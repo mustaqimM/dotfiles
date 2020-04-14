@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+# exit on all errors
+set -e
+
+#
+# root has to run the script
+#
+if [ `whoami` != "root" ]
+    then
+    printf "You need to be root to do this!\nIf you have SUDO installed, then run this script with sudo \$script.bash\n"
+    exit 1
+fi
+
+CHECKCONF=`(which unbound-checkconf)`
+CONTROL=`(which unbound-control)`
+
+wget -qO- 'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=unbound&showintro=0&mimetype=plaintext' | egrep 'local-zone' | sed -ne "/local-zone/s/redirect$/always_nxdomain/p" > /var/lib/unbound/adblock.yoyo
+wget -qO- 'https://ransomwaretracker.abuse.ch/feeds/csv/' | awk -F, '/^#/{ next }; { if ( $4 ~ /[a-z]/ ) printf("local-zone: %s always_nxdomain\n",$4) }' > /var/lib/unbound/ransomware.abuse.ch
+wget -qO- 'https://raw.githubusercontent.com/spirillen/rpz-block-list/master/hosts' | grep -v '#' | grep -v '^$' | sed -e 's/^/local-zone: \"/; s/$/\" always_nxdomain/' > /var/lib/unbound/mypdns.org
+wget -qO- 'https://raw.githubusercontent.com/FleuryK/pihole-ytadblock/master/ytadblock.txt' | grep -v '#' | dos2unix | sed -e 's/^/local-zone: \"/; s/$/\" always_nxdomain/' > /var/lib/unbound/youtube.com
+#wget -qO- 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts' | grep '^0\.0\.0\.0' | cut -d' ' -f2 | grep -v '0\.0\.0\.0' | dos2unix | sed -e 's/^/local-zone: \"/; s/$/\" always_nxdomain/' > /var/lib/unbound/StevenBlack.db
+wget -qO- 'https://gitlab.com/my-privacy-dns/matrix/matrix/raw/master/source/adware/domains.list' | awk '{ printf "local-zone: \"" $1 "\" always_nxdomain\n" }' > /var/lib/unbound/adware_domain.list
+wget -qO- 'https://gitlab.com/my-privacy-dns/matrix/matrix/raw/master/source/adware/wildcard.list' | awk '{ printf "local-zone: \"" $1 "\" always_nxdomain\n" }' > /var/lib/unbound/adware_wildcard.list
+wget -qO- 'https://gitlab.com/my-privacy-dns/matrix/matrix/raw/master/source/redirector/wildcard.list' | awk '{ printf "local-zone: \"" $1 "\" always_nxdomain\n" }' > /var/lib/unbound/redirector_wildcard.list
+wget -qO- 'https://gitlab.com/my-privacy-dns/matrix/matrix/raw/master/source/spyware/domain.list' | awk '{ printf "local-zone: \"" $1 "\" always_nxdomain\n" }' > /var/lib/unbound/spyware_domain.list
+wget -qO- 'https://gitlab.com/my-privacy-dns/matrix/matrix/raw/master/source/spyware/wildcard.list' | awk '{ printf "local-zone: \"" $1 "\" always_nxdomain\n" }' > /var/lib/unbound/spyware_wildcard.list
+wget -qO- 'https://gitlab.com/my-privacy-dns/matrix/matrix/raw/master/source/tracking/domains.list' | awk '{ printf "local-zone: \"" $1 "\" always_nxdomain\n" }' > /var/lib/unbound/tracking_domains.list
+wget -qO- 'https://gitlab.com/my-privacy-dns/matrix/matrix/raw/master/source/tracking/wildcard.list' | awk '{ printf "local-zone: \"" $1 "\" always_nxdomain\n" }' > /var/lib/unbound/tracking_wildcard.list
+wget -qO- 'http://someonewhocares.org/hosts/hosts' | grep -v '#' | awk '/^#/{ next }; { if ( $2 ~ /[a-z]/ ) printf("%s\n",$2) | "sort -i" }' | uniq -u | sed -e 's/^/local-zone: \"/; s/$/\" always_nxdomain/' > /var/lib/unbound/someonewhocares.db
+wget -qO- 'https://urlhaus.abuse.ch/downloads/rpz/' | dos2unix | grep -i '^[a-z0-9_]' | cut -d' ' -f 1 | sort -u | awk '{ printf "local-zone: \"" $1 "\" always_nxdomain\n" }' > /var/lib/unbound/urlhaus.db
+
+sort -u -f /var/lib/unbound/StevenBlack.db \
+        -f /var/lib/unbound/youtube.com \
+        -f /var/lib/unbound/adblock.yoyo \
+        -f /var/lib/unbound/ransomware.abuse.ch \
+        -f /etc/unbound/local-blocking-data.conf \
+        -f /var/lib/unbound/mypdns.org \
+        -f /var/lib/unbound/adware_domain.list \
+        -f /var/lib/unbound/adware_wildcard.list \
+        -f /var/lib/unbound/redirector_wildcard.list \
+        -f /var/lib/unbound/spyware_domain.list \
+        -f /var/lib/unbound/spyware_wildcard.list \
+        -f /var/lib/unbound/tracking_domains.list \
+        -f /var/lib/unbound/tracking_wildcard.list \
+        -f /var/lib/unbound/someonewhocares.db \
+        -f /var/lib/unbound/urlhaus.db \
+        -o /etc/unbound/zones/rpz.db
+# Temponary disabled
+#        -f /etc/unbound/zones/adblock.local \
+
+"${CHECKCONF}" > /dev/null 2>&1
+if [ $? == 0 ]
+then
+        "${CONTROL}" reload > /dev/null 2>&1
+        if [ -t 1 ]
+        then
+        printf "You're unbound NXDOMAINs have been updated\nreloading unbound server\n"
+        else
+        printf "Something went wrong\n"
+        fi
+        exit 0
+else
+        printf "The program got terminated by an error\n\nPlease see log for detail\n"
+        exit 1
+fi

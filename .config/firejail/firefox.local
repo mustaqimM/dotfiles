@@ -1,0 +1,12 @@
+ignore noexec ${HOME}
+
+noblacklist ${HOME}/.local/bin/firefox
+whitelist ${HOME}/.local/bin/firefox
+noblacklist ${HOME}/.local/share/tridactyl
+whitelist ${HOME}/.local/share/tridactyl
+noblacklist ${HOME}/.sndio
+whitelist ${HOME}/.sndio
+
+
+ignore nodbus
+ignore private-tmp

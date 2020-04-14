@@ -1,0 +1,6 @@
+# Site-specific additions and overrides for 'usr.bin.nginx'
+"/var/www/html/ariang/*" rk,
+"/var/www/html/ariang/*" lrwk,
+"/etc/nginx/snippets/*" r,
+"/etc/nginx/snippets/*" lrwk,
+"/etc/ssl/private/*" r,

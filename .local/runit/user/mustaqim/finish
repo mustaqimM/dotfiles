@@ -1,0 +1,3 @@
+#!/bin/sh
+sv -w600 force-stop /home/mustaqim/.local/runit/service/*
+sv exit /home/mustaqim/.local/runit/service/*

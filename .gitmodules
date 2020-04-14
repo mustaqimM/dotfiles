@@ -1,0 +1,6 @@
+[submodule ".config/awesome/tyrannical"]
+	path = .config/awesome/tyrannical
+	url = gh:Elv13/tyrannical
+[submodule ".config/awesome/lain"]
+	path = .config/awesome/lain
+	url = gh:lcpz/lain

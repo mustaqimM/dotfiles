@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+
+alias cat=bat
+alias cd=' cd'
+alias chts='cht --shell'
+alias gpg=gpg2
+alias lf='env LS_COLORS=$DEFAULT_LS_COLORS lf'
+alias nightly=~/.local/bin/firefox-nightly/firefox-bin
+#alias firefox=~/.local/bin/firefox/firefox-bin
+alias q=exit
+alias r=ranger
+alias s='googler --count 7'
+alias surf='firejail surf'
+alias tmux='tmux -2 -f ~/.config/tmux/tmux.conf'
+alias vi='emacsclient -nc -c -F "((width . 1366))"'
+alias pip='/bin/pip3'
+
+#alias ls=exa -bh --group-directories-first --sort name --git -G -F "$@"
+alias ls='lsd -h'
+
+alias -s {yml,yaml,toml,md}=$EDITOR
+alias -s {mkv,mp4,avi}=mpv
+alias -s {png,jpg}=feh
+
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+
+forgit_log=fglo
+forgit_diff=fgd
+forgit_add=fga
+forgit_reset_head=fgrh
+forgit_ignore=fgi
+forgit_restore=fgcf
+forgit_clean=fgclean
+forgit_stash_show=fgss

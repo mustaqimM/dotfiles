@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+open() {
+	xdg-open "$@"
+}
+
+open "$@"

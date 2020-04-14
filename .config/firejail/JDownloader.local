@@ -1,0 +1,10 @@
+ignore noexec ${HOME}
+
+noblacklist ${HOME}/.local/bin/jd2/
+whitelist ${HOME}/.local/bin/jd2/
+
+whitelist ${HOME}/Library/Downloads
+whitelist ${HOME}/Downloads
+
+ignore nodbus
+ignore private-tmp

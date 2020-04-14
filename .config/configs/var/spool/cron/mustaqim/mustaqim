@@ -1,0 +1,6 @@
+# -*- mode: sh -*-
+
+@weekly bash /bin/update_unbound.sh > /dev/null 2>&1
+
+#@daily env DISPLAY=:1 firejail --profile=~/.config/firejail/JDownloader.local /home/mustaqim/.local/bin/jd2/JDownloader2
+#@daily env DISPLAY=:1 QT_QPA_PLATFORMTHEME=qt5ct firejail /bin/qbittorrent

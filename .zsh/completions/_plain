@@ -1,0 +1,7 @@
+_plain() {
+	_arguments '1:command:((
+    	hide\:"unmount folder"
+    	show\:"mount and show folder"
+    	move\:"move... whatever"
+		))'
+}

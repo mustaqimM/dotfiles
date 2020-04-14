@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+XDG_CONFIG_HOME=''$HOME'/.config'
+GNUPGHOME='$HOME/.config/gnupg'

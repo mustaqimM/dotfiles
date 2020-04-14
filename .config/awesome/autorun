@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+
+run() {
+  if ! pgrep "$1" > /dev/null ;
+  then
+    "$@"&
+  fi
+}
+
+
+# A compositor for X11
+run "picom" --config ~/.config/picom/picom.conf
+
+# Enable touchpad tapping
+device_number=$(/usr/bin/xinput --list-props "ETPS/2 Elantech Touchpad" | rg "libinput Tapping Enabled" | head -1 | cut -d "(" -f2 | cut -d ")" -f1)
+run xinput set-prop 13 "$device_number" 1
+
+# Run a dock
+#run plank
+
+# Netork manager tray icon
+#run nm-applet
+
+# Volume icon
+#run volumeicon
+
+numlockx on
+setxkbmap -option caps:swapescape
+xset b off
+xrdb -load ~/.Xresources
+xsetroot -cursor_name left_ptr
+run xbanish
+
+firejail aria2c --rpc-secret="${RPC_SECRET}" -D
+
+run /bin/emacs -bg '#17191a' --daemon

@@ -1,0 +1,11 @@
+# Default rc.local for void; add your custom commands here.
+#
+# This is run by runit in stage 2 before the services are executed
+# (see /etc/runit/2).
+
+# This makes sure that no other unprivileged user on a system
+# can create/edit/inspect files in the users runtime directory
+# which might contain security sensitive files.
+mkdir /run/user/mustaqim
+chmod 0700 /run/user/mustaqim
+chown mustaqim:mustaqim /run/user/mustaqim

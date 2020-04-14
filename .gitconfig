@@ -1,0 +1,56 @@
+[user]
+	name = mustaqim
+	email = mustaqim@pm.me
+	signingkey = A343492B
+
+[color]
+	ui = true
+
+[core]
+	editor = emacs
+	excludesfile = /home/mustaqim/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
+#	autocrlf = true
+	safecrlf = true
+	autocrlf = input
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+
+[url "https://gist.github.com/"]
+	insteadOf = "gist:"
+
+[url "git@gitlab.com:"]
+	insteadOf = "gl:"
+
+[url "https://gitlab.com/snippets/"]
+	insteadOf = "snippet:"
+
+[alias]
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+
+[gpg]
+	program = gpg2
+
+[commit]
+	gpgsign = true
+	verbose = true
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[diff-so-fancy]
+	markEmptyLines = true
+	changeHunkIndicators = true
+	stripLeadingSymbols = true
+[blame]
+	coloring = highlightRecent

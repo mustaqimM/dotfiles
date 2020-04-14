@@ -1,0 +1,36 @@
+# -*- mode: conf; eval: (rainbow-mode) -*-
+
+set guioptions ""
+set recolor true
+set recolor-keephue true
+set window-title-basename true
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 2
+set selection-clipboard clipboard
+set font "DejaVu Sans 11"
+
+map K zoom in
+map J zoom out
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+
+set default-bg              "#141414"
+set default-fg              "#eceff1"
+set statusbar-bg            "#17191a"
+set statusbar-fg            "#eceff1"
+set recolor-darkcolor       "#eceff1"
+set recolor-lightcolor      "#17191a"
+set completion-bg           "#17191a"
+set completion-highlight-bg "#81a2be"
+set inputbar-fg             "#81a2be"
+set completion-group-bg     "#17191a"
+set completion-group-fg     "#eceff1"
+set notification-bg         "#17191a"
+set notification-fg         "#eceff1"
+set notification-error-bg   "#cc6666"
+set notification-error-fg   "#17191a"
+set highlight-color         "#81a2be"
+set highlight-active-color  "#f0c674"
+set index-active-bg         "#81a2be"

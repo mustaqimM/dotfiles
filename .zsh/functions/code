@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+code() {
+
+  local dir="$(fd . -j 4 -d 5 -t d \
+  ~/Library/Cloud/code/ \
+  ~/Library/Code/Tutorials/ \
+  | fzf )"
+
+  cd "$dir"
+}
+
+code "$@"

@@ -1,0 +1,30 @@
+#!/bin/env zsh
+
+plain() {
+  if (( ! $# )); then
+    gocryptfs -q /home/mustaqim/Library/.cipher /home/mustaqim/Library/.plain -o -allow_other
+  else
+    case $1 in
+      hide)
+        fusermount -u /home/mustaqim/Library/.plain
+        ;;
+      show)
+        gocryptfs -q /home/mustaqim/Library/.cipher /home/mustaqim/Library/.plain -o -allow_other
+        ranger /home/mustaqim/Library/.plain/ & disown
+        ;;
+      move)
+        fd . ~/Library/Downloads/.var -E '*.part' -x mv "{}" ~/Library/.plain/
+        ;;
+    esac
+  fi
+}
+
+_plain() {
+	_arguments '1:command:((
+    	hide\:"unmount folder"
+    	show\:"mount and show folder"
+    	move\:"move... whatever"
+		))'
+}
+
+compdef _plain plain

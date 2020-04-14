@@ -1,0 +1,7 @@
+#!/bin/sh
+
+export USERNAME=mustaqim
+export NZBGET="/usr/bin/nzbget"
+
+exec 2>&1
+exec chpst -u "$USERNAME" "$NZBGET" -s -o outputmode=log

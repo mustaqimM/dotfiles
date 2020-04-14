@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pkill -USR1 -x sxhkd
+pkill -USR1 -x polybar
+xrandr --output LVDS-1 --mode 1366x768

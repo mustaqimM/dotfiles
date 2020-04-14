@@ -1,0 +1,27 @@
+#! /bin/sh
+
+   case $1 in
+   world        |w*)  x=world       # shortcut: w
+   ;;us         |u*)  x=us          # shortcut: u
+   ;;politics   |p*)  x=politics    # shortcut: p
+   ;;nyregion   |n*)  x=nyregion    # shortcut: n
+   ;;business   |bu*) x=business    # shortcut: bu
+   ;;opinion    |o*)  x=opinion     # shortcut: o
+   ;;technology |te*) x=technology  # shortcut: te
+   ;;science    |sc*) x=science     # shortcut: sc
+   ;;health     |h*)  x=health      # shortcut: h
+   ;;sports     |sp*) x=sports      # shortcut: sp
+   ;;arts       |a*)  x=arts        # shortcut: a
+   ;;books      |bo*) x=books       # shortcut: bo
+   ;;style      |st*) x=style       # shortcut: st
+   ;;food       |f*)  x=food        # shortcut: f
+   ;;travel     |tr*) x=travel      # shortcut: tr
+   ;;magazine   |m*)  x=magazine    # shortcut: m
+   ;;t-magazine |t-*) x=t-magazine  # shortcut: t-
+   ;;realestate |r*)  x=realestate  # shortcut: r
+   ;;*)
+   echo usage: "$0" section
+   exec sed '/x=/!d;s/.*x=//;/sed/!p' "$0"
+   esac
+
+curl -s https://static01.nyt.com/services/json/sectionfronts/$x/index.jsonp
