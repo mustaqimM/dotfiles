@@ -63,3 +63,4 @@ newtabtools@darktrojan.net=d7945ad0-652a-48c1-a61c-81998b907b6a
 {c607c8df-14a7-4f28-894f-29e8722976af}=631ff38a-b2f9-4a62-a64c-3cc6807a4cee
 tridactyl.vim.betas.nonewtab@cmcaine.co.uk=76bf5b16-3684-4551-a96c-c11208f1edda
 jid1-TSgSxBhncsPBWQ@jetpack=0d288d5c-7eba-4a35-9f41-7336270bd6f9
+{708bb4c5-336d-4a30-9126-8bf5d773bb41}=12813527-8a64-4272-9297-98488ba71c49

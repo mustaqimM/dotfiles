@@ -174,7 +174,6 @@ theme.titlebar_close_button_focus               = titlebar_icon_path.."close_foc
 theme.titlebar_close_button_normal_hover        = titlebar_icon_path.."close_hover.png"
 theme.titlebar_close_button_normal_press        = titlebar_icon_path.."close_press.png"
 
-
 theme.titlebar_minimize_button_normal           = titlebar_icon_path.."minimize_normal.png"
 theme.titlebar_minimize_button_focus            = titlebar_icon_path.."minimize_focus.png"
 

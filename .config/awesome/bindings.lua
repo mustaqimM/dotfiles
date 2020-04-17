@@ -230,10 +230,10 @@ bindings.globalkeys = gears.table.join(
 
     awful.key({ modkey }, "z", function ()
             awful.spawn.easy_async_with_shell("doas /bin/zzz") end,
-        { description = "Sleep", group = "hotkeys"}),
+        { description = "Sleep", group = "hotkeys"})
 
     -- Toggle redshift with Mod+Shift+t
-    awful.key({ modkey, "Shift" }, "t", function () lain.widget.contrib.redshift:toggle() end)
+    --awful.key({ modkey, "Shift" }, "t", function () lain.widget.contrib.redshift:toggle() end)
 )
 
 bindings.clientkeys = gears.table.join(
@@ -284,6 +284,11 @@ bindings.clientkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "t",
         awful.titlebar.toggle,
         {description = "toggle title bar", group = "client"}),
+
+
+    awful.key({ modkey, "Shift" }, "s",
+        function (c) c.sticky = not c.sticky  end,
+        {description = "sticky client", group = "client"}),
 
     awful.key({ modkey }, "a",
         function (c)

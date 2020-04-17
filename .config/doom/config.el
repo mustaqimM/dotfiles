@@ -53,6 +53,7 @@
 
 
 (add-to-list 'auto-mode-alist '("\\template\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\vifmrc\\'" . vimrc-mode))
 ;(add-to-list 'auto-mode-alist '("\\.vue$" . vue-mode))
 (set-file-template! "\\.vue$" :trigger "__vue" :mode 'vue-mode)
 
@@ -114,3 +115,4 @@
 ;;(centaur-tabs-hide-tab-function 'centaur-tabs-hide-tab)
 
 ;;(add-to-list 'default-frame-alist '(fullscreen . maximized))
+

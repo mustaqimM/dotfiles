@@ -40,11 +40,21 @@ client.connect_signal("request::titlebars", function(c)
         end)
     )
 
+    -- TODO: Put multiple widgets into a single margin container
     awful.titlebar(c) : setup {
         { -- Left
-            awful.titlebar.widget.closebutton    (c),
-            awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.floatingbutton (c),
+            { widget = wibox.container.margin,
+              margins=5,
+              awful.titlebar.widget.closebutton(c)
+            },
+            { widget = wibox.container.margin,
+              margins=5,
+              awful.titlebar.widget.maximizedbutton(c)
+            },
+            { widget = wibox.container.margin,
+              margins=5,
+              awful.titlebar.widget.minimizebutton(c)
+            },
             layout = wibox.layout.fixed.horizontal()
         },
         { -- Middle
@@ -56,9 +66,22 @@ client.connect_signal("request::titlebars", function(c)
             layout  = wibox.layout.flex.horizontal
         },
         { -- Right
-            awful.titlebar.widget.stickybutton(c),
-            awful.titlebar.widget.ontopbutton (c),
-            awful.titlebar.widget.iconwidget  (c),
+        --    { widget = wibox.container.margin,
+        --      margins=4,
+        --      awful.titlebar.widget.floatingbutton(c)
+        --    },
+        --    { widget = wibox.container.margin,
+        --      margins=4,
+        --      awful.titlebar.widget.stickybutton(c)
+        --    },
+        --    { widget = wibox.container.margin,
+        --      margins=4,
+        --      awful.titlebar.widget.ontopbutton(c)
+        --    },
+            { widget = wibox.container.margin,
+              margins=4,
+              awful.titlebar.widget.iconwidget(c)
+            },
             buttons = buttons,
             layout  = wibox.layout.fixed.horizontal
         },

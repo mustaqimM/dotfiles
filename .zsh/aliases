@@ -8,12 +8,14 @@ alias lf='env LS_COLORS=$DEFAULT_LS_COLORS lf'
 alias nightly=~/.local/bin/firefox-nightly/firefox-bin
 #alias firefox=~/.local/bin/firefox/firefox-bin
 alias q=exit
-alias r=ranger
+#alias r=ranger
+alias f='~/.config/vifm/scripts/vifmrun'
 alias s='googler --count 7'
 alias surf='firejail surf'
 alias tmux='tmux -2 -f ~/.config/tmux/tmux.conf'
 alias vi='emacsclient -nc -c -F "((width . 1366))"'
 alias pip='/bin/pip3'
+alias xargs='xargs ' # Needed for alias subtitution
 
 #alias ls=exa -bh --group-directories-first --sort name --git -G -F "$@"
 alias ls='lsd -h'

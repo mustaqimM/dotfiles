@@ -58,3 +58,5 @@
 (package! sml-mode)
 
 (package! vue-mode)
+
+(package! vimrc-mode)

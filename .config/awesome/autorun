@@ -28,7 +28,7 @@ numlockx on
 setxkbmap -option caps:swapescape
 xset b off
 xrdb -load ~/.Xresources
-xsetroot -cursor_name left_ptr
+#xsetroot -cursor_name left_ptr
 run xbanish
 
 firejail aria2c --rpc-secret="${RPC_SECRET}" -D

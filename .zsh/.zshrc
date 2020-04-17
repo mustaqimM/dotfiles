@@ -6,8 +6,9 @@ if [ ! -S ~/.ssh/ssh_auth_sock ]; then
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 #ssh-add -l > /dev/null || ssh-add
-#ssh-add -q $HOME/.ssh/GitLab > /dev/null || ssh-add
-#ssh-add -q $HOME/.ssh/GitHub > /dev/null || ssh-add
+ssh-add -q $HOME/.ssh/GitLab > /dev/null || ssh-add
+ssh-add -q $HOME/.ssh/GitHub > /dev/null || ssh-add
+
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -38,17 +39,18 @@ zinit light-mode for \
     zinit-zsh/z-a-as-monitor \
     zinit-zsh/z-a-bin-gem-node
 ### End of Zinit's installer chunk
+# ==============================================================================
 
 
 fpath=(
   $ZDOTDIR/functions
   $ZDOTDIR/completions
-  #$HOME/.cargo/bin
   $HOME/.local/bin/scripts
   "${fpath[@]}"
 )
 
 
+# ==============================================================================
 HISTFILE=~/.zsh/zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -94,78 +96,78 @@ unalias zplg
 # }}}
 
 
+# ==============================================================================
 #===  PLUGINS  ==={{{
 
-zpl ice wait"0a" lucid \
+zi ice wait"0a" lucid \
   atload"HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=blue,fg=232,bold""
-zpl light "zsh-users/zsh-history-substring-search"
+zi light "zsh-users/zsh-history-substring-search"
 
-zpl ice wait"0b" lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start; "
-zpl light "zsh-users/zsh-autosuggestions"
+zi ice wait"0b" lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start; "
+zi light "zsh-users/zsh-autosuggestions"
 
-zpl ice wait lucid atload"zicompinit; zicdreplay" blockf for \
-zpl light-mode "zsh-users/zsh-completions"
-#zpl snippet "OMZ::lib/completion.zsh"
+zi ice wait lucid atload"zicompinit; zicdreplay" blockf for \
+zi light-mode "zsh-users/zsh-completions"
+zi ice wait lucid atinit"_zcomp"
+zi light "zdharma/fast-syntax-highlighting"
+#zi snippet "OMZ::lib/completion.zsh"
 
-zpl ice wait lucid atinit"_zcomp; zpcdreplay"
-zpl light "zdharma/fast-syntax-highlighting"
+zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
+zi snippet "OMZ::plugins/git/git.plugin.zsh"
+zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
+zi snippet "OMZ::plugins/git-extras/git-extras.plugin.zsh"
+zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
+zi light "wfxr/forgit"
 
-zpl ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
-zpl snippet "OMZ::plugins/git/git.plugin.zsh"
-zpl ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
-zpl snippet "OMZ::plugins/git-extras/git-extras.plugin.zsh"
-zpl ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
-zpl light "wfxr/forgit"
+zi ice wait lucid pick"init.sh"
+zi light "b4b4r07/enhancd"
+zi ice wait"2g" lucid
+zi light "changyuheng/zsh-interactive-cd"
 
-zpl ice wait lucid pick"init.sh" #atpull"git checkout 718bd31"
-zpl light "b4b4r07/enhancd"
-zpl ice wait"2g" lucid
-zpl light "changyuheng/zsh-interactive-cd"
+zi ice lucid from"gh-r" as'program' bpick"*linux*" pick"def-matcher"
+zi light sei40kr/fast-alias-tips-bin
+zi ice wait"2h" lucid
+zi light sei40kr/zsh-fast-alias-tips
 
-zpl ice lucid from"gh-r" as'program' bpick"*linux*" pick"def-matcher"
-zpl light sei40kr/fast-alias-tips-bin
-zpl ice wait"2h" lucid
-zpl light sei40kr/zsh-fast-alias-tips
+#zi ice wait lucid
+#zi light "xPMo/zsh-toggle-command-prefix"
 
-#zpl ice wait lucid
-#zpl light "xPMo/zsh-toggle-command-prefix"
+#zi light "willghatch/zsh-cdr"
+#zi light "zsh-users/zaw"
 
-#zpl light "willghatch/zsh-cdr"
-#zpl light "zsh-users/zaw"
+zi ice wait"2" lucid nocompletions
+zi light "hlissner/zsh-autopair"
 
-zpl ice wait"2" lucid nocompletions
-zpl light "hlissner/zsh-autopair"
+#zi ice wait"2" lucid
+#zi snippet "OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh"
 
-#zpl ice wait"2" lucid
-#zpl snippet "OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh"
+zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)np*]} ]]'
+zi snippet "OMZ::plugins/npm/npm.plugin.zsh"
 
-zpl ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)np*]} ]]'
-zpl snippet "OMZ::plugins/npm/npm.plugin.zsh"
-
-zpl ice wait lucid from"gh-r" as"program" \
+zi ice wait lucid from"gh-r" as"program" \
   atload"_fzf_compgen_path() { fd --type f --hidden --follow --exclude ".git" . "$1" }; \
          _fzf_compgen_dir() { fd --type d --hidden --follow --exclude ".git" . "$1" }"
-zpl light junegunn/fzf-bin
+zi light junegunn/fzf-bin
 if [[ $(type -p fzf) ]] then
-  zpl ice wait lucid multisrc"shell/{key-bindings,completion}.zsh" pick""
-  zpl light "junegunn/fzf"
+  zi ice wait lucid multisrc"shell/{key-bindings,completion}.zsh" pick""
+  zi light "junegunn/fzf"
 fi
 
-zpl ice wait lucid id-as"base16-fzf" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi \n  --reverse' base16-fzf" atpull"%atclone"
-zpl snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow-night.config"
+zi ice wait lucid id-as"base16-fzf" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi \n  --reverse' base16-fzf" atpull"%atclone"
+zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow-night.config"
 
 
-zpl ice wait"2" lucid
-zpl snippet "OMZ::plugins/extract/extract.plugin.zsh"
-#zpl ice wait"2" lucid
-#zpl snippet "OMZ::plugins/sudo/sudo.plugin.zsh"
-zpl ice wait"2" lucid
-zpl snippet "OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh"
-#zpl ice wait"2" lucid
-#zpl snippet "OMZ::plugins/tmux/tmux.plugin.zsh"
+zi ice wait"2" lucid
+zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
+#zi ice wait"2" lucid
+#zi snippet "OMZ::plugins/sudo/sudo.plugin.zsh"
+zi ice wait"2" lucid
+zi snippet "OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh"
+#zi ice wait"2" lucid
+#zi snippet "OMZ::plugins/tmux/tmux.plugin.zsh"
 
-#zpl ice wait"3" lucid
-#zpl light "marzocchi/zsh-notify"
+#zi ice wait"3" lucid
+#zi light "marzocchi/zsh-notify"
 
 #if [[ ! -d ~/.rbenv/plugins ]] then
 #   echo "Creating \$(rbenv root)/plugins"
@@ -175,101 +177,95 @@ zpl snippet "OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh"
 #      git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 #   fi
 #fi
-#zpl ice svn lucid \
+#zi ice svn lucid \
 #  wait'[[ -n ${ZLAST_COMMANDS[(r)rben*]} ]]' \
 #  atload"POWERLEVEL9K_RBENV_PROMPT_ALWAYS_SHOW=true" \
 #  unload"![[ ! -e Gemfile || ! -e Rakefile ]]"
-#zpl snippet "PZT::modules/ruby/"
-#zpl ice wait"3a" lucid wait"[[ -f Gemfile || -f Rakefile ]]" unload"[[ ! -f Gemfile ]]"
-#zpl snippet "OMZ::plugins/rbenv/rbenv.plugin.zsh"
+#zi snippet "PZT::modules/ruby/"
+#zi ice wait"3a" lucid wait"[[ -f Gemfile || -f Rakefile ]]" unload"[[ ! -f Gemfile ]]"
+#zi snippet "OMZ::plugins/rbenv/rbenv.plugin.zsh"
 
-#zpl ice lucid wait \
+#zi ice lucid wait \
 #  as'command' pick'bin/pyenv' \
 #  atload'eval "$(pyenv init - --no-rehash zsh)"; echo "TEST"' \
 #  src'completions/pyenv.zsh' nocompile'!'
-#zpl light pyenv/pyenv
+#zi light pyenv/pyenv
 #export PYENV_ROOT="$HOME/.pyenv"
 
-#zpl ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)pyenv]} ]]' \
+#zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)pyenv]} ]]' \
 #  as'command' pick"bin/*" \
 #  atload'eval "$(pyenv virtualenv-init - zsh)"'
-#zpl light pyenv/pyenv-virtualenv
+#zi light pyenv/pyenv-virtualenv
 
-zpl ice from"gh-r" as"program" mv"direnv* -> direnv" \
+zi ice svn atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
+zi snippet "OMZ::plugins/emacs"
+
+zi ice from"gh-r" as"program" mv"direnv* -> direnv" \
   atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
-zpl light direnv/direnv
+zi light direnv/direnv
 
-zpl ice wait"3b" lucid mv"*cht.sh -> cht" pick"cht" as"program" id-as"cht.sh"
-zpl snippet "https://cht.sh/:cht.sh"
-#zpl ice wait"2" lucid id-as"tldr" as"program" pick"tldr"
-#zpl snippet "https://raw.githubusercontent.com/raylee/tldr/master/tldr"
+zi ice wait"3b" lucid mv"*cht.sh -> cht" pick"cht" as"program" id-as"cht.sh"
+zi snippet "https://cht.sh/:cht.sh"
+#zi ice wait"2" lucid id-as"tldr" as"program" pick"tldr"
+#zi snippet "https://raw.githubusercontent.com/raylee/tldr/master/tldr"
 
-zpl ice lucid mv"ps_mem.py -> psmem" pick"psmem" as"program"
-zpl light "pixelb/ps_mem"
+zi ice lucid mv"ps_mem.py -> psmem" pick"psmem" as"program"
+zi light "pixelb/ps_mem"
 
-zpl ice wait"3d" lucid as"program" pick"bin/git-dsf"
-zpl light "zdharma/zsh-diff-so-fancy"
+zi ice wait"3d" lucid as"program" pick"bin/git-dsf"
+zi light "zdharma/zsh-diff-so-fancy"
 
-#zpl ice wait lucid atload'eval "$(lua /home/mustaqim/.zinit/plugins/skywind3000---z.lua/z.lua --init zsh enhanced once fzf)"'
-#zpl light "skywind3000/z.lua"
+#zi ice pick"fasd" as"program"
+#zi snippet "https://raw.githubusercontent.com/clvv/fasd/master/fasd"
+#zi snippet "OMZ::plugins/fasd/fasd.plugin.zsh"
 
-zpl ice svn atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
-zpl snippet "OMZ::plugins/emacs"
+#zi ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
+#zi light "chriskempson/base16-shell"
 
-#zpl ice pick"fasd" as"program"
-#zpl snippet "https://raw.githubusercontent.com/clvv/fasd/master/fasd"
-#zpl snippet "OMZ::plugins/fasd/fasd.plugin.zsh"
-
-#zpl ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
-#zpl light "chriskempson/base16-shell"
-
-zpl ice lucid reset \
+zi ice lucid reset \
   atclone"dircolors -b LS_COLORS > c.zsh; sed -i 's/30/12/g; s/172/11/g; s/196/9/g' c.zsh;" \
   atpull'%atclone' pick"c.zsh" nocompile'!' \
   atload'zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}'
-zpl light trapd00r/LS_COLORS
+zi light trapd00r/LS_COLORS
 
-zpl ice lucid from"gh-r" as"program" bpick"*linux*" mv"lsd* -> lsd" pick"lsd/lsd"
-zpl light "Peltoche/lsd"
+#zi ice lucid from"gh-r" as"program" bpick"*linux*" mv"lsd* -> lsd" pick"lsd/lsd"
+#zi light "Peltoche/lsd"
 
-zpl ice lucid pick"pfetch" as"program"
-zpl light "dylanaraps/pfetch"
+zi ice lucid pick"pfetch" as"program"
+zi light "dylanaraps/pfetch"
 
-zpl ice lucid from"gh-r" as"program" bpick"joe"
-zpl light "karan/joe"
+zi ice lucid from"gh-r" as"program" bpick"joe"
+zi light "karan/joe"
 
-zpl ice lucid from"gh-r" as"program" bpick"*linux*"
-zpl light "imsnif/bandwhich"
+zi ice lucid from"gh-r" as"program" bpick"*linux*"
+zi light "imsnif/bandwhich"
 
-zpl ice lucid from"gh-r" as"program" bpick"*linux*" pick"bat-v0.13.0-x86_64-unknown-linux-gnu/bat"
-zpl light "sharkdp/bat"
+zi ice lucid from"gh-r" as"program" bpick"*linux*" pick"bat-v0.13.0-x86_64-unknown-linux-gnu/bat"
+zi light "sharkdp/bat"
 
-# Local plugins
-#zpl ice lucid as"program" pick"doom"
-#zpl snippet "/home/mustaqim/.emacs.d/bin/doom"
+#zi ice wait"2" lucid as"program" pick"build/release/peaclock" atclone"./build.sh"
+#zi light "octobanana/peaclock"
 
-#zpl ice wait"2" lucid as"program" pick"colorblocks"
-#zpl snippet /home/mustaqim/.local/bin/scripts/colorblocks
+#zi ice wait"2" lucid as"program" pick"heroku"
+#zi light "$HOME/.local/bin/heroku/bin"
+#zi ice wait"2" lucid cloneonly
+#zi snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
 
-#zpl ice wait"2" lucid as"program" pick"build/release/peaclock" atclone"./build.sh"
-#zpl light "octobanana/peaclock"
-
-#zpl ice wait"2" lucid as"program" pick"heroku"
-#zpl light "$HOME/.local/bin/heroku/bin"
-#zpl ice wait"2" lucid cloneonly
-#zpl snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
-
-#zpl ice as"program" pick"bin/sml"
-#zpl snippet "/home/mustaqim/.local/bin/sml/bin/sml"
+#zi ice as"program" pick"bin/sml"
+#zi snippet "/home/mustaqim/.local/bin/sml/bin/sml"
 
 # }}}
 
 # === THEMES === {{{
 
-zpl ice lucid atinit'[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh'
-zpl light romkatv/powerlevel10k
+zi ice lucid atinit'[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh'
+zi light romkatv/powerlevel10k
 # }}}
 
+if [ -n "$INSIDE_VIFM" ]; then
+    RANGER_LEVEL="[V]"
+    unset INSIDE_VIFM
+fi
 
 # Compile to decrease startup speed (only if $1 is older than 4 hours)
 _zcompare() {
@@ -323,11 +319,11 @@ function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/"$@" ;}
 # Copy and Paste for `st`
 x-kill-region () {
   zle kill-region
-  print -rn $CUTBUFFER | xsel -i -b
+  print -rn $CUTBUFFER | xclip -i -sel clipboard
 }
 zle -N x-kill-region
 x-yank () {
-  CUTBUFFER=$(xsel -o -b </dev/null)
+  CUTBUFFER=$(xclip -sel clipboard -o </dev/null)
   zle yank
 }
 zle -N x-yank
@@ -419,14 +415,14 @@ autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz code fh fkill fco gfy plain 
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 
 # generic completions for programs which understand GNU long options(--help)
-zpcompdef _gnu_generic fd bat gocryptfs curl fzf tlp-stat cwebp aomenc pip flask \
-  docker-machine docker light rofi cargo rustc emacs tar extract psmem firejail direnv \
-  aria2c nzbget pipx sk redshift z kitty wmctrl
+zicompdef _gnu_generic aomenc aria2c bat cargo curl cwebp direnv docker \
+  docker-machine emacs extract fd firejail flask fzf gocryptfs kitty light \
+  mimeo nzbget pip pipx psmem redshift rofi rustc sk tar tlp-stat wmctrl z
 
-zpcompdef _yadm yadm
+for comp ( yadm vifm ) { zicompdef _$comp $comp; }
 
-zpcompinit
-zplugin cdreplay -q
+zicompinit
+zinit cdreplay -q
 
 
 # vim:ft=zsh:et:fileencoding=utf-8:ft=conf:foldmethod=marker

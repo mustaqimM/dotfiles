@@ -65,7 +65,7 @@ st.shell:        /bin/zsh
 
 ! The following options options can be reloaded via USR1 signal.
 st.font:              Iosevka Medium:pixelsize=16:antialias=true:autohint=true:spacing=[0|90|100|110];
-st.borderpx:          16
+st.borderpx:          32
 ! Available cursor values: 2 4 6 7 = █ _ | ☃ ( 1 3 5 are blinking versions)
 st.cursorshape:       2
 ! thickness of underline and bar cursors
@@ -95,3 +95,5 @@ st.imstyle:           root
 ! opacity==255 means what terminal will be not transparent, 0 - fully transparent
 st.opacity:      254
 ! Defaults taken from base16-tomorrow-night colorscheme.
+
+Xcursor.theme: Breeze-Hacked-White

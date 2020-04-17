@@ -12,5 +12,6 @@ fi
 if [ -f ~/.bashrc ]; then . .bashrc; fi
 
 if [[ ! $DISPLAY ]]; then
-  startx 2> .xsession-errors
+  sx sh ~/.xinitrc 2> .xsession-errors
+  #startx 2> .xsession-errors
 fi

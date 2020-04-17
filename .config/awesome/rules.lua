@@ -34,7 +34,7 @@ tyrannical.tags = {
     screen      = {1,2},                  -- Create gnhis tag on screen 1 and screen 2
     layout      = awful.layout.suit.spiral,         -- Use the tile layout
     class       = { --Accept the following classes, refuse everything else (because of "exclusive=true")
-      "Alacritty", "kitty", "konsole", "st", "Tilix", "URxvt", "UXTerm", "xst" }
+      "Alacritty", "kitty", "konsole", "st", "Tilix", "URxvt", "UXTerm", "xst", "feh", "sxiv" }
   },
   {
     name        = "Files",
@@ -103,14 +103,14 @@ tyrannical.tags = {
 -- Ignore the tag "exclusive" property for the following clients (matched by classes)
 tyrannical.properties.intrusive = {
   "ksnapshot"     , "pinentry"       , "gtksu"     , "kcalc"        , "xcalc"               ,
-  "feh"           , "Gradient editor", "About KDE" , "Paste Special", "Background color"    ,
+              "Gradient editor", "About KDE" , "Paste Special", "Background color"    ,
   "kcolorchooser" , "plasmoidviewer" , "Xephyr"    , "kruler"       , "plasmaengineexplorer",
 }
 
 -- Ignore the tiled layout for the matching clients
 tyrannical.properties.floating = {
   "MPlayer"      , "pinentry"        , "ksnapshot"  , "pinentry"     , "gtksu"          ,
-  "xine"         , "feh"             , "kmix"       , "kcalc"        , "xcalc"          ,
+  "xine"                       , "kmix"       , "kcalc"        , "xcalc"          ,
   "yakuake"      , "Select Color$"   , "kruler"     , "kcolorchooser", "Paste Special"  ,
   "New Form"     , "Insert Picture"  , "kcharselect", "mythfrontend" , "plasmoidviewer"
 }
@@ -129,11 +129,11 @@ tyrannical.properties.placement = {
 }
 
 tyrannical.properties.fullscreen   = { "mpv" }
-tyrannical.properties.skip_taskbar = { "Plank" }
-tyrannical.properties.sticky       = { "Plank" }
+--tyrannical.properties.skip_taskbar = { "Plank" }
+--tyrannical.properties.sticky       = { "Plank" }
 
 tyrannical.settings.block_children_focus_stealing = true --Block popups ()
-tyrannical.settings.group_children = true --Force popups/dialogs to have the same tags as the parent client
+tyrannical.settings.group_children = false --Force popups/dialogs to have the same tags as the parent client
 
 
 -- {{{ Rules
@@ -231,6 +231,14 @@ awful.rules.rules = {
                    floating = true, sticky = true },
     callback = function (c)
       awful.placement.centered(c) end },
+
+  { rule = { class = "feh" },
+    properties = { fullscreen = false, titlebars_enabled = false,
+                   floating = true, border_width = 0 },
+    callback = function (c)
+      c:geometry({ width = 1024, height = 576 })
+      awful.placement.centered(c) end },
+
 }
 -- }}}
 

@@ -350,7 +350,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
   background: transparent !important;
 }
 
-
+/* Bookmark icon in suggestions */
+.urlbarView-type-icon {fill: white !important;}
 /* Icons on urlbar */
 /* Make icon white */
 #urlbar-engine-one-off-item-GitHub {
