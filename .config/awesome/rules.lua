@@ -25,7 +25,8 @@ tyrannical.tags = {
     layout      = awful.layout.suit.max,                 -- Use the max layout
     class = {
       "Opera"         , "Firefox"        , "Next"        , "qutebrowser",
-      "Chromium"      , "nightly"        , "Plank"       , "Surf" }
+      "Chromium"      , "nightly"        , "Plank"       , "Surf" },
+    instance = { "mpvstream" }
   },
   {
     name        = "​",                   -- Call the tag "Term"
@@ -68,6 +69,7 @@ tyrannical.tags = {
     name        = "",
     init        = false,
     exclusive   = true,
+    --no_tag_deselect=true,
     class       = { "mpv" }
   },
   {
@@ -124,11 +126,11 @@ tyrannical.properties.ontop = {
 tyrannical.properties.placement = {
   dolphin = awful.placement.centered,
   kcalc   = awful.placement.centered,
-  mpv     = awful.placement.centered,
+  --mpv     = awful.placement.centered,
   Firefox = awful.placement.centered,
 }
 
-tyrannical.properties.fullscreen   = { "mpv" }
+--tyrannical.properties.fullscreen   = { "mpv" }
 --tyrannical.properties.skip_taskbar = { "Plank" }
 --tyrannical.properties.sticky       = { "Plank" }
 
@@ -221,9 +223,11 @@ awful.rules.rules = {
     callback = function (c) awful.placement.centered(c) end
   },
 
-  { rule = { class = "mpv" },
-    properties = { fullscreen = true, titlebars_enabled = false,
-                   floating = true, border_width = 0 } },
+  { rule = { instance = "mpvstream" },
+    properties = { floating = true, sticky = true, skip_taskbar = true, width = 500, height = 300 },
+    callback = function (c)
+      --c:geometry({ width = 500, height = 300 })
+      awful.placement.bottom_right(c) end },
 
   { rule = { name = "Upload to Imgur" },
     properties = { width = 700, height = 400,
@@ -253,35 +257,8 @@ awful.rules.rules = {
 --      callback = function (c)
 --        awful.placement.centered(c) end },
 --
---    { rule = { class = "feh" },
---      properties = { fullscreen = false, titlebars_enabled = false,
---                     floating = true, border_width = 0 },
---      callback = function (c)
---          c:geometry({ width = 1024, height = 576 })
---          awful.placement.centered(c) end },
-  --
---    { rule = { name = "Upload to Imgur" },
---      properties = { width = 700, height = 400,
---                     titlebars_enabled = false,
---                     floating = true,
---      },
---      callback = function (c)
---        awful.placement.centered(c) end },
-
 --    { rule = { class = "Gramps" },
 --      properties = { titlebars_enabled = false } },
 --    { rule = { name = "Tip of the Day - Gramps" },
 --      callback = function (c)
 --        awful.placement.centered(c) end },
---
---    { rule = { class = "Plank" },
---      properties = {
---          border_width = 0,
---          floating = true,
---          sticky = true,
---          ontop = false,
---          focusable = false,
---          below = true,
---          skip_taskbar = true
---      }
---    },

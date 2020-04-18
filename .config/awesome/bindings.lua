@@ -225,7 +225,7 @@ bindings.globalkeys = gears.table.join(
         end, { description = "Printscreen", group = "hotkeys"}),
 
     awful.key({ modkey }, "y", function ()
-            helpers.async_with_shell("mpv $(xsel -bo)", function(out) end) end,
+            helpers.async_with_shell("mpv --x11-name=mpvstream $(xclip -selection clipboard -o)", function(out) end) end,
         { description = "Play clipboard content with mpv", group = "hotkeys"}),
 
     awful.key({ modkey }, "z", function ()

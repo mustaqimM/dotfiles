@@ -326,7 +326,9 @@ fileviewer <audio/*>
 ""          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
 ""          \*.as[fx]
 ""         \ ffprobe -pretty %c 2>&1
-"filextype <video/*> mpv %c %i
+"filetype <video/*>
+""          \ {View using mpv}
+""          \ mpv %f,
 fileviewer <video/*>
         \ vifmimg video %px %py %pw %ph %c
         \ %pc
@@ -358,14 +360,12 @@ filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Images
-filextype *.bmp,*.gif,*.jpg,*.jpeg,*.png,*.webp,*.xpm
+filetype *.bmp,*.gif,*.jpg,*.jpeg,*.png,*.webp,*.xpm
         \ {View in feh}
         \ feh --scale-down %c &,
         \ {View in sxiv}
         \ sxiv %f,
-        \ {View in shotwell}
-        \ shotwell,
-fileviewer *.bmp,*.gif,*.jpg,*.jpeg,*.png,*.webp,*.xpm
+fileviewer <image/*>
         \ vifmimg draw %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
@@ -479,6 +479,8 @@ fileviewer Makefile,Makefile.* highlight -O xterm256 -s dante --syntax make %c
 filetype <text/*> $EMACS_PLUGIN_LAUNCHER -nw
 "fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never %c -p
 fileviewer <text/*> highlight -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --force %c
+                    \ %pc
+                    \ vifmimg clear
 
 "filetype * xdg-open %c
 filetype * mimeo %c %i &
@@ -489,7 +491,7 @@ set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  :
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[hc]::,  ::/^copying|license$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::,  ::*.sql::,  ::*.sqlite::'
 set classify+='  ::*.conf,,*.yml,,*.ini::,  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::'
-set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::'
+set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::'
 " archives
 set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.jar,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'

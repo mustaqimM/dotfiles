@@ -3,8 +3,15 @@
 -- This script skips sponsored segments of YouTube videos
 -- using data from https://github.com/ajayyy/SponsorBlock
 
+local ON_WINDOWS = package.config:sub(1,1) ~= '/'
+
 local options = {
     server_address = "https://api.sponsor.ajay.app",
+
+    python_path = ON_WINDOWS and "python" or "python3",
+
+    -- Whether or not to automatically skip sponsors
+    skip = true,
 
     -- If true, sponsored segments will only be skipped once
     skip_once = true,
@@ -19,6 +26,9 @@ local options = {
     -- User ID used to submit sponsored segments, leave blank for random
     user_id = "",
 
+    -- Name to display on the stats page https://sponsor.ajay.app/stats/ leave blank to keep current name
+    display_name = "",
+
     -- Tell the server when a skip happens
     report_views = true,
 
@@ -27,6 +37,9 @@ local options = {
 
     -- Use sponsor times from server if they're more up to date than our local database
     server_fallback = true,
+
+    -- Create chapters at sponsor boundaries for OSC display and manual skipping with skip=false
+    make_chapters = true,
 
     -- Minimum duration for sponsors (in seconds), segments under that threshold will be ignored
     min_duration = 1,
@@ -47,7 +60,11 @@ local options = {
     fast_forward_increase = .2,
 
     -- Playback speed cap
-    fast_forward_cap = 2
+    fast_forward_cap = 2,
+
+    -- Pattern for video id in local files, ignored if blank
+    -- Recommended value for base youtube-dl is "-([%a%d%-_]+)%.[mw][kpe][v4b][m]?$"
+    local_pattern = ""
 }
 
 mp.options = require "mp.options"
@@ -59,14 +76,18 @@ if legacy then
 end
 
 local utils = require "mp.utils"
-local scripts_dir = mp.find_config_file("scripts")
+if mp.get_script_directory == nil then
+    scripts_dir = mp.find_config_file("scripts/sponsorblock")
+else
+    scripts_dir = mp.get_script_directory()
+end
 local sponsorblock = utils.join_path(scripts_dir, "shared/sponsorblock.py")
 local uid_path = utils.join_path(scripts_dir, "shared/sponsorblock.txt")
 local database_file = options.local_database and utils.join_path(scripts_dir, "shared/sponsorblock.db") or ""
 local youtube_id = nil
 local ranges = {}
 local init = false
-local segment = {a = 0, b = 0, progress = 0}
+local segment = {a = 0, b = 0, progress = 0, first = true}
 local retrying = false
 local last_skip = {uuid = "", dir = nil}
 local speed_timer = nil
@@ -83,6 +104,29 @@ function t_count(t)
     local count = 0
     for _ in pairs(t) do count = count + 1 end
     return count
+end
+
+function time_sort(a, b)
+    return a.time < b.time
+end
+
+function clean_chapters()
+    local chapters = mp.get_property_native("chapter-list")
+    local new_chapters = {}
+    for _, chapter in pairs(chapters) do
+        if chapter.title ~= "Preview segment start" and chapter.title ~= "Preview segment end" then
+            table.insert(new_chapters, chapter)
+        end
+    end
+    mp.set_property_native("chapter-list", new_chapters)
+end
+
+function create_chapter(chapter_title, chapter_time)
+    local chapters = mp.get_property_native("chapter-list")
+    local duration = mp.get_property_native("duration")
+    table.insert(chapters, {title=chapter_title, time=(duration == nil or duration > chapter_time) and chapter_time or duration - .001})
+    table.sort(chapters, time_sort)
+    mp.set_property_native("chapter-list", chapters)
 end
 
 function getranges(_, exists, db, more)
@@ -107,7 +151,7 @@ function getranges(_, exists, db, more)
     end
     local sponsors
     local args = {
-        "python",
+        options.python_path,
         sponsorblock,
         "ranges",
         db,
@@ -131,6 +175,12 @@ function getranges(_, exists, db, more)
         else
             start_time = tonumber(string.match(t, '[^,]+'))
             end_time = tonumber(string.sub(string.match(t, ',[^,]+'), 2))
+            for o_uuid, o_t in pairs(ranges) do
+                if (start_time >= o_t.start_time and start_time <= o_t.end_time) or (o_t.start_time >= start_time and o_t.start_time <= end_time) then
+                    new_ranges[o_uuid] = o_t
+                    goto continue
+                end
+            end
             if end_time - start_time >= options.min_duration then
                 new_ranges[uuid] = {
                     start_time = start_time,
@@ -138,7 +188,12 @@ function getranges(_, exists, db, more)
                     skipped = false
                 }
             end
+            if options.make_chapters then
+                create_chapter("Sponsor start (" .. string.sub(uuid, 1, 6) .. ")", start_time)
+                create_chapter("Sponsor end (" .. string.sub(uuid, 1, 6) .. ")", end_time)
+            end
         end
+        ::continue::
         r_count = r_count + 1
     end
     local c_count = t_count(ranges)
@@ -182,7 +237,7 @@ function skip_ads(name, pos)
             last_skip = {uuid = uuid, dir = nil}
             if options.report_views or options.auto_upvote then
                 local args = {
-                    "python",
+                    options.python_path,
                     sponsorblock,
                     "stats",
                     database_file,
@@ -236,7 +291,7 @@ function vote(dir)
     if last_skip.dir == dir then return mp.osd_message("[sponsorblock] " .. updown .. "vote already submitted") end
     last_skip.dir = dir
     local args = {
-        "python",
+        options.python_path,
         sponsorblock,
         "stats",
         database_file,
@@ -258,7 +313,7 @@ end
 
 function update()
     mp.command_native_async({name = "subprocess", playback_only = false, args = {
-        "python",
+        options.python_path,
         sponsorblock,
         "update",
         database_file,
@@ -269,14 +324,18 @@ end
 function file_loaded()
     local initialized = init
     ranges = {}
-    segment = {a = 0, b = 0, progress = 0}
+    segment = {a = 0, b = 0, progress = 0, first = true}
     last_skip = {uuid = "", dir = nil}
     local video_path = mp.get_property("path")
     local youtube_id1 = string.match(video_path, "https?://youtu%.be/([%a%d%-_]+).*")
     local youtube_id2 = string.match(video_path, "https?://w?w?w?%.?youtube%.com/v/([%a%d%-_]+).*")
     local youtube_id3 = string.match(video_path, "/watch%?v=([%a%d%-_]+).*")
     local youtube_id4 = string.match(video_path, "/embed/([%a%d%-_]+).*")
-    youtube_id = youtube_id1 or youtube_id2 or youtube_id3 or youtube_id4
+    local local_pattern = nil
+    if options.local_pattern ~= "" then
+        local_pattern = string.match(video_path, options.local_pattern)
+    end
+    youtube_id = youtube_id1 or youtube_id2 or youtube_id3 or youtube_id4 or local_pattern
     if not youtube_id then return end
     init = true
     if not options.local_database then
@@ -293,7 +352,29 @@ function file_loaded()
         end
     end
     if initialized then return end
-    mp.observe_property("time-pos", "native", skip_ads)
+    if options.skip then
+        mp.observe_property("time-pos", "native", skip_ads)
+    end
+    if options.display_name ~= "" then
+        local args = {
+            options.python_path,
+            sponsorblock,
+            "username",
+            database_file,
+            options.server_address,
+            youtube_id,
+            "",
+            "",
+            uid_path,
+            options.user_id,
+            options.display_name
+        }
+        if not legacy then
+            mp.command_native_async({name = "subprocess", playback_only = false, args = args}, function () end)
+        else
+            utils.subprocess_detached({args = args})
+        end
+    end
     if not options.local_database or (not options.auto_update and file_exists(database_file)) then return end
     update()
 end
@@ -314,6 +395,16 @@ function set_segment()
         segment.a = pos
         mp.osd_message("[sponsorblock] segment boundary A set, press again for boundary B", 3)
     end
+    if options.make_chapters and not segment.first then
+        local start_time = math.min(segment.a, segment.b)
+        local end_time = math.max(segment.a, segment.b)
+        if end_time - start_time ~= 0 and end_time ~= 0 then
+            clean_chapters()
+            create_chapter("Preview segment start", start_time)
+            create_chapter("Preview segment end", end_time)
+        end
+    end
+    segment.first = false
 end
 
 function submit_segment()
@@ -329,7 +420,7 @@ function submit_segment()
         mp.osd_message("[sponsorblock] submitting segment...", 30)
         local submit
         local args = {
-            "python",
+            options.python_path,
             sponsorblock,
             "submit",
             database_file,
@@ -346,20 +437,25 @@ function submit_segment()
             submit = utils.subprocess({args = args})
         end
         if string.match(submit.stdout, "success") then
-            segment = {a = 0, b = 0, progress = 0}
+            segment = {a = 0, b = 0, progress = 0, first = true}
             mp.osd_message("[sponsorblock] segment submitted")
+            if options.make_chapters then
+                clean_chapters()
+                create_chapter("Submitted segment start", start_time)
+                create_chapter("Submitted segment end", end_time)
+            end
         elseif string.match(submit.stdout, "error") then
             mp.osd_message("[sponsorblock] segment submission failed, server may be down. try again", 5)
         elseif string.match(submit.stdout, "502") then
             mp.osd_message("[sponsorblock] segment submission failed, server is down. try again", 5)
         elseif string.match(submit.stdout, "400") then
             mp.osd_message("[sponsorblock] segment submission failed, impossible inputs", 5)
-            segment = {a = 0, b = 0, progress = 0}
+            segment = {a = 0, b = 0, progress = 0, first = true}
         elseif string.match(submit.stdout, "429") then
             mp.osd_message("[sponsorblock] segment submission failed, rate limited. try again", 5)
         elseif string.match(submit.stdout, "409") then
             mp.osd_message("[sponsorblock] segment already submitted", 3)
-            segment = {a = 0, b = 0, progress = 0}
+            segment = {a = 0, b = 0, progress = 0, first = true}
         else
             mp.osd_message("[sponsorblock] segment submission failed", 5)
         end

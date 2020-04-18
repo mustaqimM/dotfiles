@@ -177,6 +177,18 @@ awful.screen.connect_for_each_screen( function(s)
 end)
 
 
+-- Disconnect the default handler for resize requests
+--client.disconnect_signal("request::geometry", awful.ewmh.client_geometry_requests)
+---- Connect our own handler
+--client.connect_signal("request::geometry", function(c, context, hints)
+--    if c.instance ~= "mpvstream" then
+--        c.width = 500
+--        c.height = 300
+--    end
+--    awful.ewmh.client_geometry_requests(c, context, hints)
+--end)
+
+
 return signals
 
 -- }}}
