@@ -62,7 +62,6 @@ st.color21:      base06
 st.termname:     xst-256color
 ! if you do not set shell, precedence is: -e arg, utmp option, SHELL env var, /etc/passwd shell
 st.shell:        /bin/zsh
-
 ! The following options options can be reloaded via USR1 signal.
 st.font:              Iosevka Medium:pixelsize=16:antialias=true:autohint=true:spacing=[0|90|100|110];
 st.borderpx:          32
@@ -91,9 +90,8 @@ st.bellvolume:        0
 st.prompt_char:       $
 ! This option is can be preedit style. Available values: `root` `overthespot` (Default taken `root`)
 st.imstyle:           root
-
 ! opacity==255 means what terminal will be not transparent, 0 - fully transparent
 st.opacity:      254
-! Defaults taken from base16-tomorrow-night colorscheme.
+
 
 Xcursor.theme: Breeze-Hacked-White

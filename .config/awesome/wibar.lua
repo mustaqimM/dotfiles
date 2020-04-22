@@ -244,12 +244,12 @@ awful.screen.connect_for_each_screen(function(s)
       layout = wibox.layout.align.horizontal,
       { -- Left widgets
         layout = wibox.layout.fixed.horizontal,
-        { -- Make mylauncher image margin smaller
-          widget = wibox.container.margin,
-          margins=5,
-          mylauncher
-        },
-        wibox.widget.textbox('┊ '),
+        --{ -- Make mylauncher image margin smaller
+        --  widget = wibox.container.margin,
+        --  margins=5,
+        --  mylauncher
+        --},
+        --wibox.widget.textbox('┊ '),
         s.mytaglist,
         s.mypromptbox,
       },

@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval `ssh-agent`
+  eval `ssh-agent` &>/dev/null
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
@@ -103,14 +103,14 @@ zi ice wait"0a" lucid \
   atload"HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=blue,fg=232,bold""
 zi light "zsh-users/zsh-history-substring-search"
 
-zi ice wait"0b" lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start; "
-zi light "zsh-users/zsh-autosuggestions"
-
-zi ice wait lucid atload"zicompinit; zicdreplay" blockf for \
-zi light-mode "zsh-users/zsh-completions"
+zi ice wait lucid blockf
+zi light "zsh-users/zsh-completions"
 zi ice wait lucid atinit"_zcomp"
 zi light "zdharma/fast-syntax-highlighting"
-#zi snippet "OMZ::lib/completion.zsh"
+zi snippet "OMZ::lib/completion.zsh"
+
+zi ice wait lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start"
+zi light "zsh-users/zsh-autosuggestions"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi snippet "OMZ::plugins/git/git.plugin.zsh"
@@ -156,7 +156,6 @@ fi
 zi ice wait lucid id-as"base16-fzf" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi \n  --reverse' base16-fzf" atpull"%atclone"
 zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow-night.config"
 
-
 zi ice wait"2" lucid
 zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
 #zi ice wait"2" lucid
@@ -200,6 +199,18 @@ zi snippet "OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh"
 zi ice svn atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
 zi snippet "OMZ::plugins/emacs"
 
+#zi ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
+#zi light "chriskempson/base16-shell"
+
+zi ice lucid reset \
+  atclone"dircolors -b LS_COLORS > c.zsh; sed -i 's/30/12/g; s/172/11/g; s/196/9/g' c.zsh;" \
+  atpull'%atclone' pick"c.zsh" nocompile'!' \
+  atload'zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}'
+zi light trapd00r/LS_COLORS
+
+#zi ice lucid from"gh-r" as"program" bpick"*linux*" mv"lsd* -> lsd" pick"lsd/lsd"
+#zi light "Peltoche/lsd"
+
 zi ice from"gh-r" as"program" mv"direnv* -> direnv" \
   atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
 zi light direnv/direnv
@@ -219,18 +230,6 @@ zi light "zdharma/zsh-diff-so-fancy"
 #zi snippet "https://raw.githubusercontent.com/clvv/fasd/master/fasd"
 #zi snippet "OMZ::plugins/fasd/fasd.plugin.zsh"
 
-#zi ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
-#zi light "chriskempson/base16-shell"
-
-zi ice lucid reset \
-  atclone"dircolors -b LS_COLORS > c.zsh; sed -i 's/30/12/g; s/172/11/g; s/196/9/g' c.zsh;" \
-  atpull'%atclone' pick"c.zsh" nocompile'!' \
-  atload'zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}'
-zi light trapd00r/LS_COLORS
-
-#zi ice lucid from"gh-r" as"program" bpick"*linux*" mv"lsd* -> lsd" pick"lsd/lsd"
-#zi light "Peltoche/lsd"
-
 zi ice lucid pick"pfetch" as"program"
 zi light "dylanaraps/pfetch"
 
@@ -242,6 +241,9 @@ zi light "imsnif/bandwhich"
 
 zi ice lucid from"gh-r" as"program" bpick"*linux*" pick"bat-v0.13.0-x86_64-unknown-linux-gnu/bat"
 zi light "sharkdp/bat"
+
+zi ice lucid from"gh-r" as"program" bpick"*linux*"
+zi light "casey/intermodal"
 
 #zi ice wait"2" lucid as"program" pick"build/release/peaclock" atclone"./build.sh"
 #zi light "octobanana/peaclock"
@@ -257,13 +259,14 @@ zi light "sharkdp/bat"
 # }}}
 
 # === THEMES === {{{
-
-zi ice lucid atinit'[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh'
+#PS1="%F{green}%B$❯%b%f "
+zi ice lucid atinit'[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh' nocd \
+  atload"!_p9k_do_nothing _p9k_precmd"
 zi light romkatv/powerlevel10k
 # }}}
 
 if [ -n "$INSIDE_VIFM" ]; then
-    RANGER_LEVEL="[V]"
+    RANGER_LEVEL=" "
     unset INSIDE_VIFM
 fi
 
@@ -275,7 +278,7 @@ _zcompare() {
   # - 'mh+4' matches files (or directories or whatever) that are older than 4 hours.
   setopt extendedglob local_options
   if [[ -n "${1}"(#qN.mh+4) && (! -s "${1}.zwc" || "$1" -nt "${1}.zwc") ]]; then
-    ZINIT[COMPINIT_OPTS]=-C; zpcompinit
+    ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay
     zcompile ${1}
   fi
 }
@@ -381,9 +384,11 @@ zstyle ':completion:*'               completer _complete _match _approximate
 zstyle ':completion:*:match:*'       original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-zstyle ':completion:*'               group-name ''          # Keep directories and files separated
+zstyle ':completion:*'               group-name ''              # Keep directories and files separated
 #zstyle ':completion:*'               list-dirs-first true
 zstyle ':completion:*'               auto-description
+zstyle ':completion:*'               file-patterns '%p:globbed-files' '*(-/):directories' '*:all-files'
+
 zstyle ':completion:*:manuals'       separate-sections true
 zstyle ':completion:*:manuals.*'     insert-sections   true
 zstyle ':completion:*:man:*'         menu yes select
@@ -405,8 +410,6 @@ zstyle ':notify:*'                   success-icon "/usr/share/emoticons/EmojiOne
 zstyle ':notify:*'                   command-complete-timeout 15
 zstyle ':notify:*'                   activate-terminal no
 
-zstyle ':completion:*'               file-patterns '%p:globbed-files' '*(-/):directories' '*:all-files'
-
 autoload -U select-word-style
 select-word-style bash
 
@@ -416,13 +419,14 @@ autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz code fh fkill fco gfy plain 
 
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc aria2c bat cargo curl cwebp direnv docker \
-  docker-machine emacs extract fd firejail flask fzf gocryptfs kitty light \
-  mimeo nzbget pip pipx psmem redshift rofi rustc sk tar tlp-stat wmctrl z
+  docker-machine emacs fd firejail flask fzf gocryptfs kitty light \
+  mimeo nzbget pip pipx psmem redshift rofi rustc sk tar tlp-stat vue wmctrl z
 
-for comp ( yadm vifm ) { zicompdef _$comp $comp; }
+#for comp ( yadm vifm ) { zicompdef _$comp $comp; }
 
 zicompinit
 zinit cdreplay -q
 
+source ~/.base16_theme
 
 # vim:ft=zsh:et:fileencoding=utf-8:ft=conf:foldmethod=marker

@@ -22,12 +22,12 @@ function font_preview() {
 
 function pdf_preview() {
   # if no preview found, generate one
-  if [ ! -f "/tmp/ueberzug${PWD}/$6.png" ]; then
-    pdftoppm -png -singlefile "$6" "/tmp/ueberzug${PWD}/$6"
+  if [ ! -f "/tmp/ueberzug/pdf/$6.jpg" ]; then
+    pdftoppm -jpeg -singlefile "$6" "/tmp/ueberzug/pdf/$6"
   fi
   declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
                      [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-                     [path]="/tmp/ueberzug${PWD}/$6.png") \
+                     [path]="/tmp/ueberzug/pdf/$6.jpg") \
     > "$FIFO_UEBERZUG"
 }
 
@@ -45,22 +45,32 @@ function audio_preview() {
 function video_preview() {
   # if no preview found, generate one
   filename=$(printf "$6" | openssl sha1 | cut -d'=' -f2)
-  if [ ! -f "/tmp/ueberzug/$filename.png" ]; then
-    ffmpegthumbnailer -i "$6" -o "/tmp/ueberzug/$filename.png" -s 0 -q 10
+  if [ ! -f "/tmp/ueberzug/video/$filename.jpeg" ]; then
+    ffmpegthumbnailer -i "$6" -o "/tmp/ueberzug/video/$filename.jpeg" -s 592 -q 7 -t 2
   fi
   declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
                      [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-                     [path]="/tmp/ueberzug/$filename.png") \
+                     [path]="/tmp/ueberzug/video/$filename.jpeg") \
     > "$FIFO_UEBERZUG"
 }
 
 function epub_preview() {
-    if [ ! -f "/tmp/ueberzug$PWD/$6.png" ]; then
-        epub-thumbnailer "$6" "/tmp/ueberzug$PWD/$6.png" 1024
+    if [ ! -f "/tmp/ueberzug/epub/$6.png" ]; then
+        gnome-epub-thumbnailer -s 384 "$6" "/tmp/ueberzug/epub/$6.png"
     fi
     declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
         [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-        [path]="/tmp/ueberzug$PWD/$6.png") \
+        [path]="/tmp/ueberzug/epub/$6.png") \
+        > "$FIFO_UEBERZUG"
+}
+
+function mobi_preview() {
+    if [ ! -f "/tmp/ueberzug/mobi/$6.png" ]; then
+        gnome-mobi-thumbnailer -s 384 "$6" "/tmp/ueberzug/mobi/$6.png"
+    fi
+    declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
+        [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
+        [path]="/tmp/ueberzug/mobi/$6.png") \
         > "$FIFO_UEBERZUG"
 }
 
@@ -73,7 +83,7 @@ function clear_preview() {
 # Check all the dependencies that are needed to show all the file previews.
 # The reason why we are sending a notification incase a dependency does not
 # exist is because that is the easiest way to get the user's attention.
-#dependencies=(ffmpeg ffmpegthumbnailer fontpreview pdftoppm epub-thumbnailer)
+#dependencies=(ffmpeg ffmpegthumbnailer fontpreview pdftoppm gnome-epub-thumbnailer)
 #for dependency in "${dependencies[@]}"; do
 #    type -p "$dependency" &>/dev/null || {
 #        notify-send "vifm" "Could not find '${dependency}', is it installed?"
@@ -84,15 +94,22 @@ function clear_preview() {
 
 # Make sure ueberzug's fifo exists
 if [ -e "$FIFO_UEBERZUG" ]; then
-  # Make a temp dir for rendering if not exists
-  [ ! -d "/tmp/ueberzug/" ] && mkdir -p "/tmp/ueberzug/"
-  case "$1" in
-    draw) draw "$@" ;;
-    font) font_preview "$@" ;;
-    pdf) pdf_preview "$@" ;;
-    video) video_preview "$@" ;;
-    clear) clear_preview ;;
-    audio) audio_preview "$@" ;;
-    epub) epub_preview "$@" ;;
-  esac
+
+for folder in {epub,pdf,mobi,video}
+do
+  if [ ! -d /tmp/ueberzug/"$folder" ]; then
+  mkdir -p /tmp/ueberzug/"$folder"
+  fi
+done
+
+case "$1" in
+  draw) draw "$@" ;;
+  font) font_preview "$@" ;;
+  pdf) pdf_preview "$@" ;;
+  video) video_preview "$@" ;;
+  clear) clear_preview ;;
+  audio) audio_preview "$@" ;;
+  epub) epub_preview "$@" ;;
+  mobi) mobi_preview "$@" ;;
+esac
 fi

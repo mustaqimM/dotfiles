@@ -42,7 +42,8 @@ export FZF_ALT_C_COMMAND="fd . -t d"
 export FZF_TMUX_HEIGHT=80%
 export SKIM_DEFAULT_OPTIONS="--color=bg+:#282a2e,bg:#1d1f21,spinner:#8abeb7,hl:#81a2be,fg:#b4b7b4,header:#81a2be,info:#f0c674,pointer:#8abeb7,marker:#8abeb7,fg+:#e0e0e0,prompt:#f0c674,hl+:#81a2be
   --ansi
-  --reverse"
+  --reverse
+  --info inline"
 export SKIM_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND"
 export ENHANCD_FILTER='fzf'
 export ZSH_AUTOSUGGEST_USE_ASYNC=1

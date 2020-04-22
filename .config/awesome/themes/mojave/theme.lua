@@ -121,7 +121,7 @@ theme.prompt_font              = theme.font_mono
 theme.hotkeys_font             = theme.font_mono .. " 10"
 theme.hotkeys_description_font = theme.font_notif .. " 11"
 theme.hotkeys_shape            = helpers.rrect(theme.border_radius or 8)
-theme.hotkeys_border_color     = theme.xcolor8 .. "00"
+theme.hotkeys_border_color     = theme.xcolor8 .. "2F"
 theme.hotkeys_border_width     = 2
 theme.hotkeys_group_margin     = 25
 

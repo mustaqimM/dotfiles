@@ -1,23 +1,28 @@
 highlight clear
 
 highlight Win cterm=none ctermfg=248 ctermbg=234
+highlight AuxWin cterm=none ctermfg=248 ctermbg=default
+highlight OtherWin cterm=none ctermfg=248 ctermbg=default
 highlight Directory cterm=bold ctermfg=012 ctermbg=234
 highlight Link cterm=bold ctermfg=yellow ctermbg=234
-highlight BrokenLink cterm=reverse ctermfg=red ctermbg=default
+highlight BrokenLink cterm=reverse ctermfg=196 termbg=default
 highlight Socket cterm=bold ctermfg=125 ctermbg=default
 highlight Device cterm=bold ctermfg=red ctermbg=default
 highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
-highlight Executable cterm=bold ctermfg=166 ctermbg=default
+highlight Executable cterm=bold ctermfg=green ctermbg=default
 highlight Selected cterm=bold ctermfg=255 ctermbg=237
 highlight CurrLine cterm=bold ctermfg=default ctermbg=237
+highlight OtherLine cterm=bold ctermfg=default ctermbg=237
 highlight TopLine cterm=bold ctermfg=black ctermbg=235
 highlight TopLineSel cterm=bold ctermfg=black ctermbg=default
+highlight TabLine cterm=bold ctermfg=black ctermbg=235
+highlight TabLineSel cterm=bold ctermfg=016 ctermbg=237
 highlight StatusLine cterm=bold ctermfg=black ctermbg=235
-highlight WildMenu cterm=underline,reverse ctermfg=white ctermbg=black
+highlight WildMenu cterm=underline,reverse ctermfg=237 ctermbg=white
 highlight CmdLine cterm=none ctermfg=white ctermbg=black
 highlight ErrorMsg cterm=none ctermfg=red ctermbg=black
 highlight Border cterm=none ctermfg=black ctermbg=234
-highlight JobLine cterm=bold,reverse ctermfg=black ctermbg=white
+highlight JobLine cterm=bold,reverse ctermfg=black ctermbg=red
 highlight SuggestBox cterm=bold ctermfg=default ctermbg=default
 
 
@@ -36,7 +41,7 @@ highlight /^.*\.(vob)$/I cterm=bold ctermfg=115 ctermbg=default
 highlight /^.*\.(application|cue|description|directory|m3u|m3u8|md5|properties|sfv|theme|torrent|urlview|webloc)$/I cterm=none ctermfg=116 ctermbg=default
 highlight /^.*\.(ass|srt|ssa|sub|sup|vtt)$/I cterm=none ctermfg=117 ctermbg=default
 highlight /^.*\.(82p|83p|8eu|8xe|8xp)$/I cterm=none ctermfg=121 ctermbg=default
-highlight /^.*\.(bin|iso|nrg|qcow|sparseimage|toast|vcd|vmdk)$/I cterm=none ctermfg=124 ctermbg=default
+highlight /^.*\.(bin|iso|nrg|qcow|sparseimage|toast|vcd|vmdk)$/I cterm=none ctermfg=red ctermbg=black
 highlight /^.*\.(css|eml|htm|html|jhtm|less|mht|mustache|sass|scss)$/I cterm=bold ctermfg=125 ctermbg=default
 highlight /^.*\.(aiff|alac|ape|cda|flac|midi|pcm|wav|wv|wvc)$/I cterm=bold ctermfg=136 ctermbg=default
 highlight /^.*\.(3ga|aac|amr|au|caf|dat|dts|fcm|m4a|mid|mod|mp3|mp4a|oga|ogg|opus|s3m|sid|wma)$/I cterm=bold ctermfg=137 ctermbg=default
@@ -50,7 +55,7 @@ highlight /^.*\.(tf|tfstate|tfvars)$/I cterm=none ctermfg=168 ctermbg=default
 highlight /^.*\.(bib|dhall|fxml|json|jsonl|msg|pgn|rdata|rss|toml|xml|yaml|yml)$/I cterm=none ctermfg=178 ctermbg=default
 highlight /^.*\.(etx|info|markdown|md|mkd|nfo|pod|rst|tex|textile)$/I cterm=none ctermfg=184 ctermbg=default
 highlight /^.*\.(log)$/I cterm=none ctermfg=190 ctermbg=default
-highlight /^.*(\.asc|\.bfe|\.enc|\.gpg|\.p12|\.p7s|\.pem|\.pgp|\.sig|\.signature|id_dsa|id_ecdsa|id_ed25519|id_rsa)$/I cterm=reverse ctermfg=192 ctermbg=default
+highlight /^.*(\.asc|\.bfe|\.enc|\.gpg|\.p12|\.p7s|\.pem|\.pgp|\.sig|\.signature|id_dsa|id_ecdsa|id_ed25519|id_rsa)$/I cterm=reverse ctermfg=black ctermbg=192
 highlight /^.*\.(git)$/I cterm=none ctermfg=197 ctermbg=default
 highlight /^.*\.(xib)$/I cterm=none ctermfg=208 ctermbg=default
 highlight /^.*\.(32x|a00|a52|a64|a78|adf|atr|cdi|fm2|gb|gba|gbc|gel|gg|ggl|ipk|j64|nds|nes|rom|sav|sms|st)$/I cterm=none ctermfg=213 ctermbg=default
@@ -96,3 +101,5 @@ highlight /^.*(ls_colors)$/I cterm=bold,reverse,underline,reverse ctermfg=197 ct
 if $USER == 'root'
     highlight Border ctermbg=red
 endif
+
+highlight User1 ctermfg=blue

@@ -24,8 +24,7 @@ tyrannical.tags = {
     screen      = screen.count()>1 and 2 or 1, -- Setup on screen 2 if there is more than 1 screen, else on screen 1
     layout      = awful.layout.suit.max,                 -- Use the max layout
     class = {
-      "Opera"         , "Firefox"        , "Next"        , "qutebrowser",
-      "Chromium"      , "nightly"        , "Plank"       , "Surf" },
+      "Chromium", "Firefox", "Next", "Nightly", "Plank", "qutebrowser", "Surf" },
     instance = { "mpvstream" }
   },
   {
@@ -104,18 +103,15 @@ tyrannical.tags = {
 
 -- Ignore the tag "exclusive" property for the following clients (matched by classes)
 tyrannical.properties.intrusive = {
-  "ksnapshot"     , "pinentry"       , "gtksu"     , "kcalc"        , "xcalc"               ,
-              "Gradient editor", "About KDE" , "Paste Special", "Background color"    ,
-  "kcolorchooser" , "plasmoidviewer" , "Xephyr"    , "kruler"       , "plasmaengineexplorer",
-}
+  "AboutKDE", "Backgroundcolor", "Gradienteditor", "gtksu", "kcalc",
+  "kcolorchooser", "kruler", "ksnapshot", "PasteSpecial", "pinentry",
+  "plasmaengineexplorer", "plasmoidviewer", "Surf", "xcalc", "Xephyr" }
 
 -- Ignore the tiled layout for the matching clients
 tyrannical.properties.floating = {
-  "MPlayer"      , "pinentry"        , "ksnapshot"  , "pinentry"     , "gtksu"          ,
-  "xine"                       , "kmix"       , "kcalc"        , "xcalc"          ,
-  "yakuake"      , "Select Color$"   , "kruler"     , "kcolorchooser", "Paste Special"  ,
-  "New Form"     , "Insert Picture"  , "kcharselect", "mythfrontend" , "plasmoidviewer"
-}
+  "gtksu", "InsertPicture", "kcalc", "kcharselect", "kcolorchooser", "kmix",
+  "kruler", "ksnapshot", "MPlayer", "mythfrontend", "NewForm", "PasteSpecial",
+  "pinentry", "pinentry", "plasmoidviewer", "SelectColor$", "xcalc", "xine", "yakuake" }
 
 -- Make the matching clients (by classes) on top of the default layout
 tyrannical.properties.ontop = {
