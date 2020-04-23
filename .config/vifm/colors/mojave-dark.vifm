@@ -55,7 +55,7 @@ highlight /^.*\.(tf|tfstate|tfvars)$/I cterm=none ctermfg=168 ctermbg=default
 highlight /^.*\.(bib|dhall|fxml|json|jsonl|msg|pgn|rdata|rss|toml|xml|yaml|yml)$/I cterm=none ctermfg=178 ctermbg=default
 highlight /^.*\.(etx|info|markdown|md|mkd|nfo|pod|rst|tex|textile)$/I cterm=none ctermfg=184 ctermbg=default
 highlight /^.*\.(log)$/I cterm=none ctermfg=190 ctermbg=default
-highlight /^.*(\.asc|\.bfe|\.enc|\.gpg|\.p12|\.p7s|\.pem|\.pgp|\.sig|\.signature|id_dsa|id_ecdsa|id_ed25519|id_rsa)$/I cterm=reverse ctermfg=black ctermbg=192
+highlight /^.*(\.asc|\.bfe|\.enc|\.gpg|\.p12|\.p7s|\.pem|\.pgp|\.sig|\.signature|id_dsa|id_ecdsa|id_ed25519|id_rsa)$/I cterm=none ctermfg=192 ctermbg=black
 highlight /^.*\.(git)$/I cterm=none ctermfg=197 ctermbg=default
 highlight /^.*\.(xib)$/I cterm=none ctermfg=208 ctermbg=default
 highlight /^.*\.(32x|a00|a52|a64|a78|adf|atr|cdi|fm2|gb|gba|gbc|gel|gg|ggl|ipk|j64|nds|nes|rom|sav|sms|st)$/I cterm=none ctermfg=213 ctermbg=default

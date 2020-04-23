@@ -3,7 +3,7 @@
 XDG_CONFIG_HOME=''$HOME'/.config'
 GNUPGHOME='$HOME/.config/gnupg'
 
-export PATH="$HOME/.cargo/bin:$HOME/.local/bin/sml/bin:$HOME/.yarn/bin:$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin/sml/bin:$HOME/.yarn/bin:$HOME/.emacs.d/bin:$HOME/.local/bin/scripts:$PATH"
 export RUST_SRC_PATH="/home/mustaqim/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 # shellcheck source=/home/mustaqim/.priv-env

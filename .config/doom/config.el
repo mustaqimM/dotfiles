@@ -70,7 +70,7 @@
   (add-hook! 'flycheck-mode-hook  'my-fly-mode-hook))
 
 
-(setq centaur-tabs-style "alternate"
+(setq centaur-tabs-style "bar"
       centaur-tabs-height 22
       ;centaur-tabs-set-icons t
       ;centaur-tabs-set-modified-marker t

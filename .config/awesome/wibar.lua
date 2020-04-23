@@ -90,7 +90,7 @@ awful.screen.connect_for_each_screen(function(s)
       filter = awful.widget.tasklist.filter.currenttags,
       buttons = tasklist_buttons,
       style = {
-        font = beautiful.font_notif .. " Semibold 9.5",
+        font = beautiful.font_notif .. " 9.5",
         align = "center",
       },
       widget_template = {

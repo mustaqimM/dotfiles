@@ -79,7 +79,7 @@ FAST_HIGHLIGHT_STYLES[path-to-dir]="fg=blue,underline"
 FAST_HIGHLIGHT_STYLES[suffix-alias]="fg=012"
 FAST_HIGHLIGHT_STYLES[builtin]="fg=012"
 FAST_HIGHLIGHT_STYLES[function]="fg=012"
-FAST_HIGHLIGHT_STYLES[precommand]="fg=red,bg=black,underline,bold"
+FAST_HIGHLIGHT_STYLES[precommand]="fg=red,bg=default,underline,bold"
 FAST_HIGHLIGHT_STYLES[command]="fg=012"
 FAST_HIGHLIGHT_STYLES[commandseparator]="fg=012"
 FAST_HIGHLIGHT_STYLES[comment]="fg=011,bold,italic"
@@ -153,8 +153,10 @@ if [[ $(type -p fzf) ]] then
   zi light "junegunn/fzf"
 fi
 
-zi ice wait lucid id-as"base16-fzf" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi \n  --reverse' base16-fzf" atpull"%atclone"
-zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow-night.config"
+#zi ice wait lucid id-as"base16-fzf-tomorrow-night" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi' base16-fzf-tomorrow-night" atpull"%atclone"
+#zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow-night.config"
+zi ice wait lucid id-as"base16-fzf-tomorrow" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi' base16-fzf-tomorrow" atpull"%atclone"
+zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow.config"
 
 zi ice wait"2" lucid
 zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
@@ -414,7 +416,7 @@ autoload -U select-word-style
 select-word-style bash
 
 source $ZDOTDIR/aliases
-autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz code fh fkill fco gfy plain pb scan center_text
+autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz code fh fkill fco gfy plain pb scan center_text switch_theme
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 
 # generic completions for programs which understand GNU long options(--help)

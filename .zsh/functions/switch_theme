@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+autoload colors && colors
+
+switch_theme() {
+    if (( ! $# )); then
+        echo "$fg[yellow]Usage: $fg[white]switch_theme [ light | dark ]"
+    else
+        case $1 in
+            light)
+                echo "\nChanging theme to $fg[black]$bg[white]LIGHT\n"
+                sed -i 's|theme_tomorrow_night|theme_tomorrow|' ~/.Xresources; xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
+                sed -i 's|--style=base16/tomorrow-night|--style=base16/tomorrow|;s|mojave-dark|mojave-light|' ~/.config/vifm/vifmrc
+                sed -i 's|dark|light|;s|Dark|Light|' ~/.config/gtk-3.0/settings.ini
+                ln -sf ~/.local/themes/base16-tomorrow.sh ~/.base16_theme
+                ;;
+            dark)
+                echo "\nChanging theme to $fg[black]$bg[white]DARK\n"
+                sed -i 's|\btheme_tomorrow\b|theme_tomorrow_night|' ~/.Xresources; xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
+                sed -i 's|--style=base16/tomorrow|--style=base16/tomorrow-night|;s|mojave-light|mojave-dark|' ~/.config/vifm/vifmrc
+                sed -i 's|light|dark|;s|Light|Dark|' ~/.config/gtk-3.0/settings.ini
+                ln -sf ~/.local/themes/base16-tomorrow-night.sh ~/.base16_theme
+                ;;
+        esac
+    fi
+}
+
+switch_theme "$@"

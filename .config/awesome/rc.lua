@@ -13,7 +13,8 @@ local beautiful   = require("beautiful")
 local config_path = awful.util.getdir("config") .. "/"
 local theme_dir   = config_path .. "/themes/"
 local theme_collection = {
-    "mojave"    -- 1 --
+    "mojave-dark",    -- 1 --
+    "mojave-light"    -- 2 --
 }
 local theme_name = theme_collection[1]
 

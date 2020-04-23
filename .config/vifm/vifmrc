@@ -48,7 +48,7 @@ set vimhelp
 set norunexec
 
 " Selected color scheme
-colorscheme mojave
+colorscheme mojave-light
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
@@ -474,7 +474,7 @@ fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --synt
 " Text
 filetype <text/*> $EMACS_PLUGIN_LAUNCHER -nw
 "fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never %c -p
-fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --force %c
+fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow --force %c
                     \ %pc
                     \ vifmimg clear
 

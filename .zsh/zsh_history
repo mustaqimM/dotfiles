@@ -740,7 +740,6 @@
 : 1557322522:0;vi /etc/X11/xinit/xinitrc
 : 1557377042:0;yadm diff .Xresources
 : 1557461914:0;man uxterm
-: 1557463536:0;xrdb ~/.Xresources
 : 1557488843:0;man xterm
 : 1557489302:0;sudo xbps-install konsole
 : 1557544463:0;sudo xbps-remove -R konsole
@@ -974,7 +973,6 @@
 : 1562761686:0;zcompile ~/.zsh/.zshrc
 : 1562777594:0;echo $PS1
 : 1562777600:0;echo $POWERLEVEL9K_DIR_DEFAULT_FOREGROUND
-: 1562782218:0;yadm mv .Xresources .Xdefaults
 : 1562846911:0;gcs -m "Initial commit"
 : 1562847029:0;git remote add origin gh:mustaqimm/odin_rails
 : 1562847652:0;heroku keys:add
@@ -982,7 +980,6 @@
 : 1562870976:0;perf stat -r 10 -d uxterm -e false
 : 1562870980:0;perf stat -r 10 -d alacritty -e false
 : 1562870988:0;perf stat -r 10 -d kitty -e false
-: 1562949940:0;xrdb -load ~/.Xresources
 : 1562955599:0;cdl
 : 1562955795:0;vi ~/.config/fontconfig/conf.d/57-add-emoji-support.conf
 : 1562965883:0;exec zsh -df
@@ -1109,7 +1106,6 @@
 : 1566190094:0;sudo xbps-install harfbuzz
 : 1566190946:0;sudo xbps-install ruby
 : 1566190954:0;bin/doom doctor
-: 1566190992:0;sudo xbps-install shellcheck
 : 1566274820:0;sudo xbps-install exiftool
 : 1566274870:0;sudo xbps-install mediainfo
 : 1566277256:0;git clone gh:gnotclub/xst
@@ -1835,7 +1831,6 @@
 : 1576398753:0;sudo xbps-reconfigure -f linux5.3
 : 1576400706:0;sudo dmesg
 : 1576400913:0;xbps-query -f iwd
-: 1576430566:0;picom --config ~/.config/picom/picom.conf
 : 1576438983:0;gco -b update_dav1d
 : 1576438999:0;vi srcpkgs/dav1d/template
 : 1576439121:0;./xbps-src pkg dav1d
@@ -1918,7 +1913,6 @@
 : 1576662183:0;xbps-query -Rs webkit
 : 1576662323:0;xnew next
 : 1576662361:0;sudo xbps-install next
-: 1576665008:0;xbps-query -f awesome
 : 1576665024:0;xbps-query -f awesome-LuaJIT
 : 1576665043:0;vi /usr/share/awesome/lib/awful/hotkeys_popup/init.lua
 : 1576672060:0;adb sideload RR-P-v7.0.3-20191218-zerolte-Final.zip
@@ -2654,7 +2648,6 @@
 : 1586278033:0;lf
 : 1586280360:0;man tput
 : 1586285755:0;echo 
-: 1586317997:0;w
 : 1586321733:0;git clone gh:vueschool/vue-master-class
 : 1586322048:0;vi ~/.config/doom/packages.el
 : 1586325183:0;yadm diff .config/doom
@@ -2825,7 +2818,6 @@ fi
 : 1586664043:0;echo "blacklist pcspkr" | sudo tee -a /etc/modprobe.d/blacklist.conf # Disable Bell
 : 1586664062:0;curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts >> hosts
 : 1586664497:0;vi hosts
-: 1586665262:0;vi /etc/unbound/zones/rpz.db
 : 1586668222:0;rg '^0\.0\.0\.0' hosts | awk '{if(NR>1)print "local-zone: \""$2"\" always_nxdomain"}' > rpz.db
 : 1586670133:0;sudo ./update_unbound.sh
 : 1586677005:0;sudo xbps-install smbclient
@@ -2840,14 +2832,10 @@ fi
 : 1586678978:0;sudo unbound-control reload
 : 1586679088:0;unbound-host -C /etc/unbound/unbound.conf -v sigok.verteiltesysteme.net
 : 1586679121:0;vi /etc/unbound/rpz.conf
-: 1586679156:0;unbound-checkconf
-: 1586679435:0;sudo unbound-control-setup
-: 1586679451:0;sudo sv restart unbound
 : 1586679461:0;dig sigfail.verteiltesysteme.net @127.0.0.1 -p 5353
 : 1586679577:0;dig -b 127.0.0.1 example.com +norecurse
 : 1586679588:0;dig sigok.verteiltesysteme.net @127.0.0.1 -p 5353
 : 1586679685:0;dig sigok.verteiltesysteme.net @127.0.0.1
-: 1586679692:0;sudo unbound-control stats_noreset
 : 1586683417:0;notify-send -a SA -i /usr/share/emoticons/EmojiOne/1f1ff-1f1e6.png 'South Africa'
 : 1586683831:0;sudo xbps-install tmux
 : 1586683916:0;vi ~/.config/tmux/tmux.conf
@@ -2886,14 +2874,12 @@ fi
 : 1586773624:0;awk '{if(NR=1)print "a"}' .xsession-errors
 : 1586790610:0;vi ~/.config/awesome/widgets/popup.lua
 : 1586792055:0;vi ~/.config/ranger/rifle.conf
-: 1586794624:0;svlogtail | rg unbound
 : 1586795445:0;xbps-query -Rs vulkan
 : 1586795997:0;sudo xbps-install mesa-vaapi
 : 1586796639:0;vi ~/.config/awesome/widgets/upower_battery.lua
 : 1586799216:0;vi ~/.config/awesome/helpers.lua
 : 1586802117:0;sudo xbps-install android-tools
 : 1586802288:0;yadm log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" | fzf | awk '{print $1}'
-: 1586802387:0;yadm diff --staged
 : 1586802598:0;yadm add ~/.config/picom
 : 1586802604:0;yadm add ~/.local/bin/scripts/
 : 1586841877:0;yadm init
@@ -2903,7 +2889,6 @@ fi
 : 1586842285:0;yadm add ~/.config/configs
 : 1586842307:0;yadm add ~/.config/firejail
 : 1586842470:0;yadm add ~/.config/fish/{functions,config.fish}
-: 1586842506:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1586842551:0;yadm add ~/.config/gnupg/gpg{,-agent}.conf
 : 1586842652:0;yadm add ~/.config/kitty
 : 1586842663:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,Mojave-dark}
@@ -2912,12 +2897,10 @@ fi
 : 1586842874:0;yadm add ~/.config/picom/picom.conf
 : 1586842939:0;yadm add ~/.config/polybar
 : 1586843531:0;yadm add ~/.config/sxhkd
-: 1586843562:0;yadm add ~/.config/tmux/tmux.conf{,.local}
 : 1586843579:0;yadm add ~/.config/zathura/zathurarc
 : 1586843616:0;yadm add ~/.gitconfig
 : 1586843627:0;yadm add ~/.github/README.md
 : 1586843683:0;yadm add ~/.gitmodules
-: 1586843713:0;yadm add ~/.local/bin/scripts
 : 1586843799:0;yadm add ~/.local/runit
 : 1586843886:0;yadm add ~/.local/share/ranger/bookmarks
 : 1586843930:0;yadm add ~/.local/share/fonts/TTF/iosevka-*
@@ -2948,7 +2931,6 @@ fi
 : 1586866032:0;git remote -v
 : 1586866545:0;./xbps-src update-check ueberzug
 : 1586866577:0;gco -b update_ueberzug
-: 1586867380:0;sudo xbps-install gimp
 : 1586867417:0;sudo xbps-install ImageMagick
 : 1586869549:0;sudo xbps-install python3-pip
 : 1586869708:0;sudo xbps-install python3-psutil
@@ -3006,7 +2988,6 @@ fi
 : 1586934552:0;sudo xbps-remove -R fuse3
 : 1586934562:0;vi /etc/fuse.conf
 : 1586935896:0;vi ~/.config/awesome/notifications.lua
-: 1586935904:0;vi ~/.config/awesome/rc.lua
 : 1586936750:0;cat /usr/share/examples/vifm/vifmrc
 : 1586938706:0;for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done;
 : 1586942173:0;ping 'void.local'
@@ -3022,7 +3003,6 @@ fi
 : 1586967809:0;vi
 : 1586972095:0;vifm
 : 1586972135:0;v
-: 1586974012:0;yadm diff
 : 1587011253:0;ranger
 : 1587011865:0;vi srcpkgs/python3-pillow-simd/template
 : 1587011896:0;xlint srcpkgs/python3-pillow-simd/template
@@ -3103,7 +3083,6 @@ fi
 : 1587054150:0;sudo xbps-remove -R gnome-tweaks
 : 1587054174:0;./megatools-1.11.0-git-20200404-linux-x86_64/megatools dl 'https://mega.nz/#!CodCSK4D!17aeO7Jg3WNFpPGU2PBmxjF-6ghejwfMEThLTDzFPEU'
 : 1587055214:0;yadm add ~/.config/bat
-: 1587055843:0;xrdb -merge ~/.Xresources
 : 1587057526:0;mimeo -m .webm
 : 1587058495:0;mimeo --add image/jpeg feh.desktop
 : 1587059490:0;sudo xbps-install most
@@ -3115,7 +3094,6 @@ fi
 : 1587096839:0;sudo xbps-remove -R imlib2-devel libwebp-devel
 : 1587098404:0;./xbps-src -a armv7l pkg imlib2-webp
 : 1587098703:0;vi srcpkgs/imlib2-webp/template
-: 1587098887:0;sudo xbps-remove -Oo
 : 1587100281:0;git pull --rebase upstream master
 : 1587100317:0;gco -b update_hexyl
 : 1587100331:0;vi srcpkgs/hexyl/template
@@ -3152,7 +3130,6 @@ fi
 : 1587124540:0;sudo xbps-install --repository=hostdir/binpkgs/update_imlib2-webp imlib2-webp
 : 1587124640:0;man sxiv
 : 1587130206:0;smbstatus
-: 1587130247:0;fusermount -u ~/Library/.plain
 : 1587131689:0;sudo useradd --no-create-home plain
 : 1587132277:0;sudo smbpasswd -a mustaqim
 : 1587133145:0;sudo smbpasswd -a plain
@@ -3162,8 +3139,6 @@ fi
 : 1587135914:0;sudo smbpasswd -a nobody
 : 1587138174:0;cp /etc/samba/smb.conf /etc/samba/smb.conf
 : 1587138213:0;cp /etc/samba/smb.conf ~/.config/configs/etc/samba/smb.conf
-: 1587138259:0;yadm add ~/.Xresources
-: 1587138278:0;yadm add ~/.config/doom
 : 1587138281:0;yadm add ~/.config/mpv/{scripts,script-opts,shaders,input.conf,mpv.conf}
 : 1587138298:0;yadm add ~/.config/rofi
 : 1587138357:0;yadm add ~/.config/ranger/{commands.py,rc.conf,rifle.conf,scope.sh,colorschemes/mojave_dark.py}
@@ -3186,22 +3161,13 @@ fi
 : 1587206288:0;testparm -s
 : 1587206832:0;yadm add ~/.config/aria2/aria2.conf
 : 1587206867:0;f ~/.config/awesome
-: 1587206946:0;yadm add ~/.config/awesome
 : 1587206976:0;yadm add ~/.config/htop/htoprc
 : 1587207485:0;yadm add -n ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/^sponsorblock}
-: 1587207492:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/^sponsorblock}
-: 1587207502:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1587207510:0;...
-: 1587207517:0;yadm status
-: 1587207527:0;yadm add ~/.mozilla/firefox/chrome
 : 1587207533:0;yadm add ~/.zshenv ~/.zsh/{.,}^*.zwc
-: 1587207538:0;yadm commit
-: 1587207593:0;yadm push
-: 1587210900:0;vi ~/.config/awesome/wibar.lua
 : 1587211432:0;vi ~/.config/awesome/signals.lua
 : 1587215098:0;vi ~/.config/picom/picom.conf
 : 1587215105:0;vi ~/.config/awesome/autorun
-: 1587219787:0;pfetch
 : 1587223464:0;pkill ssh-agent
 : 1587232756:0;smbclient -U nobody //192.168.1.100/plain
 : 1587232765:0;smbclient -U mustaqim //192.168.1.100/Library
@@ -3220,13 +3186,10 @@ fi
 : 1587299728:0;vi ~/.local/share/applications/emacs-client.desktop
 : 1587317485:0;fd -e .backup -x rm
 : 1587318398:0;vi ~/.config/ranger/rc.conf
-: 1587320640:0;adb push "$(fzf -m)" /sdcard
 : 1587356151:0;git clone gl:mozbugbox/aria2daemon
 : 1587359271:0;xbps-query -Rs fzf
 : 1587359279:0;sudo xbps-install fzf
-: 1587359337:0;man fzf
 : 1587360263:0;mono ~/.local/bin/Jackett/JackettConsole.exe
-: 1587366091:0;vi /etc/unbound/unbound.conf
 : 1587369728:0;sudo xbps-install syncthing-gtk
 : 1587369737:0;sudo xbps-install syncthing
 : 1587369866:0;sudo cp -r ~/.local/runit/sv/syncthing/ /etc/sv/
@@ -3237,20 +3200,16 @@ fi
 : 1587376641:0;vi ShadowFox_customization/userChrome_customization.css
 : 1587377023:0;cd .mozilla/firefox/chrome/
 : 1587377025:0;./shadowfox_linux_x64 -profile-index 1 -generate-uuids -set-dark-theme
-: 1587377115:0;fd -e backup -x rm
 : 1587380147:0;ttyqr $(xclip -sel clip -o)
 : 1587381116:0;adb shell cmd overlay enable com.android.internal.systemui.navbar.gestural
 : 1587381118:0;adb devices
-: 1587389804:0;vi ~/.zsh/.p10k.zsh
 : 1587390423:0;vi ~/.zsh/aliases
 : 1587390547:0;mimeo --add video/mp4 mpv.desktop
-: 1587391125:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
 : 1587391560:0;pkill picom
 : 1587391714:0;./.zinit/plugins/chriskempson---base16-shell/colortest base16-tomorrow-night.sh
 : 1587395755:0;s
 : 1587399015:0;gpg --import public.asc
 : 1587399023:0;gpg --verify twrp-3.3.1-0-zerolte.img.asc
-: 1587405324:0;f ~/.config/vifm
 : 1587407230:0;xbps-query -Rs cron
 : 1587445957:0;sudo xbps-install cronie
 : 1587446243:0;sudo ln -s /etc/sv/cronie /var/service
@@ -3260,7 +3219,6 @@ fi
 : 1587447486:0;gst
 : 1587447953:0;sudo xbps-install gramps libosmgpsmap libgexiv2
 : 1587455577:0;fd -e torrent | fzf --preview='imdl -t -c always torrent show -i {}' --height 20
-: 1587455591:0;vi ~/.zsh/zsh_history
 : 1587457604:0;vi ~/.config/doom/snippets/web-mode/__vue
 : 1587458067:0;vi ~/.config/mpv/mpv.conf
 : 1587458446:0;vi ~/.config/vifm/scripts/vifmimg
@@ -3284,43 +3242,32 @@ fi
 : 1587488148:0;man vifm
 : 1587489016:0;f 
 : 1587491114:0;vi ~/.config/awesome/themes/mojave/theme.lua
-: 1587493821:0;pkill ueberzug
-: 1587528688:0;sudo xbps-install -Suvy
 : 1587528896:0;vi ~/.config/vifm/colors/mojave.vifm
-: 1587532714:0;rm ~/.config/vifm/vifminfo
 : 1587532885:0;sudo aa-enforce firejail-default
 : 1587533553:0;sudo xbps-install nodejs
 : 1587533661:0;sudo xbps-remove -R nodejs
 : 1587533681:0;xbps-query -Rs yarn
 : 1587533692:0;sudo xbps-install yarn-bin
 : 1587533770:0;yarn global add @vue/cli-init
-: 1587533792:0;vi .Xresources
 : 1587533813:0;rehash
-: 1587533897:0;xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
-: 1587534028:0;vi ~/.zsh/zshenv
 : 1587534260:0;yarn global add @vue/cli
 : 1587534481:0;yarn global bin
 : 1587535255:0;zpl cclear
 : 1587540559:0;zpl completions
-: 1587540773:0;echo $PATH | tr ":" "\n" | nl
 : 1587542779:0;print $precmd_functions
 : 1587542850:0;typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 : 1587542929:0;sudo xbps-install alacritty
 : 1587543049:0;vi ~/.config/alacritty/alacritty.yml
 : 1587545009:0;zpl times
-: 1587545989:0;vi ~/.zsh/.zshrc
 : 1587546642:0;vue init webpack-simple vue-cli
 : 1587546841:0;yarn install
 : 1587546908:0;fg
 : 1587546948:0;cd learn/web/vuejs2/vue-cli/
-: 1587546956:0;tmux
 : 1587546985:0;tmux attach -t 0
 : 1587547720:0;yarn global add eslint --dev
 : 1587548079:0;echo $MANPATH
 : 1587548091:0;echo $TERM
 : 1587548320:0;ls -Al
-: 1587548329:0;ls -A
-: 1587548884:0;vi ~/.config/vifm/vifmrc
 : 1587549509:0;fc-cache -fv
 : 1587549521:0;vi ~/.config/fontconfig/fonts.conf
 : 1587549937:0;fc-list | rg "Nerd" | cut -d ":" -f2
@@ -3330,40 +3277,95 @@ fi
 : 1587558342:0;vi ~/.config/doom/init.el
 : 1587558453:0;doom upgrade
 : 1587558966:0;yarn global add vls
-: 1587568307:0;pkill emacs
 : 1587568312:0;rm -rf ~/.emacs.d/
 : 1587568332:0;git clone gh:hlissner/doom-emacs ~/.emacs.d
 : 1587568585:0;doom install
 : 1587568927:0;htop
 : 1587569242:0;tlp-stat -t | rg temp
-: 1587569697:0;cd
-: 1587569699:0;f
-: 1587569702:0;f .
 : 1587570915:0;/bin/emacs -bg '#17191a' --daemon
-: 1587571201:0;psmem -p $(pgrep -d, -u $USER)
 : 1587571730:0;yarn global add -D eslint eslint-plugin-vue@next
 : 1587571777:0;yarn add -D eslint eslint-plugin-vue@next
-: 1587571822:0;exec zsh
-: 1587571824:0;psmem -p $(pgrep -d, -u $USER)
-: 1587571831:0;yadm status
-: 1587571841:0;yadm diff
-: 1587571852:0;vi .Xresources
 : 1587571875:0;yadm diff
-: 1587571904:0;yadm add ~/.Xresources
-: 1587571906:0;yadm status
-: 1587571920:0;yadm add ~/.config/awesome
 : 1587571922:0;yadm add ~/.config/fontconfig/fonts.conf
-: 1587571927:0;yadm add ~/.config/doom
 : 1587571940:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/^sponsorblock}
-: 1587571943:0;yadm status
 : 1587571952:0;yadm add ~/.config/tmux/tmux.conf{,.local}
 : 1587571979:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1587571991:0;cd
 : 1587571999:0;fd -e backup -x rm
-: 1587572000:0;cd
-: 1587572003:0;yadm status
 : 1587572008:0;yadm add ~/.mozilla/firefox/chrome
-: 1587572032:0;f
-: 1587572034:0;f .
-: 1587572554:0;yadm status
-: 1587572578:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1587573142:0;yadm commit
+: 1587573186:0;yadm push
+: 1587578226:0;adb push "$(fzf -m)" /sdcard
+: 1587615037:0;w
+: 1587615151:0;pkill ueberzug
+: 1587616360:0;sudo xbps-install -Suvy
+: 1587617015:0;vi ~/.local/bin/scripts/update_unbound_steveblack_hosts.sh
+: 1587617586:0;svlogtail | rg unbound
+: 1587617624:0;vi /etc/unbound/zones/rpz.db
+: 1587617781:0;sudo xbps-install shellcheck
+: 1587619634:0;vi ~/.zsh/zshenv
+: 1587619677:0;sudo update_unbound_steveblack_hosts.sh
+: 1587619826:0;xclip -sel clip < /etc/unbound/unbound.conf
+: 1587619920:0;unbound-checkconf
+: 1587619947:0;sudo unbound-control-setup
+: 1587620077:0;sudo sv restart unbound
+: 1587620079:0;sudo unbound-control stats_noreset
+: 1587620137:0;vi /etc/unbound/unbound.conf
+: 1587623181:0;pkill emacs
+: 1587623228:0;cd
+: 1587623285:0;f ~/.config/awesome/themes/mojave/
+: 1587623667:0;sudo xbps-install gimp
+: 1587624873:0;yadm restore ~/.config/awesome
+: 1587624902:0;vi ~/.config/awesome/wibar.lua
+: 1587625246:0;xbps-query -f awesome
+: 1587627650:0;tmux
+: 1587628037:0;picom --config ~/.config/picom/picom.conf
+: 1587628146:0;psmem -p $(pgrep -d, -u $USER)
+: 1587630266:0;vi .Xresources.d/theme_tomorrow_night
+: 1587631003:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
+: 1587631058:0;rm ~/.config/vifm/vifminfo
+: 1587632156:0;vi .Xresources.d/theme_tomorrow
+: 1587632810:0;ls -A
+: 1587632846:0;vi ~/.config/awesome/rc.lua
+: 1587633697:0;vi ~/.local/bin/scripts/switch_theme
+: 1587634604:0;fusermount -u ~/Library/.plain
+: 1587634716:0;vi ~/.zsh/functions/switch_theme
+: 1587635154:0;f .
+: 1587635305:0;vi ~/.zsh/completions/_switch_theme
+: 1587635402:0;man fzf
+: 1587635685:0;echo $PATH | tr ":" "\n" | nl
+: 1587635892:0;for COLOR in {0..255} \
+do\
+    for STYLE in "38;5"\
+    do \
+        TAG="\033[${STYLE};${COLOR}m"\
+        STR="${STYLE};${COLOR}"\
+        echo -ne "${TAG}${STR}${NONE}  "\
+    done\
+    echo\
+done
+: 1587637069:0;f ~/.config/vifm
+: 1587637757:0;switch_theme
+: 1587638305:0;vi .Xresources
+: 1587638669:0;xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
+: 1587642818:0;cat .base16_theme
+: 1587642834:0;sudo xbps-remove -Oo
+: 1587643084:0;vi ~/.zsh/.zshrc
+: 1587643227:0;vi ~/.config/vifm/vifmrc
+: 1587643518:0;switch_theme dark
+: 1587643521:0;switch_theme light
+: 1587643534:0;pfetch
+: 1587644121:0;yadm add ~/.config/awesome
+: 1587644146:0;yadm add ~/.config/doom
+: 1587644158:0;yadm add ~/.local/bin/scripts
+: 1587644183:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1587644216:0;yadm diff --staged
+: 1587644272:0;vi ~/.zsh/.p10k.zsh
+: 1587644296:0;f
+: 1587644336:0;yadm add ~/{.Xresources,.Xresources.d}
+: 1587644339:0;yadm status
+: 1587644360:0;vi ~/.zsh/zsh_history
+: 1587644402:0;exec zsh
+: 1587644405:0;yadm status
+: 1587644417:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1587644420:0;yadm status
+: 1587644438:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc

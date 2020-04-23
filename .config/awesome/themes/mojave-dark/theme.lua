@@ -9,7 +9,7 @@ local gfs   = gears.filesystem
 
 local helpers     = require("helpers")
 local themes_path = gfs.get_themes_dir()
-local theme_name  = "mojave"
+local theme_name  = "mojave-dark"
 
 local icon_path          = themes_path .. theme_name .. "/icons/"
 local layout_icon_path   = icon_path .. "layouts/"
