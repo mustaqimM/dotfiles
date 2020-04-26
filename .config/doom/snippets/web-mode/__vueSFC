@@ -1,10 +1,11 @@
 # -*- mode: snippet -*-
-# name: Vue Component
+# name: Vue SFC
 # key: vue
-# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 <template>
-  $1
+  <div>
+    $1
+  </div>
 </template>
 
 

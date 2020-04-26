@@ -1,4 +1,6 @@
-#!/bin/env zsh
+#!/bin/zsh
+
+autoload colors && colors
 
 plain() {
   if (( ! $# )); then
@@ -19,12 +21,4 @@ plain() {
   fi
 }
 
-_plain() {
-	_arguments '1:command:((
-    	hide\:"unmount folder"
-    	show\:"mount and show folder"
-    	move\:"move... whatever"
-		))'
-}
-
-compdef _plain plain
+plain "$@"

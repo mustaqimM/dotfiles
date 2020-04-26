@@ -21,6 +21,7 @@ export KDEWM=/usr/bin/awesome
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 export BROWSER=firefox
+export MOZ_USE_XINPUT2=1
 export MOZ_ACCELERATED=1
 export MOZ_WEBRENDER=1
 

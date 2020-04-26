@@ -153,10 +153,10 @@ if [[ $(type -p fzf) ]] then
   zi light "junegunn/fzf"
 fi
 
-#zi ice wait lucid id-as"base16-fzf-tomorrow-night" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi' base16-fzf-tomorrow-night" atpull"%atclone"
-#zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow-night.config"
-zi ice wait lucid id-as"base16-fzf-tomorrow" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi' base16-fzf-tomorrow" atpull"%atclone"
-zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow.config"
+zi ice wait lucid id-as"base16-fzf-tomorrow-night" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi' base16-fzf-tomorrow-night" atpull"%atclone"
+zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow-night.config"
+#zi ice wait lucid id-as"base16-fzf-tomorrow" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi' base16-fzf-tomorrow" atpull"%atclone"
+#zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow.config"
 
 zi ice wait"2" lucid
 zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
@@ -416,7 +416,7 @@ autoload -U select-word-style
 select-word-style bash
 
 source $ZDOTDIR/aliases
-autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz code fh fkill fco gfy plain pb scan center_text switch_theme
+autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz code fh fkill fco gfy pb scan center_text switch_theme plain
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 
 # generic completions for programs which understand GNU long options(--help)

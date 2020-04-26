@@ -1,7 +1,13 @@
+#compdef plain
+
 _plain() {
-	_arguments '1:command:((
-    	hide\:"unmount folder"
-    	show\:"mount and show folder"
-    	move\:"move... whatever"
-		))'
+  local state
+
+  _arguments \
+    '1: :->profile'
+
+  case $state in
+    (profile) _arguments '1:Select an option:(hide show move)' ;;
+  esac
 }
+

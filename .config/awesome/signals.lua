@@ -41,7 +41,7 @@ client.connect_signal("request::titlebars", function(c)
     )
 
     -- TODO: Put multiple widgets into a single margin container
-    awful.titlebar(c) : setup {
+    awful.titlebar(c, {size=24}) : setup {
         { -- Left
             { widget = wibox.container.margin,
               margins=5,

@@ -48,7 +48,7 @@ set vimhelp
 set norunexec
 
 " Selected color scheme
-colorscheme mojave-light
+colorscheme mojave-dark
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
@@ -99,8 +99,9 @@ set statusline=" Hint: *%z%= %T %A %9u:%-8g %7E %13d "
 " update terminal title
 "set title
 
-" Dont show delete confirmation
-"set confirm-=delete
+set nowrap
+
+vsplit
 
 " Empty the ruler. By default, it shows the number of directories+files.
 set rulerformat='%2l/%S %[  %x%]'
@@ -122,7 +123,9 @@ set findprg='fd -t d -t f -H -L -E ".git" %p'
 
 "au DirEnter '~/repos/**/*' setl previewprg='git log --color -- %c 2>&1'
 
-set nowrap
+" Dont show delete confirmation
+"set confirm-=delete
+
 
 " ------------------------------------------------------------------------------
 " ==============================================================================
@@ -253,7 +256,7 @@ nnoremap <silent> ,d :set viewcolumns=*{name}.,10{perms},12{uname},-7{gname},10{
 
 " don't show preview on ../
 "fileview ../ echo >/dev/null
-fileviewer .*/ lsd --icon-theme=fancy --color=always --tree -F --depth=1
+fileviewer .*/ lsd --color=always --group-dirs=first -F --tree --depth=1
 fileviewer */ lsd --color=always --group-dirs=first
 
 " Pdf
@@ -474,7 +477,7 @@ fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --synt
 " Text
 filetype <text/*> $EMACS_PLUGIN_LAUNCHER -nw
 "fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never %c -p
-fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow --force %c
+fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --force %c
                     \ %pc
                     \ vifmimg clear
 

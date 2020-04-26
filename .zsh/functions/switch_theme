@@ -10,15 +10,21 @@ switch_theme() {
             light)
                 echo "\nChanging theme to $fg[black]$bg[white]LIGHT\n"
                 sed -i 's|theme_tomorrow_night|theme_tomorrow|' ~/.Xresources; xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
-                sed -i 's|--style=base16/tomorrow-night|--style=base16/tomorrow|;s|mojave-dark|mojave-light|' ~/.config/vifm/vifmrc
+                sed -i 's|--style=base16/tomorrow-night|--style=base16/tomorrow|;s|mojave-dark|mojave-light|' ~/.config/vifm/vifmrc && vifm --remote -c ':reload'
+                sed -i 's|Tomorrow-Night|Tomorrow|' ~/.config/bat/config
                 sed -i 's|dark|light|;s|Dark|Light|' ~/.config/gtk-3.0/settings.ini
+                sed -i 's|Mojave-dark|KvMojaveLight|' ~/.config/Kvantum/kvantum.kvconfig
+                sed -i 's|262626|eeeeee|' ~/.config/tmux/tmux.conf.local && tmux source-file ~/.config/tmux/tmux.conf
                 ln -sf ~/.local/themes/base16-tomorrow.sh ~/.base16_theme
                 ;;
             dark)
                 echo "\nChanging theme to $fg[black]$bg[white]DARK\n"
                 sed -i 's|\btheme_tomorrow\b|theme_tomorrow_night|' ~/.Xresources; xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
-                sed -i 's|--style=base16/tomorrow|--style=base16/tomorrow-night|;s|mojave-light|mojave-dark|' ~/.config/vifm/vifmrc
+                sed -i 's|--style=base16/tomorrow|--style=base16/tomorrow-night|;s|mojave-light|mojave-dark|' ~/.config/vifm/vifmrc && vifm --remote -c ':reload'
+                sed -i 's|Tomorrow|Tomorrow-Night|' ~/.config/bat/config
                 sed -i 's|light|dark|;s|Light|Dark|' ~/.config/gtk-3.0/settings.ini
+                sed -i 's|KvMojaveLight|Mojave-dark|' ~/.config/Kvantum/kvantum.kvconfig
+                sed -i 's|eeeeee|262626|' ~/.config/tmux/tmux.conf.local && tmux source-file ~/.config/tmux/tmux.conf
                 ln -sf ~/.local/themes/base16-tomorrow-night.sh ~/.base16_theme
                 ;;
         esac

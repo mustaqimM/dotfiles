@@ -56,11 +56,11 @@ tmux_conf_theme_pane_active_border='blue'
 
 # pane indicator colours
 tmux_conf_theme_pane_indicator='#444444'
-tmux_conf_theme_pane_active_indicator='yellow'
+tmux_conf_theme_pane_active_indicator='blue'
 
 # status line style
 tmux_conf_theme_message_fg='yellow'
-tmux_conf_theme_message_bg='black'
+tmux_conf_theme_message_bg='default'
 tmux_conf_theme_message_attr='bold'
 
 # status line command style (<prefix> : Escape)
@@ -74,8 +74,8 @@ tmux_conf_theme_mode_bg='blue'                          # selection
 tmux_conf_theme_mode_attr='none'
 
 # status line style
-tmux_conf_theme_status_fg='#8a8a8a'                     # light gray
-tmux_conf_theme_status_bg='black'
+tmux_conf_theme_status_fg='#8a8a8a'
+tmux_conf_theme_status_bg='#262626'
 tmux_conf_theme_status_attr='none'
 
 # terminal title
@@ -130,12 +130,12 @@ tmux_conf_theme_window_status_bell_attr='blink,underscore'
 
 # window last status style
 tmux_conf_theme_window_status_last_fg='blue'         # light blue
-tmux_conf_theme_window_status_last_bg='#17191a'
+tmux_conf_theme_window_status_last_bg='default'
 tmux_conf_theme_window_status_last_attr='none'
 
 # status left/right sections separators
 tmux_conf_theme_left_separator_main=''
-tmux_conf_theme_left_separator_sub='│'
+tmux_conf_theme_left_separator_sub=' │'
 tmux_conf_theme_right_separator_main=''
 tmux_conf_theme_right_separator_sub='|'
 #tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
@@ -168,11 +168,11 @@ tmux_conf_theme_right_separator_sub='|'
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left='#S #P,'
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{root}'
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}'
 
 # status left style
 tmux_conf_theme_status_left_fg='green'
-tmux_conf_theme_status_left_bg='#17191a'
+tmux_conf_theme_status_left_bg='default'
 tmux_conf_theme_status_left_attr='bold,none'
 
 # status right style
@@ -188,15 +188,15 @@ tmux_conf_theme_pairing_attr='none'
 
 # prefix indicator
 tmux_conf_theme_prefix=' + '
-tmux_conf_theme_prefix_fg='yellow'
-tmux_conf_theme_prefix_bg='black'
+tmux_conf_theme_prefix_fg='#000000'
+tmux_conf_theme_prefix_bg='yellow'
 tmux_conf_theme_prefix_attr='bold'
 
 # root indicator
-tmux_conf_theme_root=' '
-tmux_conf_theme_root_fg='red'
-tmux_conf_theme_root_bg='none'
-tmux_conf_theme_root_attr='bold,blink'
+#tmux_conf_theme_root=' '
+#tmux_conf_theme_root_fg='red'
+#tmux_conf_theme_root_bg='none'
+#tmux_conf_theme_root_attr='bold,blink'
 
 # synchronized indicator
 tmux_conf_theme_synchronized='🔒'     # U+1F512

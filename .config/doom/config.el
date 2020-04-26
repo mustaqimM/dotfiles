@@ -50,34 +50,63 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+;; ============================================================================
 
 
 (add-to-list 'auto-mode-alist '("\\template\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\vifmrc\\'" . vimrc-mode))
-;(add-to-list 'auto-mode-alist '("\\.vue$" . vue-mode))
-(set-file-template! "\\.vue$" :trigger "__vue" :mode 'vue-mode)
+
+
+;; Vue.js
+;; ============================================================================
+
+(add-to-list 'auto-mode-alist '("\\.vue$" . web-mode))
 
 (with-eval-after-load 'flycheck
-  (flycheck-add-mode 'javascript-eslint 'web-mode)
   (flycheck-add-mode 'javascript-eslint 'vue-mode)
+  (flycheck-add-mode 'javascript-eslint 'web-mode)
   )
-  ;(add-to-list 'flycheck-checkers 'rustic-clippy))
+  ;(add-to-list 'flycheck-checkers 'rustic-clippy)
   ;(add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
 
-(defun my-fly-mode-hook ()
-  (flycheck-inline-mode 't))
-(with-eval-after-load 'flycheck
-  (add-hook! 'flycheck-mode-hook  'my-fly-mode-hook))
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  ;(setq web-mode-script-padding 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2))
+(after! web-mode
+  (add-hook 'web-mode-hook  'my-web-mode-hook))
 
 
-(setq centaur-tabs-style "bar"
-      centaur-tabs-height 22
-      ;centaur-tabs-set-icons t
-      ;centaur-tabs-set-modified-marker t
-      ;centaur-tabs-show-navigation-buttons nil
-      ;centaur-tabs-set-bar 'under
-      centaur-tabs-close-button ""
-      x-underline-at-descent-line t)
+;(defun vuejs-custom ()
+  ;(setq vue-html-tab-width 2)
+  ;(flycheck-mode t)
+  ;(rainbow-mode t)
+  ;(global-set-key (kbd "C-c C-l") 'vue-mode-reparse)
+  ;(global-set-key (kbd "C-c C-e") 'vue-mode-edit-indirect-at-point)
+  ;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
+  ;(turn-on-diff-hl-mode)
+  ;(setq mmm-submode-decoration-level 0)
+  ;; Needed for proper indentation in vue-mode
+  ;(setq mmm-js-mode-enter-hook (lambda () (setq syntax-ppss-table nil)))
+  ;(setq mmm-typescript-mode-enter-hook (lambda () (setq syntax-ppss-table nil)))
+;  )
+
+;(after! vue-mode
+;  (add-hook 'vue-mode-hook 'vuejs-custom))
+;(add-hook 'vue-mode-hook (lambda () (setq syntax-ppss-table nil)))
+;(set-file-template! "\\.vue$" :trigger "__vueSFC" :mode 'vue-mode)
+
+
+;; ============================================================================
+
+;(defun my-fly-mode-hook () (flycheck-inline-mode 't))
+;(with-eval-after-load 'flycheck
+;  (add-hook! 'flycheck-mode-hook  'my-fly-mode-hook))
+
+;; ============================================================================
+
 
 (after! centaur-tabs
   (defun centaur-tabs-hide-tab (x)
@@ -111,8 +140,21 @@
        (and (string-prefix-p "magit" name)
             (not (file-name-extension name)))
        )))
-  )
-;;(centaur-tabs-hide-tab-function 'centaur-tabs-hide-tab)
+  ;(centaur-tabs-hide-tab-function 'centaur-tabs-hide-tab)
 
-;;(add-to-list 'default-frame-alist '(fullscreen . maximized))
+  (setq centaur-tabs-style "bar"
+      centaur-tabs-height 18
+      ;centaur-tabs-set-icons t
+      ;centaur-tabs-set-modified-marker t
+      ;centaur-tabs-show-navigation-buttons nil
+      ;centaur-tabs-set-bar 'under
+      centaur-tabs-close-button ""
+      x-underline-at-descent-line t))
 
+
+                                        ;(setq all-the-icons-scale-factor 0.9)
+;(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(after! doom-modeline
+  (doom-modeline-def-modeline 'main
+    '(bar matches buffer-info remote-host buffer-position parrot selection-info)
+    '(misc-info minor-modes checker input-method buffer-encoding major-mode process vcs " "))) ; <-- added padding here
