@@ -18,14 +18,14 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Iosevka Medium" :size 16 :weight 'medium))
+(setq doom-font (font-spec :family "Iosevka" :size 16 :weight 'medium))
+(custom-set-faces
+ '(font-lock-comment-face ((t (:foreground "#5a5b5a" :slant italic)))))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
 (setq doom-theme 'doom-tomorrow-night)
-(setq doom-themes-treemacs-theme "doom-colors")
-(setq treemacs-width 22)
 
 ;; If you intend to use org, it is recommended you change this!
 (setq org-directory "~/Library/Cloud/Org/")
@@ -59,15 +59,7 @@
 
 ;; Vue.js
 ;; ============================================================================
-
-(add-to-list 'auto-mode-alist '("\\.vue$" . web-mode))
-
-(with-eval-after-load 'flycheck
-  (flycheck-add-mode 'javascript-eslint 'vue-mode)
-  (flycheck-add-mode 'javascript-eslint 'web-mode)
-  )
-  ;(add-to-list 'flycheck-checkers 'rustic-clippy)
-  ;(add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
+;(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
@@ -96,7 +88,14 @@
 ;(after! vue-mode
 ;  (add-hook 'vue-mode-hook 'vuejs-custom))
 ;(add-hook 'vue-mode-hook (lambda () (setq syntax-ppss-table nil)))
-;(set-file-template! "\\.vue$" :trigger "__vueSFC" :mode 'vue-mode)
+(set-file-template! "\\.vue$" :trigger "__vueSFC" :mode 'web-mode)
+
+(with-eval-after-load 'flycheck
+  (flycheck-add-mode 'javascript-eslint 'vue-mode)
+  (flycheck-add-mode 'javascript-eslint 'web-mode)
+  )
+  ;(add-to-list 'flycheck-checkers 'rustic-clippy)
+  ;(add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
 
 
 ;; ============================================================================
@@ -158,3 +157,20 @@
   (doom-modeline-def-modeline 'main
     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
     '(misc-info minor-modes checker input-method buffer-encoding major-mode process vcs " "))) ; <-- added padding here
+
+(after! treemacs
+  (setq doom-themes-treemacs-theme "doom-colors")
+  (setq treemacs-width 22)
+  ;(setq treemacs-icon-root (all-the-icons-octicon "file-directory"))
+  )
+
+;    (treemacs-create-icon
+;     :icon (all-the-icons-octicon "file-directory")
+;     :extensions (root)))
+
+;; ============================================================================
+;; key bindings
+
+;(global-set-key (kbd "g l") 'evil-end-of-line)
+;(global-set-key (kbd "g h") 'evil-beginning-of-line-or-digit-argument)
+(global-set-key (kbd "M-n") 'mc/mark-all-dwim)

@@ -44,7 +44,7 @@ tyrannical.tags = {
     layout      = awful.layout.suit.floating,
     --exec_once   = {"dolphin"}, --When the tag is accessed for the first time, execute this command
     class  = {
-      "Thunar", "Konqueror", "dolphin", "ark", "Org.gnome.Nautilus", "emelfm", "Nemo", "pcmanfm-qt" }
+      "Thunar", "dolphin", "Org.gnome.Nautilus", "Nemo", "pcmanfm-qt" }
   },
   {
     name        = "",
@@ -91,7 +91,7 @@ tyrannical.tags = {
     layout      = awful.layout.suit.max,
     instance    = {"dev", "ops"},         -- Accept the following instances. This takes precedence over 'class'
     class = {
-      "Code - OSS", "Emacs", "jetbrains-studio", "QtCreator"}
+      "Code - OSS", "Emacs", "jetbrains-studio", "jetbrains-webstorm", "QtCreator"}
   },
   {
     name        = "",
@@ -194,7 +194,7 @@ awful.rules.rules = {
   { rule = { role = "PictureInPicture" },
     properties = { floating = true, sticky = true, skip_taskbar = true },
     callback = function (c) awful.placement.bottom_right(c) end },
-  { rule = { name = "Firefox Safe Mode" },
+  { rule_any = { name = "Firefox Safe Mode", "Refresh Firefox" },
     properties = { width = 505, height = 206, floating = true },
     callback = function (c) awful.placement.centered(c) end },
 

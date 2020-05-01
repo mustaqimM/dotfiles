@@ -3,7 +3,9 @@ html, img {
     -webkit-filter: invert(95%) hue-rotate(180deg);
     color: #17191a;
 }
+/* Ariang */
 .sidebar, .header.ng-scope, .header.ng-scope, .logo, .main-footer {
     background: white !important;
     color: black;
 }
+

@@ -9,9 +9,9 @@ if test -z "${XDG_RUNTIME_DIR}"; then
     fi
 fi
 
-if [ -f ~/.bashrc ]; then . .bashrc; fi
+#if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
-if [[ ! $DISPLAY ]]; then
+if [ ! "$DISPLAY" ]; then
   sx sh ~/.xinitrc 2> .xsession-errors
   #startx 2> .xsession-errors
 fi

@@ -344,10 +344,10 @@ filextype *.html,*.htm
 "fileviewer *.html w3m -dump %c
 
 " Fonts
-fileviewer *.otf,*.ttf,*.woff
-        \ vifmimg font %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+fileviewer *.otf,*.ttf,*.woff file %c
+"        \ vifmimg font %px %py %pw %ph %c
+"        \ %pc
+"        \ vifmimg clear
 
 " Object
 filetype *.o nm %f | less
@@ -469,7 +469,7 @@ filextype *.pro qtcreator %f &
 "        \ {View in thunar}
 "        \ Thunar %f &,
 
-fileviewer *.json python -m json.tool -- %c
+fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
 fileviewer *.[s]o hexyl -c 500 %c
 
 fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --syntax make %c
@@ -489,7 +489,7 @@ set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  :
 " code
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[c]::,  ::*.[h]::,  ::/^copying|license$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::,  ::*.sql::,  ::*.sqlite::'
-set classify+='  ::*.conf,,*.yml,,*.ini::,  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
+set classify+='  ::*.conf,,*.yml,,*.ini::,  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
 set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::,  ::*.vue::'
 " archives
 set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.jar,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar::'

@@ -1,7 +1,7 @@
 ! -*- eval: (rainbow-mode); -*-
 
 ! Base16 Tomorrow Night
-#define base00 #17191a
+#define base00 #1d1f21
 #define base01 #282a2e
 #define base02 #373b41
 #define base03 #969896
