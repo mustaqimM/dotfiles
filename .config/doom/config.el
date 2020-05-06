@@ -6,7 +6,7 @@
 
 ;; These are used for a number of things, particularly for GPG configuration,
 ;; some email clients, file templates and snippets.
-(setq user-full-name "Mustaqim Malim"
+(setq user-full-name "mustaqim malim"
       user-mail-address "mustaqim@pm.me")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
@@ -18,7 +18,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Iosevka" :size 16 :weight 'medium))
+(setq doom-font (font-spec :family "Iosevka" :size 16 :weight 'normal))
 (custom-set-faces
  '(font-lock-comment-face ((t (:foreground "#5a5b5a" :slant italic)))))
 
@@ -54,7 +54,9 @@
 
 
 (add-to-list 'auto-mode-alist '("\\template\\'" . conf-mode))
-(add-to-list 'auto-mode-alist '("\\vifmrc\\'" . vimrc-mode))
+;(add-to-list 'auto-mode-alist '("\\vifmrc\\'" . vimrc-mode))
+(define-generic-mode vimrc-mode '("\"") '("set" "syntax") nil '("\\vifmrc\\'") nil
+    "Generic mode for Vim configuration files.")
 
 
 ;; Vue.js
@@ -63,10 +65,10 @@
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
-  ;(setq web-mode-script-padding 2)
-  (setq web-mode-code-indent-offset 2)
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2))
+  (setq web-mode-script-padding 0)
+  (setq web-mode-code-indent-offset 2))
+  ;(setq web-mode-markup-indent-offset 0)
+  ;(setq web-mode-css-indent-offset 0)
 (after! web-mode
   (add-hook 'web-mode-hook  'my-web-mode-hook))
 
@@ -150,10 +152,8 @@
       centaur-tabs-close-button ""
       x-underline-at-descent-line t))
 
-
-                                        ;(setq all-the-icons-scale-factor 0.9)
-;(add-to-list 'default-frame-alist '(fullscreen . maximized))
 (after! doom-modeline
+  ;(setq all-the-icons-scale-factor 0.9)
   (doom-modeline-def-modeline 'main
     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
     '(misc-info minor-modes checker input-method buffer-encoding major-mode process vcs " "))) ; <-- added padding here
@@ -171,6 +171,7 @@
 ;; ============================================================================
 ;; key bindings
 
-;(global-set-key (kbd "g l") 'evil-end-of-line)
-;(global-set-key (kbd "g h") 'evil-beginning-of-line-or-digit-argument)
-(global-set-key (kbd "M-n") 'mc/mark-all-dwim)
+(map! "M-n" 'mc/mark-all-dwim)
+
+(map! :n "g h" 'evil-beginning-of-line-or-digit-argument)
+(map! :n "g l" 'evil-end-of-line)

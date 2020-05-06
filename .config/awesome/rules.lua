@@ -194,7 +194,8 @@ awful.rules.rules = {
   { rule = { role = "PictureInPicture" },
     properties = { floating = true, sticky = true, skip_taskbar = true },
     callback = function (c) awful.placement.bottom_right(c) end },
-  { rule_any = { name = "Firefox Safe Mode", "Refresh Firefox" },
+  { rule_any = { name = "Firefox Safe Mode", "Refresh Firefox",
+                 "Extension: (Tree Style Tab) - Close tabs? - Mozilla Firefox" },
     properties = { width = 505, height = 206, floating = true },
     callback = function (c) awful.placement.centered(c) end },
 

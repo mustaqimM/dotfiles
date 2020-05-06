@@ -53,10 +53,11 @@
 
 
 ;(package! flycheck-rust)
-(package! flycheck-inline)
 
-(package! sml-mode)
+;(package! flycheck-inline)
 
-(package! vue-mode)
+;(package! sml-mode)
 
-(package! vimrc-mode)
+;(package! vue-mode)
+
+;(package! vimrc-mode)

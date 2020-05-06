@@ -166,9 +166,9 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
 
-command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('locate $HOME | fzf --height 10 2>/dev/tty'))
-command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('find | fzf --height 10 2>/dev/tty'))
-nnoremap <c-g> :FZFlocate<cr>
+"command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('locate $HOME | fzf --height 10 2>/dev/tty'))
+"nnoremap <c-g> :FZFlocate<cr>
+command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd | fzf 2>/dev/tty'))
 nnoremap <c-f> :FZFfind<cr>
 
 " Block particular shortcut
@@ -207,7 +207,7 @@ nnoremap cc cw<c-u>
 nnoremap A cw
 
 " Open console in current directory
-nnoremap ,t :!xst &<cr>
+nnoremap ,t :!xst -c st -T Terminal -e zsh &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
@@ -490,7 +490,7 @@ set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  :
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[c]::,  ::*.[h]::,  ::/^copying|license$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::,  ::*.sql::,  ::*.sqlite::'
 set classify+='  ::*.conf,,*.yml,,*.ini::,  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::,  ::*.vue::'
+set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::,  ::*.vue::,  ::*.ts::'
 " archives
 set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.jar,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
@@ -500,7 +500,7 @@ set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*
 " audio
 set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 " media
-set classify+='  ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid,,*.webm::'
+set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid,,*.webm::'
 " documents
 set classify+='  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.text,,*.txt,,README::,  ::*.epub,,*.fb2,,*.djvu,,*.mobi::'
 set classify+='  ::*.srt::,  ::*.pdf::'

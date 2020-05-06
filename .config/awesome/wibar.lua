@@ -118,7 +118,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create a textclock widget
-    mytextclock = wibox.widget.textclock("%a %d %b %H:%M") -- %a %Y-%m-%d %H:%M %Z
+    mytextclock = wibox.widget.textclock("  %a %d %b %H:%M") -- %a %Y-%m-%d %H:%M %Z
 
     -- Battery
     bat = battery();

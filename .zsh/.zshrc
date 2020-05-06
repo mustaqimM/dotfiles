@@ -234,7 +234,7 @@ zi light "zdharma/zsh-diff-so-fancy"
 zi ice lucid pick"pfetch" as"program"
 zi light "dylanaraps/pfetch"
 
-zi ice lucid from"gh-r" as"program" bpick"joe"
+zi ice lucid from"gh-r" as"program" bpick"joe" ver"1.0.3"
 zi light "karan/joe"
 
 zi ice lucid from"gh-r" as"program" bpick"*linux*"
