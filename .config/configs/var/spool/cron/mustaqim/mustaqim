@@ -1,6 +1,11 @@
 # -*- mode: sh -*-
 
-@weekly bash /bin/update_unbound.sh > /dev/null 2>&1
+#Mins  Hours  Days  Months  Day    Command
+#------------------------------------------
 
-#@daily env DISPLAY=:1 firejail --profile=~/.config/firejail/JDownloader.local /home/mustaqim/.local/bin/jd2/JDownloader2
-#@daily env DISPLAY=:1 QT_QPA_PLATFORMTHEME=qt5ct firejail /bin/qbittorrent
+0      0      *     *       *      aria2c --rpc-secret="${RPC_SECRET}" -D
+
+#@weekly                            bash /bin/update_unbound.sh > /dev/null 2>&1
+
+#@midnight                          env DISPLAY=:1 firejail --profile=~/.config/firejail/JDownloader.local /home/mustaqim/.local/bin/jd2/JDownloader2
+#@midnight                          env DISPLAY=:1 QT_QPA_PLATFORMTHEME=qt5ct firejail /bin/qbittorrent

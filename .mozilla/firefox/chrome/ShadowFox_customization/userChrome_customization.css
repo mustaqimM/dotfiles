@@ -236,7 +236,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
   display: none !important;
 }
 #urlbar{
- --autocomplete-popup-highlight-background: #373b411a !important;
+ --autocomplete-popup-highlight-background: #52596e66 !important;
 }
 /* Search Bar */
 #urlbar-input-container, #searchbar {
@@ -343,7 +343,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
 }
 /* Bottom search icons container */
 .search-panel-one-offs-container .search-panel-one-offs {
-  background: transparent !important;}
+  background: transparent !important;
+}
 /* 'This time, search with...' */
 .search-panel-one-offs-header.search-panel-header {
   background: transparent !important;
@@ -353,7 +354,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 .urlbarView-type-icon {fill: white !important;}
 /* Icons on urlbar */
 /* Make icon white */
-#urlbar-engine-one-off-item-GitHub {
+#urlbar-engine-one-off-item-GitHub,#urlbar-engine-one-off-item-bundlephobia {
   -webkit-filter: grayscale(100%) invert(100%);
   filter: grayscale(100%) invert(100%);
 }

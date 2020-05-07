@@ -175,3 +175,11 @@
 
 (map! :n "g h" 'evil-beginning-of-line-or-digit-argument)
 (map! :n "g l" 'evil-end-of-line)
+
+;; ============================================================================
+;; ligatures
+(push '("!=" . #Xe901) +pretty-code-iosevka-font-ligatures)
+(push '("++" . #Xe790) +pretty-code-iosevka-font-ligatures)
+(push '("--" . #Xe980) +pretty-code-iosevka-font-ligatures)
+(push '("==" . #Xea01) +pretty-code-iosevka-font-ligatures)
+(push '("===" . #Xea02) +pretty-code-iosevka-font-ligatures)

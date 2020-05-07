@@ -44,7 +44,7 @@ function audio_preview() {
 
 function video_preview() {
   # if no preview found, generate one
-  filename=$(printf "$6" | openssl sha1 | cut -d'=' -f2)
+  filename=$(printf '%s' "$6" | openssl sha1 | cut -d'=' -f2)
   if [ ! -f "/tmp/ueberzug/video/$filename.jpeg" ]; then
     ffmpegthumbnailer -i "$6" -o "/tmp/ueberzug/video/$filename.jpeg" -s 592 -q 7 -t 2
   fi
@@ -74,6 +74,17 @@ function mobi_preview() {
         > "$FIFO_UEBERZUG"
 }
 
+function comic_preview() {
+    if [ ! -f "/tmp/ueberzug/comic/$6.png" ]; then
+        unrar e "$6" "$(unrar vb "$6" | rg "000")" /tmp/ueberzug/comic/
+        # TODO: rename file to $6
+    fi
+    declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
+        [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
+        [path]="/tmp/ueberzug/comic/$6.png") \
+        > "$FIFO_UEBERZUG"
+}
+
 # clear preview image
 function clear_preview() {
   declare -p -A cmd=([action]=remove [identifier]="$ID_PREVIEW") \
@@ -95,7 +106,7 @@ function clear_preview() {
 # Make sure ueberzug's fifo exists
 if [ -e "$FIFO_UEBERZUG" ]; then
 
-for folder in {epub,pdf,mobi,video}
+for folder in {comic,epub,pdf,mobi,video}
 do
   if [ ! -d /tmp/ueberzug/"$folder" ]; then
   mkdir -p /tmp/ueberzug/"$folder"
@@ -111,5 +122,6 @@ case "$1" in
   audio) audio_preview "$@" ;;
   epub) epub_preview "$@" ;;
   mobi) mobi_preview "$@" ;;
+  comic) comic_preview "$@" ;;
 esac
 fi

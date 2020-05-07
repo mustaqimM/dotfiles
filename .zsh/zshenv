@@ -31,7 +31,7 @@ export TZ=Africa/Johannesburg
 LC_ALL="en_ZA.UTF-8"
 
 #export ALTERNATE_EDITOR=""
-#export EDITOR="emacsclient"
+export EDITOR="emacsclient -nw"
 #export VISUAL="emacsclient -c -a emacs"
 
 export TERM=xterm-256color

@@ -7,7 +7,7 @@
 	ui = true
 
 [core]
-	editor = emacs
+	editor = emacsclient -nw
 	excludesfile = /home/mustaqim/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
 #	autocrlf = true

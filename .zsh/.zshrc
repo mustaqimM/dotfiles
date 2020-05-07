@@ -152,7 +152,7 @@ if [[ $(type -p fzf) ]] then
   zi light "junegunn/fzf"
 fi
 
-zi ice wait lucid id-as"base16-fzf-tomorrow-night" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi' base16-fzf-tomorrow-night" atpull"%atclone"
+zi ice wait lucid id-as"base16-fzf-tomorrow-night" atclone"sleep 2; sed -i '27i\  --ansi\n  --reverse' base16-fzf-tomorrow-night" atpull"%atclone"
 zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow-night.config"
 #zi ice wait lucid id-as"base16-fzf-tomorrow" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi' base16-fzf-tomorrow" atpull"%atclone"
 #zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow.config"

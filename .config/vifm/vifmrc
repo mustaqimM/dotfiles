@@ -269,7 +269,7 @@ fileviewer *.pdf
 " Comic
 filextype *.cbr,*.cbz zathura %c %i
 fileviewer *.cbr
-        \ vifmimg pdf %px %py %pw %ph %c
+        \ vifmimg comic %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 

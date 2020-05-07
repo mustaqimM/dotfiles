@@ -8,7 +8,7 @@ set statusbar-h-padding 0
 set statusbar-v-padding 0
 set page-padding 2
 set selection-clipboard clipboard
-set font "DejaVu Sans 11"
+set font "Noto Sans 11"
 
 map K zoom in
 map J zoom out

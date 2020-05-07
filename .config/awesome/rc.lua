@@ -25,7 +25,7 @@ require("error")
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init( theme_dir .. theme_name .. "/theme.lua" )
-terminal = "xst -c st -T Terminal -e zsh"
+terminal = "alacritty -e zsh"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 awful.util.terminal = terminal
