@@ -1,4 +1,4 @@
-#files: 897	version: 5.8
+#files: 902	version: 5.8
 
 _comps=(
 '-' '_precommand'
@@ -273,6 +273,9 @@ _comps=(
 'dmesg' '_dmesg'
 'dmidecode' '_dmidecode'
 'doas' '_doas'
+'docker' '_docker'
+'docker-compose' '_docker-compose'
+'dockerd' '_docker'
 'docpad' '_docpad'
 'domainname' '_yp'
 'dos2unix' '_dos2unix'
@@ -1350,6 +1353,9 @@ _comps=(
 'txt' '_hosts'
 'type' '_which'
 'typeset' '_typeset'
+'udiskie' '_udiskie'
+'udiskie-mount' '_udiskie-mount'
+'udiskie-umount' '_udiskie-umount'
 'udisksctl' '_udisksctl'
 'ufw' '_ufw'
 'ulimit' '_ulimit'
@@ -1795,8 +1801,9 @@ autoload -Uz _plain _switch_theme _afew _android _archlinux-java \
             _trash-put _trash-restore _udisksctl _ufw _vagrant \
             _virtualbox _vnstat _wemux _wg-quick _xinput \
             _xsel _yaourt _yarn _zcash-cli _zinit \
-            _alacritty _fd _libinput _mpv _pulseaudio \
-            _rg _rustup _sv _vifm _xbps \
+            _alacritty _docker _docker-compose _fd _libinput \
+            _mpv _pulseaudio _rg _rustup _sv \
+            _udiskie _udiskie-mount _udiskie-umount _vifm _xbps \
             _xbps_src _xtools _yadm _youtube-dl _zathura \
             _cdr _all_labels _all_matches _alternative _approximate \
             _arg_compile _arguments _bash_completions _cache_invalid _call_function \

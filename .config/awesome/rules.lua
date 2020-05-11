@@ -97,7 +97,7 @@ tyrannical.tags = {
     name        = "",
     init        = false,
     exclusive   = true,
-    class       = { "Franz", "Fractal", "konversation" }
+    class       = { "Franz", "Fractal", "konversation", "nheko" }
   }
 }
 
@@ -238,6 +238,12 @@ awful.rules.rules = {
                    floating = true, border_width = 0 },
     callback = function (c)
       c:geometry({ width = 1024, height = 576 })
+      awful.placement.centered(c) end },
+
+  { rule = { class = "nheko" },
+    properties = { fullscreen = false, titlebars_enabled = false,
+                   floating = true, border_width = 0 },
+    callback = function (c)
       awful.placement.centered(c) end },
 
 }

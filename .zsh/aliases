@@ -16,7 +16,7 @@ alias f='~/.config/vifm/scripts/vifmrun'
 alias s='googler --count 7'
 alias surf='firejail surf'
 alias tmux='tmux -2 -f ~/.config/tmux/tmux.conf'
-alias vi='emacsclient -nc -c -F "((width . 1366))"'
+alias vi='emacsclient -nc -F "((width . 1366))"'
 alias pip='/bin/pip3'
 alias xargs='xargs ' # Needed for alias subtitution
 

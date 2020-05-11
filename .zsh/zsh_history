@@ -208,7 +208,6 @@
 : 1542457832:0;xbps-query -Rs kakoune
 : 1542457832:0;sudo xbps-install kakoune
 : 1542457832:0;git submodule update --init
-: 1542457832:0;sudo xbps-install autoconf
 : 1542457832:0;autoreconf -i
 : 1542457832:0;firefox --private-window
 : 1542457832:0;git help reflog
@@ -365,7 +364,6 @@
 : 1544382455:0;git add . && git reset --hard HEAD
 : 1544443454:0;xbps-query -Rs zeal
 : 1544443463:0;sudo xbps-install zeal
-: 1544443528:0;cat .gitignore
 : 1544505755:0;xbps-query -Rs mono
 : 1544722232:0;ranger /etc/sv/
 : 1544722239:0;ranger /var/service/
@@ -402,7 +400,6 @@
 : 1545812636:0;vi ~/.config/awesome/themes/theme.lua
 : 1545828449:0;sudo usermod -aG network mustaqim
 : 1545844074:0;cp -r /usr/share/awesome/themes/default ~/.config/awesome/themes
-: 1545844565:0;cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
 : 1546019775:0;yadm checkout -- .config/awesome/rc.lua
 : 1546053274:0;sudo xbps-install volumeicon
 : 1546083560:0;mv -bv awesome-copycats/* ~/.config/awesome; rm -rf awesome-copycats
@@ -667,7 +664,6 @@
 : 1555762979:0;sudo hwclock --set --date "20 apr 2019 14:23"
 : 1555763099:0;sudo date --set="14:25"
 : 1555793356:0;git commit -S -m "android-studio: update to 3.4.0"
-: 1555863183:0;sudo xbps-install android-studio
 : 1555937677:0;vi /etc/ntpd.conf
 : 1555937978:0;sudo hwclock --set --date "22 apr 2019 15:00"
 : 1555937984:0;sudo hwclock --hctosys
@@ -1026,7 +1022,6 @@
 : 1563818172:0;zsh-prompt-benchmark
 : 1563861122:0;vi ~/.zsh/p10k-pure.zsh
 : 1563947543:0;sudo xbps-install WoeUSB
-: 1563950053:0;sudo mount -t vfat /dev/sdb /media/ -o uid=1000,gid=100,utf8,dmask=027,fmask=137
 : 1564205008:0;fc-list | rg "Iosevka"
 : 1564245958:0;vi ~/.config/doom/modules/private/mustaqim/+bindings.el
 : 1564320344:0;git clone -b straight gh:hlissner/doom-emacs ~/.emacs.d/
@@ -1104,12 +1099,7 @@
 : 1567052494:0;git rebase --edit-todo
 : 1567053399:0;ldconfig -v | rg libstd
 : 1567054165:0;sudo xbps-install --repository=hostdir/binpkgs/android-studio-update-branch/nonfree android-studio
-: 1567055105:0;xlint srcpkgs/android-studio/template
 : 1567058956:0;sudo xbps-remove android-studio
-: 1567059675:0;gco -b update_android_studio
-: 1567059682:0;vi srcpkgs/android-studio/template
-: 1567060015:0;./xbps-src pkg android-studio
-: 1567077979:0;sudo xbps-install --repository=hostdir/binpkgs/update_android_studio/nonfree android-studio
 : 1567101260:0;vi db/migrate
 : 1567522297:0;vi app/views/articles/index.html.erb
 : 1567526984:0;git remote
@@ -1368,7 +1358,6 @@
 : 1572025053:0;vi srcpkgs/libavcodec/template
 : 1572025167:0;sudo xbps-install --repository=hostdir/binpkgs/update_dav1d libavcodec
 : 1572027682:0;sudo xbps-install --repository=hostdir/binpkgs/update_dav1d ffmpeg
-: 1572028974:0;vi common/shlibs
 : 1572060131:0;ga common/shlibs
 : 1572061569:0;xrevshlib libdav1d1
 : 1572063260:0;mpv
@@ -1611,7 +1600,6 @@
 : 1575447273:0;g lg
 : 1575447295:0;gra origin gl:mustaqim/bookgress
 : 1575448573:0;ga .gitignore
-: 1575448576:0;gcs
 : 1575448605:0;gp origin master
 : 1575457313:0;vi models.py
 : 1575480229:0;cd .emacs.d
@@ -1827,7 +1815,6 @@
 : 1576492949:0;gem install rails -v 6.0.0
 : 1576513231:0;man htop
 : 1576513784:0;cat ~/.config/awesome/autorun
-: 1576525740:0;sudo xbps-install docker docker-compose docker-machine
 : 1576552796:0;vi /etc/iwd/main.conf
 : 1576553847:0;sudo xbps-install emacs-gtk3
 : 1576555853:0;xlint srcpkgs/containerd/template
@@ -1886,7 +1873,6 @@
 : 1576665043:0;vi /usr/share/awesome/lib/awful/hotkeys_popup/init.lua
 : 1576672060:0;adb sideload RR-P-v7.0.3-20191218-zerolte-Final.zip
 : 1576698109:0;vi ~/.config/next/init.lisp
-: 1576819780:0;vi ~/.config/kitty/kitty.conf
 : 1576864125:0;sudo xbps-install Quaternion
 : 1576902868:0;xbps-query -Rs emoji
 : 1576903336:0;fc-match 'Noto Color Emoji'
@@ -2160,7 +2146,6 @@
 : 1578888784:0;vi ~/.config/firejail/JDownloader.local
 : 1578891009:0;aria2c --rpc-secret=${RPC_SECRET} -D
 : 1578912897:0;cat .local/share/applications/firefox.desktop
-: 1578944380:0;man fd
 : 1579005461:0;sudo xbps-install mtr
 : 1579005536:0;sudo xbps-install libressl-netcat
 : 1579005599:0;sudo xbps-install openbsd-netcat
@@ -2187,7 +2172,6 @@
 : 1579318729:0;sudo protonvpn init
 : 1579318783:0;sudo protonvpn connect
 : 1579321175:0;sudo protonvpn disconnect
-: 1579330412:0;sudo umount /media/
 : 1579332551:0;sudo sv down iwd
 : 1579355605:0;cargo -V
 : 1579364462:0;xbps-query -Rs rust
@@ -2484,7 +2468,6 @@
 : 1585285214:0;sudo xbps-install pycharm-community
 : 1585287101:0;xbps-query -Rs intelli
 : 1585299164:0;xbps-query -Rs plymouth
-: 1585299179:0;sudo xbps-install plymouth
 : 1585299215:0;git clone gh:adi1090x/plymouth-themes
 : 1585389460:0;sudo setcap cap_net_raw,cap_net_admin=+ep bandwhich
 : 1585389490:0;sudo setcap cap_net_raw,cap_net_admin=+ep ~/.local/bin/bandwhich
@@ -2676,7 +2659,6 @@ fi
 : 1586600126:0;sudo ln -s /etc/sv/smbd /var/service
 : 1586601305:0;ip addr show
 : 1586602836:0;vi .zshenv
-: 1586603078:0;man mpv
 : 1586603340:0;sudo xbps-install ca-certificates
 : 1586603460:0;sudo ln -s /etc/sv/thermald /var/service
 : 1586603476:0;sudo ln -s /etc/sv/tlp /var/service
@@ -2801,10 +2783,8 @@ fi
 : 1586802598:0;yadm add ~/.config/picom
 : 1586802604:0;yadm add ~/.local/bin/scripts/
 : 1586841877:0;yadm init
-: 1586841934:0;yadm add ~/.config/alacritty
 : 1586842149:0;yadm submodule add gh:Elv13/tyrannical .config/awesome/tyrannical
 : 1586842252:0;yadm add ~/.config/bspwm/bspwmrc
-: 1586842285:0;yadm add ~/.config/configs
 : 1586842307:0;yadm add ~/.config/firejail
 : 1586842470:0;yadm add ~/.config/fish/{functions,config.fish}
 : 1586842551:0;yadm add ~/.config/gnupg/gpg{,-agent}.conf
@@ -2814,7 +2794,6 @@ fi
 : 1586842867:0;yadm add ~/.config/nvim/init.vim
 : 1586842939:0;yadm add ~/.config/polybar
 : 1586843531:0;yadm add ~/.config/sxhkd
-: 1586843579:0;yadm add ~/.config/zathura/zathurarc
 : 1586843627:0;yadm add ~/.github/README.md
 : 1586843683:0;yadm add ~/.gitmodules
 : 1586843799:0;yadm add ~/.local/runit
@@ -2932,7 +2911,6 @@ fi
 : 1587015847:0;echo $COLORTERM
 : 1587016432:0;vi ShadowFox_customization/colorOverrides.css
 : 1587020896:0;xdg-settings get default-web-browser
-: 1587020994:0;xdg-settings set default-web-browser firefox.desktop
 : 1587021352:0;xbps-query -Rs mime
 : 1587021431:0;sudo xbps-remove -R xdg-utils
 : 1587021441:0;sudo xbps-install mimeo
@@ -3046,7 +3024,6 @@ fi
 : 1587202426:0;mimeo -m .png
 : 1587205772:0;f ~/.config/mpv
 : 1587206288:0;testparm -s
-: 1587206832:0;yadm add ~/.config/aria2/aria2.conf
 : 1587206867:0;f ~/.config/awesome
 : 1587207485:0;yadm add -n ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/^sponsorblock}
 : 1587207533:0;yadm add ~/.zshenv ~/.zsh/{.,}^*.zwc
@@ -3062,7 +3039,6 @@ fi
 : 1587292817:0;cargo install imdl
 : 1587293287:0;imdl completions --shell zsh > ~/.zinit/completions/_imdl
 : 1587299713:0;sudo mv /usr/share/applications/emacs.desktop{,.BAK}
-: 1587299728:0;vi ~/.local/share/applications/emacs-client.desktop
 : 1587317485:0;fd -e .backup -x rm
 : 1587318398:0;vi ~/.config/ranger/rc.conf
 : 1587356151:0;git clone gl:mozbugbox/aria2daemon
@@ -3073,12 +3049,10 @@ fi
 : 1587369866:0;sudo cp -r ~/.local/runit/sv/syncthing/ /etc/sv/
 : 1587369878:0;sudo ln -s /etc/sv/syncthing /var/service
 : 1587375060:0;vi /usr/share/applications/htop.desktop
-: 1587375102:0;vi ~/.config/rofi/config.rasi
 : 1587381116:0;adb shell cmd overlay enable com.android.internal.systemui.navbar.gestural
 : 1587381118:0;adb devices
 : 1587390547:0;mimeo --add video/mp4 mpv.desktop
 : 1587391714:0;./.zinit/plugins/chriskempson---base16-shell/colortest base16-tomorrow-night.sh
-: 1587395755:0;s
 : 1587399015:0;gpg --import public.asc
 : 1587399023:0;gpg --verify twrp-3.3.1-0-zerolte.img.asc
 : 1587407230:0;xbps-query -Rs cron
@@ -3137,7 +3111,6 @@ fi
 : 1587632156:0;vi .Xresources.d/theme_tomorrow
 : 1587633697:0;vi ~/.local/bin/scripts/switch_theme
 : 1587634604:0;fusermount -u ~/Library/.plain
-: 1587635685:0;echo $PATH | tr ":" "\n" | nl
 : 1587637069:0;f ~/.config/vifm
 : 1587637757:0;switch_theme
 : 1587642834:0;sudo xbps-remove -Oo
@@ -3160,13 +3133,11 @@ fi
 : 1587704106:0;vi /etc/unbound/unbound.conf
 : 1587707767:0;vi ~/.zsh/completions/_plain
 : 1587715652:0;sudo xbps-install albert
-: 1587720142:0;vi ~/.config/mpv/mpv.conf
 : 1587723854:0;f .emacs.d
 : 1587730632:0;yadm diff .config/picom/picom.conf
 : 1587730682:0;cp /usr/share/examples/picom/picom.sample.conf ~/.config/picom/picom.conf
 : 1587741292:0;f ~/.config/doom/snippets/
 : 1587741385:0;vi ~/.config/doom/snippets/vue-mode/__vueSFC
-: 1587787397:0;vi ~/.zsh/.p10k.zsh
 : 1587793942:0;zpl times
 : 1587794682:0;rustup check
 : 1587797617:0;vi /etc/samba/smb.conf
@@ -3188,11 +3159,9 @@ done
 : 1587812136:0;pfetch
 : 1587812367:0;man picom
 : 1587815690:0;free -h
-: 1587827893:0;vi ~/.config/tmux/tmux.conf.local
 : 1587832840:0;sudo xbps-install vscode
 : 1587874075:0;sleep 2; xprop | rg WM_CLASS | cut --delimiter=' ' -f4
 : 1587874725:0;vi ~/.config/awesome/themes/mojave-dark/theme.lua
-: 1587874983:0;vi ~/.config/awesome/signals.lua
 : 1587886838:0;vi ~/.zsh/functions/switch_theme
 : 1587887005:0;vi ~/.config/bat/config
 : 1587887134:0;cat .base16_theme
@@ -3207,7 +3176,6 @@ done
 : 1587894206:0;sudo psmem
 : 1587895448:0;vi ~/.surf/styles/default.css
 : 1587896824:0;sudo xbps-install qutebrowser
-: 1587902894:0;vi ~/.config/picom/picom.conf
 : 1587913389:0;sudo xbps-install tlp-rdw
 : 1587913407:0;ping 'google.com'
 : 1587963130:0;cat .Xresources.d/theme_tomorrow_night
@@ -3221,7 +3189,6 @@ done
 : 1588060291:0;gocryptfs -allow_other .cipher .plain
 : 1588071330:0;cd 5\ router/
 : 1588074901:0;man fzf
-: 1588074998:0;vi ~/.zsh/aliases
 : 1588088590:0;sudo xbps-install surf dmenu
 : 1588132238:0;vi ~/.gitconfig
 : 1588132344:0;git clone suckless:st
@@ -3230,7 +3197,6 @@ done
 : 1588135441:0;git push origin master
 : 1588136674:0;mkdir srcpkgs/st/patches
 : 1588137934:0;smbclient -U nobody //192.168.1.100/plain
-: 1588137981:0;smbclient -U mustaqim //192.168.1.100/Library
 : 1588143379:0;youtube-dl -f 'hls-720p' "$(xclip -sel clip -o)"
 : 1588149008:0;vi ~/.config/doom/snippets/web-mode/__vueSFC
 : 1588152635:0;gpg --list-public-keys
@@ -3242,7 +3208,6 @@ done
 : 1588224968:0;sudo vkpurge rm all
 : 1588225392:0;sudo xbps-install inxi
 : 1588225860:0;pkill picom
-: 1588229033:0;cat .xsession-errors
 : 1588229058:0;cat .xinitrc
 : 1588229131:0;sx sh ~/.xinitrc 2> .xsession-errors
 : 1588229337:0;startx 2> .xsession-errors
@@ -3265,9 +3230,7 @@ done
 : 1588314936:0;git push origin update_st
 : 1588317161:0;gco -b custom_package_st
 : 1588317168:0;vi srcpkgs/st/template
-: 1588319078:0;xilog
 : 1588319668:0;sudo xbps-install libinput-gestures
-: 1588323498:0;vi ~/.config/qutebrowser/config.py
 : 1588330666:0;cd Iosevka/
 : 1588331012:0;pipx install afdko
 : 1588332039:0;vi ~/.zsh/.zprofile
@@ -3275,20 +3238,16 @@ done
 : 1588337220:0;yarn run build contents::iosevka
 : 1588338342:0;cat ~/.base16_theme
 : 1588338378:0;vi ~/.config/fontconfig/fonts.conf
-: 1588341768:0;yadm diff
 : 1588341816:0;yadm add ~/{.Xresources,.Xresources.d}
 : 1588341838:0;yadm add ~/.config/picom/picom.conf
 : 1588341847:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1588341868:0;yadm add ~/.config/tmux/tmux.conf{,.local}
-: 1588341895:0;yadm add ~/.gitconfig
-: 1588342259:0;yadm add ~/.mozilla/firefox/chrome
 : 1588342271:0;yadm add ~/.surf/{script.js,styles/default.css}
 : 1588343377:0;cd ../7\ final/
 : 1588343397:0;yarn install
 : 1588390241:0;yarn add element-ui
 : 1588391133:0;vue add vuetify
 : 1588391198:0;yarn add sass sass-loader fibers deepmerge -D
-: 1588392448:0;joe update
 : 1588392864:0;gitignore vue
 : 1588392875:0;gitignore vue > .gitignore
 : 1588392913:0;gcs -m "Initial commit"
@@ -3301,26 +3260,21 @@ done
 : 1588398498:0;xsetroot -cursor_name left_ptr
 : 1588400173:0;aria2c --no-conf $(xclip -sel clip -o)
 : 1588406409:0;cd ..
-: 1588409752:0;quasar dev
 : 1588411089:0;quasar create .
 : 1588414152:0;vi src/App.vue
 : 1588414225:0;git clone -d1 gh:hlissner/doom-emacs ~/.emacs.d
 : 1588414292:0;doom install
-: 1588420996:0;ls -A
 : 1588424018:0;cat quasar.conf.js
 : 1588437924:0;sudo xbps-install fonts-roboto-ttf
 : 1588441088:0;fd -X adb push {} /sdcard
-: 1588485332:0;vi quasar.conf.js
 : 1588485971:0;gcount
 : 1588498829:0;yarn add vuex
 : 1588499085:0;quasar new store store
 : 1588503936:0;g
 : 1588524930:0;yarn audit
-: 1588565496:0;youtube-dl -f '247+251' --merge-output-format webm "$(xclip -sel clip -o)"
 : 1588579436:0;quasar new store portfolioStore
 : 1588581852:0;mimeo --add application/pdf zathura.desktop
 : 1588582612:0;switch_theme light
-: 1588582687:0;ttyqr -b8 $(xclip -sel clip -o)
 : 1588585142:0;switch_theme dark
 : 1588585922:0;gd --staged
 : 1588650136:0;git clone --depth=1 gh:be5invis/Iosevka
@@ -3330,35 +3284,21 @@ done
 : 1588660010:0;hp-setup --auto 002:004
 : 1588660395:0;sudo ln -s /etc/sv/cupsd /var/service
 : 1588660488:0;sudo hp-setup -i
-: 1588662044:0;vi .Xresources
-: 1588662608:0;lsusb
 : 1588664758:0;sudo xbps-install libreoffice-calc
 : 1588672650:0;yadm diff .config/doom
 : 1588672830:0;sudo xbps-install editorconfig
 : 1588672986:0;rm -rf ~/.emacs.d/
 : 1588672999:0;git clone --depth=1 gh:hlissner/doom-emacs ~/.emacs.d
-: 1588673055:0;doom upgrade
-: 1588676423:0;doom compile
-: 1588678958:0;doom sync
-: 1588678967:0;doom clean
 : 1588680428:0;doom doctor
-: 1588680680:0;sudo xbps-install kitty
-: 1588680751:0;sudo xbps-remove -R kitty
 : 1588687742:0;fc
 : 1588687744:0;f 
-: 1588687783:0;youtube-dl --list-formats "$(xclip -sel clip -o)"
-: 1588691290:0;tmux
 : 1588692224:0;cd .emacs.d/
 : 1588693148:0;vi ~/.config/doom/config.el
 : 1588693180:0;vi ~/.config/doom/init.el
-: 1588695966:0;man vifm
-: 1588734928:0;zpl update -p
 : 1588735102:0;sudo xbps-remove -R hplip
 : 1588735124:0;sudo sv status /var/service/*
 : 1588735151:0;sudo rm /var/service/cupsd
 : 1588735178:0;sudo update_unbound_steveblack_hosts.sh
-: 1588736003:0;xprop
-: 1588740316:0;rm ~/.config/vifm/vifminfo
 : 1588741865:0;git clone gh:vinceliuice/Mojave-gtk-theme
 : 1588741909:0;git clone --depth=1 gh:vinceliuice/Mojave-gtk-theme
 : 1588742329:0;sudo xbps-install sassc
@@ -3368,7 +3308,6 @@ done
 : 1588744951:0;vi /etc/libinput-gestures.conf
 : 1588745353:0;cp /etc/libinput-gestures.conf ~/.config
 : 1588747261:0;id mustaqim
-: 1588749630:0;git pull --rebase upstream master
 : 1588749665:0;gco -b update_libinput-gestures
 : 1588749725:0;xgensum -f srcpkgs/libinput-gestures/template
 : 1588750049:0;./xbps-src pkg libinput-gestures
@@ -3387,93 +3326,189 @@ done
 : 1588751359:0;xinput --list-props "ETPS/2 Elantech Touchpad" | rg "libinput Tapping Enabled" | head -1 | cut -d "(" -f2 | cut -d ")" -f1
 : 1588751649:0;sudo xbps-install ruby
 : 1588751773:0;gem install fusuma
-: 1588751804:0;rehash
 : 1588751870:0;libinput-gestures -r
-: 1588752527:0;mono ~/.local/bin/Jackett/JackettConsole.exe
 : 1588753634:0;yadm list -a
-: 1588753700:0;yadm add ~/.local/share/fonts/TTF/iosevka-*
-: 1588753707:0;yadm add ~/.config/awesome
-: 1588753711:0;yadm add ~/.config/doom
 : 1588753717:0;yadm add ~/.config/htop/htoprc
-: 1588753722:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1588753737:0;yadm status
-: 1588753767:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
-: 1588753771:0;yadm commit
 : 1588753841:0;yadm push
-: 1588753900:0;vi ~/.config/awesome/rules.lua
 : 1588754071:0;git clone --depth=1 gh:jsravn/iosevka-emacs
 : 1588754234:0;vi parameters.toml
 : 1588754918:0;npm run build -- ttf::iosevka
 : 1588756526:0;xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
 : 1588759248:0;vi ~/.config/zathura/zathurarc
 : 1588762710:0;vi /etc/X11/xorg.conf.d/20-intel.conf
-: 1588764972:0;vi ~/.zsh/zshenv
-: 1588765026:0;git init
 : 1588765071:0;gdt
 : 1588765089:0;vi .gitconfig
-: 1588779116:0;htop
 : 1588781820:0;vi ~/.config/alacritty/alacritty.yml
-: 1588782346:0;vi ~/.config/awesome/rc.lua
 : 1588782439:0;vi ~/.config/ranger/scope.sh
-: 1588783509:0;vi ~/.config/vifm/scripts/vifmimg
-: 1588784159:0;vi ~/.config/vifm/vifmrc
-: 1588784985:0;fg
-: 1588785678:0;ls -t
-: 1588787924:0;vi ~/.zsh/.zshrc
 : 1588788016:0;adb push "$(fzf -m)" /sdcard
 : 1588788058:0;vi ~/.config/aria2/aria2.conf
-: 1588788421:0;sudo sv restart smbd
 : 1588788447:0;pkill aria2c
-: 1588788454:0;psmem -p $(pgrep -d, -u $USER)
 : 1588821344:0;svlogtail | rg cron
-: 1588822381:0;/bin/emacs -bg '#17191a' --daemon
 : 1588822383:0;crontab -e
 : 1588822424:0;echo $RPC_SECRET
 : 1588822447:0;clip
 : 1588822474:0;crontab -l
-: 1588823596:0;sudo xbps-install -Suvy
 : 1588823924:0;grv
-: 1588824102:0;gb | fzf | xargs gco
-: 1588824296:0;f
-: 1588824299:0;f /
-: 1588824341:0;vi ~/.zsh/zsh_history
-: 1588824383:0;exec zsh
 : 1588824460:0;git clone --depth=1 gh:be5invis/Iosevka -b dev
 : 1588824535:0;cp private-build-plans.sample.toml private-build-plans.toml
-: 1588824578:0;vi private-build-plans.toml
 : 1588826082:0;npm install
-: 1588826810:0;pkill emacs
-: 1588826825:0;fc-list | rg "Iosevka" | cut -d ":" -f2
-: 1588828441:0;npm run build -- ttf::iosevka-custom
 : 1588830067:0;vi ~/.config/awesome/wibar.lua
-: 1588830540:0;fc-cache -fv
-: 1588830543:0;tlp-stat -t | rg temp
-: 1588831317:0;f .
 : 1588831356:0;cp /var/spool/cron/mustaqim .config/configs/var/spool/cron/mustaqim/
-: 1588834705:0;git reset 'HEAD@{1}'
 : 1588834726:0;vi srcpkgs/libinput-gestures/template
-: 1588834734:0;gd
-: 1588834741:0;ga .
 : 1588834743:0;gcs -m "libinput-gestures: update to 2.50"
-: 1588834747:0;git rebase --interactive HEAD~2
-: 1588834804:0;gst
-: 1588834815:0;fglo
 : 1588835402:0;cd .mozilla/firefox/chrome/
 : 1588835406:0;vi ShadowFox_customization/userChrome_customization.css
 : 1588835939:0;./shadowfox_linux_x64 -profile-index 1 -generate-uuids -set-dark-theme
 : 1588836257:0;fd -e backup -x rm
-: 1588836289:0;cd
-: 1588837965:0;yadm status
 : 1588838074:0;yadm add ~/.config/alacritty
 : 1588838088:0;yadm add ~/.config/aria2/aria2.conf
 : 1588838129:0;yadm add ~/.config/doom
 : 1588838137:0;yadm add ~/.config/configs
-: 1588838139:0;yadm status
 : 1588838145:0;yadm add ~/.config/awesome
 : 1588838150:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1588838155:0;yadm add ~/.config/zathura/zathurarc
 : 1588838161:0;yadm add ~/.gitconfig
 : 1588838183:0;yadm add ~/.local/share/fonts/TTF/iosevka-*
-: 1588838188:0;yadm status
 : 1588838237:0;yadm add ~/.mozilla/firefox/chrome
 : 1588838241:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1588838573:0;yadm commit
+: 1588839930:0;ls -t
+: 1588840463:0;s
+: 1588840716:0;man fd
+: 1588842116:0;rm *
+: 1588846535:0;f /
+: 1588847081:0;man mpv
+: 1588850777:0;fc-list | rg "Iosevka" | cut -d ":" -f2
+: 1588850785:0;vi ~/.config/kitty/kitty.conf
+: 1588857227:0;sudo xbps-install hunspell-en_GB-ize
+: 1588857399:0;vi .Xresources
+: 1588857430:0;doom sync
+: 1588864365:0;surf localhost:9117
+: 1588908233:0;xilog
+: 1588915791:0;git clone --depth=1 gh:dogukanbatal/vue-weather-app
+: 1588934704:0;sudo xbps-install nheko
+: 1588934882:0;vi ~/.config/awesome/rules.lua
+: 1588938456:0;sudo xbps-install kitty
+: 1588940614:0;sudo xbps-remove -R kitty
+: 1588948158:0;vi ~/.config/awesome/signals.lua
+: 1588950838:0;vi ~/.local/share/applications/emacs-client.desktop
+: 1588950874:0;/bin/emacs -bg '#17191a' -fg '#c5c8c6' -q
+: 1588955348:0;htop
+: 1588955383:0;vi ~/.config/mpv/mpv.conf
+: 1588955779:0;sudo xbps-install docker docker-compose docker-machine
+: 1588993922:0;doom clean
+: 1588993930:0;doom upgrade
+: 1588993963:0;xdg-settings set default-web-browser firefox.desktop
+: 1588994436:0;zpl update -p
+: 1588996354:0;vi ~/.config/picom/picom.conf
+: 1588996431:0;xprop
+: 1588996975:0;cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
+: 1588996986:0;cat .xsession-errors
+: 1588997006:0;vi ~/.config/awesome/rc.lua
+: 1588997855:0;doom compile
+: 1588998228:0;git clone --depth=1 gh:BelkaDev/RofiFtw
+: 1588998513:0;vi ~/.config/rofi/config.rasi
+: 1588998538:0;git clone --depth=1 gh:OmarCastro/rofi-blocks
+: 1588998707:0;sudo xbps-install autoconf
+: 1589005690:0;sudo xbps-install udiskie
+: 1589005871:0;gco -b update_udiskie
+: 1589005878:0;vi srcpkgs/udiskie/template
+: 1589005963:0;xgensum -f srcpkgs/udiskie/template
+: 1589006052:0;./xbps-src pkg udiskie
+: 1589006267:0;gcs -m "udiskie: update to 2.2.0"
+: 1589006294:0;git push origin update_udiskie
+: 1589006427:0;sudo xbps-install --repository=hostdir/binpkgs/update_udiskie udiskie
+: 1589006434:0;rehash
+: 1589006560:0;sudo xbps-install libappindicator
+: 1589006704:0;lsusb
+: 1589006723:0;sudo mount -t vfat /dev/sdb /media/ -o uid=1000,gid=100,utf8,dmask=027,fmask=137
+: 1589006805:0;sudo umount /media/
+: 1589006929:0;sudo udiskie-mount /dev/sdb1
+: 1589007182:0;yadm status
+: 1589007187:0;yadm diff
+: 1589007558:0;git clone --depth=1 gh:HackerNews/API
+: 1589015102:0;ttyqr -b8 $(xclip -sel clip -o)
+: 1589024307:0;quasar create hn
+: 1589025683:0;git init
+: 1589025714:0;joe update
+: 1589025833:0;joe ls
+: 1589026335:0;cat .gitignore
+: 1589026349:0;yarn
+: 1589030016:0;pkill emacs
+: 1589030072:0;vi ~/.config/tmux/tmux.conf.local
+: 1589030135:0;gd
+: 1589030170:0;gcs -m "Initial setup"
+: 1589030174:0;git rebase --interactive HEAD~2
+: 1589030300:0;git reset 'HEAD@{1}'
+: 1589030564:0;vi ~/.zsh/aliases
+: 1589032048:0;sudo xbps-install broot
+: 1589032240:0;gco -b update_broot
+: 1589032248:0;vi srcpkgs/broot/template
+: 1589032260:0;xgensum -f srcpkgs/broot/template
+: 1589032349:0;gcs -m "broot: update to 0.13.6"
+: 1589032357:0;git push origin update_broot
+: 1589032736:0;f .
+: 1589033550:0;ga .
+: 1589033556:0;gcs
+: 1589033593:0;fglo
+: 1589033804:0;ls -A
+: 1589034736:0;man
+: 1589034741:0;man vifm
+: 1589036237:0;sudo xbps-install android-studio
+: 1589038644:0;vi ~/.zsh/.p10k.zsh
+: 1589045626:0;smbclient -U mustaqim //192.168.1.100/Library
+: 1589078882:0;tlp-stat -t | rg temp
+: 1589078888:0;sudo xbps-install -Suvy
+: 1589080598:0;vi ~/.zsh/zsh_history
+: 1589080935:0;gl --rebase upstream master
+: 1589080951:0;git pull --rebase upstream master
+: 1589080966:0;gst
+: 1589081259:0;gco -b update_android_studio
+: 1589081263:0;gb | fzf | xargs gco
+: 1589082668:0;vi quasar.conf.js
+: 1589084575:0;cd
+: 1589084961:0;mono ~/.local/bin/Jackett/JackettConsole.exe
+: 1589085464:0;sudo xbps-install plymouth
+: 1589088010:0;youtube-dl --list-formats "$(xclip -sel clip -o)"
+: 1589088035:0;youtube-dl -f '247+251' --merge-output-format webm "$(xclip -sel clip -o)"
+: 1589088465:0;tmux
+: 1589089849:0;npm run build -- ttf::iosevka-custom
+: 1589091512:0;fc-cache -fv
+: 1589091549:0;vi src/pages/Index.vue
+: 1589092155:0;quasar dev
+: 1589112176:0;vi ~/.config/qutebrowser/config.py
+: 1589120893:0;sudo xbps-install chromium
+: 1589123066:0;/bin/emacs -bg '#17191a' --daemon
+: 1589123070:0;vi src/boot/axios.js
+: 1589132807:0;psmem -p $(pgrep -d, -u $USER)
+: 1589133152:0;sudo sv restart smbd
+: 1589165017:0;vi srcpkgs/android-studio/template
+: 1589167037:0;./xbps-src pkg android-studio
+: 1589167200:0;vi private-build-plans.toml
+: 1589167221:0;sudo xbps-install --repository=hostdir/binpkgs/update_android_studio/nonfree android-studio
+: 1589167263:0;xlint srcpkgs/android-studio/template
+: 1589168147:0;quasar dev -m android
+: 1589168779:0;vi ~/.zsh/zshenv
+: 1589169450:0;vi common/shlibs
+: 1589169527:0;vi ~/.zsh/.zshrc
+: 1589169963:0;exec zsh
+: 1589169964:0;echo $path | tr " " "\n" | nl
+: 1589169974:0;echo $PATH | tr ":" "\n" | nl
+: 1589172266:0;vi ~/.config/vifm/scripts/vifmimg
+: 1589177150:0;fg
+: 1589178675:0;rm .config/vifm/vifminfo
+: 1589178676:0;f
+: 1589178832:0;vi ~/.config/vifm/vifmrc
+: 1589178867:0;yadm status
+: 1589178878:0;yadm add ~/.config/awesome
+: 1589178891:0;yadm add ~/.config/configs
+: 1589178893:0;yadm add ~/.config/doom
+: 1589178899:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/^sponsorblock}
+: 1589178916:0;yadm add ~/.config/kitty
+: 1589178918:0;yadm add ~/.config/picom/picom.conf
+: 1589178922:0;yadm add ~/.config/tmux/tmux.conf{,.local}
+: 1589178931:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1589178934:0;yadm status
+: 1589178944:0;yadm add ~/.local/share/fonts/TTF/iosevka-*
+: 1589178946:0;yadm status
+: 1589178952:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc

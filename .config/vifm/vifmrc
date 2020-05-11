@@ -91,7 +91,7 @@ view
 "set milleroptions+=lsize:1,csize:3,rsize:4,rpreview:all
 
 " Customize view columns a bit (enable ellipsis for truncated file names)
-" set viewcolumns=-{name}..,6{}.
+set viewcolumns=-{name}...,{target},6{}.
 
 " Set custom status line look
 set statusline=" Hint: *%z%= %T %A %9u:%-8g %7E %13d "
@@ -108,12 +108,13 @@ set rulerformat='%2l/%S %[  %x%]'
 
 " What should be saved automatically between vifm sessions.  Drop "savedirs"
 " value if you don't want vifm to remember last visited directories for you.
-set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+set vifminfo=dhistory,chistory,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks,marks
 
 " Filter-out build and temporary files
 " filter! /^.*\.(lo|o|d|class|py[co])$|.*~$/
 "filter! /^\_\_MACOSX\/$/
+filter node_modules\/
 
 set grepprg='rg -n -H -j2 %i %a %s'
 set findprg='fd -t d -t f -H -L -E ".git" %p'
@@ -268,7 +269,7 @@ fileviewer *.pdf
 
 " Comic
 filextype *.cbr,*.cbz zathura %c %i
-fileviewer *.cbr
+fileviewer *.cbr,*.cbz
         \ vifmimg comic %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
@@ -414,7 +415,7 @@ filetype *.zip,*.jar,*.war,*.ear,*.oxt,*.apkg
        \ zip -sf %c | less,
        \ {Extract here}
        \ unzip -qq %c,
-fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zipinfo %c
+fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zipinfo -1 %c
 
 " ArchiveMount
 filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz

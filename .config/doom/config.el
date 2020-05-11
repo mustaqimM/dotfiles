@@ -50,18 +50,18 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+;;
 ;; ============================================================================
-
+;; automodes
 
 (add-to-list 'auto-mode-alist '("\\template\\'" . conf-mode))
 ;(add-to-list 'auto-mode-alist '("\\vifmrc\\'" . vimrc-mode))
 (define-generic-mode vimrc-mode '("\"") '("set" "syntax") nil '("\\vifmrc\\'") nil
     "Generic mode for Vim configuration files.")
-
-
-;; Vue.js
-;; ============================================================================
 ;(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+
+;; ============================================================================
+;; Vue.js
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
@@ -70,8 +70,10 @@
   ;(setq web-mode-markup-indent-offset 0)
   ;(setq web-mode-css-indent-offset 0)
 (after! web-mode
-  (add-hook 'web-mode-hook  'my-web-mode-hook))
+  (add-hook 'web-mode-hook  'my-web-mode-hook)
+  (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
+(set-file-template! "\\.vue$" :trigger "__vueSFC" :mode 'web-mode)
 
 ;(defun vuejs-custom ()
   ;(setq vue-html-tab-width 2)
@@ -85,29 +87,26 @@
   ;; Needed for proper indentation in vue-mode
   ;(setq mmm-js-mode-enter-hook (lambda () (setq syntax-ppss-table nil)))
   ;(setq mmm-typescript-mode-enter-hook (lambda () (setq syntax-ppss-table nil)))
-;  )
-
+  ;)
 ;(after! vue-mode
 ;  (add-hook 'vue-mode-hook 'vuejs-custom))
 ;(add-hook 'vue-mode-hook (lambda () (setq syntax-ppss-table nil)))
-(set-file-template! "\\.vue$" :trigger "__vueSFC" :mode 'web-mode)
 
-(with-eval-after-load 'flycheck
-  (flycheck-add-mode 'javascript-eslint 'vue-mode)
-  (flycheck-add-mode 'javascript-eslint 'web-mode)
-  )
+;(with-eval-after-load 'flycheck
+;  (flycheck-add-mode 'javascript-eslint 'vue-mode)
+;  (flycheck-add-mode 'javascript-eslint 'web-mode))
   ;(add-to-list 'flycheck-checkers 'rustic-clippy)
   ;(add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
 
-
 ;; ============================================================================
+;; flycheck
 
 ;(defun my-fly-mode-hook () (flycheck-inline-mode 't))
 ;(with-eval-after-load 'flycheck
 ;  (add-hook! 'flycheck-mode-hook  'my-fly-mode-hook))
 
 ;; ============================================================================
-
+;; centaur-tabs
 
 (after! centaur-tabs
   (defun centaur-tabs-hide-tab (x)
@@ -160,9 +159,8 @@
 
 (after! treemacs
   (setq doom-themes-treemacs-theme "doom-colors")
-  (setq treemacs-width 22)
+  (setq treemacs-width 22))
   ;(setq treemacs-icon-root (all-the-icons-octicon "file-directory"))
-  )
 
 ;    (treemacs-create-icon
 ;     :icon (all-the-icons-octicon "file-directory")
@@ -170,11 +168,12 @@
 
 ;; ============================================================================
 ;; key bindings
-
 (map! "M-n" 'mc/mark-all-dwim)
 
 (map! :n "g h" 'evil-beginning-of-line-or-digit-argument)
 (map! :n "g l" 'evil-end-of-line)
+
+(map! :n "C-e" nil)
 
 ;; ============================================================================
 ;; ligatures
@@ -183,3 +182,5 @@
 (push '("--" . #Xe980) +pretty-code-iosevka-font-ligatures)
 (push '("==" . #Xea01) +pretty-code-iosevka-font-ligatures)
 (push '("===" . #Xea02) +pretty-code-iosevka-font-ligatures)
+
+(setq! +pretty-code-symbols nil)

@@ -3,9 +3,6 @@
 XDG_CONFIG_HOME=''$HOME'/.config'
 GNUPGHOME='$HOME/.config/gnupg'
 
-export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.emacs.d/bin:$HOME/.local/bin/scripts:$PATH"
-export RUST_SRC_PATH="/home/mustaqim/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-
 # shellcheck source=/home/mustaqim/.priv-env
 source "$HOME/.priv-env"
 
@@ -73,3 +70,22 @@ export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
 export LESS_TERMCAP_so=$'\E[30;43m'       # search result
 # }}}
 
+export RUST_SRC_PATH="/home/mustaqim/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+export ANDROID_HOME="$HOME/Android/Sdk"
+
+export path=(
+    $path
+    $HOME/.cargo/bin
+    $HOME/.local/bin
+    $HOME/.yarn/bin
+    $HOME/.emacs.d/bin
+    $HOME/.local/bin/scripts
+    $ANDROID_HOME/tools
+    $ANDROID_HOME/platform-tools
+    )
+
+for i in $( echo $PATH | tr ":" "\n" | sort | uniq )
+do
+    PATH_SORT="${PATH_SORT}$i:"
+done
+PATH="${PATH_SORT%:}"

@@ -129,6 +129,7 @@ client.connect_signal("manage",
     function(c)
         local t = {}
         t["Alacritty"]   = "/usr/share/pixmaps/Alacritty.svg"
+        t["Code - OSS"]  = "/usr/share/icons/Papirus-Dark/64x64/apps/vscodium.svg"
         t["Franz"]       = "/usr/share/icons/Papirus-Dark/64x64/apps/franz.svg"
         t["Fractal"]     = "/usr/share/icons/hicolor/scalable/apps/org.gnome.Fractal.svg"
         t["Firefox"]     = "/home/mustaqim/.mozilla/firefox/chrome/firefox.png"

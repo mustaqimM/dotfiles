@@ -95,9 +95,32 @@ featureTag = 'calt'
 sequence = '->'
 
 [[buildPlans.iosevka-custom.compatibility-ligatures]]
+unicode = 57655 # 0xe137
+featureTag = 'calt'
+sequence = "<-"
+
+[[buildPlans.iosevka-custom.compatibility-ligatures]]
+unicode = 57730 # 0xe182
+featureTag = 'calt'
+sequence = "<--"
+
+[[buildPlans.iosevka-custom.compatibility-ligatures]]
+unicode = 57682 # 0xe152
+featureTag = 'calt'
+sequence = "-->"
+
+[[buildPlans.iosevka-custom.compatibility-ligatures]]
 unicode = 57697 # 0xe161
 featureTag = 'calt'
 sequence = "=>"
+
+unicode = 57754 # 0xe19a
+featureTag = 'calt'
+sequence = "<=="
+
+unicode = 57706 # 0xe16a
+featureTag = 'XALL'
+sequence = "==>"
 
 [[buildPlans.iosevka-custom.compatibility-ligatures]]
 unicode = 57715 # 0xe173
@@ -135,11 +158,6 @@ sequence = "<!--"
 # -----------------------------------------
 # Three-char ops with discards
 # -----------------------------------------
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57618 # 0xe112
-featureTag = 'calt'
-sequence = "$>"
 
 [[buildPlans.iosevka-custom.compatibility-ligatures]]
 unicode = 59280 # 0xe790
