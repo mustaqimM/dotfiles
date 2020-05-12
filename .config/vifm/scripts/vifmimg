@@ -76,11 +76,10 @@ function mobi_preview() {
 
 function comic_preview() {
     if [ ! -f "/tmp/ueberzug/comic/$6.jpg" ]; then
-        # TODO: Fix cbz previews
         if [[ ${6##*\.} == "cbz" ]]; then
-          unzip -qq -j "$6" "$(zipinfo -1 "$6" | sort | rg "0[012].jpg" --max-count=1)" -d /tmp/ueberzug/comic/
+          unzip -qq -j "$6" "$(zipinfo -1 "$6" | sort | rg "(0{0,2})[012].jpg" --max-count=1)" -d /tmp/ueberzug/comic/
         elif [[ ${6##*\.} == "cbr" ]]; then
-          unrar e "$6" "$(unrar vb "$6" | sort | rg "0[012].jpg" --max-count=1)" /tmp/ueberzug/comic/ -idq
+          unrar e "$6" "$(unrar vb "$6" | sort | rg "(0{0,2})[012].jpg" --max-count=1)" /tmp/ueberzug/comic/ -idq
         fi
         cd /tmp/ueberzug/comic/ || exit
         mv "$(find . -printf "%T@ %p\n" | head -n2 | tail -n1 | cut -d'/' -f2)" "/tmp/ueberzug/comic/$6.jpg"

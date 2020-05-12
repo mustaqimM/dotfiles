@@ -246,6 +246,9 @@ zi light "sharkdp/bat"
 zi ice lucid from"gh-r" as"program" bpick"*linux*"
 zi light "casey/intermodal"
 
+zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> completions/exercism_completion.zsh"
+zi light "exercism/cli"
+
 #zi ice wait"2" lucid as"program" pick"build/release/peaclock" atclone"./build.sh"
 #zi light "octobanana/peaclock"
 
@@ -413,6 +416,8 @@ zstyle ':completion:*:messages'      format ' %B%F{magenta}  %U%d%u 
 zstyle ':completion:*:warnings'      format ' %B%F{red} %Uno matches found%u %f%b'
 #zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
 
+zstyle ':completion:*:parameters'    ignored-patterns '_*'
+
 zstyle ':completion::complete:*'     use-cache on
 zstyle ':completion:*'               cache-path ~/.zsh/cache
 
@@ -428,7 +433,7 @@ autoload -U select-word-style
 select-word-style bash
 
 source $ZDOTDIR/aliases
-autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz code fh fkill fco gfy pb scan center_text switch_theme plain
+autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz code fh fkill fco gfy pb scan center_text switch_theme plain ert-run
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 
 # generic completions for programs which understand GNU long options(--help)

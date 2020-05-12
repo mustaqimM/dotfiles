@@ -91,7 +91,7 @@ view
 "set milleroptions+=lsize:1,csize:3,rsize:4,rpreview:all
 
 " Customize view columns a bit (enable ellipsis for truncated file names)
-set viewcolumns=-{name}...,{target},6{}.
+set viewcolumns=-{name}...,6{}.
 
 " Set custom status line look
 set statusline=" Hint: *%z%= %T %A %9u:%-8g %7E %13d "

@@ -184,3 +184,10 @@
 (push '("===" . #Xea02) +pretty-code-iosevka-font-ligatures)
 
 (setq! +pretty-code-symbols nil)
+
+(add-to-list 'default-frame-alist
+             '(background-color . "#17191a"))
+
+;(when (daemonp)
+;  (remove-hook 'after-make-frame-functions #'doom-init-theme-h)
+;  (add-hook 'server-after-make-frame-hook #'doom-init-theme-h))
