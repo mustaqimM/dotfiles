@@ -1,0 +1,17 @@
+{
+    "editor.fontFamily": "'Iosevka', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "workbench.colorTheme": "Tomorrow Night",
+    "keyboard.dispatch": "keyCode",
+    "editor.fontSize": 16,
+    "vetur.format.scriptInitialIndent": true,
+    "vetur.format.styleInitialIndent": true,
+    "editor.highlightActiveIndentGuide": false,
+    "editor.tabSize": 2,
+    "java.semanticHighlighting.enabled": true,
+    // "java.project.referencedLibraries": [
+    //     "/home/mustaqim/Downloads/perimeter/*.jar"
+    // ],
+    "java.home": "/usr/lib/jvm/jbrsdk",
+    "telemetry.enableTelemetry": false,
+    "editor.renderIndentGuides": false
+}
