@@ -491,9 +491,9 @@ set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  :
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[c]::,  ::*.[h]::,  ::/^copying|license$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::,  ::*.sql::,  ::*.sqlite::'
 set classify+='  ::*.conf,,*.yml,,*.ini::,  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::,  ::*.vue::,  ::*.ts::'
+set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::'
 " archives
-set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.jar,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar::'
+set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
 set classify+='  ::*.iso,,*.img::'
 " images

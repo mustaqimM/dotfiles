@@ -44,6 +44,10 @@ The dotfiles in this repository are managed by [yadm](https://thelocehiliosan.gi
 ![Qbittorrent](https://i.imgur.com/XNYtqu1.png)
 ![Floating gaps](https://i.imgur.com/O16j1BZ.png "Floating gaps")
 
+## Notes
+* There is no `⇪ Caps Lock` key. When `⇪ Caps Lock` is pressed alone, it is `Esc`.
+  When pressed in combination with another key, it acts as `Ctrl`.
+
 
 ### bspwm
 

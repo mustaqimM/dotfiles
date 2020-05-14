@@ -1,7 +1,7 @@
 ignore noexec ${HOME}
 
-noblacklist ${HOME}/.local/bin/jd2/
-whitelist ${HOME}/.local/bin/jd2/
+noblacklist ${HOME}/.local/bin/jdownloader/
+whitelist ${HOME}/.local/bin/jdownloader/
 
 whitelist ${HOME}/Library/Downloads
 whitelist ${HOME}/Downloads

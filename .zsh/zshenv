@@ -53,11 +53,14 @@ export GPG_TTY=$(tty)
 export MANPAGER='nvim +Man!'
 #export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export RANGER_LOAD_DEFAULT_RC=FALSE
-export JAVA_HOME="/usr/lib/jvm/openjdk"
-export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export XENVIRONMENT="${HOME}/.Xresources"
 export DOCKER_HOST=127.0.0.1:2375
 export DOOMDIR="~/.config/doom"
+
+#export JAVA_HOME="/usr/lib/jvm/openjdk"
+export JAVA_HOME="/usr/lib/jvm/jbrsdk"
+export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+export CLASSPATH="/home/mustaqim/Downloads/perimeter/apache-csv.jar:courserajava.jar"
 
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
@@ -82,8 +85,11 @@ export path=(
     $HOME/.local/bin/scripts
     $ANDROID_HOME/tools
     $ANDROID_HOME/platform-tools
+    /opt/texlive/2020/bin/x86_64-linux
+    $JAVA_HOME/bin
     )
 
+# remove duplicate entries
 for i in $( echo $PATH | tr ":" "\n" | sort | uniq )
 do
     PATH_SORT="${PATH_SORT}$i:"

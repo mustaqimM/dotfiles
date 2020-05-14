@@ -64,3 +64,7 @@ simple-tab-groups@drive4ik=bbf3438b-65d7-4e72-8f1b-8f5c7d97fa69
 {e58d3966-3d76-4cd9-8552-1582fbc800c1}=e1dfb288-4f72-4583-8927-6f95582dee47
 {143d373a-88f7-4eed-8b80-a6ce4ef56015}=aa1ed6f8-81fb-4494-88b3-539a58485727
 tridactyl.vim.betas.nonewtab@cmcaine.co.uk=5d7fa818-9fb2-4e3e-a37f-cf16224ffb83
+{60f82f00-9ad5-4de5-b31c-b16a47c51558}=e25bff81-3ee5-4256-9d37-f774fb5c0010
+{36bdf805-c6f2-4f41-94d2-9b646342c1dc}=8aaab266-64f7-45e1-86bb-89bfe4a5fbef
+cookie-manager@robwu.nl=71717646-deaf-40e6-86a1-0b55961a3d45
+{529b261b-df0b-4e3b-bf42-07b462da0ee8}=34487dba-9165-4be1-be4c-f2188e3ae52b

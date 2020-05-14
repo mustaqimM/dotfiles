@@ -12,7 +12,7 @@ plain() {
         ;;
       show)
         gocryptfs -q /home/mustaqim/Library/.cipher /home/mustaqim/Library/.plain -o -allow_other
-        ranger /home/mustaqim/Library/.plain/ & disown
+        vifm /home/mustaqim/Library/.plain/
         ;;
       move)
         fd . ~/Library/Downloads/.var -E '*.part' -x mv "{}" ~/Library/.plain/
