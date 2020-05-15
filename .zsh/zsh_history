@@ -2636,7 +2636,6 @@ fi
 : 1586598535:0;gpg-agent --daemon
 : 1586598822:0;sudo xbps-install qt5ct qt5-styleplugins
 : 1586599135:0;vi /etc/fstab
-: 1586599169:0;lsblk
 : 1586599398:0;sudo mount /dev/sda5 ~/Library
 : 1586599481:0;yadm log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" | fzy | awk '{print $1}'
 : 1586599601:0;openssl rand -hex 32
@@ -2771,7 +2770,6 @@ fi
 : 1586841877:0;yadm init
 : 1586842149:0;yadm submodule add gh:Elv13/tyrannical .config/awesome/tyrannical
 : 1586842252:0;yadm add ~/.config/bspwm/bspwmrc
-: 1586842307:0;yadm add ~/.config/firejail
 : 1586842470:0;yadm add ~/.config/fish/{functions,config.fish}
 : 1586842551:0;yadm add ~/.config/gnupg/gpg{,-agent}.conf
 : 1586842663:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,Mojave-dark}
@@ -2779,7 +2777,6 @@ fi
 : 1586842867:0;yadm add ~/.config/nvim/init.vim
 : 1586842939:0;yadm add ~/.config/polybar
 : 1586843531:0;yadm add ~/.config/sxhkd
-: 1586843627:0;yadm add ~/.github/README.md
 : 1586843683:0;yadm add ~/.gitmodules
 : 1586843799:0;yadm add ~/.local/runit
 : 1586843886:0;yadm add ~/.local/share/ranger/bookmarks
@@ -3090,7 +3087,6 @@ fi
 : 1587637069:0;f ~/.config/vifm
 : 1587637757:0;switch_theme
 : 1587642834:0;sudo xbps-remove -Oo
-: 1587644216:0;yadm diff --staged
 : 1587644797:0;sudo xbps-remove -R font-cursor-misc
 : 1587645299:0;xbps-query -m > ~/.config/configs/installed_apps
 : 1587647710:0;sudo xbps-install python3-subliminal
@@ -3178,7 +3174,6 @@ done
 : 1588166719:0;vi src/routes.js
 : 1588180194:0;xprop | rg WM_CLASS | cut --delimiter=' ' -f4
 : 1588224752:0;sudo xbps-install intel-ucode
-: 1588224968:0;sudo vkpurge rm all
 : 1588225392:0;sudo xbps-install inxi
 : 1588225860:0;pkill picom
 : 1588229058:0;cat .xinitrc
@@ -3211,7 +3206,6 @@ done
 : 1588337220:0;yarn run build contents::iosevka
 : 1588338342:0;cat ~/.base16_theme
 : 1588341816:0;yadm add ~/{.Xresources,.Xresources.d}
-: 1588341847:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1588342271:0;yadm add ~/.surf/{script.js,styles/default.css}
 : 1588343377:0;cd ../7\ final/
 : 1588343397:0;yarn install
@@ -3295,11 +3289,9 @@ done
 : 1588751773:0;gem install fusuma
 : 1588751870:0;libinput-gestures -r
 : 1588753634:0;yadm list -a
-: 1588753717:0;yadm add ~/.config/htop/htoprc
 : 1588754071:0;git clone --depth=1 gh:jsravn/iosevka-emacs
 : 1588754234:0;vi parameters.toml
 : 1588754918:0;npm run build -- ttf::iosevka
-: 1588756526:0;xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
 : 1588759248:0;vi ~/.config/zathura/zathurarc
 : 1588762710:0;vi /etc/X11/xorg.conf.d/20-intel.conf
 : 1588765071:0;gdt
@@ -3325,7 +3317,6 @@ done
 : 1588838088:0;yadm add ~/.config/aria2/aria2.conf
 : 1588838155:0;yadm add ~/.config/zathura/zathurarc
 : 1588838161:0;yadm add ~/.gitconfig
-: 1588838237:0;yadm add ~/.mozilla/firefox/chrome
 : 1588839930:0;ls -t
 : 1588840463:0;s
 : 1588840716:0;man fd
@@ -3335,7 +3326,6 @@ done
 : 1588850777:0;fc-list | rg "Iosevka" | cut -d ":" -f2
 : 1588850785:0;vi ~/.config/kitty/kitty.conf
 : 1588857227:0;sudo xbps-install hunspell-en_GB-ize
-: 1588857399:0;vi .Xresources
 : 1588864365:0;surf localhost:9117
 : 1588915791:0;git clone --depth=1 gh:dogukanbatal/vue-weather-app
 : 1588934704:0;sudo xbps-install nheko
@@ -3367,7 +3357,6 @@ done
 : 1589006723:0;sudo mount -t vfat /dev/sdb /media/ -o uid=1000,gid=100,utf8,dmask=027,fmask=137
 : 1589006805:0;sudo umount /media/
 : 1589006929:0;sudo udiskie-mount /dev/sdb1
-: 1589007187:0;yadm diff
 : 1589007558:0;git clone --depth=1 gh:HackerNews/API
 : 1589024307:0;quasar create hn
 : 1589025683:0;git init
@@ -3406,7 +3395,6 @@ done
 : 1589167221:0;sudo xbps-install --repository=hostdir/binpkgs/update_android_studio/nonfree android-studio
 : 1589167263:0;xlint srcpkgs/android-studio/template
 : 1589169964:0;echo $path | tr " " "\n" | nl
-: 1589178878:0;yadm add ~/.config/awesome
 : 1589178891:0;yadm add ~/.config/configs
 : 1589178899:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/^sponsorblock}
 : 1589178916:0;yadm add ~/.config/kitty
@@ -3443,11 +3431,6 @@ done
 : 1589287407:0;npm install -g cordova
 : 1589287476:0;sudo xbps-install yarn-bin
 : 1589287832:0;vi ~/.zsh/.zshrc
-: 1589287944:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
-: 1589287949:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1589287958:0;yadm add ~/.config/doom
-: 1589287960:0;yadm status
-: 1589287964:0;yadm commit
 : 1589295606:0;vi ~/.zsh/functions/plain
 : 1589304768:0;fusermount -u ~/Library/.plain
 : 1589340270:0;pipx install dl_coursera
@@ -3480,8 +3463,6 @@ done
 : 1589383818:0;dl_coursera --cookies cookies.txt --slug java-programming --outdir java-programming --how aria2 --generate-input-file
 : 1589388167:0;mono ~/.local/bin/Jackett/JackettConsole.exe
 : 1589388228:0;xbps-query -X libharfbuzz
-: 1589389562:0;sudo sv restart smbd
-: 1589424552:0;sudo xbps-install -Suvy
 : 1589424559:0;doom upgrade
 : 1589424838:0;doom compile
 : 1589424858:0;sudo xbps-remove -R yarn-bin
@@ -3522,28 +3503,44 @@ done
 : 1589459377:0;vi ~/.config/vifm/vifmrc
 : 1589460305:0;/usr/lib/jvm/jbrsdk/bin/java -Djavafx.embed.singleThread=true -Dawt.useSystemAAFontSettings=on -Xmx512M -cp "$CP" bluej.Boot "$@"
 : 1589460446:0;sudo xbps-install oracle-jdk
-: 1589460812:0;fg
 : 1589462035:0;echo $JAVA_HOME
 : 1589465474:0;java -classpath "courserajava.jar:apache-csv.jar" PerimeterRunner.java
-: 1589465957:0;psmem -p $(pgrep -d, -u $USER)
-: 1589466046:0;vi ~/.zsh/zshenv
 : 1589466128:0;pwd | xclip -sel clip
 : 1589466159:0;exec zsh
-: 1589466453:0;f
 : 1589467007:0;/bin/emacs -bg '#17191a' --daemon
 : 1589468752:0;cd
 : 1589468757:0;vi ShadowFox_customization/userChrome_customization.css
 : 1589469135:0;./shadowfox_linux_x64 -profile-index 1 -generate-uuids -set-dark-theme
 : 1589469892:0;fd -e backup -x rm
-: 1589469984:0;yadm status
 : 1589469994:0;yadm add ~/.config/doom
 : 1589469997:0;yadm add ~/.config/awesome
 : 1589470001:0;yadm add ~/.config/firejail
 : 1589470007:0;yadm add ~/.config/fontconfig/fonts.conf
-: 1589470014:0;yadm diff
 : 1589470026:0;yadm add ~/.config/htop/htoprc
 : 1589470030:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1589470033:0;yadm status
 : 1589470043:0;yadm add ~/.github/README.md
 : 1589470048:0;yadm add ~/.mozilla/firefox/chrome
 : 1589470053:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1589470218:0;yadm status
+: 1589470224:0;yadm diff
+: 1589470344:0;yadm add '~/.config/Code - OSS/User/settings.json'
+: 1589470412:0;yadm add ~/.config/Code\ -\ OSS/User/settings.json
+: 1589470416:0;yadm diff --staged
+: 1589470431:0;yadm commit
+: 1589474490:0;vi .Xresources
+: 1589474507:0;xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
+: 1589474521:0;xrdb -merge ~/.Xresources
+: 1589475890:0;echo $PATH
+: 1589478277:0;psmem -p $(pgrep -d, -u $USER)
+: 1589478304:0;sudo sv restart smbd
+: 1589513653:0;sudo vkpurge rm all
+: 1589513706:0;fg
+: 1589513723:0;sudo xbps-install -Suvy
+: 1589513780:0;vi ~/.zsh/zshenv
+: 1589513871:0;lsblk
+: 1589513880:0;f
+: 1589514276:0;fg
+: 1589514427:0;yadm status
+: 1589514456:0;yadm add ~/{.Xresources,.Xresources.d}
+: 1589514464:0;yadm add ~/.config/doom
+: 1589514468:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc

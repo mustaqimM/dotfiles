@@ -60,7 +60,7 @@ export DOOMDIR="~/.config/doom"
 #export JAVA_HOME="/usr/lib/jvm/openjdk"
 export JAVA_HOME="/usr/lib/jvm/jbrsdk"
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-export CLASSPATH="/home/mustaqim/Downloads/perimeter/apache-csv.jar:courserajava.jar"
+#export CLASSPATH="/home/mustaqim/Downloads/perimeter/apache-csv.jar:courserajava.jar"
 
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking

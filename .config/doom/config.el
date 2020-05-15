@@ -131,6 +131,7 @@
        (string-prefix-p "*Help" name)
        (string-prefix-p "*which-key*" name)
        (string-prefix-p "*doom*" name)
+       (string-prefix-p "*shell*" name)
        (string-prefix-p "*scratch*" name)
        (string-prefix-p "*Messages*" name)
        (string-prefix-p "*Warnings*" name)
