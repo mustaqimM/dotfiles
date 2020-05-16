@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-XDG_CONFIG_HOME=''$HOME'/.config'
-GNUPGHOME='$HOME/.config/gnupg'
+XDG_CONFIG_HOME="$HOME/.config"
+GNUPGHOME="$HOME/.config/gnupg"
 
 # shellcheck source=/home/mustaqim/.priv-env
 source "$HOME/.priv-env"
@@ -50,7 +50,7 @@ export FAST_ALIAS_TIPS_SUFFIX="\n╰──$(tput sgr0)"
 
 export GNUPGHOME=$HOME/.config/gnupg
 export GPG_TTY=$(tty)
-export MANPAGER='nvim +Man!'
+#export MANPAGER='nvim +Man!'
 #export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export XENVIRONMENT="${HOME}/.Xresources"

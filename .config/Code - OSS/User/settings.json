@@ -13,5 +13,8 @@
     // ],
     "java.home": "/usr/lib/jvm/jbrsdk",
     "telemetry.enableTelemetry": false,
-    "editor.renderIndentGuides": false
+    "editor.renderIndentGuides": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.fontLigatures": true
 }

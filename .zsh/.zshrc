@@ -51,7 +51,7 @@ fpath=(
 )
 
 # ==============================================================================
-HISTFILE=~/.zsh/zsh_history
+HISTFILE=${ZDOTDIR}/zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1                # all search results returned will be unique
@@ -123,10 +123,10 @@ zi light "b4b4r07/enhancd"
 zi ice wait"2g" lucid
 zi light "changyuheng/zsh-interactive-cd"
 
-zi ice lucid from"gh-r" as'program' bpick"*linux*" pick"def-matcher"
-zi light sei40kr/fast-alias-tips-bin
-zi ice wait"2h" lucid
-zi light sei40kr/zsh-fast-alias-tips
+#zi ice lucid from"gh-r" as'program' bpick"" pick"def-matcher"
+#zi light sei40kr/fast-alias-tips-bin
+#zi ice wait"2h" lucid
+#zi light sei40kr/zsh-fast-alias-tips
 
 #zi ice wait lucid
 #zi light "xPMo/zsh-toggle-command-prefix"
@@ -161,8 +161,8 @@ zi ice wait"2" lucid
 zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
 #zi ice wait"2" lucid
 #zi snippet "OMZ::plugins/sudo/sudo.plugin.zsh"
-zi ice wait"2" lucid
-zi snippet "OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh"
+#zi ice wait"2" lucid
+#zi snippet "OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh"
 #zi ice wait"2" lucid
 #zi snippet "OMZ::plugins/tmux/tmux.plugin.zsh"
 
@@ -197,8 +197,8 @@ zi snippet "OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh"
 #  atload'eval "$(pyenv virtualenv-init - zsh)"'
 #zi light pyenv/pyenv-virtualenv
 
-zi ice svn atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
-zi snippet "OMZ::plugins/emacs"
+#zi ice svn atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
+#zi snippet "OMZ::plugins/emacs"
 
 #zi ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
 #zi light "chriskempson/base16-shell"
@@ -212,9 +212,9 @@ zi light trapd00r/LS_COLORS
 #zi ice lucid from"gh-r" as"program" bpick"*linux*" mv"lsd* -> lsd" pick"lsd/lsd"
 #zi light "Peltoche/lsd"
 
-zi ice from"gh-r" as"program" mv"direnv* -> direnv" \
-  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
-zi light direnv/direnv
+#zi ice from"gh-r" as"program" mv"direnv* -> direnv" \
+#  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
+#zi light direnv/direnv
 
 zi ice wait"3b" lucid mv"*cht.sh -> cht" pick"cht" as"program" id-as"cht.sh"
 zi snippet "https://cht.sh/:cht.sh"
@@ -234,20 +234,17 @@ zi light "zdharma/zsh-diff-so-fancy"
 zi ice lucid pick"pfetch" as"program"
 zi light "dylanaraps/pfetch"
 
-#zi ice lucid from"gh-r" as"program" bpick"joe"
-#zi light "karan/joe"
+#zi ice lucid from"gh-r" as"program" bpick"*linux*"
+#zi light "imsnif/bandwhich"
 
-zi ice lucid from"gh-r" as"program" bpick"*linux*"
-zi light "imsnif/bandwhich"
+#zi ice lucid from"gh-r" as"program" bpick"*linux*" pick"bat-v0.13.0-x86_64-unknown-linux-gnu/bat"
+#zi light "sharkdp/bat"
 
-zi ice lucid from"gh-r" as"program" bpick"*linux*" pick"bat-v0.13.0-x86_64-unknown-linux-gnu/bat"
-zi light "sharkdp/bat"
+#zi ice lucid from"gh-r" as"program" bpick"*linux*"
+#zi light "casey/intermodal"
 
-zi ice lucid from"gh-r" as"program" bpick"*linux*"
-zi light "casey/intermodal"
-
-zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> completions/exercism_completion.zsh"
-zi light "exercism/cli"
+#zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> completions/exercism_completion.zsh"
+#zi light "exercism/cli"
 
 #zi ice wait"2" lucid as"program" pick"build/release/peaclock" atclone"./build.sh"
 #zi light "octobanana/peaclock"
@@ -266,7 +263,7 @@ zi light "exercism/cli"
 # === THEME ===
 # {{{
 #PS1="%F{green}%B$❯%b%f "
-zi ice lucid atinit'[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh' nocd \
+zi ice depth'1' lucid atinit'[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh' nocd \
   atload"!_p9k_do_nothing _p9k_precmd"
 zi light romkatv/powerlevel10k
 # }}}
@@ -446,6 +443,10 @@ zicompdef _gnu_generic aomenc aria2c bat cargo curl cwebp direnv docker \
 zicompinit
 zinit cdreplay -q
 
-source ~/.base16_theme
+#source ~/.base16_theme
 
 # vim:ft=zsh:et:fileencoding=utf-8:ft=conf:foldmethod=marker
+#GITSTATUS_LOG_LEVEL=DEBUG
+
+# To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
+[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh

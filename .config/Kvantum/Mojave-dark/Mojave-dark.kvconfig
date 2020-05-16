@@ -111,7 +111,7 @@ min_height=35
 
 [Hacks]
 transparent_ktitle_label=true
-transparent_dolphin_view=false
+transparent_dolphin_view=true
 transparent_pcmanfm_sidepane=true
 blur_translucent=true
 transparent_menutitle=true
@@ -127,10 +127,10 @@ no_selection_tint=true
 normal_default_pushbutton=true
 single_top_toolbar=false
 tint_on_mouseover=0
-transparent_pcmanfm_view=false
+transparent_pcmanfm_view=true
 centered_forms=true
 kinetic_scrolling=false
-scroll_jump_workaround=false
+scroll_jump_workaround=true
 
 [PanelButtonCommand]
 frame=true

@@ -174,12 +174,12 @@ awful.rules.rules = {
       name = {
         "Event Tester",  -- xev.
         "Delete Permanently",
-        "New tag"
+        "New tag",
+        "Open Folder"
       },
       role = {
         "AlarmWindow",  -- Thunderbird's calendar.
         "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
-        "GtkFileChooserDialog"
       },
       type = {
         "dialog",
@@ -189,6 +189,12 @@ awful.rules.rules = {
     callback = function (c)
       --c:geometry({ width = 505, height = 206 })
       awful.placement.centered(c, { honor_workarea=true })
+    end
+  },
+  { rule = { role = "GtkFileChooserDialog" },
+    callback = function (c)
+      c:geometry({ width = 1024, height = 506 })
+      awful.placement.top(c, { honor_workarea=true })
     end
   },
 

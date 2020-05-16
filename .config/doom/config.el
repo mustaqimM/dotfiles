@@ -189,3 +189,4 @@
 (add-to-list 'default-frame-alist
              '(background-color . "#17191a"))
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))

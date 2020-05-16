@@ -7,8 +7,8 @@ local wibox     = require("wibox")
 local helpers   = require("helpers")
 local signals   = require("signals")
 
-local lain      = require("lain")
-local markup    = lain.util.markup
+--local lain      = require("lain")
+--local markup    = lain.util.markup
 --local separators = lain.util.separators
 --local sound     = lain.widget.alsa
 
@@ -121,7 +121,7 @@ awful.screen.connect_for_each_screen(function(s)
     mytextclock = wibox.widget.textclock("  %a %d %b %H:%M") -- %a %Y-%m-%d %H:%M %Z
 
     -- Battery
-    bat = battery();
+    --bat = battery();
 
     -- RAM
     local interval = 15
@@ -133,46 +133,46 @@ awful.screen.connect_for_each_screen(function(s)
                                   widget = wibox.widget.textbox }
 
     -- Net
-    local netdowninfo = wibox.widget.textbox()
-    local netdowninfo = lain.widget.net({
-        iface = "wlp2s0",
-        units = 1024,
-        notify = off,
-        settings = function()
-          widget:set_markup(markup.fontfg(beautiful.font_notif .. " 9", beautiful.fg_normal, "" .. net_now.received))
-          --netdowninfo:set_markup(markup.fontfg(beautiful.font, "#87af5f", net_now.received .. " "))
-        end
-    })
+    --local netdowninfo = wibox.widget.textbox()
+    --local netdowninfo = lain.widget.net({
+    --    iface = "wlp2s0",
+    --    units = 1024,
+    --    notify = off,
+    --    settings = function()
+    --      widget:set_markup(markup.fontfg(beautiful.font_notif .. " 9", beautiful.fg_normal, "" .. net_now.received))
+    --      --netdowninfo:set_markup(markup.fontfg(beautiful.font, "#87af5f", net_now.received .. " "))
+    --    end
+    --})
 
     -- ALSA volume
-    local volicon = wibox.widget.textbox()
-    beautiful.volume = lain.widget.alsabar({
-        --togglechannel = "IEC958,3",
-        notification_preset = { font = "Monospace 12", fg = beautiful.fg_normal },
-        settings = function()
-          local index, perc = "", tonumber(volume_now.level) or 0
+    --local volicon = wibox.widget.textbox()
+    --beautiful.volume = lain.widget.alsabar({
+    --    --togglechannel = "IEC958,3",
+    --    notification_preset = { font = "Monospace 12", fg = beautiful.fg_normal },
+    --    settings = function()
+    --      local index, perc = "", tonumber(volume_now.level) or 0
 
-          if volume_now.status == "off" then
-            index = "volmutedblocked"
-          else
-            if perc <= 5 then
-              --index = "volmuted"
-              volicon:set_markup(markup.fontfg(beautiful.font_icon, "#aaaaaa", "奄"))
-            elseif perc <= 25 then
-              --index = "vollow"
-              volicon:set_markup(markup.fontfg(beautiful.font_icon, "#aaaaaa", "墳"))
-            elseif perc <= 75 then
-              --index = "volmed"
-              volicon:set_markup(markup.fontfg(beautiful.font_icon, "#aaaaaa", "墳"))
-            else
-              --index = "volhigh"
-              volicon:set_markup(markup.fontfg(beautiful.font_icon, "#aaaaaa", "奄ﱛ"))
-            end
-          end
+    --      if volume_now.status == "off" then
+    --        index = "volmutedblocked"
+    --      else
+    --        if perc <= 5 then
+    --          --index = "volmuted"
+    --          volicon:set_markup(markup.fontfg(beautiful.font_icon, "#aaaaaa", "奄"))
+    --        elseif perc <= 25 then
+    --          --index = "vollow"
+    --          volicon:set_markup(markup.fontfg(beautiful.font_icon, "#aaaaaa", "墳"))
+    --        elseif perc <= 75 then
+    --          --index = "volmed"
+    --          volicon:set_markup(markup.fontfg(beautiful.font_icon, "#aaaaaa", "墳"))
+    --        else
+    --          --index = "volhigh"
+    --          volicon:set_markup(markup.fontfg(beautiful.font_icon, "#aaaaaa", "奄ﱛ"))
+    --        end
+    --      end
 
-          --volicon:set_markup(markup.fontfg(beautiful.font_icon, "#aaaaaa", "墳"))
-        end
-    })
+    --      --volicon:set_markup(markup.fontfg(beautiful.font_icon, "#aaaaaa", "墳"))
+    --    end
+    --})
     --volicon:buttons(my_table.join (
     --          awful.button({}, 1, function()
     --            awful.spawn(string.format("%s -e alsamixer", awful.util.terminal))
@@ -224,16 +224,16 @@ awful.screen.connect_for_each_screen(function(s)
     --   end
     -- )
 
-    weather_lain = lain.widget.weather({
-    city_id = 953781,
-    notification_preset = { font = beautiful.font_notif, fg = beautiful.fg_normal },
-    weather_na_markup = markup.fontfg(beautiful.font .. " 9", "#eca4c4", "N/A"),
-    settings = function()
-      descr = weather_now["weather"][1]["description"]:lower()
-      units = math.floor(weather_now["main"]["temp"])
-      widget:set_markup(markup.fontfg(beautiful.font_notif .. " 9", beautiful.xforeground, descr .. "|".. units .. "°C"))
-    end
-    })
+    --weather_lain = lain.widget.weather({
+    --city_id = 953781,
+    --notification_preset = { font = beautiful.font_notif, fg = beautiful.fg_normal },
+    --weather_na_markup = markup.fontfg(beautiful.font .. " 9", "#eca4c4", "N/A"),
+    --settings = function()
+    --  descr = weather_now["weather"][1]["description"]:lower()
+    --  units = math.floor(weather_now["main"]["temp"])
+    --  widget:set_markup(markup.fontfg(beautiful.font_notif .. " 9", beautiful.xforeground, descr .. "|".. units .. "°C"))
+    --end
+    --})
 
 
     -- Create the wibox
@@ -257,16 +257,16 @@ awful.screen.connect_for_each_screen(function(s)
 
         { -- Right widgets
           layout = wibox.layout.fixed.horizontal,
-          netdowninfo,
+          --netdowninfo,
           wibox.widget.textbox('  '),
           --separators.arrow_left(beautiful.bg_focus, "#ffffff"),
           --separators.arrow_left("#ffffff", beautiful.bg_focus),
           memory,
           awful.widget.watch(psmem, interval),
-          wibox.widget.textbox('  '),
-          bat,
+          --wibox.widget.textbox('  '),
+          --bat,
           wibox.widget.textbox(' '),
-          {widget=wibox.container.margin,margins=0,weather_lain},
+          --{widget=wibox.container.margin,margins=0,weather_lain},
           --volicon,
           --{widget=wibox.container.margin,margins=3,myredshift},
           wibox.widget.systray(),

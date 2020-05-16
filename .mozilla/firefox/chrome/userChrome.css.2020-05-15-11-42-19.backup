@@ -1493,6 +1493,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
   min-width: var(--wide-tab-width) !important;
   max-width: none !important;
 }
+
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
   overflow: hidden !important;
   position: relative !important;
