@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=surf /home/mustaqim/.local/bin/scripts/ariang.html
+Name=AriaNg
+GenericName=Downloader
+Comment=Downloader
+Icon=downloader-arrow

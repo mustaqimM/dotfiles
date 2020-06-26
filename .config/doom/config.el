@@ -32,7 +32,7 @@
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type nil)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -50,7 +50,13 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
-;;
+
+
+;; ============================================================================
+;; misc
+(add-to-list 'default-frame-alist
+             '(background-color . "#17191a"))
+
 ;; ============================================================================
 ;; automodes
 
@@ -170,12 +176,16 @@
 ;; ============================================================================
 ;; key bindings
 (map! "M-n" 'mc/mark-all-dwim)
+(map! "C-S-<mouse-1>" 'mc/add-cursor-on-click)
 
 (map! :n "g h" 'evil-beginning-of-line-or-digit-argument)
 (map! :n "g l" 'evil-end-of-line)
 
 (map! :n "C-e" nil)
+(map! :n "C-<f5>" 'dap-java-debug)
 
+(map! "<f8>" '+treemacs/toggle)
+(map! "<f9>" 'centaur-tabs-mode)
 ;; ============================================================================
 ;; ligatures
 (push '("!=" . #Xe901) +pretty-code-iosevka-font-ligatures)
@@ -186,7 +196,7 @@
 
 (setq! +pretty-code-symbols nil)
 
-(add-to-list 'default-frame-alist
-             '(background-color . "#17191a"))
-
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; ============================================================================
+;; lsp
+;(setq lsp-enable-symbol-highlighting nil)
+(setq underline-minimum-offset 5)

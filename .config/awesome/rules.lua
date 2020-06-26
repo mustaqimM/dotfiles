@@ -55,7 +55,7 @@ tyrannical.tags = {
     layout      = awful.layout.suit.max,
     class       = {
       "Assistant"     , "Okular"         , "Evince"    , "EPDFviewer"   , "xpdf",
-      "Xpdf"          , "Zeal"           , "Zathura"                            }
+      "Xpdf"          , "Zeal"           , "Zathura", "com.github.johnfactotum.Foliate" }
   },
   {
     name        = "",
@@ -81,6 +81,7 @@ tyrannical.tags = {
     name        = "",
     init        = false,
     exclusive   = true,
+    no_focus_stealing_in = true,
     class       = { "JDownloader", "qBittorrent" }
   },
   {
@@ -174,8 +175,7 @@ awful.rules.rules = {
       name = {
         "Event Tester",  -- xev.
         "Delete Permanently",
-        "New tag",
-        "Open Folder"
+        "New tag"
       },
       role = {
         "AlarmWindow",  -- Thunderbird's calendar.
@@ -191,7 +191,7 @@ awful.rules.rules = {
       awful.placement.centered(c, { honor_workarea=true })
     end
   },
-  { rule = { role = "GtkFileChooserDialog" },
+  { rule_any = { role = { "GtkFileChooserDialog", "gimp-file-open" } },
     callback = function (c)
       c:geometry({ width = 1024, height = 506 })
       awful.placement.top(c, { honor_workarea=true })
@@ -233,11 +233,12 @@ awful.rules.rules = {
       --c:geometry({ width = 500, height = 300 })
       awful.placement.bottom_right(c) end },
 
-  { rule = { name = "Upload to Imgur" },
-    properties = { width = 700, height = 400,
+  { rule_any = { name = { "Upload to Imgur", "Tip of the Day - Gramps"} },
+    properties = {
                    titlebars_enabled = false,
                    floating = true, sticky = true },
     callback = function (c)
+      c:geometry({ width = 520, height = 330 })
       awful.placement.centered(c) end },
 
   { rule = { class = "feh" },

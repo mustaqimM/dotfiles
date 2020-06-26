@@ -16,6 +16,7 @@ export XDG_SESSION_CLASS=user
 export AWESOME_THEMES_PATH="$HOME/.config/awesome/themes"
 export KDEWM=/usr/bin/awesome
 export QT_QPA_PLATFORMTHEME=qt5ct
+export XCURSOR_PATH=$HOME/.local/share/icons
 
 export BROWSER=firefox
 #export MOZ_USE_XINPUT2=1
@@ -45,13 +46,14 @@ export SKIM_DEFAULT_OPTIONS="--color=bg+:#282a2e,bg:#1d1f21,spinner:#8abeb7,hl:#
 export SKIM_DEFAULT_COMMAND="$FZF_DEFAULT_COMMAND"
 export ENHANCD_FILTER='fzf'
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
-export FAST_ALIAS_TIPS_PREFIX="$(tput bold)╭──\n\033[01;33m 💡  \033[01;37m"
-export FAST_ALIAS_TIPS_SUFFIX="\n╰──$(tput sgr0)"
+export FAST_ALIAS_TIPS_PREFIX="$(tput bold)╭───\n\033[01;33m   \033[01;37m"
+export FAST_ALIAS_TIPS_SUFFIX="\n╰───$(tput sgr0)"
 
 export GNUPGHOME=$HOME/.config/gnupg
 export GPG_TTY=$(tty)
-#export MANPAGER='nvim +Man!'
+export MANPAGER='nvim +Man!'
 #export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPATH=/usr/share/man:/opt/texlive/2020/texmf-dist/doc/man
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export XENVIRONMENT="${HOME}/.Xresources"
 export DOCKER_HOST=127.0.0.1:2375
@@ -59,7 +61,7 @@ export DOOMDIR="~/.config/doom"
 
 #export JAVA_HOME="/usr/lib/jvm/openjdk"
 export JAVA_HOME="/usr/lib/jvm/jbrsdk"
-export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 #export CLASSPATH="/home/mustaqim/Downloads/perimeter/apache-csv.jar:courserajava.jar"
 
 # Less Colors for Man Pages

@@ -16,5 +16,17 @@
     "editor.renderIndentGuides": false,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "vscode-neovim.neovimPath": "/bin/nvim",
+    "workbench.iconTheme": "vscode-great-icons",
+    "todo-tree.tree.showScanModeButton": false,
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "foreground": "#1d1f21",
+            "background": "#f0c674",
+            "icon": "checkbox",
+            "type": "tag"
+        }
+    }
 }

@@ -76,9 +76,9 @@ st.imstyle:           root
 st.opacity:      254
 
 
-Xcursor.theme: Breeze-Hacked-White
-Xft.antialias:  1
-Xft.hinting:    1
-Xft.hintstyle:  hintfull
-Xft.lcdfilter:  lcddefault
-Xft.rgba:       rgb
+Xcursor.theme: X11-Cursors-Breeze-Hacked-White
+Xft.antialias: 1
+Xft.hinting:   1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba:      rgb

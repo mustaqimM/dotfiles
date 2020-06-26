@@ -2,7 +2,7 @@
 " nesting detection
 let $INSIDE_VIFM = 'true'
 
-set vicmd='/bin/emacs -nw'
+set vicmd='$EMACS_PLUGIN_LAUNCHER -nw'
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
@@ -91,10 +91,10 @@ view
 "set milleroptions+=lsize:1,csize:3,rsize:4,rpreview:all
 
 " Customize view columns a bit (enable ellipsis for truncated file names)
-set viewcolumns=-{name}...,6{}.
+set viewcolumns=-{name}...,{target},6{}.
 
 " Set custom status line look
-set statusline=" Hint: *%z%= %T %A %9u:%-8g %7E %13d "
+set statusline=" Hint: *%z%= %A %9u:%-8g %7E %13d "
 
 " update terminal title
 "set title
@@ -195,9 +195,9 @@ nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
 " Open file in existing instance
-"nnoremap o :!$EMACS_PLUGIN_LAUNCHER %f &<cr>
+nnoremap o :!emacsclient -nc %f &<cr>
 " Open file in new instance
-"nnoremap O :!$EMACS_PLUGIN_LAUNCHER -c %f &<cr>
+nnoremap O :!/bin/emacs -bg '#17191a' %f &<cr>
 
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
@@ -213,7 +213,7 @@ nnoremap ,t :!xst -c st -T Terminal -e zsh &<cr>
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
 " Open gvim to edit vifmrc
-nnoremap ,C :vicmd--remote-tab-silent $MYVIFMRC &<cr>
+"nnoremap ,C :vicmd--remote-tab-silent $MYVIFMRC &<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
@@ -304,7 +304,7 @@ filextype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
        \ {Play using ffplay}
        \ ffplay -nodisp -autoexit %c,
        \ {Play using mpv}
-       \ mpv %f,
+       \ mpv %f %i &,
 fileviewer <audio/*>
         \ vifmimg audio %px %py %pw %ph %c
         \ %pc
@@ -324,9 +324,10 @@ fileviewer <audio/*>
 ""          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
 ""          \*.as[fx]
 ""         \ ffprobe -pretty %c 2>&1
+
 "filetype <video/*>
-""          \ {View using mpv}
-""          \ mpv %f,
+"          \ {View using mpv}
+"          \ mpv %f &,
 fileviewer <video/*>
         \ vifmimg video %px %py %pw %ph %c
         \ %pc
@@ -342,7 +343,7 @@ filextype *.html,*.htm
         \ uzbl-browser %f %i &,
 "filetype *.html,*.htm links, lynx
 "filextype *.html,*.htm firefox %f 2>/dev/null
-"fileviewer *.html w3m -dump %c
+fileviewer *.html w3m -dump %c
 
 " Fonts
 fileviewer *.otf,*.ttf,*.woff file %c
@@ -472,17 +473,18 @@ filextype *.pro qtcreator %f &
 
 fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
 fileviewer *.[s]o hexyl -c 500 %c
+fileviewer *.csv bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
 
 fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --syntax make %c
 
 " Text
 filetype <text/*> /bin/emacs -nw
-"fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never %c -p
+"fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
 fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --force %c
                     \ %pc
                     \ vifmimg clear
 
-"filetype * xdg-open %c
+"filetype * xdg-open %c &
 filetype * mimeo %c %i &
 "fileviewer * file -b %c
 
@@ -491,7 +493,7 @@ set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  :
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[c]::,  ::*.[h]::,  ::/^copying|license$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::,  ::*.sql::,  ::*.sqlite::'
 set classify+='  ::*.conf,,*.yml,,*.ini::,  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::'
+set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::, ::*.rb,,Gemfile::'
 " archives
 set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'

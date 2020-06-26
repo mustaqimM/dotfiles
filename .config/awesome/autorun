@@ -17,9 +17,8 @@ numlockx on
 #setxkbmap -option caps:swapescape
 #
 setxkbmap -option 'caps:ctrl_modifier' && xcape -e 'Caps_Lock=Escape'
-xrdb -load ~/.Xresources
 run xbanish
-#xset b off
+xset b off
 xsetroot -cursor_name left_ptr
 
 run aria2c --rpc-secret="${RPC_SECRET}" -D

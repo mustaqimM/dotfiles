@@ -90,9 +90,9 @@ awful.screen.connect_for_each_screen(function(s)
       filter = awful.widget.tasklist.filter.currenttags,
       buttons = tasklist_buttons,
       style = {
-        font = beautiful.font_notif .. " 9.5",
+        font = beautiful.font_notif .. " 10",
         align = "center",
-      },
+      },    
       widget_template = {
         {
           {
@@ -101,7 +101,7 @@ awful.screen.connect_for_each_screen(function(s)
           },
           margins = 3,
           widget  = wibox.container.margin
-        },
+        },       
         {
           {
             id     = 'text_role',
@@ -114,14 +114,14 @@ awful.screen.connect_for_each_screen(function(s)
           self:get_children_by_id('clienticon')[1].client = c
         end,
         widget  = wibox.layout.align.horizontal,
-      },
+      },    
     }
 
     -- Create a textclock widget
     mytextclock = wibox.widget.textclock("  %a %d %b %H:%M") -- %a %Y-%m-%d %H:%M %Z
 
     -- Battery
-    --bat = battery();
+    bat = battery();
 
     -- RAM
     local interval = 15
@@ -258,14 +258,14 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
           layout = wibox.layout.fixed.horizontal,
           --netdowninfo,
-          wibox.widget.textbox('  '),
+          wibox.widget.textbox('   '),
           --separators.arrow_left(beautiful.bg_focus, "#ffffff"),
           --separators.arrow_left("#ffffff", beautiful.bg_focus),
           memory,
           awful.widget.watch(psmem, interval),
-          --wibox.widget.textbox('  '),
-          --bat,
-          wibox.widget.textbox(' '),
+          wibox.widget.textbox('  '),
+          bat,
+          -- wibox.widget.textbox(' '),
           --{widget=wibox.container.margin,margins=0,weather_lain},
           --volicon,
           --{widget=wibox.container.margin,margins=3,myredshift},

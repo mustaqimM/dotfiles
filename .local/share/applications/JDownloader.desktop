@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=JDownloader
+Comment=Downloader
+GenericName=Downloader
+Exec=firejail --profile=jdownloader java -jar /home/mustaqim/.local/bin/jdownloader/JDownloader.jar
+Icon=jdownloader
+Type=Application
+Terminal=false
+StartupNotify=false
+Categories=Utility;Downloader;
+Keywords=jd;down;

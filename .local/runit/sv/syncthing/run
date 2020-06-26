@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export USERNAME=mustaqim
+export USERNAME="$USER"
 export HOME="/home/$USERNAME"
 export SYNCTHING="/usr/bin/syncthing"
 

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Emacs
+Comment=Editor
+GenericName=Text Editor
+Exec=/home/mustaqim/.zinit/snippets/OMZ::plugins/emacs/emacsclient.sh %F
+Icon=emacs
+Type=Application
+StartupNotify=false
+Categories=Utility;TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;
+Keywords=edit;

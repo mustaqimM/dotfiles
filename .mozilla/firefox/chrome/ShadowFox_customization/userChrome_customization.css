@@ -29,7 +29,7 @@ textbox,
 /*toolbar,*/
 tab,
 tree, .tree-rows {
-  font-family: 'Input Sans Narrow', sans-serif !important;
+  font-family: 'Noto Sans', sans-serif !important;
   font-size: 11pt !important;
   font-weight: regular;
   font-style: normal !important;
@@ -225,34 +225,35 @@ vbox#sidebar-box.chromeclass-extrachrome {
   to  { margin-top: 0 }
 }
 /* Minimize nav-bar and show on hover */
-:root:not([customizing]) #nav-bar
-{
-  position: relative !important;
-  z-index: 1;
-  /*overflow-y: visible !important;
-  max-height:0; !important;
-  min-height:0; !important;*/
-  opacity: 0;
-}
-:root:not([customizing]) :hover > #nav-bar,
-:root:not([customizing]) #nav-bar:focus-within {
-  /*max-height: 32px;*/
-  opacity: 1;
-  /*animation: slideout ease-out 48ms 15*/
-  -moz-transition: opacity .11s ease-in-out; /* on-focus transition animation */
-}
-:root:not([customizing]) #navigator-toolbox {
-  max-height: 0px;
-  min-height: 0px;
-  margin-bottom: calc(-1 * var(--trigger-area-height));
-  background: #17191a !important;
-}
-:root:not([customizing]) #navigator-toolbox:hover,
-:root:not([customizing]) #navigator-toolbox:focus-within {
-  animation: slideout ease-out 48ms 15 /* Required to stop navbar jumping page content */
-  max-height: calc(var(--tabbar-height) + var(--nav-bar-height));
-  /*margin-bottom: calc(0px - var(--nav-bar-height));*/
-}
+/* :root:not([customizing]) #nav-bar */
+/* { */
+/*   position: relative !important; */
+/*   z-index: 1; */
+/*   /\*overflow-y: visible !important; */
+/*   max-height:0; !important; */
+/*   min-height:0; !important;*\/ */
+/*   opacity: 0; */
+/* } */
+/* :root:not([customizing]) :hover > #nav-bar, */
+/* :root:not([customizing]) #nav-bar:focus-within { */
+/*   /\*max-height: 32px;*\/ */
+/*   opacity: 1; */
+/*   /\*animation: slideout ease-out 48ms 15*\/ */
+/*   -moz-transition: opacity .11s ease-in-out; /\* on-focus transition animation *\/ */
+/* } */
+/* :root:not([customizing]) #navigator-toolbox { */
+/*   max-height: 0px; */
+/*   min-height: 0px; */
+/*   margin-bottom: calc(-1 * var(--trigger-area-height)); */
+/*   background: #17191a !important; */
+/* } */
+/* :root:not([customizing]) #navigator-toolbox:hover, */
+/* :root:not([customizing]) #navigator-toolbox:focus-within { */
+/*   animation: slideout ease-out 48ms 15 /\* Required to stop navbar jumping page content *\/ */
+/*   max-height: calc(var(--tabbar-height) + var(--nav-bar-height)); */
+/*   /\*margin-bottom: calc(0px - var(--nav-bar-height));*\/ */
+/* } */
+
 /* Remove thin black line */
 #navigator-toolbox { border: none !important;}
 /* }}} */

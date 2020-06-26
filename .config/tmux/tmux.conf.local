@@ -298,4 +298,4 @@ unbind U
 set -g @sidebar-tree 'F8'
 set -g @sidebar-tree-command 'lsd --color=always --tree'
 
-set -g @extrakto_key 'u'
+set -g @extrakto_key 'y'

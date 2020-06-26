@@ -97,32 +97,12 @@ client.connect_signal("mouse::enter", function(c)
     end
 end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
-
-
--- Rounded corners
-if beautiful.border_radius ~= 0 then
-    client.connect_signal("manage", function (c, startup)
-        if not c.fullscreen then
-            c.shape = helpers.rrect(beautiful.border_radius)
-        end
-    end)
-
-    -- Fullscreen & maximised clients should not have rounded corners
-    local function no_round_corners (c)
-        if c.fullscreen or c.maximized then
-            c.shape = helpers.rect()
-        else
-            c.shape = helpers.rrect(beautiful.border_radius)
-        end
-    end
-
-    client.connect_signal("property::fullscreen", no_round_corners)
-    client.connect_signal("property::maximized", no_round_corners)
-
-end
-
+--function relativeMove(c, x, y)
+--    local g = c:geometry()
+--    g.x = g.x + x
+--    g.y = g.y + y
+--    c:geometry(g)
+--end
 
 -- Set/Change tasklist application icons
 client.connect_signal("manage",
@@ -150,7 +130,6 @@ client.connect_signal("manage",
     end
 )
 
-
 function set_wallpaper(s)
     --local instance = nil
     --return function()
@@ -175,6 +154,23 @@ awful.screen.connect_for_each_screen( function(s)
     if awful.screen.focused().tags == nil then
         s.mywibox = awful.wibar({ position = "bottom", screen = s })
     end
+
+    -- Rounded corners
+    screen[s]:connect_signal(
+        'arrange',
+        function(s)
+            for _, c in pairs(s.clients) do
+                if  beautiful.border_radius ~= 0 and
+                    (s.selected_tag.layout.name == 'fullscreen' -- or s.selected_tag.layout.name ~= 'floating'
+                         and #s.tiled_clients == 1) --and not (c.floating or c.maximized)
+                then
+                    c.shape = helpers.rect()
+                else
+                    c.shape = helpers.rrect(beautiful.border_radius)
+                end
+            end
+        end
+                            )
 end)
 
 
@@ -189,6 +185,8 @@ end)
 --    awful.ewmh.client_geometry_requests(c, context, hints)
 --end)
 
+--client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+--client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 return signals
 

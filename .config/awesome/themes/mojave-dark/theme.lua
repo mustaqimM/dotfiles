@@ -69,7 +69,7 @@ theme.useless_gap     = dpi(0)
 -- This could be used to manually determine how far away from the
 -- screen edge the bars / notifications should be.
 theme.screen_margin   = dpi(3)
-theme.border_width    = dpi(0)
+theme.border_width    = 0--dpi(1.5)
 theme.border_radius   = dpi(8)            -- Rounded corners
 theme.border_normal   = theme.xcolor0
 theme.border_focus    = theme.xbackground

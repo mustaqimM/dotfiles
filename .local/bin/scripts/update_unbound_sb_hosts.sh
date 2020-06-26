@@ -24,7 +24,8 @@ mkdir -p "${dest}"
 
 fd . "${dest}/" -e hosts -x rm
 
-curl -f https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts -o "${dest}/hosts"
+#curl -f https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts -o "${dest}/hosts"
+cd /; aria2c --no-conf --allow-overwrite=true 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts' -o "/var/lib/unbound/hosts"
 
 if [ -f "${zonedir}/rpz.db" ]
 then

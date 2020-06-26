@@ -98,7 +98,7 @@ unalias zplg
 # ===  PLUGINS  ===
 # {{{
 
-zi ice wait"0a" lucid \
+zi ice wait lucid \
   atload"HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=blue,fg=232,bold""
 zi light "zsh-users/zsh-history-substring-search"
 
@@ -123,10 +123,10 @@ zi light "b4b4r07/enhancd"
 zi ice wait"2g" lucid
 zi light "changyuheng/zsh-interactive-cd"
 
-#zi ice lucid from"gh-r" as'program' bpick"" pick"def-matcher"
-#zi light sei40kr/fast-alias-tips-bin
-#zi ice wait"2h" lucid
-#zi light sei40kr/zsh-fast-alias-tips
+zi ice lucid from"gh-r" as'program' bpick"" pick"def-matcher"
+zi light sei40kr/fast-alias-tips-bin
+zi ice wait"2h" lucid
+zi light sei40kr/zsh-fast-alias-tips
 
 #zi ice wait lucid
 #zi light "xPMo/zsh-toggle-command-prefix"
@@ -169,19 +169,20 @@ zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
 #zi ice wait"3" lucid
 #zi light "marzocchi/zsh-notify"
 
-#if [[ ! -d ~/.rbenv/plugins ]] then
-#   echo "Creating \$(rbenv root)/plugins"
-#   mkdir -p ~/.rbenv/plugins
-#   if [[ ! -d ~/.rbenv/plugins/ruby-build ]] then
-#      echo "Cloning \$(rbenv root)/plugins/ruby-build"
-#      git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-#   fi
-#fi
-#zi ice svn lucid \
-#  wait'[[ -n ${ZLAST_COMMANDS[(r)rben*]} ]]' \
-#  atload"POWERLEVEL9K_RBENV_PROMPT_ALWAYS_SHOW=true" \
-#  unload"![[ ! -e Gemfile || ! -e Rakefile ]]"
-#zi snippet "PZT::modules/ruby/"
+if [[ ! -d ~/.rbenv/plugins ]] then
+  echo "Creating \$(rbenv root)/plugins"
+  mkdir -p ~/.rbenv/plugins
+  if [[ ! -d ~/.rbenv/plugins/ruby-build ]] then
+     echo "Cloning \$(rbenv root)/plugins/ruby-build"
+     git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  fi
+fi
+zi ice svn lucid \
+ wait'[[ -n ${ZLAST_COMMANDS[(r)rben*]} ]]' \
+ atload"POWERLEVEL9K_RBENV_PROMPT_ALWAYS_SHOW=true" \
+ unload"![[ ! -e Gemfile || ! -e Rakefile ]]"
+zi snippet "PZT::modules/ruby/"
+#
 #zi ice wait"3a" lucid wait"[[ -f Gemfile || -f Rakefile ]]" unload"[[ ! -f Gemfile ]]"
 #zi snippet "OMZ::plugins/rbenv/rbenv.plugin.zsh"
 
@@ -197,8 +198,8 @@ zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
 #  atload'eval "$(pyenv virtualenv-init - zsh)"'
 #zi light pyenv/pyenv-virtualenv
 
-#zi ice svn atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
-#zi snippet "OMZ::plugins/emacs"
+zi ice svn atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
+zi snippet "OMZ::plugins/emacs"
 
 #zi ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
 #zi light "chriskempson/base16-shell"
@@ -216,7 +217,7 @@ zi light trapd00r/LS_COLORS
 #  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
 #zi light direnv/direnv
 
-zi ice wait"3b" lucid mv"*cht.sh -> cht" pick"cht" as"program" id-as"cht.sh"
+zi ice wait lucid mv"*cht.sh -> cht" pick"cht" as"program" id-as"cht.sh"
 zi snippet "https://cht.sh/:cht.sh"
 #zi ice wait"2" lucid id-as"tldr" as"program" pick"tldr"
 #zi snippet "https://raw.githubusercontent.com/raylee/tldr/master/tldr"
@@ -240,11 +241,11 @@ zi light "dylanaraps/pfetch"
 #zi ice lucid from"gh-r" as"program" bpick"*linux*" pick"bat-v0.13.0-x86_64-unknown-linux-gnu/bat"
 #zi light "sharkdp/bat"
 
-#zi ice lucid from"gh-r" as"program" bpick"*linux*"
-#zi light "casey/intermodal"
+zi ice lucid from"gh-r" as"program" bpick"*linux*"
+zi light "casey/intermodal"
 
-#zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> completions/exercism_completion.zsh"
-#zi light "exercism/cli"
+zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> completions/exercism_completion.zsh"
+zi light "exercism/cli"
 
 #zi ice wait"2" lucid as"program" pick"build/release/peaclock" atclone"./build.sh"
 #zi light "octobanana/peaclock"
@@ -430,12 +431,12 @@ autoload -U select-word-style
 select-word-style bash
 
 source $ZDOTDIR/aliases
-autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz code fh fkill fco gfy pb scan center_text switch_theme plain ert-run
+autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy pb scan center_text switch_theme plain ert-run sqlint
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc aria2c bat cargo curl cwebp direnv docker \
-  docker-machine emacs fd firejail flask fzf gocryptfs kitty light \
+  docker-machine emacs fd firejail flask fzf gocryptfs inkscape kitty light \
   mimeo nzbget pip pipx psmem redshift rofi rustc sk tar tlp-stat vue wmctrl z
 
 #for comp ( yadm vifm ) { zicompdef _$comp $comp; }

@@ -1,3 +1,4 @@
+if !exists('g:vscode')
 " Has to be first
 set nocompatible
 
@@ -205,3 +206,5 @@ nnoremap <C-Right> :tabnext<CR>
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+
+endif
