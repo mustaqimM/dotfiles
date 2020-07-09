@@ -127,9 +127,9 @@ tyrannical.properties.placement = {
   Firefox = awful.placement.centered,
 }
 
---tyrannical.properties.fullscreen   = { "mpv" }
---tyrannical.properties.skip_taskbar = { "Plank" }
---tyrannical.properties.sticky       = { "Plank" }
+tyrannical.properties.fullscreen   = { "mpv" }
+tyrannical.properties.skip_taskbar = { "Plank" }
+tyrannical.properties.sticky       = { "Plank" }
 
 tyrannical.settings.block_children_focus_stealing = true --Block popups ()
 tyrannical.settings.group_children = false --Force popups/dialogs to have the same tags as the parent client
@@ -182,7 +182,7 @@ awful.rules.rules = {
         "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
       },
       type = {
-        "dialog",
+        -- "dialog",
       },
   },
     properties = { floating = true, titlebars_enabled = false },
@@ -191,6 +191,7 @@ awful.rules.rules = {
       awful.placement.centered(c, { honor_workarea=true })
     end
   },
+
   { rule_any = { role = { "GtkFileChooserDialog", "gimp-file-open" } },
     callback = function (c)
       c:geometry({ width = 1024, height = 506 })
@@ -204,7 +205,8 @@ awful.rules.rules = {
   { rule_any = { name = "Firefox Safe Mode", "Refresh Firefox",
                  "Extension: (Tree Style Tab) - Close tabs? - Mozilla Firefox" },
     properties = { width = 505, height = 206, floating = true },
-    callback = function (c) awful.placement.centered(c) end },
+    callback = function (c) awful.placement.centered(c) end
+  },
 
   { rule_any = { class = { "dolphin", "Org.gnome.Nautilus" } },
     properties = { width = screen_width * 0.85, height = screen_height * 0.75 },
@@ -216,7 +218,7 @@ awful.rules.rules = {
                           "Confirm Remove TOTP Settings", "Timed Password", "Confirm remove",
                           "Delete entry?", "Move entry to recycle bin?",
                           "KeePassXC: New key association request", "KeePassXC: Update Entry",
-                          "Setup TOTP" } },
+                          "Setup TOTP", "Download Favicons" } },
     --type = { "dialog" },
     properties = { sticky = true },
     callback = function (c)
@@ -231,7 +233,8 @@ awful.rules.rules = {
     properties = { floating = true, sticky = true, skip_taskbar = true, width = 500, height = 300 },
     callback = function (c)
       --c:geometry({ width = 500, height = 300 })
-      awful.placement.bottom_right(c) end },
+      awful.placement.bottom_right(c) end
+  },
 
   { rule_any = { name = { "Upload to Imgur", "Tip of the Day - Gramps"} },
     properties = {
@@ -239,37 +242,43 @@ awful.rules.rules = {
                    floating = true, sticky = true },
     callback = function (c)
       c:geometry({ width = 520, height = 330 })
-      awful.placement.centered(c) end },
+      awful.placement.centered(c) end
+  },
 
   { rule = { class = "feh" },
     properties = { fullscreen = false, titlebars_enabled = false,
                    floating = true, border_width = 0 },
     callback = function (c)
       c:geometry({ width = 1024, height = 576 })
-      awful.placement.centered(c) end },
+      awful.placement.centered(c) end
+  },
 
   { rule = { class = "nheko" },
     properties = { fullscreen = false, titlebars_enabled = false,
                    floating = true, border_width = 0 },
     callback = function (c)
-      awful.placement.centered(c) end },
+      awful.placement.centered(c) end
+  },
+
+  { rule = { class = "jetbrains-studio",
+             name="^win[0-9]+$" },
+    properties = {
+      placement = awful.placement.no_offscreen,
+      titlebars_enabled = false
+    }
+  },
+
+  { rule_any = { name = { "Close Query — Konversation", "Configure — Konversation",
+                          "Close Tab — Konversation", "Leave Channel — Konversation",
+                          "Disconnect From Server — Konversation", "Server List — Konversation",
+                          "Join Channel — Konversation" } },
+    --type = { "dialog" },
+    properties = { sticky = true },
+    callback = function (c)
+      awful.placement.centered(c)
+      -- c:geometry({ width = 505, height = 206 })
+    end
+  },
 
 }
 -- }}}
-
---    -- Application specific rules
---    --{ rule = { name = "Awesome drawin" },
---    --properties = { width = 505,
---    --               height = 306 },
---    --},
---    { rule = { name = "Extension: (Aria2 Download Manager Integration) - Download Panel - Mozilla Firefox"},
---      properties = { width = 505,
---                     height = 206 },
---      callback = function (c)
---        awful.placement.centered(c) end },
---
---    { rule = { class = "Gramps" },
---      properties = { titlebars_enabled = false } },
---    { rule = { name = "Tip of the Day - Gramps" },
---      callback = function (c)
---        awful.placement.centered(c) end },

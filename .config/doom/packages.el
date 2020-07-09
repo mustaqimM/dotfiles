@@ -56,7 +56,7 @@
 
 ;(package! flycheck-inline)
 
-;(package! sml-mode)
+(package! sml-mode)
 
 ;(package! vue-mode)
 

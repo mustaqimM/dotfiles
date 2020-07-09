@@ -79,16 +79,16 @@ export RUST_SRC_PATH="/home/mustaqim/.rustup/toolchains/nightly-x86_64-unknown-l
 export ANDROID_HOME="$HOME/Android/Sdk"
 
 export path=(
-    $path
     $HOME/.cargo/bin
-    $HOME/.local/bin
     $HOME/.yarn/bin
     $HOME/.emacs.d/bin
+    $HOME/.local/bin/sml/bin
     $HOME/.local/bin/scripts
     $ANDROID_HOME/tools
     $ANDROID_HOME/platform-tools
     /opt/texlive/2020/bin/x86_64-linux
     $JAVA_HOME/bin
+    $path
     )
 
 # remove duplicate entries
