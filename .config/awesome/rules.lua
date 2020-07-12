@@ -218,7 +218,7 @@ awful.rules.rules = {
                           "Confirm Remove TOTP Settings", "Timed Password", "Confirm remove",
                           "Delete entry?", "Move entry to recycle bin?",
                           "KeePassXC: New key association request", "KeePassXC: Update Entry",
-                          "Setup TOTP", "Download Favicons" } },
+                          "Setup TOTP", "Download Favicons", "win0" } },
     --type = { "dialog" },
     properties = { sticky = true },
     callback = function (c)

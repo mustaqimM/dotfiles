@@ -483,7 +483,7 @@ fileviewer *.csv bat --color always --theme Tomorrow-Night --wrap never --pager 
 fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --syntax make %c
 
 " Text
-filetype <text/*> /bin/emacs -nw
+filetype <text/*> /bin/emacs -bg '#17191a'
 "fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
 "material-palenight
 fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --force %c
@@ -499,7 +499,7 @@ set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  :
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[c]::,  ::*.[h]::,  ::/^copying|license$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::,  ::*.sql::,  ::*.sqlite::'
 set classify+='  ::*.conf,,*.yml,,*.ini::,  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::, ::*.rb,,Gemfile::'
+set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::, ::*.rb,,Gemfile::,  ::*.kt::'
 " archives
 set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'

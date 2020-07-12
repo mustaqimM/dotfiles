@@ -226,11 +226,11 @@ bindings.globalkeys = gears.table.join(
 
     awful.key({ modkey }, "y", function ()
             helpers.async_with_shell("mpv --x11-name=mpvstream $(xclip -selection clipboard -o)", function(out) end) end,
-        { description = "Play clipboard content with mpv", group = "hotkeys"}),
+        { description = "Play clipboard content with mpv", group = "hotkeys"})
 
-    awful.key({ modkey }, "z", function ()
-            awful.spawn.easy_async_with_shell("doas /bin/zzz") end,
-        { description = "Sleep", group = "hotkeys"})
+    -- awful.key({ modkey }, "z", function ()
+    --         -- awful.spawn.easy_async_with_shell("XF86Sleep") end,
+    --     { description = "Sleep", group = "hotkeys"})
 
     -- Toggle redshift with Mod+Shift+t
     --awful.key({ modkey, "Shift" }, "t", function () lain.widget.contrib.redshift:toggle() end)

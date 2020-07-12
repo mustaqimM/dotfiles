@@ -108,8 +108,8 @@ zi light "zsh-users/zsh-completions"
 
 zi ice wait lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start"
 zi light "zsh-users/zsh-autosuggestions"
-zi ice wait lucid atinit"_zcomp"
-zi light "zdharma/fast-syntax-highlighting"
+#zi ice wait lucid atinit"_zcomp"
+#zi light "zdharma/fast-syntax-highlighting"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi snippet "OMZ::plugins/git/git.plugin.zsh"

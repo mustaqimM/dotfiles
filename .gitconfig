@@ -10,9 +10,9 @@
 	editor = emacsclient -nw
 	excludesfile = /home/mustaqim/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
-#	autocrlf = true
-	safecrlf = true
-	autocrlf = input
+	# autocrlf = true
+	# safecrlf = true
+	# autocrlf = input
 
 [url "git@github.com:"]
 	insteadOf = "gh:"
