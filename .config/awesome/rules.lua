@@ -213,7 +213,7 @@ awful.rules.rules = {
     callback = function (c) awful.placement.centered(c) end
   },
 
-  { rule_any = { name = { "KeePassXC-Browser Confirm Access", "Confirm Removal",
+  { rule_any = { name = { "KeePassXC - Browser Access Request", "Confirm Removal",
                           "Auto-Type - KeePassXC", "KeePassXC: Overwrite existing key?",
                           "Confirm Remove TOTP Settings", "Timed Password", "Confirm remove",
                           "Delete entry?", "Move entry to recycle bin?",

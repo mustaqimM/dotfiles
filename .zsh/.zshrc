@@ -108,8 +108,9 @@ zi light "zsh-users/zsh-completions"
 
 zi ice wait lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start"
 zi light "zsh-users/zsh-autosuggestions"
-#zi ice wait lucid atinit"_zcomp"
-#zi light "zdharma/fast-syntax-highlighting"
+zi ice wait lucid atinit"_zcomp"
+zi light "zdharma/fast-syntax-highlighting"
+# zi light "zsh-users/zsh-syntax-highlighting"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi snippet "OMZ::plugins/git/git.plugin.zsh"
@@ -152,7 +153,7 @@ if [[ $(type -p fzf) ]] then
   zi light "junegunn/fzf"
 fi
 
-zi ice wait lucid id-as"base16-fzf-tomorrow-night" atclone'sed -e "26s/$/\\\/" -e "27i\" --ansi\"\\\ \n\" --reverse\"" -i base16-fzf-tomorrow-night' atpull"%atclone"
+zi ice wait lucid id-as"base16-fzf-tomorrow-night" atclone'sed -e "26s/$/\\\/" -e "27i\" --ansi\"\\\ " -i base16-fzf-tomorrow-night' atpull"%atclone"
 zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow-night.config"
 #zi ice wait lucid id-as"base16-fzf-tomorrow" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi' base16-fzf-tomorrow" atpull"%atclone"
 #zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow.config"

@@ -1066,7 +1066,6 @@
 : 1567526984:0;git remote
 : 1567527032:0;sudo cp -v 51-android.rules /etc/udev/rules.d/51-android.rules
 : 1567528093:0;heimdall detect
-: 1567528651:0;adb start-server
 : 1567528668:0;adb usb
 : 1567528949:0;adb push Magisk-v19.0.zip /data
 : 1567744559:0;adb shell getprop ro.treble.enabled
@@ -2452,7 +2451,6 @@
 : 1586085124:0;cd vueschool-forum/
 : 1586108688:0;vi ~/.bashrc
 : 1586164883:0;sleep 1; ffmpeg -f x11grab  -s 1366x768 -i :0.0 -r 25 -vcodec libx264 output.mkv
-: 1586165473:0;curl --header 'Host: loadshedding.eskom.co.za' --user-agent 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --header 'Accept-Encoding: gzip,deflate' --header 'Connection: keep-alive' --header 'Content-Type: application/json; charset=utf-8' 'http://loadshedding.eskom.co.za/LoadShedding/GetStatus'
 : 1586165582:0;yadm add .bashrc
 : 1586168919:0;vi ~/.local/share/applications/firefox.desktop
 : 1586170672:0;rofi -combi-modi window,drun -show combi -modi combi -sort -sorting-method fzf
@@ -2604,7 +2602,6 @@ fi
 : 1586712628:0;sudo xbps-install surf
 : 1586712926:0;stat -c "%a %n" .priv-env
 : 1586715726:0;vi ~/.config/firejail/surf.local
-: 1586765363:0;ffmpeg -f x11grab  -s 1366x768 -i :0.0 -r 25 -vcodec libx264 output.mkv
 : 1586766977:0;cd emacs
 : 1586773101:0;sudo xbps-install hexyl
 : 1586773227:0;hexdump -C .xsession-errors
@@ -2629,7 +2626,6 @@ fi
 : 1586843886:0;yadm add ~/.local/share/ranger/bookmarks
 : 1586844335:0;yadm add ~/.ssh/{sshd_,}config
 : 1586844434:0;yadm remote add origin gl:mustaqim/dotfiles.git
-: 1586844438:0;yadm remote -v
 : 1586844514:0;yadm push --set-upstream origin master
 : 1586849883:0;sudo xbps-install pixz
 : 1586850052:0;sudo xbps-remove -R pixz
@@ -2831,7 +2827,6 @@ fi
 : 1587399023:0;gpg --verify twrp-3.3.1-0-zerolte.img.asc
 : 1587407230:0;xbps-query -Rs cron
 : 1587447953:0;sudo xbps-install gramps libosmgpsmap libgexiv2
-: 1587459786:0;sudo xbps-install zip
 : 1587459979:0;sudo xbps-install fuse-zip
 : 1587471209:0;sudo xbps-remove -R transmission
 : 1587474478:0;echo $XDG_DATA_HOME
@@ -2926,9 +2921,7 @@ done
 : 1588230152:0;cat /proc/cmdline
 : 1588230264:0;sudo dmesg
 : 1588231234:0;sudo tlp-stat
-: 1588231241:0;sudo powertop
 : 1588231424:0;sudo update-grub
-: 1588231626:0;sudo bluetooth off
 : 1588314290:0;gco -b changes
 : 1588314297:0;./xbps-src pkg st
 : 1588314394:0;sudo xbps-install --repository=hostdir/binpkgs/custom_package_st st
@@ -3428,11 +3421,9 @@ done
 : 1591419682:0;git clone --depth=1 gh:Vinylwalk3r/JDownloader-2-Dark-Theme
 : 1591419966:0;sudo smbpasswd -a nobody
 : 1591419980:0;smbclient -U nobody //192.168.1.100/plain
-: 1591443282:0;sudo powertop --auto-tune
 : 1591509821:0;sudo xbps-install ttyqr
 : 1591610080:0;dl_coursera --cookies cookies.txt --slug java-programming-recommender --outdir java-programming-recommender --how aria2 --generate-input-file
 : 1591614316:0;aria2c --no-conf --input-file=java-programming-recommender/java-programming-recommender.download.aria2_input_file.txt
-: 1591637732:0;adb kill-server
 : 1591692568:0;vi ~/.config/picom/picom.conf
 : 1591720854:0;adb tcpip 5555
 : 1591720925:0;adb connect 192.168.0.101:5555
@@ -3584,7 +3575,6 @@ done
 : 1593079485:0;vi examples/cv/education.tex
 : 1593079865:0;vi examples/cv.tex
 : 1593079993:0;xelatex examples/cv.tex
-: 1593101258:0;sudo tlmgr update --self
 : 1593101292:0;sudo tlmgr install lastpage
 : 1593147708:0;vi cv/education.tex
 : 1593150678:0;sudo tlmgr install fontawesome5
@@ -3599,11 +3589,9 @@ done
 : 1593174602:0;yadm add ~/.local/runit
 : 1593174620:0;yadm add ~/.local/share/applications/ArianNg.desktop
 : 1593174624:0;yadm add ~/.local/share/applications/JDownloader.desktop
-: 1593174641:0;fd -e backup -x rm
 : 1593174694:0;yadm add ~/.mozilla/firefox/chrome
 : 1593174701:0;yadm add ~/.surf/{script.js,styles/default.css}
 : 1593174707:0;yadm add ~/.xinitrc
-: 1593192147:0;fd -X adb push {} /sdcard
 : 1593237139:0;./xbps-src pkg postgresql12-client
 : 1593238020:0;./xbps-src pkg postgresql12
 : 1593270036:0;gco $(gb|fzf)
@@ -3628,12 +3616,10 @@ done
 : 1593363758:0;xbps-query -f highlight
 : 1593408875:0;sudo xbps-install android-studio
 : 1593408949:0;echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
-: 1593409237:0;git pull --rebase upstream master
 : 1593410304:0;vi ~/.zsh/zsh_history
 : 1593419565:0;vi files/cv/education.tex
 : 1593419713:0;vi awesome-cv.cls
 : 1593423235:0;./xbps-src pkg nodejs
-: 1593425563:0;vi ~/.zsh/zshenv
 : 1593425699:0;echo $PATH | tr ":" "\n" | nl
 : 1593428602:0;git clone gl:pages/vuepress
 : 1593428703:0;npm install -g yarn
@@ -3651,7 +3637,6 @@ done
 : 1593444362:0;git clone gh:Mister-Hope/vuepress-theme-hope
 : 1593444415:0;git clone --depth=1 gh:Mister-Hope/vuepress-theme-hope
 : 1593445340:0;yarn add vuepress -D
-: 1593448242:0;clip
 : 1593508129:0;yarn add -D @vuepress/plugin-blog
 : 1593508250:0;yarn install
 : 1593508262:0;yarn add vuepress @vuepress/theme-blog -D
@@ -3716,7 +3701,6 @@ done
 : 1593966704:0;sudo xbps-install inetutils-telnet
 : 1594036985:0;ping mustaqim.js.org
 : 1594042665:0;xbps-query -Rs csv
-: 1594047925:0;xprop | rg WM_CLASS | cut --delimiter=' ' -f4
 : 1594049574:0;xbps-query -Rs zathura
 : 1594049811:0;man zathura
 : 1594050019:0;vi ~/.config/zathura/zathurarc
@@ -3771,7 +3755,6 @@ done
 : 1594184033:0;vi srcpkgs/pgadmin4/template
 : 1594186598:0;vi CNAME
 : 1594186646:0;gcs -m "Update: CNAME"
-: 1594202953:0;/bin/emacs -bg '#17191a' --daemon
 : 1594207298:0;xelatex cv.tex
 : 1594216141:0;sudo xbps-install --repository=hostdir/binpkgs/update_pgadmin pgadmin4
 : 1594216169:0;sudo xbps-install --repository=hostdir/binpkgs/update_pgadmin pgadmin4-qt
@@ -3781,31 +3764,16 @@ done
 : 1594284129:0;sudo update_unbound_sb_hosts.sh
 : 1594284953:0;vi .Xresources.d/theme_tomorrow
 : 1594288330:0;sudo psmem
-: 1594289489:0;pfetch
-: 1594289624:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
 : 1594289632:0;yadm add ~/.config/zathura/zathurarc
 : 1594289643:0;yadm add ~/.config/doom
-: 1594289656:0;yadm commit
-: 1594289668:0;yadm push
-: 1594290227:0;aria2c --no-conf $(xclip -sel clip -o)
-: 1594292669:0;doom upgrade
 : 1594292690:0;zpl times
-: 1594292693:0;zpl update -p
 : 1594292797:0;xbps-query -Rs nodejs
 : 1594295842:0;dig sigok.verteiltesysteme.net @127.0.0.1
 : 1594302808:0;git commit --all --amend --no-edit
 : 1594302879:0;gd --staged
-: 1594303114:0;pkill emacs
 : 1594366620:0;ping mustaqim.ml
 : 1594366633:0;sudo xbps-install ghidra
-: 1594366757:0;doom compile
-: 1594366776:0;alsamixer
-: 1594368796:0;bc <<< "$(fd -e mp4 -x ffprobe -i {} -show_entries format=duration -v quiet -of csv="p=0" | awk '{total = total + $1}END{print total}') / 60"
-: 1594394842:0;mono ~/.local/bin/Jackett/JackettConsole.exe
-: 1594399398:0;vi files/cv.tex
 : 1594448789:0;sudo xbps-install gnome-authenticator
-: 1594448845:0;rehash
-: 1594449249:0;bandwhich
 : 1594451303:0;vi ~/.config/awesome/signals.lua
 : 1594452078:0;fc-list | rg "Nerd" | cut -d ":" -f2
 : 1594452098:0;fc-cache -fv
@@ -3814,10 +3782,7 @@ done
 : 1594470598:0;id mustaqim
 : 1594470792:0;lsusb
 : 1594470847:0;sudo xbps-install android-udev-rules
-: 1594470858:0;sudo sv restart udevd
 : 1594471779:0;vi .zinit/snippets/base16-fzf-tomorrow-night/base16-fzf-tomorrow-night
-: 1594473133:0;htop
-: 1594473248:0;adb push "$(fzf -m)" /sdcard
 : 1594474661:0;sudo vkpurge rm all
 : 1594474920:0;df -Th
 : 1594476289:0;pkill picom
@@ -3825,9 +3790,7 @@ done
 : 1594476344:0;vi ~/.gitconfig
 : 1594476585:0;gco -b challenge_1
 : 1594476677:0;pkill java
-: 1594477413:0;fglo
 : 1594477431:0;gcs -m "Challenge1"
-: 1594477444:0;gb | fzf | xargs gco
 : 1594477889:0;sudo mkdir -p /var/cache/swap/
 : 1594477926:0;sudo dd if=/dev/zero of=/var/cache/swap/myswap bs=1M count=4096
 : 1594478035:0;sudo chmod 0600 /var/cache/swap/myswap
@@ -3837,39 +3800,93 @@ done
 : 1594478081:0;vi /etc/fstab
 : 1594478198:0;psmem -p $(pgrep -d, -u $USER)
 : 1594478234:0;whatis setcap
-: 1594479892:0;tmux
-: 1594479908:0;xprop
-: 1594479942:0;vi ~/.config/awesome/rules.lua
 : 1594482138:0;youtube-dl --list-formats "$(xclip -sel clip -o)"
 : 1594482160:0;youtube-dl -f '247+251' --merge-output-format webm "$(xclip -sel clip -o)"
-: 1594483859:0;free -h
 : 1594488047:0;sudo sv restart smbd
 : 1594488347:0;vi ~/.config/vifm/vifmrc
 : 1594488466:0;vi ~/.config/fontconfig/fonts.conf
-: 1594529232:0;sudo xbps-install -Suvy
-: 1594529266:0;chts
 : 1594543201:0;dig +short txt mustaqim.ml
 : 1594543217:0;dig +short txt _gitlab-pages-verification-code.mustaqim.ml
 : 1594545434:0;yarn src:dev
-: 1594547858:0;gst
 : 1594547861:0;gd
 : 1594549080:0;sudo xbps-install chrony
 : 1594549141:0;sudo ln -s /etc/sv/chronyd /var/service
-: 1594549146:0;sudo sv status /var/service/*
 : 1594549311:0;ttyqr -b8 $(xclip -sel clip -o)
-: 1594550858:0;ga .
 : 1594550907:0;gp
-: 1594551080:0;psmem -p $(pgrep -d, -u $USER) -S
-: 1594551248:0;f
 : 1594555597:0;sudo xbps-remove -R links
 : 1594555602:0;sudo xbps-remove -R links-x11
-: 1594555928:0;tlp-stat -t | rg temp
 : 1594556028:0;vi ~/.config/doom/init.el
-: 1594556500:0;adb devices
 : 1594558618:0;yadm status
 : 1594558624:0;yadm add ~/.config/awesome
 : 1594558628:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1594558644:0;yadm add ~/.gitconfig
-: 1594558650:0;vi ~/.zsh/.zshrc
-: 1594558663:0;exec zsh
 : 1594558681:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1594558685:0;yadm commit
+: 1594558702:0;yadm remote -v
+: 1594558707:0;yadm push
+: 1594566451:0;git pull --rebase upstream master
+: 1594575349:0;man setcap
+: 1594623544:0;sudo sv status /var/service/*
+: 1594623548:0;mono ~/.local/bin/Jackett/JackettConsole.exe
+: 1594624751:0;doom upgrade
+: 1594624976:0;doom compile
+: 1594625041:0;pkill emacs
+: 1594625046:0;/bin/emacs -bg '#17191a' --daemon
+: 1594625167:0;vi ~/.zsh/.zshrc
+: 1594625721:0;zcompile base16-fzf-tomorrow-night
+: 1594632278:0;gb | fzf | xargs gco
+: 1594650733:0;bc <<< "$(fd -e mp4 -x ffprobe -i {} -show_entries format=duration -v quiet -of csv="p=0" | awk '{total = total + $1}END{print total}') / 60"
+: 1594655340:0;fd -X adb push {} /sdcard
+: 1594655570:0;adb push "$(fd -e mp4 -e mkv -c always | fzf -m)" /sdcard
+: 1594656937:0;sudo xbps-install zip
+: 1594702508:0;vi files/cv.tex
+: 1594713613:0;ffmpeg -f x11grab  -s 1366x768 -i :0.0 -r 25 -vcodec libx264 output.mkv
+: 1594718232:0;vi ~/.config/awesome/rules.lua
+: 1594718245:0;xprop | rg WM_CLASS | cut --delimiter=' ' -f4
+: 1594718253:0;xprop
+: 1594742197:0;xbps-query -Rs kotlin
+: 1594742207:0;sudo xbps-install kotlin-bin
+: 1594802879:0;ffmpeg -f x11grab  -s 1366x768 -i :1.0 -r 25 -vcodec libx264 output.mkv
+: 1594807391:0;sudo bluetooth off
+: 1594814283:0;sudo powertop --auto-tune
+: 1594814292:0;sudo powertop
+: 1594814512:0;adb pull storage/emulated/0/mx.apk
+: 1594814589:0;adb start-server
+: 1594815380:0;sudo sv restart udevd
+: 1594816237:0;adb kill-server
+: 1594816241:0;adb devices
+: 1594817054:0;pfetch
+: 1594831711:0;bandwhich
+: 1594874869:0;sudo tlmgr update --self
+: 1594874883:0;sudo tlmgr update --all
+: 1594874926:0;zpl update -p
+: 1594875034:0;exec zsh
+: 1594875042:0;adb push "$(fzf -m)" /sdcard
+: 1594879610:0;clip
+: 1594881446:0;./shadowfox_linux_x64 -profile-index 2 -generate-uuids -set-dark-theme
+: 1594881477:0;fd -e backup -x rm
+: 1594883205:0;vi ~/.zsh/zshenv
+: 1594884806:0;chts
+: 1594885698:0;tlp-stat -t | rg temp
+: 1594887224:0;curl --header 'Host: loadshedding.eskom.co.za' --user-agent 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --header 'Accept-Encoding: gzip,deflate' --header 'Connection: keep-alive' --header 'Content-Type: application/json; charset=utf-8' 'http://loadshedding.eskom.co.za/LoadShedding/GetStatus'
+: 1594895897:0;xbps-query -Rs android
+: 1594895947:0;sudo xbps-remove -R android-tools
+: 1594896546:0;rehash
+: 1594897596:0;sudo xbps-install -Suvy
+: 1594900372:0;alsamixer
+: 1594911150:0;aria2c --no-conf $(xclip -sel clip -o)
+: 1594914346:0;htop
+: 1594914350:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1594915099:0;sudo psmem -S
+: 1594915119:0;tmux
+: 1594915342:0;ga .
+: 1594915391:0;gst
+: 1594915415:0;fglo
+: 1594916217:0;f
+: 1594918034:0;free -h
+: 1594918201:0;yadm status
+: 1594918205:0;f
+: 1594918239:0;yadm status
+: 1594918244:0;yadm add ~/.mozilla/firefox/chrome
+: 1594918249:0;yadm add ~/.config/awesome
+: 1594918254:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
