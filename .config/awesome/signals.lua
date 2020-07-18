@@ -149,28 +149,30 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen( function(s)
-    set_wallpaper(s)
+        set_wallpaper(s)
 
-    if awful.screen.focused().tags == nil then
-        s.mywibox = awful.wibar({ position = "bottom", screen = s })
-    end
+        -- if awful.screen.focused().tags == nil then
+        --     s.mywibox = awful.wibar({ position = "bottom", screen = s })
+        -- end
 
     -- Rounded corners
     screen[s]:connect_signal(
         'arrange',
         function(s)
             for _, c in pairs(s.clients) do
-                if  beautiful.border_radius ~= 0 and
-                    (s.selected_tag.layout.name == 'max') -- or s.selected_tag.layout.name ~= 'floating'
-                         --and #s.tiled_clients == 1) --and not (c.floating or c.maximized)
+                if beautiful.border_radius ~= 0 and
+                    (s.selected_tag.layout.name == 'max') or c.fullscreen
+                    --and (#s.tiled_clients == 1)
                 then
                     c.shape = helpers.rect()
                 else
-                    c.shape = helpers.rrect(beautiful.border_radius)
+                    if (c.floating == true) or (c.modal == true) or (c.skip_taskbar == true) or
+                        s.selected_tag.layout.name == 'floating'
+                    then
+                        c.shape = helpers.rrect(beautiful.border_radius) end
                 end
             end
-        end
-                            )
+        end)
 end)
 
 

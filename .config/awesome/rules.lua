@@ -99,6 +99,12 @@ tyrannical.tags = {
     init        = false,
     exclusive   = true,
     class       = { "Franz", "Fractal", "konversation", "nheko" }
+  },
+  {
+    name        = "",
+    init        = false,
+    exclusive   = true,
+    class       = { "Gramps" }
   }
 }
 
