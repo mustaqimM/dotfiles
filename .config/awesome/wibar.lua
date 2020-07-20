@@ -7,7 +7,7 @@ local wibox     = require("wibox")
 local helpers   = require("helpers")
 local signals   = require("signals")
 
---local lain      = require("lain")
+local lain      = require("lain")
 --local markup    = lain.util.markup
 --local separators = lain.util.separators
 --local sound     = lain.widget.alsa
@@ -125,8 +125,9 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- RAM
     local interval = 15
-    local psmem = [[ bash -c "
-        /home/mustaqim/.zinit/plugins/pixelb---ps_mem/psmem -p $(pgrep -d, -u $USER) | tail -n 2 | head -n 1 | awk '{print $1 $2}' "]]
+    -- local psmem = [[ bash -c "
+    --     /home/mustaqim/.zinit/plugins/pixelb---ps_mem/psmem -p $(pgrep -d, -u $USER) | tail -n 2 | head -n 1 | awk '{print $1 $2}' "]]
+    local meminfo = [[ bash -c " rg 'Active:' /proc/meminfo | awk '{ mem=$2 /1024/1024; printf \"%.2fGB\", mem }' "]]
     local memory = wibox.widget { text = '',
                                   font = beautiful.font_notif .. " 9",
                                   valign = 'center',
@@ -235,6 +236,18 @@ awful.screen.connect_for_each_screen(function(s)
     --end
     --})
 
+    -- my_mem = lain.widget.mem()
+
+    -- local my_mem = wibox.container.margin(
+    --   wibox.widget {
+    --     align = "center",
+    --     widget = lain.widget.mem{
+    --         settings = function()
+    --             widget:set_text(math.floor(mem_now.used * 1.048576))
+    --         end
+    --     },
+    --     top = 3,
+    -- })
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
@@ -262,7 +275,8 @@ awful.screen.connect_for_each_screen(function(s)
           --separators.arrow_left(beautiful.bg_focus, "#ffffff"),
           --separators.arrow_left("#ffffff", beautiful.bg_focus),
           memory,
-          awful.widget.watch(psmem, interval),
+          -- my_mem,
+          awful.widget.watch(meminfo, interval),
           wibox.widget.textbox('  '),
           bat,
           -- wibox.widget.textbox(' '),

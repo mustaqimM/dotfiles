@@ -238,8 +238,24 @@ vbox#sidebar-box.chromeclass-extrachrome {
 
 
 /* ============================================================================= */
-/* Urlbar {{{
- */
+/* Urlbar */
+/* compact */
+:root[uidensity=compact] #urlbar,
+:root[uidensity=compact] .searchbar-textbox {
+  font-size: unset !important;
+  min-height: 22px !important;
+}
+:root[uidensity=compact] #identity-box {
+  max-height: 20px;
+}
+:root[uidensity=compact] #nav-bar .toolbarbutton-1 {
+  padding: 0px !important;
+}
+/* Compatibility with auto-hide.css */
+:root[uidensity=compact] #navigator-toolbox {
+  --nav-bar-height: 28px !important;
+}
+
 /* remove line below url */
 .urlbarView-body-inner
 {
@@ -250,11 +266,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
   display: none !important;
 }
 #urlbar{
- --autocomplete-popup-highlight-background: #52596e66 !important;
-}
-/* Search Bar */
-#urlbar-input-container, #searchbar {
-  border-radius: 2em !important;
+ --autocomplete-popup-highlight-background: rgba(249, 249, 250, 0.15) !important;
 }
 #urlbar[breakout]{
   height: var(--urlbar-height) + 1 !important;
@@ -279,12 +291,16 @@ vbox#sidebar-box.chromeclass-extrachrome {
 }
 #urlbar {
   border: 0 !important;
-  border-bottom: 1px solid #ffffff30 !important;
-  border-radius: 8px 8px 8px 8px !important;
+  /* border-bottom: 1px solid #ffffff30 !important; */
+  border-radius: 10px 10px 10px 10px !important;
   background-color: #282a2e;
   box-shadow: none !important;
   text-align: center !important;
 }
+
+/* .urlbar-input-box { */
+/*   margin-left: 18px !important; */
+/* } */
 
 /* prevent urlbar grow when selected */
 #urlbar[breakout][breakout-extend] > #urlbar-input-container,
@@ -311,22 +327,17 @@ vbox#sidebar-box.chromeclass-extrachrome {
 #searchbar {
   border: none !important;
 }
-.urlbarView-row[selected] {
-  background: #e0e0e00f !important;
-  color: #e0e0e0 !important;
-  fill-opacity: 1 !important;
-}
 
-.urlbarView.megabar .search-one-offs {
-  background: transparent !important;
-}
 /* Bottom search icons container */
-.search-panel-one-offs-container .search-panel-one-offs {
-  background: transparent !important;
+.search-one-offs, .search-panel-one-offs-header, .search-panel-one-offs {
+  background-image: url(image/noise-512x512.png) !important;
+  background-color: #1E1E1EBF;
+  backdrop-filter: blur(24px) !important;
+  padding-block: 0px !important;
 }
 /* 'This time, search with...' */
-.search-panel-one-offs-header.search-panel-header {
-  background: transparent !important;
+.search-panel-one-offs-header, .search-panel-one-offs {
+  background-color: transparent !important;
 }
 
 /* Separator */
@@ -378,11 +389,14 @@ vbox#sidebar-box.chromeclass-extrachrome {
 }
 
 /* Flip the position of the icons in the identity box */
-#identity-box { direction: rtl; }
+#identity-box { direction: rtl;
+  border-radius: 10px !important;
+ }
 
 /* Hide info icon */
 #urlbar :not(.grantedPermissions) #identity-icon {
   /* visibility: hidden !important; */
+  margin-inline-start: 0px;
   transition: 300ms !important; /* Animate icon hiding */
   opacity: 0 !important; /* Make icons transparent */
   /* -moz-margin-end: -1.1em !important; /\* Hide icons by offsetting them *\/ */
@@ -392,14 +406,13 @@ vbox#sidebar-box.chromeclass-extrachrome {
   /* visibility: visible !important; */
   transition: 300ms !important; /* Animate icon showing */
   opacity: 1 !important; /* Make icons opaque */
+  margin-inline-end: 0px !important;
   /* -moz-margin-end: initial !important; /\* Use initial margins to show icons *\/ */
 }
 #tracking-protection-icon-container, #blocked-permissions-container {
   visibility: collapse !important;
 }
-.urlbar-input-box {
-  margin-left: 18px !important;
-}
+
 /* ============================================================================= */
 /* Extension Icons */
 

@@ -166,7 +166,7 @@ awful.screen.connect_for_each_screen( function(s)
                 then
                     c.shape = helpers.rect()
                 else
-                    if (c.floating == true) or (c.modal == true) or (c.skip_taskbar == true) or
+                    if c.floating or c.modal or c.skip_taskbar or
                         s.selected_tag.layout.name == 'floating'
                     then
                         c.shape = helpers.rrect(beautiful.border_radius) end

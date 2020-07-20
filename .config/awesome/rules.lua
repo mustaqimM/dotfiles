@@ -181,7 +181,8 @@ awful.rules.rules = {
       name = {
         "Event Tester",  -- xev.
         "Delete Permanently",
-        "New tag"
+        "New tag",
+        "Welcome to Android Studio"
       },
       role = {
         "AlarmWindow",  -- Thunderbird's calendar.
