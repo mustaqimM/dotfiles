@@ -173,7 +173,7 @@ command! reload :write | restart
 
 command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('fd -t d -F . $HOME | fzf --reverse 2>/dev/tty')) | view
 nnoremap <c-g> :FZFlocate<cr>
-command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd | fzf 2>/dev/tty'))
+command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd -H | fzf 2>/dev/tty')) | view
 nnoremap <c-f> :FZFfind<cr>
 
 " Block particular shortcut
@@ -486,7 +486,7 @@ fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --synt
 filetype <text/*> /bin/emacs -bg '#17191a'
 "fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
 "material-palenight
-fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --force %c
+fileviewer <text/*> highlight -q -O ansi --replace-tabs=2 --style=base16/monokai %c
                     \ %pc
                     \ vifmimg clear
 
