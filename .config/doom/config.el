@@ -61,6 +61,7 @@
 ;; automodes
 
 (add-to-list 'auto-mode-alist '("\\template\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.profile\\'" . conf-mode))
 ;(add-to-list 'auto-mode-alist '("\\vifmrc\\'" . vimrc-mode))
 (define-generic-mode vimrc-mode '("\"") '("set" "syntax") nil '("\\vifmrc\\'") nil
     "Generic mode for Vim configuration files.")

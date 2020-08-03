@@ -3,21 +3,24 @@
 -- This script skips sponsored segments of YouTube videos
 -- using data from https://github.com/ajayyy/SponsorBlock
 
-local ON_WINDOWS = package.config:sub(1,1) ~= '/'
+local ON_WINDOWS = package.config:sub(1,1) ~= "/"
 
 local options = {
-    server_address = "https://api.sponsor.ajay.app",
+    server_address = "https://sponsor.ajay.app",
 
     python_path = ON_WINDOWS and "python" or "python3",
 
-    -- Whether or not to automatically skip sponsors
-    skip = true,
+    -- Categories to fetch
+    categories = "sponsor,intro,outro,interaction,selfpromo",
+
+    -- Categories to skip automatically
+    skip_categories = "sponsor",
 
     -- If true, sponsored segments will only be skipped once
     skip_once = true,
 
     -- Note that sponsored segments may ocasionally be inaccurate if this is turned off
-    -- see https://ajay.app/blog.html#voting-and-pseudo-randomness-or-sponsorblock-or-youtube-sponsorship-segment-blocker
+    -- see https://blog.ajay.app/voting-and-pseudo-randomness-or-sponsorblock-or-youtube-sponsorship-segment-blocker
     local_database = true,
 
     -- Update database on first run, does nothing if local_database is false
@@ -33,12 +36,12 @@ local options = {
     report_views = true,
 
     -- Auto upvote skipped sponsors
-    auto_upvote = true,
+    auto_upvote = false,
 
     -- Use sponsor times from server if they're more up to date than our local database
     server_fallback = true,
 
-    -- Create chapters at sponsor boundaries for OSC display and manual skipping with skip=false
+    -- Create chapters at sponsor boundaries for OSC display and manual skipping
     make_chapters = true,
 
     -- Minimum duration for sponsors (in seconds), segments under that threshold will be ignored
@@ -63,8 +66,11 @@ local options = {
     fast_forward_cap = 2,
 
     -- Pattern for video id in local files, ignored if blank
-    -- Recommended value for base youtube-dl is "-([%a%d%-_]+)%.[mw][kpe][v4b][m]?$"
-    local_pattern = ""
+    -- Recommended value for base youtube-dl is "-([%w-_]+)%.[mw][kpe][v4b]m?$"
+    local_pattern = "",
+
+    -- Legacy option, use skip_categories instead
+    skip = true
 }
 
 mp.options = require "mp.options"
@@ -76,14 +82,11 @@ if legacy then
 end
 
 local utils = require "mp.utils"
-if mp.get_script_directory == nil then
-    scripts_dir = mp.find_config_file("scripts/sponsorblock")
-else
-    scripts_dir = mp.get_script_directory()
-end
-local sponsorblock = utils.join_path(scripts_dir, "shared/sponsorblock.py")
-local uid_path = utils.join_path(scripts_dir, "shared/sponsorblock.txt")
-local database_file = options.local_database and utils.join_path(scripts_dir, "shared/sponsorblock.db") or ""
+scripts_dir = mp.find_config_file("scripts")
+
+local sponsorblock = utils.join_path(scripts_dir, "sponsorblock_shared/sponsorblock.py")
+local uid_path = utils.join_path(scripts_dir, "sponsorblock_shared/sponsorblock.txt")
+local database_file = options.local_database and utils.join_path(scripts_dir, "sponsorblock_shared/sponsorblock.db") or ""
 local youtube_id = nil
 local ranges = {}
 local init = false
@@ -94,6 +97,13 @@ local speed_timer = nil
 local fade_timer = nil
 local fade_dir = nil
 local volume_before = mp.get_property_number("volume")
+local categories = {}
+local all_categories = {"sponsor", "intro", "outro", "interaction", "selfpromo", "music_offtopic"}
+local chapter_cache = {}
+
+for category in string.gmatch(options.skip_categories, "([^,]+)") do
+    categories[category] = true
+end
 
 function file_exists(name)
     local f = io.open(name,"r")
@@ -107,6 +117,9 @@ function t_count(t)
 end
 
 function time_sort(a, b)
+    if a.time == b.time then
+        return string.match(a.title, "segment end")
+    end
     return a.time < b.time
 end
 
@@ -127,6 +140,32 @@ function create_chapter(chapter_title, chapter_time)
     table.insert(chapters, {title=chapter_title, time=(duration == nil or duration > chapter_time) and chapter_time or duration - .001})
     table.sort(chapters, time_sort)
     mp.set_property_native("chapter-list", chapters)
+end
+
+function process(uuid, t, new_ranges)
+    start_time = tonumber(string.match(t, "[^,]+"))
+    end_time = tonumber(string.sub(string.match(t, ",[^,]+"), 2))
+    for o_uuid, o_t in pairs(ranges) do
+        if (start_time >= o_t.start_time and start_time <= o_t.end_time) or (o_t.start_time >= start_time and o_t.start_time <= end_time) then
+            new_ranges[o_uuid] = o_t
+            return
+        end
+    end
+    category = string.match(t, "[^,]+$")
+    if categories[category] and end_time - start_time >= options.min_duration then
+        new_ranges[uuid] = {
+            start_time = start_time,
+            end_time = end_time,
+            category = category,
+            skipped = false
+        }
+    end
+    if options.make_chapters and not chapter_cache[uuid] then
+        chapter_cache[uuid] = true
+        local category_title = (category:gsub("^%l", string.upper):gsub("_", " "))
+        create_chapter(category_title .. " segment start (" .. string.sub(uuid, 1, 6) .. ")", start_time)
+        create_chapter(category_title .. " segment end (" .. string.sub(uuid, 1, 6) .. ")", end_time)
+    end
 end
 
 function getranges(_, exists, db, more)
@@ -156,7 +195,8 @@ function getranges(_, exists, db, more)
         "ranges",
         db,
         options.server_address,
-        youtube_id
+        youtube_id,
+        options.categories
     }
     if not legacy then
         sponsors = mp.command_native({name = "subprocess", capture_stdout = true, playback_only = false, args = args})
@@ -169,31 +209,12 @@ function getranges(_, exists, db, more)
     local r_count = 0
     if more then r_count = -1 end
     for t in string.gmatch(sponsors.stdout, "[^:%s]+") do
-        uuid = string.match(t, '[^,]+$')
+        uuid = string.match(t, "([^,]+),[^,]+$")
         if ranges[uuid] then
             new_ranges[uuid] = ranges[uuid]
         else
-            start_time = tonumber(string.match(t, '[^,]+'))
-            end_time = tonumber(string.sub(string.match(t, ',[^,]+'), 2))
-            for o_uuid, o_t in pairs(ranges) do
-                if (start_time >= o_t.start_time and start_time <= o_t.end_time) or (o_t.start_time >= start_time and o_t.start_time <= end_time) then
-                    new_ranges[o_uuid] = o_t
-                    goto continue
-                end
-            end
-            if end_time - start_time >= options.min_duration then
-                new_ranges[uuid] = {
-                    start_time = start_time,
-                    end_time = end_time,
-                    skipped = false
-                }
-            end
-            if options.make_chapters then
-                create_chapter("Sponsor start (" .. string.sub(uuid, 1, 6) .. ")", start_time)
-                create_chapter("Sponsor end (" .. string.sub(uuid, 1, 6) .. ")", end_time)
-            end
+            process(uuid, t, new_ranges)
         end
-        ::continue::
         r_count = r_count + 1
     end
     local c_count = t_count(ranges)
@@ -203,6 +224,10 @@ function getranges(_, exists, db, more)
 end
 
 function fast_forward()
+    if options.fast_forward and options.fast_forward == true then
+        speed_timer = nil
+        mp.set_property("speed", 1)
+    end
     local last_speed = mp.get_property_number("speed")
     local new_speed = math.min(last_speed + options.fast_forward_increase, options.fast_forward_cap)
     if new_speed <= last_speed then return end
@@ -257,6 +282,7 @@ function skip_ads(name, pos)
             end
             if options.fast_forward ~= false then
                 options.fast_forward = uuid
+                if speed_timer ~= nil then speed_timer:kill() end
                 speed_timer = mp.add_periodic_timer(1, fast_forward)
             end
             return
@@ -281,6 +307,7 @@ function skip_ads(name, pos)
     if options.fast_forward and options.fast_forward ~= true then
         options.fast_forward = true
         speed_timer:kill()
+        speed_timer = nil
         mp.set_property("speed", 1)
     end
 end
@@ -326,17 +353,19 @@ function file_loaded()
     ranges = {}
     segment = {a = 0, b = 0, progress = 0, first = true}
     last_skip = {uuid = "", dir = nil}
+    chapter_cache = {}
     local video_path = mp.get_property("path")
-    local youtube_id1 = string.match(video_path, "https?://youtu%.be/([%a%d%-_]+).*")
-    local youtube_id2 = string.match(video_path, "https?://w?w?w?%.?youtube%.com/v/([%a%d%-_]+).*")
-    local youtube_id3 = string.match(video_path, "/watch%?v=([%a%d%-_]+).*")
-    local youtube_id4 = string.match(video_path, "/embed/([%a%d%-_]+).*")
+    local youtube_id1 = string.match(video_path, "https?://youtu%.be/([%w-_]+).*")
+    local youtube_id2 = string.match(video_path, "https?://w?w?w?%.?youtube%.com/v/([%w-_]+).*")
+    local youtube_id3 = string.match(video_path, "/watch.*[?&]v=([%w-_]+).*")
+    local youtube_id4 = string.match(video_path, "/embed/([%w-_]+).*")
     local local_pattern = nil
     if options.local_pattern ~= "" then
         local_pattern = string.match(video_path, options.local_pattern)
     end
     youtube_id = youtube_id1 or youtube_id2 or youtube_id3 or youtube_id4 or local_pattern
-    if not youtube_id then return end
+    if not youtube_id or string.len(youtube_id) < 11 or (local_pattern and string.len(youtube_id) ~= 11) then return end
+    youtube_id = string.sub(youtube_id, 1, 11)
     init = true
     if not options.local_database then
         getranges(true, true)
@@ -407,15 +436,30 @@ function set_segment()
     segment.first = false
 end
 
-function submit_segment()
+function select_category(selected)
+    for category in string.gmatch(options.categories, "([^,]+)") do
+        mp.remove_key_binding("select_category_"..category)
+        mp.remove_key_binding("kp_select_category_"..category)
+    end
+    submit_segment(selected)
+end
+
+function submit_segment(category)
     if not youtube_id then return end
     local start_time = math.min(segment.a, segment.b)
     local end_time = math.max(segment.a, segment.b)
     if end_time - start_time == 0 or end_time == 0 then
         mp.osd_message("[sponsorblock] empty segment, not submitting")
     elseif segment.progress <= 1 then
-        mp.osd_message(string.format("[sponsorblock] press Shift+G again to confirm: %.2d:%.2d:%.2d to %.2d:%.2d:%.2d", start_time/(60*60), start_time/60%60, start_time%60, end_time/(60*60), end_time/60%60, end_time%60), 5)
         segment.progress = segment.progress + 2
+        local category_list = ""
+        for category_id, category in pairs(all_categories) do
+            local category_title = (category:gsub("^%l", string.upper):gsub("_", " "))
+            category_list = category_list .. category_id .. ": " .. category_title .. "\n"
+            mp.add_forced_key_binding(tostring(category_id), "select_category_"..category, function() select_category(category) end)
+            mp.add_forced_key_binding("KP"..tostring(category_id), "kp_select_category_"..category, function() select_category(category) end)
+        end
+        mp.osd_message(string.format("[sponsorblock] press a number to select category for segment: %.2d:%.2d:%.2d to %.2d:%.2d:%.2d\n\n" .. category_list .. "\nyou can press Shift+G again for default (Sponsor) or hide this message with g", math.floor(start_time/(60*60)), math.floor(start_time/60%60), math.floor(start_time%60), math.floor(end_time/(60*60)), math.floor(end_time/60%60), math.floor(end_time%60)), 30)
     else
         mp.osd_message("[sponsorblock] submitting segment...", 30)
         local submit
@@ -429,7 +473,8 @@ function submit_segment()
             tostring(start_time),
             tostring(end_time),
             uid_path,
-            options.user_id
+            options.user_id,
+            category or "sponsor"
         }
         if not legacy then
             submit = mp.command_native({name = "subprocess", capture_stdout = true, playback_only = false, args = args})
@@ -463,7 +508,12 @@ function submit_segment()
 end
 
 mp.register_event("file-loaded", file_loaded)
-mp.add_key_binding("g", "sponsorblock_set_segment", set_segment)
-mp.add_key_binding("G", "sponsorblock_submit_segment", submit_segment)
-mp.add_key_binding("h", "sponsorblock_upvote", function() return vote("1") end)
-mp.add_key_binding("H", "sponsorblock_downvote", function() return vote("0") end)
+mp.add_key_binding("g", "set_segment", set_segment)
+mp.add_key_binding("G", "submit_segment", submit_segment)
+mp.add_key_binding("h", "upvote_segment", function() return vote("1") end)
+mp.add_key_binding("H", "downvote_segment", function() return vote("0") end)
+-- Bindings below are for backwards compatibility and could be removed at any time
+mp.add_key_binding(nil, "sponsorblock_set_segment", set_segment)
+mp.add_key_binding(nil, "sponsorblock_submit_segment", submit_segment)
+mp.add_key_binding(nil, "sponsorblock_upvote", function() return vote("1") end)
+mp.add_key_binding(nil, "sponsorblock_downvote", function() return vote("0") end)

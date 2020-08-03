@@ -267,8 +267,7 @@ awful.rules.rules = {
       awful.placement.centered(c) end
   },
 
-  { rule = { class = "jetbrains-studio",
-             name="^win[0-9]+$" },
+  { rule_any = { class = "jetbrains-studio", name="^win[0-9]+$" },
     properties = {
       placement = awful.placement.no_offscreen,
       titlebars_enabled = false

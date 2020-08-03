@@ -124,10 +124,10 @@ zi light "b4b4r07/enhancd"
 zi ice wait"2g" lucid
 zi light "changyuheng/zsh-interactive-cd"
 
-zi ice lucid from"gh-r" as'program' bpick"" pick"def-matcher"
-zi light sei40kr/fast-alias-tips-bin
-zi ice wait"2h" lucid
-zi light sei40kr/zsh-fast-alias-tips
+# zi ice lucid from"gh-r" as'program' bpick"" pick"def-matcher"
+# zi light sei40kr/fast-alias-tips-bin
+# zi ice wait"2h" lucid
+# zi light sei40kr/zsh-fast-alias-tips
 
 #zi ice wait lucid
 #zi light "xPMo/zsh-toggle-command-prefix"
@@ -432,7 +432,7 @@ autoload -U select-word-style
 select-word-style bash
 
 source $ZDOTDIR/aliases
-autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy pb scan center_text switch_theme plain ert-run sqlint
+autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy pb scan center_text switch_theme plain ert-run sqlint magit
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 
 # generic completions for programs which understand GNU long options(--help)

@@ -203,16 +203,14 @@ nnoremap o :!emacsclient -nc %f &<cr>
 " Open file in new instance
 nnoremap O :!/bin/emacs -bg '#17191a' %f &<cr>
 
-" Open file in the background using its default program
-nnoremap gb :file &<cr>l
-
 " Mappings for faster renaming
 nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
 nnoremap A cw
 
 " Open console in current directory
-nnoremap ,t :!xst -c st -T Terminal -e zsh &<cr>
+" nnoremap ,t :!xst -c st -T Terminal -e zsh &<cr>
+nnoremap ,t :!alacritty -e zsh &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
@@ -245,6 +243,9 @@ nnoremap mkd :mkdir<space>
 
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
+
+" Open application dialog
+nnoremap b :file & <cr> >/dev/null
 
 " Extract an archive
 "nnoremap x :!extract %f &<cr>
@@ -477,6 +478,7 @@ filextype *.pro qtcreator %f &
 "        \ Thunar %f &,
 
 fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
+fileviewer *.org highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax md
 fileviewer *.[s]o hexyl -c 500 %c
 fileviewer *.csv bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
 
@@ -484,9 +486,9 @@ fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --synt
 
 " Text
 filetype <text/*> /bin/emacs -bg '#17191a'
-"fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
-"material-palenight
-fileviewer <text/*> highlight -q -O ansi --replace-tabs=2 --style=base16/monokai %c
+fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
+" fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night -- %c
+" fileviewer <text/*> pygmentize3 -f "terminal256" -O "style=tomorrownight" %c
                     \ %pc
                     \ vifmimg clear
 

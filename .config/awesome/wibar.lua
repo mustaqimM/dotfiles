@@ -18,7 +18,6 @@ local battery   = require("widgets/upower_battery")
 --local timer    = require("widgets/pomodoro")
 
 
--- {{{ Wibar
 local taglist_buttons = gears.table.join(
   awful.button({ }, 1, function(t) t:view_only() end),
   awful.button({ modkey }, 1, function(t)
@@ -120,35 +119,8 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a textclock widget
     mytextclock = wibox.widget.textclock("  %a %d %b %H:%M") -- %a %Y-%m-%d %H:%M %Z
 
-    -- Battery
-    bat = battery();
 
-    -- RAM
     local interval = 15
-    -- local psmem = [[ bash -c "
-    --     /home/mustaqim/.zinit/plugins/pixelb---ps_mem/psmem -p $(pgrep -d, -u $USER) | tail -n 2 | head -n 1 | awk '{print $1 $2}' "]]
-    -- local meminfo = helpers.line_callback([["sh /home/mustaqim/.config/awesome/scripts/meminfo.awk"]])
-    -- local meminfo = [[ bash -c " rg 'Active:' /proc/meminfo | awk '{ mem=$2 /1024/1024; printf \"%.2fGB\", mem }' "]]
-    -- local meminfo = [[ bash -c " awk ' /MemTotal:/{MT=$2}
-    --                                    /MemFree/{MF=$2}
-    --                                    /Buffers/{B=$2}
-    --                                    /Cached/{C=$2}
-    --                                    /SReclaimable/{SR=$2}
-    --                                    /Shmem:/{SM=$2} END
-    --                                    { total=(MT-(MF+B+C+SR+SM))/1024/1024; printf \"%.2fGB\", total }' /proc/meminfo
-    --                 " ]]
-    -- local memory = wibox.widget { text = '',
-    --                               font = beautiful.font_notif .. " 9",
-    --                               valign = 'center',
-    --                               widget = wibox.widget.textbox }
-
-    local mem = lain.widget.mem {
-      timeout = 7,
-      settings = function()
-        local mem = string.format("%.2f", mem_now.used / 1024)
-        widget:set_markup("" ..mem.. "GB")
-      end
-    }
 
     -- Net
     local netdowninfo = wibox.widget.textbox()
@@ -161,6 +133,19 @@ awful.screen.connect_for_each_screen(function(s)
          --netdowninfo:set_markup(markup.fontfg(beautiful.font, "#87af5f", net_now.received .. " "))
        end
     }
+
+    local mem = lain.widget.mem {
+      timeout = 7,
+      settings = function()
+        local mem = string.format("%.2f", mem_now.used / 1024)
+        widget:set_markup("" ..mem.. "GB")
+      end
+    }
+
+    -- Battery
+    bat = battery();
+
+    local temp = lain.widget.temp()
 
     -- ALSA volume
     --local volicon = wibox.widget.textbox()
@@ -253,17 +238,6 @@ awful.screen.connect_for_each_screen(function(s)
     --end
     --})
 
-    -- my_mem = wibox.container.margin(
-    --   wibox.widget {
-    --     align = "center",
-    --     widget = lain.widget.mem{
-    --         settings = function()
-    --             widget:set_text(math.floor(mem_now.used * 1.048576))
-    --         end
-    --     },
-    --     top = 3,
-    -- })
-
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
@@ -292,11 +266,10 @@ awful.screen.connect_for_each_screen(function(s)
           },
           --separators.arrow_left(beautiful.bg_focus, "#ffffff"),
           --separators.arrow_left("#ffffff", beautiful.bg_focus),
-          mem,
-          awful.widget.watch(meminfo, interval),
-          wibox.widget.textbox('  '),
+          {widget=wibox.container.margin,margins=5,mem},
+          -- wibox.widget.textbox('  '),
           bat,
-          -- wibox.widget.textbox(' '),
+          -- temp,
           --{widget=wibox.container.margin,margins=0,weather_lain},
           --volicon,
           --{widget=wibox.container.margin,margins=3,myredshift},
@@ -313,4 +286,3 @@ awful.screen.connect_for_each_screen(function(s)
         }
     }
 end)
--- }}}

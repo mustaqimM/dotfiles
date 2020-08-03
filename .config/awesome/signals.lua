@@ -155,23 +155,23 @@ awful.screen.connect_for_each_screen( function(s)
         --     s.mywibox = awful.wibar({ position = "bottom", screen = s })
         -- end
 
-    -- Rounded corners
-    screen[s]:connect_signal(
-        'arrange',
-        function(s)
-            for _, c in pairs(s.clients) do
-                if beautiful.border_radius ~= 0 and
-                    (s.selected_tag.layout.name == 'max') or c.fullscreen
-                    --and (#s.tiled_clients == 1)
-                then
-                    c.shape = helpers.rect()
-                else
-                    if c.floating or c.modal or c.skip_taskbar or
-                        s.selected_tag.layout.name == 'floating'
-                    then
-                        c.shape = helpers.rrect(beautiful.border_radius) end
-                end
-            end
+        -- Rounded corners
+        screen[s]:connect_signal
+        ('arrange',
+         function(s)
+             for _, c in pairs(s.clients) do
+                 if beautiful.border_radius ~= 0 and
+                     (s.selected_tag.layout.name == 'max') or c.fullscreen
+                 --and (#s.tiled_clients == 1)
+                 then
+                     c.shape = helpers.rect()
+                 else
+                     if c.type == ("floating" or "skip_taskbar" or "modal") or
+                         s.selected_tag.layout.name == 'floating'
+                     then
+                         c.shape = helpers.rrect(beautiful.border_radius) end
+                 end
+             end
         end)
 end)
 
