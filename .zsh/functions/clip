@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+clip() {
+    local selection
+    selection=$(
+        print 'buffer-cut\nclipboard\nprimary\nsecondary' |
+        fzf --preview='xclip -sel {} -o' --bind 'ctrl-y:execute-silent(xclip -sel {} -o)+abort')
+        # print 'buffer-cut\nclipboard\nprimary\nsecondary' |
+            # fzf --preview='xclip -selection {} -o')
+        # --bind 'ctrl-y:execute(echo {+f})' \
+        # --header 'Select buffer to copy into clipboard')
+    echo $selection
+
+}
+# -bind 'ctrl-y:execute-silent(echo -n {2..}

@@ -52,7 +52,7 @@ tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
 tmux_conf_theme_pane_border='#444444'
-tmux_conf_theme_pane_active_border='blue'
+tmux_conf_theme_pane_active_border='green'
 
 # pane indicator colours
 tmux_conf_theme_pane_indicator='#444444'
@@ -101,7 +101,8 @@ tmux_conf_theme_window_status_bg='default'
 tmux_conf_theme_window_status_attr='none'
 #tmux_conf_theme_window_status_format='#I #W'
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
-tmux_conf_theme_window_status_format='#I#{?window_bell_flag,  ,}#{?window_zoomed_flag,  ,}'
+tmux_conf_theme_window_status_format='#I#{?window_bell_flag, ,}#{?window_zoomed_flag, ,}'
+
 
 # window current status style
 #   - built-in variables are:
@@ -114,9 +115,9 @@ tmux_conf_theme_window_status_format='#I#{?window_bell_flag,  ,}#{?window_zoo
 tmux_conf_theme_window_status_current_fg='blue'
 tmux_conf_theme_window_status_current_bg='default'
 tmux_conf_theme_window_status_current_attr='bold'
-tmux_conf_theme_window_status_current_format='#I'
-#tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
-#tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
+tmux_conf_theme_window_status_current_format='#I'
+# tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
+# tmux_conf_theme_window_status_current_format='#I #{?window_zoomed_flag,,}'
 
 # window activity status style
 tmux_conf_theme_window_status_activity_fg='#000000'
@@ -168,7 +169,7 @@ tmux_conf_theme_right_separator_sub=''
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left='#S #P,'
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}'
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}#{?window_zoomed_flag,  ,}'
 
 # status left style
 tmux_conf_theme_status_left_fg='#000000'
@@ -176,8 +177,8 @@ tmux_conf_theme_status_left_bg='green'
 tmux_conf_theme_status_left_attr='bold,none'
 
 # status right style
-tmux_conf_theme_status_right_fg='#000000'
-tmux_conf_theme_status_right_bg='#17191a'
+tmux_conf_theme_status_right_fg='#ffffff'
+tmux_conf_theme_status_right_bg='default'
 tmux_conf_theme_status_right_attr='none,none,bold'
 
 # pairing indicator

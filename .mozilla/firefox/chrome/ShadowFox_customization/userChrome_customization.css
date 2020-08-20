@@ -470,4 +470,12 @@ vbox#sidebar-box.chromeclass-extrachrome {
   filter: grayscale(100%) invert(100%);
 }
 
+/* ============================================================================= */
+/* Context menu */
+#context-searchselect {
+  display: inline-block;
+  image: url(chrome://browser/skin/search-glass.svg);
+}
+
+
 /* vim:fileencoding=utf-8:ft=conf:foldmethod=marker */

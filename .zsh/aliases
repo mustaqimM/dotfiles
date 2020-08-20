@@ -1,10 +1,8 @@
 #!/usr/bin/env zsh
 
+alias aria="aria2c --no-conf"
 alias cat=bat
 alias cd=' cd'
-alias clip="print 'buffer-cut\nclipboard\nprimary\nsecondary' | \
-    fzf --preview='xclip -selection {} -o' --bind 'enter:execute(cat {})' \
-    --header 'Select buffer to copy into clipboard' --reverse"
 alias chts='CHTSH_CONF='~/.config/cht.sh/cht.sh.conf' cht --shell'
 alias gpg=gpg2
 alias lf='env LS_COLORS=$DEFAULT_LS_COLORS lf'

@@ -92,7 +92,7 @@ tyrannical.tags = {
     layout      = awful.layout.suit.max,
     instance    = {"dev", "ops"},         -- Accept the following instances. This takes precedence over 'class'
     class = {
-      "Code - OSS", "Emacs", "jetbrains-studio", "jetbrains-webstorm", "QtCreator"}
+      "Code - OSS", "Emacs", "Godot", "jetbrains-studio", "jetbrains-webstorm", "QtCreator" }
   },
   {
     name        = "",
@@ -105,6 +105,12 @@ tyrannical.tags = {
     init        = false,
     exclusive   = true,
     class       = { "Gramps" }
+  },
+  {
+    name        = "",
+    init        = false,
+    exclusive   = true,
+    class       = { "Gimp-2.10", "Inkscape", "Blender" }
   }
 }
 
@@ -131,6 +137,7 @@ tyrannical.properties.placement = {
   kcalc   = awful.placement.centered,
   --mpv     = awful.placement.centered,
   Firefox = awful.placement.centered,
+  win0 = awful.placement.centered,
 }
 
 tyrannical.properties.fullscreen   = { "mpv" }
@@ -189,7 +196,7 @@ awful.rules.rules = {
         "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
       },
       type = {
-        -- "dialog",
+        "dialog",
       },
   },
     properties = { floating = true, titlebars_enabled = false },
@@ -267,11 +274,18 @@ awful.rules.rules = {
       awful.placement.centered(c) end
   },
 
-  { rule_any = { class = "jetbrains-studio", name="^win[0-9]+$" },
+  { rule_any =  { class = { "jetbrains-studio", "sun-awt-X11-XWindowPeer" }},
+                -- { name = "^win[0-9]+$" },
     properties = {
-      placement = awful.placement.no_offscreen,
-      titlebars_enabled = false
-    }
+      sticky = false,
+      floating = true,
+      titlebars_enabled = false },
+    callback = function (c)
+      c:geometry({ width = 600, height = 400 })
+      awful.placement.centered(c) end
+  },
+  { rule = { role = "Welcome to Android Studio" },
+    properties = { width = 777, height = 460, floating = true }
   },
 
   { rule_any = { name = { "Close Query — Konversation", "Configure — Konversation",
