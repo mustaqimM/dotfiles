@@ -89,7 +89,7 @@ tyrannical.tags = {
     init        = false,
     exclusive   = true,
     screen      = 1,
-    layout      = awful.layout.suit.max,
+    layout      = awful.layout.suit.max.fullscreen,
     instance    = {"dev", "ops"},         -- Accept the following instances. This takes precedence over 'class'
     class = {
       "Code - OSS", "Emacs", "Godot", "jetbrains-studio", "jetbrains-webstorm", "QtCreator" }
@@ -274,19 +274,22 @@ awful.rules.rules = {
       awful.placement.centered(c) end
   },
 
-  { rule_any =  { class = { "jetbrains-studio", "sun-awt-X11-XWindowPeer" }},
+  { rule_any =  { class = { "jetbrains-studio", "sun-awt-X11-XWindowPeer", "Emacs" }},
                 -- { name = "^win[0-9]+$" },
     properties = {
       sticky = false,
       floating = true,
-      titlebars_enabled = false },
-    callback = function (c)
-      c:geometry({ width = 600, height = 400 })
-      awful.placement.centered(c) end
+      -- titlebars_enabled = false
+    },
+    -- callback = function (c)
+    --   c:geometry({ width = 600, height = 400 })
+    --   awful.placement.centered(c) end
   },
-  { rule = { role = "Welcome to Android Studio" },
-    properties = { width = 777, height = 460, floating = true }
-  },
+  -- { rule = { name = "Welcome to Android Studio" },
+  --   callback = function (c)
+  --     c:geometry({ width = 900, height = 460 })
+  --     awful.placement.centered(c) end
+  -- },
 
   { rule_any = { name = { "Close Query — Konversation", "Configure — Konversation",
                           "Close Tab — Konversation", "Leave Channel — Konversation",

@@ -46,7 +46,7 @@ zinit light-mode for \
 fpath=(
   $ZDOTDIR/functions
   $ZDOTDIR/completions
-  $HOME/.local/bin/scripts
+  $HOME/.local/bin
   "${fpath[@]}"
 )
 
@@ -106,10 +106,10 @@ zi ice wait lucid blockf
 zi light "zsh-users/zsh-completions"
 #zi snippet "OMZ::lib/completion.zsh"
 
-zi ice wait lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start"
-zi light "zsh-users/zsh-autosuggestions"
 zi ice wait lucid atinit"_zcomp"
 zi light "zdharma/fast-syntax-highlighting"
+zi ice wait lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start"
+zi light "zsh-users/zsh-autosuggestions"
 # zi light "zsh-users/zsh-syntax-highlighting"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
@@ -437,7 +437,7 @@ autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy pb scan cen
 
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc aria2c bat cargo curl cwebp direnv docker \
-  docker-machine emacs fd firejail flask fzf gocryptfs inkscape kitty light \
+  docker-machine emacs fd firejail flask fzf gocryptfs inkscape kitty ktlint light \
   mimeo nzbget pip pipx psmem redshift rofi rustc sk tar tlp-stat vue wmctrl z
 
 #for comp ( yadm vifm ) { zicompdef _$comp $comp; }
@@ -447,8 +447,30 @@ zinit cdreplay -q
 
 #source ~/.base16_theme
 
-# vim:ft=zsh:et:fileencoding=utf-8:ft=conf:foldmethod=marker
-#GITSTATUS_LOG_LEVEL=DEBUG
-
 # To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
+
+# ALIAS_FILE="${HOME}/.zsh_aliases"
+
+# reload_aliases () {
+#     # do nothing if there is no $ALIAS_FILE
+#     [[ -e ALIAS_FILE ]] || return 1
+#     # check if $ALIAS_FILE has been modified since last reload
+#     # the modifier `(:A)` resolves any symbolic links
+#     if [[ $LAST_ALIAS_RELOAD < $(stat -c %Y ${ALIAS_FILE}(:A)) ]]; then
+#         # remove all aliases; optional!
+#         # only do this if all of your aliases are defined in $ALIAS_FILE
+#         # also affects aliases defined on the command line
+#         unalias -m '*'
+#         # load aliases
+#         source $ALIAS_FILE
+#         # update date of last reload
+#         LAST_ALIAS_RELOAD=$(date +%s)
+#     fi
+# }
+
+# # make reload_aliases to be run before each prompt
+# autoload -Uz add-zsh-hook
+# add-zsh-hook precmd reload_aliases
+
+# vim:ft=zsh:et:fileencoding=utf-8:ft=conf:foldmethod=marker

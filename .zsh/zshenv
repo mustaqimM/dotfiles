@@ -22,6 +22,7 @@ export BROWSER="$HOME/.local/bin/firefox/firefox"
 #export MOZ_USE_XINPUT2=1
 export MOZ_ACCELERATED=1
 export MOZ_WEBRENDER=1
+export MOZ_X11_EGL=1
 
 export LC_ALL=C
 export TZ=Africa/Johannesburg
@@ -86,6 +87,7 @@ export path=(
     $HOME/.yarn/bin
     $HOME/.emacs.d/bin
     $HOME/.local/bin/sml/bin
+    $HOME/.local/bin/ktlint
     $HOME/.local/bin/scripts
     $ANDROID_HOME/tools
     $ANDROID_HOME/platform-tools

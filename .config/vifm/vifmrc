@@ -180,13 +180,13 @@ nnoremap <c-f> :FZFfind<cr>
 " nnoremap <left> <nop>
 
 " yank current directory path into the clipboard
-nnoremap yd :!echo -n %d | xclip -sel clip %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
+nnoremap yd :!echo -n %d | xclip -sel clip %i<cr>:echo expand('%"d') "dir yanked to clipboard"<cr>
 " yank current file path into the clipboard
-nnoremap yp :!echo -n %c:p | xclip -sel clip %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
+nnoremap yp :!echo -n %c:p | xclip -sel clip %i<cr>:echo expand('%"c:p') "file path yanked to clipboard"<cr>
 " yank current filename without path into the clipboard
-nnoremap yn :!echo -n %c | xclip -sel clip %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
+nnoremap yn :!echo -n %c | xclip -sel clip %i<cr>:echo expand('%"c') "file & ext yanked to clipboard"<cr>
 " yank root of current file's name into the clipboard
-nnoremap yr :!echo -n %c:r | xclip -sel clip %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
+nnoremap yr :!echo -n %c:r | xclip -sel clip %i<cr>:echo expand('%"c:r') "file name yanked to clipboard"<cr>
 
 " Start shell in current directory
 nnoremap s :shell<cr>

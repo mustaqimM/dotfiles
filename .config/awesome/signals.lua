@@ -115,6 +115,7 @@ client.connect_signal("manage",
         t["Firefox"]     = "/home/mustaqim/.mozilla/firefox/chrome/firefox.png"
         t["JDownloader"] = "/usr/share/icons/Papirus-Dark/64x64/apps/jdownloader.svg"
         t["Keybase"]     = "/usr/share/icons/Papirus-Dark/64x64/apps/keybase.svg"
+        t["KeePassXC"]   = "/usr/share/icons/Papirus-Dark/64x64/apps/keepassxc.svg"
         t["Nightly"]     = "/usr/share/icons/Papirus-Dark/64x64/apps/org.mozilla.FirefoxNightly.svg"
         t["Next"]        = "/usr/share/icons/hicolor/128x128/apps/next.png"
         t["st"]          = "/usr/share/icons/Papirus-Dark/64x64/apps/st.svg"
@@ -161,7 +162,7 @@ awful.screen.connect_for_each_screen( function(s)
          function(s)
              for _, c in pairs(s.clients) do
                  if beautiful.border_radius ~= 0 and
-                     (s.selected_tag.layout.name == 'max') or c.fullscreen
+                     (s.selected_tag.layout.name == 'max' or c.fullscreen)
                  --and (#s.tiled_clients == 1)
                  then
                      c.shape = helpers.rect()
