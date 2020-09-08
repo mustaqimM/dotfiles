@@ -61,3 +61,5 @@
 ;(package! vue-mode)
 
 ;(package! vimrc-mode)
+
+(package! gdscript-mode)

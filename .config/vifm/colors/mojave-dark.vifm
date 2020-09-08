@@ -15,8 +15,8 @@ highlight CurrLine cterm=bold ctermfg=default ctermbg=237
 highlight OtherLine cterm=bold ctermfg=default ctermbg=237
 highlight TopLine cterm=bold ctermfg=black ctermbg=235
 highlight TopLineSel cterm=bold ctermfg=black ctermbg=default
-highlight TabLine cterm=bold ctermfg=black ctermbg=235
-highlight TabLineSel cterm=bold ctermfg=016 ctermbg=237
+highlight TabLine cterm=none ctermfg=white ctermbg=235
+highlight TabLineSel cterm=bold ctermfg=016 ctermbg=004
 highlight StatusLine cterm=bold ctermfg=black ctermbg=235
 highlight WildMenu cterm=underline,reverse ctermfg=237 ctermbg=white
 highlight CmdLine cterm=none ctermfg=white ctermbg=black

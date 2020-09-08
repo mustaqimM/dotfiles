@@ -218,6 +218,7 @@ zi light trapd00r/LS_COLORS
 #  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
 #zi light direnv/direnv
 
+
 zi ice wait lucid mv"*cht.sh -> cht" pick"cht" as"program" id-as"cht.sh"
 zi snippet "https://cht.sh/:cht.sh"
 #zi ice wait"2" lucid id-as"tldr" as"program" pick"tldr"
@@ -258,6 +259,9 @@ zi light "exercism/cli"
 
 #zi ice as"program" pick"bin/sml"
 #zi snippet "/home/mustaqim/.local/bin/sml/bin/sml"
+
+zi ice lucid from"gh-r" as"program"
+zi light "pinterest/ktlint"
 
 # }}}
 
@@ -317,13 +321,13 @@ fb() {
     filebot -rename "$@" -non-strict --format "{e} - {t}"
 }
 
-#man() {
-#  if [ -n "$TMUX" ]; then
-#    tmux split-window -h -p 40 /bin/man "$@"
-#  else
-#    /bin/man "$@"
-#  fi
-#}
+man() {
+ if [ -n "$TMUX" ]; then
+   tmux split-window -h -p 40 /bin/man "$@"
+ else
+   /bin/man "$@"
+ fi
+}
 
 function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/"$@" ;}
 

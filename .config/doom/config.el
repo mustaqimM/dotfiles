@@ -189,13 +189,13 @@
 (map! "<f9>" 'centaur-tabs-mode)
 ;; ============================================================================
 ;; ligatures
-(push '("!=" . #Xe901) +pretty-code-iosevka-font-ligatures)
-(push '("++" . #Xe790) +pretty-code-iosevka-font-ligatures)
-(push '("--" . #Xe980) +pretty-code-iosevka-font-ligatures)
-(push '("==" . #Xea01) +pretty-code-iosevka-font-ligatures)
-(push '("===" . #Xea02) +pretty-code-iosevka-font-ligatures)
-
-(setq! +pretty-code-symbols nil)
+;(push '("!=" . #Xe900) +pretty-code-iosevka-font-ligatures)
+;(push '("++" . #Xe790) +pretty-code-iosevka-font-ligatures)
+;(push '("--" . #Xe980) +pretty-code-iosevka-font-ligatures)
+;(push '("==" . #Xea01) +pretty-code-iosevka-font-ligatures)
+;(push '("===" . #Xea02) +pretty-code-iosevka-font-ligatures)
+;
+;(setq! +pretty-code-symbols nil)
 
 ;; ============================================================================
 ;; lsp

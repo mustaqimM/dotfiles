@@ -2,7 +2,7 @@
 " nesting detection
 let $INSIDE_VIFM = 'true'
 
-set vicmd='$EMACS_PLUGIN_LAUNCHER -nw'
+set vicmd='$EMACS_PLUGIN_LAUNCHER -nw -fs'
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
@@ -77,7 +77,7 @@ set smartcase
 set incsearch
 
 " Try to leave some space from cursor to upper/lower border in lists
-set scrolloff=4
+set scrolloff=0
 
 " Don't do too many requests to slow file systems
 "if !has('win')
@@ -91,7 +91,7 @@ view
 "set milleroptions+=lsize:1,csize:3,rsize:4,rpreview:all
 
 " Customize view columns a bit (enable ellipsis for truncated file names)
-set viewcolumns=-{name}...,{target},6{}.
+set viewcolumns=-{name}...,{target}..,6{size}
 
 " Set custom status line look
 set statusline=" Hint: *%z%= %A %9u:%-8g %7E %13d "
@@ -101,7 +101,7 @@ set statusline=" Hint: *%z%= %A %9u:%-8g %7E %13d "
 
 set nowrap
 
-vsplit
+" vsplit
 
 " Empty the ruler. By default, it shows the number of directories+files.
 set rulerformat='%2l/%S %[  %x%]'
@@ -201,7 +201,7 @@ vnoremap w :view<cr>gv
 " Open file in existing instance
 nnoremap o :!emacsclient -nc %f &<cr>
 " Open file in new instance
-nnoremap O :!/bin/emacs -bg '#17191a' %f &<cr>
+nnoremap O :!/bin/emacs -bg '#17191a' -fs %f &<cr>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
@@ -237,7 +237,7 @@ nnoremap ; :
 " Upload highlighted file to 0x0.st and then save url to clipboard
 nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)" &<cr>
 
-"nnoremap gg ggj
+nnoremap gg 2gg
 nnoremap t tj
 nnoremap mkd :mkdir<space>
 
@@ -367,7 +367,7 @@ fileviewer *.[1-8] man ./%c | col -b
 " Images
 filetype *.bmp,*.gif,*.jpg,*.jpeg,*.png,*.webp,*.xpm
         \ {View in feh}
-        \ feh --scale-down %c &,
+        \ feh --scale-down %c %i &,
         \ {View in sxiv}
         \ sxiv %f,
 fileviewer <image/*>
@@ -485,7 +485,7 @@ fileviewer *.csv bat --color always --theme Tomorrow-Night --wrap never --pager 
 fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --syntax make %c
 
 " Text
-filetype <text/*> /bin/emacs -bg '#17191a'
+filetype <text/*> /bin/emacs -bg '#17191a' -fs
 fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
 " fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night -- %c
 " fileviewer <text/*> pygmentize3 -f "terminal256" -O "style=tomorrownight" %c
@@ -496,12 +496,15 @@ fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --
 filetype * mimeo %c %i &
 "fileviewer * file -b %c
 
-set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  ::*.apk::'
+set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  ::*.apk::'
 " code
-set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[c]::,  ::*.[h]::,  ::/^copying|license$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
-set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::, ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::,  ::*.sql::,  ::*.sqlite::'
-set classify+='  ::*.conf,,*.yml,,*.ini::,  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.gd,,*.godot,,*.tscn::,  ::*.java::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::, ::*.rb,,Gemfile::,  ::*.kt::'
+set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[c]::,  ::*.[h]::,  ::/^copying|license|NOTICE$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
+set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::'
+set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::, ::*.rb,,Gemfile::,  ::*.kt::'
+set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
+set classify+='  ::*.conf,,*.yml,,*.ini,,*.cfg::,  ::*.properties::'
+set classify+='  ::*.db,,*.sql,,*.sqlite::'
+set classify+='  ::*.pem::'
 " archives
 set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
@@ -513,8 +516,9 @@ set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.
 " media
 set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid,,*.webm::'
 " documents
-set classify+='  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.text,,*.txt,,README::,  ::*.epub,,*.fb2,,*.djvu,,*.mobi::'
-set classify+='  ::*.srt::,  ::*.pdf::'
+set classify+='  ::*.org::,  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.text,,*.txt,,README::'
+set classify+='  ::*.epub,,*.fb2,,*.djvu,,*.mobi::'
+set classify+='  ::*.csv::,  ::*.srt::,  ::*.pdf::'
 " misc
 set classify+='  ::*.otf,,*.ttf::,  ::*.asc::'
 "}}}

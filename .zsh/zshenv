@@ -18,7 +18,8 @@ export KDEWM=/usr/bin/awesome
 export QT_QPA_PLATFORMTHEME=qt5ct
 export XCURSOR_PATH=$HOME/.local/share/icons
 
-export BROWSER="$HOME/.local/bin/firefox/firefox"
+# export BROWSER="$HOME/.local/bin/firefox/firefox"
+export BROWSER="firefox"
 #export MOZ_USE_XINPUT2=1
 export MOZ_ACCELERATED=1
 export MOZ_WEBRENDER=1
@@ -87,7 +88,7 @@ export path=(
     $HOME/.yarn/bin
     $HOME/.emacs.d/bin
     $HOME/.local/bin/sml/bin
-    $HOME/.local/bin/ktlint
+    # $HOME/.local/bin/ktlint
     $HOME/.local/bin/scripts
     $ANDROID_HOME/tools
     $ANDROID_HOME/platform-tools
@@ -102,3 +103,4 @@ do
     PATH_SORT="${PATH_SORT}$i:"
 done
 PATH="${PATH_SORT%:}"
+

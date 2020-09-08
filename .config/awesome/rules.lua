@@ -54,7 +54,7 @@ tyrannical.tags = {
     exclusive   = true,
     layout      = awful.layout.suit.max,
     class       = {
-      "Assistant"     , "Okular"         , "Evince"    , "EPDFviewer"   , "xpdf",
+      "Assistant"     , "Okular"         , "Evince"    , "EPDFviewer"   , "xpdf", "calibre",
       "Xpdf"          , "Zeal"           , "Zathura", "com.github.johnfactotum.Foliate" }
   },
   {
@@ -110,6 +110,7 @@ tyrannical.tags = {
     name        = "",
     init        = false,
     exclusive   = true,
+    layout      = awful.layout.suit.max.fullscreen,
     class       = { "Gimp-2.10", "Inkscape", "Blender" }
   }
 }
@@ -274,11 +275,12 @@ awful.rules.rules = {
       awful.placement.centered(c) end
   },
 
-  { rule_any =  { class = { "jetbrains-studio", "sun-awt-X11-XWindowPeer", "Emacs" }},
+  { rule_any =  { class = { "jetbrains-studio", "Emacs" } },
                 -- { name = "^win[0-9]+$" },
     properties = {
       sticky = false,
       floating = true,
+      fullscreen = true
       -- titlebars_enabled = false
     },
     -- callback = function (c)
@@ -290,6 +292,11 @@ awful.rules.rules = {
   --     c:geometry({ width = 900, height = 460 })
   --     awful.placement.centered(c) end
   -- },
+--  { rule = { name = { "Reformat file: *" } },
+--    properties = {
+--      floating = true
+--    }
+--  },
 
   { rule_any = { name = { "Close Query — Konversation", "Configure — Konversation",
                           "Close Tab — Konversation", "Leave Channel — Konversation",

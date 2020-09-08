@@ -112,7 +112,7 @@ client.connect_signal("manage",
         t["Code - OSS"]  = "/usr/share/icons/Papirus-Dark/64x64/apps/vscodium.svg"
         t["Franz"]       = "/usr/share/icons/Papirus-Dark/64x64/apps/franz.svg"
         t["Fractal"]     = "/usr/share/icons/hicolor/scalable/apps/org.gnome.Fractal.svg"
-        t["Firefox"]     = "/home/mustaqim/.mozilla/firefox/chrome/firefox.png"
+        -- t["Firefox"]     = "/home/mustaqim/.mozilla/firefox/chrome/firefox.png"
         t["JDownloader"] = "/usr/share/icons/Papirus-Dark/64x64/apps/jdownloader.svg"
         t["Keybase"]     = "/usr/share/icons/Papirus-Dark/64x64/apps/keybase.svg"
         t["KeePassXC"]   = "/usr/share/icons/Papirus-Dark/64x64/apps/keepassxc.svg"
