@@ -56,7 +56,7 @@ tmux_conf_theme_highlight_focused_pane=false
 
 # focused pane colours:
 tmux_conf_theme_focused_pane_fg='default'
-tmux_conf_theme_focused_pane_bg='blue'
+tmux_conf_theme_focused_pane_bg='default'
 
 # pane border style, possible values are:
 #   - thin (default)
@@ -64,25 +64,25 @@ tmux_conf_theme_focused_pane_bg='blue'
 tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
-tmux_conf_theme_pane_border='#444444'                   # gray
+tmux_conf_theme_pane_border='#444444'
 tmux_conf_theme_pane_active_border='blue'
 
 # pane indicator colours
-tmux_conf_theme_pane_indicator='#00afff'                # light blue
-tmux_conf_theme_pane_active_indicator='#00afff'         # light blue
+tmux_conf_theme_pane_indicator='yellow'
+tmux_conf_theme_pane_active_indicator='blue'
 
 # status line style
-tmux_conf_theme_message_fg='yellow'                    # black
-tmux_conf_theme_message_bg='default'                   # yellow
+tmux_conf_theme_message_fg='yellow'
+tmux_conf_theme_message_bg='default'
 tmux_conf_theme_message_attr='bold'
 
 # status line command style (<prefix> : Escape)
-tmux_conf_theme_message_command_fg='#ffff00'            # yellow
-tmux_conf_theme_message_command_bg='#000000'            # black
+tmux_conf_theme_message_command_fg='#ffff00'
+tmux_conf_theme_message_command_bg='default'
 tmux_conf_theme_message_command_attr='bold'
 
 # window modes style
-tmux_conf_theme_mode_fg='#000000'
+tmux_conf_theme_mode_fg='#1d1f21'
 tmux_conf_theme_mode_bg='blue'                          # selection
 tmux_conf_theme_mode_attr='bold'
 
@@ -294,7 +294,7 @@ set -g mouse on
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
 # unbind C-a
-# unbind C-b
+unbind C-b
 # set -g prefix C-a
 # bind C-a send-prefix
 set -g prefix2 M-j
@@ -307,15 +307,11 @@ bind M-j send-prefix
 set-environment -g TMUX_PLUGIN_MANAGER_PATH ~/.config/tmux/plugins/
 set -g @tpm_plugins '                   \
     tmux-plugins/tpm                    \
-    tmux-plugins/tmux-sidebar           \
     laktak/extrakto                     \
     tmux-plugins/tmux-resurrect         \
     tmux-plugins/tmux-continuum         \
 '
 run -b '~/.config/tmux/plugins/tpm/tpm'
 unbind U
-
-set -g @sidebar-tree 'F8'
-set -g @sidebar-tree-command 'lsd --color=always --tree'
 
 set -g @extrakto_key 'y'

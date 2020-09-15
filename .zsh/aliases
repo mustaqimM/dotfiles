@@ -5,7 +5,7 @@ alias cat=bat
 alias cd=' cd'
 alias chts='CHTSH_CONF='~/.config/cht.sh/cht.sh.conf' cht --shell'
 alias gpg=gpg2
-alias jackett=mono ~/.local/bin/Jackett/JackettConsole.exe
+alias jackett='mono ~/.local/bin/Jackett/JackettConsole.exe'
 alias ktlint='ktlint --android --color --relative -v'
 alias lf='env LS_COLORS=$DEFAULT_LS_COLORS lf'
 alias nightly=~/.local/bin/firefox/firefox-bin
@@ -13,11 +13,13 @@ alias nightly=~/.local/bin/firefox/firefox-bin
 alias q=exit
 #alias r=ranger
 alias f='~/.config/vifm/scripts/vifmrun'
+alias reload='exec zsh'
 alias s='googler --count 7'
 alias surf='firejail surf'
 alias tmux='tmux -2 -f ~/.config/tmux/tmux.conf'
 # alias vi='emacsclient -nc -F "((width . 1366))"'
 alias pip='/bin/pip3'
+alias vimb='vimb -c ~/.config/vimb/settings.conf'
 alias xargs='xargs ' # Needed for alias subtitution
 
 #alias ls=exa -bh --group-directories-first --sort name --git -G -F "$@"

@@ -3,11 +3,13 @@
 _plain() {
   local state
 
-  _arguments \
-    '1: :->profile'
+  # _arguments "1: :->profile"
 
-  case $state in
-    (profile) _arguments '1:Select an option:(hide show move)' ;;
-  esac
+  _arguments \
+    "*:Select an option:((show\:show hide:\unmount move:\move))"
+
+  # case $state in
+  #   (profile) _arguments '1:Select an option:(hide show move)' ;;
+  # esac
 }
 

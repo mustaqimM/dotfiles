@@ -24,7 +24,7 @@ tyrannical.tags = {
     screen      = screen.count()>1 and 2 or 1, -- Setup on screen 2 if there is more than 1 screen, else on screen 1
     layout      = awful.layout.suit.max,                 -- Use the max layout
     class = {
-      "Chromium", "Firefox", "Next", "Nightly", "Plank", "qutebrowser", "Surf" },
+      "Chromium", "Firefox", "Next", "Nightly", "Plank", "qutebrowser", "Surf", "vimb" },
     instance = { "mpvstream" }
   },
   {
@@ -310,5 +310,10 @@ awful.rules.rules = {
     end
   },
 
+  { rule = { name = "galculator" },
+    properties = { floating = true, sticky = true, skip_taskbar = true, width = 500, height = 300 },
+    callback = function (c)
+      awful.placement.bottom_right(c) end
+  },
 }
 -- }}}
