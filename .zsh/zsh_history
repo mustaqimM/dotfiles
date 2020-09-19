@@ -2339,7 +2339,6 @@
 : 1585564481:0;yadm rm --cached .config/awesome/tyrannical
 : 1585564669:0;yadm submodule add gh:Elv13/tyrannical tyrannical
 : 1585564764:0;yadm submodule add gh:lcpz/lain lain
-: 1585589365:0;git clone gh:gpakosz/.tmux
 : 1585629704:0;git clone gh:tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 : 1585645146:0;tput cols
 : 1585645979:0;e ~/.local/bin/scripts/center_text
@@ -3095,7 +3094,6 @@ fi
 : 1589548258:0;bat cache --build
 : 1589548313:0;sudo xbps-install xprop
 : 1589549006:0;sudo mount /dev/sda5 ~/Library
-: 1589549658:0;git checkout $(git branch | fzf)
 : 1589551155:0;sudo xbps-install python3-pillow-simd
 : 1589551176:0;sudo xbps-install python3-Pillow
 : 1589551785:0;sudo xbps-remove -R python3-pillow-simd
@@ -3145,7 +3143,6 @@ fi
 : 1589613640:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,Mojave-dark}
 : 1589613715:0;gpg-connect-agent reloadagent /bye
 : 1589613755:0;gpg --list-secret-keys
-: 1589614092:0;gpg -a --export 72692FB2 | xclip -sel clip
 : 1589614098:0;gpg --list-public-keys
 : 1589617650:0;sudo xbps-install pulseaudio
 : 1589617819:0;sudo xbps-install alsa-utils pulseaudio
@@ -3231,7 +3228,6 @@ fi
 : 1589980532:0;sudo xbps-install patch
 : 1590053342:0;sudo xbps-install pipx
 : 1590053363:0;sudo xbps-install python3-pipx
-: 1590053407:0;pipx install dl_coursera
 : 1590053475:0;dl_coursera --cookies cookies.txt --slug java-programming-arrays-lists-data --outdir java-programming-arrays-lists-data --how aria2 --generate-input-file
 : 1590058829:0;sudo xbps-install fwupdate
 : 1590058886:0;sudo cp /usr/lib/fwupdate/EFI/void/fwupx64.efi /boot/efi/EFI/
@@ -3257,7 +3253,6 @@ fi
 : 1590682755:0;yadm diff .surf/styles/default.css
 : 1590685449:0;yadm add ~/.config/configs
 : 1590685482:0;yadm add ~/.config/nvim/init.vim
-: 1590685488:0;yadm add ~/.config/rofi
 : 1590685498:0;yadm add ~/.config/Code\ -\ OSS/User/settings.json
 : 1590725334:0;cd .mozilla/firefox/chrome/
 : 1590725343:0;e ShadowFox_customization/userChrome_customization.css
@@ -3440,10 +3435,7 @@ fi
 : 1593150678:0;sudo tlmgr install fontawesome5
 : 1593168226:0;xclip -sel clip < ~/.ssh/GitLab.pub
 : 1593168281:0;git push origin cv
-: 1593174461:0;yadm add ~/.config/aria2/aria2.conf
-: 1593174588:0;yadm add ~/.local/bin/scripts
 : 1593174602:0;yadm add ~/.local/runit
-: 1593174620:0;yadm add ~/.local/share/applications/ArianNg.desktop
 : 1593174624:0;yadm add ~/.local/share/applications/JDownloader.desktop
 : 1593174701:0;yadm add ~/.surf/{script.js,styles/default.css}
 : 1593174707:0;yadm add ~/.xinitrc
@@ -3594,7 +3586,6 @@ fi
 : 1594448789:0;sudo xbps-install gnome-authenticator
 : 1594470847:0;sudo xbps-install android-udev-rules
 : 1594471779:0;e .zinit/snippets/base16-fzf-tomorrow-night/base16-fzf-tomorrow-night
-: 1594476344:0;e ~/.gitconfig
 : 1594476585:0;gco -b challenge_1
 : 1594477889:0;sudo mkdir -p /var/cache/swap/
 : 1594477926:0;sudo dd if=/dev/zero of=/var/cache/swap/myswap bs=1M count=4096
@@ -3641,7 +3632,6 @@ fi
 : 1595234550:0;sudo ln -s /etc/sv/nanoklogd /var/service
 : 1595234560:0;svlogtail | rg postgres
 : 1595234568:0;svlogtail | rg syncthing
-: 1595235764:0;e ~/.config/mpv/scripts/time.lua
 : 1595239593:0;yadm diff --staged
 : 1595239690:0;yadm remote -v
 : 1595247189:0;e ~/.config/cht.sh/cht.sh.conf
@@ -3706,7 +3696,6 @@ fi
 : 1596346151:0;yadm diff .config/alacritty
 : 1596349510:0;git clone gh:mustaqimm/dm
 : 1596349523:0;grv
-: 1596359612:0;fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500' --preview-window right:90
 : 1596371327:0;git clone --depth=1 gh:be5invis/Iosevka
 : 1596382752:0;for COLOR in {0..255} \
 do\
@@ -3723,7 +3712,6 @@ done
 : 1596433631:0;xdg-settings set default-web-browser Firefox-Nightly.desktop
 : 1596433641:0;echo $BROWSER
 : 1596433664:0;mimeo --add application/x-extension-html Firefox-Nightly.desktop
-: 1596457666:0;yadm add ~/.config/firejail
 : 1596457670:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/^sponsorblock}
 : 1596457804:0;yadm add ~/.gitconfig
 : 1596458269:0;sudo psmem -S
@@ -3800,9 +3788,7 @@ done
 : 1597925441:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1597925791:0;sudo bluetooth toggle
 : 1597925882:0;sudo rfkill block bluetooth
-: 1597926246:0;ls -A
 : 1597927643:0;yadm diff .config/tmux
-: 1597931763:0;sleep 1; ffmpeg -s 1366x768 -y -rtbufsize 100M -f x11grab -t 00:00:30 -framerate 30 -probesize 10M -draw_mouse 1 -i :1 -c:v libx264 -r 30 -preset ultrafast -tune zerolatency -crf 25 -pix_fmt yuv420p -vf "crop=350:250:0:768" output.mp4
 : 1597933761:0;echo -e '\U0001f602'
 : 1597983669:0;sudo wifi toggle
 : 1598003077:0;e ~/Library/Cloud/Org/code/android/database.org
@@ -3820,7 +3806,6 @@ done
 : 1598115374:0;pipx install PyDictionary
 : 1598158008:0;yadm ls-tree -r master --name-only
 : 1598162407:0;e ~/.zsh/functions/clip
-: 1598163825:0;man fzf
 : 1598197480:0;e ~/.config/awesome/bindings.lua
 : 1598248053:0;df -Th
 : 1598253223:0;./shadowfox_linux_x64 -profile-index 3 -generate-uuids -set-dark-theme
@@ -3831,11 +3816,8 @@ done
 : 1598338976:0;e ~/.config/mpv/input.conf
 : 1598343125:0;e ~/.local/share/applications/Firefox-Nightly.desktop
 : 1598351404:0;e ~/Library/Cloud/Org/code/android/libraries.org
-: 1598354406:0;e ~/.config/youtube-dl/config
 : 1598358941:0;udacimak download 'ud9012'
 : 1598367080:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db}
-: 1598367092:0;yadm add ~/.config/picom/picom.conf
-: 1598368327:0;echo $PATH | tr ":" "\n" | nl
 : 1598368914:0; source ~/.zshenv
 : 1598368922:0; source ~/.zsh/.zshrc
 : 1598370091:0;. .zsh/.zshrc
@@ -3888,7 +3870,6 @@ done
 : 1598611942:0;sudo rm /var/service/mysqld
 : 1598615393:0;git clone gh:GDQuest/godot-platformer-2d
 : 1598616626:0;pkill emacs
-: 1598630736:0;e ~/.zsh/zshenv
 : 1598632513:0;aria "https://tridactyl.cmcaine.co.uk/betas/nonewtab/tridactyl_no_new_tab_beta-latest.xpi"
 : 1598636428:0;sudo xbps-install calibre
 : 1598673011:0;mimeo --add application/pdf zathura.desktop
@@ -3937,7 +3918,6 @@ done
 : 1599299776:0;sudo xbps-install anki
 : 1599366187:0;git clone --depth=1 gh:muckSponge/MaterialFox
 : 1599406274:0;yarn add @vuepress/theme-blog -D
-: 1599417671:0;sudo sv restart smbd
 : 1599468717:0;man vifm
 : 1599469465:0;e ~/.config/awesome/wibar.lua
 : 1599475996:0;git init
@@ -3947,29 +3927,18 @@ done
 : 1599480023:0;e requirements.txt
 : 1599481460:0;gl
 : 1599487428:0;sudo powertop --auto-tune
-: 1599543167:0;doom upgrade
 : 1599545341:0;mono ~/.local/bin/Jackett/JackettConsole.exe
 : 1599553654:0;youtube-dl -f '1080p' "$(xclip -sel clip -o)"
 : 1599560139:0;ls -l
 : 1599560426:0;tmux
 : 1599560751:0;yadm add ~/.config/alacritty
-: 1599560757:0;yadm add ~/.config/awesome
-: 1599560761:0;yadm add ~/.config/doom
 : 1599560804:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db*} -n
 : 1599560854:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db*}
-: 1599560869:0;yadm add ~/.config/tmux/tmux.conf{,.local}
-: 1599560876:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1599560886:0;yadm add ~/.mozilla/firefox/chrome
-: 1599560896:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
-: 1599560903:0;yadm commit
-: 1599560947:0;yadm push
-: 1599566301:0;jupyter notebook
 : 1599566598:0;sudo xbps-install python3-pip
-: 1599576023:0;doom compile
 : 1599579823:0;/bin/emacs -bg '#17191a' --daemon
 : 1599582177:0;git clone --depth=1 gh:coekuss/quietfox chrome
 : 1599629396:0;sudo tlmgr update --all
-: 1599629985:0;ttyqr $(xclip -sel clip -o)
 : 1599630547:0;e files/cv.tex
 : 1599664397:0;picom --config ~/.config/picom/picom.conf
 : 1599671405:0;pkill picom
@@ -3979,29 +3948,22 @@ done
 : 1599725966:0;git switch master
 : 1599726044:0;git cherry-pick 80bb692
 : 1599726614:0;git merge master
-: 1599726693:0;git switch $(gb|fzf)
 : 1599726711:0;git merge ML
 : 1599727421:0;ga .
-: 1599727422:0;gcs
 : 1599727454:0;gp
 : 1599734375:0;youtube-dl 'https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab'
 : 1599835496:0;xbps-query -Rs nextcloud
 : 1599835511:0;sudo xbps-install nextcloud-client nextcloud-client-dolphin
 : 1599838110:0;e ~/.config/picom/picom.conf
-: 1599884008:0;tlp-stat -t | rg temp
 : 1599884227:0;e /etc/unbound/unbound.conf
 : 1599894353:0;youtube-dl -f '720p' "$(xclip -sel clip -o)"
-: 1599928127:0;e ~/.zsh/.zshrc
 : 1599942507:0;pkill ueberzug
 : 1599970219:0;e ~/.config/tmux/tmux.conf
-: 1599970823:0;chts
 : 1599971436:0;e ~/.zsh/functions/plain
 : 1599971930:0;man zshcompsys
 : 1599975090:0;e ~/.zsh/completions/_plain
-: 1599975801:0;plain show
 : 1599976493:0;dc
 : 1599977370:0;gd
-: 1599977374:0;fglo
 : 1599977539:0;sudo sv restart unbound
 : 1599983996:0;e ~/.config/rofi/themes/mojave.rasi
 : 1599984029:0;man tmux
@@ -4011,7 +3973,6 @@ done
 : 1599990729:0;type -p bandwhich
 : 1599990755:0;sudo setcap cap_net_raw,cap_net_admin=+ep $(whence bandwhich)
 : 1599990760:0;bandwhich
-: 1599990804:0;reload
 : 1599990809:0;gst
 : 1599990910:0;yarn src:dev
 : 1600013895:0;e ~/.config/tmux/tmux.conf.local
@@ -4020,12 +3981,9 @@ done
 : 1600064201:0;sudo vkpurge rm all
 : 1600064493:0;cd
 : 1600064592:0;date +%s
-: 1600064697:0;pfetch
 : 1600066058:0;fd -X adb push {} /sdcard
 : 1600066677:0;sudo tlmgr install dvipng
-: 1600067115:0;e ~/Library/Cloud/Org/code/ml/ml.org
 : 1600067996:0;sudo xbps-install vimb
-: 1600068053:0;rehash
 : 1600070044:0;psmem -p $(pgrep -d, -u $USER) -S
 : 1600075383:0;sudo xbps-install kcalc
 : 1600075563:0;sudo xbps-install galculator-gtk3
@@ -4035,60 +3993,109 @@ done
 : 1600077694:0;e ~/.config/mpv/mpv.conf
 : 1600097982:0;pkill aria2c
 : 1600100859:0;fd -e backup -x rm
-: 1600102513:0;adb connect 192.168.1.101:5555
-: 1600102515:0;adb push "$(fzf -m)" /sdcard
 : 1600103300:0;man surf
-: 1600105392:0;tmux attach || tmux
 : 1600105398:0;nvim +Man! /tmp/man.XXXXAnuCz7
 : 1600105444:0;vimb -c ~/.config/vimb/settings.conf
-: 1600105481:0;jackett
 : 1600105758:0;echo $RPC_SECRET
-: 1600105804:0;echo $RPC_SECRET | xclip -sel clip
-: 1600106195:0;yadm diff
 : 1600106210:0;e ~/.config/aria2/aria2.conf
-: 1600106220:0;man aria2c
-: 1600142455:0;sudo xbps-install -Suvy
-: 1600142516:0;cat .config/aria2/aria2.log
-: 1600142679:0;alsamixer
 : 1600143838:0;ping mustaqim.ml
 : 1600149611:0;firejail --list
 : 1600149651:0;sudo aa-enforce firejail-default
 : 1600149745:0;cp /usr/share/applications/firefox.desktop ~/.local/share/applications/firefox.desktop
 : 1600149753:0;e ~/.local/share/applications/firefox.desktop
-: 1600150099:0;e ~/.config/vifm/vifmrc
 : 1600150164:0;e ~/.config/vimb/settings.conf
 : 1600151368:0;e ~/.Xresources.d/theme_tomorrow_night
 : 1600151421:0;e ~/.zsh/aliases
-: 1600152108:0;e ~/.config/firejail/firefox.local
 : 1600152348:0;vimb
 : 1600152475:0;e ~/.surf/styles/default.css
 : 1600152505:0;e ~/.config/awesome/rules.lua
 : 1600153329:0;clip
 : 1600155019:0;sudo update_unbound_sb_hosts.sh
-: 1600155215:0;yadm add ~/.config/vimb/{settings.conf,style.css}
 : 1600155960:0;man vimb
 : 1600156363:0;cp /usr/share/applications/vimb.desktop ~/.local/share/applications/vimb.desktop
-: 1600156440:0;e ~/.config/vimb/style.css
 : 1600156470:0;e ~/.local/share/applications/vimb.desktop
-: 1600156536:0;f
-: 1600157035:0;yadm status
-: 1600157040:0;e ~/.zsh/zsh_history
-: 1600157046:0;exec zsh
-: 1600157050:0;yadm status
-: 1600157055:0;yadm diff
-: 1600157082:0;f
-: 1600157114:0;yadm status
 : 1600157122:0;yadm add ~/.config/aria2/aria2.conf
 : 1600157126:0;yadm add ~/.config/awesome
 : 1600157132:0;yadm add ~/.config/doom
 : 1600157150:0;yadm add ~/.config/picom/picom.conf
 : 1600157158:0;yadm add ~/.config/rofi
-: 1600157161:0;yadm status
 : 1600157167:0;yadm add ~/.config/firejail
 : 1600157176:0;yadm diff
 : 1600157196:0;yadm add ~/.config/tmux/tmux.conf{,.local}
-: 1600157200:0;yadm status
 : 1600157206:0;yadm add ~/.config/vimb/{settings.conf,style.css}
 : 1600157212:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1600157222:0;yadm add ~/.local/bin/scripts
 : 1600157230:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1600157235:0;yadm commit
+: 1600157322:0;yadm push
+: 1600183098:0;sudo xbps-install python3-packaging 
+: 1600183110:0;pipx install dl_coursera
+: 1600183139:0;e ~/.zsh/.zshrc
+: 1600183173:0;exec zsh
+: 1600183685:0;aria2c --input-file=programming-languages.download.aria2_input_file.txt
+: 1600186034:0;e ~/.config/mpv/scripts/time.lua
+: 1600188290:0;e ~/.config/vimb/style.css
+: 1600191977:0;sudo sv restart smbd
+: 1600277150:0;echo $RPC_SECRET | xclip -sel clip
+: 1600277152:0;ttyqr $(xclip -sel clip -o)
+: 1600316351:0;chts
+: 1600317114:0;git clone gh:gpakosz/.tmux
+: 1600317167:0;git switch $(gb|fzf)
+: 1600317222:0;git checkout $(git branch | fzf)
+: 1600317666:0;ls -A
+: 1600322843:0;sleep 1; ffmpeg -s 1366x768 -y -rtbufsize 100M -f x11grab -t 00:00:30 -framerate 30 -probesize 10M -draw_mouse 1 -i :1 -c:v libx264 -r 30 -preset ultrafast -tune zerolatency -crf 25 -pix_fmt yuv420p -vf "crop=350:250:0:768" output.mp4
+: 1600325955:0;e ~/.config/youtube-dl/config
+: 1600326006:0;man aria2c
+: 1600327562:0;yadm add ~/.config/youtube-dl/config
+: 1600327605:0;yadm add ~/.local/share/applications/ArianNg.desktop
+: 1600327773:0;yadm status
+: 1600332290:0;e ~/Library/Cloud/Org/code/ml/ml.org
+: 1600336631:0;adb connect 192.168.1.101:5555
+: 1600336719:0;fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500' --preview-window right:90
+: 1600336842:0;man fzf
+: 1600337306:0;plain show
+: 1600337310:0;adb push "$(fzf -m)" /sdcard
+: 1600341631:0;aria --input-file=programming-languages.download.aria2_input_file.txt
+: 1600341649:0;dl_coursera --cookies cookies.txt --slug programming-languages --outdir programming-languages --how aria2 --generate-input-file
+: 1600346337:0;sudo tlmgr install wrapfig
+: 1600346407:0;sudo tlmgr install capt-of
+: 1600401224:0;doom upgrade
+: 1600402564:0;e ~/.gitconfig
+: 1600403408:0;gpg --armour --export-secret-keys > 2692FB2_private.key
+: 1600403782:0;gpg -a --export 72692FB2 | xclip -sel clip
+: 1600404008:0;gpg --list-secret-keys --keyid-format LONG
+: 1600404029:0;gpg --gen-revoke 6817FDC58E0389A44AD1511690E10E0172692FB2
+: 1600404238:0;xclip -sel clip -o >> 6817FDC58E0389A44AD1511690E10E0172692FB2.rev
+: 1600404284:0;xclip -sel clip -o > 6817FDC58E0389A44AD1511690E10E0172692FB2.rev
+: 1600407086:0;gcs
+: 1600407098:0;fglo
+: 1600407798:0;doom compile
+: 1600416288:0;jackett
+: 1600440916:0;sudo xbps-install aspell-en
+: 1600443325:0;cat .config/aria2/aria2.log
+: 1600446498:0;jupyter notebook
+: 1600446520:0;e ~/.config/firejail/firefox.local
+: 1600446671:0;sudo xbps-install python3-matplotlib-data
+: 1600446698:0;sudo xbps-install python3-matplotlib
+: 1600446747:0;pip install h5py
+: 1600446762:0;e ~/.zsh/zsh_history
+: 1600446782:0;rehash
+: 1600446981:0;echo $PATH | tr ":" "\n" | nl
+: 1600447146:0;e ~/.zsh/zshenv
+: 1600447180:0;reload
+: 1600447414:0;sudo xbps-install python3-scipy
+: 1600451050:0;alsamixer
+: 1600451155:0;tlp-stat -t | rg temp
+: 1600487172:0;sudo xbps-install -Suvy
+: 1600487624:0;pfetch
+: 1600494448:0;tmux attach || tmux
+: 1600494477:0;e ~/.config/vifm/vifmrc
+: 1600494641:0;lsattr vifminfo
+: 1600494705:0;f
+: 1600495252:0;yadm status
+: 1600495255:0;f
+: 1600495381:0;yadm add ~/.mozilla/firefox/chrome
+: 1600495393:0;yadm add ~/.mozilla/chrome
+: 1600495401:0;yadm add ~/.config/firejail
+: 1600495404:0;yadm add ~/.gitconfig
+: 1600495409:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc

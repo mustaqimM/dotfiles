@@ -87,6 +87,7 @@ export path=(
     $HOME/.cargo/bin
     $HOME/.yarn/bin
     $HOME/.emacs.d/bin
+    $HOME/.local/bin
     $HOME/.local/bin/sml/bin
     # $HOME/.local/bin/ktlint
     $HOME/.local/bin/scripts

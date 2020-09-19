@@ -1,0 +1,174 @@
+/* Hide border on tab bar, force its state to 'scroll', adjust margin-left for width of scrollbar. */
+#tabbar { border: 0; overflow-y: scroll !important; margin-left: -9px !important; margin-top: 17px;}
+
+/* Hide .twisty and adjust margins so favicons have 7px on left. */
+.tab .twisty {
+  margin-left: 10px;
+  margin-right: -1.5em;
+  opacity: 0;
+  position: relative;
+  z-index: 10000;
+}
+
+/* Push tab labels slightly to the right so they're completely hidden in collapsed state */
+.tab .label {
+  margin-left: 7px;
+}
+
+/* Close Button */
+.tab .closebox::before {
+  border-radius: 3px; /* vary between 0 and 10 to make the background rounder */
+}
+.tab .closebox:hover::before {
+  background: #e0e0e0;
+  opacity: 1; /* defaults to 0.1 */
+}
+.tab.active .closebox:hover::before {
+  background: #e0e0e0;
+}
+
+.tab.active .closebox:hover::before {
+  background: #e0e0e0;
+}
+.tab.pinned {
+  margin-left: 0.11em !important;
+}
+
+.sidebar-splitter {
+  border-color: transparent !important;
+}
+
+#tabbar {
+  border-color: transparent !important;
+}
+
+#tabbar .tab.pinned {
+  margin-left: 1px !important;
+}
+
+
+/* Hide sound playing/muted button. */
+.sound-button::before {
+  display: none !important;
+}
+
+/* ################################################ */
+/* ##### COLOR THEME ############################## */
+/* ################################################ */
+
+:root {
+  --tabbar-bg: red;
+}
+
+#tabbar {
+  border-right: 0px solid #1d1d1d;
+  box-shadow: none !important;
+}
+.tab {
+  box-shadow: none !important;
+}
+
+.label-content {
+  font-size: 14px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.contextual-identity-marker {
+  top: auto !important;
+  /*left: .5em !important;*/
+  /*right: .5em !important;*/
+  bottom: 0 !important;
+  width: .1em !important;
+  max-width: none !important;
+  height: calc(var(--favicon-size) / 0.5) !important;
+
+}
+.pinned {
+  top: auto !important;
+  bottom: 0 !important;
+  max-width: none !important;
+  height: calc(var(--favicon-size) / 0.5) !important;
+
+}
+
+/* Less visible tab dividers.
+   A black border with a very low alpha slightly darkens any color. */
+.tab {
+  border: solid 1px #0000001;
+}
+
+.tab, .tabs, body, #background {
+  background: #1d1f21;
+}
+
+.tab.discarded {
+  background-color: #1d1d1d;
+}
+/* Change styling of the favicon of pending (unloaded) tabs */
+.tab.discarded .favicon {
+  opacity: 0.5 !important;
+}
+.tab.discarded .label {
+  color: rgba(207,207,207,0.25) !important;
+}
+.tab.discarded:hover {
+  background-color: #292929 !important;
+}
+.tab.unread .label {
+  font-style: italic;
+}
+
+/* Adjust style for tab that has sound playing. */
+.tab.sound-playing .favicon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: #000000;
+    animation: pulse 2s ease-out 0s infinite;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* Adjust style for tab that is muted. */
+.tab.muted {
+    opacity: 0.5;
+}
+
+/* Better alignment of Favicons when collapsed*/
+.tab[data-level][data-level="0"] {
+  margin-left: 2% !important;
+}
+.tab[data-level][data-level="1"] {
+  margin-left: 4% !important;
+}
+.tab[data-level][data-level="2"] {
+  margin-left: 6% !important;
+}
+.tab[data-level][data-level="3"] {
+  margin-left: 8% !important;
+}
+.tab[data-level][data-level="4"] {
+  margin-left: 10% !important;
+}
+.tab[data-level][data-level="5"] {
+  margin-left: 12% !important;
+}
+.tab[data-level][data-level="6"] {
+  margin-left: 14% !important;
+}
+.tab[data-level][data-level="6"] {
+  margin-left: 16% !important;
+}
+
+/* Put New Tab on Bottom*/
+#tabbar:not(.overflow) .after-tabs {
+  display: none;
+}
+#tabbar:not(.overflow) ~ .after-tabs {
+  display: block;
+}
+
+button.ghhider {background-color: #1d1f21; border-color: #1d1f21}

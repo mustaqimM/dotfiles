@@ -1,4 +1,4 @@
-*,div,pre,textarea,body,input,td,tr,p:not(btn) {
+*,div,pre,textarea,body,input,td,tr,p {
     background-color: #181818 !important;
     background-image: none !important;
     color: #c0c0c0 !important;
