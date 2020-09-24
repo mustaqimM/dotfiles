@@ -1,4 +1,11 @@
--f '247+251'
+-f '247+251/bestvideo[height<=?720][vcodec=?vp9][fps<=?60]/best'
+--write-sub
+--sub-format=en
+--write-srt
+--write-auto-sub
+--sub-lang=en
+--sub-format=vtt
+--embed-subs
 --merge-output-format webm
 --external-downloader aria2c
---external-downloader-args "--no-conf --continue -j5 -x10 --summary-interval=0"
+--external-downloader-args "--no-conf --continue -j5 -x10 -s10 --summary-interval=0"

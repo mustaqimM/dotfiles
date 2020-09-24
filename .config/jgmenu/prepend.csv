@@ -1,0 +1,4 @@
+Browser,      firefox,               firefox
+File manager, pcmanfm-qt,            system-file-manager
+Terminal,     alacritty,             /usr/share/pixmaps/Alacritty.svg
+^sep()

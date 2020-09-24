@@ -65,7 +65,7 @@ tyrannical.tags = {
     class       = { "KeePassXC" }
   },
   {
-    name        = "",
+    name        = "",
     init        = false,
     exclusive   = true,
     --no_tag_deselect=true,
@@ -85,7 +85,7 @@ tyrannical.tags = {
     class       = { "JDownloader", "qBittorrent" }
   },
   {
-    name        = "​​​​​​​​", --"",
+    name        = "", --"",
     init        = false,
     exclusive   = true,
     screen      = 1,
@@ -112,6 +112,12 @@ tyrannical.tags = {
     exclusive   = true,
     layout      = awful.layout.suit.max.fullscreen,
     class       = { "Gimp-2.10", "Inkscape", "Blender" }
+  },
+  {
+    name        = "",
+    init        = false,
+    exclusive   = true,
+    class       = { "Thunderbird" }
   }
 }
 
@@ -135,6 +141,7 @@ tyrannical.properties.ontop = {
 -- Force the matching clients (by classes) to be centered on the screen on init
 tyrannical.properties.placement = {
   dolphin = awful.placement.centered,
+  pcmanfm = awful.placement.centered,
   kcalc   = awful.placement.centered,
   --mpv     = awful.placement.centered,
   Firefox = awful.placement.centered,
@@ -223,7 +230,7 @@ awful.rules.rules = {
     callback = function (c) awful.placement.centered(c) end
   },
 
-  { rule_any = { class = { "dolphin", "Org.gnome.Nautilus" } },
+  { rule_any = { class = { "dolphin", "Org.gnome.Nautilus", "pcmanfm-qt" } },
     properties = { width = screen_width * 0.85, height = screen_height * 0.75 },
     callback = function (c) awful.placement.centered(c) end
   },

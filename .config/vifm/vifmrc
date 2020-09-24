@@ -335,9 +335,10 @@ fileviewer <audio/*>
 "          \ {View using mpv}
 "          \ mpv %f &,
 fileviewer <video/*>
-        \ vifmimg video %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+           \ mediainfo %c
+"         \ vifmimg video %px %py %pw %ph %c
+"         \ %pc
+"         \ vifmimg clear
 
 " html
 filextype *.html,*.htm
