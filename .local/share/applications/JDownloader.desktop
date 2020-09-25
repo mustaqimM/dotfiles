@@ -2,7 +2,7 @@
 Name=JDownloader
 Comment=Downloader
 GenericName=Downloader
-Exec=firejail --profile=jdownloader java -jar /home/mustaqim/.local/bin/jdownloader/JDownloader.jar
+Exec=java -jar /home/mustaqim/.local/bin/jdownloader/JDownloader.jar
 Icon=jdownloader
 Type=Application
 Terminal=false
