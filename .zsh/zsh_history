@@ -43,8 +43,6 @@
 : 1542457832:0;xbps-query -Rs mpv
 : 1542457832:0;git clone gl:mildlyparallel/pscircle
 : 1542457832:0;sudo xbps-installuv
-: 1542457832:0;sudo xbps-install ttfautohint
-: 1542457832:0;sudo xbps-install otfcc
 : 1542457832:0;sudo xbps-install fontforge
 : 1542457832:0;fontforge -v
 : 1542457832:0;sudo xbps-reconfigure -f linux
@@ -2504,7 +2502,6 @@ fi
 : 1586677377:0;sudo sv down unbound
 : 1586677385:0;sudo unbound-anchor
 : 1586677615:0;sudo sv up unbound
-: 1586678919:0;e /etc/unbound/zones/adblock.local
 : 1586678929:0;cat /etc/unbound/zones/rpz.db
 : 1586678974:0;sudo unbound-control dump_cache
 : 1586679088:0;unbound-host -C /etc/unbound/unbound.conf -v sigok.verteiltesysteme.net
@@ -2832,7 +2829,6 @@ fi
 : 1588317168:0;e srcpkgs/st/template
 : 1588319668:0;sudo xbps-install libinput-gestures
 : 1588330666:0;cd Iosevka/
-: 1588331012:0;pipx install afdko
 : 1588332039:0;e ~/.zsh/.zprofile
 : 1588337220:0;yarn run build contents::iosevka
 : 1588338342:0;cat ~/.base16_theme
@@ -2953,7 +2949,6 @@ fi
 : 1589080935:0;gl --rebase upstream master
 : 1589082668:0;e quasar.conf.js
 : 1589085464:0;sudo xbps-install plymouth
-: 1589089849:0;npm run build -- ttf::iosevka-custom
 : 1589112176:0;e ~/.config/qutebrowser/config.py
 : 1589123070:0;e src/boot/axios.js
 : 1589167263:0;xlint srcpkgs/android-studio/template
@@ -3002,7 +2997,6 @@ fi
 : 1589462035:0;echo $JAVA_HOME
 : 1589465474:0;java -classpath "courserajava.jar:apache-csv.jar" PerimeterRunner.java
 : 1589466128:0;pwd | xclip -sel clip
-: 1589470026:0;yadm add ~/.config/htop/htoprc
 : 1589470043:0;yadm add ~/.github/README.md
 : 1589470344:0;yadm add '~/.config/Code - OSS/User/settings.json'
 : 1589520956:0;cat .xinitrc
@@ -3270,7 +3264,6 @@ fi
 : 1591332466:0;zpl completions
 : 1591349202:0;e .xinitrc
 : 1591369376:0;sudo ln -s /etc/sv/cronie /var/service
-: 1591369383:0;crontab -e
 : 1591375247:0;w
 : 1591378579:0;sudo sv restart syncthing
 : 1591418903:0;e ~/.config/firejail/JDownloader.local
@@ -3435,7 +3428,6 @@ fi
 : 1593273384:0;./xbps-src pkg smlnj
 : 1593277093:0;./config/install.sh -default 64
 : 1593320949:0;sed -e "26s/$/\\\/" -e "27i\" --ansi\"\\\ \n\" --reverse\"" base16-fzf-tomorrow-night
-: 1593338974:0;git pull
 : 1593339325:0;sudo xbps-install atop
 : 1593339463:0;man atop
 : 1593339499:0;atop
@@ -3525,7 +3517,6 @@ fi
 : 1594097967:0;./xbps-src pkg python3-speaklater
 : 1594098007:0;e srcpkgs/python3-sshtunnel/template
 : 1594098064:0;e srcpkgs/python3-Flask-Migrate/template
-: 1594098083:0;e srcpkgs/python3-Flask-Security-Too/template
 : 1594098186:0;git restore --staged .
 : 1594098217:0;ga srcpkgs/python3-Flask-BabelEx
 : 1594098245:0;gcs -m "New package: python3-Flask-BabelEx-0.9.4"
@@ -3588,7 +3579,6 @@ fi
 : 1594543217:0;dig +short txt _gitlab-pages-verification-code.mustaqim.ml
 : 1594555597:0;sudo xbps-remove -R links
 : 1594555602:0;sudo xbps-remove -R links-x11
-: 1594556028:0;e ~/.config/doom/init.el
 : 1594575349:0;man setcap
 : 1594650733:0;bc <<< "$(fd -e mp4 -x ffprobe -i {} -show_entries format=duration -v quiet -of csv="p=0" | awk '{total = total + $1}END{print total}') / 60"
 : 1594656937:0;sudo xbps-install zip
@@ -3767,7 +3757,6 @@ done
 : 1597921597:0;sudo xbps-remove -R twemoji
 : 1597921884:0;xbps-query -Rs emoji
 : 1597925262:0;fc-list | rg "Nerd" | cut -d ":" -f2
-: 1597925293:0;fc-cache -fv
 : 1597925441:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1597925882:0;sudo rfkill block bluetooth
 : 1597927643:0;yadm diff .config/tmux
@@ -3825,8 +3814,6 @@ done
 : 1598518462:0;sudo xbps-remove -R Trimage
 : 1598518516:0;xbps-query -Rs oxipng
 : 1598518524:0;sudo xbps-install oxipng
-: 1598519325:0;gco $(gb | fzf)
-: 1598519333:0;git pull --rebase upstream master
 : 1598519406:0;git push origin master
 : 1598525885:0;xelatex cv.tex
 : 1598529510:0;ktlint --format
@@ -3868,13 +3855,11 @@ done
 : 1598863714:0;git clone --depth=1 gh:GDQuest/godot-demos
 : 1598866222:0;mimeo -m project.godot
 : 1598883818:0;sudo xbps-install pulsemixer
-: 1598883950:0;id mustaqim
 : 1598889352:0;e .gitignore
 : 1598945304:0;aria "https://downloads.tuxfamily.org/godotengine/3.2.2/Godot_v3.2.2-stable_export_templates.tpz"
 : 1599021762:0;mkcd TEST
 : 1599021852:0;sudo xbps-install cmake
 : 1599057757:0;e ~/.config/doom/packages.el
-: 1599057773:0;doom sync
 : 1599058061:0;xbps-query -Rs godot
 : 1599058161:0;aria "https://archive.hugo.pro/builds/godot/master/docs/godot-docs-html-nightly.zip"
 : 1599067827:0;sudo xbps-install blender
@@ -3889,25 +3874,21 @@ done
 : 1599141216:0;git clone gh:fastai/course-v4
 : 1599235159:0;aria "http://download.huzheng.org/babylon/english/stardict-Concise_Oxford_English_Dictionary_2-2.4.2.tar.bz2"
 : 1599235276:0;aria "http://download.huzheng.org/babylon/english/stardict-Merriam-Webster_Collegiate_Dictionary-2.4.2.tar.bz2"
-: 1599239203:0;crontab -l
 : 1599281205:0;sudo xbps-install kdeconnect
 : 1599299748:0;git clone --depth=1 gh:LauraLangdon/anki fastai_course_anki
 : 1599299776:0;sudo xbps-install anki
 : 1599366187:0;git clone --depth=1 gh:muckSponge/MaterialFox
 : 1599406274:0;yarn add @vuepress/theme-blog -D
 : 1599468717:0;man vifm
-: 1599469465:0;e ~/.config/awesome/wibar.lua
 : 1599475996:0;git init
 : 1599476073:0;git remote add origin gl:mustaqim/shoe_or_sandal
 : 1599477041:0;README.md
 : 1599477354:0;git push --set-upstream origin master
 : 1599480023:0;e requirements.txt
-: 1599481460:0;gl
 : 1599545341:0;mono ~/.local/bin/Jackett/JackettConsole.exe
 : 1599553654:0;youtube-dl -f '1080p' "$(xclip -sel clip -o)"
 : 1599560139:0;ls -l
 : 1599560426:0;tmux
-: 1599560751:0;yadm add ~/.config/alacritty
 : 1599560804:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db*} -n
 : 1599560854:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db*}
 : 1599566598:0;sudo xbps-install python3-pip
@@ -3937,14 +3918,12 @@ done
 : 1599975090:0;e ~/.zsh/completions/_plain
 : 1599976493:0;dc
 : 1599977370:0;gd
-: 1599977539:0;sudo sv restart unbound
 : 1599983996:0;e ~/.config/rofi/themes/mojave.rasi
 : 1599984029:0;man tmux
 : 1599984033:0;man rofi
 : 1599990673:0;type -f bandwhich
 : 1599990729:0;type -p bandwhich
 : 1599990755:0;sudo setcap cap_net_raw,cap_net_admin=+ep $(whence bandwhich)
-: 1599990809:0;gst
 : 1599990910:0;yarn src:dev
 : 1600013895:0;e ~/.config/tmux/tmux.conf.local
 : 1600064024:0;sudo xbps-remove -ROo
@@ -3974,10 +3953,8 @@ done
 : 1600157132:0;yadm add ~/.config/doom
 : 1600157150:0;yadm add ~/.config/picom/picom.conf
 : 1600157158:0;yadm add ~/.config/rofi
-: 1600157176:0;yadm diff
 : 1600157196:0;yadm add ~/.config/tmux/tmux.conf{,.local}
 : 1600157206:0;yadm add ~/.config/vimb/{settings.conf,style.css}
-: 1600157212:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1600157222:0;yadm add ~/.local/bin/scripts
 : 1600183098:0;sudo xbps-install python3-packaging 
 : 1600183110:0;pipx install dl_coursera
@@ -3994,7 +3971,6 @@ done
 : 1600317666:0;ls -A
 : 1600322843:0;sleep 1; ffmpeg -s 1366x768 -y -rtbufsize 100M -f x11grab -t 00:00:30 -framerate 30 -probesize 10M -draw_mouse 1 -i :1 -c:v libx264 -r 30 -preset ultrafast -tune zerolatency -crf 25 -pix_fmt yuv420p -vf "crop=350:250:0:768" output.mp4
 : 1600327605:0;yadm add ~/.local/share/applications/ArianNg.desktop
-: 1600332290:0;e ~/Library/Cloud/Org/code/ml/ml.org
 : 1600336719:0;fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500' --preview-window right:90
 : 1600336842:0;man fzf
 : 1600341631:0;aria --input-file=programming-languages.download.aria2_input_file.txt
@@ -4024,9 +4000,7 @@ done
 : 1600495381:0;yadm add ~/.mozilla/firefox/chrome
 : 1600495393:0;yadm add ~/.mozilla/chrome
 : 1600495401:0;yadm add ~/.config/firejail
-: 1600495404:0;yadm add ~/.gitconfig
 : 1600495409:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
-: 1600495412:0;yadm commit
 : 1600495441:0;yadm push
 : 1600497197:0;sudo update_unbound_sb_hosts.sh
 : 1600501744:0;ping mustaqim.ml
@@ -4046,10 +4020,7 @@ done
 : 1600614131:0;sudo xbps-install thunderbird
 : 1600622882:0;yadm add ~/.config/jgmenu/^backup
 : 1600623022:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,Mojave-dark,WhiteSur-dark}
-: 1600623029:0;yadm add ~/.config/awesome
-: 1600623049:0;yadm add ~/.config/youtube-dl/config
 : 1600662747:0;mimeo --add text/plain Emacs.desktop
-: 1600667353:0;ttyqr $(xclip -sel clip -o)
 : 1600668462:0;sudo strings /sys/firmware/acpi/tables/MSDM
 : 1600678086:0;e ~/.config/youtube-dl/config
 : 1600678288:0;man aria2c
@@ -4060,12 +4031,10 @@ done
 : 1600755896:0;sudo xbps-install thunderbird birdtray
 : 1600756123:0;xprop
 : 1600756814:0;e ~/.config/awesome/rules.lua
-: 1600762176:0;jackett
 : 1600762471:0;sudo xbps-install mediainfo
 : 1600763137:0;mimeo --add video/mp4 mpv.desktop
 : 1600764496:0;e ~/.config/jgmenu/jgmenurc
 : 1600766176:0;sudo powertop --auto-tune
-: 1600786036:0;zpl update -p
 : 1600787684:0;e ~/.config/alacritty/alacritty.yml
 : 1600833593:0;clip
 : 1600833804:0;sudo xbps-install opendoas
@@ -4081,49 +4050,99 @@ done
 : 1600839379:0;cp /etc/xbps.d/10-ignore.conf ~/.config/configs/etc/xbps.d/10-ignore.conf
 : 1600839505:0;cp /etc/doas.conf ~/.config/configs/etc
 : 1600839532:0;yadm add ~/.config/configs
-: 1600839533:0;yadm status
 : 1600839564:0;sudo xbps-isntall -Suvy
-: 1600839649:0;doom upgrade
 : 1600845342:0;sudo xbps-install libreoffice
 : 1600849043:0;sudo powertop
-: 1600849105:0;psmem -p $(pgrep -d, -u $USER) -S
 : 1600850677:0;adb connect 192.168.1.101:5555
 : 1600851038:0;fd -X adb push {} /sdcard
-: 1600851522:0;e ~/.config/mpv/input.conf
-: 1600856581:0;htop
 : 1600857820:0;cat .config/aria2/aria2.log
-: 1600858615:0;plain show
 : 1600858882:0;adb push "$(fzf -m)" /sdcard
 : 1600872907:0;jupyter notebook
 : 1600874294:0;man vimb
 : 1600877413:0;e /etc/xbps.d/10-ignore.conf
 : 1600878448:0;bandwhich
-: 1600881885:0;firejail --list
 : 1600920107:0;e ~/.config/vifm/vifmrc
 : 1600922244:0;sudo sv restart smbd
 : 1600922250:0;e /etc/doas.conf
 : 1600922324:0;sudo bluetooth toggle
-: 1600929736:0;tmux attach || tmux
-: 1600930880:0;alsamixer
 : 1600933756:0;man mpv
-: 1600934820:0;sudo xbps-install -Suvy
-: 1600937383:0;tlp-stat -t | rg temp
-: 1600937408:0;reload
 : 1600937568:0;sudo xbps-install sudo
-: 1600937574:0;f
 : 1600937608:0;doom clean
-: 1600937613:0;doom compile
-: 1600937654:0;/bin/emacs -bg '#17191a' --daemon
-: 1600937660:0;e ~/.config/mpv/mpv.conf
 : 1600937722:0;sudo vkpurge rm all
-: 1600937771:0;sudo sv status /var/service/*
-: 1600937967:0;yadm status
-: 1600937985:0;yadm diff
-: 1600937999:0;yadm status
 : 1600938047:0;yadm add ~/.config/alacritty
 : 1600938052:0;yadm add ~/.config/awesome
 : 1600938057:0;yadm add ~/.config/htop/htoprc
-: 1600938078:0;yadm status
 : 1600938124:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1600938127:0;yadm status
 : 1600938136:0;yadm add ~/.config/youtube-dl/config
+: 1600962926:0;cp /usr/share/applications/thunderbird.desktop ~/.local/share/applications/
+: 1600962933:0;e ~/.local/share/applications/thunderbird.desktop
+: 1600963082:0;firejail --list
+: 1600964539:0;e ~/.config/firejail/jdownloader.local
+: 1600967054:0;sudo rm /var/service/postgresql12
+: 1601005685:0;yadm status
+: 1601005692:0;yadm diff
+: 1601005731:0;yadm add ~/.gitconfig
+: 1601005735:0;yadm commit
+: 1601028480:0;for ((i=32;i<127;i++)) do printf "\\$(printf %03o "$i")"; done; printf "\n"
+: 1601028979:0;gl
+: 1601031105:0;sudo xbps-install otfcc
+: 1601031131:0;sudo xbps-install ttfautohint
+: 1601031172:0;yarn add otf2otc
+: 1601031221:0;pipx install afdko
+: 1601031302:0;yarn add verda
+: 1601031339:0;npm run build -- ttf::iosevka-custom
+: 1601032144:0;fc-cache -fv
+: 1601032598:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1601034541:0;e ~/.config/mpv/input.conf
+: 1601044806:0;plain show
+: 1601048664:0;alsamixer
+: 1601051573:0;jackett
+: 1601052412:0;htop
+: 1601092535:0;zpl update -p
+: 1601092979:0;e ~/.config/mpv/mpv.conf
+: 1601093043:0;cat /etc/sudoers
+: 1601093672:0;crontab -l
+: 1601093677:0;/bin/emacs -bg '#17191a' --daemon
+: 1601093683:0;crontab -e
+: 1601094125:0;sudo groupadd sudo
+: 1601094130:0;sudo usermod -aG sudo $USER
+: 1601094281:0;cat /etc/unbound/zones/adblock.local
+: 1601094289:0;sudo sv restart unbound
+: 1601094790:0;reload
+: 1601095004:0;id mustaqim
+: 1601095012:0;sudo visudo /etc/sudoers
+: 1601095820:0;tmux attach || tmux
+: 1601095855:0;e /etc/unbound/zones/adblock.local
+: 1601096113:0;sudoedit /etc/sudoers
+: 1601096129:0;sudo sv status /var/service/*
+: 1601096191:0;sudo visudo
+: 1601096335:0;e ~/.config/awesome/wibar.lua
+: 1601100938:0;sudo xbps-install -Suvy
+: 1601101113:0;e ~/.config/doom/init.el
+: 1601101133:0;doom sync
+: 1601101211:0;doom upgrade
+: 1601101347:0;ttyqr $(xclip -sel clip -o)
+: 1601101413:0;e ~/Library/Cloud/Org/code/ml/ml.org
+: 1601101595:0;sudo xbps-install plantuml
+: 1601101626:0;git pull --rebase upstream master
+: 1601101805:0;gco $(gb | fzf)
+: 1601101814:0;gst
+: 1601101831:0;git pull
+: 1601101921:0;e srcpkgs/python3-Flask-Security-Too/template
+: 1601102168:0;f
+: 1601103309:0;doom compile
+: 1601103482:0;	q
+: 1601103666:0;tlp-stat -t | rg temp
+: 1601103938:0;e /etc/unbound/zones/adblock.local
+: 1601104132:0;sudo sv restart unbound
+: 1601108048:0;yadm status
+: 1601108060:0;yadm diff
+: 1601108075:0;yadm add ~/.gitconfig
+: 1601108078:0;yadm status
+: 1601108086:0;yadm add ~/.config/awesome
+: 1601108093:0;yadm add ~/.config/doom
+: 1601108098:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db*}
+: 1601108106:0;yadm add ~/.config/tmux/tmux.conf{,.local}
+: 1601108116:0;yadm add ~/.local/share/fonts/TTF/iosevka-*
+: 1601108120:0;yadm status
+: 1601108125:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc

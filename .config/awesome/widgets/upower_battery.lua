@@ -56,9 +56,9 @@ local function round(f)
 end
 
 local function update_widget (widget, device)
-   msg = "" .. status_symbols[device.state] .. round(device.percentage) .. " "
+   msg = "" .. status_symbols[device.state] .. round(device.percentage)
    color = get_color(device)
-   widget:set_markup(markup.fontfg(beautiful.font_notif .. " 9", beautiful.fg_normal, format_html(msg, color)));
+   widget:set_markup(markup.fontfg(beautiful.font, beautiful.fg_normal, format_html(msg, color)));
 end
 
 -- Show notifification with extra information

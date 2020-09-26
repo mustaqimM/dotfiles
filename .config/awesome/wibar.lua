@@ -143,9 +143,13 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Battery
-    bat = battery();
-
-    local temp = lain.widget.temp()
+    bat = battery()
+   
+    local temp = lain.widget.temp({
+        settings = function ()
+          widget:set_markup(markup.font(beautiful.font, "" .. coretemp_now .. "° "))
+        end
+    })
 
     -- ALSA volume
     --local volicon = wibox.widget.textbox()
@@ -261,15 +265,24 @@ awful.screen.connect_for_each_screen(function(s)
           layout = wibox.layout.fixed.horizontal,
           {
             widget = wibox.container.margin,
-            margins=6,
+            margins=4,
             netdowninfo,
           },
           --separators.arrow_left(beautiful.bg_focus, "#ffffff"),
           --separators.arrow_left("#ffffff", beautiful.bg_focus),
-          {widget=wibox.container.margin,margins=5,mem},
+          {widget=wibox.container.margin,margins=4,mem},
           -- wibox.widget.textbox('  '),
-          bat,
           -- temp,
+          -- bat,
+          {
+            widget=wibox.container.margin,
+            margins=3,
+            temp
+          },
+          {
+            widget=wibox.container.margin,
+            bat
+          },
           --{widget=wibox.container.margin,margins=0,weather_lain},
           --volicon,
           --{widget=wibox.container.margin,margins=3,myredshift},
