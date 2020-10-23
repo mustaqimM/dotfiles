@@ -335,10 +335,10 @@ fileviewer <audio/*>
 "          \ {View using mpv}
 "          \ mpv %f &,
 fileviewer <video/*>
-           \ mediainfo %c
-"         \ vifmimg video %px %py %pw %ph %c
-"         \ %pc
-"         \ vifmimg clear
+"        \ mediainfo %c
+         \ vifmimg video %px %py %pw %ph %c
+         \ %pc
+         \ vifmimg clear
 
 " html
 filextype *.html,*.htm
@@ -517,7 +517,7 @@ set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*
 " audio
 set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 " media
-set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid,,*.webm::'
+set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vid,,*.vob,,*.wmv,,*.xvid,,*.webm::'
 " documents
 set classify+='  ::*.org::,  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.text,,*.txt,,README::'
 set classify+='  ::*.epub,,*.fb2,,*.djvu,,*.mobi::'

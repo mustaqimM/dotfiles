@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 readonly ID_PREVIEW="preview"
 
 # Preview an image file directly

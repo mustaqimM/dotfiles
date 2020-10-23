@@ -201,3 +201,4 @@
 ;; lsp
 ;(setq lsp-enable-symbol-highlighting nil)
 (setq underline-minimum-offset 5)
+(add-to-list 'exec-path "~/.local/bin/language-servers/kotlin-language-server/bin")

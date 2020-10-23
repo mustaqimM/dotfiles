@@ -56,10 +56,12 @@
 
 ;(package! flycheck-inline)
 
-(package! sml-mode)
+;(package! sml-mode)
 
 ;(package! vue-mode)
 
 ;(package! vimrc-mode)
 
 (package! gdscript-mode)
+
+(package! gnuplot)

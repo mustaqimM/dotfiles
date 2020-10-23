@@ -89,6 +89,7 @@ export path=(
     $HOME/.emacs.d/bin
     $HOME/.local/bin
     $HOME/.local/bin/sml/bin
+    $HOME/.local/bin/language-servers/kotlin-language-server/bin
     # $HOME/.local/bin/ktlint
     $HOME/.local/bin/scripts
     $ANDROID_HOME/tools
