@@ -442,7 +442,7 @@ autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy pb scan cen
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc aria2c bat cargo curl cwebp direnv docker \
   docker-machine emacs fd firejail flask fzf gocryptfs inkscape kitty ktlint light \
-  lsd mimeo nzbget pip pip3 pipx psmem redshift rofi rustc sk tar tlp-stat vue wmctrl z
+  lsd mimeo megadl nzbget pip pip3 pipx psmem redshift rofi rustc sk tar tlp-stat vue wmctrl z
 
 #for comp ( yadm vifm ) { zicompdef _$comp $comp; }
 

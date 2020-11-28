@@ -197,6 +197,12 @@ bindings.globalkeys = gears.table.join(
                               awesome.emit_signal("brightness:change")
             end)
         end, { description = "Decrease Brightness", group = "hotkeys" }),
+    awful.key({ "Control" }, "XF86MonBrightnessDown",
+        function()
+            helpers.async("light -U 20%", function()
+                              awesome.emit_signal("brightness:change")
+            end)
+        end, { description = "Decrease Brightness by 20%", group = "hotkeys" }),
 
     awful.key({ }, "XF86MonBrightnessUp",
         function ()
@@ -204,6 +210,12 @@ bindings.globalkeys = gears.table.join(
                               awesome.emit_signal("brightness:change")
             end)
         end, { description = "Increase Brightness", group = "hotkeys" }),
+    awful.key({ "Control" }, "XF86MonBrightnessUp",
+        function ()
+            helpers.async("light -A 20%", function()
+                              awesome.emit_signal("brightness:change")
+            end)
+        end, { description = "Increase Brightness by 20%", group = "hotkeys" }),
 
     -- Volume control
     awful.key({ }, "XF86AudioLowerVolume", function()

@@ -817,6 +817,7 @@ _comps=(
 'mdeltree' '_mtools'
 'mdir' '_mtools'
 'mdu' '_mtools'
+'megadl' '_gnu_generic'
 'mencal' '_mencal'
 'mere' '_mere'
 'merge' '_rcs'

@@ -18,8 +18,8 @@ export KDEWM=/usr/bin/awesome
 export QT_QPA_PLATFORMTHEME=qt5ct
 export XCURSOR_PATH=$HOME/.local/share/icons
 
-# export BROWSER="$HOME/.local/bin/firefox/firefox"
-export BROWSER="firefox"
+export BROWSER="$HOME/.local/bin/firefox/firefox"
+#export BROWSER="firefox"
 #export MOZ_USE_XINPUT2=1
 export MOZ_ACCELERATED=1
 export MOZ_WEBRENDER=1

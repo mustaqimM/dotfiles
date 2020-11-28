@@ -47,7 +47,6 @@
 : 1542457832:0;sudo xbps-reconfigure -f linux
 : 1542457832:0;e /etc/dracut.conf.d/intel_ucode.conf
 : 1542457832:0;wmname LG3D
-: 1542457832:0;sudo xbps-install qbittorrent
 : 1542457832:0;git pull origin master --allow-unrelated-histories
 : 1542457832:0;flameshot full -p ~/Pictures/Screenshots
 : 1542457832:0;sudo xbps-install nzbget
@@ -512,8 +511,6 @@
 : 1550166690:0;heimdall download-pit --output pit.pit
 : 1550166704:0;cat pit.pit
 : 1550166827:0;heimdall flash --no-reboot --RECOVERY twrp-3.2.3-0-zerolte.img
-: 1550167009:0;heimdall print-pit --verbose --no-reboot
-: 1550167085:0;sudo heimdall-frontend
 : 1550199858:0;adb sideload RR-P-v7.0.0-20190123-zeroltexx-Official.zip
 : 1550201159:0;adb sideload Magisk-v18.1.zip
 : 1550379437:0;xbps-query -Rs xdo
@@ -585,7 +582,6 @@
 : 1554381038:0;sudo xbps-install NetworkManager
 : 1554381126:0;sudo ln -s /etc/sv/NetworkManager /var/service
 : 1554381928:0;psmem -p $(pgrep -d, -u $USER) | tail -n 2 | head -n 1 | awk '{print $1 $2}'
-: 1554437548:0;plain hide
 : 1554438062:0;e /etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf
 : 1554438527:0;git clone gh:rfjakob/gocryptfs
 : 1554439179:0;sudo xbps-remove -O
@@ -1150,7 +1146,6 @@
 : 1570335881:0;mpv --ao=alsa ""
 : 1570363134:0;sudo xbps-remove -R libpulseaudio
 : 1570363157:0;e /etc/asound.conf
-: 1570364031:0;e ~/.asoundrc
 : 1570364350:0;sudo xbps-install strace
 : 1570364575:0;ldd /bin/zsh
 : 1570366994:0;ls ~/.config/mpv/shaders/vulkan
@@ -1200,7 +1195,6 @@
 : 1571030901:0;ga srcpkgs/gocryptfs
 : 1571030929:0;gcs -m "gocryptfs: update to 1.7.1"
 : 1571030939:0;git push -u origin update_gocryptfs
-: 1571031089:0;man gocryptfs
 : 1571113774:0;xbps-query -Rs sudo
 : 1571113807:0;sudo xbps-install opensudo
 : 1571113860:0;cat /etc/pam.d/sudo
@@ -1330,7 +1324,6 @@
 : 1572781896:0;git push -u origin master
 : 1572782544:0;gco -b awesome_luajit
 : 1572796795:0;ln -s srcpkgs/awesome srcpkgs/awesome-LuaJIT
-: 1572797064:0;e srcpkgs/awesome/template
 : 1572842314:0;xbps-query -Rs JIT
 : 1572842403:0;luajit -e 'print(package.cpath)' 
 : 1572886503:0;man lf
@@ -2559,7 +2552,6 @@ fi
 : 1586866577:0;gco -b update_ueberzug
 : 1586869708:0;sudo xbps-install python3-psutil
 : 1586869712:0;pip install ueberzug
-: 1586869817:0;pipx ensurepath
 : 1586869878:0;pipx install ueberzug
 : 1586870000:0;./img 2020-04-12_11-00.png 0 0 300 300
 : 1586871068:0;git restore --staged srcpkgs/python3-pillow-simd/template
@@ -2621,7 +2613,6 @@ fi
 : 1587022975:0;echo $RANGER_LEVEL
 : 1587023930:0;sudo xbps-install sx
 : 1587024767:0;echo $DOOMDIR
-: 1587024788:0;e ~/.xinitrc
 : 1587025170:0;man sx
 : 1587025400:0;echo $DISPLAY
 : 1587025443:0;ps -o tty= -p $$
@@ -2712,7 +2703,6 @@ fi
 : 1587207485:0;yadm add -n ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/^sponsorblock}
 : 1587207533:0;yadm add ~/.zshenv ~/.zsh/{.,}^*.zwc
 : 1587223464:0;pkill ssh-agent
-: 1587232775:0;svlogtail | rg smbd
 : 1587276011:0;e ~/.config/vifm/colors/ph.vifm
 : 1587284745:0;mimeo --add application/vnd.comicbook-rar zathura.desktop
 : 1587292295:0;sudo xbps-install clang
@@ -2804,7 +2794,6 @@ fi
 : 1588166719:0;e src/routes.js
 : 1588224752:0;sudo xbps-install intel-ucode
 : 1588230152:0;cat /proc/cmdline
-: 1588230264:0;sudo dmesg
 : 1588231234:0;sudo tlp-stat
 : 1588231424:0;sudo update-grub
 : 1588314290:0;gco -b changes
@@ -2817,7 +2806,6 @@ fi
 : 1588317168:0;e srcpkgs/st/template
 : 1588319668:0;sudo xbps-install libinput-gestures
 : 1588330666:0;cd Iosevka/
-: 1588332039:0;e ~/.zsh/.zprofile
 : 1588337220:0;yarn run build contents::iosevka
 : 1588338342:0;cat ~/.base16_theme
 : 1588343377:0;cd ../7\ final/
@@ -2942,7 +2930,6 @@ fi
 : 1589169964:0;echo $path | tr " " "\n" | nl
 : 1589178916:0;yadm add ~/.config/kitty
 : 1589203830:0;git clone --depth=1 gh:vuejs/vue-hackernews-2.0
-: 1589209910:0;fd -e torrent | fzf --preview='imdl -t -c always torrent show -i {}' --height 20
 : 1589216900:0;cd emacs-lisp/
 : 1589259777:0;quasar dev -m android
 : 1589274317:0;xbps-query -Rs emacs
@@ -2953,7 +2940,6 @@ fi
 : 1589284060:0;e src/pages/Index.vue
 : 1589286670:0;quasar dev
 : 1589287407:0;npm install -g cordova
-: 1589304768:0;fusermount -u ~/Library/.plain
 : 1589342279:0;pipx install coursera-dl
 : 1589342715:0;xclip -sel clip -o > cookies.txt
 : 1589342722:0;dl_coursera --cookies cookies.txt --slug duke-programming-web --outdir duke-programming-web --how aria2 --generate-input-file
@@ -3021,7 +3007,6 @@ fi
 : 1589527824:0;sudo xbps-install xinput
 : 1589528203:0;sudo xbps-install awesome
 : 1589528297:0;ssh-add $HOME/.ssh/GitLab </dev/null
-: 1589528299:0;ssh-add $HOME/.ssh/GitHub </dev/null
 : 1589528362:0;sudo xbps-install setxkbmap
 : 1589529435:0;sudo xbps-install keepassxc
 : 1589530429:0;sudo xbps-install xclip
@@ -3098,8 +3083,6 @@ fi
 : 1589564902:0;sudo cp ~/.config/configs/etc/samba/smb.conf /etc/samba/smb.conf
 : 1589564912:0;sudo ln -s /etc/sv/smbd /var/service
 : 1589600718:0;e srcpkgs/python3-Pillow/template
-: 1589601570:0;./xbps-src binary-bootstrap
-: 1589602326:0;./xbps-src bootstrap-update
 : 1589602343:0;e srcpkgs/harfbuzz/template
 : 1589603014:0;man fstab
 : 1589604729:0;sudo xbps-install inkscape
@@ -3180,7 +3163,6 @@ fi
 : 1589897781:0;xbps-query -m > ~/.config/configs/installed_apps
 : 1589909239:0;sudo xbps-install gimp
 : 1589911442:0;sudo xbps-install android-tools
-: 1589911513:0;git clone --depth=1 gh:M0Rf30/android-udev-rules
 : 1589911539:0;sudo cp android-udev-rules/51-android.rules /usr/lib/udev/rules.d/51-android.rules
 : 1589911599:0;sudo chmod a+r /etc/udev/rules.d/51-android.rules
 : 1589911647:0;sudo chmod a+r /usr/lib/udev/rules.d/51-android.rules
@@ -3191,7 +3173,6 @@ fi
 : 1589980221:0;git clone --depth=1 suckless:surf
 : 1589980532:0;sudo xbps-install patch
 : 1590053342:0;sudo xbps-install pipx
-: 1590053363:0;sudo xbps-install python3-pipx
 : 1590053475:0;dl_coursera --cookies cookies.txt --slug java-programming-arrays-lists-data --outdir java-programming-arrays-lists-data --how aria2 --generate-input-file
 : 1590058829:0;sudo xbps-install fwupdate
 : 1590058886:0;sudo cp /usr/lib/fwupdate/EFI/void/fwupx64.efi /boot/efi/EFI/
@@ -3384,7 +3365,6 @@ fi
 : 1593079865:0;e examples/cv.tex
 : 1593079993:0;xelatex examples/cv.tex
 : 1593101292:0;sudo tlmgr install lastpage
-: 1593147708:0;e cv/education.tex
 : 1593150678:0;sudo tlmgr install fontawesome5
 : 1593168226:0;xclip -sel clip < ~/.ssh/GitLab.pub
 : 1593168281:0;git push origin cv
@@ -3507,7 +3487,6 @@ fi
 : 1594478054:0;sudo mkswap /var/cache/swap/myswap
 : 1594478063:0;sudo swapon /var/cache/swap/myswap
 : 1594478068:0;lsblk
-: 1594478081:0;e /etc/fstab
 : 1594478198:0;psmem -p $(pgrep -d, -u $USER)
 : 1594478234:0;whatis setcap
 : 1594488466:0;e ~/.config/fontconfig/fonts.conf
@@ -3573,7 +3552,6 @@ fi
 : 1595502713:0;e ~/.config/rofi/config.rasi
 : 1595567367:0;e ~/.config/firejail/firefox-nightly.local
 : 1595567770:0;man firejail
-: 1595653254:0;inxi -F -d -f -l -m -o -p -t cm -u -x
 : 1595669936:0;tmux attach -t 0
 : 1595675559:0;man alacritty
 : 1595693836:0;e ~/.zsh/.p10k.zsh
@@ -3645,7 +3623,6 @@ done
 : 1597384471:0;adb push system-quack-arm64-aonly-vanilla.img /sdcard
 : 1597388670:0;fastboot reboot bootloader
 : 1597388775:0;sudo xbps-install heimdall
-: 1597388789:0;heimdall detect
 : 1597390962:0;adb push LineageOS-10-zero-multitarget-2020-04-13_2047.zip /sdcard
 : 1597392752:0;aria2c --no-conf 'https://lineageos.wickenberg.nu/zeroflte/lineage-17.1-20200813-UNOFFICIAL-zerofltexx.zip'
 : 1597394657:0;aria2c --no-conf $(xclip -sel clip -o)
@@ -3654,7 +3631,6 @@ done
 : 1597406281:0;adb shell pm uninstall --user 0 com.android.launcher3
 : 1597407906:0;aria2c --no-conf "https://f-droid.org/F-Droid.apk"
 : 1597419579:0;gcans!
-: 1597553341:0;smbclient -U nobody //192.168.1.100/plain
 : 1597725046:0;xprop | rg WM_CLASS | cut --delimiter=' ' -f4
 : 1597725727:0;gcs -m "Initial setup"
 : 1597729621:0;e cv.tex
@@ -3668,7 +3644,6 @@ done
 : 1597897838:0;sudo alsactl store
 : 1597898325:0;adb tcpip 5555
 : 1597898414:0;adb shell setprop service.adb.tcp.port 4444
-: 1597898586:0;adb devices
 : 1597900614:0;echo $FZF_CTRL_T_COMMAND
 : 1597910432:0;yadm diff .config/awesome
 : 1597912546:0;sudo xbps-install cronie
@@ -3724,9 +3699,7 @@ done
 : 1598505563:0;sudo hp-setup -i
 : 1598506056:0;sudo xbps-install simple-scan
 : 1598506502:0;sudo simple-scan 'hp:/usb/Deskjet_2050_J510_series?serial=CN0481N09C05D1'
-: 1598506707:0;sudo sv restart udevd
 : 1598509247:0;sudo usermod -a -G scanner $USER
-: 1598509420:0;lsusb
 : 1598509695:0;sudo usermod -a -G lp $USER
 : 1598509703:0;sudo sane-find-scanner
 : 1598509736:0;sudo ldconfig
@@ -3797,7 +3770,6 @@ done
 : 1599299776:0;sudo xbps-install anki
 : 1599366187:0;git clone --depth=1 gh:muckSponge/MaterialFox
 : 1599406274:0;yarn add @vuepress/theme-blog -D
-: 1599468717:0;man vifm
 : 1599475996:0;git init
 : 1599476073:0;git remote add origin gl:mustaqim/shoe_or_sandal
 : 1599477041:0;README.md
@@ -3820,7 +3792,6 @@ done
 : 1599726044:0;git cherry-pick 80bb692
 : 1599726614:0;git merge master
 : 1599726711:0;git merge ML
-: 1599727421:0;ga .
 : 1599835496:0;xbps-query -Rs nextcloud
 : 1599835511:0;sudo xbps-install nextcloud-client nextcloud-client-dolphin
 : 1599838110:0;e ~/.config/picom/picom.conf
@@ -3832,7 +3803,6 @@ done
 : 1599975090:0;e ~/.zsh/completions/_plain
 : 1599976493:0;dc
 : 1599983996:0;e ~/.config/rofi/themes/mojave.rasi
-: 1599984029:0;man tmux
 : 1599984033:0;man rofi
 : 1599990673:0;type -f bandwhich
 : 1599990729:0;type -p bandwhich
@@ -3845,7 +3815,6 @@ done
 : 1600075383:0;sudo xbps-install kcalc
 : 1600075563:0;sudo xbps-install galculator-gtk3
 : 1600075928:0;sudo xbps-remove -R kcalc
-: 1600097982:0;pkill aria2c
 : 1600103300:0;man surf
 : 1600105398:0;nvim +Man! /tmp/man.XXXXAnuCz7
 : 1600105444:0;vimb -c ~/.config/vimb/settings.conf
@@ -3858,12 +3827,10 @@ done
 : 1600152475:0;e ~/.surf/styles/default.css
 : 1600156363:0;cp /usr/share/applications/vimb.desktop ~/.local/share/applications/vimb.desktop
 : 1600156470:0;e ~/.local/share/applications/vimb.desktop
-: 1600157122:0;yadm add ~/.config/aria2/aria2.conf
 : 1600157150:0;yadm add ~/.config/picom/picom.conf
 : 1600157158:0;yadm add ~/.config/rofi
 : 1600157222:0;yadm add ~/.local/bin/scripts
 : 1600183098:0;sudo xbps-install python3-packaging 
-: 1600183110:0;pipx install dl_coursera
 : 1600183173:0;exec zsh
 : 1600183685:0;aria2c --input-file=programming-languages.download.aria2_input_file.txt
 : 1600186034:0;e ~/.config/mpv/scripts/time.lua
@@ -3890,12 +3857,10 @@ done
 : 1600494641:0;lsattr vifminfo
 : 1600495381:0;yadm add ~/.mozilla/firefox/chrome
 : 1600495401:0;yadm add ~/.config/firejail
-: 1600501744:0;ping mustaqim.ml
 : 1600528717:0;youtube-dl 'https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab'
 : 1600575795:0;e ~/.config/jgmenu/hooks
 : 1600575941:0;e ~/.config/jgmenu/startup
 : 1600576919:0;sudo cp Downloads/jgmenu-gtktheme.py /usr/lib/jgmenu/
-: 1600589997:0;e ~/.config/awesome/bindings.lua
 : 1600590563:0;jgmenu_run init -i
 : 1600591606:0;e ~/.config/jgmenu/append.csv
 : 1600592204:0;zzz
@@ -3942,7 +3907,6 @@ done
 : 1600962926:0;cp /usr/share/applications/thunderbird.desktop ~/.local/share/applications/
 : 1600962933:0;e ~/.local/share/applications/thunderbird.desktop
 : 1600964539:0;e ~/.config/firejail/jdownloader.local
-: 1600967054:0;sudo rm /var/service/postgresql12
 : 1601028480:0;for ((i=32;i<127;i++)) do printf "\\$(printf %03o "$i")"; done; printf "\n"
 : 1601028979:0;gl
 : 1601031105:0;sudo xbps-install otfcc
@@ -3958,7 +3922,6 @@ done
 : 1601094125:0;sudo groupadd sudo
 : 1601094130:0;sudo usermod -aG sudo $USER
 : 1601094281:0;cat /etc/unbound/zones/adblock.local
-: 1601095004:0;id mustaqim
 : 1601095012:0;sudo visudo /etc/sudoers
 : 1601096113:0;sudoedit /etc/sudoers
 : 1601096191:0;sudo visudo
@@ -3968,28 +3931,20 @@ done
 : 1601101805:0;gco $(gb | fzf)
 : 1601101831:0;git pull
 : 1601103482:0;	q
-: 1601108060:0;yadm diff
 : 1601108075:0;yadm add ~/.gitconfig
-: 1601108086:0;yadm add ~/.config/awesome
 : 1601108098:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db*}
 : 1601108106:0;yadm add ~/.config/tmux/tmux.conf{,.local}
 : 1601108116:0;yadm add ~/.local/share/fonts/TTF/iosevka-*
-: 1601108130:0;yadm commit
-: 1601108146:0;yadm push
-: 1601109381:0;sudo update_unbound_sb_hosts.sh
 : 1601141688:0;e files/cv/education.tex
 : 1601141818:0;xelatex files/cv.tex
-: 1601141837:0;xelatex cv.tex
 : 1601142211:0;dl_coursera --cookies cookies.txt --slug programming-languages --outdir programming-languages --how aria2 --generate-input-file
 : 1601142223:0;aria --input-file=programming-languages.download.aria2_input_file.txt
-: 1601142567:0;dl_coursera --cookies cookies.txt --slug algorithms-divide-conquer --outdir algorithms-divide-conquer --how aria2 --generate-input-file
 : 1601143685:0;e ~/.config/vimb/settings.conf
 : 1601177663:0;aria --input-file=algorithms-divide-conquer.download.aria2_input_file.txt
 : 1601179118:0;git checkout -b update_plantuml
 : 1601179302:0;./xbps-src pkg plantuml
 : 1601179628:0;sudo xbps-install --repository=hostdir/binpkgs/update_plantuml plantuml
 : 1601179784:0;ga srcpkgs/plantuml/template
-: 1601179804:0;gcs
 : 1601179920:0;git push origin update_plantuml
 : 1601180879:0;git config --global user.signingkey 72692FB2
 : 1601181068:0;xlint srcpkgs/plantuml/template
@@ -4011,9 +3966,6 @@ done
 : 1601270370:0;xbps-query -Rs tesseract
 : 1601277757:0;e ~/.config/mpv/input.conf
 : 1601294374:0;ttyqr $(xclip -sel clip -o)
-: 1601361555:0;e ~/.zsh/.zshrc
-: 1601368105:0;e ~/.config/awesome/themes/mojave-dark/theme.lua
-: 1601487449:0;clip
 : 1601525118:0;e srcpkgs/plantuml/template
 : 1601530980:0;git reset --hard 7124b4d1e1
 : 1601531225:0;git fetch origin
@@ -4035,11 +3987,8 @@ done
 : 1601620831:0;git rebase --interactive HEAD~3
 : 1601625728:0;doom purge
 : 1601625748:0;doom help
-: 1601634449:0;jupyter notebook
 : 1601706039:0;doom clean
 : 1601722099:0;./shadowfox_linux_x64 -profile-index 3 -generate-uuids -set-dark-theme
-: 1601731045:0;sudo sv restart smbd
-: 1601739128:0;bc <<< "$(fd -e mp4 -x ffprobe -i {} -show_entries format=duration -v quiet -of csv="p=0" | awk '{total = total + $1}END{print total}') / 60"
 : 1601745323:0;e ~/.zsh/zsh_history
 : 1601745336:0;fd -X adb push {} /sdcard
 : 1601746520:0;adb push "$(fd -e mp4 -e mkv -c always | fzf -m)" /sdcard/Downloads
@@ -4051,7 +4000,6 @@ done
 : 1601784443:0;xlint srcpkgs/imlib2/template
 : 1601784508:0;xbps-query -Rs scantailor
 : 1601784889:0;gcs -m "Remove package: imlib2-webp-1.0"
-: 1601785077:0;gp
 : 1601785266:0;git checkout -b origin/new_package_smlnj
 : 1601785355:0;xnew smlnj
 : 1601785362:0;e srcpkgs/smlnj/template
@@ -4096,7 +4044,6 @@ done
 : 1601876887:0;ga srcpkgs/python3-sshtunnel
 : 1601876893:0;gcs -m "New package: python3-sshtunnel-0.1.5"
 : 1601876905:0;e srcpkgs/pgadmin4/patches/hardcode-py-lib-location.patch
-: 1601879557:0;gd
 : 1601879571:0;git rebase --interactive '3696cdb77f^'
 : 1601879622:0;e srcpkgs/pgadmin4/template
 : 1601880307:0;xlint srcpkgs/python3-brotli/template
@@ -4116,7 +4063,6 @@ done
 : 1601883280:0;xlint srcpkgs/python3-Flask-Paranoid/template
 : 1601883389:0;git rebase --interactive '7f911ed310^'
 : 1601883560:0;e srcpkgs/python3-Flask-Security-Too/template
-: 1601883775:0;glo
 : 1601883787:0;git rebase --interactive 'c76c9c4246^'
 : 1601883800:0;e srcpkgs/python3-Flask-Paranoid/template
 : 1601883814:0;git commit --all --amend --no-edit
@@ -4124,74 +4070,47 @@ done
 : 1601883833:0;./xbps-src pkg pgadmin4
 : 1601884294:0;git push -f
 : 1602002457:0;sudo bluetooth toggle
-: 1602002507:0;yadm add ~/.config/doom
 : 1602002535:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1602002608:0;yadm add ~/.mozilla/chrome
 : 1602002653:0;yadm add ~/.config/vimb/{settings.conf,style.css}
-: 1602002665:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
 : 1602003396:0;git stash clear
-: 1602003416:0;git switch $(gb|fzf)
 : 1602003480:0;gs
-: 1602003575:0;gst
 : 1602065709:0;fd -e mkv -x mv {} . \;
 : 1602067573:0;firejail --list
 : 1602083262:0;./shadowfox_linux_x64 -profile-index 2 -generate-uuids -set-dark-theme
 : 1602083599:0;fd -e backup -x rm
-: 1602083841:0;yadm status
 : 1602084371:0;echo $RPC_SECRET | xclip -sel clip
 : 1602127242:0;pfetch
-: 1602175477:0;e /etc/unbound/zones/adblock.local
-: 1602256831:0;sudo sv restart unbound
 : 1602257489:0;aria 'https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz'
 : 1602479164:0;bat cache --build
 : 1602523616:0;adb p[C]
-: 1602559703:0;sudo vkpurge rm all
 : 1602677435:0;sml
 : 1602763093:0;pkill ueberzug
 : 1602763109:0;e ~/.zsh/aliases
-: 1602774697:0;man mpv
 : 1602819137:0;xbps-query -Rs kotlin
 : 1602819178:0;sudo xbps-install kotlin-bin
-: 1602820201:0;ttyqr -b $(xclip -sel clip -o)
 : 1602837030:0;xbps-query -Rs wine
-: 1602839136:0;cat .config/aria2/aria2.log
-: 1602839757:0;plain show
 : 1602861623:0;chts
 : 1602862509:0;git clone -d1 gh:hlissner/doom-emacs ~/.emacs.d
 : 1602862550:0;git clone --depth=1 gh:hlissner/doom-emacs ~/.emacs.d
 : 1602862577:0;doom install
-: 1602863302:0;e ~/.config/aria2/aria2.conf
 : 1602863771:0;doom sync
-: 1602865046:0;e ~/.zsh/zshenv
 : 1602865541:0;echo $PATH | tr ":" "\n" | nl
 : 1602905857:0;kotlinc pa2.kt -include-runtime -d pa2.jar
 : 1602906294:0;java -jar pa2.jar
 : 1602906314:0;sudo xbps-install gradle
 : 1602914787:0;git clone --depth=1 gh:fwcd/kotlin-quick-start
-: 1602914832:0;reload
-: 1602914931:0;e ~/.config/mpv/mpv.conf
 : 1602915585:0;...
 : 1602915804:0;ktlint
-: 1602916752:0;psmem -p $(pgrep -d, -u $USER) -S
-: 1602916762:0;sudo psmem -S
 : 1602956123:0;pkill java
 : 1602992161:0;sudo xbps-install megatools
 : 1602992171:0;rehash
 : 1603007889:0;xprop
 : 1603019923:0;./gradlew build
 : 1603019927:0;./gradlew run
-: 1603124825:0;cd
-: 1603124829:0;doom upgrade
-: 1603164100:0;tmux attach || tmux
 : 1603167227:0;sudo setcap cap_sys_ptrace,cap_dac_read_search,cap_net_raw,cap_net_admin+ep $(whence bandwhich)
-: 1603167342:0;bandwhich
-: 1603194538:0;df -Th
-: 1603269673:0;pkill emacs
-: 1603269675:0;doom compile
-: 1603269699:0;/bin/emacs -bg '#17191a' --daemon
 : 1603269706:0;e ~/.config/vifm/vifmrc
 : 1603270694:0;xbps-query -Rs rar
-: 1603270741:0;git pull --rebase upstream master
 : 1603270795:0;git checkout -b new_package_rar2fs
 : 1603270802:0;xnew rar2fs
 : 1603271402:0;e srcpkgs/rar2fs/template
@@ -4199,29 +4118,153 @@ done
 : 1603271730:0;./xbps-src cle
 : 1603273713:0;./xbps-src pkg rar2fs
 : 1603274009:0;./xbps-src pkg unrar_devel
-: 1603274247:0;sudo xbps-remove -ROo
 : 1603274599:0;sudo xbps-install --repository=hostdir/binpkgs/new_package_rar2fs/nonfree unrar-devel
 : 1603277491:0;e srcpkgs/unrar/template
-: 1603278163:0;./xbps-src clean
 : 1603278164:0;./xbps-src pkg unrar-devel
 : 1603278863:0;sudo xbps-install unrar
 : 1603282763:0;adb connect 192.168.1.102:5555
-: 1603282817:0;adb kill-server
-: 1603299265:0;adb push "$(fd -e mp4 -e mkv -c always | fzf -m)" /sdcard/Download
-: 1603301763:0;htop
-: 1603336789:0;tlp-stat -t | rg temp
-: 1603355134:0;alsamixer
-: 1603355170:0;adb connect 192.168.1.101:5555
-: 1603355172:0;fd -X adb push {} /sdcard/Download
-: 1603380722:0;zpl update -p
-: 1603389074:0;man aria2c
-: 1603435725:0;f
-: 1603435753:0;jackett
-: 1603437042:0;sudo xbps-install -Suvy
 : 1603437101:0;sudo xbps-install earlyoom
 : 1603437135:0;sudo ln -s /etc/sv/earlyoom /var/service
-: 1603437153:0;sudo sv status /var/service/*
 : 1603437160:0;svlogtail
-: 1603437193:0;yadm status
-: 1603437200:0;yadm diff
 : 1603437236:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1603437254:0;yadm add ~/.config/doom
+: 1603437262:0;yadm 
+: 1603437274:0;yadm commit
+: 1603437328:0;yadm push
+: 1603456989:0;adb kill-server
+: 1603523780:0;svlogtail | rg smbd
+: 1603524296:0;smbclient -U nobody //192.168.1.100/plain
+: 1603552961:0;e /etc/mtab
+: 1603553056:0;e /etc/fstab
+: 1603553068:0;man gocryptfs
+: 1603702627:0;git clone gl:artefact2/wiktionary-to-stardict
+: 1603769564:0;fusermount -u ~/Library/.plain
+: 1603786071:0;e ~/.xinitrc
+: 1603787098:0;heimdall --help
+: 1603787229:0;heimdall detect
+: 1603787447:0;sudo touch /etc/udev/rules.d/79-samsung.rules
+: 1603787448:0;e /etc/udev/rules.d/79-samsung.rules
+: 1603788114:0;git clone --depth=1 gh:M0Rf30/android-udev-rules
+: 1603788196:0;id mustaqim
+: 1603788209:0;glo
+: 1603788267:0;heimdall print-pit --no-reboot
+: 1603788324:0;sudo heimdall-frontend
+: 1603789866:0;sudo sv restart udevd
+: 1603789868:0;heimdall print-pit --verbose --no-reboot
+: 1603790096:0;heimdall detect --verbose --usb-log-level debug
+: 1603790608:0;lsusb
+: 1603791960:0;adb devices
+: 1603795687:0;adb push "$(fzf -m)" /sdcard/Download
+: 1603855039:0;heimdall-frontend
+: 1603945222:0;pipx ensurepath
+: 1603945313:0;sudo xbps-remove -R python3-pipx
+: 1603945497:0;sudo xbps-install python3-pipx
+: 1603945509:0;pipx list
+: 1603945515:0;pipx install dl_coursera
+: 1603945999:0;dl_coursera --cookies cookies.txt --slug algorithms-divide-conquer --outdir algorithms-divide-conquer --how aria2 --generate-input-file
+: 1603946016:0;dl_coursera --cookies cookies.txt --slug algorithms-graphs-data-structures --outdir algorithms-graphs-data-structures --how aria2 --generate-input-file
+: 1603946077:0;aria --input-file=algorithms-graphs-data-structures/algorithms-graphs-data-structures.download.aria2_input_file.txt
+: 1603954824:0;xnew taiwins
+: 1603954867:0;e srcpkgs/awesome/template
+: 1603965574:0;gd
+: 1603965587:0;ga .
+: 1603965593:0;gcs
+: 1603965669:0;gp
+: 1604054167:0;e ~/.config/awesome/bindings.lua
+: 1604054454:0;yadm add ~/.config/aria2/aria2.conf
+: 1604054456:0;yadm add ~/.config/awesome
+: 1604054460:0;yadm status
+: 1604054504:0;e ~/.zsh/.zprofile
+: 1604054512:0;yadm diff
+: 1604145560:0;./xbps-src bootstrap-update
+: 1604145567:0;./xbps-src binary-bootstrap
+: 1604146914:0;xlint srcpkgs/taiwins/template
+: 1604160570:0;sudo psmem -S
+: 1604201887:0;git switch $(gb|fzf)
+: 1604201892:0;git pull --rebase upstream master
+: 1604202021:0;git checkout -b new_package_taiwins
+: 1604203270:0;e srcpkgs/taiwins/template
+: 1604209504:0;dl_coursera --cookies cookies.txt --slug algorithms-npcomplete --outdir 4-algorithms-npcomplete --how aria2 --generate-input-file
+: 1604209732:0;aria --input-file=3-algorithms-greedy/algorithms-greedy.download.aria2_input_file.txt
+: 1604210278:0;man tmux
+: 1604214440:0;man megadl
+: 1604297904:0;./xbps-src clean
+: 1604298127:0;./xbps-src pkg taiwins
+: 1604300503:0;sudo vkpurge rm all
+: 1604300591:0;gst
+: 1604303017:0;reload
+: 1604566903:0;plain hide
+: 1604566937:0;sudo sv restart smbd
+: 1604645266:0;jupyter notebook
+: 1604818552:0;e ~/.zsh/zshenv
+: 1604820130:0;xbps-query -f plantuml
+: 1604832949:0;dl_coursera --cookies cookies.txt --slug deep-neural-network --outdir dl/2-deep-neural-network --how aria2 --generate-input-file
+: 1604832984:0;aria --input-file=dl/2-deep-neural-network/deep-neural-network.download.aria2_input_file.txt
+: 1604912239:0;fd -e torrent | fzf --preview='imdl -t -c always torrent show -i {}' --height 20
+: 1604986558:0;dl_coursera --cookies cookies.txt --slug convolutional-neural-networks --outdir dl/4-convolutional-neural-networks --how aria2 --generate-input-file
+: 1604986598:0;dl_coursera --cookies cookies.txt --slug nlp-sequence-models --outdir dl/5-nlp-sequence-models --how aria2 --generate-input-file
+: 1604986642:0;aria --input-file=dl/3-machine-learning-projects/machine-learning-projects.download.aria2_input_file.txt
+: 1604989584:0;aria --input-file=dl/4-convolutional-neural-networks/convolutional-neural-networks.download.aria2_input_file.txt
+: 1605022913:0;aria --input-file=dl/5-nlp-sequence-models/nlp-sequence-models.download.aria2_input_file.txt
+: 1605073770:0;clip
+: 1605087553:0;sudo sv status /var/service/*
+: 1605087565:0;sudo rm /var/service/postgresql12
+: 1605168907:0;sudo update_unbound_sb_hosts.sh
+: 1605198219:0;inxi -F -d -f -l -m -o -p -t cm -u -x
+: 1605200826:0;e /etc/unbound/zones/adblock.local
+: 1605200833:0;sudo sv restart unbound
+: 1605543141:0;e ~/.zsh/.zshrc
+: 1605543532:0;sudo dmesg
+: 1605596032:0;e ~/.asoundrc
+: 1605614473:0;tlp-stat -t | rg temp
+: 1605674883:0;e ~/.config/awesome/themes/mojave-dark/theme.lua
+: 1605715150:0;sudo xbps-install python3-tqdm
+: 1605769811:0;sudo xbps-install qbittorrent
+: 1605772555:0;man aria2c
+: 1605772794:0;pkill aria2c
+: 1605773473:0;e ~/.config/aria2/aria2.conf
+: 1605880356:0;ping mustaqim.ml
+: 1605958587:0;bandwhich
+: 1606014749:0;sudo xbps-remove -ROo
+: 1606015186:0;doom upgrade
+: 1606016742:0;pkill emacs
+: 1606063380:0;dl_coursera --cookies cookies.txt --slug machine-learning-projects --outdir dl/3-machine-learning-projects --how aria2 --generate-input-file
+: 1606063510:0;dl_coursera --cookies cookies.txt --slug algorithms-greedy --outdir 3-algorithms-greedy --how aria2 --generate-input-file
+: 1606063526:0;dl_coursera --cookies cookies.txt --slug algorithms-greedy --outdir algorithms/3-algorithms-greedy --how aria2 --generate-input-file
+: 1606063660:0;aria --input-file=algorithms/3-algorithms-greedy/algorithms-greedy.download.aria2_input_file.txt
+: 1606064524:0;dl_coursera --cookies cookies.txt --slug algorithms-npcomplete --outdir algorithms/4-algorithms-npcomplete --how aria2 --generate-input-file
+: 1606064556:0;aria --input-file=algorithms/4-algorithms-npcomplete/algorithms-npcomplete.download.aria2_input_file.txt
+: 1606122280:0;base64 -d <<< $(xclip -sel clip -o) | xclip -sel clip
+: 1606135064:0;ssh-add $HOME/.ssh/GitHub </dev/null
+: 1606151666:0;man vifm
+: 1606152828:0;base64 -d <<< $(xclip -sel clip -o | awk '{$1=$1};1') | xclip -sel clip
+: 1606200265:0;man mpv
+: 1606200286:0;e ~/.config/mpv/mpv.conf
+: 1606200928:0;df -Th
+: 1606274041:0;pkill xelatex
+: 1606276386:0;e cv/education.tex
+: 1606276552:0;xelatex cv.tex
+: 1606282372:0;zpl update -p
+: 1606323369:0;fd -X adb push {} /sdcard/Download
+: 1606369263:0;g++ 2SAT.cpp
+: 1606369265:0;./a.out
+: 1606405382:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1606405838:0;doom compile
+: 1606405861:0;/bin/emacs -bg '#17191a' --daemon
+: 1606410143:0;alsamixer
+: 1606457297:0;bc <<< "$(fd -e mp4 -x ffprobe -i {} -show_entries format=duration -v quiet -of csv="p=0" | awk '{total = total + $1}END{print total}') / 60"
+: 1606476965:0;plain show
+: 1606492905:0;htop
+: 1606493058:0;ttyqr -b $(xclip -sel clip -o)
+: 1606532447:0;sudo xbps-install -Suvy
+: 1606537978:0;tmux attach || tmux
+: 1606542507:0;jackett
+: 1606543482:0;cat .config/aria2/aria2.log
+: 1606543856:0;adb connect 192.168.1.101:5555
+: 1606543882:0;adb shell ls /sdcard/Download
+: 1606544887:0;cd
+: 1606545396:0;f
+: 1606545400:0;adb push "$(fd -e mp4 -e mkv -c always | fzf -m)" /sdcard/Download
+: 1606545819:0;yadm status
+: 1606545826:0;yadm add ~/.config/aria2/aria2.conf
+: 1606545843:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
