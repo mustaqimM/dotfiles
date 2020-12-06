@@ -2381,7 +2381,6 @@
 : 1586188396:0;weechat
 : 1586253400:0;man xst
 : 1586255790:0;ls **/*
-: 1586256512:0;man zshexpn
 : 1586256769:0;man zshoptions
 : 1586256807:0;man zshall
 : 1586257157:0;ls -l **/([^A-Z[:digit:]])##(#q.x^X^u1002Lm+30mM-1)
@@ -3684,7 +3683,6 @@ done
 : 1598351404:0;e ~/Library/Cloud/Org/code/android/libraries.org
 : 1598358941:0;udacimak download 'ud9012'
 : 1598367080:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db}
-: 1598368914:0; source ~/.zshenv
 : 1598368922:0; source ~/.zsh/.zshrc
 : 1598370091:0;. .zsh/.zshrc
 : 1598370096:0;. ~/.zsh/.zshrc
@@ -3733,7 +3731,6 @@ done
 : 1598678133:0;sudo xbps-install void-repo-multilib
 : 1598678162:0;sudo xbps-install wine-32bit wine-gecko wine-mono winetricks wineasio-32bit
 : 1598713208:0;youtube-dl --list-formats "$(xclip -sel clip -o)"
-: 1598721141:0;sudo xbps-install python3-jupyter
 : 1598721374:0;jupyter notebook list
 : 1598772194:0;youtube-dl 'https://www.youtube.com/watch?v=_QUEXsHfsA0&list=PLfYUBJiXbdtRL3FMB3GoWHRI8ieU6FhfM'
 : 1598774335:0;e ~/Library/Cloud/Org/code/godot.org
@@ -3816,7 +3813,6 @@ done
 : 1600075563:0;sudo xbps-install galculator-gtk3
 : 1600075928:0;sudo xbps-remove -R kcalc
 : 1600103300:0;man surf
-: 1600105398:0;nvim +Man! /tmp/man.XXXXAnuCz7
 : 1600105444:0;vimb -c ~/.config/vimb/settings.conf
 : 1600105758:0;echo $RPC_SECRET
 : 1600149651:0;sudo aa-enforce firejail-default
@@ -3841,7 +3837,6 @@ done
 : 1600322843:0;sleep 1; ffmpeg -s 1366x768 -y -rtbufsize 100M -f x11grab -t 00:00:30 -framerate 30 -probesize 10M -draw_mouse 1 -i :1 -c:v libx264 -r 30 -preset ultrafast -tune zerolatency -crf 25 -pix_fmt yuv420p -vf "crop=350:250:0:768" output.mp4
 : 1600327605:0;yadm add ~/.local/share/applications/ArianNg.desktop
 : 1600336719:0;fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500' --preview-window right:90
-: 1600336842:0;man fzf
 : 1600346337:0;sudo tlmgr install wrapfig
 : 1600346407:0;sudo tlmgr install capt-of
 : 1600403408:0;gpg --armour --export-secret-keys > 2692FB2_private.key
@@ -3989,7 +3984,6 @@ done
 : 1601625748:0;doom help
 : 1601706039:0;doom clean
 : 1601722099:0;./shadowfox_linux_x64 -profile-index 3 -generate-uuids -set-dark-theme
-: 1601745323:0;e ~/.zsh/zsh_history
 : 1601745336:0;fd -X adb push {} /sdcard
 : 1601746520:0;adb push "$(fd -e mp4 -e mkv -c always | fzf -m)" /sdcard/Downloads
 : 1601784130:0;git rebase --quit
@@ -4082,7 +4076,6 @@ done
 : 1602084371:0;echo $RPC_SECRET | xclip -sel clip
 : 1602127242:0;pfetch
 : 1602257489:0;aria 'https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz'
-: 1602479164:0;bat cache --build
 : 1602523616:0;adb p[C]
 : 1602677435:0;sml
 : 1602763093:0;pkill ueberzug
@@ -4090,7 +4083,6 @@ done
 : 1602819137:0;xbps-query -Rs kotlin
 : 1602819178:0;sudo xbps-install kotlin-bin
 : 1602837030:0;xbps-query -Rs wine
-: 1602861623:0;chts
 : 1602862509:0;git clone -d1 gh:hlissner/doom-emacs ~/.emacs.d
 : 1602862550:0;git clone --depth=1 gh:hlissner/doom-emacs ~/.emacs.d
 : 1602862577:0;doom install
@@ -4109,7 +4101,6 @@ done
 : 1603019923:0;./gradlew build
 : 1603019927:0;./gradlew run
 : 1603167227:0;sudo setcap cap_sys_ptrace,cap_dac_read_search,cap_net_raw,cap_net_admin+ep $(whence bandwhich)
-: 1603269706:0;e ~/.config/vifm/vifmrc
 : 1603270694:0;xbps-query -Rs rar
 : 1603270795:0;git checkout -b new_package_rar2fs
 : 1603270802:0;xnew rar2fs
@@ -4126,14 +4117,10 @@ done
 : 1603437101:0;sudo xbps-install earlyoom
 : 1603437135:0;sudo ln -s /etc/sv/earlyoom /var/service
 : 1603437160:0;svlogtail
-: 1603437236:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
 : 1603437254:0;yadm add ~/.config/doom
 : 1603437262:0;yadm 
-: 1603437274:0;yadm commit
-: 1603437328:0;yadm push
 : 1603456989:0;adb kill-server
 : 1603523780:0;svlogtail | rg smbd
-: 1603524296:0;smbclient -U nobody //192.168.1.100/plain
 : 1603552961:0;e /etc/mtab
 : 1603553056:0;e /etc/fstab
 : 1603553068:0;man gocryptfs
@@ -4171,9 +4158,7 @@ done
 : 1603965593:0;gcs
 : 1603965669:0;gp
 : 1604054167:0;e ~/.config/awesome/bindings.lua
-: 1604054454:0;yadm add ~/.config/aria2/aria2.conf
 : 1604054456:0;yadm add ~/.config/awesome
-: 1604054460:0;yadm status
 : 1604054504:0;e ~/.zsh/.zprofile
 : 1604054512:0;yadm diff
 : 1604145560:0;./xbps-src bootstrap-update
@@ -4186,16 +4171,11 @@ done
 : 1604203270:0;e srcpkgs/taiwins/template
 : 1604209504:0;dl_coursera --cookies cookies.txt --slug algorithms-npcomplete --outdir 4-algorithms-npcomplete --how aria2 --generate-input-file
 : 1604209732:0;aria --input-file=3-algorithms-greedy/algorithms-greedy.download.aria2_input_file.txt
-: 1604210278:0;man tmux
 : 1604214440:0;man megadl
 : 1604297904:0;./xbps-src clean
 : 1604298127:0;./xbps-src pkg taiwins
-: 1604300503:0;sudo vkpurge rm all
 : 1604300591:0;gst
-: 1604303017:0;reload
 : 1604566903:0;plain hide
-: 1604566937:0;sudo sv restart smbd
-: 1604645266:0;jupyter notebook
 : 1604818552:0;e ~/.zsh/zshenv
 : 1604820130:0;xbps-query -f plantuml
 : 1604832949:0;dl_coursera --cookies cookies.txt --slug deep-neural-network --outdir dl/2-deep-neural-network --how aria2 --generate-input-file
@@ -4209,11 +4189,9 @@ done
 : 1605073770:0;clip
 : 1605087553:0;sudo sv status /var/service/*
 : 1605087565:0;sudo rm /var/service/postgresql12
-: 1605168907:0;sudo update_unbound_sb_hosts.sh
 : 1605198219:0;inxi -F -d -f -l -m -o -p -t cm -u -x
 : 1605200826:0;e /etc/unbound/zones/adblock.local
 : 1605200833:0;sudo sv restart unbound
-: 1605543141:0;e ~/.zsh/.zshrc
 : 1605543532:0;sudo dmesg
 : 1605596032:0;e ~/.asoundrc
 : 1605614473:0;tlp-stat -t | rg temp
@@ -4225,9 +4203,6 @@ done
 : 1605773473:0;e ~/.config/aria2/aria2.conf
 : 1605880356:0;ping mustaqim.ml
 : 1605958587:0;bandwhich
-: 1606014749:0;sudo xbps-remove -ROo
-: 1606015186:0;doom upgrade
-: 1606016742:0;pkill emacs
 : 1606063380:0;dl_coursera --cookies cookies.txt --slug machine-learning-projects --outdir dl/3-machine-learning-projects --how aria2 --generate-input-file
 : 1606063510:0;dl_coursera --cookies cookies.txt --slug algorithms-greedy --outdir 3-algorithms-greedy --how aria2 --generate-input-file
 : 1606063526:0;dl_coursera --cookies cookies.txt --slug algorithms-greedy --outdir algorithms/3-algorithms-greedy --how aria2 --generate-input-file
@@ -4237,34 +4212,74 @@ done
 : 1606122280:0;base64 -d <<< $(xclip -sel clip -o) | xclip -sel clip
 : 1606135064:0;ssh-add $HOME/.ssh/GitHub </dev/null
 : 1606151666:0;man vifm
-: 1606152828:0;base64 -d <<< $(xclip -sel clip -o | awk '{$1=$1};1') | xclip -sel clip
 : 1606200265:0;man mpv
 : 1606200286:0;e ~/.config/mpv/mpv.conf
-: 1606200928:0;df -Th
 : 1606274041:0;pkill xelatex
 : 1606276386:0;e cv/education.tex
 : 1606276552:0;xelatex cv.tex
-: 1606282372:0;zpl update -p
-: 1606323369:0;fd -X adb push {} /sdcard/Download
 : 1606369263:0;g++ 2SAT.cpp
 : 1606369265:0;./a.out
 : 1606405382:0;psmem -p $(pgrep -d, -u $USER) -S
-: 1606405838:0;doom compile
-: 1606405861:0;/bin/emacs -bg '#17191a' --daemon
-: 1606410143:0;alsamixer
 : 1606457297:0;bc <<< "$(fd -e mp4 -x ffprobe -i {} -show_entries format=duration -v quiet -of csv="p=0" | awk '{total = total + $1}END{print total}') / 60"
-: 1606476965:0;plain show
-: 1606492905:0;htop
 : 1606493058:0;ttyqr -b $(xclip -sel clip -o)
-: 1606532447:0;sudo xbps-install -Suvy
-: 1606537978:0;tmux attach || tmux
-: 1606542507:0;jackett
 : 1606543482:0;cat .config/aria2/aria2.log
-: 1606543856:0;adb connect 192.168.1.101:5555
-: 1606543882:0;adb shell ls /sdcard/Download
-: 1606544887:0;cd
-: 1606545396:0;f
-: 1606545400:0;adb push "$(fd -e mp4 -e mkv -c always | fzf -m)" /sdcard/Download
 : 1606545819:0;yadm status
 : 1606545826:0;yadm add ~/.config/aria2/aria2.conf
 : 1606545843:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1606545846:0;yadm commit
+: 1606545871:0;yadm push
+: 1606546156:0;git clone --depth=1 gh:ageron/handson-ml2
+: 1606549512:0;python3 -m venv ml
+: 1606549575:0;. ml/bin/activate
+: 1606549627:0;python3 -m ipykernel install --user --name=python3
+: 1606549667:0;sudo xbps-install python3-jupyter
+: 1606549691:0;python3 -m pip install -U jupyter matplotlib numpy pandas scipy scikit-learn
+: 1606556677:0;cd
+: 1606650385:0;fd -X adb push {} /sdcard/Download
+: 1606705655:0;pkill emacs
+: 1606705660:0;doom upgrade
+: 1606723015:0;adb connect 192.168.1.101:5555
+: 1606723020:0;adb push "$(fd -e mp4 -e mkv -c always | fzf -m)" /sdcard/Download
+: 1606723385:0;e ~/.zsh/functions/push
+: 1606723855:0;man fzf
+: 1606837800:0;sudo sv restart smbd
+: 1606837806:0;sudo update_unbound_sb_hosts.sh
+: 1606837839:0;smbclient -U nobody //192.168.1.100/plain
+: 1606878987:0;doom compile
+: 1606879027:0;/bin/emacs -bg '#17191a' --daemon
+: 1606910840:0;e ~/.config/vifm/vifmrc
+: 1607058651:0;jupyter notebook
+: 1607080339:0;htop
+: 1607096468:0;alsamixer
+: 1607101286:0;base64 -d <<< $(xclip -sel clip -o | awk '{$1=$1};1') | xclip -sel clip
+: 1607102623:0;jackett
+: 1607102699:0;e ~/.zsh/functions/decode
+: 1607102977:0;e ~/.zsh/.zshrc
+: 1607103365:0;man zshexpn
+: 1607105111:0;decode
+: 1607148662:0;reload
+: 1607148714:0;e ~/.zsh/zsh_history
+: 1607153284:0;plain show
+: 1607155442:0;cat _dl.txt
+: 1607169616:0;man tmux
+: 1607169692:0;chts
+: 1607169920:0;adb shell ls /sdcard/Download
+: 1607169929:0;push
+: 1607182280:0;sudo xbps-install -Suvy
+: 1607183308:0;zpl update -p
+: 1607193393:0;tmux attach || tmux
+: 1607193448:0;bat cache --build
+: 1607223633:0;sudo vkpurge rm all
+: 1607223685:0;sudo xbps-remove -ROo
+: 1607223846:0;f
+: 1607223934:0;df -Th
+: 1607224213:0;sudo tlmgr update --all
+: 1607224251:0;sudo tlmgr update --self
+: 1607224260:0;sudo tlmgr update --all
+: 1607224622:0;e ~/.config/vifm/vifmrc
+: 1607224642:0;e ~/.config/tmux/tmux.conf.local
+: 1607224700:0;sudo xbps-install -Suvy
+: 1607225570:0;sudo update_unbound_sb_hosts.sh
+: 1607225690:0;yadm status
+: 1607225699:0;yadm diff
+: 1607225737:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc

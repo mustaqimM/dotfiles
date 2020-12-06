@@ -8,7 +8,7 @@ set -e
 #
 if [ "$(whoami)" != "root" ]
 then
-  printf "\nYou need to be \e[4m\e[31mroot\e[0m to do this!\nIf you have sudo installed, then run this script with:\n\n\$ \e[32msudo $(basename "$0")\n"
+  printf '\nYou need to be \e[4m\e[31mroot\e[0m for this!\nIf you have sudo installed, then run this script with:\n\n$ \e[31msudo \e[34m%s\e[0m \n' "$(basename "$0")"
   exit 1
 fi
 
@@ -35,17 +35,16 @@ fi
 
 rg '^0\.0\.0\.0' "${dest}/hosts" | awk '{if(NR>1)print "local-zone: \""$2"\" always_nxdomain"}' > "${zonedir}/rpz.db"
 
-"${CHECKCONF}" > /dev/null 2>&1
-if [ $? == 0 ]
+if "${CHECKCONF}" > /dev/null 2>&1
 then
   "${CONTROL}" dump_cache >> "${CacheDump}"
   "${CONTROL}" reload > /dev/null 2>&1
   "${CONTROL}" load_cache < "${CacheDump}" && rm "${CacheDump}"
 if [ -t 1 ]
 then
-  printf "Your unbound NXDOMAINs have been updated\nreloading unbound server\n"
+  printf "\nYour unbound NXDOMAINs have been updated\nreloading unbound server\n"
 else
-  printf "Something went wrong\n"
+  printf "\n\e[31mSomething went wrong\n"
 fi
 exit 0
 else

@@ -85,7 +85,7 @@ set scrolloff=0
 "endif
 
 " show preview window
-view
+"view
 
 "set millerview
 "set milleroptions+=lsize:1,csize:3,rsize:4,rpreview:all
@@ -104,7 +104,7 @@ set nowrap
 " vsplit
 
 " Empty the ruler. By default, it shows the number of directories+files.
-set rulerformat='%2l/%S %[  %x%]'
+" set rulerformat='%2l/%S %[  %x%]'
 
 " What should be saved automatically between vifm sessions.  Drop "savedirs"
 " value if you don't want vifm to remember last visited directories for you.

@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+push() {
+     declare -a list
+     declare -i i=1
+     fd -e mkv -c always | fzf -m | while read -r item; do
+          list[$i]=$item
+          ((i++))
+     done
+     adb push $list /sdcard/Download
+}
+
+push "$@"

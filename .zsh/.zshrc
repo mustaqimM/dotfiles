@@ -436,7 +436,7 @@ autoload -U select-word-style
 select-word-style bash
 
 source $ZDOTDIR/aliases
-autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy pb scan center_text switch_theme plain ert-run sqlint magit clip
+autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy pb scan center_text switch_theme plain push ert-run sqlint magit clip decode
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 
 # generic completions for programs which understand GNU long options(--help)
