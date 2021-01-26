@@ -86,6 +86,7 @@ set scrolloff=0
 
 " show preview window
 "view
+only
 
 "set millerview
 "set milleroptions+=lsize:1,csize:3,rsize:4,rpreview:all

@@ -9,5 +9,5 @@ whitelist ${HOME}/.sndio
 ignore noexec ${HOME}
 noblacklist ${HOME}/.local/bin
 whitelist ${HOME}/.local/bin
-# ignore nodbus
-# ignore private-tmp
+ignore nodbus
+ignore private-tmp

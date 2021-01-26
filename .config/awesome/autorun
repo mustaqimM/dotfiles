@@ -15,8 +15,8 @@ xinput set-prop 13 "$device_number" 1
 
 numlockx on
 #setxkbmap -option caps:swapescape
-#
 setxkbmap -option 'caps:ctrl_modifier' && xcape -e 'Caps_Lock=Escape'
+xmodmap -e "keysym Alt_R = Multi_key"
 run xbanish
 xset b off
 xsetroot -cursor_name left_ptr

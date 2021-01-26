@@ -1,0 +1,3 @@
+# workspace rules
+assign [class="Nightly"] workspace 1
+assign [class="Emacs"] workspace 3

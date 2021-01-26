@@ -8,7 +8,6 @@ awful.layout.layouts = {
     l.spiral,
     l.max,
     l.max.fullscreen,
-    l.max.fullscreen,
     l.fair,
     l.floating,
     l.spiral,

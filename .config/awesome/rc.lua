@@ -32,7 +32,7 @@ awful.util.terminal = terminal
 -- }}}
 
 -- {{{ Custom Local Library
---local layouts  = require("layouts")       -- Workspace Layouts
+-- local layouts  = require("layouts")       -- Workspace Layouts
 local helpers  = require("helpers")       -- Helper functions
 local menu     = require("menu")          -- Context menu
 local wibar    = require("wibar")         -- Top bar

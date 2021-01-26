@@ -10,6 +10,8 @@ local lain       = require("lain")
 local markup     = lain.util.markup
 local separators = lain.util.separators
 
+local layouts  = require("layouts")
+
 screen_width     = awful.screen.focused().geometry.width
 screen_height    = awful.screen.focused().geometry.height
 
@@ -22,7 +24,7 @@ tyrannical.tags = {
     no_focus_stealing_in = false,
     --icon        = "~net.png",                -- Use this icon for the tag (uncomment with a real path)
     screen      = screen.count()>1 and 2 or 1, -- Setup on screen 2 if there is more than 1 screen, else on screen 1
-    layout      = awful.layout.suit.max,                 -- Use the max layout
+    layout      = layouts.max.fullscreen,                 -- Use the max layout
     class = {
       "Chromium", "Firefox", "Next", "Nightly", "Plank", "qutebrowser", "Surf", "vimb" },
     instance = { "mpvstream" }
@@ -118,6 +120,12 @@ tyrannical.tags = {
     init        = false,
     exclusive   = true,
     class       = { "Thunderbird" }
+  },
+  {
+    name        = "",
+    init        = false,
+    exclusive   = true,
+    class       = { "org-openstreetmap-josm-gui-MainApplication" }
   }
 }
 

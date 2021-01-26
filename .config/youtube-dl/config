@@ -6,6 +6,7 @@
 --sub-lang=en
 --sub-format=vtt
 --embed-subs
+--add-metadata
 --merge-output-format webm
 --external-downloader aria2c
 --external-downloader-args "--no-conf --continue -j5 -x10 -s10 --summary-interval=0"

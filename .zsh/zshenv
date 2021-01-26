@@ -17,13 +17,14 @@ export AWESOME_THEMES_PATH="$HOME/.config/awesome/themes"
 export KDEWM=/usr/bin/awesome
 export QT_QPA_PLATFORMTHEME=qt5ct
 export XCURSOR_PATH=$HOME/.local/share/icons
+export XCURSOR_THEME="X11-Cursors-Breeze-Hacked-White"
 
 export BROWSER="$HOME/.local/bin/firefox/firefox"
 #export BROWSER="firefox"
 #export MOZ_USE_XINPUT2=1
-export MOZ_ACCELERATED=1
-export MOZ_WEBRENDER=1
-export MOZ_X11_EGL=1
+# export MOZ_ACCELERATED=1
+# export MOZ_WEBRENDER=1
+# export MOZ_X11_EGL=1
 
 export LC_ALL=C
 export TZ=Africa/Johannesburg
