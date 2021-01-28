@@ -1,0 +1,55 @@
+window {
+  margin: 5px;
+  border: 1px solid #373b41;
+  border-radius:    10px;
+  background-color: #1d1f21;
+  font-size: 14px;
+  font-family: "SF Pro Display";
+  font-size: 18;
+}
+
+#input {
+  margin: 5px;
+  /* margin: 0px 0px 0px 0px; */
+}
+#input image:first-child {
+  margin-left: -34px;
+}
+
+#inner-box {
+  margin: 5px;
+  padding: 0px 10px 0px 10px;
+}
+
+/* #outer-box { */
+/*     margin: 5px; */
+/*     border-radius:    10px; */
+/*     border: 2px solid green; */
+/*     background-color: green; */
+/* } */
+
+#scroll {
+  border-bottom: none;
+  margin: 5px;
+  margin: 10px 10px;
+}
+
+#text {
+  margin: 5px 10px;
+  color: #c5c8c6;
+}
+
+#img {
+  /* border: 2px solid orange; */
+}
+
+#entry:selected {
+  background-color: #373b41;
+  /* border: 1px solid orange; */
+}
+
+#text:selected {
+  background-color: transparent;
+  color: #ffffff;
+}
+

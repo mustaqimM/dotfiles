@@ -2,10 +2,12 @@
 
 decode() {
     declare string
-    string=$(base64 -d <<< $(xclip -sel clip -o | awk '{$1=$1};1'))
+    # string=$(base64 -d <<< $(xclip -sel clip -o | awk '{$1=$1};1'))
+    string=$(base64 -d <<< $($1 | awk '{$1=$1};1'))
 
-    xclip -sel clip <<< $string
-    echo $string
+    wl-copy $string
+    # xclip -sel clip <<< $string
+    wl-paste $string
 }
 
 decode "$@"

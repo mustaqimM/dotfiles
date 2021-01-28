@@ -19,12 +19,12 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu dmenu_path | rofi -show | xargs swaymsg exec --
+set $menu dmenu_path | wofi | xargs swaymsg exec --
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/Pictures/Wallpapers/MK1-Dark.png fill
 #
 # Example configuration:
 #
@@ -64,12 +64,12 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
       tap enabled
       # natural_scroll enabled
       middle_emulation enabled
-      scroll_factor 0.6
+      scroll_factor 0.8
 }
 
 input "type:keyboard" {
-      # xkb_options caps:escape
       xkb_options caps:ctrl_modifier
+      xkb_options caps:escape
       # xkb_layout alt_r=multi_key
 }
 
@@ -83,8 +83,11 @@ input "type:keyboard" {
     # Kill focused window
     bindsym $mod+Shift+q kill
 
+    # Middle click titlebar to kill
+    bindsym button2 kill
+
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym alt+space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -114,6 +117,7 @@ input "type:keyboard" {
 #
     bindsym $mod+tab workspace back_and_forth #next_on_output
     bindsym $mod+Shift+tab workspace prev_on_output
+    bindsym Alt+tab focus next
 
     # Move your focus around
     bindsym $mod+$left focus left

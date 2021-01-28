@@ -1,0 +1,12 @@
+show=drun
+allow_images=true
+image_size=22
+gtk_dark=false
+insensitive=true
+width=60%
+height=50%
+hide_scroll=true
+no_actions=true
+prompt=
+# drun-display_generic=true
+term=alacritty

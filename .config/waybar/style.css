@@ -2,8 +2,8 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-size: 11px;
+    font-family: SF Pro Display, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12.5px;
     min-height: 0;
 }
 
@@ -99,11 +99,11 @@ window#waybar.chromium {
 }
 
 #clock {
-    background-color: #373b41;
+    /* background-color: #373b41; */
 }
 
 #battery {
-    background-color: #373b41;
+    /* background-color: #373b41; */
     color: #ffffff;
 }
 
@@ -139,15 +139,15 @@ label:focus {
 }
 
 #memory {
-    background-color: #373b41;
+    /* background-color: #373b41; */
 }
 
 #backlight {
-    background-color: #373b41;
+    /* background-color: #373b41; */
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: #373b41;
 }
 
 #network.disconnected {
@@ -155,7 +155,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #373b41;
+    /* background-color: #373b41; */
     color: #ffffff;
 }
 
@@ -179,7 +179,7 @@ label:focus {
 }
 
 #temperature {
-    background-color: #373b41;
+    /* background-color: #373b41; */
 }
 
 #temperature.critical {

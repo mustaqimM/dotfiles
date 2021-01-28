@@ -925,7 +925,6 @@
 : 1563255515:0;zpl snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
 : 1563255547:0;heroku run rails db:migrate
 : 1563255614:0;heroku open
-: 1563338844:0;sudo xbps-install wmctrl
 : 1563427605:0;rg "background_role" $(xbps-query -f awesome)
 : 1563452424:0;sudo rm /var/service/socklog-unix /var/service/nanoklogd
 : 1563472483:0;npm version
@@ -2354,7 +2353,6 @@
 : 1586108688:0;e ~/.bashrc
 : 1586164883:0;sleep 1; ffmpeg -f x11grab  -s 1366x768 -i :0.0 -r 25 -vcodec libx264 output.mkv
 : 1586165582:0;yadm add .bashrc
-: 1586170672:0;rofi -combi-modi window,drun -show combi -modi combi -sort -sorting-method fzf
 : 1586175536:0;fc-list | rg "icon" | cut -d ":" -f2
 : 1586176075:0;e .envrc
 : 1586176101:0;echo $VIRTUAL_ENV
@@ -3630,7 +3628,6 @@ done
 : 1598265983:0;free -h
 : 1598266347:0;e ~/.config/awesome/signals.lua
 : 1598288662:0;youtube-dl "ytsearch:john oliver"
-: 1598343125:0;e ~/.local/share/applications/Firefox-Nightly.desktop
 : 1598351404:0;e ~/Library/Cloud/Org/code/android/libraries.org
 : 1598358941:0;udacimak download 'ud9012'
 : 1598367080:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db}
@@ -3686,7 +3683,6 @@ done
 : 1598774335:0;e ~/Library/Cloud/Org/code/godot.org
 : 1598847393:0;e ~/Library/Cloud/Org/code/godot/godot.org
 : 1598847563:0;sudo xbps-install gnuplot-qt
-: 1598849095:0;fc-list | rg "Iosevka" | cut -d ":" -f2
 : 1598849334:0;yadm diff .config/doom
 : 1598856671:0;sudo xbps-install pavucontrol-qt
 : 1598857882:0;pavucontrol
@@ -3794,7 +3790,6 @@ done
 : 1600447414:0;sudo xbps-install python3-scipy
 : 1600494641:0;lsattr vifminfo
 : 1600495381:0;yadm add ~/.mozilla/firefox/chrome
-: 1600495401:0;yadm add ~/.config/firejail
 : 1600528717:0;youtube-dl 'https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab'
 : 1600575795:0;e ~/.config/jgmenu/hooks
 : 1600575941:0;e ~/.config/jgmenu/startup
@@ -3835,9 +3830,6 @@ done
 : 1600874294:0;man vimb
 : 1600877413:0;e /etc/xbps.d/10-ignore.conf
 : 1600937568:0;sudo xbps-install sudo
-: 1600938047:0;yadm add ~/.config/alacritty
-: 1600938057:0;yadm add ~/.config/htop/htoprc
-: 1600938136:0;yadm add ~/.config/youtube-dl/config
 : 1600962926:0;cp /usr/share/applications/thunderbird.desktop ~/.local/share/applications/
 : 1600962933:0;e ~/.local/share/applications/thunderbird.desktop
 : 1600964539:0;e ~/.config/firejail/jdownloader.local
@@ -3863,7 +3855,6 @@ done
 : 1601101831:0;git pull
 : 1601108075:0;yadm add ~/.gitconfig
 : 1601108098:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db*}
-: 1601108116:0;yadm add ~/.local/share/fonts/TTF/iosevka-*
 : 1601141688:0;e files/cv/education.tex
 : 1601141818:0;xelatex files/cv.tex
 : 1601142211:0;dl_coursera --cookies cookies.txt --slug programming-languages --outdir programming-languages --how aria2 --generate-input-file
@@ -3914,7 +3905,6 @@ done
 : 1601620831:0;git rebase --interactive HEAD~3
 : 1601625728:0;doom purge
 : 1601625748:0;doom help
-: 1601706039:0;doom clean
 : 1601722099:0;./shadowfox_linux_x64 -profile-index 3 -generate-uuids -set-dark-theme
 : 1601745336:0;fd -X adb push {} /sdcard
 : 1601746520:0;adb push "$(fd -e mp4 -e mkv -c always | fzf -m)" /sdcard/Downloads
@@ -4075,7 +4065,6 @@ done
 : 1603965587:0;ga .
 : 1603965593:0;gcs
 : 1603965669:0;gp
-: 1604054456:0;yadm add ~/.config/awesome
 : 1604145560:0;./xbps-src bootstrap-update
 : 1604145567:0;./xbps-src binary-bootstrap
 : 1604146914:0;xlint srcpkgs/taiwins/template
@@ -4101,7 +4090,6 @@ done
 : 1605087565:0;sudo rm /var/service/postgresql12
 : 1605200826:0;e /etc/unbound/zones/adblock.local
 : 1605596032:0;e ~/.asoundrc
-: 1605614473:0;tlp-stat -t | rg temp
 : 1605715150:0;sudo xbps-install python3-tqdm
 : 1605769811:0;sudo xbps-install qbittorrent
 : 1605772555:0;man aria2c
@@ -4132,7 +4120,6 @@ done
 : 1606723385:0;e ~/.zsh/functions/push
 : 1606723855:0;man fzf
 : 1607101286:0;base64 -d <<< $(xclip -sel clip -o | awk '{$1=$1};1') | xclip -sel clip
-: 1607102699:0;e ~/.zsh/functions/decode
 : 1607103365:0;man zshexpn
 : 1607169616:0;man tmux
 : 1607169692:0;chts
@@ -4140,12 +4127,7 @@ done
 : 1607223934:0;df -Th
 : 1607224251:0;sudo tlmgr update --self
 : 1607224260:0;sudo tlmgr update --all
-: 1607225737:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
-: 1607225747:0;yadm add ~/.config/tmux/tmux.conf{,.local}
-: 1607225760:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1607225771:0;yadm add ~/.local/bin/scripts
-: 1607225789:0;yadm commit
-: 1607225835:0;yadm push
 : 1607484751:0;e cv/education.tex
 : 1607484833:0;xelatex cv.tex
 : 1607657311:0;sudo wifi toggle
@@ -4203,7 +4185,6 @@ done
 : 1608546349:0;sudo losetup -j gps.img
 : 1608546681:0;e /usr/lib/udev/rules.d/51-android.rules
 : 1608546720:0;groups mustaqim
-: 1608546730:0;id mustaqim
 : 1608547603:0;sudo mount -t vfat /dev/mmcblk0p1 /media/ -o uid=1000,gid=100,utf8,dmask=027,fmask=137
 : 1608547715:0;smbclient -U nobody //192.168.1.100/plain
 : 1608551329:0;svlogtail | rg smbd
@@ -4270,7 +4251,6 @@ done
 : 1610005630:0;pkill emacs
 : 1610005635:0;doom compile
 : 1610014590:0;git pull --rebase upstream master
-: 1610014861:0;/bin/emacs -bg '#17191a' --daemon
 : 1610014918:0;gd
 : 1610015151:0;gd HEAD:private-build-plans.sample.toml private-build-plans.toml
 : 1610035067:0;rg . /sys/devices/system/cpu/vulnerabilities/*
@@ -4278,7 +4258,6 @@ done
 : 1610035325:0;sudo xbps-reconfigure -f linux5.9
 : 1610035543:0;cat /proc/cmdline
 : 1610041034:0;e ~/.config/mpv/mpv.conf
-: 1610128397:0;man mpv
 : 1610170140:0;npm install
 : 1610178048:0;inxi -F -d -f -l -m -o -p -t cm -u -x
 : 1610178187:0;e private-build-plans.toml
@@ -4298,7 +4277,6 @@ done
 : 1610979321:0;cat /usr/share/X11/locale/en_US.UTF-8/Compose
 : 1611087576:0;sudo sv restart smbd
 : 1611160523:0;jackett
-: 1611204813:0;decode
 : 1611222905:0;sudo xbps-remove elogind
 : 1611222962:0;sudo update_unbound_sb_hosts.sh
 : 1611246045:0;sudo xbps-install -Suvy
@@ -4308,13 +4286,10 @@ done
 : 1611318428:0;mimeo --add video/avi mpv.desktop
 : 1611318474:0;mimeo --add video/x-msvideo mpv.desktop
 : 1611507126:0;chromium --incognito
-: 1611508354:0;bandwhich
-: 1611554837:0;push
 : 1611565213:0;plain show
 : 1611568329:0;whoami
 : 1611568361:0;sx sh ~/.xinitrc 2> .xsession-errors
 : 1611568394:0;yadm upgrade
-: 1611568441:0;yadm diff
 : 1611568589:0;gst
 : 1611569442:0;man sway
 : 1611569683:0;echo $XDG_CONFIG_HOME
@@ -4322,89 +4297,112 @@ done
 : 1611570413:0;sudo bluetooth toggle
 : 1611572081:0;zsh
 : 1611572109:0;sudo xbps-install dmenu
-: 1611572562:0;htop
 : 1611572676:0;xbps-query -Rs sway
 : 1611575087:0;sudo ln -s /etc/sv/elogind /var/service
 : 1611575108:0;sway
-: 1611575130:0;sudo xbps-remove -R elogind
-: 1611575157:0;sudo rm /var/service/elogind
 : 1611575190:0;cat ~/.xinitrc
-: 1611575297:0;yadm status
 : 1611575553:0;sudo chattr +i ~/.zsh/.zprofile
 : 1611575995:0;sudo chattr -i ~/.zsh/.zprofile
 : 1611576234:0;sudo xbps-install sway
 : 1611576260:0;xbps-query -Rs seatd
-: 1611576441:0;sudo xbps-install seatd
-: 1611576463:0;sudo ln -s /etc/sv/seatd /var/service
 : 1611576579:0;sudo xbps-remove -R seatd
-: 1611576584:0;sudo sv status /var/service/*
 : 1611576594:0;sudo rm /var/service/seatd
-: 1611576606:0;sudo xbps-install elogind
-: 1611576771:0;echo $XDG_RUNTIME_DIR
 : 1611576896:0;sudo dmesg
 : 1611576988:0;nvim +Man! /tmp/man.XXXXsk4Sk1
 : 1611577013:0;clear
-: 1611577205:0;dbus-run-session sway
 : 1611577474:0;man sway-input
 : 1611577612:0;cat ~/.zsh/.zprofile
 : 1611577703:0;cp /etc/sway/config ~/.config/sway/
 : 1611578964:0;man date
 : 1611579600:0;swaymsg -t get_inputs
 : 1611579893:0;setxkbmap -print -query
-: 1611580386:0;e ~/.zsh/.zprofile
 : 1611580513:0;tmux detach
-: 1611590342:0;tmux attach || tmux
 : 1611590354:0;nvim +Man! /tmp/man.XXXXbrwEJA
 : 1611591015:0;gb | fzf | xargs gco
 : 1611591450:0;xcape -e 'Caps_Lock=Escape'
 : 1611592129:0;light -S 1%
-: 1611592252:0;man 5 sway-input
 : 1611592441:0;cat ~/.config/awesome/autorun
-: 1611592839:0;e ~/.config/sway/autostart
 : 1611594717:0;sudo xbps-install Waybar
 : 1611595460:0;cp -r /etc/xdg/waybar ~/.config/waybar
-: 1611598737:0;adb connect 192.168.1.101:5555
-: 1611598747:0;adb shell ls /sdcard/Download
-: 1611598825:0;e ~/.config/waybar/config
 : 1611598898:0;e ~/.config/awesome/themes/mojave-dark/theme.lua
 : 1611599221:0;e ~/.config/awesome/rules.lua
 : 1611599616:0;e ~/.config/awesome/bindings.lua
 : 1611599654:0;sudo xbps-install grimshot
-: 1611599767:0;e ~/.config/sway/theme
-: 1611632516:0;f
 : 1611632811:0;sudo makewhatis /usr/share/man
-: 1611633201:0;man 5 sway
-: 1611633238:0;swaymsg -t get_tree
-: 1611633279:0;e ~/.config/sway/rules
-: 1611633453:0;psmem -p $(pgrep -d, -u $USER) -S
-: 1611635624:0;e ~/.config/sway/config
 : 1611636961:0;echo $XCURSOR_PATH
-: 1611637048:0;e ~/.zsh/zshenv
 : 1611637096:0;echo $XCURSOR_THEME
-: 1611637395:0;reload
-: 1611637602:0;yadm add ~/.config/sway
-: 1611637694:0;yadm add ~/.config/waybar
-: 1611637699:0;yadm status
-: 1611637806:0;f
-: 1611637821:0;yadm status
-: 1611637831:0;yadm diff
-: 1611638308:0;e ~/.config/sway/config
-: 1611638702:0;yadm status
 : 1611638718:0;yadm add ~/.config/alacritty
 : 1611638755:0;yadm add ~/.config/awesome
 : 1611638768:0;yadm add ~/.config/firejail
 : 1611638771:0;yadm add ~/.config/htop/htoprc
-: 1611638785:0;yadm diff
-: 1611638791:0;yadm status
 : 1611638799:0;yadm add ~/.config/sway
-: 1611638812:0;yadm diff
 : 1611638822:0;yadm add ~/.config/tmux/tmux.conf{,.local}
 : 1611638837:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1611638839:0;yadm add ~/.config/waybar
-: 1611638844:0;yadm status
-: 1611638850:0;yadm diff
 : 1611638867:0;yadm add ~/.config/youtube-dl/config
-: 1611638869:0;yadm status
 : 1611638879:0;yadm add ~/.local/share/fonts/TTF/iosevka-*
-: 1611638910:0;f
 : 1611638956:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1611638963:0;yadm commit
+: 1611639009:0;yadm push
+: 1611639643:0;bandwhich
+: 1611640535:0;man 5 sway-input
+: 1611643904:0;yadm status
+: 1611643910:0;yadm diff
+: 1611644275:0;sudo chown $USER:$USER /run/user/mustaqim
+: 1611644684:0;e ~/.zsh/.zprofile
+: 1611645129:0;tlp-stat -t | rg temp
+: 1611645880:0;e ~/.local/share/applications/Firefox-Nightly.desktop
+: 1611647898:0;sudo xbps-install wmctrl
+: 1611648357:0;e ~/.config/sway/theme
+: 1611648908:0;sudo xbps-install wofi
+: 1611650698:0;wofi -S drun
+: 1611650790:0;wofi -S drun -I -G
+: 1611662814:0;sudo sv status /var/service/*
+: 1611662823:0;sudo xbps-install elogind
+: 1611663170:0;sudo xbps-remove -R elogind
+: 1611663178:0;sudo xbps-install seatd
+: 1611663306:0;sudo ln -s /etc/sv/seatd /var/service
+: 1611663444:0;sudo usermod -aG _seatd $USER
+: 1611663461:0;sudo rm /var/service/elogind
+: 1611663541:0;id mustaqim
+: 1611663688:0;sudoedit /etc/rc.local
+: 1611663706:0;/bin/emacs -bg '#17191a' --daemon
+: 1611663845:0;echo $XDG_RUNTIME_DIR
+: 1611663888:0;dbus-run-session sway
+: 1611663924:0;tmux attach || tmux
+: 1611664007:0;doom clean
+: 1611664389:0;e ~/.config/sway/rules
+: 1611664581:0;htop
+: 1611664954:0;man mpv
+: 1611665127:0;sudo xbps-install SPIRV-Tools
+: 1611675944:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1611676309:0;e ~/.config/waybar/config
+: 1611676677:0;e ~/.config/sway/autostart
+: 1611681777:0;sudo xbps-install wl-clipboard
+: 1611681800:0;decode
+: 1611681834:0;e ~/.zsh/functions/decode
+: 1611682016:0;man wl-clipboard
+: 1611682629:0;adb connect 192.168.1.101:5555
+: 1611682795:0;adb she
+: 1611682801:0;adb shell ls /sdcard/Download
+: 1611684117:0;push
+: 1611723783:0;e ~/.zsh/zshenv
+: 1611723803:0;reload
+: 1611723812:0;echo $QT_QPA_PLATFORM
+: 1611723938:0;sudo xbps-install qt5-wayland
+: 1611747438:0;swaymsg -t get_tree
+: 1611747579:0;man 5 sway
+: 1611837508:0;e ~/.config/sway/config
+: 1611837715:0;e ~/.config/wofi/config
+: 1611849693:0;e ~/.config/wofi/style.css
+: 1611850675:0;f
+: 1611852619:0;fc-list | rg "Iosevka" | cut -d ":" -f2
+: 1611852673:0;rofi -combi-modi window,drun -show combi -modi combi -sort -sorting-method fzf
+: 1611854125:0;e ~/.config/waybar/style.css
+: 1611854515:0;ping mustaqim.ml
+: 1611854684:0;jackett
+: 1611854703:0;yadm status
+: 1611854750:0;yadm add ~/.config/sway
+: 1611854755:0;yadm add ~/.config/waybar
+: 1611854763:0;yadm add ~/.config/wofi
+: 1611854767:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
