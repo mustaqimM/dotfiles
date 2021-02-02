@@ -2,7 +2,6 @@
 : 1542457832:0;sudo xbps-install exa
 : 1542457832:0;sudo xbps-install fd
 : 1542457832:0;sudo xbps-install mesa
-: 1542457832:0;sudo xbps-install breeze-cursors
 : 1542457832:0;sudo xbps-install Vulkan-Tools
 : 1542457832:0;sudo xbps-install sk
 : 1542457832:0;sudo xbps-install libGLES
@@ -1276,7 +1275,6 @@
 : 1572110593:0;ga srcpkgs/ffmpeg
 : 1572110598:0;gcs -m "ffmpeg: revbump to build against libdav1d3"
 : 1572200866:0;sudo xbps-install dav1d
-: 1572241040:0;make
 : 1572323262:0;sudo xbps-install python3-pip3
 : 1572323312:0;pip3 install --user -U nltk
 : 1572327816:0;./compare --sentences inputs/LesMis1.txt inputs/LesMis2.txt
@@ -1742,7 +1740,6 @@
 : 1576662090:0;gco -b new_package_next
 : 1576662183:0;xbps-query -Rs webkit
 : 1576662323:0;xnew next
-: 1576662361:0;sudo xbps-install next
 : 1576665024:0;xbps-query -f awesome-LuaJIT
 : 1576665043:0;e /usr/share/awesome/lib/awful/hotkeys_popup/init.lua
 : 1576672060:0;adb sideload RR-P-v7.0.3-20191218-zerolte-Final.zip
@@ -1796,7 +1793,6 @@
 : 1577388004:0;bin/doom sync
 : 1577388688:0;/bin/emacs --no-x-resources --daemon
 : 1577417868:0;xbps-query -Rs dbus
-: 1577470490:0;sudo xbps-install kwalletmanager kwallet-pam
 : 1577470967:0;gpg --edit-key 9D00EC3C1FFE688F0F5C1419DBF37962A343492B
 : 1577503542:0;sudo xbps-install links-x11
 : 1577504369:0;sudo xbps-install rtv
@@ -2073,7 +2069,6 @@
 : 1579983569:0;sudo xbps-install kcoreaddons
 : 1580010453:0;dl_coursera --cookies cookies.txt --slug it-security --outdir it --how builtin
 : 1580011122:0;coursera-dl it-security
-: 1580019620:0;sudo ln -s /etc/sv/sddm /var/service
 : 1580020482:0;firejail aria2c --rpc-secret=${RPC_SECRET} -D
 : 1580023045:0;dl_coursera --cookies cookies.txt --slug it-security --outdir it --how aria2 --generate-input-file
 : 1580023129:0;aria2c --no-conf --load-cookies cookies.txt "https://www.coursera.org/learn/it-security/"
@@ -2146,7 +2141,6 @@
 : 1582789775:0;cd .dotfiles/
 : 1582789886:0;sudo xbps-remove -R sddm
 : 1582789894:0;sudo xbps-remove -R sddm-kcm
-: 1582791429:0;sudo rm /var/service/sddm
 : 1582791677:0;sudo apparmor_parser -r /etc/apparmor.d/usr.bin.nginx
 : 1582791681:0;svlogtail | rg nginx
 : 1582792700:0;e /etc/nginx/nginx.conf
@@ -2396,7 +2390,6 @@
 : 1586578451:0;echo $AWESOME_THEMES_PATH
 : 1586580860:0;x
 : 1586580880:0;bindkey -l
-: 1586583393:0;./shadowfox_linux_x64 -generate-uuids -set-dark-theme
 : 1586586219:0;sudo xbps-install xrandr
 : 1586588132:0;e .profile
 : 1586590524:0;xbps-query -Rs xrdb
@@ -2747,7 +2740,6 @@ fi
 : 1587913389:0;sudo xbps-install tlp-rdw
 : 1587913407:0;ping 'google.com'
 : 1587963130:0;cat .Xresources.d/theme_tomorrow_night
-: 1587966843:0;e
 : 1587978860:0;yarn global add vls
 : 1587979207:0;yarn add vue
 : 1587988989:0;yarn add axios
@@ -2958,7 +2950,6 @@ fi
 : 1589523916:0;sudo xbps-install intel-video-accel
 : 1589523980:0;sudo xbps-install vulkan-loader
 : 1589524689:0;xbps-query -f awesome
-: 1589524733:0;startx 2> .xsession-errors
 : 1589525066:0;sudo xbps-install mesa-vulkan-intel
 : 1589525072:0;sudo xbps-install mesa-vaapi
 : 1589525184:0;sudo xbps-install mesa-intel-dri
@@ -2989,7 +2980,6 @@ fi
 : 1589534523:0;sudo xbps-install unzip
 : 1589534674:0;sudo xbps-install ueberzug
 : 1589536909:0;sudo xbps-install ffmpegthumbnailer
-: 1589537219:0;sudo xbps-install void-repo-nonfree
 : 1589538198:0;sudo xbps-install papirus-icon-theme
 : 1589538316:0;git clone --depth=1 gh:vinceliuice/Mojave-gtk-theme
 : 1589538377:0;sudo xbps-install sassc
@@ -3231,7 +3221,6 @@ fi
 : 1592570149:0;sudo sv restart postgresql
 : 1592570550:0;gco -b update_pgadmin
 : 1592570570:0;e srcpkgs/pgadmin3/template
-: 1592628896:0;git status
 : 1592635680:0;e srcpkgs/python-Flask-BabelEx/template
 : 1592636271:0;xnew python3-Flask-Paranoid
 : 1592637555:0;xnew python3-Flask-Principal
@@ -3387,7 +3376,6 @@ fi
 : 1593683385:0;git remote add origin gh:mustaqimm/js.org
 : 1593705028:0;xbps-query -Rs volta
 : 1593755552:0;yadm restore ~/.config/awesome
-: 1593755615:0;sudo xbps-install -u xbps
 : 1593757218:0;awesome
 : 1593758663:0;gco -b update_android_studio
 : 1593758668:0;e srcpkgs/android-studio/template
@@ -3530,7 +3518,6 @@ fi
 : 1596346088:0;cp /usr/share/examples/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 : 1596346151:0;yadm diff .config/alacritty
 : 1596349510:0;git clone gh:mustaqimm/dm
-: 1596349523:0;grv
 : 1596371327:0;git clone --depth=1 gh:be5invis/Iosevka
 : 1596382752:0;for COLOR in {0..255} \
 do\
@@ -3686,7 +3673,6 @@ done
 : 1598849334:0;yadm diff .config/doom
 : 1598856671:0;sudo xbps-install pavucontrol-qt
 : 1598857882:0;pavucontrol
-: 1598861308:0;fg
 : 1598863714:0;git clone --depth=1 gh:GDQuest/godot-demos
 : 1598866222:0;mimeo -m project.godot
 : 1598883818:0;sudo xbps-install pulsemixer
@@ -3851,7 +3837,6 @@ done
 : 1601096191:0;sudo visudo
 : 1601101413:0;e ~/Library/Cloud/Org/code/ml/ml.org
 : 1601101595:0;sudo xbps-install plantuml
-: 1601101805:0;gco $(gb | fzf)
 : 1601101831:0;git pull
 : 1601108075:0;yadm add ~/.gitconfig
 : 1601108098:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts/sponsorblock_shared/^sponsorblock.db*}
@@ -3990,7 +3975,6 @@ done
 : 1602003396:0;git stash clear
 : 1602003480:0;gs
 : 1602065709:0;fd -e mkv -x mv {} . \;
-: 1602067573:0;firejail --list
 : 1602084371:0;echo $RPC_SECRET | xclip -sel clip
 : 1602257489:0;aria 'https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz'
 : 1602523616:0;adb p[C]
@@ -4062,10 +4046,6 @@ done
 : 1603946077:0;aria --input-file=algorithms-graphs-data-structures/algorithms-graphs-data-structures.download.aria2_input_file.txt
 : 1603954824:0;xnew taiwins
 : 1603954867:0;e srcpkgs/awesome/template
-: 1603965587:0;ga .
-: 1603965593:0;gcs
-: 1603965669:0;gp
-: 1604145560:0;./xbps-src bootstrap-update
 : 1604145567:0;./xbps-src binary-bootstrap
 : 1604146914:0;xlint srcpkgs/taiwins/template
 : 1604160570:0;sudo psmem -S
@@ -4075,7 +4055,6 @@ done
 : 1604209504:0;dl_coursera --cookies cookies.txt --slug algorithms-npcomplete --outdir 4-algorithms-npcomplete --how aria2 --generate-input-file
 : 1604209732:0;aria --input-file=3-algorithms-greedy/algorithms-greedy.download.aria2_input_file.txt
 : 1604214440:0;man megadl
-: 1604297904:0;./xbps-src clean
 : 1604298127:0;./xbps-src pkg taiwins
 : 1604820130:0;xbps-query -f plantuml
 : 1604832949:0;dl_coursera --cookies cookies.txt --slug deep-neural-network --outdir dl/2-deep-neural-network --how aria2 --generate-input-file
@@ -4088,7 +4067,6 @@ done
 : 1605022913:0;aria --input-file=dl/5-nlp-sequence-models/nlp-sequence-models.download.aria2_input_file.txt
 : 1605073770:0;clip
 : 1605087565:0;sudo rm /var/service/postgresql12
-: 1605200826:0;e /etc/unbound/zones/adblock.local
 : 1605596032:0;e ~/.asoundrc
 : 1605715150:0;sudo xbps-install python3-tqdm
 : 1605769811:0;sudo xbps-install qbittorrent
@@ -4124,14 +4102,10 @@ done
 : 1607169616:0;man tmux
 : 1607169692:0;chts
 : 1607193448:0;bat cache --build
-: 1607223934:0;df -Th
 : 1607224251:0;sudo tlmgr update --self
 : 1607224260:0;sudo tlmgr update --all
 : 1607225771:0;yadm add ~/.local/bin/scripts
-: 1607484751:0;e cv/education.tex
-: 1607484833:0;xelatex cv.tex
 : 1607657311:0;sudo wifi toggle
-: 1607658401:0;sudo sv restart unbound
 : 1607658437:0;sudo sv restart dhcpcd
 : 1607658465:0;sudo sv restart wpa_supplicant
 : 1607742357:0;e cv/skills.tex
@@ -4151,7 +4125,6 @@ done
 : 1608223038:0;sudo xbps-install bash-completion
 : 1608223879:0;sudo tune2fs -l /dev/sda5
 : 1608224487:0;man e4defrag
-: 1608227612:0;man vifm
 : 1608282410:0;sudo xbps-install pkg-config
 : 1608282442:0;sudo xbps-install base-devel
 : 1608307094:0;sudo xbps-install smartmontools
@@ -4164,7 +4137,6 @@ done
 : 1608452034:0;lsmod | rg ufs
 : 1608452110:0;sudo mount -t ufs -o ufstype=ufs2 /dev/loop0p1 /mnt 
 : 1608466229:0;sudo mount /dev/mmcblk0p1 /media
-: 1608466914:0;ls -l
 : 1608468093:0;sudo fdisk /dev/loop0
 : 1608535699:0;java -jar mkgmap.jar --gmapsupp map.osm
 : 1608535718:0;aria 'https://download.geofabrik.de/africa/south-africa-latest.osm.bz2'
@@ -4189,7 +4161,6 @@ done
 : 1608547715:0;smbclient -U nobody //192.168.1.100/plain
 : 1608551329:0;svlogtail | rg smbd
 : 1608551391:0;e /etc/samba/smb.conf
-: 1608614012:0;lsusb
 : 1608614683:0;sudo eject /dev/mmcblk0
 : 1608615156:0;sudo dd if=/dev/zero of=/dev/mmcblk0 bs=4k oflag=sync conv=fsync status=progress && sync
 : 1608616577:0;lsblk --fs
@@ -4213,16 +4184,13 @@ done
 : 1608780867:0;yarn add vue-plugin-load-script
 : 1608780924:0;yarn add vue-plugin-load-script@">=2.0.0"
 : 1608780955:0;cat package.json
-: 1608781086:0;e ~/.config/vifm/vifmrc
 : 1608883953:0;sudo xbps-install libva-utils
 : 1608883960:0;vainfo
 : 1608884114:0;sudo xbps-install strace
-: 1608998449:0;./shadowfox_linux_x64 -profile-index 2 -generate-uuids -set-dark-theme
 : 1608999053:0;fd -e backup -x rm
 : 1609039570:0;aria 'https://josm.openstreetmap.de/josm-tested.jar'
 : 1609430509:0;git clone -d1 gh:hlissner/doom-emacs ~/.emacs.d
 : 1609430538:0;git clone --depth=1 gh:hlissner/doom-emacs ~/.emacs.d
-: 1609430556:0;doom sync
 : 1609430796:0;sudo xbps-install noto-fonts-cjk
 : 1609431394:0;e ~/.config/doom/init.el
 : 1609431603:0;git diff ~/.config/doom/init.el ~/.emacs.d/init.example.el
@@ -4245,13 +4213,7 @@ done
 : 1609608948:0;sudo xbps-install elogind dbus-elogind dbus-elogind-libs dbus-elogind-x11
 : 1609651182:0;xprop | rg WM_CLASS | cut --delimiter=' ' -f4
 : 1609651197:0;e ~/.config/awesome/wibar.lua
-: 1609690140:0;java -jar josm-tested.jar
-: 1609989953:0;e ~/.zsh/zsh_history
-: 1609991329:0;ping mustaqim.ml
 : 1610005630:0;pkill emacs
-: 1610005635:0;doom compile
-: 1610014590:0;git pull --rebase upstream master
-: 1610014918:0;gd
 : 1610015151:0;gd HEAD:private-build-plans.sample.toml private-build-plans.toml
 : 1610035067:0;rg . /sys/devices/system/cpu/vulnerabilities/*
 : 1610035323:0;pfetch
@@ -4259,7 +4221,6 @@ done
 : 1610035543:0;cat /proc/cmdline
 : 1610041034:0;e ~/.config/mpv/mpv.conf
 : 1610170140:0;npm install
-: 1610178048:0;inxi -F -d -f -l -m -o -p -t cm -u -x
 : 1610178187:0;e private-build-plans.toml
 : 1610178699:0;e ~/.config/alacritty/alacritty.yml
 : 1610179004:0;npm run build -- ttf::iosevka-custom
@@ -4272,26 +4233,18 @@ done
 : 1610616609:0;plain hide
 : 1610643189:0;cat _dl.txt
 : 1610815233:0;e ~/.config/tmux/tmux.conf.local
-: 1610854418:0;doom upgrade
 : 1610963019:0;e ~/.config/mpv/input.conf
 : 1610979321:0;cat /usr/share/X11/locale/en_US.UTF-8/Compose
 : 1611087576:0;sudo sv restart smbd
-: 1611160523:0;jackett
 : 1611222905:0;sudo xbps-remove elogind
 : 1611222962:0;sudo update_unbound_sb_hosts.sh
-: 1611246045:0;sudo xbps-install -Suvy
-: 1611249112:0;zpl update -p
 : 1611306074:0;sudo vkpurge rm all
-: 1611306122:0;sudo xbps-remove -ROo
 : 1611318428:0;mimeo --add video/avi mpv.desktop
 : 1611318474:0;mimeo --add video/x-msvideo mpv.desktop
 : 1611507126:0;chromium --incognito
-: 1611565213:0;plain show
 : 1611568329:0;whoami
 : 1611568361:0;sx sh ~/.xinitrc 2> .xsession-errors
 : 1611568394:0;yadm upgrade
-: 1611568589:0;gst
-: 1611569442:0;man sway
 : 1611569683:0;echo $XDG_CONFIG_HOME
 : 1611570248:0;light -G
 : 1611570413:0;sudo bluetooth toggle
@@ -4326,8 +4279,6 @@ done
 : 1611595460:0;cp -r /etc/xdg/waybar ~/.config/waybar
 : 1611598898:0;e ~/.config/awesome/themes/mojave-dark/theme.lua
 : 1611599221:0;e ~/.config/awesome/rules.lua
-: 1611599616:0;e ~/.config/awesome/bindings.lua
-: 1611599654:0;sudo xbps-install grimshot
 : 1611632811:0;sudo makewhatis /usr/share/man
 : 1611636961:0;echo $XCURSOR_PATH
 : 1611637096:0;echo $XCURSOR_THEME
@@ -4335,29 +4286,19 @@ done
 : 1611638755:0;yadm add ~/.config/awesome
 : 1611638768:0;yadm add ~/.config/firejail
 : 1611638771:0;yadm add ~/.config/htop/htoprc
-: 1611638799:0;yadm add ~/.config/sway
 : 1611638822:0;yadm add ~/.config/tmux/tmux.conf{,.local}
 : 1611638837:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1611638839:0;yadm add ~/.config/waybar
 : 1611638867:0;yadm add ~/.config/youtube-dl/config
 : 1611638879:0;yadm add ~/.local/share/fonts/TTF/iosevka-*
-: 1611638956:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
-: 1611638963:0;yadm commit
-: 1611639009:0;yadm push
 : 1611639643:0;bandwhich
 : 1611640535:0;man 5 sway-input
-: 1611643904:0;yadm status
-: 1611643910:0;yadm diff
 : 1611644275:0;sudo chown $USER:$USER /run/user/mustaqim
-: 1611644684:0;e ~/.zsh/.zprofile
-: 1611645129:0;tlp-stat -t | rg temp
 : 1611645880:0;e ~/.local/share/applications/Firefox-Nightly.desktop
 : 1611647898:0;sudo xbps-install wmctrl
 : 1611648357:0;e ~/.config/sway/theme
 : 1611648908:0;sudo xbps-install wofi
 : 1611650698:0;wofi -S drun
 : 1611650790:0;wofi -S drun -I -G
-: 1611662814:0;sudo sv status /var/service/*
 : 1611662823:0;sudo xbps-install elogind
 : 1611663170:0;sudo xbps-remove -R elogind
 : 1611663178:0;sudo xbps-install seatd
@@ -4367,42 +4308,136 @@ done
 : 1611663541:0;id mustaqim
 : 1611663688:0;sudoedit /etc/rc.local
 : 1611663706:0;/bin/emacs -bg '#17191a' --daemon
-: 1611663845:0;echo $XDG_RUNTIME_DIR
-: 1611663888:0;dbus-run-session sway
-: 1611663924:0;tmux attach || tmux
 : 1611664007:0;doom clean
-: 1611664389:0;e ~/.config/sway/rules
-: 1611664581:0;htop
 : 1611664954:0;man mpv
 : 1611665127:0;sudo xbps-install SPIRV-Tools
-: 1611675944:0;psmem -p $(pgrep -d, -u $USER) -S
-: 1611676309:0;e ~/.config/waybar/config
-: 1611676677:0;e ~/.config/sway/autostart
 : 1611681777:0;sudo xbps-install wl-clipboard
-: 1611681800:0;decode
-: 1611681834:0;e ~/.zsh/functions/decode
 : 1611682016:0;man wl-clipboard
-: 1611682629:0;adb connect 192.168.1.101:5555
 : 1611682795:0;adb she
-: 1611682801:0;adb shell ls /sdcard/Download
-: 1611684117:0;push
-: 1611723783:0;e ~/.zsh/zshenv
-: 1611723803:0;reload
-: 1611723812:0;echo $QT_QPA_PLATFORM
 : 1611723938:0;sudo xbps-install qt5-wayland
 : 1611747438:0;swaymsg -t get_tree
-: 1611747579:0;man 5 sway
-: 1611837508:0;e ~/.config/sway/config
-: 1611837715:0;e ~/.config/wofi/config
-: 1611849693:0;e ~/.config/wofi/style.css
-: 1611850675:0;f
 : 1611852619:0;fc-list | rg "Iosevka" | cut -d ":" -f2
-: 1611852673:0;rofi -combi-modi window,drun -show combi -modi combi -sort -sorting-method fzf
 : 1611854125:0;e ~/.config/waybar/style.css
 : 1611854515:0;ping mustaqim.ml
 : 1611854684:0;jackett
-: 1611854703:0;yadm status
 : 1611854750:0;yadm add ~/.config/sway
 : 1611854755:0;yadm add ~/.config/waybar
 : 1611854763:0;yadm add ~/.config/wofi
 : 1611854767:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1611854773:0;yadm commit
+: 1611854842:0;yadm push
+: 1611901545:0;sudo xbps-install -u xbps
+: 1611907078:0;zpl update -p
+: 1611909602:0;e ~/.config/wofi/config
+: 1611919247:0;e ~/.config/wofi/style.css
+: 1611919531:0;doom upgrade
+: 1611921576:0;doom compile
+: 1611922346:0;sudo xbps-install wayfire wayfire-plugins-extra
+: 1611991813:0;sudo xbps-remove -ROo
+: 1611992135:0;e ~/.config/awesome/bindings.lua
+: 1611995671:0;tlp-stat -t | rg temp
+: 1612023555:0;man 5 sway
+: 1612023577:0;man sway
+: 1612029631:0;adb
+: 1612029815:0;e ~/.zsh/functions/decode
+: 1612030632:0;decode
+: 1612031580:0;sudo xbps-install next
+: 1612064630:0;git pull --rebase upstream master
+: 1612064770:0;xnew caps2esc
+: 1612065620:0;xnew interception-tools
+: 1612065640:0;e srcpkgs/interception-tools/template
+: 1612065780:0;./xbps-src bootstrap-update
+: 1612069757:0;./xbps-src pkg interception-tools
+: 1612070851:0;gd
+: 1612071020:0;git status
+: 1612071066:0;gco -b new_package_interception_tools
+: 1612071136:0;gco $(gb | fzf)
+: 1612071180:0;e srcpkgs/caps2esc/template
+: 1612071325:0;./xbps-src clean
+: 1612071393:0;./xbps-src pkg caps2esc
+: 1612071490:0;sudo xbps-install --repository=hostdir/binpkgs/new_package_interception_tools caps2esc
+: 1612071580:0;sudo xbps-remove -R interception-tools
+: 1612071832:0;wl-paste
+: 1612073004:0;doom sync
+: 1612073056:0;e ~/.config/sway/autostart
+: 1612073781:0;sudo nice -n -20 udevmon -c udevmon.yaml >udevmon.log 2>udevmon.err
+: 1612074103:0;caps2esc -m 1
+: 1612078544:0;sudo xbps-install grimshot
+: 1612078645:0;swaymsg -t get_tree | fzf
+: 1612078812:0;e ~/.zsh/zshenv
+: 1612093074:0;e ~/.config/sway/rules
+: 1612095827:0;yadm diff
+: 1612095884:0;e ~/.config/waybar/config
+: 1612098487:0;adb connect 192.168.1.101:5555
+: 1612098961:0;push
+: 1612117217:0;adb shell ls /sdcard/Download
+: 1612150226:0;java -jar josm-tested.jar
+: 1612158819:0;e ~/.config/sway/config
+: 1612161112:0;e cv/education.tex
+: 1612161401:0;xelatex cv.tex
+: 1612162470:0;gst
+: 1612162482:0;grv
+: 1612162497:0;ga .
+: 1612162500:0;gcs
+: 1612162548:0;gp
+: 1612174145:0;dbus-run-session sway
+: 1612175985:0;make
+: 1612176213:0;inxi -F -d -f -l -m -o -p -t cm -u -x
+: 1612181483:0;sudo nice -n -20 udevmon -c udevmon.yaml >udevmon.log 2>udevmon.err &
+: 1612181558:0;fg
+: 1612187500:0;e ~/.config/vifm/vifmrc
+: 1612187520:0;man vifm
+: 1612248084:0;xbps-query -Rs dropbox
+: 1612249681:0;lsusb
+: 1612250373:0;plain show
+: 1612251579:0;e ~/.zsh/zsh_history
+: 1612252200:0;sudo xbps-install kde5 kde5-baseapps
+: 1612252261:0;sudo xbps-install -Suvy
+: 1612252390:0;sudo xbps-install void-repo-nonfree
+: 1612253327:0;dbus-run-session plasma
+: 1612254550:0;e
+: 1612254935:0;sudo ln -s /etc/sv/sddm /var/service
+: 1612255891:0;sudo xbps-install kwalletmanager kwallet-pam
+: 1612256441:0;xbps-query -Rs wallet
+: 1612256457:0;sudo xbps-install kwalletmanager kwallet-pam kwallet-cli
+: 1612256475:0;reload
+: 1612259683:0;git clone --depth=1 gh:burjorjee/pyethrecover
+: 1612259763:0;firejail --list
+: 1612262259:0;ls -l
+: 1612262523:0;df -Th
+: 1612268737:0;sudo xbps-install breeze-cursors
+: 1612269405:0;sudo rm /var/service/sddm
+: 1612280122:0;htop
+: 1612280241:0;dbus-run-session startplasma-wayland
+: 1612280541:0;rofi -combi-modi window,drun -show combi -modi combi -sort -sorting-method fzf
+: 1612282213:0;startx 2> .xsession-errors
+: 1612282235:0;echo $XDG_RUNTIME_DIR
+: 1612282239:0;echo $XDG_SESSION_TYPE
+: 1612282669:0;sudo sv status /var/service/*
+: 1612282765:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1612283211:0;e ~/.zsh/.zprofile
+: 1612283239:0;echo $QT_QPA_PLATFORM
+: 1612283554:0;tmux attach || tmux
+: 1612283739:0;e /etc/unbound/zones/adblock.local
+: 1612283766:0;sudo sv restart unbound
+: 1612284029:0;./shadowfox_linux_x64 -profile-index 2 -generate-uuids -set-dark-theme
+: 1612284075:0;./shadowfox_linux_x64 -generate-uuids -set-dark-theme
+: 1612284598:0;yadm status
+: 1612284606:0;f
+: 1612284648:0;yadm status
+: 1612284658:0;f
+: 1612284683:0;yadm status
+: 1612284694:0;yadm add ~/.config/awesome
+: 1612284700:0;yadm status
+: 1612284707:0;yadm diff
+: 1612284717:0;yadm status
+: 1612284721:0;yadm add ~/.config/doom
+: 1612284725:0;yadm add ~/.config/sway
+: 1612284728:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1612284735:0;yadm add ~/.config/waybar
+: 1612284742:0;yadm add ~/.config/wofi
+: 1612284747:0;f
+: 1612284761:0;yadm add ~/.mozilla/chrome
+: 1612284763:0;yadm status
+: 1612284766:0;f
+: 1612284807:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc

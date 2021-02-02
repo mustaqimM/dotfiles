@@ -6,6 +6,8 @@
 	#fi
 #fi
 
-#if [ ! "$DISPLAY" ]; then
-#    dbus-run-session sway
-#fi
+if [ ! "$DISPLAY" ]; then
+  sx sh ~/.xinitrc 2> .xsession-errors
+  # dbus-run-session sway
+  # XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland
+fi

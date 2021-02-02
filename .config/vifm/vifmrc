@@ -418,8 +418,10 @@ filetype *.asc
 filetype *.torrent ktorrent %f &
 fileviewer *.torrent imdl -c always -t torrent show -i %c
 
+filetype *.jar java -jar %f %i &
+
 " FuseZipMount
-filetype *.zip,*.jar,*.war,*.ear,*.oxt,*.apkg
+filetype *.zip,*.war,*.ear,*.oxt,*.apkg
        \ {Mount with fuse-zip}
        \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
        \ {View contents}

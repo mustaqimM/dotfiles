@@ -3,7 +3,10 @@ assign [class="Nightly"] workspace 1
 assign [app_id="firefox"] workspace 1
 assign [app_id="Chromium"] workspace 1
 assign [class="Emacs"] workspace 3
+assign [app_id="org.pwmt.zathura"] workspace 4
 assign [app_id="mpv"] workspace 5
-assign [class="KeePassXC"] workspace 6
+assign [app_id="org.keepassxc.KeePassXC"] workspace 6
 
 for_window [class="KeePassXC"] floating enable
+for_window [app_id="firefox" title="About Firefox Nightly"] floating enable
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, move position 890 490, resize set 505 305 , sticky enable

@@ -7,10 +7,6 @@ run() {
   fi
 }
 
-run xbanish
-
 run aria2c --rpc-secret="${RPC_SECRET}" -D
 
 run emacs -bg "#17191a" --daemon -fs
-
-run xcape -e "Caps_Lock=Escape"

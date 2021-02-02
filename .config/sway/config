@@ -67,11 +67,10 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
       scroll_factor 0.8
 }
 
-input "type:keyboard" {
-      xkb_options caps:ctrl_modifier
-      xkb_options caps:escape
-      # xkb_layout alt_r=multi_key
-}
+# input "type:keyboard" {
+#       xkb_options caps:ctrl_modifier
+#       xkb_options caps:escape
+# }
 
 ### Key bindings
 #
@@ -87,7 +86,7 @@ input "type:keyboard" {
     bindsym button2 kill
 
     # Start your launcher
-    bindsym alt+space exec $menu
+    bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -111,6 +110,9 @@ input "type:keyboard" {
     # volume
     bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
     bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+
+    # mpv from clipboard
+    bindsym $mod+y exec mpv $(wl-paste -n)
 
 #
 # Moving around:

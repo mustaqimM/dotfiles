@@ -5,7 +5,7 @@ window {
   background-color: #1d1f21;
   font-size: 14px;
   font-family: "SF Pro Display";
-  font-size: 18;
+  font-size: 1.4em;
 }
 
 #input {
@@ -29,9 +29,8 @@ window {
 /* } */
 
 #scroll {
-  border-bottom: none;
-  margin: 5px;
-  margin: 10px 10px;
+  padding: 30px 0px 30px 0px;
+  margin: -32px 10px;
 }
 
 #text {

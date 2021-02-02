@@ -1718,7 +1718,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 /* Flip the position of the icons in the identity box */
 #identity-box {
   direction: rtl;
-  border-radius: 0px !important;
+  border-radius: 10px !important;
  }
 
 /* Hide info icon */
