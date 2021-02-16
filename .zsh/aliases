@@ -4,6 +4,7 @@ alias aria="aria2c --no-conf"
 alias cat=bat
 alias cd=' cd'
 alias chts='CHTSH_CONF='~/.config/cht.sh/cht.sh.conf' cht --shell'
+alias firejail='firejail --rmenv=LS_COLORS'
 alias gpg=gpg2
 alias jackett='mono ~/.local/bin/Jackett/JackettConsole.exe'
 alias ktlint='ktlint --android --color --relative -v'

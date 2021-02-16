@@ -174,8 +174,8 @@ command! reload :write | restart
 
 command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('fd -t d -F . $HOME | fzf --reverse 2>/dev/tty')) | view
 nnoremap <c-g> :FZFlocate<cr>
-command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd -H | fzf 2>/dev/tty')) | view
-nnoremap <c-f> :FZFfind<cr>
+" command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd -H | fzf 2>/dev/tty')) | view
+" nnoremap <c-f> :FZFfind<cr>
 
 " Block particular shortcut
 " nnoremap <left> <nop>
@@ -369,7 +369,9 @@ filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Images
-filetype *.bmp,*.gif,*.jpg,*.jpeg,*.png,*.webp,*.xpm
+filetype *.bmp,*.gif,*.jpg,*.jpeg,*.png,*.tif,*.webp,*.xpm
+        \ {View in imv}
+        \ imv -b 000000 %f %i &,
         \ {View in feh}
         \ feh --scale-down %c %i &,
         \ {View in sxiv}

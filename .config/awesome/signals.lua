@@ -108,19 +108,19 @@ end)
 client.connect_signal("manage",
     function(c)
         local t = {}
-        t["Alacritty"]   = "/usr/share/pixmaps/Alacritty.svg"
-        t["Code - OSS"]  = "/usr/share/icons/Papirus-Dark/64x64/apps/vscodium.svg"
-        t["Franz"]       = "/usr/share/icons/Papirus-Dark/64x64/apps/franz.svg"
-        t["Fractal"]     = "/usr/share/icons/hicolor/scalable/apps/org.gnome.Fractal.svg"
-        -- t["Firefox"]     = "/home/mustaqim/.mozilla/firefox/chrome/firefox.png"
-        t["JDownloader"] = "/usr/share/icons/Papirus-Dark/64x64/apps/jdownloader.svg"
-        t["Keybase"]     = "/usr/share/icons/Papirus-Dark/64x64/apps/keybase.svg"
-        t["KeePassXC"]   = "/usr/share/icons/Papirus-Dark/64x64/apps/keepassxc.svg"
-        t["Nightly"]     = "/usr/share/icons/Papirus-Dark/64x64/apps/org.mozilla.FirefoxNightly.svg"
-        t["Next"]        = "/usr/share/icons/hicolor/128x128/apps/next.png"
-        t["st"]          = "/usr/share/icons/Papirus-Dark/64x64/apps/st.svg"
-        t["URxvt"]       = "/usr/share/icons/Papirus-Dark/64x64/apps/urxvt.svg"
-        t["UXTerm"]      = "/usr/share/icons/Papirus-Dark/64x64/apps/utilities-terminal.svg"
+        t["Alacritty"]    = "/usr/share/pixmaps/Alacritty.svg"
+        t["Code - OSS"]   = "/usr/share/icons/Papirus-Dark/64x64/apps/vscodium.svg"
+        t["Franz"]        = "/usr/share/icons/Papirus-Dark/64x64/apps/franz.svg"
+        t["Fractal"]      = "/usr/share/icons/hicolor/scalable/apps/org.gnome.Fractal.svg"
+        t["JDownloader"]  = "/usr/share/icons/Papirus-Dark/64x64/apps/jdownloader.svg"
+        t["Keybase"]      = "/usr/share/icons/Papirus-Dark/64x64/apps/keybase.svg"
+        t["KeePassXC"]    = "/usr/share/icons/Papirus-Dark/64x64/apps/keepassxc.svg"
+        t["Nightly"]      = "/usr/share/icons/Papirus-Dark/64x64/apps/org.mozilla.FirefoxNightly.svg"
+        t["Next"]         = "/usr/share/icons/hicolor/128x128/apps/next.png"
+        t["st"]           = "/usr/share/icons/Papirus-Dark/64x64/apps/st.svg"
+        t["URxvt"]        = "/usr/share/icons/Papirus-Dark/64x64/apps/urxvt.svg"
+        t["UXTerm"]       = "/usr/share/icons/Papirus-Dark/64x64/apps/utilities-terminal.svg"
+        t["Zathura"]      = "/usr/share/icons/Papirus-Dark/64x64/apps/zathura.svg"
 
         local icon = t[c.class]
         if not icon then

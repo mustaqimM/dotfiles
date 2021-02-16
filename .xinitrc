@@ -1,3 +1,3 @@
 xrdb -merge ~/.Xresources
 xset b off
-awesome
+dbus-run-session awesome

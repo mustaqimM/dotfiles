@@ -8,7 +8,7 @@ source "$HOME/.priv-env"
 
 # ===  VARIABLES  === {{{
 
-# export XDG_SESSION_TYPE=x11
+export XDG_SESSION_TYPE=x11
 # export XDG_SESSION_TYPE=wayland
 #export XDG_CURRENT_DESKTOP=KDE
 export KDE_SESSION_VERSION=5
@@ -21,8 +21,8 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export XCURSOR_PATH=$HOME/.local/share/icons
 export XCURSOR_THEME="X11-Cursors-Breeze-Hacked-White"
 
-export BROWSER="$HOME/.local/bin/firefox/firefox"
-#export BROWSER="firefox"
+# export BROWSER="$HOME/.local/bin/firefox/firefox"
+export BROWSER="firefox"
 #export MOZ_USE_XINPUT2=1
 # export MOZ_ACCELERATED=1
 # export MOZ_WEBRENDER=1
@@ -43,11 +43,11 @@ export EDITOR="emacsclient -nw"
 export TERM=xterm-256color
 export COLORTERM=truecolor
 
-export FZF_DEFAULT_COMMAND="fd --type file --color=always"
+export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -c always"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd . -t d"
-export FZF_DEFAULT_OPTS="--layout=reverse-list --ansi --color=bg+:#282a2e,bg:#1d1f21,spinner:#8abeb7,hl:#81a2be,fg:#b4b7b4,header:#81a2be,info:#f0c674,pointer:#8abeb7,marker:#8abeb7,fg+:#e0e0e0,prompt:#f0c674,hl+:#81a2be"
-export FZF_TMUX_HEIGHT=80%
+export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
+export FZF_DEFAULT_OPTS="--layout=reverse --ansi --color=bg+:#282a2e,bg:#1d1f21,spinner:#8abeb7,hl:#81a2be,fg:#b4b7b4,header:#81a2be,info:#f0c674,pointer:#8abeb7,marker:#8abeb7,fg+:#e0e0e0,prompt:#f0c674,hl+:#81a2be"
+# export FZF_TMUX_HEIGHT=80%
 # export SKIM_DEFAULT_OPTIONS="--color=bg+:#282a2e,bg:#1d1f21,spinner:#8abeb7,hl:#81a2be,fg:#b4b7b4,header:#81a2be,info:#f0c674,pointer:#8abeb7,marker:#8abeb7,fg+:#e0e0e0,prompt:#f0c674,hl+:#81a2be
 #   --ansi
 #   --reverse

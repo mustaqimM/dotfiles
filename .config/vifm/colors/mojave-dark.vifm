@@ -11,8 +11,8 @@ highlight Device cterm=bold ctermfg=red ctermbg=default
 highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
 highlight Executable cterm=bold ctermfg=green ctermbg=default
 highlight Selected cterm=bold ctermfg=255 ctermbg=237
-highlight CurrLine cterm=bold ctermfg=default ctermbg=237
-highlight OtherLine cterm=bold ctermfg=default ctermbg=237
+highlight CurrLine cterm=bold ctermfg=default ctermbg=235
+highlight OtherLine cterm=bold ctermfg=default ctermbg=235
 highlight TopLine cterm=bold ctermfg=black ctermbg=235
 highlight TopLineSel cterm=bold ctermfg=black ctermbg=default
 highlight TabLine cterm=none ctermfg=white ctermbg=235
@@ -93,8 +93,8 @@ highlight /^.*\.(agda|asm|c|c++|cc|cl|cp|cpp|cr|cs|ctp|cxx|f|f03|f08|f90|f95|for
 highlight /^.*\.(deny|storyboard)$/I cterm=none ctermfg=9 ctermbg=default
 highlight /^.*\.(bmp|cdr|dicom|flif|gif|icns|ico|jpeg|jpg|nth|png|psd|pxd|pxm|tif|tiff|webp|xpm)$/I cterm=none ctermfg=97 ctermbg=default
 highlight /^.*\.(ai|drw|eps|epsf|ps|svg)$/I cterm=none ctermfg=99 ctermbg=default
-highlight /^.*\.(diff)$/I cterm=none ctermfg=232 ctermbg=197
-highlight /^.*\.(patch)$/I cterm=bold ctermfg=232 ctermbg=197
+highlight /^.*\.(diff)$/I cterm=bold ctermfg=197 ctermbg=default
+highlight /^.*\.(patch)$/I cterm=bold ctermfg=197 ctermbg=default
 highlight /^.*(ls_colors)$/I cterm=bold,reverse,underline,reverse ctermfg=197 ctermbg=89
 
 

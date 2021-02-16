@@ -1,5 +1,15 @@
 #!/usr/bin/env zsh
 
+# ==============================================================================
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# ==============================================================================
+
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
   eval `ssh-agent` &>/dev/null
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
@@ -8,15 +18,6 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 #ssh-add -l > /dev/null || ssh-add
 ssh-add -q $HOME/.ssh/GitLab > /dev/null || ssh-add
 ssh-add -q $HOME/.ssh/GitHub > /dev/null || ssh-add
-
-
-# ==============================================================================
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 # ==============================================================================
 
@@ -36,10 +37,10 @@ autoload -Uz _zinit
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-bin-gem-node
+# zinit light-mode for \
+#     zinit-zsh/z-a-patch-dl \
+#     zinit-zsh/z-a-as-monitor \
+#     zinit-zsh/z-a-bin-gem-node
 ### End of Zinit's installer chunk
 # ==============================================================================
 
@@ -62,7 +63,7 @@ setopt HIST_SAVE_NO_DUPS                                # don't write duplicate 
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_SPACE                                # prefix commands you don't want stored with a space
-HISTORY_IGNORE="(exit|ls|r|open|pwd|q|x *|kill *|s *)"
+HISTORY_IGNORE="(exit|ls|r|open|pwd|q|x *|kill *|s *|cd *)"
 
 setopt NO_HUP                                           # don't kill jobs
 setopt NO_CHECK_JOBS
@@ -144,13 +145,12 @@ zi light "hlissner/zsh-autopair"
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)np*]} ]]'
 zi snippet "OMZ::plugins/npm/npm.plugin.zsh"
 
-zi ice wait lucid from"gh-r" as"program" \
-  atload"_fzf_compgen_path() { fd --type f --hidden --follow --exclude ".git" . "$1" }; \
-         _fzf_compgen_dir() { fd --type d --hidden --follow --exclude ".git" . "$1" }"
-zi light junegunn/fzf-bin
 if [[ $(type -p fzf) ]] then
-  zi ice wait lucid multisrc"shell/{key-bindings,completion}.zsh" pick""
-  zi light "junegunn/fzf"
+   zi ice wait lucid multisrc"{key-bindings,completion}.zsh" pick"" \
+     atload"\
+     _fzf_compgen_path() { echo \"\$1\"; command fd --type f --type d --hidden --follow --exclude \".git\" . \"\$1\" }; \
+     _fzf_compgen_dir() { command fd -L --type d --hidden --follow --exclude \".git\" . \"\$1\" }"
+  zi light "/usr/share/doc/fzf"
 fi
 
 #zi ice wait lucid id-as"base16-fzf-tomorrow-night" #atclone'sed -e "26s/$/\\\/" -e "27i\" --ansi\"\\\ " -i base16-fzf-tomorrow-night' atpull"%atclone"
@@ -199,17 +199,17 @@ zi snippet "PZT::modules/ruby/"
 #  atload'eval "$(pyenv virtualenv-init - zsh)"'
 #zi light pyenv/pyenv-virtualenv
 
-zi ice svn atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
+zi ice svn #atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
 zi snippet "OMZ::plugins/emacs"
 
 #zi ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
 #zi light "chriskempson/base16-shell"
 
-zi ice lucid reset \
-  atclone"dircolors -b LS_COLORS > c.zsh; sed -i 's/30/12/g; s/172/11/g; s/196/9/g' c.zsh;" \
-  atpull'%atclone' pick"c.zsh" nocompile'!' \
-  atload'zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}'
-zi light trapd00r/LS_COLORS
+# zi ice lucid reset \
+#   atclone"dircolors -b LS_COLORS > c.zsh; sed -i 's/30/12/g; s/172/11/g; s/196/9/g' c.zsh;" \
+#   atpull'%atclone' pick"c.zsh" nocompile'!' \
+#   atload'zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}'
+# zi light trapd00r/LS_COLORS
 
 #zi ice lucid from"gh-r" as"program" bpick"*linux*" mv"lsd* -> lsd" pick"lsd/lsd"
 #zi light "Peltoche/lsd"
@@ -243,11 +243,11 @@ zi light "imsnif/bandwhich"
 #zi ice lucid from"gh-r" as"program" bpick"*linux*" pick"bat-v0.13.0-x86_64-unknown-linux-gnu/bat"
 #zi light "sharkdp/bat"
 
-zi ice lucid from"gh-r" as"program" bpick"*linux*"
-zi light "casey/intermodal"
+# zi ice lucid from"gh-r" as"program" bpick"*linux*"
+# zi light "casey/intermodal"
 
-zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> completions/exercism_completion.zsh"
-zi light "exercism/cli"
+# zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> completions/exercism_completion.zsh"
+# zi light "exercism/cli"
 
 #zi ice wait"2" lucid as"program" pick"build/release/peaclock" atclone"./build.sh"
 #zi light "octobanana/peaclock"
@@ -260,8 +260,11 @@ zi light "exercism/cli"
 #zi ice as"program" pick"bin/sml"
 #zi snippet "/home/mustaqim/.local/bin/sml/bin/sml"
 
-zi ice lucid from"gh-r" as"program"
-zi light "pinterest/ktlint"
+# zi ice lucid from"gh-r" as"program"
+# zi light "pinterest/ktlint"
+
+# zi ice lucid blockf
+# zi light "ziglang/shell-completions"
 
 # }}}
 
@@ -417,9 +420,9 @@ zstyle ':completion:*:corrections'   format ' %B%F{green} %d (errors: %e) 
 zstyle ':completion:*:descriptions'  format ' %F{yellow} %U%d%u  %f'
 zstyle ':completion:*:messages'      format ' %B%F{magenta}  %U%d%u  %f%b'
 zstyle ':completion:*:warnings'      format ' %B%F{red} %Uno matches found%u %f%b'
-#zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
 
-zstyle ':completion:*:parameters'    ignored-patterns '_*'
+# zstyle ':completion:*:parameters'    ignored-patterns '_*'
 
 zstyle ':completion::complete:*'     use-cache on
 zstyle ':completion:*'               cache-path ~/.zsh/cache

@@ -36,7 +36,7 @@ tyrannical.tags = {
     screen      = {1,2},                  -- Create gnhis tag on screen 1 and screen 2
     layout      = awful.layout.suit.spiral,         -- Use the tile layout
     class       = { --Accept the following classes, refuse everything else (because of "exclusive=true")
-      "Alacritty", "kitty", "konsole", "st", "Tilix", "URxvt", "UXTerm", "xst", "feh", "sxiv" }
+      "Alacritty", "kitty", "konsole", "st", "Tilix", "URxvt", "UXTerm", "imv", "xst", "feh", "sxiv" }
   },
   {
     name        = "Files",
@@ -125,6 +125,7 @@ tyrannical.tags = {
     name        = "",
     init        = false,
     exclusive   = true,
+    layout      = awful.layout.suit.max.fullscreen,
     class       = { "org-openstreetmap-josm-gui-MainApplication" }
   }
 }
@@ -275,7 +276,7 @@ awful.rules.rules = {
       awful.placement.centered(c) end
   },
 
-  { rule = { class = "feh" },
+  { rule_any = { class = { "feh", "imv" } },
     properties = { fullscreen = false, titlebars_enabled = false,
                    floating = true, border_width = 0 },
     callback = function (c)
@@ -290,18 +291,18 @@ awful.rules.rules = {
       awful.placement.centered(c) end
   },
 
-  { rule_any =  { class = { "jetbrains-studio", "Emacs" } },
-                -- { name = "^win[0-9]+$" },
-    properties = {
-      sticky = false,
-      floating = true,
-      fullscreen = true
-      -- titlebars_enabled = false
-    },
-    -- callback = function (c)
-    --   c:geometry({ width = 600, height = 400 })
-    --   awful.placement.centered(c) end
-  },
+  -- { rule_any =  { class = { "jetbrains-studio", "Emacs" } },
+  --               -- { name = "^win[0-9]+$" },
+  --   properties = {
+  --     sticky = false,
+  --     floating = true,
+  --     fullscreen = true
+  --     -- titlebars_enabled = false
+  --   },
+  --   -- callback = function (c)
+  --   --   c:geometry({ width = 600, height = 400 })
+  --   --   awful.placement.centered(c) end
+  -- },
   -- { rule = { name = "Welcome to Android Studio" },
   --   callback = function (c)
   --     c:geometry({ width = 900, height = 460 })

@@ -65,3 +65,5 @@
 (package! gdscript-mode)
 
 (package! gnuplot)
+
+(package! zig-mode)

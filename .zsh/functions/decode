@@ -2,11 +2,18 @@
 
 decode() {
     declare string
-    # string=$(base64 -d <<< $(xclip -sel clip -o | awk '{$1=$1};1'))
-    string=$(base64 -d <<< $(wl-paste -p | awk '{$1=$1};1'))
+    declare base
 
-    wl-copy $string
-    # xclip -sel clip <<< $string
+    if [ "$XDG_SESSION_TYPE" = "x11" ];then
+        base=$(xclip -sel clip -o)
+    else
+        base=$(wl-paste -p)
+    fi
+
+    string=$(base64 -d <<< $(echo $base | awk '{$1=$1};1'))
+
+    # wl-copy $string
+    xclip -sel clip <<< $string
     echo $string
 }
 

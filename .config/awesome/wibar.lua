@@ -117,7 +117,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create a textclock widget
-    mytextclock = wibox.widget.textclock("  %a %d %b %H:%M") -- %a %Y-%m-%d %H:%M %Z
+    mytextclock = wibox.widget.textclock("%a %d %b %H:%M") -- %a %Y-%m-%d %H:%M %Z
 
 
     local interval = 15
@@ -286,7 +286,11 @@ awful.screen.connect_for_each_screen(function(s)
           --{widget=wibox.container.margin,margins=0,weather_lain},
           --volicon,
           --{widget=wibox.container.margin,margins=3,myredshift},
-          wibox.widget.systray(),
+          {
+            widget=wibox.container.margin,
+            margins=4,
+            wibox.widget.systray(),
+          },
           mytextclock,
           --brightness
           --{widget=wibox.container.margin,margins=0,brightness},
