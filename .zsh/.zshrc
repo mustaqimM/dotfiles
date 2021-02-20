@@ -11,7 +11,7 @@ fi
 # ==============================================================================
 
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval `ssh-agent` &>/dev/null
+  eval $(ssh-agent) &>/dev/null
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
@@ -22,24 +22,27 @@ ssh-add -q $HOME/.ssh/GitHub > /dev/null || ssh-add
 # ==============================================================================
 
 declare -A ZINIT
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+  print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+  command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+  command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+      print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+      print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
-source "$HOME/.zinit/bin/zinit.zsh"
 
+source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 # zinit light-mode for \
-#     zinit-zsh/z-a-patch-dl \
+#     zinit-zsh/z-a-rust \
 #     zinit-zsh/z-a-as-monitor \
+#     zinit-zsh/z-a-patch-dl \
 #     zinit-zsh/z-a-bin-gem-node
 ### End of Zinit's installer chunk
 # ==============================================================================
@@ -103,15 +106,15 @@ zi ice wait lucid \
   atload"HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=blue,fg=232,bold""
 zi light "zsh-users/zsh-history-substring-search"
 
-zi ice wait lucid blockf
+zi ice wait lucid atload"zicompinit; zicdreplay" blockf
 zi light "zsh-users/zsh-completions"
 #zi snippet "OMZ::lib/completion.zsh"
 
 zi ice wait lucid atinit"_zcomp"
 zi light "zdharma/fast-syntax-highlighting"
+
 zi ice wait lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start"
 zi light "zsh-users/zsh-autosuggestions"
-# zi light "zsh-users/zsh-syntax-highlighting"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi snippet "OMZ::plugins/git/git.plugin.zsh"
@@ -148,8 +151,8 @@ zi snippet "OMZ::plugins/npm/npm.plugin.zsh"
 if [[ $(type -p fzf) ]] then
    zi ice wait lucid multisrc"{key-bindings,completion}.zsh" pick"" \
      atload"\
-     _fzf_compgen_path() { echo \"\$1\"; command fd --type f --type d --hidden --follow --exclude \".git\" . \"\$1\" }; \
-     _fzf_compgen_dir() { command fd -L --type d --hidden --follow --exclude \".git\" . \"\$1\" }"
+     _fzf_compgen_path() { command fd -L -td -tf -tl -H -E \".git\" . \"\$1\" 2> /dev/null }; \
+     _fzf_compgen_dir() { command fd -L -td -H -E \".git\" . \"\$1\" 2> /dev/null }"
   zi light "/usr/share/doc/fzf"
 fi
 
@@ -170,19 +173,19 @@ zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
 #zi ice wait"3" lucid
 #zi light "marzocchi/zsh-notify"
 
-if [[ ! -d ~/.rbenv/plugins ]] then
-  echo "Creating \$(rbenv root)/plugins"
-  mkdir -p ~/.rbenv/plugins
-  if [[ ! -d ~/.rbenv/plugins/ruby-build ]] then
-     echo "Cloning \$(rbenv root)/plugins/ruby-build"
-     git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-  fi
-fi
-zi ice svn lucid \
- wait'[[ -n ${ZLAST_COMMANDS[(r)rben*]} ]]' \
- atload"POWERLEVEL9K_RBENV_PROMPT_ALWAYS_SHOW=true" \
- unload"![[ ! -e Gemfile || ! -e Rakefile ]]"
-zi snippet "PZT::modules/ruby/"
+# if [[ ! -d ~/.rbenv/plugins ]] then
+#   echo "Creating \$(rbenv root)/plugins"
+#   mkdir -p ~/.rbenv/plugins
+#   if [[ ! -d ~/.rbenv/plugins/ruby-build ]] then
+#      echo "Cloning \$(rbenv root)/plugins/ruby-build"
+#      git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+#   fi
+# fi
+# zi ice svn lucid \
+#  wait'[[ -n ${ZLAST_COMMANDS[(r)rben*]} ]]' \
+#  atload"POWERLEVEL9K_RBENV_PROMPT_ALWAYS_SHOW=true" \
+#  unload"![[ ! -e Gemfile || ! -e Rakefile ]]"
+# zi snippet "PZT::modules/ruby/"
 #
 #zi ice wait"3a" lucid wait"[[ -f Gemfile || -f Rakefile ]]" unload"[[ ! -f Gemfile ]]"
 #zi snippet "OMZ::plugins/rbenv/rbenv.plugin.zsh"
@@ -218,27 +221,26 @@ zi snippet "OMZ::plugins/emacs"
 #  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
 #zi light direnv/direnv
 
-
-zi ice wait lucid mv"*cht.sh -> cht" pick"cht" as"program" id-as"cht.sh"
+zi ice wait lucid as"program" mv"*cht.sh -> cht" pick"cht" id-as"cht.sh"
 zi snippet "https://cht.sh/:cht.sh"
 #zi ice wait"2" lucid id-as"tldr" as"program" pick"tldr"
 #zi snippet "https://raw.githubusercontent.com/raylee/tldr/master/tldr"
 
-zi ice lucid mv"ps_mem.py -> psmem" pick"psmem" as"program"
+zi ice lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
 zi light "pixelb/ps_mem"
 
-zi ice wait"3d" lucid as"program" pick"bin/git-dsf"
-zi light "zdharma/zsh-diff-so-fancy"
+zi ice lucid from"gh-r" as"program"
+zi light "so-fancy/diff-so-fancy"
 
 #zi ice pick"fasd" as"program"
 #zi snippet "https://raw.githubusercontent.com/clvv/fasd/master/fasd"
 #zi snippet "OMZ::plugins/fasd/fasd.plugin.zsh"
 
-zi ice lucid pick"pfetch" as"program"
-zi light "dylanaraps/pfetch"
+# zi ice lucid as"program" pick"pfetch"
+# zi light "dylanaraps/pfetch"
 
-zi ice lucid from"gh-r" as"program" bpick"*linux*"
-zi light "imsnif/bandwhich"
+# zi ice lucid from"gh-r" as"program" bpick"*linux*"
+# zi light "imsnif/bandwhich"
 
 #zi ice lucid from"gh-r" as"program" bpick"*linux*" pick"bat-v0.13.0-x86_64-unknown-linux-gnu/bat"
 #zi light "sharkdp/bat"
@@ -272,8 +274,7 @@ zi light "imsnif/bandwhich"
 # === THEME ===
 # {{{
 #PS1="%F{green}%B$❯%b%f "
-zi ice depth'1' lucid atinit'[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh' nocd \
-  atload"!_p9k_do_nothing _p9k_precmd"
+zi ice depth'1' lucid atinit'[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh' nocd atload"!_p9k_do_nothing _p9k_precmd"
 zi light romkatv/powerlevel10k
 # }}}
 
@@ -305,8 +306,10 @@ _zcomp() {
   _zcompare "$zshrc"
   _zcompare "$zcompdump"
   _zcompare "$p10k"
-}
 
+  for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
+
+}
 #case $TERM in (xst*)
 #  preexec () { print -Pn "\e]0; $PWD - xst\a" }
 #  precmd () { print -Pn "\e]0; %~\a" }
@@ -326,37 +329,38 @@ fb() {
 
 man() {
  if [ -n "$TMUX" ]; then
-   tmux split-window -h -p 40 /bin/man "$@"
+ tmux split-window -h -p 40 \
+   emacsclient -nw -e "(let ((Man-notify-method 'bully)) (man \"$1\") (evil-local-set-key 'normal \"q\" (lambda () (interactive) (+workspace:delete) (delete-frame))))"
  else
-   /bin/man "$@"
+   emacsclient -nw -e "(let ((Man-notify-method 'bully)) (man \"$1\"))"
  fi
 }
 
 function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/"$@" ;}
 
 # Copy and Paste for `st`
-x-kill-region () {
-  zle kill-region
-  print -rn $CUTBUFFER | xclip -i -sel clipboard
-}
-zle -N x-kill-region
+# x-kill-region () {
+#   zle kill-region
+#   print -rn $CUTBUFFER | xclip -i -sel clipboard
+# }
+# zle -N x-kill-region
 x-yank () {
   CUTBUFFER=$(xclip -sel clipboard -o </dev/null)
   zle yank
 }
 zle -N x-yank
-bindkey -e '^X' x-kill-region
+# bindkey -e '^X' x-kill-region
 bindkey -e '^V' x-yank
 
 fzf-open-file-or-dir() {
-  local cmd="fd -j4 -d5 -tf -td -tl -c=always 2> /dev/null"
+  local cmd="_fzf_compgen_path -calways $(pwd)"
   local out=$(eval $cmd | fzf)
 
   if [ -f "$out" ]; then
-    $EDITOR --no-wait "$out" < /dev/tty
+    emacs -nw "$out" #< /dev/tty
   elif [ -d "$out" ]; then
     cd "$out"
-    zle reset-prompt
+    zle accept-line
   fi
 }
 
@@ -427,20 +431,22 @@ zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion::complete:*'     use-cache on
 zstyle ':completion:*'               cache-path ~/.zsh/cache
 
-#zstyle ':notify:*'                   notifier /bin/notify-send # Only needed for custom scripts
-zstyle ':notify:*'                   error-title "Command failed in #{time_elapsed}s"
-zstyle ':notify:*'                   success-title "Command finished in #{time_elapsed}s"
-zstyle ':notify:*'                   error-icon "/usr/share/emoticons/EmojiOne/1f3f3.png"
-zstyle ':notify:*'                   success-icon "/usr/share/emoticons/EmojiOne/1f389.png"
-zstyle ':notify:*'                   command-complete-timeout 15
-zstyle ':notify:*'                   activate-terminal no
+# zstyle ':notify:*'                   notifier /bin/notify-send # Only needed for custom scripts
+# zstyle ':notify:*'                   error-title "Command failed in #{time_elapsed}s"
+# zstyle ':notify:*'                   success-title "Command finished in #{time_elapsed}s"
+# zstyle ':notify:*'                   error-icon "/usr/share/emoticons/EmojiOne/1f3f3.png"
+# zstyle ':notify:*'                   success-icon "/usr/share/emoticons/EmojiOne/1f389.png"
+# zstyle ':notify:*'                   command-complete-timeout 15
+# zstyle ':notify:*'                   activate-terminal no
 
-autoload -U select-word-style
-select-word-style bash
+# autoload -U select-word-style
+# select-word-style bash
 
 source $ZDOTDIR/aliases
+
 autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy pb scan center_text switch_theme plain push ert-run sqlint magit clip decode
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
+autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc aria2c bat cargo curl cwebp direnv docker \
@@ -449,35 +455,3 @@ zicompdef _gnu_generic aomenc aria2c bat cargo curl cwebp direnv docker \
 
 #for comp ( yadm vifm ) { zicompdef _$comp $comp; }
 
-zicompinit
-zinit cdreplay -q
-
-#source ~/.base16_theme
-
-# To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
-[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
-
-# ALIAS_FILE="${HOME}/.zsh_aliases"
-
-# reload_aliases () {
-#     # do nothing if there is no $ALIAS_FILE
-#     [[ -e ALIAS_FILE ]] || return 1
-#     # check if $ALIAS_FILE has been modified since last reload
-#     # the modifier `(:A)` resolves any symbolic links
-#     if [[ $LAST_ALIAS_RELOAD < $(stat -c %Y ${ALIAS_FILE}(:A)) ]]; then
-#         # remove all aliases; optional!
-#         # only do this if all of your aliases are defined in $ALIAS_FILE
-#         # also affects aliases defined on the command line
-#         unalias -m '*'
-#         # load aliases
-#         source $ALIAS_FILE
-#         # update date of last reload
-#         LAST_ALIAS_RELOAD=$(date +%s)
-#     fi
-# }
-
-# # make reload_aliases to be run before each prompt
-# autoload -Uz add-zsh-hook
-# add-zsh-hook precmd reload_aliases
-
-# vim:ft=zsh:et:fileencoding=utf-8:ft=conf:foldmethod=marker

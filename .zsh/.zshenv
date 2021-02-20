@@ -14,8 +14,8 @@ export XDG_SESSION_TYPE=x11
 export KDE_SESSION_VERSION=5
 export XDG_SESSION_CLASS=user
 
-export AWESOME_THEMES_PATH="$HOME/.config/awesome/themes"
-export KDEWM=/usr/bin/awesome
+export AWESOME_THEMES_PATH="/home/mustaqim/.config/awesome/themes/"
+# export KDEWM=/usr/bin/awesome
 export QT_QPA_PLATFORMTHEME=qt5ct
 # export QT_QPA_PLATFORM=wayland
 export XCURSOR_PATH=$HOME/.local/share/icons

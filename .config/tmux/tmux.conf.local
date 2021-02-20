@@ -206,7 +206,7 @@ tmux_conf_theme_pairing_attr='none'
 tmux_conf_theme_prefix='[M+J]'
 tmux_conf_theme_prefix_fg='#000000'
 tmux_conf_theme_prefix_bg='yellow'
-tmux_conf_theme_prefix_attr='none'
+tmux_conf_theme_prefix_attr='bold'
 
 # root indicator
 tmux_conf_theme_root='#'

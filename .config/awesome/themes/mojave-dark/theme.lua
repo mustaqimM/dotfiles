@@ -8,7 +8,8 @@ local gears = require("gears")
 local gfs   = gears.filesystem
 
 local helpers     = require("helpers")
-local themes_path = gfs.get_themes_dir()
+-- local themes_path = gfs.get_themes_dir()
+local themes_path = "/home/mustaqim/.config/awesome/themes/"
 local theme_name  = "mojave-dark"
 
 local icon_path          = themes_path .. theme_name .. "/icons/"

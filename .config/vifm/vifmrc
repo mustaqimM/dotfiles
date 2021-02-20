@@ -35,7 +35,7 @@ set sortnumbers
 set sort=iname
 
 " hide .. directory everywhere
-"set dotdirs=
+" set dotdirs=
 
 " Maximum number of changes that can be undone.
 set undolevels=100
@@ -238,7 +238,7 @@ nnoremap ; :
 " Upload highlighted file to 0x0.st and then save url to clipboard
 nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)" &<cr>
 
-nnoremap gg 2gg
+"nnoremap gg 2gg
 nnoremap t tj
 nnoremap mkd :mkdir<space>
 
@@ -493,7 +493,7 @@ fileviewer *.csv bat --color always --theme Tomorrow-Night --wrap never --pager 
 fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --syntax make %c
 
 " Text
-filetype <text/*> /bin/emacs -bg '#17191a' -fs
+filetype <text/*> /bin/emacs -bg '#17191a' -fs &
 fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
 " fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night -- %c
 " fileviewer <text/*> pygmentize3 -f "terminal256" -O "style=tomorrownight" %c
@@ -508,7 +508,7 @@ set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  :
 " code
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[c]::,  ::*.[h]::,  ::/^copying|license|NOTICE$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::'
-set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
+set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
 set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
 set classify+='  ::*.conf,,*.yml,,*.ini,,*.cfg::,  ::*.properties::'
 set classify+='  ::*.db,,*.sql,,*.sqlite::'

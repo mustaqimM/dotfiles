@@ -12,8 +12,6 @@ alias lf='env LS_COLORS=$DEFAULT_LS_COLORS lf'
 alias nightly=~/.local/bin/firefox/firefox-bin
 #alias firefox=~/.local/bin/firefox/firefox-bin
 alias q=exit
-#alias r=ranger
-#alias f='~/.config/vifm/scripts/vifmrun'
 alias f=vifm
 alias reload='exec zsh'
 alias s='googler --count 7'

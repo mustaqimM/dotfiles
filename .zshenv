@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-ZDOTDIR=/home/mustaqim/.zsh
-. $ZDOTDIR/zshenv
-ZSH_CACHE_DIR=$ZDOTDIR/cache
-
+export ZDOTDIR=/home/mustaqim/.zsh
+export ZSH_CACHE_DIR=$ZDOTDIR/cache
+#. $ZDOTDIR/zshenv

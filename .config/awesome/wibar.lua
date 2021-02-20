@@ -7,8 +7,8 @@ local wibox     = require("wibox")
 local helpers   = require("helpers")
 local signals   = require("signals")
 
-local lain      = require("lain")
-local markup    = lain.util.markup
+-- local lain      = require("lain")
+-- local markup    = lain.util.markup
 --local separators = lain.util.separators
 --local sound     = lain.widget.alsa
 
@@ -123,33 +123,33 @@ awful.screen.connect_for_each_screen(function(s)
     local interval = 15
 
     -- Net
-    local netdowninfo = wibox.widget.textbox()
-    local netdowninfo = lain.widget.net {
-       -- iface = "wlp2s0",
-       units = 1024,
-       notify = off,
-       settings = function()
-         widget:set_markup(markup.fontfg(beautiful.font_notif .. " 9", beautiful.fg_normal, "" .. net_now.received))
-         --netdowninfo:set_markup(markup.fontfg(beautiful.font, "#87af5f", net_now.received .. " "))
-       end
-    }
+    -- local netdowninfo = wibox.widget.textbox()
+    -- local netdowninfo = lain.widget.net {
+    --    -- iface = "wlp2s0",
+    --    units = 1024,
+    --    notify = off,
+    --    settings = function()
+    --      widget:set_markup(markup.fontfg(beautiful.font_notif .. " 9", beautiful.fg_normal, "" .. net_now.received))
+    --      --netdowninfo:set_markup(markup.fontfg(beautiful.font, "#87af5f", net_now.received .. " "))
+    --    end
+    -- }
 
-    local mem = lain.widget.mem {
-      timeout = 7,
-      settings = function()
-        local mem = string.format("%.2f", mem_now.used / 1024)
-        widget:set_markup("" ..mem.. "GB")
-      end
-    }
+    -- local mem = lain.widget.mem {
+    --   timeout = 7,
+    --   settings = function()
+    --     local mem = string.format("%.2f", mem_now.used / 1024)
+    --     widget:set_markup("" ..mem.. "GB")
+    --   end
+    -- }
 
     -- Battery
     bat = battery()
    
-    local temp = lain.widget.temp({
-        settings = function ()
-          widget:set_markup(markup.font(beautiful.font, "" .. coretemp_now .. "° "))
-        end
-    })
+    -- local temp = lain.widget.temp({
+    --     settings = function ()
+    --       widget:set_markup(markup.font(beautiful.font, "" .. coretemp_now .. "° "))
+    --     end
+    -- })
 
     -- ALSA volume
     --local volicon = wibox.widget.textbox()
@@ -263,26 +263,26 @@ awful.screen.connect_for_each_screen(function(s)
 
         { -- Right widgets
           layout = wibox.layout.fixed.horizontal,
-          {
-            widget = wibox.container.margin,
-            margins=4,
-            netdowninfo,
-          },
+          -- {
+          --   widget = wibox.container.margin,
+          --   margins=4,
+          --   netdowninfo,
+          -- },
           --separators.arrow_left(beautiful.bg_focus, "#ffffff"),
           --separators.arrow_left("#ffffff", beautiful.bg_focus),
           {widget=wibox.container.margin,margins=4,mem},
           -- wibox.widget.textbox('  '),
           -- temp,
           -- bat,
-          {
-            widget=wibox.container.margin,
-            margins=3,
-            temp
-          },
-          {
-            widget=wibox.container.margin,
-            bat
-          },
+          -- {
+          --   widget=wibox.container.margin,
+          --   margins=3,
+          --   temp
+          -- },
+          -- {
+          --   widget=wibox.container.margin,
+          --   bat
+          -- },
           --{widget=wibox.container.margin,margins=0,weather_lain},
           --volicon,
           --{widget=wibox.container.margin,margins=3,myredshift},
