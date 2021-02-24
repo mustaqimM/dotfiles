@@ -21,7 +21,7 @@ configuration {
 /*	icon-theme: "Papirus-Dark";*/
 /*	drun-match-fields: "name,generic,exec,categories";*/
 /*	drun-show-actions: false;*/
-	drun-display-format: "{name} [<span weight='light' size='x-small'><i>({generic})</i></span>]";
+	drun-display-format: "{name} [<span weight='light' size='x-small'>({generic})</span>]";
 /*	disable-history: false;*/
 /*	ignored-prefixes: "";*/
 /*	sort: false;*/

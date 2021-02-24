@@ -19,7 +19,7 @@ export AWESOME_THEMES_PATH="/home/mustaqim/.config/awesome/themes/"
 export QT_QPA_PLATFORMTHEME=qt5ct
 # export QT_QPA_PLATFORM=wayland
 export XCURSOR_PATH=$HOME/.local/share/icons
-export XCURSOR_THEME="X11-Cursors-Breeze-Hacked-White"
+export XCURSOR_THEME="Breeze_Snow"
 
 # export BROWSER="$HOME/.local/bin/firefox/firefox"
 export BROWSER="firefox"

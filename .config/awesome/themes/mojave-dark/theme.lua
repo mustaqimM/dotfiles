@@ -65,7 +65,7 @@ theme.fg_urgent       = "#ffffff"
 theme.fg_minimize     = theme.xcolor8
 
 theme.useless_gap     = dpi(0)
---theme.systray_icon_spacing = 0
+theme.systray_icon_spacing = 3
 
 -- This could be used to manually determine how far away from the
 -- screen edge the bars / notifications should be.
@@ -97,11 +97,11 @@ theme.taglist_spacing          = dpi(0)
 theme.tasklist_disable_icon    = false
 theme.tasklist_plain_task_name = false
 theme.tasklist_bg_normal       = theme.xcolor0 .. "00"
-theme.tasklist_fg_normal       = unfocused_color
-theme.tasklist_bg_focus        = theme.xcolor0 .. "00"
-theme.tasklist_bg_minimize     = theme.xcolor0 .. "00"
+theme.tasklist_fg_normal       = theme.xforeground
+theme.tasklist_bg_focus        = theme.xcolor0
+theme.tasklist_bg_minimize     = theme.xcolor0
 theme.tasklist_fg_minimize     = theme.fg_minimize
-theme.tasklist_bg_urgent       = theme.xcolor0 .. "00"
+theme.tasklist_bg_urgent       = theme.xcolor0
 theme.tasklist_fg_urgent       = urgent_color
 --theme.tasklist_spacing         = dpi(50)
 --theme.tasklist_align           = "center"

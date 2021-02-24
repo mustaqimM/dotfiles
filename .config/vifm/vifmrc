@@ -369,7 +369,7 @@ filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Images
-filetype *.bmp,*.gif,*.jpg,*.jpeg,*.png,*.tif,*.webp,*.xpm
+filetype *.bmp,*.gif,*.jp[e]g,*.png,*.svg,*.tif,*.webp,*.xpm
         \ {View in imv}
         \ imv -b 000000 %f %i &,
         \ {View in feh}
@@ -510,7 +510,7 @@ set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[c]:
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::'
 set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
 set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.conf,,*.yml,,*.ini,,*.cfg::,  ::*.properties::'
+set classify+='  ::*.conf,,*.yml,,*.ini,,*.cfg::,  ::*.properties::,  ::*.log::'
 set classify+='  ::*.db,,*.sql,,*.sqlite::'
 set classify+='  ::*.pem::'
 " archives

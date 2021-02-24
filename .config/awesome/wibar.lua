@@ -91,7 +91,7 @@ awful.screen.connect_for_each_screen(function(s)
       style = {
         font = beautiful.font_notif .. " 10",
         align = "center",
-      },    
+      },
       widget_template = {
         {
           {
@@ -100,7 +100,7 @@ awful.screen.connect_for_each_screen(function(s)
           },
           margins = 3,
           widget  = wibox.container.margin
-        },       
+        },
         {
           {
             id     = 'text_role',
@@ -113,7 +113,7 @@ awful.screen.connect_for_each_screen(function(s)
           self:get_children_by_id('clienticon')[1].client = c
         end,
         widget  = wibox.layout.align.horizontal,
-      },    
+      },
     }
 
     -- Create a textclock widget

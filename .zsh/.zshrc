@@ -208,11 +208,11 @@ zi snippet "OMZ::plugins/emacs"
 #zi ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
 #zi light "chriskempson/base16-shell"
 
-# zi ice lucid reset \
-#   atclone"dircolors -b LS_COLORS > c.zsh; sed -i 's/30/12/g; s/172/11/g; s/196/9/g' c.zsh;" \
-#   atpull'%atclone' pick"c.zsh" nocompile'!' \
-#   atload'zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}'
-# zi light trapd00r/LS_COLORS
+zi ice lucid reset \
+  atclone"dircolors -b LS_COLORS > c.zsh; sed -i 's/30/12/g; s/172/11/g; s/196/9/g' c.zsh;" \
+  atpull'%atclone' pick"c.zsh" nocompile'!' \
+  atload'zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}'
+zi light trapd00r/LS_COLORS
 
 #zi ice lucid from"gh-r" as"program" bpick"*linux*" mv"lsd* -> lsd" pick"lsd/lsd"
 #zi light "Peltoche/lsd"
@@ -307,7 +307,7 @@ _zcomp() {
   _zcompare "$zcompdump"
   _zcompare "$p10k"
 
-  for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
+  # for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
 
 }
 #case $TERM in (xst*)
@@ -351,6 +351,16 @@ x-yank () {
 zle -N x-yank
 # bindkey -e '^X' x-kill-region
 bindkey -e '^V' x-yank
+
+# # Ctrl-w - delete a full WORD (including colon, dot, comma, quotes...)
+# my-backward-kill-word () {
+#   # Add colon, comma, single/double quotes to word chars
+#   local WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>:,"'"'"
+#   zle -f kill # Append to the kill ring on subsequent kills.
+#   zle backward-kill-word
+# }
+# zle -N my-backward-kill-word
+# bindkey '^w' my-backward-kill-word
 
 fzf-open-file-or-dir() {
   local cmd="_fzf_compgen_path -calways $(pwd)"
@@ -424,7 +434,7 @@ zstyle ':completion:*:corrections'   format ' %B%F{green} %d (errors: %e) 
 zstyle ':completion:*:descriptions'  format ' %F{yellow} %U%d%u  %f'
 zstyle ':completion:*:messages'      format ' %B%F{magenta}  %U%d%u  %f%b'
 zstyle ':completion:*:warnings'      format ' %B%F{red} %Uno matches found%u %f%b'
-zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
+# zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
 
 # zstyle ':completion:*:parameters'    ignored-patterns '_*'
 
@@ -440,7 +450,7 @@ zstyle ':completion:*'               cache-path ~/.zsh/cache
 # zstyle ':notify:*'                   activate-terminal no
 
 # autoload -U select-word-style
-# select-word-style bash
+# select-word-style bash # Delete word at a time
 
 source $ZDOTDIR/aliases
 
