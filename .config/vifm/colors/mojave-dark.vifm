@@ -5,7 +5,7 @@ highlight AuxWin cterm=none ctermfg=248 ctermbg=default
 highlight OtherWin cterm=none ctermfg=248 ctermbg=default
 highlight Directory cterm=none ctermfg=012 ctermbg=234
 highlight Link cterm=bold ctermfg=yellow ctermbg=234
-highlight BrokenLink cterm=reverse ctermfg=196 termbg=default
+highlight BrokenLink cterm=reverse ctermfg=black ctermbg=196
 highlight Socket cterm=bold ctermfg=125 ctermbg=default
 highlight Device cterm=bold ctermfg=red ctermbg=default
 highlight Fifo cterm=bold ctermfg=cyan ctermbg=default

@@ -1,0 +1,15 @@
+#compdef headphones
+
+_headphones() {
+  local state
+
+  # _arguments "1: :->profile"
+
+  _arguments \
+    "*:Select an option:((on:\power off:\off))"
+
+  # case $state in
+  #   (profile) _arguments '1:Select an option:(on off)' ;;
+  # esac
+}
+

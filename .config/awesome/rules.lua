@@ -83,6 +83,7 @@ tyrannical.tags = {
     name        = "",
     init        = false,
     exclusive   = true,
+    layout      = awful.layout.suit.max,
     no_focus_stealing_in = true,
     class       = { "JDownloader", "qBittorrent" }
   },
@@ -230,7 +231,7 @@ awful.rules.rules = {
     end
   },
 
-  { rule = { role = "PictureInPicture" },
+  { rule_any = { role = { "PictureInPicture" }, name = { "Picture-in-picture" } },
     properties = { floating = true, sticky = true, skip_taskbar = true },
     callback = function (c) awful.placement.bottom_right(c) end },
   { rule_any = { name = "Firefox Safe Mode", "Refresh Firefox",

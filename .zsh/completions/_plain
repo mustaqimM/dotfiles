@@ -6,7 +6,7 @@ _plain() {
   # _arguments "1: :->profile"
 
   _arguments \
-    "*:Select an option:((show\:show hide:\unmount move:\move))"
+    "*:Select an option:((show:\show hide:\unmount move:\move))"
 
   # case $state in
   #   (profile) _arguments '1:Select an option:(hide show move)' ;;

@@ -42,7 +42,7 @@ set undolevels=100
 
 " Use Vim's format of help file (has highlighting and "hyperlinks").
 " If you would rather use a plain text help file set novimhelp.
-set vimhelp
+set novimhelp
 
 " don't allow automatic running of executable files
 set norunexec
@@ -125,7 +125,7 @@ set findprg='fd -t d -t f -H -L -E ".git" %p'
 
 "au DirEnter '~/repos/**/*' setl previewprg='git log --color -- %c 2>&1'
 
-" Dont show delete confirmation
+" Don't show delete confirmation
 "set confirm-=delete
 
 
@@ -225,7 +225,7 @@ nnoremap <f1> :tabnew<cr>
 nnoremap <f2> :tabname<space>
 nnoremap > gt
 nnoremap < gT
-nnoremap <f3> :!bat %f --color always --theme Tomorrow-Night --paging always --pager=less <cr>
+nnoremap <f3> :!bat %f --color always --paging always --pager=less <cr>
 nnoremap <f4> :edit<cr>
 nnoremap <f5> :copy<cr>
 nnoremap <f6> :move<cr>
@@ -488,13 +488,13 @@ filextype *.pro qtcreator %f &
 fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
 fileviewer *.org highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax md
 fileviewer *.[s]o hexyl -c 500 %c
-fileviewer *.csv bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
+fileviewer *.csv bat --color always --wrap never --pager never -p %c
 
 fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --syntax make %c
 
 " Text
-filetype <text/*> /bin/emacs -bg '#17191a' -fs &
-fileviewer <text/*> env -uCOLORTERM bat --color always --theme Tomorrow-Night --wrap never --pager never -p %c
+filetype <text/*> emacsclient
+fileviewer <text/*> env -uCOLORTERM bat --color always --wrap never --pager never -p %c
 " fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night -- %c
 " fileviewer <text/*> pygmentize3 -f "terminal256" -O "style=tomorrownight" %c
                     \ %pc

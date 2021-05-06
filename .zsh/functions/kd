@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+kd() {
+    filename=$1
+    dcode=$(xclip -sel clip -o)
+    resolution='720p'
+
+    host='goplay.anontpp.com'
+    video_dl="https://$host/?dcode=$dcode&quality=$resolution&downloadmp4vid=1"
+    sub_dl="https://$host/?dcode=$dcode&downloadccsub=1"
+    video_file="$filename.mkv"
+    sub_file="$filename.srt"
+
+    ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto -loglevel "error" -stats -i "$video_dl" -i "$sub_dl" -metadata title="$filename" -c copy -bsf:a aac_adtstoasc -f 'matroska' "$video_file"
+}
+
+kd "$@"

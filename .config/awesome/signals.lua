@@ -161,14 +161,18 @@ awful.screen.connect_for_each_screen( function(s)
         ('arrange',
          function(s)
              for _, c in pairs(s.clients) do
-                 if beautiful.border_radius ~= 0 and
-                     (s.selected_tag.layout.name == 'max' or c.fullscreen)
-                 --and (#s.tiled_clients == 1)
+                 if
+                     s.selected_tag.layout.name == "fullscreen"
+                     -- c.type == "fullscreen"
+                     -- #s.tiled_clients == 1
                  then
                      c.shape = helpers.rect()
                  else
-                     if c.type == ("floating" or "skip_taskbar" or "modal") or
-                         s.selected_tag.layout.name == 'floating'
+                     if
+                         c.type == "skip_taskbar"
+                         or c.type == "modal"
+                         or c.type == "dialog"
+                         -- or s.selected_tag.layout.name == "floating"
                      then
                          c.shape = helpers.rrect(beautiful.border_radius) end
                  end

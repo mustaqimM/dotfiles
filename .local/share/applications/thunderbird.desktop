@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Thunderbird
+GenericName=Mail Client
+Comment=Send and receive mail with Thunderbird
+Exec=sh -c "firejail --rmenv=LS_COLORS --profile=thunderbird thunderbird & birdtray"
+Icon=thunderbird
+Terminal=false
+Type=Application
+MimeType=message/rfc822;x-scheme-handler/mailto;
+StartupNotify=true
+Categories=Network;Email;

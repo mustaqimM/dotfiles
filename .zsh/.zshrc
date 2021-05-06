@@ -274,7 +274,7 @@ zi light "so-fancy/diff-so-fancy"
 # === THEME ===
 # {{{
 #PS1="%F{green}%B$❯%b%f "
-zi ice depth'1' lucid atinit'[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh' nocd atload"!_p9k_do_nothing _p9k_precmd"
+zi ice depth'1' lucid atinit'[[ ! -f ~/.zsh/.p10k-lean.zsh ]] || source ~/.zsh/.p10k-lean.zsh' nocd atload"!_p9k_do_nothing _p9k_precmd"
 zi light romkatv/powerlevel10k
 # }}}
 
@@ -330,9 +330,11 @@ fb() {
 man() {
  if [ -n "$TMUX" ]; then
  tmux split-window -h -p 40 \
-   emacsclient -nw -e "(let ((Man-notify-method 'bully)) (man \"$1\") (evil-local-set-key 'normal \"q\" (lambda () (interactive) (+workspace:delete) (delete-frame))))"
+   /bin/man "$@"
+   # emacsclient -nw -e "(let ((Man-notify-method 'bully)) (man \"$1\") (evil-local-set-key 'normal \"q\" (lambda () (interactive) (+workspace:delete) (delete-frame))))"
  else
-   emacsclient -nw -e "(let ((Man-notify-method 'bully)) (man \"$1\"))"
+   /bin/man "$@"
+   # emacsclient -nw -e "(let ((Man-notify-method 'bully)) (man \"$1\"))"
  fi
 }
 
@@ -392,6 +394,7 @@ bindkey '^A'      beginning-of-line
 bindkey '^E'      end-of-line
 bindkey '^O'      push-line-or-edit
 bindkey '^[[P'    delete-char
+bindkey '^W'      backward-kill-word
 #bindkey '^[[1;3D'
 #bindkey '^[[1;3C'
 
@@ -410,7 +413,7 @@ bindkey '^x^e'    edit-command-line
 # Fish-like search completions functionality
 zmodload zsh/complist
 setopt menucomplete
-zstyle ':completion:*'               menu select=0 search
+zstyle ':completion:*'               menu select=2 search
 
 zstyle ':completion:*'               matcher-list '' \
        'm:{a-z\-}={A-Z\_}' \
@@ -449,12 +452,12 @@ zstyle ':completion:*'               cache-path ~/.zsh/cache
 # zstyle ':notify:*'                   command-complete-timeout 15
 # zstyle ':notify:*'                   activate-terminal no
 
-# autoload -U select-word-style
-# select-word-style bash # Delete word at a time
+autoload -U select-word-style
+select-word-style bash # Delete word at a time
 
 source $ZDOTDIR/aliases
 
-autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy pb scan center_text switch_theme plain push ert-run sqlint magit clip decode
+autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy headphones kd pb scan center_text switch_theme plain push ert-run sqlint magit clip decode
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 autoload zcalc
 

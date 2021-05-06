@@ -273,7 +273,7 @@ awful.screen.connect_for_each_screen(function(s)
           {widget=wibox.container.margin,margins=4,mem},
           -- wibox.widget.textbox('  '),
           -- temp,
-          -- bat,
+          bat,
           -- {
           --   widget=wibox.container.margin,
           --   margins=3,

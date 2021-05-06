@@ -219,13 +219,13 @@ bindings.globalkeys = gears.table.join(
 
     -- Volume control
     awful.key({ }, "XF86AudioLowerVolume", function()
-            helpers.async("amixer -q set Master 5%-", function(out)
+            helpers.async("pactl -- set-sink-volume 0 -5%", function(out)
                               awesome.emit_signal("volume::change") end)
                                            end,
         { description = "Decrease Volume", group = "hotkeys" }
     ),
     awful.key({ }, "XF86AudioRaiseVolume", function()
-            helpers.async("amixer -q set Master 5%+", function(out)
+            helpers.async("pactl -- set-sink-volume 0 +5%", function(out)
                               awesome.emit_signal("volume::change") end)
                                            end,
         { description = "Increase Volume", group = "hotkeys" }),

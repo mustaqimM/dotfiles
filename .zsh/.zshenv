@@ -54,8 +54,8 @@ export FAST_ALIAS_TIPS_SUFFIX="\n╰───$(tput sgr0)"
 
 export GNUPGHOME=$HOME/.config/gnupg
 export GPG_TTY=$(tty)
-# export MANPAGER='nvim +Man!'
-#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER='nvim +Man!'
+# export MANPAGER="sh -c \'col -bx | bat -l man -p\'"
 export MANPATH=/usr/share/man:/opt/texlive/2020/texmf-dist/doc/man
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export XENVIRONMENT="${HOME}/.Xresources"

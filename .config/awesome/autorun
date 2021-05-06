@@ -9,6 +9,8 @@ run() {
 
 
 pkill picom; run picom
+run pipewire
+run pipewire-pulse
 
 device_number=$(/usr/bin/xinput --list-props "ETPS/2 Elantech Touchpad" | rg "libinput Tapping Enabled" | head -1 | cut -d "(" -f2 | cut -d ")" -f1)
 xinput set-prop 13 "$device_number" 1

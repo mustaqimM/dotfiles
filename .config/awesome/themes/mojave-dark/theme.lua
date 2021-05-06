@@ -71,7 +71,7 @@ theme.systray_icon_spacing = 3
 -- screen edge the bars / notifications should be.
 theme.screen_margin   = dpi(3)
 theme.border_width    = 0--dpi(1.5)
-theme.border_radius   = dpi(8)            -- Rounded corners
+theme.border_radius   = dpi(6)            -- Rounded corners
 theme.border_normal   = theme.xcolor0
 theme.border_focus    = theme.xbackground
 theme.border_marked   = theme.xcolor9

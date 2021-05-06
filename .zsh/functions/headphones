@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+autoload colors && colors
+
+plain() {
+  if (( ! $# )); then
+  bluetoothctl power on; bluetoothctl connect C5:57:73:63:F4:C0
+  else
+    case $1 in
+      on)
+        bluetoothctl power on; bluetoothctl connect C5:57:73:63:F4:C0
+        ;;
+      off)
+        bluetoothctl power off; bluetoothctl disconnect C5:57:73:63:F4:C0
+        ;;
+    esac
+  fi
+}
+
+plain "$@"
