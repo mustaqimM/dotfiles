@@ -11,8 +11,7 @@ plain() {
         fusermount -u /home/mustaqim/Library/.plain
         ;;
       show)
-        gocryptfs -q /home/mustaqim/Library/.cipher /home/mustaqim/Library/.plain -o -allow_other
-        vifm /home/mustaqim/Library/.plain/
+        gocryptfs -q /home/mustaqim/Library/.cipher /home/mustaqim/Library/.plain -o -allow_other; vifm /home/mustaqim/Library/.plain/
         ;;
       move)
         fd . ~/Library/Downloads/.var -E '*.part' -x mv "{}" ~/Library/.plain/

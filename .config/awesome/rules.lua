@@ -120,6 +120,7 @@ tyrannical.tags = {
     name        = "",
     init        = false,
     exclusive   = true,
+    no_focus_stealing_in = true,
     class       = { "Thunderbird" }
   },
   {

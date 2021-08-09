@@ -3,7 +3,7 @@
 push() {
      declare -a list
      declare -i i=1
-     fd -e mkv -e mp4 -c always | fzf -m | while read -r item; do
+     fd -e mkv -e mp4 -c always | lsd -1v --color=always | fzf -m | while read -r item; do
           list[$i]=$item
           ((i++))
      done

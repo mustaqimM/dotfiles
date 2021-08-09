@@ -76,7 +76,7 @@ st.imstyle:           root
 st.opacity:      254
 
 
-Xcursor.theme: Breeze-Snow
+Xcursor.theme: Breeze-Obsidian
 Xft.antialias: 1
 Xft.hinting:   1
 Xft.hintstyle: hintfull

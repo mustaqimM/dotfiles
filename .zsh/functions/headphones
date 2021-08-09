@@ -8,7 +8,10 @@ plain() {
   else
     case $1 in
       on)
-        bluetoothctl power on; bluetoothctl connect C5:57:73:63:F4:C0
+        bluetoothctl power on; bluetoothctl connect C5:57:73:63:F4:C0; pamixer --set-volume 35
+        ;;
+      bat)
+        python /home/mustaqim/.local/bin/bluetooth_battery/bluetooth_battery.py 'C5:57:73:63:F4:C0'
         ;;
       off)
         bluetoothctl power off; bluetoothctl disconnect C5:57:73:63:F4:C0

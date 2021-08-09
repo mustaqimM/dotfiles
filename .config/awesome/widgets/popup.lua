@@ -47,7 +47,7 @@ end
 
 
 awesome.connect_signal("volume::change", function()
-	awful.spawn.easy_async("pactl list sinks | rg 'Volume' | tail -n 2 | head -n 1 | cut -d' ' -f6 | cut -d'%' -f1", function(o)
+	awful.spawn.easy_async("pamixer --get-volume", function(o)
 		-- Sample output
 		-- Mono: Playback 63 [50%] [-32.00dB] [on]
 		-- lv, stat = string.match(o, ".*%[(%d%d?%d?)%%%].*%[(%a*)].*")

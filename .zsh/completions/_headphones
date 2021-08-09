@@ -6,10 +6,10 @@ _headphones() {
   # _arguments "1: :->profile"
 
   _arguments \
-    "*:Select an option:((on:\power off:\off))"
+    "*:Select an option:((on:Connect\ headphones bat:Get\ battery\ info off:Disconnect\ headphones))"
 
   # case $state in
-  #   (profile) _arguments '1:Select an option:(on off)' ;;
+  #   (profile) _arguments '1:Select an option:(on bat off)' ;;
   # esac
 }
 

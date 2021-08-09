@@ -1,4 +1,4 @@
--f '247+251/bestvideo[height<=?720][vcodec=?vp9][fps<=?60]/best'
+-f '302+251/247+251'
 --write-sub
 --sub-format=en
 --write-srt

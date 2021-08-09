@@ -308,10 +308,10 @@ filextype *.djvu
 
 " Audio
 filextype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
-       \ {Play using ffplay}
-       \ ffplay -nodisp -autoexit %c,
        \ {Play using mpv}
-       \ mpv %f %i &,
+       \ mpv --player-operation-mode=pseudo-gui -- %f %i &,
+       \ {Play using ffplay}
+       \ ffplay -nodisp -autoexit %c &,
 fileviewer <audio/*>
         \ vifmimg audio %px %py %pw %ph %c
         \ %pc
@@ -371,7 +371,7 @@ fileviewer *.[1-8] man ./%c | col -b
 " Images
 filetype *.bmp,*.gif,*.jp[e]g,*.png,*.svg,*.tif,*.webp,*.xpm
         \ {View in imv}
-        \ imv -b 000000 %f %i &,
+        \ imv -b 000000 * -n %f %i &,
         \ {View in feh}
         \ feh --scale-down %c %i &,
         \ {View in sxiv}

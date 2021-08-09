@@ -464,7 +464,7 @@ autoload zcalc
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc aria2c bat cargo curl cwebp direnv docker \
   docker-machine emacs fd firejail flask fsck.ext4 fzf gocryptfs inkscape kitty ktlint light \
-  lsd mimeo megadl mkfs.vfat nzbget pip pip3 pipx psmem redshift rofi rustc sk tar tlp-stat vue wmctrl z
+  lsd mimeo megadl mkfs.vfat nzbget pamixer pip pip3 pipx psmem redshift rofi rustc sk tar tlp-stat vue wmctrl z
 
 #for comp ( yadm vifm ) { zicompdef _$comp $comp; }
 
