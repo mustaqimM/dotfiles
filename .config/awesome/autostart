@@ -24,7 +24,7 @@ run xbanish
 xset b off
 xsetroot -cursor_name left_ptr
 
-run aria2c --rpc-secret="${RPC_SECRET}" -D
+# run aria2c --rpc-secret="${RPC_SECRET}" -D
 
 run emacs -bg '#17191a' --daemon -fs
 

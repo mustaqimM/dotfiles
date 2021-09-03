@@ -369,7 +369,7 @@ filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Images
-filetype *.bmp,*.gif,*.jp[e]g,*.png,*.svg,*.tif,*.webp,*.xpm
+filetype *.bmp,*.gif,*.jpeg,*.jpg,*.png,*.svg,*.tif,*.webp,*.xpm
         \ {View in imv}
         \ imv -b 000000 * -n %f %i &,
         \ {View in feh}
@@ -506,7 +506,7 @@ filetype * mimeo %c %i &
 
 set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  ::*.apk::'
 " code
-set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.[c]::,  ::*.[h]::,  ::/^copying|license|NOTICE$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
+set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::'
 set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
 set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'

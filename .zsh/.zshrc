@@ -346,13 +346,14 @@ function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/"$@" ;}
 #   print -rn $CUTBUFFER | xclip -i -sel clipboard
 # }
 # zle -N x-kill-region
-x-yank () {
-  CUTBUFFER=$(xclip -sel clipboard -o </dev/null)
-  zle yank
-}
-zle -N x-yank
-# bindkey -e '^X' x-kill-region
-bindkey -e '^V' x-yank
+#
+# x-yank () {
+#   CUTBUFFER=$(xclip -sel clipboard -o </dev/null)
+#   zle yank
+# }
+# zle -N x-yank
+# # bindkey -e '^X' x-kill-region
+# bindkey -e '^V' x-yank
 
 # # Ctrl-w - delete a full WORD (including colon, dot, comma, quotes...)
 # my-backward-kill-word () {

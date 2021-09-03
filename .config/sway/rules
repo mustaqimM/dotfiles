@@ -1,12 +1,20 @@
+# -*- mode: conf -*-
+
 # workspace rules
-assign [class="Nightly"] workspace 1
+assign [app_id="Nightly"] workspace 1
 assign [app_id="firefox"] workspace 1
 assign [app_id="Chromium"] workspace 1
 assign [class="Emacs"] workspace 3
-assign [app_id="org.pwmt.zathura"] workspace 4
+assign [app_id="org.keepassxc.KeePassXC"] workspace 4
 assign [app_id="mpv"] workspace 5
-assign [app_id="org.keepassxc.KeePassXC"] workspace 6
+assign [app_id="org.pwmt.zathura"] workspace 6
+assign [app_id="org.qbittorrent.qBittorrent"] workspace 7
+assign [app_id="JDownloader"] workspace 7
+assign [app_id="Thunderbird"] workspace 8
 
-for_window [class="KeePassXC"] floating enable
-for_window [app_id="firefox" title="About Firefox Nightly"] floating enable
+for_window [class="Emacs"] focus
+for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set 956 576
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, move position 890 490, resize set 505 305 , sticky enable
+for_window [title=".+[Ss]haring (Indicator|your screen)"] floating enable, move to scratchpad
+for_window [app_id="firefox" title="Extension: \(Tree Style Tab\)"] floating enable, resize set 505 305
+for_window [app_id="mpv"] fullscreen, focus, resize set 956 576

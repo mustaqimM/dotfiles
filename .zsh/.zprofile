@@ -8,7 +8,7 @@
 
 if [ ! "$DISPLAY" ]; then
   # sx sh ~/.xinitrc 2> .xsession-errors
-  # dbus-run-session sway
+  dbus-run-session sway
   # XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland
-  startx 2> .xsession-errors
+  # startx 2> .xsession-errors
 fi

@@ -45,4 +45,4 @@ require("widgets/popup")
 -- }}}
 
 -- Autorun applications
-awful.spawn.with_shell( os.getenv("HOME") .. "/.config/awesome/autorun" )
+awful.spawn.with_shell( os.getenv("HOME") .. "/.config/awesome/autostart" )

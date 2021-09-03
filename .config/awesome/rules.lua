@@ -34,7 +34,7 @@ tyrannical.tags = {
     init        = true,                   -- Load the tag on startup
     exclusive   = true,                   -- Refuse any other type of clients (by classes)
     screen      = {1,2},                  -- Create gnhis tag on screen 1 and screen 2
-    layout      = awful.layout.suit.spiral,         -- Use the tile layout
+    layout      = layouts.spiral,         -- Use the tile layout
     class       = { --Accept the following classes, refuse everything else (because of "exclusive=true")
       "Alacritty", "kitty", "konsole", "st", "Tilix", "URxvt", "UXTerm", "imv", "xst", "feh", "sxiv" }
   },
@@ -43,7 +43,7 @@ tyrannical.tags = {
     init        = false,
     exclusive   = true,
     screen      = 1,
-    layout      = awful.layout.suit.floating,
+    layout      = layouts.floating,
     --exec_once   = {"dolphin"}, --When the tag is accessed for the first time, execute this command
     class  = {
       "Thunar", "dolphin", "Org.gnome.Nautilus", "Nemo", "pcmanfm-qt" }
@@ -54,7 +54,7 @@ tyrannical.tags = {
     -- client in the "class" section will start. It will be created on
     -- the client startup screen
     exclusive   = true,
-    layout      = awful.layout.suit.max,
+    layout      = layouts.max,
     class       = {
       "Assistant"     , "Okular"         , "Evince"    , "EPDFviewer"   , "xpdf", "calibre",
       "Xpdf"          , "Zeal"           , "Zathura", "com.github.johnfactotum.Foliate" }
@@ -83,7 +83,7 @@ tyrannical.tags = {
     name        = "",
     init        = false,
     exclusive   = true,
-    layout      = awful.layout.suit.max,
+    layout      = layouts.max,
     no_focus_stealing_in = true,
     class       = { "JDownloader", "qBittorrent" }
   },
@@ -92,7 +92,7 @@ tyrannical.tags = {
     init        = false,
     exclusive   = true,
     screen      = 1,
-    layout      = awful.layout.suit.max.fullscreen,
+    layout      = layouts.max.fullscreen,
     instance    = {"dev", "ops"},         -- Accept the following instances. This takes precedence over 'class'
     class = {
       "Code - OSS", "Emacs", "Godot", "jetbrains-studio", "jetbrains-webstorm", "QtCreator" }
@@ -113,7 +113,7 @@ tyrannical.tags = {
     name        = "",
     init        = false,
     exclusive   = true,
-    layout      = awful.layout.suit.max.fullscreen,
+    layout      = layouts.max.fullscreen,
     class       = { "Gimp-2.10", "Inkscape", "Blender" }
   },
   {
@@ -121,13 +121,14 @@ tyrannical.tags = {
     init        = false,
     exclusive   = true,
     no_focus_stealing_in = true,
+    layout      = layouts.max,
     class       = { "Thunderbird" }
   },
   {
     name        = "",
     init        = false,
     exclusive   = true,
-    layout      = awful.layout.suit.max.fullscreen,
+    layout      = layouts.max.fullscreen,
     class       = { "org-openstreetmap-josm-gui-MainApplication" }
   }
 }
