@@ -2,7 +2,7 @@
 Name=JDownloader
 Comment=Downloader
 GenericName=Downloader
-Exec=firejail --profile=JDownloader -- env _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on" java -jar /home/mustaqim/.local/bin/jdownloader/JDownloader.jar
+Exec=env _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on" java -jar /home/mustaqim/.local/bin/jd2/JDownloader.jar
 Icon=jdownloader
 Type=Application
 Terminal=false

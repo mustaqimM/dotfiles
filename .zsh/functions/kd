@@ -2,7 +2,7 @@
 
 kd() {
     filename=$1
-    dcode=$(xclip -sel clip -o)
+    dcode=$(wl-paste)
     resolution='720p'
 
     host='goplay.anontpp.com'

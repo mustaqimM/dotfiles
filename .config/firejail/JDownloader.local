@@ -1,5 +1,5 @@
-noblacklist ${HOME}/.local/bin/jdownloader
-whitelist ${HOME}/.local/bin/jdownloader
+noblacklist ${HOME}/.local/bin/jd2
+whitelist ${HOME}/.local/bin/jd2
 
 noblacklist ${HOME}/.jd
 whitelist ${HOME}/.jd

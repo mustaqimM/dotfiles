@@ -181,13 +181,13 @@ nnoremap <c-g> :FZFlocate<cr>
 " nnoremap <left> <nop>
 
 " yank current directory path into the clipboard
-nnoremap yd :!echo -n %d | xclip -sel clip %i<cr>:echo expand('%"d') "dir yanked to clipboard"<cr>
+nnoremap yd :!echo -n %d | wl-copy %i <cr>:echo expand('%"d') "dir yanked to clipboard"<cr>
 " yank current file path into the clipboard
-nnoremap yp :!echo -n %c:p | xclip -sel clip %i<cr>:echo expand('%"c:p') "file path yanked to clipboard"<cr>
+nnoremap yp :!echo -n %c:p | wl-copy %i <cr>:echo expand('%"c:p') "file path yanked to clipboard"<cr>
 " yank current filename without path into the clipboard
-nnoremap yn :!echo -n %c | xclip -sel clip %i<cr>:echo expand('%"c') "file & ext yanked to clipboard"<cr>
+nnoremap yn :!echo -n %c | wl-copy %i <cr>:echo expand('%"c') "file & ext yanked to clipboard"<cr>
 " yank root of current file's name into the clipboard
-nnoremap yr :!echo -n %c:r | xclip -sel clip %i<cr>:echo expand('%"c:r') "file name yanked to clipboard"<cr>
+nnoremap yr :!echo -n %c:r | wl-copy %i <cr>:echo expand('%"c:r') "file name yanked to clipboard"<cr>
 
 " Start shell in current directory
 nnoremap s :shell<cr>
@@ -269,30 +269,30 @@ fileviewer */ lsd --color=always --group-dirs=first
 
 " Pdf
 filextype *.pdf zathura %c %i
-fileviewer *.pdf
-        \ vifmimg pdf %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+" fileviewer *.pdf
+"         \ vifmimg pdf %px %py %pw %ph %c
+"         \ %pc
+"         \ vifmimg clear
 
 " Comic
 filextype *.cbr,*.cbz zathura %c %i
-fileviewer *.cbr,*.cbz
-        \ vifmimg comic %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+" fileviewer *.cbr,*.cbz
+"         \ vifmimg comic %px %py %pw %ph %c
+"         \ %pc
+"         \ vifmimg clear
 
 " epub
 filextype *.epub zathura %c %i &
-fileviewer *.epub
-        \ vifmimg epub %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+" fileviewer *.epub
+"         \ vifmimg epub %px %py %pw %ph %c
+"         \ %pc
+"         \ vifmimg clear
 " mobi
 "filextype *.mobi zathura %c %i
-fileviewer *.mobi
-        \ vifmimg mobi %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+" fileviewer *.mobi
+"         \ vifmimg mobi %px %py %pw %ph %c
+"         \ %pc
+"         \ vifmimg clear
 
 " PostScript
 filextype *.ps,*.eps,*.ps.gz
@@ -312,34 +312,34 @@ filextype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
        \ mpv --player-operation-mode=pseudo-gui -- %f %i &,
        \ {Play using ffplay}
        \ ffplay -nodisp -autoexit %c &,
-fileviewer <audio/*>
-        \ vifmimg audio %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+" fileviewer <audio/*>
+"         \ vifmimg audio %px %py %pw %ph %c
+"         \ %pc
+"         \ vifmimg clear
 
 " Video
-"filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-""         \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-""         \*.as[fx]
-""        \ {View using ffplay}
-""        \ ffplay -fs -autoexit %f,
-""        \ {View using Dragon}
-""        \ dragon %f:p,
-""        \ {View using mplayer}
-""        \ mplayer %f,
+" filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+"         \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+"         \*.as[fx]
+"        \ {View using mpv}
+"        \ mpv %f %i &,
+"        \ {View using ffplay}
+"        \ ffplay -fs -autoexit %f,
+"        \ {View using Dragon}
+"        \ dragon %f:p,
 "fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 ""          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
 ""          \*.as[fx]
 ""         \ ffprobe -pretty %c 2>&1
 
-"filetype <video/*>
-"          \ {View using mpv}
-"          \ mpv %f &,
-fileviewer <video/*>
-"        \ mediainfo %c
-         \ vifmimg video %px %py %pw %ph %c
-         \ %pc
-         \ vifmimg clear
+filetype <video/*>
+         \ {View using mpv}
+         \ mpv --player-operation-mode=pseudo-gui -- %f %i &,
+" fileviewer <video/*>
+" "        \ mediainfo %c
+"          \ vifmimg video %px %py %pw %ph %c
+"          \ %pc
+"          \ vifmimg clear
 
 " html
 filextype *.html,*.htm
@@ -369,17 +369,18 @@ filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Images
-filetype *.bmp,*.gif,*.jpeg,*.jpg,*.png,*.svg,*.tif,*.webp,*.xpm
+" filetype *.bmp,*.gif,*.jpeg,*.jpg,*.png,*.svg,*.tif,*.webp,*.xpm
+filetype <image/*>
         \ {View in imv}
         \ imv -b 000000 * -n %f %i &,
-        \ {View in feh}
-        \ feh --scale-down %c %i &,
-        \ {View in sxiv}
-        \ sxiv %f,
-fileviewer <image/*>
-        \ vifmimg draw %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+"         \ {View in feh}
+"         \ feh --scale-down %c %i &,
+"         \ {View in sxiv}
+"         \ sxiv %f,
+" fileviewer <image/*>
+"         \ vifmimg draw %px %py %pw %ph %c
+"         \ %pc
+"         \ vifmimg clear
 
 " OpenRaster
 filextype *.ora
@@ -498,25 +499,25 @@ fileviewer <text/*> env -uCOLORTERM bat --color always --wrap never --pager neve
 " fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night -- %c
 " fileviewer <text/*> pygmentize3 -f "terminal256" -O "style=tomorrownight" %c
                     \ %pc
-                    \ vifmimg clear
+                    " \ vifmimg clear
 
-"filetype * xdg-open %c &
-filetype * mimeo %c %i &
+filetype * xdg-open %c &
+" filetype * mimeo %c %i &
 "fileviewer * file -b %c
 
-set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  ::*.apk::'
+set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  ::*.apk::'
 " code
-set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py::,  ::*.json::,  ::*.rkt::'
-set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::'
+set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.json::,  ::*.rkt::'
+set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::'
 set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
-set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.conf,,*.yml,,*.ini,,*.cfg::,  ::*.properties::,  ::*.log::'
+set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
+set classify+='  ::*.conf,,*.yml,,*.ini,,*.cfg,,config::,  ::*.properties::,  ::*.log::'
 set classify+='  ::*.db,,*.sql,,*.sqlite::'
 set classify+='  ::*.pem::'
 " archives
 set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
-set classify+='  ::*.iso,,*.img::'
+set classify+='  ::*.iso,,*.img::'
 " images
 set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.webp,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,*.xwd::'
 " audio
@@ -524,9 +525,9 @@ set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.
 " media
 set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vid,,*.vob,,*.wmv,,*.xvid,,*.webm::'
 " documents
-set classify+='  ::*.org::,  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.text,,*.txt,,README::'
+set classify+='  ::*.org::,  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.text,,*.txt,,README::'
 set classify+='  ::*.epub,,*.fb2,,*.djvu,,*.mobi::'
-set classify+='  ::*.csv::,  ::*.srt::,  ::*.pdf::'
+set classify+='  ::*.csv::,  ::*.srt,,*.vtt::,  ::*.pdf::'
 " misc
 set classify+='  ::*.otf,,*.ttf::,  ::*.asc::'
 "}}}

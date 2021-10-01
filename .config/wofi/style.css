@@ -15,7 +15,7 @@ window {
 }
 /* hide search icon */
 #input image:first-child {
-  margin-left: -34px;
+  margin-left: -35px;
  }
 /* list */
 #inner-box {

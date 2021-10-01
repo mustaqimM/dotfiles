@@ -11,6 +11,8 @@ assign [app_id="org.pwmt.zathura"] workspace 6
 assign [app_id="org.qbittorrent.qBittorrent"] workspace 7
 assign [app_id="JDownloader"] workspace 7
 assign [app_id="Thunderbird"] workspace 8
+assign [app_id="org.inkscape.Inkscape"] workspace 9
+assign [app_id="gramps"] workspace 9
 
 for_window [class="Emacs"] focus
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set 956 576

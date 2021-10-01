@@ -1,44 +1,35 @@
 #!/usr/bin/env zsh
 
-XDG_CONFIG_HOME="$HOME/.config"
-GNUPGHOME="$HOME/.config/gnupg"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
 
-# shellcheck source=/home/mustaqim/.priv-env
-source "$HOME/.priv-env"
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=Unity
+# KDE_SESSION_VERSION=5
+# XDG_SESSION_CLASS=user
 
-# ===  VARIABLES  === {{{
-
-export XDG_SESSION_TYPE=x11
-# export XDG_SESSION_TYPE=wayland
-#export XDG_CURRENT_DESKTOP=KDE
-export KDE_SESSION_VERSION=5
-export XDG_SESSION_CLASS=user
-
-export AWESOME_THEMES_PATH="/home/mustaqim/.config/awesome/themes/"
-# export KDEWM=/usr/bin/awesome
+# AWESOME_THEMES_PATH="/home/mustaqim/.config/awesome/themes/"
+# KDEWM=/usr/bin/awesome
 export QT_QPA_PLATFORMTHEME=qt5ct
-# export QT_QPA_PLATFORM=wayland
-export XCURSOR_PATH=$HOME/.local/share/icons
-export XCURSOR_THEME="Breeze_Snow"
+export QT_QPA_PLATFORM=wayland
+# XCURSOR_PATH=$HOME/.local/share/icons
+# XCURSOR_THEME="Breeze_Snow"
 
-# export BROWSER="$HOME/.local/bin/firefox/firefox"
 export BROWSER="firefox"
-#export MOZ_USE_XINPUT2=1
-# export MOZ_ACCELERATED=1
-# export MOZ_WEBRENDER=1
-# export MOZ_X11_EGL=1
 export MOZ_ENABLE_WAYLAND=1
+# MOZ_ACCELERATED=1
+# MOZ_WEBRENDER=1
 
 export LC_ALL=C
 export TZ=Africa/Johannesburg
 
-LC_ALL="en_ZA.UTF-8"
+export LC_ALL="en_ZA.UTF-8"
 
 export LIBVA_DRIVER_NAME=iHD_drv_video
 
-#export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -nw"
-#export VISUAL="emacsclient -c -a emacs"
+# ALTERNATE_EDITOR=""
+# VISUAL="emacsclient -c -a emacs"
 
 export TERM=xterm-256color
 export COLORTERM=truecolor
@@ -49,23 +40,22 @@ export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
 export FZF_DEFAULT_OPTS="--layout=reverse --ansi --color=bg+:#282a2e,bg:#1d1f21,spinner:#8abeb7,hl:#81a2be,fg:#b4b7b4,header:#81a2be,info:#f0c674,pointer:#8abeb7,marker:#8abeb7,fg+:#e0e0e0,prompt:#f0c674,hl+:#81a2be"
 export ENHANCD_FILTER='fzf'
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
-export FAST_ALIAS_TIPS_PREFIX="$(tput bold)╭───\n\033[01;33m   \033[01;37m"
-export FAST_ALIAS_TIPS_SUFFIX="\n╰───$(tput sgr0)"
+# FAST_ALIAS_TIPS_PREFIX="$(tput bold)╭───\n\033[01;33m   \033[01;37m"
+# FAST_ALIAS_TIPS_SUFFIX="\n╰───$(tput sgr0)"
 
 export GNUPGHOME=$HOME/.config/gnupg
 export GPG_TTY=$(tty)
 export MANPAGER='nvim +Man!'
-# export MANPAGER="sh -c \'col -bx | bat -l man -p\'"
+# MANPAGER="sh -c \'col -bx | bat -l man -p\'"
 export MANPATH=/usr/share/man:/opt/texlive/2020/texmf-dist/doc/man
-export RANGER_LOAD_DEFAULT_RC=FALSE
 export XENVIRONMENT="${HOME}/.Xresources"
 export DOCKER_HOST=127.0.0.1:2375
 export DOOMDIR="~/.config/doom"
 
-#export JAVA_HOME="/usr/lib/jvm/openjdk"
+# export JAVA_HOME="/usr/lib/jvm/openjdk"
 export JAVA_HOME="/usr/lib/jvm/jbrsdk"
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
-#export CLASSPATH="/home/mustaqim/Downloads/perimeter/apache-csv.jar:courserajava.jar"
+# export CLASSPATH="/home/mustaqim/Downloads/perimeter/apache-csv.jar:courserajava.jar"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Less Colors for Man Pages
@@ -82,7 +72,11 @@ export LESS_TERMCAP_so=$'\e[30;43m'       # search result
 export RUST_SRC_PATH="/home/mustaqim/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 export ANDROID_HOME="$HOME/Android/Sdk"
 
-export path=(
+# shellcheck source=/home/mustaqim/.priv-env
+source "$HOME/.priv-env"
+
+typeset -U path
+path=(
     $HOME/.cargo/bin
     $HOME/.yarn/bin
     $HOME/.emacs.d/bin
@@ -96,12 +90,12 @@ export path=(
     /opt/texlive/2020/bin/x86_64-linux
     $JAVA_HOME/bin
     $path
-    )
+)
+export PATH
 
-# remove duplicate entries
-for i in $( echo $PATH | tr ":" "\n" | sort | uniq )
-do
-    PATH_SORT="${PATH_SORT}$i:"
-done
-PATH="${PATH_SORT%:}"
-
+# remove duplicate entries (not required if using the -U array flag)
+# for i in $( echo $PATH | tr ":" "\n" | sort | uniq )
+# do
+#     PATH_SORT="${PATH_SORT}$i:"
+# done
+# PATH="${PATH_SORT%:}"

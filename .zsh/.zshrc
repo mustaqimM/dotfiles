@@ -10,14 +10,14 @@ fi
 
 # ==============================================================================
 
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval $(ssh-agent) &>/dev/null
-  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-#ssh-add -l > /dev/null || ssh-add
-ssh-add -q $HOME/.ssh/GitLab > /dev/null || ssh-add
-ssh-add -q $HOME/.ssh/GitHub > /dev/null || ssh-add
+#if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+#  eval $(ssh-agent) &>/dev/null
+#  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+#fi
+#export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+##ssh-add -l > /dev/null || ssh-add
+#ssh-add -q $HOME/.ssh/GitLab > /dev/null || ssh-add
+#ssh-add -q $HOME/.ssh/GitHub > /dev/null || ssh-add
 
 # ==============================================================================
 
@@ -437,7 +437,7 @@ zstyle ':completion:*:man:*'         menu yes select
 zstyle ':completion:*:corrections'   format ' %B%F{green} %d (errors: %e)  %f%b'
 zstyle ':completion:*:descriptions'  format ' %F{yellow} %U%d%u  %f'
 zstyle ':completion:*:messages'      format ' %B%F{magenta}  %U%d%u  %f%b'
-zstyle ':completion:*:warnings'      format ' %B%F{red} %Uno matches found%u %f%b'
+zstyle ':completion:*:warnings'      format ' %B%F{red} %Uno matches found%u %f%b'
 # zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
 
 # zstyle ':completion:*:parameters'    ignored-patterns '_*'

@@ -1,0 +1,14 @@
+[exit]
+font=SF Pro Display
+edge=bottom
+background=373b41e6
+text=ffffff
+message-padding=5
+border-bottom-size=0
+button-background=f0c674
+button-padding=5
+button-gap=0
+button-margin-right=10
+button-border-size=1
+button-text=000000
+dismiss-button=

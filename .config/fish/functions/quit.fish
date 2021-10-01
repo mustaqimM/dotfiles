@@ -1,3 +1,0 @@
-function quit
-	exit
-end

@@ -10,6 +10,6 @@ run() {
 run pipewire
 run pipewire-pulse
 
-run emacs -bg "#17191a" --daemon -fs
+# run emacs -bg "#17191a" --daemon -fs
 
 # run aria2c --rpc-secret="${RPC_SECRET}" -D

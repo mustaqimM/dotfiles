@@ -7,7 +7,9 @@ push() {
           list[$i]=$item
           ((i++))
      done
-     adb push $list /sdcard/Download
+
+     adb connect 192.168.1.101:5555
+     adb push $list /sdcard/Movies
 }
 
 push "$@"

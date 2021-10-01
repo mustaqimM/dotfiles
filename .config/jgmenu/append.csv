@@ -1,4 +1,0 @@
-^sep()
-Suspend,      systemctl -i suspend,  system-log-out
-Reboot,       systemctl -i reboot,   system-reboot
-Poweroff,     systemctl -i poweroff, system-shutdown

@@ -578,7 +578,6 @@
 : 1554485467:0;sudo sysctl kernel.dmesg_restrict=0
 : 1554490054:0;sudo xbps-install python3-PyICU
 : 1554525354:0;sudo rm /var/service/iwd
-: 1554525364:0;sudo ln -s /etc/sv/wpa_supplicant /var/service
 : 1554525611:0;sudo xbps-install netbsd-wtf
 : 1554551052:0;e ~/.config/sxhkd/sxhkdrc
 : 1554551086:0;e ~/.config/polybar/config
@@ -833,7 +832,6 @@
 : 1561485422:0;ps -A --no-headers | wc -l
 : 1561524110:0;sudo tlmgr install latinmodern-math
 : 1561609549:0;sudo xbps-install font-awesome font-awesome5
-: 1561609565:0;sudo xbps-install font-awesome5
 : 1561610286:0;sudo tlmgr install latinmodern
 : 1561653090:0;sudo xbps-install -
 : 1561782025:0;sudo xbps-install --repository=hostdir/binpkgs/new_package_mailspring Mailspring
@@ -1101,7 +1099,6 @@
 : 1569780798:0;lynx http://localhost
 : 1569819337:0;sudo xbps-install openjdk-jre
 : 1569819378:0;sudo xbps-install openjdk
-: 1569901872:0;sudo rtcwake -m mem --time "`date -d "20:33 today" +%s`"
 : 1569906422:0;whence rails
 : 1569906496:0;code
 : 1570075451:0;xbps-query -Rs totp
@@ -1191,7 +1188,6 @@
 : 1571486814:0;setopt extendedglob; yadm add ~/.ssh/[sshd_]#config
 : 1571543270:0;sudo powertop --calibrate --html
 : 1571543413:0;man powertop
-: 1571543497:0;sudo powertop --calibrate
 : 1571548011:0;sudo xbps-remove -R okular
 : 1571548053:0;xbps-query -Rs abiword
 : 1571548192:0;pdf2ps print.pdf
@@ -1332,7 +1328,6 @@
 : 1573904088:0;sudo xbps-install -f openresolv
 : 1573906070:0;findmnt
 : 1573922853:0;git clone gh:ilovecookieee/Glorious-Dotfiles
-: 1574076327:0;sudo xbps-install qtcreator
 : 1574095231:0;iwctl device wlan0 show
 : 1574136690:0;sudo xbps-install moreutils
 : 1574137900:0;errno -l
@@ -2326,9 +2321,6 @@
 : 1586626475:0;e /etc/resolv.conf.tail
 : 1586626694:0;cat /etc/resolv.conf.tail
 : 1586627560:0;ping ddg.gg
-: 1586627666:0;sudo cp -r /etc/sv/dhcpcd-eth0 /etc/sv/dhcpcd-wlp2s0
-: 1586627759:0;sudo sed -i 's/eth0/wlp2s0/' /etc/sv/dhcpcd-wlp2s0/run
-: 1586627782:0;sudo ln -s /etc/sv/dhcpcd-wlp2s0 /var/service
 : 1586629029:0;sudo cp /etc/dns/root.key /etc/unbound/trusted-key.key
 : 1586629286:0;ping 127.0.0.1
 : 1586630116:0;nslookup ddg.gg 127.0.0.1
@@ -2338,7 +2330,6 @@
 : 1586630935:0;sudo xbps-install openresolv
 : 1586632057:0;e /etc/resolvconf.conf
 : 1586632183:0;unbound-control dump_cache
-: 1586632639:0;sudo sv restart dhcpcd-wlp2s0
 : 1586633060:0;sudo resolvconf -u
 : 1586633140:0;e /etc/unbound/resolvconf.conf
 : 1586633302:0;cp /usr/share/examples/unbound/unbound.conf /etc/unbound/unbound.conf
@@ -2444,7 +2435,6 @@
 : 1586928027:0;bat --list-themes | fzf --preview="bat --theme={} --color=always ~/.zinit/bin/doc/install.sh"
 : 1586928636:0;r /etc/unbound
 : 1586929100:0;sudo xbps-install zathura-pdf-mupdf zathura-cb
-: 1586934514:0;sudo xbps-install fuse3
 : 1586934552:0;sudo xbps-remove -R fuse3
 : 1586935896:0;e ~/.config/awesome/notifications.lua
 : 1586936750:0;cat /usr/share/examples/vifm/vifmrc
@@ -2614,7 +2604,6 @@
 : 1587741292:0;f ~/.config/doom/snippets/
 : 1587741385:0;e ~/.config/doom/snippets/vue-mode/__vueSFC
 : 1587794682:0;rustup check
-: 1587800274:0;sudo xbps-install xdg-utils
 : 1587802741:0;e ~/.config/vifm/colors/mojave-light.vifm
 : 1587812367:0;man picom
 : 1587832840:0;sudo xbps-install vscode
@@ -2638,7 +2627,6 @@
 : 1588149008:0;e ~/.config/doom/snippets/web-mode/__vueSFC
 : 1588153065:0;gpg --armour --export A343492B
 : 1588166719:0;e src/routes.js
-: 1588224752:0;sudo xbps-install intel-ucode
 : 1588231234:0;sudo tlp-stat
 : 1588231424:0;sudo update-grub
 : 1588314290:0;gco -b changes
@@ -2789,8 +2777,6 @@
 : 1589428197:0;cp /usr/share/applications/chromium.desktop ~/.local/share/applications/chromium.desktop
 : 1589436895:0;firejail --profile=firefox /bin/firefox
 : 1589440311:0;e ~/.github/README.md
-: 1589449123:0;sudo xbps-install jetbrains-jdk-bin
-: 1589456920:0;sudo xbps-install openjdk11
 : 1589458278:0;sudo xbps-install openjdk11-src
 : 1589458724:0;xbps-query -Rs jdk
 : 1589458751:0;sudo xbps-install openjdk8
@@ -2802,7 +2788,6 @@
 : 1589470043:0;yadm add ~/.github/README.md
 : 1589470344:0;yadm add '~/.config/Code - OSS/User/settings.json'
 : 1589520956:0;cat .xinitrc
-: 1589520975:0;sudo xbps-install bat
 : 1589521027:0;sudo xbps-install emacs-x11
 : 1589521287:0;sudo xbps-install xcape
 : 1589521321:0;sudo xbps-install picom
@@ -2814,7 +2799,6 @@
 : 1589521506:0;sudo xbps-install linux5.6
 : 1589522172:0;git clone gh:lcpz/lain.git ~/.config/awesome/lain
 : 1589522397:0;sudo xbps-install upower
-: 1589522564:0;sudo ln -s /etc/sv/thermald /var/service
 : 1589522570:0;sudo ln -s /etc/sv/tlp /var/service
 : 1589522877:0;mkdir ~/.config/awesome
 : 1589522888:0;cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
@@ -2828,29 +2812,21 @@
 : 1589527594:0;rm -rf ~/.emacs.d/
 : 1589527668:0;ssh-keygen -t ed25519 -o -a 100 -C "GitLab"
 : 1589527684:0;ssh-keygen -t ed25519 -o -a 100 -C "GitHub"
-: 1589527735:0;sudo xbps-install ripgrep
 : 1589527759:0;xbps-query -Rs upower
 : 1589527824:0;sudo xbps-install xinput
 : 1589528203:0;sudo xbps-install awesome
 : 1589528297:0;ssh-add $HOME/.ssh/GitLab </dev/null
 : 1589528362:0;sudo xbps-install setxkbmap
-: 1589529435:0;sudo xbps-install keepassxc
 : 1589530429:0;sudo xbps-install xclip
 : 1589530485:0;xclip -sel clip < ~/.ssh/GitHub.pub
 : 1589531194:0;touch .priv-env
-: 1589532548:0;sudo xbps-install lsd
-: 1589532714:0;sudo xbps-install noto-fonts-ttf
 : 1589533567:0;sudo xbps-install highlight
-: 1589533733:0;sudo xbps-install gucharmap
 : 1589533856:0;p10k configure
-: 1589534523:0;sudo xbps-install unzip
 : 1589534674:0;sudo xbps-install ueberzug
 : 1589536909:0;sudo xbps-install ffmpegthumbnailer
-: 1589538198:0;sudo xbps-install papirus-icon-theme
 : 1589538316:0;git clone --depth=1 gh:vinceliuice/Mojave-gtk-theme
 : 1589538377:0;sudo xbps-install sassc
 : 1589538451:0;sudo xbps-install gtk-engine-murrine libglib-devel sassc glib-devel
-: 1589538496:0;sudo xbps-install lxappearance
 : 1589538631:0;e ~/.config/vifm/scripts/vifmimg
 : 1589538668:0;e ~/.config/vifm/scripts/vifmrun
 : 1589538874:0;echo $QT_QPA_PLATFORMTHEME
@@ -2881,28 +2857,16 @@
 : 1589555630:0;e srcpkgs/bat/template
 : 1589555713:0;gcs -m "bat: update to 0.15.1"
 : 1589555722:0;git push origin update_bat
-: 1589558637:0;sudo xbps-install light
-: 1589558817:0;sudo xbps-install youtube-dl
-: 1589559047:0;sudo xbps-install unbound
-: 1589559091:0;sudo ln -s /etc/sv/unbound /var/service
-: 1589559449:0;sudo xbps-install aria2
-: 1589559997:0;sudo unbound-control-setup
 : 1589560004:0;unbound-checkconf
 : 1589560086:0;e /etc/resolv.conf
 : 1589560174:0;ping 'srv.carbonads.net'
 : 1589560287:0;sudo xbps-install dbus-x11
-: 1589560331:0;sudo ln -s /etc/sv/dbus /var/service
 : 1589560939:0;sudo usermod -aG video mustaqim
 : 1589561185:0;./xbps-src pkg bat
-: 1589562893:0;sudo xbps-install htop
-: 1589564810:0;sudo xbps-install samba
-: 1589564864:0;sudo smbpasswd -a mustaqim
 : 1589564902:0;sudo cp ~/.config/configs/etc/samba/smb.conf /etc/samba/smb.conf
-: 1589564912:0;sudo ln -s /etc/sv/smbd /var/service
 : 1589600718:0;e srcpkgs/python3-Pillow/template
 : 1589602343:0;e srcpkgs/harfbuzz/template
 : 1589603014:0;man fstab
-: 1589604729:0;sudo xbps-install inkscape
 : 1589610311:0;gpg --expert --full-gen-key
 : 1589610495:0;gpg --delete-secret-and-public-keys
 : 1589610990:0;gpg --armour --export-secret-keys 2692FB2_private.key
@@ -2921,7 +2885,6 @@
 : 1589632606:0;sudo xbps-install xsetroot
 : 1589632754:0;sudo xbps-install xrdb
 : 1589633831:0;git clone gh:mustaqimm/X11-Cursors-Breeze-Hacked-White
-: 1589642354:0;sudo xbps-install xcursorgen
 : 1589647456:0;xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
 : 1589649095:0;yadm add ~/{.Xresources,.Xresources.d}
 : 1589685868:0;git clone gh:codejamninja/breeze-hacked-cursor-theme
@@ -2939,7 +2902,6 @@
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 : 1589713815:0;sudo xbps-install zeal
 : 1589727028:0;./shadowfox_linux_x64 -profile-index 1 -generate-uuids -set-dark-theme
-: 1589734947:0;sudo xbps-install fuse-zip fuse-archivemount
 : 1589783029:0;sudo xbps-install texlive-bin
 : 1589785310:0;sudo makewhatis /opt/texlive/2020/texmf-dist/doc/man
 : 1589786032:0;man xelatex
@@ -2956,8 +2918,6 @@
 : 1589789447:0;sudo xbps-install source-sans-pro
 : 1589790368:0;xset b off
 : 1589790758:0;make clean
-: 1589805943:0;sudo xbps-install svn
-: 1589805971:0;sudo xbps-install subversion
 : 1589808395:0;echo $EMACS_PLUGIN_LAUNCHER
 : 1589876474:0;e .priv-env
 : 1589876495:0;openssl rand -hex 32
@@ -2976,7 +2936,6 @@
 : 1589897004:0;mimeo --add video/webm mpv.desktop
 : 1589897781:0;xbps-query -m > ~/.config/configs/installed_apps
 : 1589909239:0;sudo xbps-install gimp
-: 1589911442:0;sudo xbps-install android-tools
 : 1589911539:0;sudo cp android-udev-rules/51-android.rules /usr/lib/udev/rules.d/51-android.rules
 : 1589911599:0;sudo chmod a+r /etc/udev/rules.d/51-android.rules
 : 1589911647:0;sudo chmod a+r /usr/lib/udev/rules.d/51-android.rules
@@ -2999,7 +2958,6 @@
 : 1590122356:0;sudo xbps-install w3m
 : 1590150051:0;sudo xbps-install harfbuzz
 : 1590296617:0;doom update
-: 1590332555:0;sudo xbps-install powertop
 : 1590380026:0;sudo xbps-install mono
 : 1590383072:0;e /etc/default/grub
 : 1590384068:0;firejail --profile=JDownloader java -jar ~/.local/bin/jdownloader/JDownloader.jar
@@ -3012,7 +2970,6 @@
 : 1590685482:0;yadm add ~/.config/nvim/init.vim
 : 1590685498:0;yadm add ~/.config/Code\ -\ OSS/User/settings.json
 : 1590725343:0;e ShadowFox_customization/userChrome_customization.css
-: 1590759415:0;sudo xbps-install chromium
 : 1590760188:0;dl_coursera --cookies cookies.txt --slug java-programming-design-principles --outdir java-programming-design-principles --how aria2 --generate-input-file
 : 1590762195:0;aria2c --no-conf --input-file=java-programming-design-principles/java-programming-design-principles.download.aria2_input_file.txt
 : 1590813576:0;sudo xbps-install zathura-pdf-mupdf zathura-cb zathura-djvu zathura-ps
@@ -3036,12 +2993,9 @@
 : 1591331869:0;curl https://cheat.sh/:zsh > ~/.zsh/completions/_cht
 : 1591332461:0;zpl cclear
 : 1591332466:0;zpl completions
-: 1591369376:0;sudo ln -s /etc/sv/cronie /var/service
 : 1591378579:0;sudo sv restart syncthing
 : 1591418903:0;e ~/.config/firejail/JDownloader.local
 : 1591419682:0;git clone --depth=1 gh:Vinylwalk3r/JDownloader-2-Dark-Theme
-: 1591419966:0;sudo smbpasswd -a nobody
-: 1591509821:0;sudo xbps-install ttyqr
 : 1591610080:0;dl_coursera --cookies cookies.txt --slug java-programming-recommender --outdir java-programming-recommender --how aria2 --generate-input-file
 : 1591614316:0;aria2c --no-conf --input-file=java-programming-recommender/java-programming-recommender.download.aria2_input_file.txt
 : 1591720925:0;adb connect 192.168.0.101:5555
@@ -3247,7 +3201,6 @@
 : 1594042665:0;xbps-query -Rs csv
 : 1594049574:0;xbps-query -Rs zathura
 : 1594049811:0;man zathura
-: 1594050019:0;e ~/.config/zathura/zathurarc
 : 1594096206:0;sudo xbps-remove -R postgresql postgresql-client postgresql-libs
 : 1594096454:0;xbps-query -Rs postgres
 : 1594096479:0;sudo xbps-install postgresql12 postgresql12-client
@@ -3283,7 +3236,6 @@
 : 1594478063:0;sudo swapon /var/cache/swap/myswap
 : 1594478198:0;psmem -p $(pgrep -d, -u $USER)
 : 1594478234:0;whatis setcap
-: 1594488466:0;e ~/.config/fontconfig/fonts.conf
 : 1594543201:0;dig +short txt mustaqim.ml
 : 1594543217:0;dig +short txt _gitlab-pages-verification-code.mustaqim.ml
 : 1594555597:0;sudo xbps-remove -R links
@@ -3305,10 +3257,7 @@
 : 1594981646:0;sudo xbps-install openjdk8-jre
 : 1594981659:0;sudo xbps-install libdbusmenu-glib
 : 1595054540:0;git clone gh:MrOtherGuy/firefox-csshacks
-: 1595234433:0;sudo xbps-install socklog-void
 : 1595234483:0;sudo usermod -a -G socklog $USER
-: 1595234547:0;sudo ln -s /etc/sv/socklog-unix /var/service
-: 1595234550:0;sudo ln -s /etc/sv/nanoklogd /var/service
 : 1595234560:0;svlogtail | rg postgres
 : 1595234568:0;svlogtail | rg syncthing
 : 1595239593:0;yadm diff --staged
@@ -3424,13 +3373,11 @@ done
 : 1597898414:0;adb shell setprop service.adb.tcp.port 4444
 : 1597900614:0;echo $FZF_CTRL_T_COMMAND
 : 1597910432:0;yadm diff .config/awesome
-: 1597912546:0;sudo xbps-install cronie
 : 1597912559:0;sudo xbps-remove -R chrony
 : 1597912573:0;sudo rm /var/service/chronyd
 : 1597915582:0;./gradlew ktlintFormat
 : 1597918458:0;./gradlew ktlintCheck
 : 1597920906:0;sudo xbps-install twemoji
-: 1597921458:0;sudo xbps-install noto-fonts-emoji
 : 1597921552:0;fc-list | rg "Emoji" | cut -d ":" -f2
 : 1597921597:0;sudo xbps-remove -R twemoji
 : 1597921884:0;xbps-query -Rs emoji
@@ -3505,7 +3452,6 @@ done
 : 1598847393:0;e ~/Library/Cloud/Org/code/godot/godot.org
 : 1598847563:0;sudo xbps-install gnuplot-qt
 : 1598849334:0;yadm diff .config/doom
-: 1598856671:0;sudo xbps-install pavucontrol-qt
 : 1598863714:0;git clone --depth=1 gh:GDQuest/godot-demos
 : 1598866222:0;mimeo -m project.godot
 : 1598889352:0;e .gitignore
@@ -3615,7 +3561,6 @@ done
 : 1600762471:0;sudo xbps-install mediainfo
 : 1600763137:0;mimeo --add video/mp4 mpv.desktop
 : 1600764496:0;e ~/.config/jgmenu/jgmenurc
-: 1600833804:0;sudo xbps-install opendoas
 : 1600833847:0;man opendoas
 : 1600833912:0;man doas
 : 1600835220:0;psql
@@ -3790,7 +3735,6 @@ done
 : 1602914787:0;git clone --depth=1 gh:fwcd/kotlin-quick-start
 : 1602915804:0;ktlint
 : 1602956123:0;pkill java
-: 1602992161:0;sudo xbps-install megatools
 : 1602992171:0;rehash
 : 1603007889:0;xprop
 : 1603019923:0;./gradlew build
@@ -3806,11 +3750,9 @@ done
 : 1603274599:0;sudo xbps-install --repository=hostdir/binpkgs/new_package_rar2fs/nonfree unrar-devel
 : 1603277491:0;e srcpkgs/unrar/template
 : 1603278164:0;./xbps-src pkg unrar-devel
-: 1603278863:0;sudo xbps-install unrar
 : 1603282763:0;adb connect 192.168.1.102:5555
 : 1603437101:0;sudo xbps-install earlyoom
 : 1603437135:0;sudo ln -s /etc/sv/earlyoom /var/service
-: 1603437160:0;svlogtail
 : 1603552961:0;e /etc/mtab
 : 1603553068:0;man gocryptfs
 : 1603702627:0;git clone gl:artefact2/wiktionary-to-stardict
@@ -3966,7 +3908,6 @@ done
 : 1610170140:0;npm install
 : 1610178187:0;e private-build-plans.toml
 : 1610179004:0;npm run build -- ttf::iosevka-custom
-: 1610179704:0;fc-cache -fv
 : 1610358462:0;e _dl.txt
 : 1610535735:0;git remote -v
 : 1610643189:0;cat _dl.txt
@@ -4001,7 +3942,6 @@ done
 : 1611592129:0;light -S 1%
 : 1611592441:0;cat ~/.config/awesome/autorun
 : 1611594717:0;sudo xbps-install Waybar
-: 1611632811:0;sudo makewhatis /usr/share/man
 : 1611636961:0;echo $XCURSOR_PATH
 : 1611637096:0;echo $XCURSOR_THEME
 : 1611638718:0;yadm add ~/.config/alacritty
@@ -4010,7 +3950,6 @@ done
 : 1611644275:0;sudo chown $USER:$USER /run/user/mustaqim
 : 1611645880:0;e ~/.local/share/applications/Firefox-Nightly.desktop
 : 1611647898:0;sudo xbps-install wmctrl
-: 1611648357:0;e ~/.config/sway/theme
 : 1611648908:0;sudo xbps-install wofi
 : 1611650698:0;wofi -S drun
 : 1611650790:0;wofi -S drun -I -G
@@ -4018,7 +3957,6 @@ done
 : 1611665127:0;sudo xbps-install SPIRV-Tools
 : 1611682016:0;man wl-clipboard
 : 1611682795:0;adb she
-: 1611723938:0;sudo xbps-install qt5-wayland
 : 1611747438:0;swaymsg -t get_tree
 : 1611852619:0;fc-list | rg "Iosevka" | cut -d ":" -f2
 : 1611854125:0;e ~/.config/waybar/style.css
@@ -4042,12 +3980,10 @@ done
 : 1612150226:0;java -jar josm-tested.jar
 : 1612162482:0;grv
 : 1612162500:0;gcs
-: 1612174145:0;dbus-run-session sway
 : 1612175985:0;make
 : 1612181483:0;sudo nice -n -20 udevmon -c udevmon.yaml >udevmon.log 2>udevmon.err &
 : 1612181558:0;fg
 : 1612248084:0;xbps-query -Rs dropbox
-: 1612252390:0;sudo xbps-install void-repo-nonfree
 : 1612253327:0;dbus-run-session plasma
 : 1612254935:0;sudo ln -s /etc/sv/sddm /var/service
 : 1612255891:0;sudo xbps-install kwalletmanager kwallet-pam
@@ -4083,7 +4019,6 @@ done
 : 1612966388:0;plain hide
 : 1612974634:0;aucatctl
 : 1613036301:0;e ~/.config/firejail/keepassxc.local
-: 1613044103:0;sudo xbps-install imv
 : 1613192528:0;sudo xbps-install scantailor
 : 1613213083:0;tiffcp *.tif multi.tif
 : 1613279349:0;sudo xbps-install zig
@@ -4097,7 +4032,6 @@ done
 : 1613362614:0;git push -f
 : 1613362645:0;./xbps-src pkg scantailor-advanced
 : 1613364552:0;sudo xbps-install --repository=hostdir/binpkgs/new_scantailor_advanced scantailor-advanced
-: 1613369822:0;doom sync
 : 1613372676:0;zig build
 : 1613379942:0;sudo xbps-install scrypt
 : 1613404452:0;zig version
@@ -4228,12 +4162,8 @@ done
 : 1614766401:0;testparm -s
 : 1614767448:0;cp /etc/samba/smb.conf ~/.config/configs/etc/samba/smb.conf
 : 1614769826:0;nmap -v -A -p 16992-16995,623,664 192.168.1.1/24 | rg -B 1 -e "Host is up"
-: 1614776310:0;ip addr show
 : 1614787227:0;sudo ss -lunpt
 : 1614830246:0;curl https://ipinfo.io/ip
-: 1614840007:0;sudo rm /var/service/agetty-hvsi0
-: 1614840014:0;sudo rm /var/service/agetty-hvc0
-: 1614840158:0;sudo usermod -aG socklog $USER
 : 1614840274:0;svlogtail | rg sshd
 : 1614854139:0;e ~/.config/awesome/signals.lua
 : 1614876089:0;e ~/.config/mpv/input.conf
@@ -4242,10 +4172,8 @@ done
 : 1614881886:0;cp /usr/share/nzbget/nzbget.conf ~/.config/nzbget/nzbget.conf
 : 1614881916:0;nzbget -s -o outputmode=log
 : 1614881929:0;nzbget -s -o outputmode=log -c ~/.config/nzbget/nzbget.conf
-: 1614922400:0;firejail --list
 : 1614934334:0;e cv/education.tex
 : 1614934383:0;xelatex cv.tex
-: 1614942512:0;sudo xbps-install qbittorrent
 : 1615132936:0;sudo iptables -L
 : 1615133124:0;sudo xbps-install ufw
 : 1615133669:0;e /etc/ssh/sshd_config
@@ -4267,7 +4195,6 @@ done
 : 1615363843:0;sudo sv down unbound
 : 1615440837:0;e ~/.config/firejail/chromium.local
 : 1615527461:0;sudo sv down wpa_supplicant
-: 1615529570:0;sudo sv up wpa_supplicant
 : 1615647006:0;adb logcat -c
 : 1615647108:0;adb logcat -d -v time > log.txt
 : 1615647207:0;adb logcat -v threadtime > log.txt
@@ -4311,10 +4238,8 @@ done
 : 1617365759:0;aplay -l
 : 1617365933:0;aplay -D plughw:0,0 /usr/share/sounds/alsa/Front_Center.wav
 : 1617365980:0;e /etc/pulse/default.pa
-: 1617423954:0;sudo xbps-install elogind
 : 1617423968:0;sudo rm /var/service/seatd
 : 1617424786:0;sudo xbps-install handbrake
-: 1617430242:0;sudo xbps-remove -R elogind
 : 1617430250:0;sudo rm /var/service/elogind
 : 1617430266:0;sudo xbps-install seatd
 : 1617430273:0;sudo ln -s /etc/sv/seatd /var/service
@@ -4328,7 +4253,6 @@ done
 : 1617596530:0;./xbps-src pkg parlatype
 : 1618058084:0;e /etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf
 : 1618158588:0;sudo xbps-install ncdu
-: 1618318161:0;rfkill list 
 : 1618318255:0;sudo rfkill unblock bluetooth
 : 1618318321:0;sudo usermod -aG bluetooth $USER
 : 1618382896:0;pactl info
@@ -4344,8 +4268,6 @@ done
 : 1619277201:0;man imv
 : 1619422166:0;kd
 : 1619789640:0;sudo xbps-install bluez
-: 1619789863:0;bluetoothctl
-: 1619794430:0;bluetoothctl pair C5:57:73:63:F4:C0
 : 1619887189:0;echo 0 | sudo tee /sys/module/snd_hda_intel/parameters/power_save_controller
 : 1619887506:0;e /etc/tlp.conf
 : 1619927824:0;sudo xbps-install kde5 kde5-baseapps
@@ -4355,13 +4277,11 @@ done
 : 1619964762:0;heimdall-frontend
 : 1619967088:0;qt5ct
 : 1619968917:0;chromium --incognito
-: 1619972309:0;bluetoothctl scan
 : 1619972392:0;bluetoothctl connect 55:F0:3D:56:55:79
 : 1619972459:0;bluetoothctl disconnect 55:F0:3D:56:55:79
 : 1620058456:0;inxi -F -d -f -l -m -o -p -t cm -u -x
 : 1620102912:0;sudo xbps-install pipewire alsa-pipewire
 : 1620102934:0;youtube-dl 
-: 1620103666:0;bluetoothctl devices
 : 1620103729:0;rfkill
 : 1620103744:0;rfkill unblock bluetooth
 : 1620103756:0;id mustaqim
@@ -4382,8 +4302,6 @@ done
 : 1620359450:0;e /etc/X11/xorg.conf.d/20-intel.conf
 : 1620359619:0;cat .xsession-errors
 : 1620366978:0;vkpurge list
-: 1620367392:0;e /etc/bluetooth/main.conf
-: 1620367983:0;sudo ln -s /etc/sv/bluetoothd /var/service
 : 1620368198:0;pulsemixer
 : 1620404308:0;pavucontrol
 : 1620447658:0;alsamixer
@@ -4394,16 +4312,13 @@ done
 : 1621268943:0;env QT_QPA_PLATFORMTHEME=qt5ct qt5ct
 : 1621318465:0;e ~/.config/awesome/widgets/popup.lua
 : 1621435921:0;git clone --depth=1 gh:hlissner/doom-emacs ~/.emacs.d
-: 1621436574:0;doom install
 : 1621847544:0;sudo powertop --auto-tune
-: 1621847699:0;sudo powertop
 : 1621918072:0;echo $QT_QPA_PLATFORM
 : 1622176323:0;e ~/.tmux.conf.local
 : 1622263065:0;sudo xbps-install poppler-utils
 : 1622475000:0;sudo strings /sys/firmware/acpi/tables/MSDM
 : 1622523746:0;e
 : 1622699829:0;pamixer --set-volume 35
-: 1622780758:0;cd
 : 1622909181:0;env QT_QPA_PLATFORMTHEME=qt5ct qbittorrent
 : 1623308702:0;xbps-query -Rs bluetooth
 : 1623308804:0;sudo xbps-install python3-bluez
@@ -4430,16 +4345,11 @@ done
 : 1626509709:0;man youtube-dl
 : 1626756575:0;e ~/.xinitrc
 : 1626757128:0;sudo xbps-remove -R kvantum
-: 1626771039:0;sudo xbps-install wl-clipboard
 : 1626781243:0;echo $MOZ_ENABLE_WAYLAND
 : 1626781516:0;env MOZ_ENABLE_WAYLAND=1 /opt/firefox/firefox
-: 1626842989:0;sudo xbps-install kvantum
 : 1626843907:0;echo $DISPLAY
-: 1626845721:0;e ~/.zsh/.zshenv
 : 1626845939:0;cp /etc/unbound/unbound.conf .config/configs/etc/unbound/unbound.conf
 : 1626860837:0;df -Th
-: 1626877170:0;/bin/emacs -bg '#17191a' --daemon
-: 1626935178:0;sudo xbps-install qt5ct qt5-styleplugins
 : 1627714419:0;sudo mount /dev/sdb1 /media/ -o uid=1000,gid=1000,utf8
 : 1627715338:0;man fd
 : 1627715898:0;e /etc/doas.conf
@@ -4449,7 +4359,6 @@ done
 : 1627718973:0;doom upgrade
 : 1627719120:0;doom compile
 : 1627747117:0;youtube-dl --list-formats "$(xclip -sel clip -o)"
-: 1627815970:0;crontab -
 : 1627833956:0;curl -u "$API_KEY:$API_SECRET" \\
 "https://api.luno.com/api/1/balance" | jq
 : 1627896104:0;aria 'https://languagetool.org/download/LanguageTool-stable.zip'
@@ -4463,7 +4372,6 @@ done
 : 1628420273:0;aria 'https://download.geofabrik.de/africa/south-africa-latest.osm.pbf'
 : 1628432522:0;java -Xmx3g -jar splitter.jar south-africa-latest.osm.pbf
 : 1628433725:0;java -jar mkgmap.jar --gmapsupp -c template.args
-: 1628434314:0;ls -l
 : 1628434655:0;ls .
 : 1628434738:0;sudo mkfs.vfat -v -F 32 -n "Garmin" /dev/mmcblk0p1
 : 1628434764:0;sudo mkfs.vfat -v -F 32 -n "Garmin" /dev/mmcblk0
@@ -4476,7 +4384,6 @@ done
 : 1628487059:0;gd
 : 1628487233:0;ga .
 : 1628487254:0;gp
-: 1628492202:0;e ~/.config/vifm/vifmrc
 : 1628492701:0;yadm add ~/.Xresources
 : 1628492711:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,Mojave-dark,WhiteSur-dark}
 : 1628492718:0;yadm add ~/.config/awesome
@@ -4485,101 +4392,229 @@ done
 : 1628492734:0;yadm add ~/.config/rofi
 : 1628492750:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1628492756:0;yadm add ~/.config/youtube-dl/config
-: 1628492776:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
 : 1628492852:0;yadm commit
 : 1628492878:0;yadm push
 : 1628495661:0;man vifm
 : 1628578089:0;e ~/.config/awesome/wibar.lua
 : 1628586167:0;ping google.com
 : 1628600020:0;e ~/.config/awesome/layouts.lua
-: 1628614599:0;bluetoothctl list
-: 1628614684:0;sudo sv status /var/service/*
 : 1628833624:0;e ~/.config/aria2/aria2.conf
-: 1628833683:0;e ~/.zsh/zsh_history
-: 1628833985:0;e ~/.zsh/aliases
 : 1628834773:0;man aria2c
 : 1629198998:0;sudoedit /etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf
 : 1629199035:0;sudo sv restart wpa_supplicant
-: 1629438827:0;bluetoothctl disconnect C5:57:73:63:F4:C0
-: 1629531359:0;zcalc
 : 1629566354:0;e ~/.config/rofi/config.rasi
-: 1629606776:0;plain show
-: 1629787475:0;bluetoothctl power on
-: 1629787478:0;bluetoothctl connect C5:57:73:63:F4:C0
 : 1629787682:0;sudo sv restart bluetoothd
 : 1629789509:0;ffmpeg -i file.mp4 -map 0:a -c copy output.m4a
 : 1629795288:0;ttyqr -b $(xclip -sel clip -o)
 : 1629821266:0;adb 
 : 1629867554:0;git pull --rebase upstream master
 : 1629910006:0;sudo chattr -i /etc/resolv.conf
-: 1629910018:0;sudoedit /etc/resolv.conf
-: 1629910526:0;sudo chattr +i /etc/resolv.conf
 : 1629910671:0;e /etc/unbound/rpz.conf
 : 1629910682:0;e /etc/unbound/unbound.conf
-: 1629957446:0;cat /etc/resolv.conf
-: 1629991810:0;e ~/.zsh/functions/push
 : 1630083618:0;sudo xbps-install sqlcipher
-: 1630139019:0;gst
 : 1630139033:0;e srcpkgs/awesome-master/template
 : 1630139440:0;glo
 : 1630162102:0;gco $(gb | fzf)
 : 1630162185:0;./xbps-src bootstrap-update
 : 1630164209:0;./xbps-src pkg awesome-master
-: 1630169474:0;crontab -e
 : 1630211319:0;fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500' --preview-window right:90
 : 1630211388:0;cat /etc/unbound/zones/rpz.db | fzf
-: 1630212377:0;svlogtail | rg unbound
 : 1630258690:0;headphones off
-: 1630337556:0;sudo update_unbound_sb_hosts.sh
 : 1630337637:0;e /etc/unbound/zones/rpz.db
-: 1630338002:0;sudo sv restart unbound
 : 1630342984:0;e ~/.config/awesome/autorun
-: 1630429435:0;sudo xbps-install pulseeffects
 : 1630429822:0;man mpv
-: 1630431114:0;crontab -l
-: 1630431123:0;sudo rtcwake -m mem --time "`date -d "23:59 today" +%s`"
 : 1630495829:0;e ~/.zsh/.zprofile
 : 1630497899:0;man sway
 : 1630499398:0;svlogtail | rg blue
 : 1630508522:0;swaymsg reload
 : 1630509604:0;cp -r /etc/xdg/waybar ~/.config/waybar
-: 1630513194:0;yadm status
 : 1630513538:0;rofi -show
-: 1630514857:0;pamixer --get-volume
-: 1630515117:0;tmux attach || tmux
-: 1630515452:0;pkill emacs
-: 1630515531:0;e ~/.config/sway/autostart
 : 1630515677:0;e ~/.config/sway/autorun
-: 1630555989:0;e ~/.config/waybar/config
 : 1630560005:0;e ~/.config/mpv/mpv.conf
 : 1630561279:0;ping adf.ly
-: 1630562073:0;psmem -p $(pgrep -d, -u $USER) -S
-: 1630571857:0;ping mustaqim.ml
-: 1630574780:0;tlp-stat -t | rg temp
-: 1630641186:0;sudo xbps-install -Suvy
 : 1630641824:0;sudo xbps-remove -R qt5ct
 : 1630642493:0;e ~/.config/alacritty/alacritty.yml
-: 1630642522:0;e ~/.zsh/.zshrc
 : 1630642760:0;glxinfo | rg version
-: 1630643262:0;reload
-: 1630646995:0;e ~/.config/sway/rules
-: 1630647137:0;man 5 sway
-: 1630647294:0;swaymsg -t get_tree | fzf
 : 1630648867:0;. .zsh/functions/rv
-: 1630650070:0;ffmpeg -t 00:30:00 -i file.m4a -c copy out1.m4a
-: 1630650095:0;ffmpeg -t 00:30:00 -ss 00:30:00 -i file.m4a -c copy out2.m4a
-: 1630650098:0;ffmpeg -t 00:30:00 -ss 01:00:00 -i file.m4a -c copy out3.m4a
 : 1630651115:0;bandwhich
-: 1630661950:0;free -h
 : 1630680850:0;e ~/.config/wofi/style.css
-: 1630682165:0;adb connect 192.168.1.101:5555
-: 1630682167:0;push
-: 1630682520:0;e ~/.config/sway/config
-: 1630682738:0;htop
-: 1630683592:0;headphones on
 : 1630685069:0;sudo xbps-remove -ROo
-: 1630685730:0;sudo vkpurge rm all
-: 1630685827:0;f
-: 1630685829:0;zpl update -p
-: 1630686002:0;f
 : 1630686033:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
+: 1631107250:0;pkill emacs
+: 1631107391:0;sudo ln -s /etc/sv/bluetoothd /var/service
+: 1631107411:0;bluetoothctl
+: 1631107890:0;sudo xbps-install bat
+: 1631109204:0;sudo xbps-install svn
+: 1631109585:0;sudo xbps-install kvantum
+: 1631109678:0;sudo xbps-install keepassxc
+: 1631109763:0;sudo xbps-install wl-clipboard
+: 1631109786:0;sudo xbps-install qbittorrent
+: 1631109994:0;sudo xbps-install htop
+: 1631110124:0;sudo xbps-install python
+: 1631110144:0;sudo xbps-install python3
+: 1631110336:0;sudo xbps-install lsd
+: 1631110727:0;doom install
+: 1631111026:0;sudo xbps-install sassc glib-devel libxml2
+: 1631111184:0;sudo xbps-remove -R sassc glib-devel libxml2
+: 1631111196:0;sudo xbps-install lxappearance
+: 1631111428:0;sudo xbps-install papirus-icon-theme
+: 1631111697:0;sudo xbps-install noto-fonts-emoji
+: 1631111809:0;sudo xbps-install unzip
+: 1631111832:0;sudo xbps-install unzip unrar
+: 1631111845:0;sudo xbps-install void-repo-nonfree
+: 1631112331:0;sudo xbps-install unrar
+: 1631112647:0;sudo xbps-install noto-fonts-ttf
+: 1631113787:0;sudo xbps-install gucharmap
+: 1631113986:0;sudo xbps-install subversion
+: 1631114923:0;sudo xbps-install light
+: 1631115034:0;sudo xbps-install font-awesome5
+: 1631115174:0;sudo xbps-install qt5ct qt5-styleplugins
+: 1631115743:0;sudo xbps-install socklog-void
+: 1631115766:0;sudo ln -s /etc/sv/socklog-unix /var/service
+: 1631115776:0;sudo ln -s /etc/sv/nanoklogd /var/service
+: 1631115784:0;sudo xbps-install ripgrep
+: 1631116185:0;sudo xbps-install qt5-wayland
+: 1631118275:0;sudo usermod -aG socklog $USER
+: 1631118435:0;sudo rm /var/service/agetty-hvc0
+: 1631118443:0;sudo rm /var/service/agetty-hvsi0
+: 1631120687:0;sudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf
+: 1631120756:0;sudo cp -r /etc/sv/dhcpcd-eth0 /etc/sv/dhcpcd-wlp2s0
+: 1631120773:0;sudo sed -i 's/eth0/wlp2s0/' /etc/sv/dhcpcd-wlp2s0/run
+: 1631120983:0;sudo ln -s /etc/sv/dhcpcd-wlp2s0 /var/service
+: 1631121051:0;sudo xbps-install android-tools
+: 1631121599:0;sudo sv restart dhcpcd-wlp2s0
+: 1631121617:0;sudo sv up wpa_supplicant
+: 1631121666:0;sudo ln -s /etc/sv/wpa_supplicant /var/service
+: 1631121743:0;ip addr show
+: 1631121911:0;sudo kill 31765 
+: 1631162429:0;sudo xbps-install caps2esc
+: 1631162695:0;cat conf
+: 1631162835:0;sudoedit /etc/caps2esc.yaml
+: 1631163362:0;sudo cp conf /etc/interception/udevmon.d/caps2esc.yaml
+: 1631163396:0;e ~/.config/sway/autostart
+: 1631165345:0;bluetoothctl scan
+: 1631165636:0;sudo xbps-install aria2
+: 1631201924:0;man 5 sway
+: 1631202258:0;bluetoothctl list
+: 1631203047:0;sudo ln -s /etc/sv/udevmon /var/service
+: 1631206953:0;bluetoothctl power on
+: 1631206970:0;bluetoothctl devices
+: 1631206979:0;bluetoothctl disconnect C5:57:73:63:F4:C0
+: 1631207553:0;sudo xbps-install youtube-dl
+: 1631208849:0;yadm status
+: 1631255251:0;bluetoothctl scan on
+: 1631255318:0;e /etc/bluetooth/main.conf
+: 1631292459:0;sudoedit conf
+: 1631293337:0;sudo xbps-install ttyqr
+: 1631293662:0;sudo xbps-install samba
+: 1631293943:0;sudo smbpasswd -a mustaqim
+: 1631293978:0;sudo smbpasswd -a nobody
+: 1631293983:0;sudo ln -s /etc/sv/smbd /var/service
+: 1631294504:0;sudo makewhatis /usr/share/man
+: 1631295577:0;e ~/.zsh/.zshenv
+: 1631295699:0;cd
+: 1631337767:0;sudo ln -s /etc/sv/dbus /var/service
+: 1631338265:0;dbus-run-session sway
+: 1631338297:0;sudo xbps-remove -R polkit
+: 1631338344:0;sudo xbps-install dbus-elogind
+: 1631338366:0;sudo xbps-remove -R elogind
+: 1631338376:0;sudo xbps-install elogind
+: 1631338390:0;sudo xbps-install polkit
+: 1631339376:0;bluetoothctl trust C5:57:73:63:F4:C0
+: 1631339383:0;bluetoothctl pair C5:57:73:63:F4:C0
+: 1631339392:0;pamixer --get-volume
+: 1631339398:0;svlogtail
+: 1631350177:0;sudo xbps-install chromium
+: 1631371234:0;sudo xbps-install fuse-zip fuse-archivemount
+: 1631371261:0;sudo xbps-install fuse3
+: 1631371276:0;sudoedit /etc/fuse.conf
+: 1631371419:0;sudo xbps-install xdg-utils
+: 1631371727:0;xdg-mime query filetype 001.png
+: 1631371739:0;xdg-mime query default image/jpeg
+: 1631371751:0;xdg-mime default imv.desktop image/jpeg
+: 1631371794:0;sudo xbps-install imv
+: 1631375884:0;sudo xbps-install thermald tlp
+: 1631375945:0;sudo ln -s /etc/sv/thermald /var/service
+: 1631376088:0;sudo xbps-install intel-ucode
+: 1631379639:0;adb connect 192.168.1.101:5555
+: 1631421069:0;sudo xbps-install opendoas
+: 1631421105:0;sudoedit /etc/doas.conf
+: 1631428685:0;e ~/.zsh/aliases
+: 1631450915:0;e ~/.zsh/.zshrc
+: 1631464374:0;doom sync
+: 1631465911:0;e ~/.zsh/functions/push
+: 1631467653:0;sudo xbps-install pulseeffects
+: 1631467828:0;sudo xbps-remove -R pulseeffects
+: 1631467835:0;sudo xbps-install pavucontrol-qt
+: 1631506251:0;sudo xbps-install unbound
+: 1631506545:0;sudo cp -r unbound /etc/unbound
+: 1631511228:0;sudo unbound-control-setup
+: 1631511614:0;svlogtail | rg unbound
+: 1631511745:0;sudo update_unbound_sb_hosts.sh
+: 1631511835:0;sudoedit /etc/resolv.conf
+: 1631511850:0;sudo chattr +i /etc/resolv.conf
+: 1631511853:0;cat /etc/resolv.conf
+: 1631511858:0;sudo ln -s /etc/sv/unbound /var/service
+: 1631511930:0;sudo sv restart unbound
+: 1631512179:0;sudoedit /etc/firejail/firejail.config
+: 1631520096:0;gst
+: 1631521309:0;sudo xbps-install xcursorgen
+: 1631531142:0;firejail --list
+: 1631601110:0;sudo xbps-install inkscape
+: 1631604496:0;ls -l
+: 1631610704:0;e ~/.config/vifm/vifmrc
+: 1631614711:0;sudo xbps-install qtcreator
+: 1631633558:0;sudo xbps-install gramps graphviz libosmgpsmap python3-PyICU libgexiv2
+: 1631634865:0;e ~/.config/sway/rules
+: 1631638086:0;e ~/.config/fontconfig/fonts.conf
+: 1631638158:0;fc-cache -fv
+: 1631638627:0;e ~/.config/sway/theme
+: 1631685120:0;xdg-mime default org.pwmt.zathura.desktop application/pdf
+: 1631809219:0;sudo xbps-install megatools
+: 1631851964:0;rfkill list 
+: 1631953895:0;bluetoothctl connect C5:57:73:63:F4:C0
+: 1631987727:0;sudo xbps-install powertop
+: 1631988096:0;sudo powertop --calibrate
+: 1631989747:0;tlp-stat -t | rg temp
+: 1631989956:0;sudo sv status /var/service/*
+: 1631990471:0;sudo powertop
+: 1632067897:0;zpl update -p
+: 1632111272:0;e ~/.config/zathura/zathurarc
+: 1632114560:0;e ~/.config/waybar/config
+: 1632212408:0;ping mustaqim.ml
+: 1632294559:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1632370366:0;zcalc
+: 1632677661:0;sudo xbps-install cronie
+: 1632677676:0;sudo ln -s /etc/sv/cronie /var/service
+: 1632677692:0;/bin/emacs -bg '#17191a' --daemon
+: 1632677706:0;crontab -e
+: 1632677787:0;crontab -
+: 1632677791:0;crontab -l
+: 1632677811:0;sudo rtcwake -m mem -u "+2" -t "`date -d "23:59 today" +%s`" -u
+: 1632715473:0;e ~/.zsh/zsh_history
+: 1632715485:0;reload
+: 1632734003:0;man zshbuiltins
+: 1632737284:0;sudo xbps-install openjdk11
+: 1632755277:0;sudo xbps-install jetbrains-jdk-bin
+: 1632755926:0;ttyqr -b $(wl-paste)
+: 1632760165:0;swaymsg -t get_tree | fzf
+: 1632763294:0;adb shell ls /sdcard/Movies
+: 1632842568:0;xbps-query -L
+: 1632894059:0;ffmpeg -t 00:30:00 -i file.m4a -c copy out1.m4a
+: 1632894061:0;ffmpeg -t 00:30:00 -ss 00:30:00 -i file.m4a -c copy out2.m4a
+: 1632894064:0;ffmpeg -t 00:30:00 -ss 01:00:00 -i file.m4a -c copy out3.m4a
+: 1632934923:0;htop
+: 1632973309:0;tmux attach || tmux
+: 1632973914:0;sudo vkpurge rm all
+: 1632974469:0;free -h
+: 1632979922:0;youtube-dl --list-formats "$(wl-paste)"
+: 1632997016:0;plain show
+: 1633018050:0;e ~/.config/sway/config
+: 1633022662:0;push
+: 1633060055:0;sudo xbps-install -Suvy
+: 1633060370:0;headphones on
+: 1633066054:0;f
+: 1633066671:0;yadm status
+: 1633066762:0;f
+: 1633066782:0;yadm status
+: 1633066855:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc

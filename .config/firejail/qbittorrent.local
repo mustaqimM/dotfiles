@@ -1,1 +1,2 @@
 whitelist ${HOME}/Library/Downloads
+whitelist ${HOME}/.local/share/qBittorrent

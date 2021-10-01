@@ -44,6 +44,7 @@ output * bg ~/Pictures/Wallpapers/MK1-Dark.png fill
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
 ### Input configuration
 #
@@ -64,13 +65,13 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
       tap enabled
       # natural_scroll enabled
       middle_emulation enabled
-      scroll_factor 0.4
+      # scroll_factor 0.6
 }
 
-input "type:keyboard" {
-      xkb_options caps:ctrl_modifier
-      # xkb_options caps:escape
-}
+# input "type:keyboard" {
+#       xkb_options caps:ctrl_modifier
+#       # xkb_options caps:escape
+# }
 
 ### Key bindings
 #
@@ -86,7 +87,7 @@ input "type:keyboard" {
     bindsym button2 kill
 
     # Start your launcher
-    bindsym Mod1+Space exec $menu
+    bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -99,7 +100,10 @@ input "type:keyboard" {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t exit \
+        -c '/home/mustaqim/.config/sway/swaynag' \
+        -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' \
+        -b '' 'swaymsg exit'
 
     # brightness
     bindsym XF86MonBrightnessDown exec light -U 3%
@@ -230,6 +234,8 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+bindsym $mod+c move position center
 
 #
 # Status Bar:
