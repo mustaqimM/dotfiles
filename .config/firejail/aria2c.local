@@ -1,5 +1,0 @@
-noblacklist ${HOME}/.config/aria2
-whitelist ${HOME}/.config/aria2
-
-whitelist ${HOME}/Library/Downloads
-whitelist ${HOME}/Downloads

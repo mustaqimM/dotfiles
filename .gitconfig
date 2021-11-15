@@ -1,62 +1,63 @@
 [user]
-	name = mustaqim
-	email = git@mustaqim.ml
-	signingkey = 72692FB2
+    name = mustaqim
+    email = git@mustaqim.ml
+    signingkey = 72692FB2
 
 [color]
-	ui = true
+    ui = true
 
 [core]
-	editor = emacs -bg 'black' -fs
-	excludesfile = /home/mustaqim/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
-	autocrlf = input
-	# autocrlf = true
-	# safecrlf = true
-	# autocrlf = input
+    editor = emacs -bg 'black' -fs
+    excludesfile = /home/mustaqim/.gitignore_global
+    pager = diff-so-fancy | less --tabs=4 -RFX
+    autocrlf = input
+    # autocrlf = true
+    # safecrlf = true
+    # autocrlf = input
 
 [url "git@github.com:"]
-	insteadOf = "gh:"
+    insteadOf = "gh:"
 
 [url "https://gist.github.com/"]
-	insteadOf = "gist:"
+    insteadOf = "gist:"
 
 [url "git@gitlab.com:"]
-	insteadOf = "gl:"
+    insteadOf = "gl:"
 
 [url "https://gitlab.com/snippets/"]
-	insteadOf = "snippet:"
+    insteadOf = "snippet:"
 
 [url "git://git.suckless.org/"]
-	insteadOf = "suckless:"
+    insteadOf = "suckless:"
 
 [alias]
-	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+    exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
 
 [gpg]
-	program = gpg2
+    program = gpg2
 
 [commit]
-	gpgsign = true
-	verbose = true
+    gpgsign = true
+    verbose = true
 
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 [color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = yellow
+    frag = magenta bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 [diff-so-fancy]
-	markEmptyLines = true
-	changeHunkIndicators = true
-	stripLeadingSymbols = true
+    markEmptyLines = true
+    changeHunkIndicators = true
+    stripLeadingSymbols = true
 [blame]
-	coloring = highlightRecent
+    coloring = highlightRecent
 [init]
-	defaultBranch = --list
+    defaultBranch = --list

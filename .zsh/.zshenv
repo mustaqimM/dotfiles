@@ -17,15 +17,13 @@ export QT_QPA_PLATFORM=wayland
 
 export BROWSER="firefox"
 export MOZ_ENABLE_WAYLAND=1
-# MOZ_ACCELERATED=1
-# MOZ_WEBRENDER=1
 
-export LC_ALL=C
 export TZ=Africa/Johannesburg
 
+# export LC_ALL=C
 export LC_ALL="en_ZA.UTF-8"
 
-export LIBVA_DRIVER_NAME=iHD_drv_video
+# export LIBVA_DRIVER_NAME=i965
 
 export EDITOR="emacsclient -nw"
 # ALTERNATE_EDITOR=""

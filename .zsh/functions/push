@@ -3,10 +3,12 @@
 push() {
      declare -a list
      declare -i i=1
-     fd -e mkv -e mp4 -c always | fzf -m | while read -r item; do
-          list[$i]=$item
-          ((i++))
-     done
+     fd -e mkv -e mp4 -e webm -c always | \
+          fzf -m --header $'Send media via adb\n▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔' --header-first | \
+          while read -r item; do
+               list[$i]=$item
+               ((i++))
+          done
 
      adb connect 192.168.1.101:5555
      adb push $list /sdcard/Movies

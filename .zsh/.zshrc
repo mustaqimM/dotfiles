@@ -11,11 +11,11 @@ fi
 # ==============================================================================
 
 #if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-#  eval $(ssh-agent) &>/dev/null
-#  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+# eval $(ssh-agent) & > /dev/null
+# ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 #fi
 #export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-##ssh-add -l > /dev/null || ssh-add
+## ssh-add -l > /dev/null || ssh-add
 #ssh-add -q $HOME/.ssh/GitLab > /dev/null || ssh-add
 #ssh-add -q $HOME/.ssh/GitHub > /dev/null || ssh-add
 
@@ -25,9 +25,9 @@ declare -A ZINIT
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-  print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+  print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
   command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-  command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+  command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
       print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
       print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -48,10 +48,11 @@ autoload -Uz _zinit
 # ==============================================================================
 
 fpath=(
-  $ZDOTDIR/functions
-  $ZDOTDIR/completions
-  $HOME/.local/bin
-  "${fpath[@]}"
+/usr/share/zsh/site-functions
+$ZDOTDIR/functions
+$ZDOTDIR/completions
+$HOME/.local/bin
+"${fpath[@]}"
 )
 
 # ==============================================================================
@@ -111,7 +112,7 @@ zi light "zsh-users/zsh-completions"
 #zi snippet "OMZ::lib/completion.zsh"
 
 zi ice wait lucid atinit"_zcomp"
-zi light "zdharma/fast-syntax-highlighting"
+zi light "zdharma-continuum/fast-syntax-highlighting"
 
 zi ice wait lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start"
 zi light "zsh-users/zsh-autosuggestions"
@@ -153,7 +154,7 @@ if [[ $(type -p fzf) ]] then
      atload"\
      _fzf_compgen_path() { command fd -L -td -tf -tl -H -E \".git\" . \"\$1\" 2> /dev/null }; \
      _fzf_compgen_dir() { command fd -L -td -H -E \".git\" . \"\$1\" 2> /dev/null }"
-  zi light "/usr/share/doc/fzf"
+  zi light "/usr/share/fzf"
 fi
 
 #zi ice wait lucid id-as"base16-fzf-tomorrow-night" #atclone'sed -e "26s/$/\\\/" -e "27i\" --ansi\"\\\ " -i base16-fzf-tomorrow-night' atpull"%atclone"
@@ -316,16 +317,16 @@ _zcomp() {
 #;;
 #esac
 
-zshaddhistory() {
-  whence ${${(z)1}[1]} >| /dev/null || return 1 }       # Don't add wrong commands to history
+# zshaddhistory() {
+#   whence ${${(z)1}[1]} >| /dev/null || return 1 }       # Don't add wrong commands to history
 
-function exists() {
-  (( ${+commands[$1]} ))
-}
+# function exists() {
+#   (( ${+commands[$1]} ))
+# }
 
-fb() {
-    filebot -rename "$@" -non-strict --format "{e} - {t}"
-}
+# fb() {
+#     filebot -rename "$@" -non-strict --format "{e} - {t}"
+# }
 
 man() {
  if [ -n "$TMUX" ]; then
@@ -463,9 +464,11 @@ autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy headphones 
 autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)
-zicompdef _gnu_generic aomenc aria2c bat cargo curl cwebp direnv docker \
-  docker-machine emacs fd firejail flask fsck.ext4 fzf gocryptfs inkscape kitty ktlint light \
-  lsd mimeo megadl mkfs.vfat nzbget pamixer pip pip3 pipx psmem redshift rofi rustc sk tar tlp-stat vue wmctrl z
+zicompdef _gnu_generic aomenc aria2c bandwhich curl cwebp cjxl direnv docker \
+  dunst emacs flask fsck.ext4 fzf gocryptfs hexyl inkscape ktlint light \
+  lsd mimeo megadl mkfs.vfat nzbget pamixer pip pip3 pipx psmem redshift rofi rustc \
+  tlp tlp-stat \
+  vue zstd
 
 #for comp ( yadm vifm ) { zicompdef _$comp $comp; }
 

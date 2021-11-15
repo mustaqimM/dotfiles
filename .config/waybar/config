@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/window", "custom/media"],
     //"modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
     "persistant_workspaces": {

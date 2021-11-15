@@ -35,7 +35,7 @@ set sortnumbers
 set sort=iname
 
 " hide .. directory everywhere
-" set dotdirs=
+set dotdirs=
 
 " Maximum number of changes that can be undone.
 set undolevels=100
@@ -85,8 +85,9 @@ set scrolloff=0
 "endif
 
 " show preview window
-"view
-only
+" view
+" only
+" vsplit
 
 "set millerview
 "set milleroptions+=lsize:1,csize:3,rsize:4,rpreview:all
@@ -102,10 +103,8 @@ set statusline=" Hint: *%z%= %A %9u:%-8g %7E %13d "
 
 set nowrap
 
-" vsplit
-
 " Empty the ruler. By default, it shows the number of directories+files.
-" set rulerformat='%2l/%S %[  %x%]'
+" set rulerformat='%l/%S %[  %x%]'
 
 " What should be saved automatically between vifm sessions.  Drop "savedirs"
 " value if you don't want vifm to remember last visited directories for you.
@@ -181,13 +180,15 @@ nnoremap <c-g> :FZFlocate<cr>
 " nnoremap <left> <nop>
 
 " yank current directory path into the clipboard
-nnoremap yd :!echo -n %d | wl-copy %i <cr>:echo expand('%"d') "dir yanked to clipboard"<cr>
+nnoremap yd :!echo -n %d | wl-copy %i <cr>:echo expand('%"d') ": dir yanked to clipboard"<cr>
 " yank current file path into the clipboard
-nnoremap yp :!echo -n %c:p | wl-copy %i <cr>:echo expand('%"c:p') "file path yanked to clipboard"<cr>
+nnoremap yp :!echo -n %c:p | wl-copy %i <cr>:echo expand('%"c:p') ": file path yanked to clipboard"<cr>
 " yank current filename without path into the clipboard
-nnoremap yn :!echo -n %c | wl-copy %i <cr>:echo expand('%"c') "file & ext yanked to clipboard"<cr>
+nnoremap yn :!echo -n %c | wl-copy %i <cr>:echo expand('%"c') ": file & ext yanked to clipboard"<cr>
 " yank root of current file's name into the clipboard
-nnoremap yr :!echo -n %c:r | wl-copy %i <cr>:echo expand('%"c:r') "file name yanked to clipboard"<cr>
+nnoremap yr :!echo -n %c:r | wl-copy %i <cr>:echo expand('%"c:r') ": file name yanked to clipboard"<cr>
+" yank contents of file
+nnoremap yc :!wl-copy -n < %f %i <cr>:echo expand('%"c') ": file contents yanked"<cr>
 
 " Start shell in current directory
 nnoremap s :shell<cr>
@@ -371,16 +372,22 @@ fileviewer *.[1-8] man ./%c | col -b
 " Images
 " filetype *.bmp,*.gif,*.jpeg,*.jpg,*.png,*.svg,*.tif,*.webp,*.xpm
 filetype <image/*>
-        \ {View in imv}
-        \ imv -b 000000 * -n %f %i &,
-"         \ {View in feh}
-"         \ feh --scale-down %c %i &,
-"         \ {View in sxiv}
-"         \ sxiv %f,
-" fileviewer <image/*>
-"         \ vifmimg draw %px %py %pw %ph %c
-"         \ %pc
-"         \ vifmimg clear
+       \ {View in qview}
+       \ qview %f %i &,
+       " \ {View in pqiv}
+       " \ pqiv * &,
+       " \ {View in gThumb}
+       " \ gthumb %f %i &,
+       " \ {View in imv}
+       " \ imv -b 000000 * -n %f %i &,
+       " \ {View in feh}
+       " \ feh --scale-down %c %i &,
+       " \ {View in sxiv}
+       " \ sxiv %f,
+fileviewer <image/*>
+        \ vifmimg draw %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
 
 " OpenRaster
 filextype *.ora
@@ -434,7 +441,7 @@ filetype *.zip,*.war,*.ear,*.oxt,*.apkg
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zipinfo -1 %c
 
 " ArchiveMount
-filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz
+filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.tar.zst,*.txz
        \ {Mount with archivemount}
        \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
 fileviewer *.tgz,*.tar.gz tar -tzf %c
@@ -486,7 +493,7 @@ filextype *.pro qtcreator %f &
 "        \ {View in thunar}
 "        \ Thunar %f &,
 
-fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
+" fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
 fileviewer *.org highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax md
 fileviewer *.[s]o hexyl -c 500 %c
 fileviewer *.csv bat --color always --wrap never --pager never -p %c
@@ -509,17 +516,17 @@ set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  :
 " code
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.json::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::'
-set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
+set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
 set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
 set classify+='  ::*.conf,,*.yml,,*.ini,,*.cfg,,config::,  ::*.properties::,  ::*.log::'
 set classify+='  ::*.db,,*.sql,,*.sqlite::'
 set classify+='  ::*.pem::'
 " archives
-set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar::'
+set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.zst::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
 set classify+='  ::*.iso,,*.img::'
 " images
-set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.webp,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,*.xwd::'
+set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.webp,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,*.xwd,,*.jxl::'
 " audio
 set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 " media

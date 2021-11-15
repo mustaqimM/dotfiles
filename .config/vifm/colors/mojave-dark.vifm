@@ -35,7 +35,7 @@ highlight /^.*\.(doc|docx|odb|odt|pages|rtf)$/I cterm=none ctermfg=111 ctermbg=d
 highlight /^.*\.(docm)$/I cterm=underline ctermfg=111 ctermbg=default
 highlight /^.*\.(allow|numbers|ods|xls|xlsx)$/I cterm=none ctermfg=112 ctermbg=default
 highlight /^.*\.(xlsxm)$/I cterm=underline ctermfg=112 ctermbg=default
-highlight /^.*\.(avi|divx|ifo|m2v|m4v|mkv|mov|mp4|mpeg|mpg|ogm|rmvb|sample|t|wmv)$/I cterm=none ctermfg=114 ctermbg=default
+highlight /^.*\.(avi|divx|ifo|m2v|m4v|mkv|mov|mp4|mpeg|mpg|ogm|rmvb|sample|t|wmv|VOB)$/I cterm=none ctermfg=114 ctermbg=default
 highlight /^.*\.(3g2|3gp|asf|f4v|flv|gp3|gp4|ogv|ts|webm)$/I cterm=none ctermfg=115 ctermbg=default
 highlight /^.*\.(vob)$/I cterm=bold ctermfg=115 ctermbg=default
 highlight /^.*\.(application|cue|description|directory|m3u|m3u8|md5|properties|sfv|theme|torrent|urlview|webloc)$/I cterm=none ctermfg=116 ctermbg=default
@@ -91,7 +91,7 @@ highlight /^.*\.(xla)$/I cterm=none ctermfg=76 ctermbg=default
 highlight /^.*\.(csv|tsv)$/I cterm=none ctermfg=78 ctermbg=default
 highlight /^.*\.(agda|asm|c|c++|cc|cl|cp|cpp|cr|cs|ctp|cxx|f|f03|f08|f90|f95|for|ftn|go|gs|hs|lagda|lagda.md|lagda.rst|lagda.tex|lhs|lisp|lua|moon|nim|nimble|php|rkt|rs|sx|twig|vala|vapi|vb|vba|vbs)$/I cterm=none ctermfg=81 ctermbg=default
 highlight /^.*\.(deny|storyboard)$/I cterm=none ctermfg=9 ctermbg=default
-highlight /^.*\.(bmp|cdr|dicom|flif|gif|icns|ico|jpeg|jpg|nth|png|psd|pxd|pxm|tif|tiff|webp|xpm)$/I cterm=none ctermfg=97 ctermbg=default
+highlight /^.*\.(bmp|cdr|dicom|flif|gif|icns|ico|jpeg|jpg|nth|png|psd|pxd|pxm|tif|tiff|webp|xpm|jxl)$/I cterm=none ctermfg=97 ctermbg=default
 highlight /^.*\.(ai|drw|eps|epsf|ps|svg)$/I cterm=none ctermfg=99 ctermbg=default
 highlight /^.*\.(diff)$/I cterm=bold ctermfg=197 ctermbg=default
 highlight /^.*\.(patch)$/I cterm=bold ctermfg=197 ctermbg=default

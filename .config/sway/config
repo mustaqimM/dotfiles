@@ -24,7 +24,7 @@ set $menu dmenu_path | wofi | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/Wallpapers/MK1-Dark.png fill
+output * bg ~/Pictures/Wallpapers/wallpaper.jxl fill
 #
 # Example configuration:
 #
@@ -63,13 +63,13 @@ exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "outp
 input "2:14:ETPS/2_Elantech_Touchpad" {
       dwt enabled
       tap enabled
-      # natural_scroll enabled
+      drag enabled
       middle_emulation enabled
-      # scroll_factor 0.6
+      scroll_factor 0.9
 }
 
 # input "type:keyboard" {
-#       xkb_options caps:ctrl_modifier
+#       # xkb_options caps:ctrl_modifier
 #       # xkb_options caps:escape
 # }
 
@@ -236,6 +236,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym $mod+c move position center
+
+bindsym Print exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 #
 # Status Bar:

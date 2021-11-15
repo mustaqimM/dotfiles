@@ -1,4 +1,0 @@
-ignore noexec ${HOME}
-
-#ignore nodbus
-#ignore private-tmp

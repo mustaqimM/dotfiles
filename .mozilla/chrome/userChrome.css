@@ -8,10 +8,10 @@
 }
 
 /* Sidebar */
-.sidebar-placesTree {
-  background-color: #1d1f21 !important;
-  border: none !important;
-}
+/* .sidebar-placesTree { */
+/*   background-color: #1d1f21 !important; */
+/*   border: none !important; */
+/* } */
 /* Remove sidebar border */
 vbox#sidebar-box.chromeclass-extrachrome {
   border-style: unset !important;
@@ -56,9 +56,9 @@ vbox#sidebar-box.chromeclass-extrachrome {
   margin-right: calc((var(--wide-tab-width) - var(--thin-tab-width)) * -1) !important;
   z-index: 1;
 }
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #tab-item.active {
-  background: #17191a;
-}
+/* #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #tab-item.active { */
+/*   background: #17191a; */
+/* } */
 
 /* Urlbar */
 #navigator-toolbox{ border-bottom: none !important }
@@ -81,6 +81,8 @@ vbox#sidebar-box.chromeclass-extrachrome {
 #forward-button {
   display: none;
 }
+
+.menupopup-arrowscrollbox{ border-radius: 8px !important  }
 
 /* Extension Icons */
 #ublock0_raymondhill_net-browser-action:not(:hover):not([open]) {
