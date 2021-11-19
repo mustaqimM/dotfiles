@@ -118,6 +118,8 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
     # mpv from clipboard
     bindsym $mod+y exec mpv $(wl-paste -n)
 
+    bindsym $mod+t exec zsh .zsh/functions/switch_theme toggle
+
 #
 # Moving around:
 #

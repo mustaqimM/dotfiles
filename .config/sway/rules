@@ -14,7 +14,7 @@ assign [app_id="Thunderbird"] workspace 8
 assign [app_id="org.inkscape.Inkscape"] workspace 9
 assign [class="Krita"] workspace 9
 assign [class="Gimp-2.10"] workspace 9
-assign [app_id="gramps"] workspace 0
+assign [app_id="gramps"] workspace 10
 
 for_window [class="Emacs"] focus
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set 956 576

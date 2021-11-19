@@ -585,7 +585,6 @@
 : 1554655055:0;plain
 : 1554660398:0;yadm add ~/.config/bspwm
 : 1554697406:0;awesome-client 'awesome.emit_signal("woo")'
-: 1554697777:0;echo $SSH_AUTH_SOCK
 : 1554747790:0;sudo mount -t vfat /dev/sdb /media/usb -o uid=1000,gid=1000,utf8,dmask=027,fmask=137
 : 1554786650:0;zplg unload jedahan/ripz
 : 1554789741:0;upower -i $(upower -e | rg BAT) | rg percentage | awk '{print $2}'
@@ -890,7 +889,6 @@
 : 1563209527:0;feh --randomize --bg-fill ~/Pictures/Wallpapers
 : 1563212273:0;bundle install --without production
 : 1563216176:0;curl -F'file=@FILE' https://0x0.st
-: 1563253774:0;git add .
 : 1563253927:0;git push -u heroku master
 : 1563255515:0;zpl snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
 : 1563255547:0;heroku run rails db:migrate
@@ -2633,8 +2631,6 @@
 : 1588503936:0;g
 : 1588524930:0;yarn audit
 : 1588579436:0;quasar new store portfolioStore
-: 1588582612:0;switch_theme light
-: 1588585142:0;switch_theme dark
 : 1588650388:0;npm run build -- contents::iosevka
 : 1588659275:0;sudo xbps-install hplip
 : 1588660010:0;hp-setup --auto 002:004
@@ -2882,7 +2878,6 @@
 : 1589790368:0;xset b off
 : 1589790758:0;make clean
 : 1589808395:0;echo $EMACS_PLUGIN_LAUNCHER
-: 1589876474:0;e .priv-env
 : 1589876495:0;openssl rand -hex 32
 : 1589877266:0;touch ~/.config/aria2/session.txt
 : 1589878037:0;sudo xbps-install surf dmenu
@@ -3098,7 +3093,6 @@
 : 1593339463:0;man atop
 : 1593339499:0;atop
 : 1593348427:0;gco -b update_nodejs
-: 1593348500:0;sudo xbps-install nodejs
 : 1593363758:0;xbps-query -f highlight
 : 1593408875:0;sudo xbps-install android-studio
 : 1593408949:0;echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
@@ -3110,7 +3104,6 @@
 : 1593429479:0;sudo xbps-remove -R yarn-bin
 : 1593429511:0;sudo xbps-remove -R nodejs
 : 1593429536:0;sudo xbps-install nodejs-lts
-: 1593432767:0;sudo xbps-install yarn-bin
 : 1593438780:0;yarn create vuepress site
 : 1593439140:0;yarn upgrade
 : 1593444362:0;git clone gh:Mister-Hope/vuepress-theme-hope
@@ -3179,7 +3172,6 @@
 : 1594216315:0;sudo su -l postgres --command=psql
 : 1594284953:0;e .Xresources.d/theme_tomorrow
 : 1594288330:0;sudo psmem
-: 1594292797:0;xbps-query -Rs nodejs
 : 1594295842:0;dig sigok.verteiltesysteme.net @127.0.0.1
 : 1594366633:0;sudo xbps-install ghidra
 : 1594448789:0;sudo xbps-install gnome-authenticator
@@ -3421,7 +3413,6 @@ done
 : 1599299776:0;sudo xbps-install anki
 : 1599366187:0;git clone --depth=1 gh:muckSponge/MaterialFox
 : 1599406274:0;yarn add @vuepress/theme-blog -D
-: 1599475996:0;git init
 : 1599476073:0;git remote add origin gl:mustaqim/shoe_or_sandal
 : 1599477354:0;git push --set-upstream origin master
 : 1599480023:0;e requirements.txt
@@ -3898,7 +3889,6 @@ done
 : 1611682795:0;adb she
 : 1611747438:0;swaymsg -t get_tree
 : 1611852619:0;fc-list | rg "Iosevka" | cut -d ":" -f2
-: 1611854125:0;e ~/.config/waybar/style.css
 : 1611909602:0;e ~/.config/wofi/config
 : 1611922346:0;sudo xbps-install wayfire wayfire-plugins-extra
 : 1612029631:0;adb
@@ -4002,7 +3992,6 @@ done
 : 1613805381:0;e ~/.config/awesome/themes/mojave-dark/theme.lua
 : 1613805676:0;echo $AWESOME_THEMES_PATH
 : 1613805877:0;awesome-client 'return require("awful").util.get_themes_dir()'
-: 1613806133:0;yadm ls-tree -r master --name-only
 : 1613811694:0;zsh -df
 : 1613811885:0;e /etc/modprobe.d/blacklist.conf
 : 1613812003:0;sudo rfkill block bluetooth
@@ -4019,7 +4008,6 @@ done
 : 1613843639:0;e ~/.asoundrc
 : 1613879956:0;gco -b awesomewm_master
 : 1613883641:0;sudo xbps-remove -R awesome
-: 1613883682:0;...
 : 1613883703:0;xbps-query -f awesome
 : 1613883748:0;tmux detach
 : 1613883763:0;dbus-run-session awesome
@@ -4041,7 +4029,6 @@ done
 : 1614147732:0;pfetch
 : 1614148145:0;xsetroot -cursor_name left_ptr
 : 1614148871:0;e ~/.config/rofi/themes/mojave.rasi
-: 1614151394:0;yadm 
 : 1614183194:0;man firejail
 : 1614238704:0;exec zsh
 : 1614240865:0;man zshcontrib
@@ -4203,7 +4190,6 @@ done
 : 1620184295:0;sudo xbps-remove -R pulseaudio
 : 1620191000:0;sudo hdparm -y /dev/sdb
 : 1620275439:0;yadm add ~/.xinitrc
-: 1620275520:0;yadm add ~/.config/firejail
 : 1620275566:0;yadm add ~/.config/aria2/aria2.conf
 : 1620275576:0;yadm add ~/.config/bat
 : 1620275587:0;yadm add ~/.config/doom
@@ -4263,7 +4249,6 @@ done
 : 1627717204:0;fdisk -l
 : 1627717323:0;sudo mount /dev/sdb /media/ -o uid=1000,gid=1000,utf8
 : 1627718973:0;doom upgrade
-: 1627719120:0;doom compile
 : 1627833956:0;curl -u "$API_KEY:$API_SECRET" \\
 "https://api.luno.com/api/1/balance" | jq
 : 1627896104:0;aria 'https://languagetool.org/download/LanguageTool-stable.zip'
@@ -4418,7 +4403,6 @@ done
 : 1631376088:0;sudo xbps-install intel-ucode
 : 1631379639:0;adb connect 192.168.1.101:5555
 : 1631421069:0;sudo xbps-install opendoas
-: 1631464374:0;doom sync
 : 1631467653:0;sudo xbps-install pulseeffects
 : 1631467828:0;sudo xbps-remove -R pulseeffects
 : 1631467835:0;sudo xbps-install pavucontrol-qt
@@ -4457,22 +4441,16 @@ done
 : 1633066855:0;yadm add ~/.zshenv ~/.zsh/{.,^cache}^*.zwc
 : 1633067006:0;yadm add ~/.config/zathura/zathurarc
 : 1633067081:0;yadm add ~/.config/wofi
-: 1633067085:0;yadm add ~/.config/waybar
 : 1633067092:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1633067105:0;yadm add ~/.config/sway
 : 1633067185:0;yadm add ~/.config/nvim/init.vim
 : 1633067395:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,WhiteSur}
 : 1633067404:0;yadm add ~/.config/awesome
-: 1633067461:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1633067750:0;sudo xbps-install gnupg2
-: 1633067955:0;yadm commit
 : 1633068087:0;ssh-keygen -t ed25519 -o -a 100 -C "GitLab"
 : 1633068224:0;wl-copy < ~/.ssh/GitLab.pub
 : 1633068416:0;yadm remote set-url origin git@gitlab.com:mustaqim/dotfiles.git
-: 1633068503:0;yadm remote -v
 : 1633068660:0;ssh -T git@gitlab.com
 : 1633068977:0;ssh-add $HOME/.ssh/GitLab </dev/null
-: 1633068982:0;yadm push
 : 1633104246:0;man 5 sway-input
 : 1633104510:0;sudo usermod -aG input mustaqim
 : 1633105576:0;newgrp input
@@ -4546,7 +4524,6 @@ done
 : 1634729680:0;sudo xbps-install --repository=hostdir/binpkgs/update_dav1d dav1d
 : 1634747137:0;w
 : 1634787780:0;e ~/.config/youtube-dl/config
-: 1634960824:0;e ~/.zsh/.zshenv
 : 1634960917:0;echo $PATH | tr ":" "\n" | nl
 : 1634961228:0;dbus-update-activation-environment DISPLAY
 : 1634976267:0;hotp
@@ -4563,30 +4540,23 @@ done
 : 1635527768:0;man aria2c
 : 1635556842:0;svlogtail | rg cron
 : 1635571660:0;.
-: 1635607597:0;yadm diff
 : 1635663991:0;e ~/.zsh/zsh_history
 : 1635664040:0;fzf < /etc/unbound/zones/rpz.db
 : 1635827548:0;ffmpeg -t 00:30:00 -ss 01:00:00 -i file.m4a -c copy out3.m4a
 : 1635828561:0;/bin/emacs -bg '#17191a' --daemon
-: 1635961760:0;crontab -e
 : 1635999574:0;ffmpeg -t 00:30:00 -i file.m4a -c copy out1.m4a
 : 1635999576:0;ffmpeg -t 00:30:00 -ss 00:30:00 -i file.m4a -c copy out2.m4a
 : 1636081570:0;Q
-: 1636083405:0;e ~/.zsh/.zprofile
 : 1636110550:0;sudo xbps-install nzbget
 : 1636168719:0;gtk-launch JOSM
 : 1636209872:0;ping mustaqim.ml
 : 1636266111:0;sudoedit /etc/doas.conf
 : 1636266133:0;sudo dmesg
-: 1636357075:0;e ~/.config/mpv/mpv.conf
 : 1636365285:0;./xbps-src clean
 : 1636365295:0;./xbps-src bootstrap-update
 : 1636366400:0;e srcpkgs/highway/template
 : 1636366877:0;git pull --rebase upstream master
-: 1636366903:0;ssh-add $HOME/.ssh/GitHub </dev/null
-: 1636366912:0;git push origin master
 : 1636366981:0;git fetch upstream 'pull/31397/head:jxl'
-: 1636366986:0;gco $(gb | fzf)
 : 1636367169:0;gd
 : 1636367283:0;./xbps-src pkg libjxl
 : 1636368465:0;e common/shlibs
@@ -4610,11 +4580,8 @@ done
 : 1636477199:0;sudo xbps-install godot
 : 1636516191:0;sudo xbps-install gthumb
 : 1636519792:0;sudo xbps-install qView
-: 1636529217:0;..
 : 1636530952:0;sudo xbps-install krita
 : 1636534319:0;fd '(jpe?|pn)g' -x cjxl {} {.}.jxl
-: 1636557197:0;e ~/.config/sway/config
-: 1636600643:0;zpl times
 : 1636625074:0;yt --list-formats "$(wl-paste)"
 : 1636629890:0;e ~/.config/yt-dlp/config
 : 1636644851:0;sudo xbps-install wf-recorder
@@ -4622,27 +4589,19 @@ done
 : 1636707534:0;kq
 : 1636708035:0;yadm add ~/.config/pqivrc
 : 1636710675:0;e ~/.config/qView/qView.conf
-: 1636711433:0;plain show
 : 1636712211:0;man cjxl
 : 1636715852:0;sudo xbps-install hexyl
-: 1636715879:0;e ~/.zsh/.zshrc
 : 1636716135:0;sudo xbps-install xsane
 : 1636740047:0;crontab -l
-: 1636740053:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
-: 1636773452:0;zpl update -p
 : 1636773984:0;e ~/.zsh/aliases
 : 1636774012:0;nightly
 : 1636774190:0;e ~/.config/fontconfig/fonts.conf
 : 1636774202:0;fc-cache -fv
-: 1636774276:0;ls -l
 : 1636777629:0;git clone --depth 1 gh:vinceliuice/WhiteSur-kde
 : 1636780470:0;[A]
 : 1636780472:0;pkill dunst
-: 1636784813:0;git remote -v
 : 1636784949:0;e ~/.local/share/yadm/repo.git/info/exclude
 : 1636785818:0;e .gitignore
-: 1636786001:0;e .gitconfig
-: 1636786254:0;yadm status
 : 1636790945:0;sudo ln -s /etc/sv/cupsd /var/service
 : 1636791838:0;sudo mount /dev/cdrom /mnt
 : 1636792577:0;sudo xbps-install rpmextract
@@ -4655,35 +4614,91 @@ done
 : 1636794994:0;sudo usermod -a -G scanner $USER
 : 1636794997:0;id mustaqim
 : 1636795272:0;lsusb
-: 1636796751:0;tmux attach || tmux
 : 1636797562:0;sudo xbps-install simple-scan
 : 1636797643:0;sudo xbps-install samsung-unified-driver
 : 1636797763:0;sudo xbps-install skanlite
 : 1636797793:0;sane-find-scanner
 : 1636798355:0;scanimage -L
-: 1636801326:0;bandwhich -d 1.1.1.1
 : 1636814408:0;xbps-query -m
 : 1636814544:0;sudo rm /var/service/cupsd
 : 1636814553:0;sudo sv status /var/service/*
-: 1636814827:0;reload
 : 1636817979:0;e ~/.config/dunst/dunstrc
 : 1636821830:0;top
-: 1636824906:0;e ~/.config/sway/rules
 : 1636859366:0;repos/void-packages/
-: 1636859392:0;gst
 : 1636860319:0;java -cp languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 --allow-origin "*"
 : 1636861236:0;sudo psmem -S
-: 1636867021:0;psmem -p $(pgrep -d, -u $USER) -S
 : 1636868235:0;sudo xbps-install darktable
-: 1636869033:0;free -h
-: 1636869238:0;swaymsg -t get_tree | fzf
-: 1636912135:0;push
-: 1636945265:0;sudo xbps-install -Suvy
 : 1636955243:0;man vifm
-: 1636956784:0;cd
-: 1636960502:0;htop
-: 1636960510:0;tlp-stat -t | rg temp
-: 1636962147:0;f
-: 1636962166:0;e ~/.config/vifm/vifmrc
-: 1636962174:0;yadm status
-: 1636962178:0;f
+: 1636962241:0;yadm 
+: 1636962256:0;yadm add ~/.config/firejail
+: 1636962269:0;yadm add ~/.config/fontconfig/fonts.conf
+: 1636962380:0;yadm add ~/.config/sway
+: 1636962420:0;yadm add ~/.config/waybar
+: 1636962677:0;yadm remote -v
+: 1636962684:0;yadm commit
+: 1636962733:0;yadm push
+: 1636987088:0;crontab -e
+: 1636987173:0;cd
+: 1637056277:0;gco $(gb | fzf)
+: 1637056290:0;gst
+: 1637056451:0;e .gitconfig
+: 1637056486:0;git init
+: 1637058173:0;git remote add origin gh:mustaqimm/fullstackopen
+: 1637058180:0;git add .
+: 1637058255:0;git remote -v
+: 1637058343:0;git push origin master
+: 1637058969:0;xbps-query -Rs nodejs
+: 1637058977:0;sudo xbps-install nodejs
+: 1637059066:0;sudo xbps-install yarn-bin
+: 1637059202:0;npx ls
+: 1637059244:0;npx create-react-app part1
+: 1637059702:0;..
+: 1637059704:0;...
+: 1637060147:0;xdg-settings set default-web-browser firefox-nightly.desktop
+: 1637060196:0;npm start
+: 1637065046:0;e ~/.config/mpv/mpv.conf
+: 1637077926:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1637077988:0;e ~/.config/river/init
+: 1637078100:0;e ~/.zsh/.zprofile
+: 1637130946:0;base64 -d <<< $(wl-paste) > file.png
+: 1637131853:0;free -h
+: 1637132509:0;e ~/.config/vifm/vifmrc
+: 1637136050:0;tlp-stat -t | rg temp
+: 1637139326:0;bandwhich -d 1.1.1.1
+: 1637142807:0;cp /usr/etc/xdg/dunst/dunstrc ~/.config/dunst/dunstrc
+: 1637148886:0;git clone --depth 1 gh:hlissner/doom-emacs ~/.emacs.d
+: 1637148909:0;doom sync
+: 1637150567:0;doom compile
+: 1637151813:0;ls -l
+: 1637161413:0;e ~/.zsh/.zshrc
+: 1637161509:0;echo $SSH_AUTH_SOCK
+: 1637162358:0;zpl update -p
+: 1637166294:0;plain show
+: 1637166408:0;push
+: 1637205115:0;sudo xbps-install -Suvy
+: 1637211937:0;sudo xbps-install gtk-theme-config
+: 1637225180:0;swaymsg -t get_tree | fzf
+: 1637226286:0;e ~/.config/sway/rules
+: 1637228900:0;e ~/.zsh/.zshenv
+: 1637229565:0;echo $GTK_THEME
+: 1637231950:0;gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-light-solid"
+: 1637236090:0;tmux attach || tmux
+: 1637236485:0;htop
+: 1637242991:0;ssh-add $HOME/.ssh/GitHub </dev/null
+: 1637252198:0;git clone --depth 1 gh:vinceliuice/WhiteSur-gtk-theme
+: 1637258981:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
+: 1637291006:0;e ~/.config/waybar/style.css
+: 1637291886:0;switch_theme light
+: 1637291897:0;switch_theme dark
+: 1637292347:0;e ~/.config/sway/config
+: 1637295499:0;e .priv-env
+: 1637296798:0;reload
+: 1637296806:0;echo $current_theme
+: 1637296893:0;switch_theme toggle
+: 1637296937:0;zpl times
+: 1637297307:0;f
+: 1637297517:0;yadm diff
+: 1637297635:0;yadm add ~/.config/dunst/dunstrc
+: 1637297682:0;yadm status
+: 1637297737:0;yadm ls-tree -r master --name-only
+: 1637297778:0;yadm status

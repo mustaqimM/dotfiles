@@ -3,32 +3,35 @@
 autoload colors && colors
 
 switch_theme() {
-    if (( ! $# )); then
-        echo "$fg[yellow]Usage: $fg[white]switch_theme [ light | dark ]"
-    else
-        case $1 in
-            light)
-                echo "\nChanging theme to $fg[black]$bg[white]LIGHT\n"
-                sed -i 's|theme_tomorrow_night|theme_tomorrow|' ~/.Xresources; xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
-                sed -i 's|--style=base16/tomorrow-night|--style=base16/tomorrow|;s|mojave-dark|mojave-light|' ~/.config/vifm/vifmrc && vifm --remote -c ':reload'
-                sed -i 's|Tomorrow-Night|Tomorrow|' ~/.config/bat/config
-                sed -i 's|dark|light|;s|Dark|Light|' ~/.config/gtk-3.0/settings.ini
-                sed -i 's|Mojave-dark|KvMojaveLight|' ~/.config/Kvantum/kvantum.kvconfig
-                sed -i 's|262626|eeeeee|' ~/.config/tmux/tmux.conf.local && tmux source-file ~/.config/tmux/tmux.conf
-                ln -sf ~/.local/themes/base16-tomorrow.sh ~/.base16_theme
-                ;;
-            dark)
-                echo "\nChanging theme to $fg[black]$bg[white]DARK\n"
-                sed -i 's|\btheme_tomorrow\b|theme_tomorrow_night|' ~/.Xresources; xrdb -load ~/.Xresources; kill -USR1 $(pidof xst)
-                sed -i 's|--style=base16/tomorrow|--style=base16/tomorrow-night|;s|mojave-light|mojave-dark|' ~/.config/vifm/vifmrc && vifm --remote -c ':reload'
-                sed -i 's|Tomorrow|Tomorrow-Night|' ~/.config/bat/config
-                sed -i 's|light|dark|;s|Light|Dark|' ~/.config/gtk-3.0/settings.ini
-                sed -i 's|KvMojaveLight|Mojave-dark|' ~/.config/Kvantum/kvantum.kvconfig
-                sed -i 's|eeeeee|262626|' ~/.config/tmux/tmux.conf.local && tmux source-file ~/.config/tmux/tmux.conf
-                ln -sf ~/.local/themes/base16-tomorrow-night.sh ~/.base16_theme
-                ;;
-        esac
-    fi
+    current_theme=$(cut -d= -f2 ~/.priv-env)
+
+    light_theme() {
+        echo "\nChanging theme to $fg[black]$bg[white]LIGHT"
+        gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-light-solid"
+        gsettings set org.gnome.desktop.interface icon-theme "Papirus-Light"
+        kvantummanager --set 'WhiteSur'
+        sed -i 's|Papirus-Dark|Papirus-Light|' ~/.config/qt5ct/qt5ct.conf
+        echo 'current_theme=light' > ~/.priv-env
+    }
+    dark_theme() {
+        echo "\nChanging theme to $fg[black]$bg[white]DARK"
+        gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark-solid"
+        gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+        kvantummanager --set 'WhiteSurDark'
+        sed -i 's|Papirus-Light|Papirus-Dark|' ~/.config/qt5ct/qt5ct.conf
+        echo 'current_theme=dark' > ~/.priv-env
+    }
+
+    case "$1" in
+        light)
+            light_theme ;;
+        dark)
+            dark_theme ;;
+        toggle)
+            [[ $current_theme == "light" ]] && dark_theme || light_theme ;;
+        *)
+            echo "$fg[yellow]Usage: $fg[white]switch_theme [ light | dark | toggle ]"
+    esac
 }
 
 switch_theme "$@"

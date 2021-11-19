@@ -86,7 +86,7 @@ set scrolloff=0
 
 " show preview window
 " view
-" only
+only
 " vsplit
 
 "set millerview
@@ -173,8 +173,8 @@ command! reload :write | restart
 
 command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('fd -t d -F . $HOME | fzf --reverse 2>/dev/tty')) | view
 nnoremap <c-g> :FZFlocate<cr>
-" command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd -H | fzf 2>/dev/tty')) | view
-" nnoremap <c-f> :FZFfind<cr>
+command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd -L . --min-depth 1 -t f -t d -H -c always | fzf 2>/dev/tty'))
+nnoremap F :FZFfind<cr>
 
 " Block particular shortcut
 " nnoremap <left> <nop>
@@ -265,8 +265,9 @@ nnoremap <silent> ,d :set viewcolumns=*{name}.,10{perms},12{uname},-7{gname},10{
 
 " don't show preview on ../
 "fileview ../ echo >/dev/null
-fileviewer .*/ lsd --color=always --group-dirs=first -F --tree --depth=1
-fileviewer */ lsd --color=always --group-dirs=first
+" fileviewer .*/ lsd --color=always --group-dirs=first -F --tree --depth=1
+" fileviewer */ lsd --color=always --group-dirs=first
+fileviewer */ fd . -d 1 -c always
 
 " Pdf
 filextype *.pdf zathura %c %i

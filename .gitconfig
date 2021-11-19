@@ -59,5 +59,3 @@
     stripLeadingSymbols = true
 [blame]
     coloring = highlightRecent
-[init]
-    defaultBranch = --list

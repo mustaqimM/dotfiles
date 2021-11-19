@@ -1,7 +1,6 @@
 * {
     border: none;
-    border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
+    border-radius: 3;
     font-family: SF Pro Text, Roboto, Helvetica, Arial, sans-serif;
     font-size: 12.5px;
     min-height: 0;
@@ -19,14 +18,12 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
 window#waybar.empty {
     background-color: transparent;
 }
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
+/* window#waybar.solo { */
+/*     background-color: #FFFFFF; */
+/* } */
 
 window#waybar.termite {
     background-color: #3F3F3F;

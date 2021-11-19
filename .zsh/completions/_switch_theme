@@ -7,7 +7,7 @@ _switch_theme() {
     '1: :->theme_profile'
 
   case $state in
-    (theme_profile) _arguments '1:Select a theme:(light dark)' ;;
+    (theme_profile) _arguments '1:Select an option:(light dark toggle)' ;;
   esac
 }
 

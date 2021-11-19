@@ -10,14 +10,14 @@ fi
 
 # ==============================================================================
 
-#if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-# eval $(ssh-agent) & > /dev/null
-# ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-#fi
+# if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+#  eval $(ssh-agent) & > /dev/null
+#  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+# fi
 #export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ## ssh-add -l > /dev/null || ssh-add
-#ssh-add -q $HOME/.ssh/GitLab > /dev/null || ssh-add
-#ssh-add -q $HOME/.ssh/GitHub > /dev/null || ssh-add
+# ssh-add -q $HOME/.ssh/GitLab > /dev/null || ssh-add
+# ssh-add -q $HOME/.ssh/GitHub > /dev/null || ssh-add
 
 # ==============================================================================
 
@@ -308,7 +308,7 @@ _zcomp() {
   _zcompare "$zcompdump"
   _zcompare "$p10k"
 
-  # for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
+  for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
 
 }
 #case $TERM in (xst*)
