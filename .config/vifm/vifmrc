@@ -537,6 +537,6 @@ set classify+='  ::*.org::,  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,
 set classify+='  ::*.epub,,*.fb2,,*.djvu,,*.mobi::'
 set classify+='  ::*.csv::,  ::*.srt,,*.vtt::,  ::*.pdf::'
 " misc
-set classify+='  ::*.otf,,*.ttf::,  ::*.asc::'
+set classify+='  ::*.otf,,*.ttf::,  ::*.asc::,  ::.priv-env::'
 "}}}
 

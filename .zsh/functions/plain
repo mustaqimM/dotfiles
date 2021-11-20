@@ -1,17 +1,21 @@
 #!/bin/zsh
 
-autoload colors && colors
-
 plain() {
+  local cipher=/home/mustaqim/Library/.cipher
+  local mount=/home/mustaqim/Library/.plain
   if (( ! $# )); then
-    gocryptfs -q /home/mustaqim/Library/.cipher /home/mustaqim/Library/.plain -o -allow_other
+    gocryptfs -q $cipher $mount -o -allow_other
   else
     case $1 in
       hide)
-        fusermount -u /home/mustaqim/Library/.plain
+        fusermount -u $mount
         ;;
       show)
-        gocryptfs -q /home/mustaqim/Library/.cipher /home/mustaqim/Library/.plain -o -allow_other; vifm /home/mustaqim/Library/.plain/
+        if [ $mount(NF) ]; then
+          vifm $mount
+        else
+          gocryptfs -q $cipher $mount -o -allow_other; vifm $mount
+        fi
         ;;
       move)
         fd . ~/Library/Downloads/.var -E '*.part' -x mv "{}" ~/Library/.plain/

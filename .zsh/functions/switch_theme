@@ -3,23 +3,23 @@
 autoload colors && colors
 
 switch_theme() {
-    current_theme=$(cut -d= -f2 ~/.priv-env)
+    light_theme="WhiteSur-light"
+    dark_theme="WhiteSur-dark"
+    current_theme=$(gsettings get org.gnome.desktop.interface gtk-theme | tr -d "'")
 
     light_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]LIGHT"
-        gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-light-solid"
+        gsettings set org.gnome.desktop.interface gtk-theme $light_theme
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Light"
         kvantummanager --set 'WhiteSur'
         sed -i 's|Papirus-Dark|Papirus-Light|' ~/.config/qt5ct/qt5ct.conf
-        echo 'current_theme=light' > ~/.priv-env
     }
     dark_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]DARK"
-        gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark-solid"
+        gsettings set org.gnome.desktop.interface gtk-theme $dark_theme
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
         kvantummanager --set 'WhiteSurDark'
         sed -i 's|Papirus-Light|Papirus-Dark|' ~/.config/qt5ct/qt5ct.conf
-        echo 'current_theme=dark' > ~/.priv-env
     }
 
     case "$1" in
@@ -28,7 +28,7 @@ switch_theme() {
         dark)
             dark_theme ;;
         toggle)
-            [[ $current_theme == "light" ]] && dark_theme || light_theme ;;
+            [[ $current_theme == $light_theme ]] && dark_theme || light_theme ;;
         *)
             echo "$fg[yellow]Usage: $fg[white]switch_theme [ light | dark | toggle ]"
     esac

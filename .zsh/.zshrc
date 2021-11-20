@@ -302,13 +302,13 @@ _zcompare() {
 _zcomp() {
   zshrc="${ZDOTDIR}/.zshrc"
   zcompdump="${ZDOTDIR}/.zcompdump"
-  p10k="${ZDOTDIR}/.p10k.zsh"
+  p10k="${ZDOTDIR}/.p10k-lean.zsh"
 
   _zcompare "$zshrc"
   _zcompare "$zcompdump"
   _zcompare "$p10k"
 
-  for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
+  # for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
 
 }
 #case $TERM in (xst*)

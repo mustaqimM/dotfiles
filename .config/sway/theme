@@ -23,19 +23,16 @@ font pango:monospace 0
 titlebar_border_thickness 0
 titlebar_padding 0
 
-# cursor
+
+set $gnome-schema org.gnome.desktop.interface
 set $cursor X11-Cursors-Breeze-Hacked-White
-seat seat0 xcursor_theme $cursor
-exec_always {
-    gsettings set org.gnome.desktop.interface cursor-theme $cursor
-}
+seat * xcursor_theme $cursor
 seat * hide_cursor when-typing enable
 
 # theme
-set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'WhiteSur-dark-solid'
-    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    # gsettings set $gnome-schema gtk-theme 'WhiteSur-dark-solid'
+    # gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'X11-Cursors-Breeze-Hacked-White'
-    gsettings set $gnome-schema font-name 'SF Pro Display 11'
+    gsettings set $gnome-schema font-name 'SF Pro Text 11'
 }
