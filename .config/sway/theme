@@ -2,9 +2,9 @@
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
-client.focused          #8897f4 #4b6789 #eceff4 #434c5e   #373b41
-client.focused_inactive #353b49 #353b49 #d8dee9 #3b4252   #353b49
-client.unfocused        #353b49 #353b49 #d8dee9 #3b4252   #353b49
+client.focused          #525252 #3e3e3e #eceff4 #434c5e   #373b41
+client.focused_inactive #525252 #252626 #d8dee9 #3b4252   #525252
+client.unfocused        #525252 #252626 #d8dee9 #3b4252   #525252
 client.urgent           #bf616a #bf616a #eceff4 #900000   #bf616a
 client.placeholder      #000000 #0c0c0c #eceff4 #000000   #0c0c0c
 
@@ -19,20 +19,19 @@ default_floating_border pixel 1
 hide_edge_borders --i3 both
 
 # Hide titlebar on tabbed windows
-font pango:monospace 0
+font SF Pro Text 0
 titlebar_border_thickness 0
 titlebar_padding 0
 
-
-set $gnome-schema org.gnome.desktop.interface
-set $cursor X11-Cursors-Breeze-Hacked-White
-seat * xcursor_theme $cursor
-seat * hide_cursor when-typing enable
-
 # theme
-exec_always {
-    # gsettings set $gnome-schema gtk-theme 'WhiteSur-dark-solid'
-    # gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'X11-Cursors-Breeze-Hacked-White'
-    gsettings set $gnome-schema font-name 'SF Pro Text 11'
-}
+# set $gnome-schema org.gnome.desktop.interface
+# exec_always {
+#     gsettings set $gnome-schema gtk-theme 'WhiteSur-dark-solid'
+#     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+#     gsettings set $gnome-schema cursor-theme 'X11-Cursors-Breeze-Hacked-White'
+#     gsettings set $gnome-schema font-name 'SF Pro Text 11'
+# }
+
+# set $cursor X11-Cursors-Breeze-Hacked-White
+# seat * xcursor_theme $cursor
+# seat * hide_cursor when-typing enable

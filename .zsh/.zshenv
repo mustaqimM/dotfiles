@@ -14,7 +14,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_QPA_PLATFORM=wayland
 # XCURSOR_PATH=$HOME/.local/share/icons
 # XCURSOR_THEME="Breeze_Snow"
-# export GTK_THEME=$(rg 'gtk-theme-name' ~/.gtkrc-2.0 | cut -d "=" -f 2 | sed 's/"//g')
+export GTK_USE_PORTAL=0
 
 # export BROWSER="firefox"
 export MOZ_ENABLE_WAYLAND=1

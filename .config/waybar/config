@@ -5,16 +5,16 @@
     "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/window", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/window"],
     //"modules-center": ["sway/window"],
     "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
-    "persistant_workspaces": {
-        "3": [], // Always show a workspace with name '3', on all outputs if it does not exists
-        "4": ["eDP-1"], // Always show a workspace with name '4', on output 'eDP-1' if it does not exists
-        "5": ["eDP-1", "DP-2"] // Always show a workspace with name '5', on outputs 'eDP-1' and 'DP-2' if it does not exists
-    },
+    // "persistant_workspaces": {
+    //     "3": [], // Always show a workspace with name '3', on all outputs if it does not exists
+    //     "4": ["eDP-1"], // Always show a workspace with name '4', on output 'eDP-1' if it does not exists
+    //     "5": ["eDP-1", "DP-2"] // Always show a workspace with name '5', on outputs 'eDP-1' and 'DP-2' if it does not exists
+    // },
         "disable-scroll": true,
         "all-outputs": true,
         //"format": "{name}: {icon}",
@@ -24,7 +24,7 @@
             "2": "",
             "3": "",
             "4": "",
-            "5": "",
+            "5": " ",
             "6": "",
             "7": "",
             "8": "",

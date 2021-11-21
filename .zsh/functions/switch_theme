@@ -3,8 +3,8 @@
 autoload colors && colors
 
 switch_theme() {
-    light_theme="WhiteSur-light"
-    dark_theme="WhiteSur-dark"
+    light_theme="WhiteSur-light-solid"
+    dark_theme="WhiteSur-dark-solid"
     current_theme=$(gsettings get org.gnome.desktop.interface gtk-theme | tr -d "'")
 
     light_theme() {

@@ -3,37 +3,25 @@
 alias aria="aria2c --no-conf -x16 -s16 -k1M --summary-interval=0 --check-certificate=false"
 alias cat=bat
 alias cd=' cd'
-alias chts='CHTSH_CONF='~/.config/cht.sh/cht.sh.conf' cht --shell'
-alias firejail='firejail --rmenv=LS_COLORS'
 alias gpg=gpg2
 alias jackett='mono ~/.local/bin/Jackett/JackettConsole.exe'
-alias ktlint='ktlint --android --color --relative -v'
-alias lf='env LS_COLORS=$DEFAULT_LS_COLORS lf'
+# alias ktlint='ktlint --android --color --relative -v'
 alias nightly=/opt/firefox/firefox-bin
-#alias firefox=~/.local/bin/firefox/firefox-bin
 alias q=exit
 alias f=vifm
 alias reload='exec zsh'
 alias s='googler --count 7'
-alias surf='firejail surf'
-# alias tmux='tmux -2 -f ~/.config/tmux/tmux.conf'
-# alias vi='emacsclient -nc -F "((width . 1366))"'
-alias pip='/usr/bin/pip'
+# alias pip='/usr/bin/pip'
 alias sudo=doas
-alias vimb='vimb -c ~/.config/vimb/settings.conf'
 alias xargs='xargs ' # Needed for alias subtitution
 alias yt=yt-dlp
-
-#alias ls=exa -bh --group-directories-first --sort name --git -G -F "$@"
 alias ls='lsd -h'
 
 alias -s {yml,yaml,toml,md}=$EDITOR
-# alias -s {mkv,mp4,avi}=mpv
-# alias -s {png,jpg}=imv
 
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
+# alias -g ...='../..'
+# alias -g ....='../../..'
+# alias -g .....='../../../..'
 
 forgit_log=fglo
 forgit_diff=fgd

@@ -3917,7 +3917,6 @@ done
 : 1612280241:0;dbus-run-session startplasma-wayland
 : 1612283739:0;e /etc/unbound/zones/adblock.local
 : 1612284029:0;./shadowfox_linux_x64 -profile-index 2 -generate-uuids -set-dark-theme
-: 1612284761:0;yadm add ~/.mozilla/chrome
 : 1612333317:0;e /usr/share/applications/firefox.desktop
 : 1612333436:0;echo $
 : 1612334868:0;mimeo --add application/pdf zathura.desktop
@@ -4293,7 +4292,6 @@ done
 : 1630342984:0;e ~/.config/awesome/autorun
 : 1630497899:0;man sway
 : 1630499398:0;svlogtail | rg blue
-: 1630508522:0;swaymsg reload
 : 1630509604:0;cp -r /etc/xdg/waybar ~/.config/waybar
 : 1630513538:0;rofi -show
 : 1630515677:0;e ~/.config/sway/autorun
@@ -4456,7 +4454,6 @@ done
 : 1633240272:0;headphones on
 : 1633240372:0;sudo xbps-install blueman
 : 1633249741:0;sudo xbps-install dunst
-: 1633333222:0;e ~/.config/sway/autostart
 : 1633345767:0;ssh-keygen -t ed25519 -o -a 100 -C "GitHub"
 : 1633345797:0;wl-copy < ~/.ssh/GitHub.pub
 : 1633345881:0;eval $(ssh-agent -s)
@@ -4475,7 +4472,6 @@ done
 : 1633426444:0;svlogtail
 : 1633426505:0;sudo apparmor_parser -r /etc/apparmor.d/usr.sbin.smbd
 : 1633451911:0;man 5 sway
-: 1633452419:0;e ~/.config/waybar/config
 : 1633455456:0;sudo tlp recalibrate BAT1
 : 1633455496:0;sudo tlp discharge BAT1
 : 1633538000:0;sudo tlp-stat
@@ -4569,7 +4565,6 @@ done
 : 1636519792:0;sudo xbps-install qView
 : 1636530952:0;sudo xbps-install krita
 : 1636534319:0;fd '(jpe?|pn)g' -x cjxl {} {.}.jxl
-: 1636625074:0;yt --list-formats "$(wl-paste)"
 : 1636629890:0;e ~/.config/yt-dlp/config
 : 1636644851:0;sudo xbps-install wf-recorder
 : 1636707534:0;kq
@@ -4616,7 +4611,6 @@ done
 : 1636962241:0;yadm 
 : 1636962256:0;yadm add ~/.config/firejail
 : 1636962269:0;yadm add ~/.config/fontconfig/fonts.conf
-: 1636962380:0;yadm add ~/.config/sway
 : 1636962420:0;yadm add ~/.config/waybar
 : 1636962677:0;yadm remote -v
 : 1636987088:0;crontab -e
@@ -4631,11 +4625,9 @@ done
 : 1637059066:0;sudo xbps-install yarn-bin
 : 1637059202:0;npx ls
 : 1637059244:0;npx create-react-app part1
-: 1637059702:0;..
 : 1637059704:0;...
 : 1637060147:0;xdg-settings set default-web-browser firefox-nightly.desktop
 : 1637060196:0;npm start
-: 1637065046:0;e ~/.config/mpv/mpv.conf
 : 1637077988:0;e ~/.config/river/init
 : 1637078100:0;e ~/.zsh/.zprofile
 : 1637130946:0;base64 -d <<< $(wl-paste) > file.png
@@ -4652,7 +4644,6 @@ done
 : 1637228900:0;e ~/.zsh/.zshenv
 : 1637229565:0;echo $GTK_THEME
 : 1637231950:0;gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-light-solid"
-: 1637236090:0;tmux attach || tmux
 : 1637242991:0;ssh-add $HOME/.ssh/GitHub </dev/null
 : 1637252198:0;git clone --depth 1 gh:vinceliuice/WhiteSur-gtk-theme
 : 1637258981:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
@@ -4662,19 +4653,13 @@ done
 : 1637297635:0;yadm add ~/.config/dunst/dunstrc
 : 1637297737:0;yadm ls-tree -r master --name-only
 : 1637297803:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1637297912:0;yadm commit
-: 1637298025:0;yadm push
 : 1637298147:0;zcompile switch_theme
 : 1637308048:0;psmem -p $(pgrep -d, -u $USER) -S
 : 1637309727:0;echo $current_theme
 : 1637316016:0;man 
 : 1637316019:0;man vifm
-: 1637316586:0;yadm status
 : 1637323608:0;tlp-stat -t | rg temp
-: 1637323613:0;htop
 : 1637335703:0;sudo xbps-install jq
-: 1637342413:0;push
-: 1637377349:0;sudo xbps-install -Suvy
 : 1637377372:0;zpl update -p
 : 1637377430:0;e ~/.zsh/.zshrc
 : 1637377486:0;fd -e zwc -x rm
@@ -4686,36 +4671,45 @@ done
 : 1637389089:0;inxi -F -d -f -l -m -o -p -t cm -u -x
 : 1637389879:0;sudo xbps-install rsync
 : 1637390220:0;gco -b update_gocryptfs
-: 1637390421:0;reload
 : 1637390475:0;plain hide
 : 1637390480:0;rep
 : 1637390483:0;repos/void-packages/
-: 1637390824:0;bandwhich -d 1.1.1.1
 : 1637391344:0;./xbps-src pkg gocryptfs
 : 1637391394:0;sudo xbps-install --repository=hostdir/binpkgs/update_gocryptfs gocryptfs
 : 1637391835:0;gocryptfs -speed
-: 1637395746:0;plain show
 : 1637398425:0;gsettings get org.gnome.desktop.interface gtk-theme
 : 1637398968:0;cd
 : 1637399454:0;wf-recorder -f recording.mp4
-: 1637399592:0;e ~/.config/sway/config
-: 1637400181:0;e ~/.config/waybar/style.css
-: 1637400458:0;yadm diff
-: 1637400858:0;env GTK_DEBUG=interactive waybar
-: 1637401229:0;f
 : 1637401435:0;pkill emacs
 : 1637402018:0;e ~/.zsh/functions/switch_theme
 : 1637402047:0;switch_theme toggle
-: 1637402419:0;yadm status
 : 1637402427:0;yadm add ~/.config/sway
-: 1637402438:0;yadm status
-: 1637402442:0;f
-: 1637402471:0;yadm diff
-: 1637402499:0;yadm status
 : 1637402505:0;yadm add ~/.mozilla/chrome
-: 1637402587:0;yadm status
-: 1637402676:0;yadm diff
-: 1637402707:0;yadm status
-: 1637402813:0;f
-: 1637402849:0;yadm diff
-: 1637402858:0;yadm status
+: 1637402877:0;yadm commit
+: 1637402889:0;yadm push
+: 1637410799:0;reload
+: 1637410804:0;..
+: 1637425539:0;bandwhich -d 1.1.1.1
+: 1637428420:0;e ~/.config/waybar/config
+: 1637431876:0;push
+: 1637463834:0;sudo xbps-install -Suvy
+: 1637470808:0;env GTK_DEBUG=interactive waybar
+: 1637472546:0;plain show
+: 1637478357:0;yt --list-formats "$(wl-paste)"
+: 1637478402:0;e ~/.config/mpv/mpv.conf
+: 1637478642:0;htop
+: 1637479171:0;e ~/.config/sway/autostart
+: 1637479302:0;e ~/.config/sway/config
+: 1637479409:0;swaymsg reload
+: 1637481989:0;/q
+: 1637482811:0;tmux attach || tmux
+: 1637482838:0;e ~/.config/waybar/style.css
+: 1637483016:0;f
+: 1637483322:0;yadm status
+: 1637483328:0;yadm diff
+: 1637483346:0;f
+: 1637483353:0;yadm status
+: 1637483376:0;yadm add ~/.config/sway
+: 1637483386:0;yadm diff
+: 1637483412:0;yadm add ~/.config/waybar
+: 1637483414:0;yadm status
