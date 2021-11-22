@@ -34,4 +34,4 @@ titlebar_padding 0
 
 # set $cursor X11-Cursors-Breeze-Hacked-White
 # seat * xcursor_theme $cursor
-# seat * hide_cursor when-typing enable
+seat * hide_cursor when-typing enable

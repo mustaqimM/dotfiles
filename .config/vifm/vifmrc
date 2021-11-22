@@ -2,7 +2,7 @@
 " nesting detection
 let $INSIDE_VIFM = 'true'
 
-set vicmd='$EMACS_PLUGIN_LAUNCHER -nw -fs'
+set vicmd='$EMACS_PLUGIN_LAUNCHER -nw'
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
