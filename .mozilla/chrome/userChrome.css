@@ -62,17 +62,13 @@ vbox#sidebar-box.chromeclass-extrachrome {
   --urlbar-height:  24px !important;
 }
 
+.browser-toolbar:not(.titlebar-color) {
+  background-image: none !important;
+}
 @media (prefers-color-scheme: dark) {
-  /* #nav-bar { */
-  /*   background-color: #000000 !important; */
-  /*   color: #ffffff !important; */
-  /* } */
   #urlbar {
     color: #ffffff !important;
   }
-}
-.browser-toolbar:not(.titlebar-color) {
-  background-image: none !important;
 }
 
 /* Hide the back button unless we can actually go back. */

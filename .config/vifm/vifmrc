@@ -309,11 +309,12 @@ filextype *.djvu
         \ apvlv %f,
 
 " Audio
-filextype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
+" filextype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
+filetype <audio/*>
        \ {Play using mpv}
        \ mpv --player-operation-mode=pseudo-gui -- %f %i &,
-       \ {Play using ffplay}
-       \ ffplay -nodisp -autoexit %c &,
+       " \ {Play using ffplay}
+       " \ ffplay -nodisp -autoexit %c &,
 " fileviewer <audio/*>
 "         \ vifmimg audio %px %py %pw %ph %c
 "         \ %pc
@@ -334,7 +335,10 @@ filextype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
 ""          \*.as[fx]
 ""         \ ffprobe -pretty %c 2>&1
 
-filetype <video/*>
+filextype <video/*>
+         \ {View using mpv}
+         \ mpv --player-operation-mode=pseudo-gui -- %f %i &,
+filextype *.m2ts
          \ {View using mpv}
          \ mpv --player-operation-mode=pseudo-gui -- %f %i &,
 " fileviewer <video/*>
@@ -345,14 +349,14 @@ filetype <video/*>
 
 " html
 filextype *.html,*.htm
-        \ {Open with vimb}
-        \ vimb -c ~/.config/vimb/settings.conf %f %i &,
-        \ {Open with surf}
-        \ surf %f %i &,
-        \ {Open with firefox}
+        \ {Open with Firefox}
         \ firefox %f &,
-        \ {Open with uzbl}
-        \ uzbl-browser %f %i &,
+        " \ {Open with vimb}
+        " \ vimb -c ~/.config/vimb/settings.conf %f %i &,
+        " \ {Open with surf}
+        " \ surf %f %i &,
+        " \ {Open with uzbl}
+        " \ uzbl-browser %f %i &,
 "filetype *.html,*.htm links, lynx
 "filextype *.html,*.htm firefox %f 2>/dev/null
 fileviewer *.html w3m -dump %c
@@ -519,7 +523,7 @@ set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::'
 set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
 set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.conf,,*.yml,,*.ini,,*.cfg,,config::,  ::*.properties::,  ::*.log::'
+set classify+='  ::*.conf,,*.yml,,*.ini,,*.cfg,,*.config,,config::,  ::*.properties::,  ::*.log::'
 set classify+='  ::*.db,,*.sql,,*.sqlite::'
 set classify+='  ::*.pem::'
 " archives
@@ -531,7 +535,7 @@ set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*
 " audio
 set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 " media
-set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vid,,*.vob,,*.wmv,,*.xvid,,*.webm::'
+set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m2ts,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vid,,*.vob,,*.wmv,,*.xvid,,*.webm::'
 " documents
 set classify+='  ::*.org::,  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.text,,*.txt,,README::'
 set classify+='  ::*.epub,,*.fb2,,*.djvu,,*.mobi::'

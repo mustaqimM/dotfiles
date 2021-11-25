@@ -59,8 +59,7 @@ window#waybar.empty button.focused {
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid @theme_text_color;
+    font-size: 1.2em;
 }
 
 tooltip {
@@ -85,14 +84,13 @@ tooltip label {
 #idle_inhibitor,
 #mpd {
     padding: 0 10px;
-    margin: 0 4px;
     color: @theme_text_color;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
-}
+/* #window, */
+/* #tray, #mode { */
+/*     margin: 10px 0px 0px 0px; */
+/* } */
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {

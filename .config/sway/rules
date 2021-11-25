@@ -17,11 +17,12 @@ assign [class="Gimp-2.10"] workspace 9
 assign [app_id="gramps"] workspace 10
 
 for_window [class="Emacs"] focus
-for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set 956 576
+for_window [title="Extension: \(Tree Style Tab\)"] floating enable, move position center, resize set 455 270
+for_window [title="About Firefox Nightly"] floating enable
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, move position 890 490, resize set 505 305, sticky enable
 for_window [app_id="firefox"] layout stacking
-for_window [title="About Firefox Nightly"] floating enable
-for_window [title=".+[Ss]haring (Indicator|your screen)"] floating enable, move to scratchpad
-for_window [title="Extension: \(Tree Style Tab\)"] floating enable, move position center, resize set 455 270
+for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set 956 576
+# for_window [title=".+[Ss]haring (Indicator|your screen)"] floating enable, move to scratchpad
 for_window [app_id="mpv"] fullscreen, focus, resize set 956 576
 for_window [app_id="qview"] fullscreen disable, floating enable, move position center, resize set 1024 576
+for_window [app_id="pavucontrol-qt"] floating enable, focus, resize set 956 576

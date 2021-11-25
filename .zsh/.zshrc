@@ -466,7 +466,7 @@ autoload zcalc
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc aria2c bandwhich curl cwebp cjxl direnv docker \
   dunst emacs flask fsck.ext4 fzf gocryptfs hexyl inkscape ktlint light \
-  lsd mimeo megadl mkfs.vfat nzbget pamixer pip pip3 pipx psmem redshift rofi rustc \
+  lsd mimeo megadl mkfs.vfat nzbget pamixer pip pip3 pipx psmem pw-cli redshift rofi rustc \
   tlp tlp-stat \
   vue zstd
 

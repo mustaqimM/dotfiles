@@ -5,9 +5,9 @@
     "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/window"],
-    //"modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray"],
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["sway/mode", "pulseaudio", "backlight", "battery", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
     // "persistant_workspaces": {
@@ -24,7 +24,7 @@
             "2": "",
             "3": "",
             "4": "",
-            "5": " ",
+            "5": "",
             "6": "",
             "7": "",
             "8": "",
@@ -36,7 +36,7 @@
         }
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": ""
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ ",
@@ -142,7 +142,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol-qt"
     },
     "custom/media": {
         "format": "{icon} {}",
