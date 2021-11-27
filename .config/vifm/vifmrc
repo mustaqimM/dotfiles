@@ -48,7 +48,7 @@ set novimhelp
 set norunexec
 
 " Selected color scheme
-colorscheme mojave-dark
+colorscheme dark
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
@@ -167,10 +167,6 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep nvim "+grep %a"
 command! reload :write | restart
 
-"set shellcmdflag=-ic
-"command! extract zsh -ic extract %c
-"nnoremap x :extract<cr>
-
 command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('fd -t d -F . $HOME | fzf --reverse 2>/dev/tty')) | view
 nnoremap <c-g> :FZFlocate<cr>
 command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd -L . --min-depth 1 -t f -t d -H -c always | fzf 2>/dev/tty'))
@@ -203,7 +199,7 @@ vnoremap w :view<cr>gv
 " Open file in existing instance
 nnoremap o :!emacsclient -nc %f &<cr>
 " Open file in new instance
-nnoremap O :!/bin/emacs -bg '#17191a' -fs %f &<cr>
+nnoremap O :!/bin/emacs -bg '#1d1f21' -fs %f &<cr>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
@@ -211,7 +207,6 @@ nnoremap cc cw<c-u>
 nnoremap A cw
 
 " Open console in current directory
-" nnoremap ,t :!xst -c st -T Terminal -e zsh &<cr>
 nnoremap ,t :!alacritty -e zsh &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
@@ -250,7 +245,9 @@ nnoremap gb :file &<cr>l
 nnoremap b :file & <cr> >/dev/null
 
 " Extract an archive
-"nnoremap x :!extract %f &<cr>
+" set shellcmdflag=-ic
+" command! extract extract %c &
+" nnoremap x :extract<cr>
 
 " brief information about files
 nnoremap <silent> ,b :set viewcolumns=*{name}..,6{}.<cr>
@@ -519,11 +516,11 @@ filetype * xdg-open %c &
 
 set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  ::*.apk::'
 " code
-set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.json::,  ::*.rkt::'
-set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css::'
-set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
-set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.conf,,*.yml,,*.ini,,*.cfg,,*.config,,config::,  ::*.properties::,  ::*.log::'
+set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.rkt::'
+set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css,,*.scss::'
+set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,ﯤ  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
+set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
+set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::*.properties::,  ::*.log::,  ::*.json,,*.yml::'
 set classify+='  ::*.db,,*.sql,,*.sqlite::'
 set classify+='  ::*.pem::'
 " archives
@@ -533,11 +530,11 @@ set classify+='  ::*.iso,,*.img::'
 " images
 set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.webp,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,*.xwd,,*.jxl::'
 " audio
-set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
+set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.opus,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 " media
 set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m2ts,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vid,,*.vob,,*.wmv,,*.xvid,,*.webm::'
 " documents
-set classify+='  ::*.org::,  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.text,,*.txt,,README::'
+set classify+='  ::*.org::,  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.msg,,*.text,,*.txt,,README::'
 set classify+='  ::*.epub,,*.fb2,,*.djvu,,*.mobi::'
 set classify+='  ::*.csv::,  ::*.srt,,*.vtt::,  ::*.pdf::'
 " misc

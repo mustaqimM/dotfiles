@@ -10,17 +10,6 @@ fi
 
 # ==============================================================================
 
-# if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-#  eval $(ssh-agent) & > /dev/null
-#  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-# fi
-#export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-## ssh-add -l > /dev/null || ssh-add
-# ssh-add -q $HOME/.ssh/GitLab > /dev/null || ssh-add
-# ssh-add -q $HOME/.ssh/GitHub > /dev/null || ssh-add
-
-# ==============================================================================
-
 declare -A ZINIT
 
 ### Added by Zinit's installer
@@ -283,7 +272,7 @@ zi light romkatv/powerlevel10k
 # === FUNCTIONS ===
 # {{{
 if [ -n "$INSIDE_VIFM" ]; then
-    RANGER_LEVEL=" "
+    RANGER_LEVEL=""
     unset INSIDE_VIFM
 fi
 

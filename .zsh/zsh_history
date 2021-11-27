@@ -2411,7 +2411,6 @@
 : 1586942173:0;ping 'void.local'
 : 1586953326:0;man highlight
 : 1586955216:0;git clone gh:posquit0/Awesome-CV
-: 1586972095:0;vifm
 : 1586972135:0;v
 : 1587011253:0;ranger
 : 1587012568:0;sudo xbps-remove -R ueberzug
@@ -2420,7 +2419,6 @@
 : 1587012684:0;git stash apply
 : 1587012762:0;git add srcpkgs/python3-pillow-simd
 : 1587012768:0;gcs -m "python3-pillow-simd: update to 7.0.0.post3"
-: 1587012883:0;git stash list
 : 1587015613:0;echo $INSIDE_VIFM
 : 1587015738:0;printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
 : 1587015847:0;echo $COLORTERM
@@ -2844,7 +2842,6 @@
 : 1589685868:0;git clone gh:codejamninja/breeze-hacked-cursor-theme
 : 1589689583:0;ls /usr/lib/imlib2/loaders/
 : 1589690424:0;e .Xresources
-: 1589694652:0;sudo xbps-install shellcheck
 : 1589695603:0;sudo xbps-install fonts-roboto-ttf
 : 1589695869:0;git --depth=1 clone gh:blaisck/sfwin
 : 1589695885:0;git clone --depth=1 gh:blaisck/sfwin
@@ -3670,7 +3667,6 @@ done
 : 1603271402:0;e srcpkgs/rar2fs/template
 : 1603271435:0;xbps-query -Rs fuse
 : 1603271730:0;./xbps-src cle
-: 1603273713:0;./xbps-src pkg rar2fs
 : 1603274009:0;./xbps-src pkg unrar_devel
 : 1603274599:0;sudo xbps-install --repository=hostdir/binpkgs/new_package_rar2fs/nonfree unrar-devel
 : 1603277491:0;e srcpkgs/unrar/template
@@ -4027,7 +4023,6 @@ done
 : 1614410137:0;sudo xbps-remove -R vscode
 : 1614414283:0;chmod 600 *.pem
 : 1614415159:0;git status
-: 1614423620:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
 : 1614444369:0;uname -a
 : 1614444384:0;uptime
 : 1614489054:0;e ~/.Xresources.d/theme_tomorrow_night
@@ -4178,7 +4173,6 @@ done
 : 1620275439:0;yadm add ~/.xinitrc
 : 1620275566:0;yadm add ~/.config/aria2/aria2.conf
 : 1620275576:0;yadm add ~/.config/bat
-: 1620275587:0;yadm add ~/.config/doom
 : 1620275591:0;yadm add ~/.config/htop/htoprc
 : 1620281590:0;pw-cli info all
 : 1620359450:0;e /etc/X11/xorg.conf.d/20-intel.conf
@@ -4501,7 +4495,6 @@ done
 : 1635077057:0;man fd
 : 1635077310:0;fd -e MP4 -x mv {} {.}.mp4
 : 1635164558:0;env ZSTD_CLEVEL=19 tar --zstd -cf archive.tar.zst folder
-: 1635304263:0;man yt-dlp
 : 1635354522:0;spuh
 : 1635482840:0;sudo xbps-install flameshot
 : 1635483233:0;echo $QT_QPA_PLATFORM
@@ -4557,8 +4550,6 @@ done
 : 1636740047:0;crontab -l
 : 1636773984:0;e ~/.zsh/aliases
 : 1636774012:0;nightly
-: 1636774190:0;e ~/.config/fontconfig/fonts.conf
-: 1636774202:0;fc-cache -fv
 : 1636777629:0;git clone --depth 1 gh:vinceliuice/WhiteSur-kde
 : 1636780470:0;[A]
 : 1636780472:0;pkill dunst
@@ -4611,7 +4602,6 @@ done
 : 1637142807:0;cp /usr/etc/xdg/dunst/dunstrc ~/.config/dunst/dunstrc
 : 1637150567:0;doom compile
 : 1637151813:0;ls -l
-: 1637161509:0;echo $SSH_AUTH_SOCK
 : 1637211937:0;sudo xbps-install gtk-theme-config
 : 1637228900:0;e ~/.zsh/.zshenv
 : 1637229565:0;echo $GTK_THEME
@@ -4622,15 +4612,11 @@ done
 : 1637295499:0;e .priv-env
 : 1637297635:0;yadm add ~/.config/dunst/dunstrc
 : 1637297737:0;yadm ls-tree -r master --name-only
-: 1637297803:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1637298147:0;zcompile switch_theme
 : 1637309727:0;echo $current_theme
 : 1637316016:0;man 
 : 1637335703:0;sudo xbps-install jq
-: 1637377430:0;e ~/.zsh/.zshrc
 : 1637377486:0;fd -e zwc -x rm
-: 1637377971:0;zpl times
-: 1637388891:0;git pull --rebase upstream master
 : 1637389089:0;inxi -F -d -f -l -m -o -p -t cm -u -x
 : 1637389879:0;sudo xbps-install rsync
 : 1637390220:0;gco -b update_gocryptfs
@@ -4643,50 +4629,35 @@ done
 : 1637399454:0;wf-recorder -f recording.mp4
 : 1637402018:0;e ~/.zsh/functions/switch_theme
 : 1637402047:0;switch_theme toggle
-: 1637402505:0;yadm add ~/.mozilla/chrome
 : 1637410804:0;..
 : 1637470808:0;env GTK_DEBUG=interactive waybar
 : 1637479409:0;swaymsg reload
 : 1637481989:0;/q
-: 1637483376:0;yadm add ~/.config/sway
 : 1637517914:0;crontab -e
 : 1637518781:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
 : 1637554938:0;man mpv
 : 1637561073:0;svlogtail | rg cron
 : 1637575966:0;e ~/.config/waybar/style.css
-: 1637578964:0;yadm add ~/.config/waybar
-: 1637578984:0;yadm commit
-: 1637579014:0;ssh-add $HOME/.ssh/GitLab </dev/null
-: 1637579430:0;yadm push
 : 1637583265:0;e ~/.config/mpv/mpv.conf
 : 1637603300:0;ttyqr -b $(wl-paste)
-: 1637636728:0;npm start
 : 1637642279:0;doom sync
 : 1637642292:0;doom clean
 : 1637642355:0;eval $(ssh-agent -s)
 : 1637642358:0;ssh-add $HOME/.ssh/GitHub </dev/null
 : 1637642360:0;git clone --depth 1 gh:hlissner/doom-emacs ~/.emacs.d
 : 1637642417:0;doom install
-: 1637643533:0;pkill emacs
 : 1637643540:0;/bin/emacs -bg '#17191a' --daemon
-: 1637650190:0;zpl update -p
 : 1637651382:0;e ~/.config/sway/rules
-: 1637652235:0;gco $(gb | fzf)
 : 1637652464:0;gco -b new_package_jconvolver
 : 1637652479:0;xnew jconvolver
-: 1637652906:0;gst
-: 1637654803:0;xbps-query -Rs pipewire
 : 1637654846:0;sudo xbps-install libjack-pipewire
 : 1637657406:0;tmux 
-: 1637658233:0;repos/void-packages/
 : 1637659247:0;sudo xbps-install pulseaudio-utils
 : 1637659424:0;e srcpkgs/jconvolver/template
-: 1637660693:0;./xbps-src clean
 : 1637660788:0;xbps-query --repository=hostdir/binpkgs/new_package_jconvolver -f jconvolver
 : 1637660836:0;./xbps-src pkg jconvolver
 : 1637661006:0;sudo xbps-install --repository=hostdir/binpkgs/new_package_jconvolver jconvolver
 : 1637663676:0;pw-jack jconvolver -s pipewire-0 atmos.config
-: 1637684097:0;yadm add ~/.local/share/virtual-surround
 : 1637684494:0;sudo xbps-install pulseeffects
 : 1637686785:0;cd
 : 1637686967:0;e ~/.zsh/zsh_history
@@ -4696,7 +4667,6 @@ done
 : 1637687046:0;pw-jack jconvolver -s pipewire-0 /home/mustaqim/.local/share/virtual-surround/atmos.config
 : 1637689423:0;yt --list-formats "$(wl-paste)"
 : 1637723168:0;e ~/.config/vifm/vifmrc
-: 1637724084:0;man vifm
 : 1637729783:0;sudo xbps-install p7zip
 : 1637733409:0;sudo xbps-install lutris
 : 1637733520:0;bandwhich -d 1.1.1.1
@@ -4706,35 +4676,63 @@ done
 : 1637739231:0;sudo sv restart bluetoothd
 : 1637739430:0;sudo xbps-install rtkit
 : 1637739502:0;sudo usermod -a -G rtkit $USER
-: 1637739507:0;id mustaqim
-: 1637741404:0;psmem -p $(pgrep -d, -u $USER) -S
 : 1637743780:0;e ~/.config/waybar/config
-: 1637746076:0;reload
 : 1637769850:0;cp /usr/share/pipewire/pipewire.conf ~/.config/pipewire
-: 1637769857:0;e ~/.config/pipewire/pipewire.conf
-: 1637770354:0;e ~/.config/sway/autostart
 : 1637771325:0;yadm add ~/.config/pipewire/
-: 1637773069:0;push
-: 1637809364:0;sudo xbps-install -Suvy
-: 1637811205:0;swaymsg -t get_tree | fzf
-: 1637813633:0;plain show
 : 1637818034:0;sudo xbps-install gimp gmic-gimp
 : 1637820125:0;free -h
-: 1637820155:0;htop
-: 1637825344:0;tlp-stat -t | rg temp
-: 1637828169:0;tmux attach || tmux
-: 1637836769:0;yadm status
-: 1637836772:0;yadm diff
-: 1637837098:0;f
-: 1637837203:0;yadm diff
-: 1637837219:0;yadm status
 : 1637837251:0;yadm add ~/.config/doom
 : 1637837270:0;yadm add ~/.config/waybar
-: 1637837281:0;yadm status
 : 1637837287:0;yadm add ~/.config/sway
 : 1637837293:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1637837302:0;yadm add ~/.local/share/virtual-surround
-: 1637837304:0;yadm status
 : 1637837314:0;yadm add ~/.mozilla/chrome
-: 1637837330:0;yadm status
 : 1637837373:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history
+: 1637837388:0;yadm commit
+: 1637837426:0;e ~/.zsh/.zshrc
+: 1637837725:0;echo $SSH_AUTH_SOCK
+: 1637837756:0;ssh-add $HOME/.ssh/GitLab </dev/null
+: 1637837760:0;yadm push
+: 1637837896:0;swaymsg -t get_tree | fzf
+: 1637841365:0;man vifm
+: 1637842037:0;h
+: 1637843183:0;tlp-stat -t | rg temp
+: 1637855310:0;xbps-query -Rs pipewire
+: 1637856413:0;e ~/.config/fontconfig/fonts.conf
+: 1637859116:0;fc-cache -fv
+: 1637902609:0;man yt-dlp
+: 1637903205:0;sudo xbps-install qt5-imageformats
+: 1637912469:0;e ~/.config/pipewire/pipewire.conf
+: 1637924898:0;vifm
+: 1637927164:0;plain show
+: 1637941159:0;sudo ln -s /etc/sv/rtkit /var/service
+: 1637942380:0;id mustaqim
+: 1637942702:0;tmux attach || tmux
+: 1637943148:0;sudo xbps-install shellcheck
+: 1637943184:0;pkill emacs
+: 1637943186:0;e ~/.config/sway/autostart
+: 1637944237:0;push
+: 1637949173:0;npm start
+: 1637982774:0;sudo xbps-install -Suvy
+: 1637982800:0;zpl update -p
+: 1637988199:0;htop
+: 1637989477:0;git pull --rebase upstream master
+: 1637989544:0;git stash list
+: 1637989565:0;gco $(gb | fzf)
+: 1637989586:0;gco -b new_rar2fs
+: 1637989930:0;./xbps-src clean
+: 1637991915:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1637993614:0;repos/void-packages/
+: 1637993616:0;gst
+: 1637993748:0;yadm diff
+: 1637994291:0;zpl times
+: 1637994306:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
+: 1637994446:0;reload
+: 1637994659:0;./xbps-src pkg rar2fs
+: 1637994870:0;yadm status
+: 1637994890:0;f
+: 1637994919:0;yadm add ~/.config/pipewire/pipewire.conf
+: 1637994921:0;yadm status
+: 1637994926:0;yadm add ~/.config/sway
+: 1637994933:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1637994936:0;yadm status

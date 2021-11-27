@@ -1,23 +1,16 @@
 #!/bin/sh
 
 run() {
-  if ! pgrep "$1" > /dev/null ;
-  then
+  if ! pgrep "$1" >/dev/null; then
    "$@"&
   fi
 }
 
 run pipewire
-run pipewire-pulse
 
 run dunst
 
 run blueman-applet
-
-# pw-cli destroy $(pw-cli dump short Node | rg Surround | awk -F: '{print $1}')
-# pw-cli create-node adapter '{ factory.name=support.null-audio-sink node.name=Surround media.class=Audio/Sink object.linger=1 audio.position=[FL,BL,SL,FC,FR,BR,SR] }'
-# pw-metadata -n settings 0 clock.force-quantum 1024
-# pkill jconvolver; run pw-jack jconvolver -s pipewire-0 /home/mustaqim/.local/share/virtual-surround/atmos.config
 
 # run emacs -bg "#17191a" --daemon -fs
 
