@@ -78,7 +78,7 @@
     "clock": {
         "timezone": "Africa/Johannesburg",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%A, %b %d}"
+        "format-alt": "{:%A, %d %b}"
     },
     "cpu": {
         "format": "{usage}% ",

@@ -71,7 +71,7 @@ set ignorecase
 set smartcase
 
 " Don't highlight search results automatically
-"set nohlsearch
+set nohlsearch
 
 " Use increment searching (search while typing)
 set incsearch
@@ -114,7 +114,7 @@ set vifminfo=dhistory,chistory,state,tui,shistory,
 " Filter-out build and temporary files
 " filter! /^.*\.(lo|o|d|class|py[co])$|.*~$/
 "filter! /^\_\_MACOSX\/$/
-"filter node_modules\/
+filter node_modules\/
 
 set grepprg='rg -n -H -j2 %i %a %s'
 set findprg='fd -t d -t f -H -L -E ".git" %p'
@@ -242,7 +242,7 @@ nnoremap mkd :mkdir<space>
 nnoremap gb :file &<cr>l
 
 " Open application dialog
-nnoremap b :file & <cr> >/dev/null
+nnoremap b :file &<cr>
 
 " Extract an archive
 " set shellcmdflag=-ic
@@ -261,10 +261,10 @@ nnoremap <silent> ,d :set viewcolumns=*{name}.,10{perms},12{uname},-7{gname},10{
 " file preview & file opening
 
 " don't show preview on ../
-"fileview ../ echo >/dev/null
-" fileviewer .*/ lsd --color=always --group-dirs=first -F --tree --depth=1
-" fileviewer */ lsd --color=always --group-dirs=first
-fileviewer */ fd . -d 1 -c always
+" fileviewer ../ echo >/dev/null
+
+" fileviewer /^.*// fd . -d 1 -c always
+" fileviewer /^.?*// lsd --color=always --group-dirs=first --tree --depth=1 -a
 
 " Pdf
 filextype *.pdf zathura %c %i
@@ -496,6 +496,7 @@ filextype *.pro qtcreator %f &
 "        \ Thunar %f &,
 
 " fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
+fileviewer *.json bat --color always --line-range 0:30 %c
 fileviewer *.org highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax md
 fileviewer *.[s]o hexyl -c 500 %c
 fileviewer *.csv bat --color always --wrap never --pager never -p %c
@@ -517,10 +518,10 @@ filetype * xdg-open %c &
 set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  ::*.apk::'
 " code
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.rkt::'
-set classify+='  ::.git/,,*.git/,,.gitignore,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css,,*.scss::'
+set classify+='  ::.git/,,*.git/,,.gitignore,,.gitconfig,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css,,*.scss::'
 set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,ﯤ  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
 set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::*.properties::,  ::*.log::,  ::*.json,,*.yml::'
+set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::/^rc|rc$/::,  ::*.properties::,  ::*.log::,  ::*.json,,*.yml::'
 set classify+='  ::*.db,,*.sql,,*.sqlite::'
 set classify+='  ::*.pem::'
 " archives

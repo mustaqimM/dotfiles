@@ -415,8 +415,8 @@ zstyle ':completion:*'               completer _complete _match _approximate
 zstyle ':completion:*:match:*'       original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-zstyle ':completion:*'               group-name ''              # Keep directories and files separated
-#zstyle ':completion:*'               list-dirs-first true
+zstyle ':completion:*'               group-name ''
+zstyle ':completion:*'               list-dirs-first true
 zstyle ':completion:*'               auto-description
 zstyle ':completion:*'               file-patterns '%p:globbed-files' '*(-/):directories' '*:all-files'
 
@@ -430,10 +430,16 @@ zstyle ':completion:*:messages'      format ' %B%F{magenta}  %U%d%u 
 zstyle ':completion:*:warnings'      format ' %B%F{red} %Uno matches found%u %f%b'
 # zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
 
-# zstyle ':completion:*:parameters'    ignored-patterns '_*'
+zstyle ':completion:*:parameters'    ignored-patterns '_*'
 
-zstyle ':completion::complete:*'     use-cache on
-zstyle ':completion:*'               cache-path ~/.zsh/cache
+zstyle ':completion:*'               use-cache on
+zstyle ':completion:*'               cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
 
 # zstyle ':notify:*'                   notifier /bin/notify-send # Only needed for custom scripts
 # zstyle ':notify:*'                   error-title "Command failed in #{time_elapsed}s"
@@ -453,7 +459,7 @@ autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy headphones 
 autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)
-zicompdef _gnu_generic aomenc aria2c bandwhich curl cwebp cjxl direnv docker \
+zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl direnv docker \
   dunst emacs flask fsck.ext4 fzf gocryptfs hexyl inkscape ktlint light \
   lsd mimeo megadl mkfs.vfat nzbget pamixer pip pip3 pipx psmem pw-cli redshift rofi rustc \
   tlp tlp-stat \

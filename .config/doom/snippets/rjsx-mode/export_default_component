@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: export default component
+# uuid: edc
+# key: /edc
+# condition: t
+# --
+import React from 'react'
+
+const ${1:Component} = ( ${2:$$(yas-choose-value '("\{ \}" "props"))} ) => {
+  return (
+    $0
+)
+}
+
+export default $1

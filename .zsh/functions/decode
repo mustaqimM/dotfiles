@@ -12,8 +12,7 @@ decode() {
 
     string=$(base64 -d <<< $(echo $base | awk '{$1=$1};1'))
 
-    # wl-copy $string
-    xclip -sel clip <<< $string
+    wl-copy $string
     echo $string
 }
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 export XDG_SESSION_TYPE=wayland
@@ -24,7 +25,7 @@ export TZ=Africa/Johannesburg
 # export LC_ALL=C
 export LC_ALL="en_ZA.UTF-8"
 
-# export LIBVA_DRIVER_NAME=i965
+export LIBVA_DRIVER_NAME=i965
 
 export EDITOR="emacsclient -nw"
 # ALTERNATE_EDITOR=""

@@ -7,7 +7,7 @@
 ;; These are used for a number of things, particularly for GPG configuration,
 ;; some email clients, file templates and snippets.
 (setq user-full-name "mustaqim malim"
-      user-mail-address "mustaqim@pm.me")
+      user-mail-address "git@mustaqim.ml")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -70,17 +70,17 @@
 ;; ============================================================================
 ;; Vue.js
 
-(defun my-web-mode-hook ()
-  "Hooks for Web mode."
-  (setq web-mode-script-padding 0)
-  (setq web-mode-code-indent-offset 2))
-  ;(setq web-mode-markup-indent-offset 0)
-  ;(setq web-mode-css-indent-offset 0)
-(after! web-mode
-  (add-hook 'web-mode-hook  'my-web-mode-hook)
-  (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+;; (defun my-web-mode-hook ()
+;;   "Hooks for Web mode."
+;;   (setq web-mode-script-padding 0)
+;;   (setq web-mode-code-indent-offset 2))
+;;   ;(setq web-mode-markup-indent-offset 0)
+;;   ;(setq web-mode-css-indent-offset 0)
+;; (after! web-mode
+;;   (add-hook 'web-mode-hook  'my-web-mode-hook)
+;;   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
-(set-file-template! "\\.vue$" :trigger "__vueSFC" :mode 'web-mode)
+;; (set-file-template! "\\.vue$" :trigger "__vueSFC" :mode 'web-mode)
 
 ;(defun vuejs-custom ()
   ;(setq vue-html-tab-width 2)
@@ -115,59 +115,59 @@
 ;; ============================================================================
 ;; centaur-tabs
 
-(after! centaur-tabs
-  (defun centaur-tabs-hide-tab (x)
-    "Do not show buffer X in tabs."
-    (let ((name (format "%s" x)))
-      (or
-       ;; Current window is not dedicated window.
-       (window-dedicated-p (selected-window))
+;; (after! centaur-tabs
+;;   (defun centaur-tabs-hide-tab (x)
+;;     "Do not show buffer X in tabs."
+;;     (let ((name (format "%s" x)))
+;;       (or
+;;        ;; Current window is not dedicated window.
+;;        (window-dedicated-p (selected-window))
 
-       ;; Buffer name not match below blacklist.
-       (string-prefix-p "*epc" name)
-       (string-prefix-p "*helm" name)
-       (string-prefix-p "*Compile-Log*" name)
-       (string-prefix-p "*lsp" name)
-       (string-prefix-p "*company" name)
-       (string-prefix-p "*Flycheck" name)
-       (string-prefix-p "*tramp" name)
-       (string-prefix-p " *Mini" name)
-       (string-prefix-p "*help" name)
-       (string-prefix-p "*straight" name)
-       (string-prefix-p " *temp" name)
-       (string-prefix-p "*Help" name)
-       (string-prefix-p "*which-key*" name)
-       (string-prefix-p "*doom*" name)
-       (string-prefix-p "*shell*" name)
-       (string-prefix-p "*scratch*" name)
-       (string-prefix-p "*Messages*" name)
-       (string-prefix-p "*Warnings*" name)
-       (string-prefix-p "*Treemacs-Scoped-Buffer-Perspective main*" name)
+;;        ;; Buffer name not match below blacklist.
+;;        (string-prefix-p "*epc" name)
+;;        (string-prefix-p "*helm" name)
+;;        (string-prefix-p "*Compile-Log*" name)
+;;        (string-prefix-p "*lsp" name)
+;;        (string-prefix-p "*company" name)
+;;        (string-prefix-p "*Flycheck" name)
+;;        (string-prefix-p "*tramp" name)
+;;        (string-prefix-p " *Mini" name)
+;;        (string-prefix-p "*help" name)
+;;        (string-prefix-p "*straight" name)
+;;        (string-prefix-p " *temp" name)
+;;        (string-prefix-p "*Help" name)
+;;        (string-prefix-p "*which-key*" name)
+;;        (string-prefix-p "*doom*" name)
+;;        (string-prefix-p "*shell*" name)
+;;        (string-prefix-p "*scratch*" name)
+;;        (string-prefix-p "*Messages*" name)
+;;        (string-prefix-p "*Warnings*" name)
+;;        (string-prefix-p "*Treemacs-Scoped-Buffer-Perspective main*" name)
 
-       ;; Is not magit buffer.
-       (and (string-prefix-p "magit" name)
-            (not (file-name-extension name)))
-       )))
-  ;(centaur-tabs-hide-tab-function 'centaur-tabs-hide-tab)
+;;        ;; Is not magit buffer.
+;;        (and (string-prefix-p "magit" name)
+;;             (not (file-name-extension name)))
+;;        )))
+;;   ;(centaur-tabs-hide-tab-function 'centaur-tabs-hide-tab)
 
-  (setq centaur-tabs-style "bar"
-      centaur-tabs-height 18
-      ;centaur-tabs-set-icons t
-      ;centaur-tabs-set-modified-marker t
-      ;centaur-tabs-show-navigation-buttons nil
-      ;centaur-tabs-set-bar 'under
-      centaur-tabs-close-button ""
-      x-underline-at-descent-line t))
+;;   (setq centaur-tabs-style "bar"
+;;       centaur-tabs-height 18
+;;       ;centaur-tabs-set-icons t
+;;       ;centaur-tabs-set-modified-marker t
+;;       ;centaur-tabs-show-navigation-buttons nil
+;;       ;centaur-tabs-set-bar 'under
+;;       centaur-tabs-close-button ""
+;;       x-underline-at-descent-line t))
 
-(after! doom-modeline
-  ;(setq all-the-icons-scale-factor 0.9)
-  (doom-modeline-def-modeline 'main
-    '(bar matches buffer-info remote-host buffer-position parrot selection-info)
-    '(misc-info minor-modes checker input-method buffer-encoding major-mode process vcs " "))) ; <-- added padding here
+;; (after! doom-modeline
+;;   ;(setq all-the-icons-scale-factor 0.9)
+;;   (doom-modeline-def-modeline 'main
+;;     '(bar matches buffer-info remote-host buffer-position parrot selection-info)
+;;     '(misc-info minor-modes checker input-method buffer-encoding major-mode process vcs " "))) ; <-- added padding here
 
-(after! treemacs
-  (setq doom-themes-treemacs-theme "doom-colors")
-  (setq treemacs-width 22))
+;; (after! treemacs
+;;   (setq doom-themes-treemacs-theme "doom-colors")
+;;   (setq treemacs-width 22))
   ;(setq treemacs-icon-root (all-the-icons-octicon "file-directory"))
 
 ;    (treemacs-create-icon
@@ -177,28 +177,30 @@
 ;; ============================================================================
 ;; key bindings
 (map! "M-n" 'mc/mark-all-dwim)
-(map! "C-S-<mouse-1>" 'mc/add-cursor-on-click)
+;; (map! "C-S-<mouse-1>" 'mc/add-cursor-on-click)
 
-(map! :n "g h" 'evil-beginning-of-line-or-digit-argument)
+(map! :n "g h" 'evil-beginning-of-line)
 (map! :n "g l" 'evil-end-of-line)
 
-(map! :n "C-e" nil)
-(map! :n "C-<f5>" 'dap-java-debug)
+;; (map! :n "C-e" nil)
 
-(map! "<f8>" '+treemacs/toggle)
-(map! "<f9>" 'centaur-tabs-mode)
+;; (map! :n "C-<f5>" 'dap-java-debug)
+
+;; (map! "<f8>" '+treemacs/toggle)
+;; (map! "<f9>" 'centaur-tabs-mode)
+
 ;; ============================================================================
 ;; ligatures
-;(push '("!=" . #Xe900) +pretty-code-iosevka-font-ligatures)
-;(push '("++" . #Xe790) +pretty-code-iosevka-font-ligatures)
-;(push '("--" . #Xe980) +pretty-code-iosevka-font-ligatures)
-;(push '("==" . #Xea01) +pretty-code-iosevka-font-ligatures)
-;(push '("===" . #Xea02) +pretty-code-iosevka-font-ligatures)
-;
+;; (push '("!=" . #Xe900) +pretty-code-iosevka-font-ligatures)
+;; (push '("++" . #Xe790) +pretty-code-iosevka-font-ligatures)
+;; (push '("--" . #Xe980) +pretty-code-iosevka-font-ligatures)
+;; (push '("==" . #Xea01) +pretty-code-iosevka-font-ligatures)
+;; (push '("===" . #Xea02) +pretty-code-iosevka-font-ligatures)
+
 ;(setq! +pretty-code-symbols nil)
 
 ;; ============================================================================
 ;; lsp
-;(setq lsp-enable-symbol-highlighting nil)
-(setq underline-minimum-offset 5)
-(add-to-list 'exec-path "~/.local/bin/language-servers/kotlin-language-server/bin")
+;; (setq lsp-enable-symbol-highlighting nil)
+;; (setq underline-minimum-offset 5)
+;; (add-to-list 'exec-path "~/.local/bin/language-servers/kotlin-language-server/bin")

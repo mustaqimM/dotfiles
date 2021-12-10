@@ -68,10 +68,12 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
       scroll_factor 0.9
 }
 
-# input "type:keyboard" {
-#       # xkb_options caps:ctrl_modifier
-#       # xkb_options caps:escape
-# }
+input "type:keyboard" {
+      # xkb_options caps:ctrl_modifier
+      # xkb_options caps:escape
+      repeat_delay 400
+      repeat_rate  40
+}
 
 ### Key bindings
 #

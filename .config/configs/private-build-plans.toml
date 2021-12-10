@@ -1,14 +1,78 @@
-[buildPlans.iosevka-custom]               # <iosevka-custom> is your plan name
-family = "Iosevka"		                  # Font menu family name
-design = [		  					      # Customize styles
-#"ligset-calt",
-"v-lig-ltgteq-slanted", "v-capital-g-toothless", "v-g-opendoublestorey", "v-l-italic", "v-zero-dotted", "v-asterisk-low",
-"v-dollar-open" , "v-numbersign-upright", "v-underscore-low", "v-v-curly", "v-w-curly", "v-x-curly", "v-capital-r-curly",
-"v-capital-y-curly", "v-turn-v-curly", "v-y-curly"] # "v-i-hooky", "v-l-tailed", "v-k-cursive", "ligset-dlig", "v-y-cursive"
-# upright = ["upright-styles"]            # Uncomment this line to set styles for upright only
-# italic = ["italic-styles"]              # Uncomment this line to set styles for italic only
-# oblique = ["oblique-styles"]            # Uncomment this line to set styles for oblique only
-hintParams = ["-a", "sss"]                # Optional custom parameters for ttfautohint
+[buildPlans.iosevka-custom]      # <iosevka-custom> is your plan name
+family = "Iosevka"        # Font menu family name
+spacing = "normal"               # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
+serifs = "sans"                  # Optional; Values: `sans` or `slab`
+
+###################################################################################################
+# Configure variants
+
+# Optional; Whether to inherit a `ss##` variant
+[buildPlans.iosevka-custom.variants]
+inherits = "ss08"
+
+# Optional; Configure single character's variant
+[buildPlans.iosevka-custom.variants.design]
+# capital-a = 'curly-serifless'
+capital-d = 'standard-serifless'
+capital-g = 'toothless-corner-serifless-hooked'
+capital-i = 'serifed'
+capital-j = 'serifed'
+capital-n = 'standard'
+capital-q = 'crossing-curly-tailed'
+# capital-r = 'curly'
+# capital-v = 'curly'
+# capital-w = 'curly'
+# capital-y = 'curly-serifless'
+a = 'double-storey-toothless-corner'
+g = 'double-storey-open'
+l = 'serifed-flat-tailed'
+m = 'earless-corner-double-arch'
+n = 'earless-corner-straight'
+p = 'earless-corner'
+q = 'earless-corner'
+r = 'earless-corner'
+t = 'flat-hook-short-neck'
+u = 'toothless-corner'
+# v = 'curly'
+# w = 'curly'
+# x = 'curly-serifless'
+y = 'curly-turn'
+zero = 'dotted'
+four = 'open'
+six = 'straight-bar'
+seven = 'straight-serifless'
+nine = 'straight-bar'
+lig-ltgteq = 'slanted'
+# dollar = 'open'
+paren = 'flat-arc'
+asterisk = 'penta-low'
+# ampersand = 'et-toothless-corner'
+bar = 'force-upright'
+
+# Optional; Configure single character's variant for Upright and Oblique; Overrides [design]
+# [buildPlans.iosevka-custom.variants.upright]
+# i = 'zshaped'
+# l = 'zshaped'
+
+# Optional; Configure single character's variant for Italic only; Overrides [design]
+[buildPlans.iosevka-custom.variants.italic]
+i = 'tailed-serifed'
+l = 'tailed-serifed'
+
+# End variant section
+###################################################################################################
+
+###################################################################################################
+# Configure ligations
+
+[buildPlans.iosevka-custom.ligations]
+inherits = "default-calt"   # Optional; inherits an existing ligation set
+disables = []               # Optional; disable specific ligation groups, overrides inherited ligation set
+enables  = []               # Optional; enable specific ligation groups, overrides inherited ligation set
+
+# End ligation section
+###################################################################################################
+
 
 ###################################################################################################
 # Override default building weights
@@ -37,34 +101,47 @@ css   = 700
 ###################################################################################################
 
 ###################################################################################################
-# Override default building slant sets
-# Format: <upright|italic|oblique> = <"normal"|"italic"|"oblique">
-# When this section is absent, all slants would be built.
+# Override default building slope sets
+# When this section is absent, all slopes would be built.
 
-[buildPlans.iosevka-custom.slants]
-upright = "normal"
-italic = "italic"
-#oblique = "oblique"
+[buildPlans.iosevka-custom.slopes.upright]
+angle = 0             # Angle in degrees. Valid range [0, 15]
+shape = "upright"     # Slope grade used for shape selection.  `upright` | `oblique` | `italic`
+menu  = "upright"     # Slope grade used for naming.           `upright` | `oblique` | `italic`
+css   = "normal"      # Slope grade used for webfont CSS.      `normal`  | `oblique` | `italic`
 
-# End slant section
+[buildPlans.iosevka-custom.slopes.oblique]
+angle = 9.4
+shape = "oblique"
+menu  = "oblique"
+css   = "oblique"
+
+[buildPlans.iosevka-custom.slopes.italic]
+angle = 9.4
+shape = "italic"
+menu  = "italic"
+css   = "italic"
+# End slope section
 ###################################################################################################
 
 ###################################################################################################
 # Override default building widths
 # When buildPlans.<plan name>.widths is absent, all widths would built and mapped to
 # default values.
-# IMPORTANT : Currently "shape" property only support 3, 5, and 7, while "menu" only
-#             support 1, 2, 3, 4, 5, 6, 7, 8, 9.
-#             If you decide to use custom weights you have to define all the weights you
-#             plan to use otherwise they will not be built.
+# IMPORTANT : Currently "shape" property only supports numbers between 434 and 664 (inclusive),
+#             while "menu" only supports integers between 1 and 9 (inclusive).
+#             The "shape" parameter specifies the unit width, measured in 1/1000 em. The glyphs'
+#             width are equal to, or a simple multiple of the unit width.
+#             If you decide to use custom widths you have to define all the widths you plan to use,
+#             otherwise they will not be built.
 
 [buildPlans.iosevka-custom.widths.normal]
-shape = 5          # Width of glyph shapes.
-menu  = 5          # Width for the font's names.
+shape = 500        # Unit Width, measured in 1/1000 em.
+menu  = 5          # Width grade for the font's names.
 css   = "normal"   # "font-stretch' property of webfont CSS.
 
 [buildPlans.iosevka-custom.widths.extended]
-shape = 7
+shape = 600
 menu  = 7
 css   = "expanded"
 
@@ -90,137 +167,9 @@ ranges = [[10003, 10008]]
 # Remove this section when compatibility ligatures are not needed.
 
 [[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57657 # 0xE139
+unicode = 57600 # 0xE100
 featureTag = 'calt'
-sequence = '->'
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57655 # 0xe137
-featureTag = 'calt'
-sequence = "<-"
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57730 # 0xe182
-featureTag = 'calt'
-sequence = "<--"
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57682 # 0xe152
-featureTag = 'calt'
-sequence = "-->"
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57697 # 0xe161
-featureTag = 'calt'
-sequence = "=>"
-
-unicode = 57754 # 0xe19a
-featureTag = 'calt'
-sequence = "<=="
-
-unicode = 57706 # 0xe16a
-featureTag = 'XALL'
-sequence = "==>"
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57715 # 0xe173
-featureTag = 'calt'
-sequence = ">="
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57745 # 0xe191
-featureTag = 'calt'
-sequence = "<="
-
-# -----------------------------------------
-# Composition operators
-# -----------------------------------------
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57777 # 0xe1b1
-featureTag = 'calt'
-sequence = ">>"
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57779 # 0xe1b3
-featureTag = 'calt'
-sequence = "<<"
-
-# -----------------------------------------
-# HTML comments
-# -----------------------------------------
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57614 # 0xe10e
-featureTag = 'calt'
-sequence = "<!--"
-
-# -----------------------------------------
-# Three-char ops with discards
-# -----------------------------------------
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 59280 # 0xe790
-featureTag = 'calt'
-sequence = "++"
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 59776 # 0xe980
-featureTag = 'calt'
-sequence = "--"
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 59649 # 0xe901
-featureTag = 'calt'
-sequence = "!="
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 59905 # 0xeA01
-featureTag = 'calt'
-sequence = "=="
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 59906 # 0xeA02
-featureTag = 'calt'
-sequence = "==="
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 59650 # 0xe902
-featureTag = 'calt'
-sequence = "!=="
-
-# -----------------------------------------
-# Colons
-# -----------------------------------------
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57670 # 0xe146
-featureTag = 'calt'
-sequence = "::"
-
-# -----------------------------------------
-# Lens operators
-# -----------------------------------------
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57794 # 0xe1c2
-featureTag = 'calt'
-sequence = "+="
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57795 # 0xe1c3
-featureTag = 'calt'
-sequence = "-="
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57796 # 0xe1c4
-featureTag = 'calt'
-sequence = "*="
-
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57797 # 0xe1c5
-featureTag = 'calt'
-sequence = "/="
+sequence = '<*>'
 
 # End compatibility ligatures section
 ###################################################################################################

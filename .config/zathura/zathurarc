@@ -1,6 +1,6 @@
 # -*- mode: conf; eval: (rainbow-mode) -*-
 
-set sandbox strict
+# set sandbox strict
 
 set guioptions ""
 set recolor true

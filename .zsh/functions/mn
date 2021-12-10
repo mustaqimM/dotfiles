@@ -1,7 +1,0 @@
-#!/bin/env zsh
-
-mn() {
-	/bin/man "$@" | nvim -c "set ft=man" -
-}
-
-mn "$@"

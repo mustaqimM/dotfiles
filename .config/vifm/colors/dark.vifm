@@ -4,12 +4,12 @@ highlight Win cterm=none ctermfg=248 ctermbg=234
 highlight AuxWin cterm=none ctermfg=248 ctermbg=default
 highlight OtherWin cterm=none ctermfg=248 ctermbg=default
 highlight Directory cterm=none ctermfg=012 ctermbg=234
-highlight Link cterm=bold ctermfg=yellow ctermbg=234
-highlight BrokenLink cterm=reverse ctermfg=black ctermbg=196
+highlight Link cterm=none ctermfg=011 ctermbg=234
+highlight BrokenLink cterm=reverse ctermfg=red ctermbg=default
 highlight Socket cterm=bold ctermfg=125 ctermbg=default
 highlight Device cterm=bold ctermfg=red ctermbg=default
 highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
-highlight Executable cterm=bold ctermfg=green ctermbg=default
+highlight Executable cterm=none ctermfg=green ctermbg=default
 highlight Selected cterm=bold ctermfg=255 ctermbg=235
 highlight CurrLine cterm=none ctermfg=default ctermbg=235
 highlight OtherLine cterm=bold ctermfg=default ctermbg=235
@@ -27,8 +27,8 @@ highlight SuggestBox cterm=bold ctermfg=default ctermbg=default
 
 
 " file name specific highlight
-highlight /^.*(\.entitlements|\.epf|\.hidden-color-scheme|\.hidden-tmtheme|\.ini|\.last-run|\.merged-ca-bundle|\.pbxproj|\.pcf|\.plist|\.psf|\.strings|\.sublime-build|\.sublime-commands|\.sublime-keymap|\.sublime-project|\.sublime-settings|\.sublime-snippet|\.sublime-workspace|\.tmtheme|\.user-ca-bundle|\.viminfo|\.xcconfig|\.xcsettings|\.xcuserstate|\.xcworkspacedata|authorized_keys|cfg|conf|config|known_hosts|rc)$/I cterm=bold ctermfg=default ctermbg=default
-highlight /^.*\.(coffee|java|js|jsm|jsp|mjs)$/I cterm=bold ctermfg=074 ctermbg=default
+highlight /^.*(\.entitlements|\.epf|\.hidden-color-scheme|\.hidden-tmtheme|\.ini|\.last-run|\.merged-ca-bundle|\.pbxproj|\.pcf|\.plist|\.psf|\.strings|\.sublime-build|\.sublime-commands|\.sublime-keymap|\.sublime-project|\.sublime-settings|\.sublime-snippet|\.sublime-workspace|\.tmtheme|\.user-ca-bundle|\.viminfo|\.xcconfig|\.xcsettings|\.xcuserstate|\.xcworkspacedata|authorized_keys|cfg|conf|config|known_hosts|rc)$/I cterm=none ctermfg=default ctermbg=default
+highlight /^.*\.(coffee|java|js|jsm|jsp|mjs)$/I cterm=none ctermfg=074 ctermbg=default
 highlight /^.*\.(awk|bash|bat|rproj|sed|sh|vim|zsh)$/I cterm=none ctermfg=11 ctermbg=default
 highlight /^.*\.(agdai|h|h++|hi|hpp|hxx|ii|m|s|tcc)$/I cterm=none ctermfg=110 ctermbg=default
 highlight /^.*\.(doc|docx|odb|odt|pages|rtf)$/I cterm=none ctermfg=111 ctermbg=default
@@ -42,9 +42,9 @@ highlight /^.*\.(application|cue|description|directory|m3u|m3u8|md5|properties|s
 highlight /^.*\.(ass|srt|ssa|sub|sup|vtt)$/I cterm=none ctermfg=117 ctermbg=default
 highlight /^.*\.(82p|83p|8eu|8xe|8xp)$/I cterm=none ctermfg=121 ctermbg=default
 highlight /^.*\.(bin|iso|nrg|qcow|sparseimage|toast|vcd|vmdk)$/I cterm=none ctermfg=red ctermbg=black
-highlight /^.*\.(css|eml|htm|html|jhtm|less|mht|mustache|sass|scss)$/I cterm=bold ctermfg=125 ctermbg=default
-highlight /^.*\.(aiff|alac|ape|cda|flac|midi|pcm|wav|wv|wvc)$/I cterm=bold ctermfg=136 ctermbg=default
-highlight /^.*\.(3ga|aac|amr|au|caf|dat|dts|fcm|m4a|mid|mod|mp3|mp4a|oga|ogg|opus|s3m|sid|wma)$/I cterm=bold ctermfg=137 ctermbg=default
+highlight /^.*\.(css|eml|htm|html|jhtm|less|mht|mustache|sass|scss)$/I cterm=none ctermfg=125 ctermbg=default
+highlight /^.*\.(aiff|alac|ape|cda|flac|midi|pcm|wav|wv|wvc)$/I cterm=none ctermfg=136 ctermbg=default
+highlight /^.*\.(3ga|aac|amr|au|caf|dat|dts|fcm|m4a|mid|mod|mp3|mp4a|oga|ogg|opus|s3m|sid|wma)$/I cterm=none ctermfg=137 ctermbg=default
 highlight /^.*\.(cbr|cbz|chm|djvu|epub|mobi|pdf)$/I cterm=none ctermfg=141 ctermbg=default
 highlight /^.*(\.nix|\.rake|dockerfile|makefile)$/I cterm=none ctermfg=155 ctermbg=default
 highlight /^.*\.(pl)$/I cterm=none ctermfg=160 ctermbg=default
@@ -62,7 +62,7 @@ highlight /^.*\.(32x|a00|a52|a64|a78|adf|atr|cdi|fm2|gb|gba|gbc|gel|gg|ggl|ipk|j
 highlight /^.*\.(apk|bsp|cab|deb|dmg|ipa|jad|jar|pak|pk3|rpm|vdf|vpk)$/I cterm=none ctermfg=215 ctermbg=default
 highlight /^.*\.(dwg|ply|stl|wrl)$/I cterm=none ctermfg=216 ctermbg=default
 highlight /^.*\.(scpt|swift)$/I cterm=none ctermfg=219 ctermbg=default
-highlight /^.*(authors|changes|contributors|copying|copyright|history|install|license|notice|patents|readme|readme.md|readme.rst|version)$/I cterm=bold ctermfg=220 ctermbg=default
+highlight /^.*(authors|changes|contributors|copying|copyright|history|install|license|notice|patents|readme|readme.md|readme.rst|version)$/I cterm=none ctermfg=220 ctermbg=default
 highlight /^.*\.(msql|mysql|pgsql|sql)$/I cterm=none ctermfg=222 ctermbg=default
 highlight /^.*(\.cfusertextencoding|\.ds_store|\.localized|\.part|\.r[0-9]{0,2}|\.z[0-9]{0,2}|\.zx[0-9]{0,2}|coderesources|pkginfo)$/I cterm=none ctermfg=239 ctermbg=default
 highlight /^.*(\.dockerignore|\.gitattributes|\.gitignore|\.gitmodules|\.pyc|pm_to_blib)$/I cterm=none ctermfg=240 ctermbg=default
@@ -95,7 +95,7 @@ highlight /^.*\.(bmp|cdr|dicom|flif|gif|icns|ico|jpeg|jpg|nth|png|psd|pxd|pxm|ti
 highlight /^.*\.(ai|drw|eps|epsf|ps|svg)$/I cterm=none ctermfg=99 ctermbg=default
 highlight /^.*\.(diff)$/I cterm=bold ctermfg=197 ctermbg=default
 highlight /^.*\.(patch)$/I cterm=bold ctermfg=197 ctermbg=default
-highlight /^.*(ls_colors)$/I cterm=bold,reverse,underline,reverse ctermfg=197 ctermbg=89
+highlight /^.*(ls_colors)$/I cterm=none,reverse,underline,reverse ctermfg=197 ctermbg=89
 
 
 if $USER == 'root'
