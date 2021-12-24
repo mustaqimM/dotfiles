@@ -13,6 +13,8 @@ switch_theme() {
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Light"
         kvantummanager --set 'WhiteSur'
         sed -i 's|Papirus-Dark|Papirus-Light|' ~/.config/qt5ct/qt5ct.conf
+        sed -i 's|colors: \*tomorrow-dark|colors: \*tomorrow-light|' ~/.config/alacritty/alacritty.yml
+        sed -i 's|Tomorrow-Night|Tomorrow|' ~/.config/bat/config
     }
     dark_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]DARK"
@@ -20,6 +22,8 @@ switch_theme() {
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
         kvantummanager --set 'WhiteSurDark'
         sed -i 's|Papirus-Light|Papirus-Dark|' ~/.config/qt5ct/qt5ct.conf
+        sed -i 's|colors: \*tomorrow-light|colors: \*tomorrow-dark|' ~/.config/alacritty/alacritty.yml
+        sed -i 's|Tomorrow|Tomorrow-Night|' ~/.config/bat/config
     }
 
     case "$1" in

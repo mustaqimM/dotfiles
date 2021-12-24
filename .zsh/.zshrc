@@ -96,15 +96,13 @@ zi ice wait lucid \
   atload"HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=blue,fg=232,bold""
 zi light "zsh-users/zsh-history-substring-search"
 
-zi ice wait lucid atload"zicompinit; zicdreplay" blockf
-zi light "zsh-users/zsh-completions"
-#zi snippet "OMZ::lib/completion.zsh"
-
-zi ice wait lucid atinit"_zcomp"
-zi light "zdharma-continuum/fast-syntax-highlighting"
-
-zi ice wait lucid compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start"
-zi light "zsh-users/zsh-autosuggestions"
+zi wait lucid for \
+  atinit"_zcompare" \
+    light-mode zdharma-continuum/fast-syntax-highlighting \
+  atload"zicompinit; zicdreplay" blockf \
+    light-mode zsh-users/zsh-completions \
+  compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start" \
+    light-mode zsh-users/zsh-autosuggestions
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi snippet "OMZ::plugins/git/git.plugin.zsh"
@@ -115,8 +113,8 @@ zi light "wfxr/forgit"
 
 zi ice wait lucid pick"init.sh"
 zi light "b4b4r07/enhancd"
-zi ice wait"2g" lucid
-zi light "changyuheng/zsh-interactive-cd"
+# zi ice wait lucid
+# zi light "changyuheng/zsh-interactive-cd"
 
 # zi ice lucid from"gh-r" as'program' bpick"" pick"def-matcher"
 # zi light sei40kr/fast-alias-tips-bin
@@ -192,6 +190,9 @@ zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
 #  atload'eval "$(pyenv virtualenv-init - zsh)"'
 #zi light pyenv/pyenv-virtualenv
 
+zi ice lucid wait"[[ -f package.json ]]" atload"[[ -f .nvmrc ]] && nvm exec" # wait'[[ -n ${ZLAST_COMMANDS[(r)nv]} ]]'
+zi light sei40kr/zsh-lazy-nvm
+
 zi ice svn #atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
 zi snippet "OMZ::plugins/emacs"
 
@@ -244,10 +245,10 @@ zi light "so-fancy/diff-so-fancy"
 #zi ice wait"2" lucid as"program" pick"build/release/peaclock" atclone"./build.sh"
 #zi light "octobanana/peaclock"
 
-#zi ice wait"2" lucid as"program" pick"heroku"
-#zi light "$HOME/.local/bin/heroku/bin"
-#zi ice wait"2" lucid cloneonly
-#zi snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)her*]} ]]' lucid as"program" pick"heroku"
+zi light "$HOME/.local/bin/heroku/bin"
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)her*]} ]]' lucid #cloneonly
+zi snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
 
 #zi ice as"program" pick"bin/sml"
 #zi snippet "/home/mustaqim/.local/bin/sml/bin/sml"
@@ -357,10 +358,10 @@ function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/"$@" ;}
 
 fzf-open-file-or-dir() {
   local cmd="_fzf_compgen_path -calways $(pwd)"
-  local out=$(eval $cmd | fzf)
+  local out=$(eval $cmd | fzf-tmux --exit-0)
 
   if [ -f "$out" ]; then
-    emacs -nw "$out" #< /dev/tty
+    /bin/emacs -nw "$out" </dev/tty
   elif [ -d "$out" ]; then
     cd "$out"
     zle accept-line
@@ -373,17 +374,19 @@ fzf-open-file-or-dir() {
 # === BINDINGS ===
 # {{{
 zle     -N        fzf-open-file-or-dir
-bindkey '^P'      fzf-open-file-or-dir
+bindkey '^O'      fzf-open-file-or-dir
 
 bindkey '^[[A'    history-substring-search-up
+bindkey '^P'      history-substring-search-up
 bindkey '^[[B'    history-substring-search-down
+bindkey '^N'      history-substring-search-down
 bindkey '^[[1;5C' vi-forward-word
 bindkey '^[[1;5D' vi-backward-word
 bindkey '^F'      vi-forward-word
 bindkey '^B'      emacs-backward-word
 bindkey '^A'      beginning-of-line
 bindkey '^E'      end-of-line
-bindkey '^O'      push-line-or-edit
+# bindkey '^O'      push-line-or-edit
 bindkey '^[[P'    delete-char
 bindkey '^W'      backward-kill-word
 #bindkey '^[[1;3D'
@@ -466,4 +469,3 @@ zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl direnv docker 
   vue zstd
 
 #for comp ( yadm vifm ) { zicompdef _$comp $comp; }
-

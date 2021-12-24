@@ -99,6 +99,9 @@
 ;  (add-hook 'vue-mode-hook 'vuejs-custom))
 ;(add-hook 'vue-mode-hook (lambda () (setq syntax-ppss-table nil)))
 
+(after! rjsx-mode
+  (add-hook! 'rjsx-mode-hook 'prettier-mode))
+
 ;(with-eval-after-load 'flycheck
 ;  (flycheck-add-mode 'javascript-eslint 'vue-mode)
 ;  (flycheck-add-mode 'javascript-eslint 'web-mode))
@@ -204,3 +207,5 @@
 ;; (setq lsp-enable-symbol-highlighting nil)
 ;; (setq underline-minimum-offset 5)
 ;; (add-to-list 'exec-path "~/.local/bin/language-servers/kotlin-language-server/bin")
+;; (setq-hook! 'rjsx-mode-hook +format-with-lsp nil)
+

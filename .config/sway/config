@@ -65,7 +65,7 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
       tap enabled
       drag enabled
       middle_emulation enabled
-      scroll_factor 0.9
+      scroll_factor 1
 }
 
 input "type:keyboard" {

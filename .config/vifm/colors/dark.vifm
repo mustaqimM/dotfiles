@@ -9,8 +9,8 @@ highlight BrokenLink cterm=reverse ctermfg=red ctermbg=default
 highlight Socket cterm=bold ctermfg=125 ctermbg=default
 highlight Device cterm=bold ctermfg=red ctermbg=default
 highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
-highlight Executable cterm=none ctermfg=green ctermbg=default
-highlight Selected cterm=bold ctermfg=255 ctermbg=235
+highlight Executable cterm=none ctermfg=208 ctermbg=default
+highlight Selected cterm=none ctermfg=255 ctermbg=235
 highlight CurrLine cterm=none ctermfg=default ctermbg=235
 highlight OtherLine cterm=bold ctermfg=default ctermbg=235
 highlight TopLine cterm=bold ctermfg=black ctermbg=235
@@ -29,7 +29,7 @@ highlight SuggestBox cterm=bold ctermfg=default ctermbg=default
 " file name specific highlight
 highlight /^.*(\.entitlements|\.epf|\.hidden-color-scheme|\.hidden-tmtheme|\.ini|\.last-run|\.merged-ca-bundle|\.pbxproj|\.pcf|\.plist|\.psf|\.strings|\.sublime-build|\.sublime-commands|\.sublime-keymap|\.sublime-project|\.sublime-settings|\.sublime-snippet|\.sublime-workspace|\.tmtheme|\.user-ca-bundle|\.viminfo|\.xcconfig|\.xcsettings|\.xcuserstate|\.xcworkspacedata|authorized_keys|cfg|conf|config|known_hosts|rc)$/I cterm=none ctermfg=default ctermbg=default
 highlight /^.*\.(coffee|java|js|jsm|jsp|mjs)$/I cterm=none ctermfg=074 ctermbg=default
-highlight /^.*\.(awk|bash|bat|rproj|sed|sh|vim|zsh)$/I cterm=none ctermfg=11 ctermbg=default
+highlight /^.*\.(awk|bash|bat|rproj|sed|sh|vim|zsh)$/I cterm=none ctermfg=208 ctermbg=default
 highlight /^.*\.(agdai|h|h++|hi|hpp|hxx|ii|m|s|tcc)$/I cterm=none ctermfg=110 ctermbg=default
 highlight /^.*\.(doc|docx|odb|odt|pages|rtf)$/I cterm=none ctermfg=111 ctermbg=default
 highlight /^.*\.(docm)$/I cterm=underline ctermfg=111 ctermbg=default
@@ -41,7 +41,7 @@ highlight /^.*\.(vob)$/I cterm=bold ctermfg=115 ctermbg=default
 highlight /^.*\.(application|cue|description|directory|m3u|m3u8|md5|properties|sfv|theme|torrent|urlview|webloc)$/I cterm=none ctermfg=116 ctermbg=default
 highlight /^.*\.(ass|srt|ssa|sub|sup|vtt)$/I cterm=none ctermfg=117 ctermbg=default
 highlight /^.*\.(82p|83p|8eu|8xe|8xp)$/I cterm=none ctermfg=121 ctermbg=default
-highlight /^.*\.(bin|iso|nrg|qcow|sparseimage|toast|vcd|vmdk)$/I cterm=none ctermfg=red ctermbg=black
+highlight /^.*\.(bin|iso|nrg|qcow|sparseimage|toast|vcd|vmdk)$/I cterm=none ctermfg=red ctermbg=default
 highlight /^.*\.(css|eml|htm|html|jhtm|less|mht|mustache|sass|scss)$/I cterm=none ctermfg=125 ctermbg=default
 highlight /^.*\.(aiff|alac|ape|cda|flac|midi|pcm|wav|wv|wvc)$/I cterm=none ctermfg=136 ctermbg=default
 highlight /^.*\.(3ga|aac|amr|au|caf|dat|dts|fcm|m4a|mid|mod|mp3|mp4a|oga|ogg|opus|s3m|sid|wma)$/I cterm=none ctermfg=137 ctermbg=default
@@ -53,7 +53,7 @@ highlight /^.*\.(iml|key|odp|pps|ppt|ppts|pptx)$/I cterm=none ctermfg=166 ctermb
 highlight /^.*\.(pptsm|pptxm)$/I cterm=underline ctermfg=166 ctermbg=default
 highlight /^.*\.(tf|tfstate|tfvars)$/I cterm=none ctermfg=168 ctermbg=default
 highlight /^.*\.(bib|dhall|fxml|json|jsonl|msg|pgn|rdata|rss|toml|xml|yaml|yml)$/I cterm=none ctermfg=178 ctermbg=default
-highlight /^.*\.(etx|info|markdown|md|mkd|nfo|pod|rst|tex|textile)$/I cterm=none ctermfg=184 ctermbg=default
+highlight /^.*\.(etx|info|markdown|md|mkd|nfo|pod|rst|tex|textile)$/I cterm=none ctermfg=011 ctermbg=default
 highlight /^.*\.(log)$/I cterm=none ctermfg=190 ctermbg=default
 highlight /^.*(\.asc|\.bfe|\.enc|\.gpg|\.p12|\.p7s|\.pem|\.pgp|\.sig|\.signature|id_dsa|id_ecdsa|id_ed25519|id_rsa)$/I cterm=none ctermfg=192 ctermbg=black
 highlight /^.*\.(git)$/I cterm=none ctermfg=197 ctermbg=default

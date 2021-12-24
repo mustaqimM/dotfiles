@@ -180,9 +180,9 @@ nnoremap yd :!echo -n %d | wl-copy %i <cr>:echo expand('%"d') ": dir yanked to c
 " yank current file path into the clipboard
 nnoremap yp :!echo -n %c:p | wl-copy %i <cr>:echo expand('%"c:p') ": file path yanked to clipboard"<cr>
 " yank current filename without path into the clipboard
-nnoremap yn :!echo -n %c | wl-copy %i <cr>:echo expand('%"c') ": file & ext yanked to clipboard"<cr>
+nnoremap ye :!echo -n %c | wl-copy %i <cr>:echo expand('%"c') ": file & ext yanked to clipboard"<cr>
 " yank root of current file's name into the clipboard
-nnoremap yr :!echo -n %c:r | wl-copy %i <cr>:echo expand('%"c:r') ": file name yanked to clipboard"<cr>
+nnoremap yn :!echo -n %c:r | wl-copy %i <cr>:echo expand('%"c:r') ": file name yanked to clipboard"<cr>
 " yank contents of file
 nnoremap yc :!wl-copy -n < %f %i <cr>:echo expand('%"c') ": file contents yanked"<cr>
 
@@ -203,7 +203,7 @@ nnoremap O :!/bin/emacs -bg '#1d1f21' -fs %f &<cr>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
-nnoremap cc cw<c-u>
+nnoremap cc cW<c-u>
 nnoremap A cw
 
 " Open console in current directory
@@ -235,7 +235,7 @@ nnoremap ; :
 nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)" &<cr>
 
 "nnoremap gg 2gg
-nnoremap t tj
+"nnoremap t tj
 nnoremap mkd :mkdir<space>
 
 " Open file in the background using its default program
@@ -496,7 +496,7 @@ filextype *.pro qtcreator %f &
 "        \ Thunar %f &,
 
 " fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
-fileviewer *.json bat --color always --line-range 0:30 %c
+fileviewer *.json bat --color always %c
 fileviewer *.org highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax md
 fileviewer *.[s]o hexyl -c 500 %c
 fileviewer *.csv bat --color always --wrap never --pager never -p %c
@@ -519,9 +519,9 @@ set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  :
 " code
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitconfig,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css,,*.scss::'
-set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,ﯤ  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
+set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
 set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::/^rc|rc$/::,  ::*.properties::,  ::*.log::,  ::*.json,,*.yml::'
+set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::/^rc|rc$/::,  ::*.properties::,  ::*.log::,  ::/json|yml$/::'
 set classify+='  ::*.db,,*.sql,,*.sqlite::'
 set classify+='  ::*.pem::'
 " archives

@@ -37,8 +37,9 @@ export COLORTERM=truecolor
 export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -c always"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
-export FZF_DEFAULT_OPTS="--layout=reverse --ansi --color=bg+:#282a2e,bg:#1d1f21,spinner:#8abeb7,hl:#81a2be,fg:#b4b7b4,header:#81a2be,info:#f0c674,pointer:#8abeb7,marker:#8abeb7,fg+:#e0e0e0,prompt:#f0c674,hl+:#81a2be"
+export FZF_DEFAULT_OPTS="--layout=reverse --ansi --prompt=' ' --pointer='›' --marker='›' --color=spinner:yellow,hl:red,info:yellow,pointer:yellow,marker:green,prompt:blue,hl+:red"
 export ENHANCD_FILTER='fzf'
+export ENHANCD_COMPLETION_BEHAVIOR=list
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 # FAST_ALIAS_TIPS_PREFIX="$(tput bold)╭───\n\033[01;33m   \033[01;37m"
 # FAST_ALIAS_TIPS_SUFFIX="\n╰───$(tput sgr0)"
@@ -69,26 +70,25 @@ export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
 export LESS_TERMCAP_so=$'\e[30;43m'       # search result
 # }}}
 
-export RUST_SRC_PATH="/home/mustaqim/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-export ANDROID_HOME="$HOME/Android/Sdk"
+# export RUST_SRC_PATH="/home/mustaqim/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+# export ANDROID_HOME="$HOME/Android/Sdk"
 
 # shellcheck source=/home/mustaqim/.priv-env
-source "$HOME/.priv-env"
+# source "$HOME/.priv-env"
 
 typeset -U path
 path=(
-    $HOME/.cargo/bin
-    $HOME/.yarn/bin
+    # $HOME/.cargo/bin
+    # $HOME/.yarn/bin
     $HOME/.emacs.d/bin
-    $HOME/.local/bin
-    $HOME/.local/bin/sml/bin
-    $HOME/.local/bin/language-servers/kotlin-language-server/bin
+    # $HOME/.local/bin/sml/bin
+    # $HOME/.local/bin/language-servers/kotlin-language-server/bin
     # $HOME/.local/bin/ktlint
     $HOME/.local/bin/scripts
-    $ANDROID_HOME/tools
-    $ANDROID_HOME/platform-tools
-    /opt/texlive/2020/bin/x86_64-linux
-    $JAVA_HOME/bin
+    # $ANDROID_HOME/tools
+    # $ANDROID_HOME/platform-tools
+    # /opt/texlive/2020/bin/x86_64-linux
+    # $JAVA_HOME/bin
     $path
 )
 export PATH

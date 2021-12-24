@@ -51,19 +51,16 @@
 ;; our package manager can't deal with; see raxod502/straight.el#279)
 ;(package! builtin-package :recipe (:branch "develop"))
 
+(package! prettier)
 
-;(package! flycheck-rust)
+;; (package! flycheck-rust)
 
-;(package! flycheck-inline)
+;; (package! flycheck-inline)
 
-;(package! sml-mode)
+;; (package! sml-mode)
 
-;(package! vue-mode)
+;; (package! vue-mode)
 
-;(package! vimrc-mode)
+;; (package! vimrc-mode)
 
-(package! gdscript-mode)
-
-(package! gnuplot)
-
-(package! zig-mode)
+;; (package! gdscript-mode)

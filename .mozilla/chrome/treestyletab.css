@@ -1,0 +1,26 @@
+.newtab-button-box {
+  display: none;
+}
+
+/* Only show tab close button on hover */
+#tabbar tab-item:not(:hover) tab-closebox {
+  display: none;
+}
+
+/* Hide twisty and collapse/expand tree by clicking on tab's icon */
+tab-item tab-twisty {
+  margin-left: 3px;
+  margin-right: -1em;
+  opacity: 0 !important;
+  position: relative;
+  z-index: 10000;
+}
+
+/* Change styling of pending (unloaded) tabs */
+tab-item.discarded .label-content {
+  opacity: 0.5;
+}
+
+tab-item.unread .label-content {
+  font-style: italic;
+}

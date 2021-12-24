@@ -65,11 +65,11 @@ vbox#sidebar-box.chromeclass-extrachrome {
 .browser-toolbar:not(.titlebar-color) {
   background-image: none !important;
 }
-@media (prefers-color-scheme: dark) {
-  #urlbar {
-    color: #ffffff !important;
-  }
-}
+/* @media (prefers-color-scheme: dark) { */
+/*   #urlbar { */
+/*     color: #ffffff !important; */
+/*   } */
+/* } */
 
 /* Hide the back button unless we can actually go back. */
 #back-button[disabled="true"] {
