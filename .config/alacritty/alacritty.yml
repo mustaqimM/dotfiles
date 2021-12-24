@@ -1,3 +1,4 @@
+# -*- eval: (rainbow-mode) -*-
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Import additional configuration files
@@ -182,31 +183,46 @@ schemes:
       magenta:    "#b294bb"
       cyan:       "#8abeb7"
       white:      "#ffffff"
+    indexed_colors:
+      - { index: 16, color: '#de935f' }
+      - { index: 17, color: '#a3685a' }
+      - { index: 18, color: '#282a2e' }
+      - { index: 19, color: '#373b41' }
+      - { index: 20, color: '#b4b7b4' }
+      - { index: 21, color: '#e0e0e0' }
+
   tomorrow-light: &tomorrow-light
     primary:
       background: "#ffffff"
-      foreground: "#1d1f21"
+      foreground: "#4d4d4c"
     cursor:
       text:       "#ffffff"
       cursor:     "#1d1f21"
     normal:
-      black:      "#1d1f21"
+      black:      "#ffffff"
       red:        "#c82829"
       green:      "#718c00"
       yellow:     "#eab700"
       blue:       "#4271ae"
       magenta:    "#8959a8"
       cyan:       "#3e999f"
-      white:      "#c5c8c6"
+      white:      "#4d4d4c"
     bright:
-      black:      "#000000"
+      black:      "#8e908c"
       red:        "#c82829"
       green:      "#718c00"
       yellow:     "#eab700"
       blue:       "#4271ae"
       magenta:    "#8959a8"
       cyan:       "#3e999f"
-      white:      "#ffffff"
+      white:      "#1d1f21"
+    indexed_colors:
+      - { index: 16, color: '#f5871f' }
+      - { index: 17, color: '#a3685a' }
+      - { index: 18, color: '#e0e0e0' }
+      - { index: 19, color: '#d6d6d6' }
+      - { index: 20, color: '#969896' }
+      - { index: 21, color: '#282a2e' }
 
 colors: *tomorrow-dark
 
