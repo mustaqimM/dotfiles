@@ -34,8 +34,8 @@ export EDITOR="emacsclient -nw"
 export TERM=xterm-256color
 export COLORTERM=truecolor
 
-export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -c always"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -H -c always"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --max-depth 1"
 export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
 export FZF_DEFAULT_OPTS="--layout=reverse --ansi --prompt=' ' --pointer='›' --marker='›' --color=spinner:yellow,hl:red,info:yellow,pointer:yellow,marker:green,prompt:blue,hl+:red"
 export ENHANCD_FILTER='fzf'

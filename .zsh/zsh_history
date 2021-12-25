@@ -227,7 +227,6 @@
 : 1542911987:0;cat ~/.zsh/aliases
 : 1542912383:0;sudo xbps-install yadm
 : 1542943682:0;sr google test
-: 1542945281:0;yadm add ~/.config/alacritty/alacritty.yml
 : 1542946748:0;yadm add ~/.local/runit/{sv,user}
 : 1542974479:0;yadm decrypt -l
 : 1542993155:0;e ~/.config/ranger/plugins/scaffold.py
@@ -4130,7 +4129,6 @@ done
 : 1620191000:0;sudo hdparm -y /dev/sdb
 : 1620275439:0;yadm add ~/.xinitrc
 : 1620275566:0;yadm add ~/.config/aria2/aria2.conf
-: 1620275576:0;yadm add ~/.config/bat
 : 1620275591:0;yadm add ~/.config/htop/htoprc
 : 1620281590:0;pw-cli info all
 : 1620359450:0;e /etc/X11/xorg.conf.d/20-intel.conf
@@ -4757,7 +4755,6 @@ q
 : 1640189714:0;ssh-keygen -t ed25519 -o -a 100 -C "heroku"
 : 1640189741:0;git push heroku master
 : 1640190265:0;node --version
-: 1640190268:0;npm --version
 : 1640190447:0;w
 : 1640191430:0;cd
 : 1640197701:0;grc
@@ -4775,10 +4772,8 @@ q
 : 1640282809:0;glo
 : 1640283090:0;ga .
 : 1640283106:0;gd
-: 1640283142:0;gst
 : 1640285756:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
 : 1640319590:0;echo $TERM
-: 1640321018:0;e ~/.config/alacritty/alacritty.yml
 : 1640321137:0;npx alacritty-themes
 : 1640323091:0;e ~/.zsh/.p10k-lean.zsh
 : 1640323152:0;psmem -p $(pgrep -d, -u $USER) -S
@@ -4786,36 +4781,44 @@ q
 : 1640324960:0;yadm add ~/.config/sway
 : 1640325044:0;yadm commit
 : 1640325093:0;ssh-add $HOME/.ssh/GitLab </dev/null
-: 1640325097:0;yadm push
-: 1640325262:0;e ~/.zsh/.zshenv
 : 1640325473:0;zpl update -p
-: 1640328259:0;zpl times
 : 1640329213:0;echo $THEME
-: 1640330639:0;e ~/.config/vifm/colors/light.vifm 
 : 1640331560:0;ls -l
-: 1640332800:0;e ~/.zsh/.zshrc
 : 1640338471:0;plain show
-: 1640340417:0;htop
 : 1640340420:0;tlp-stat -t | rg temp
 : 1640343920:0;e ~/.config/vifm/vifmrc
 : 1640344176:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,WhiteSur,WhiteSur-solid}
 : 1640344202:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1640344209:0;yadm diff
 : 1640346788:0;sudo xbps-remove -R vscode
-: 1640346868:0;reload
 : 1640346876:0;fc-cache -fv
-: 1640346892:0;tmux attach || tmux
-: 1640346893:0;push
 : 1640346980:0;e ~/.config/mpv/mpv.conf
 : 1640347013:0;man mpv
 : 1640348148:0;e ~/.zsh/functions/switch_theme
 : 1640349607:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
-: 1640350901:0;yadm status
 : 1640361604:0;sudo xbps-install -Suvy
-: 1640361612:0;f
-: 1640364323:0;yadm push
-: 1640364334:0;yadm status
-: 1640364404:0;f
 : 1640364416:0;yadm add ~/.config/alacritty/alacritty.yml
 : 1640364425:0;yadm add ~/.config/bat
-: 1640364463:0;yadm status
+: 1640364620:0;push
+: 1640366122:0;yadm diff
+: 1640367046:0;yadm push
+: 1640367234:0;npm --version
+: 1640368504:0;e ~/.config/alacritty/alacritty.yml
+: 1640401843:0;htop
+: 1640402141:0;tmux attach || tmux
+: 1640402304:0;yadm status
+: 1640402446:0;e ~/.zsh/.zshenv
+: 1640402526:0;yadm add ~/.tmux.conf.local
+: 1640402558:0;gst
+: 1640403537:0;e ~/.zsh/.zshrc
+: 1640403873:0;vf
+: 1640404037:0;zpl times
+: 1640404279:0;reload
+: 1640404489:0;e ~/.config/vifm/colors/light.vifm 
+: 1640404531:0;f
+: 1640404746:0;yadm status
+: 1640404764:0;yadm add ~/.config/tmux/tmux.conf{,.local}
+: 1640404776:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1640404784:0;yadm diff
+: 1640404791:0;yadm status
+: 1640404856:0;yadm push
+: 1640405294:0;yadm status

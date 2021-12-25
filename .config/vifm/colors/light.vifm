@@ -10,7 +10,7 @@ highlight Socket cterm=bold ctermfg=magenta ctermbg=default
 highlight Device cterm=bold ctermfg=blue ctermbg=default
 highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
 highlight Executable cterm=none ctermfg=208 ctermbg=default
-highlight Selected cterm=none ctermfg=200 ctermbg=default
+highlight Selected cterm=none ctermfg=255 ctermbg=235
 highlight CurrLine cterm=none ctermfg=255 ctermbg=27
 highlight OtherLine cterm=bold ctermfg=default ctermbg=248
 highlight TopLine cterm=bold ctermfg=236 ctermbg=255
@@ -35,7 +35,7 @@ highlight /^.*\.(doc|docx|odb|odt|pages|rtf)$/I cterm=none ctermfg=111 ctermbg=d
 highlight /^.*\.(docm)$/I cterm=underline ctermfg=111 ctermbg=default
 highlight /^.*\.(allow|numbers|ods|xls|xlsx)$/I cterm=none ctermfg=112 ctermbg=default
 highlight /^.*\.(xlsxm)$/I cterm=underline ctermfg=112 ctermbg=default
-highlight /^.*\.(avi|divx|ifo|m2v|m4v|mkv|mov|mp4|mpeg|mpg|ogm|rmvb|sample|t|wmv)$/I cterm=none ctermfg=114 ctermbg=default
+highlight /^.*\.(avi|divx|ifo|m2v|m4v|mkv|mov|mp4|mpeg|mpg|ogm|rmvb|sample|t|wmv)$/I cterm=none ctermfg=002 ctermbg=default
 highlight /^.*\.(3g2|3gp|asf|f4v|flv|gp3|gp4|ogv|ts|webm)$/I cterm=none ctermfg=115 ctermbg=default
 highlight /^.*\.(vob)$/I cterm=bold ctermfg=115 ctermbg=default
 highlight /^.*\.(application|cue|description|directory|m3u|m3u8|md5|properties|sfv|theme|torrent|urlview|webloc)$/I cterm=none ctermfg=116 ctermbg=default

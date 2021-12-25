@@ -8,7 +8,6 @@ alias jackett='mono ~/.local/bin/Jackett/JackettConsole.exe'
 # alias ktlint='ktlint --android --color --relative -v'
 alias nightly=/opt/firefox/firefox-bin
 alias q=exit
-alias f=vifm
 alias reload='exec zsh'
 alias s='googler --count 7'
 # alias pip='/usr/bin/pip'
