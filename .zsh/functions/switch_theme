@@ -3,24 +3,26 @@
 autoload colors && colors
 
 switch_theme() {
-    light_theme="WhiteSur-light-solid"
-    dark_theme="WhiteSur-dark-solid"
+    gtk_light_theme="WhiteSur-light-solid"
+    gtk_dark_theme="WhiteSur-dark-solid"
+    qt_light_theme="WhiteSur-solid"
+    qt_dark_theme="WhiteSur-solidDark"
     current_theme=$(gsettings get org.gnome.desktop.interface gtk-theme | tr -d "'")
 
     light_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]LIGHT"
-        gsettings set org.gnome.desktop.interface gtk-theme $light_theme
+        gsettings set org.gnome.desktop.interface gtk-theme $gtk_light_theme
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Light"
-        kvantummanager --set 'WhiteSur'
+        kvantummanager --set "$qt_light_theme"
         sed -i 's|Papirus-Dark|Papirus-Light|' ~/.config/qt5ct/qt5ct.conf
         sed -i 's|colors: \*tomorrow-dark|colors: \*tomorrow-light|' ~/.config/alacritty/alacritty.yml
         sed -i 's|Tomorrow-Night|Tomorrow|' ~/.config/bat/config
     }
     dark_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]DARK"
-        gsettings set org.gnome.desktop.interface gtk-theme $dark_theme
+        gsettings set org.gnome.desktop.interface gtk-theme $gtk_dark_theme
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
-        kvantummanager --set 'WhiteSurDark'
+        kvantummanager --set "$qt_dark_theme"
         sed -i 's|Papirus-Light|Papirus-Dark|' ~/.config/qt5ct/qt5ct.conf
         sed -i 's|colors: \*tomorrow-light|colors: \*tomorrow-dark|' ~/.config/alacritty/alacritty.yml
         sed -i 's|Tomorrow|Tomorrow-Night|' ~/.config/bat/config
@@ -32,9 +34,9 @@ switch_theme() {
         dark)
             dark_theme ;;
         toggle)
-            [[ $current_theme == $light_theme ]] && dark_theme || light_theme ;;
+            [[ $current_theme == $gtk_light_theme ]] && dark_theme || light_theme ;;
         *)
-            echo "$fg[yellow]Usage: $fg[white]switch_theme [ light | dark | toggle ]"
+            echo "$fg[yellow]Usage: $fg[white]switch_theme [ light || dark || toggle ]"
     esac
 }
 

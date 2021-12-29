@@ -1,12 +1,15 @@
 # -*- mode: conf; eval: (rainbow-mode) -*-
 
+include colorscheme-dark
+
 # Window decoration
 # class                 border  backgr. text    indicator child_border
-client.focused          #525252 #3e3e3e #eceff4 #434c5e   #373b41
-client.focused_inactive #525252 #252626 #d8dee9 #3b4252   #525252
-client.unfocused        #525252 #252626 #d8dee9 #3b4252   #525252
-client.urgent           #bf616a #bf616a #eceff4 #900000   #bf616a
-client.placeholder      #000000 #0c0c0c #eceff4 #000000   #0c0c0c
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
 
 # Title format for windows
 for_window [shell="xdg_shell"] title_format "%title (%app_id)"

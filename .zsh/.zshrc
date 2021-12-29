@@ -7,7 +7,6 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 # ==============================================================================
 
 declare -A ZINIT
@@ -37,11 +36,10 @@ autoload -Uz _zinit
 # ==============================================================================
 
 fpath=(
-/usr/share/zsh/site-functions
-$ZDOTDIR/functions
-$ZDOTDIR/completions
-$HOME/.local/bin
-"${fpath[@]}"
+  /usr/share/zsh/site-functions
+  $ZDOTDIR/functions
+  $ZDOTDIR/completions
+  "${fpath[@]}"
 )
 
 # ==============================================================================
@@ -81,7 +79,9 @@ FAST_HIGHLIGHT_STYLES[single-quoted-argument]="fg=011"
 FAST_HIGHLIGHT_STYLES[double-quoted-argument]="fg=011"
 FAST_HIGHLIGHT_STYLES[dollar-quoted-argument]="fg=011"
 FAST_HIGHLIGHT_STYLES[single-hyphen-option]="fg=yellow"
-FAST_HIGHLIGHT_STYLES[double-hyphen-option]="fg=215"
+FAST_HIGHLIGHT_STYLES[double-hyphen-option]="fg=011"
+FAST_HIGHLIGHT_STYLES[variable]="fg=016"
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=blue,fg=white,bold'
 # ==============================================================================
 
 unalias run-help
@@ -91,8 +91,7 @@ unalias zplg
 # ===  PLUGINS  ===
 # {{{
 
-zi ice wait lucid \
-  atload"HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=blue,fg=232,bold""
+zi ice wait lucid
 zi light "zsh-users/zsh-history-substring-search"
 
 zi wait lucid for \
@@ -110,7 +109,7 @@ zi snippet "OMZ::plugins/git-extras/git-extras.plugin.zsh"
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi light "wfxr/forgit"
 
-zi ice wait lucid pick"init.sh"
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)cd*]} ]]' lucid pick"init.sh"
 zi light "b4b4r07/enhancd"
 # zi ice wait lucid
 # zi light "changyuheng/zsh-interactive-cd"
@@ -126,7 +125,7 @@ zi light "b4b4r07/enhancd"
 #zi light "willghatch/zsh-cdr"
 #zi light "zsh-users/zaw"
 
-zi ice wait"2" lucid nocompletions
+zi ice wait"1" lucid nocompletions
 zi light "hlissner/zsh-autopair"
 
 #zi ice wait"2" lucid
@@ -143,12 +142,7 @@ if [[ $(type -p fzf) ]] then
   zi light "/usr/share/fzf"
 fi
 
-#zi ice wait lucid id-as"base16-fzf-tomorrow-night" #atclone'sed -e "26s/$/\\\/" -e "27i\" --ansi\"\\\ " -i base16-fzf-tomorrow-night' atpull"%atclone"
-#zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow-night.config"
-#zi ice wait lucid id-as"base16-fzf-tomorrow" atclone"sleep 2; sed -i 's|1d1f21|17191a|;27i\  --ansi' base16-fzf-tomorrow" atpull"%atclone"
-#zi snippet "https://raw.githubusercontent.com/nicodebo/base16-fzf/master/bash/base16-tomorrow.config"
-
-zi ice wait"2" lucid
+zi ice wait"1" lucid
 zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
 #zi ice wait"2" lucid
 #zi snippet "OMZ::plugins/sudo/sudo.plugin.zsh"
@@ -192,7 +186,7 @@ zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
 zi ice lucid wait"[[ -f package.json ]]" atload"[[ -f .nvmrc ]] && nvm exec" # wait'[[ -n ${ZLAST_COMMANDS[(r)nv]} ]]'
 zi light sei40kr/zsh-lazy-nvm
 
-zi ice svn #atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn #atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
 zi snippet "OMZ::plugins/emacs"
 
 #zi ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
@@ -211,12 +205,12 @@ zi light trapd00r/LS_COLORS
 #  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
 #zi light direnv/direnv
 
-zi ice wait lucid as"program" mv"*cht.sh -> cht" pick"cht" id-as"cht.sh"
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ch*]} ]]' lucid as"program" mv"*cht.sh -> cht" pick"cht" id-as"cht.sh"
 zi snippet "https://cht.sh/:cht.sh"
 #zi ice wait"2" lucid id-as"tldr" as"program" pick"tldr"
 #zi snippet "https://raw.githubusercontent.com/raylee/tldr/master/tldr"
 
-zi ice lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ps*]} ]]' lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
 zi light "pixelb/ps_mem"
 
 zi ice lucid from"gh-r" as"program"
@@ -300,22 +294,8 @@ _zcomp() {
   # for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
 
 }
-#case $TERM in (xst*)
-#  preexec () { print -Pn "\e]0; $PWD - xst\a" }
-#  precmd () { print -Pn "\e]0; %~\a" }
-#;;
-#esac
 
-# zshaddhistory() {
-#   whence ${${(z)1}[1]} >| /dev/null || return 1 }       # Don't add wrong commands to history
-
-# function exists() {
-#   (( ${+commands[$1]} ))
-# }
-
-# fb() {
-#     filebot -rename "$@" -non-strict --format "{e} - {t}"
-# }
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
 man() {
  if [ -n "$TMUX" ]; then
@@ -328,30 +308,7 @@ man() {
  fi
 }
 
-f() {
-  if [[ $(gsettings get org.gnome.desktop.interface gtk-theme | cut -d- -f2) == 'light' ]]; then
-    /bin/vifm -c 'colorscheme light'
-  else
-    /bin/vifm
-  fi
-}
-
 function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/"$@" ;}
-
-# Copy and Paste for `st`
-# x-kill-region () {
-#   zle kill-region
-#   print -rn $CUTBUFFER | xclip -i -sel clipboard
-# }
-# zle -N x-kill-region
-#
-# x-yank () {
-#   CUTBUFFER=$(xclip -sel clipboard -o </dev/null)
-#   zle yank
-# }
-# zle -N x-yank
-# # bindkey -e '^X' x-kill-region
-# bindkey -e '^V' x-yank
 
 # # Ctrl-w - delete a full WORD (including colon, dot, comma, quotes...)
 # my-backward-kill-word () {
@@ -460,7 +417,7 @@ select-word-style bash # Delete word at a time
 source $ZDOTDIR/aliases
 
 # Load autoload shell functions on demand
-autoload -Uz cdl open fzf_log yadm_log_diff mkcd fz fh fkill fco gfy headphones kd pb scan center_text switch_theme plain push ert-run sqlint magit clip decode
+autoload -Uz cdl open fzf_log yadm_log_diff mkcd f fz fh fkill fco gfy headphones kd pb scan center_text switch_theme plain push ert-run sqlint magit clip decode
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 autoload zcalc
 

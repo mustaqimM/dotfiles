@@ -1311,7 +1311,6 @@
 : 1574530969:0;valgrind speller dictionaries/small texts/cat.txt
 : 1574530979:0;valgrind ./speller dictionaries/small texts/cat.txt
 : 1574534727:0;.....
-: 1574534742:0;touch README.md
 : 1574602420:0;joe generate python > .gitignore
 : 1574626208:0;e templates
 : 1574650588:0;e application.py
@@ -2895,7 +2894,6 @@
 : 1590820741:0;e /etc/fuse.conf
 : 1590917420:0;fd -e torrent -x rm
 : 1590917583:0;sudo xbps-install foliate
-: 1591000761:0;sudo xbps-install rlwrap
 : 1591000784:0;sudo xbps-install xsel
 : 1591029488:0;git clone --depth=1 gh:tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 : 1591188412:0;yadm add ~/.local/share/applications/Emacs.desktop
@@ -2905,7 +2903,6 @@
 : 1591271084:0;sudo ln -s /etc/sv/syncthing /var/service
 : 1591271129:0;sudo usermod -aG socklog mustaqim
 : 1591271430:0;xbps-query -Rs syslog
-: 1591331818:0;chts rust/:learn
 : 1591331869:0;curl https://cheat.sh/:zsh > ~/.zsh/completions/_cht
 : 1591332461:0;zpl cclear
 : 1591332466:0;zpl completions
@@ -3913,7 +3910,6 @@ done
 : 1613551849:0;xlint srcpkgs/dav1d/template
 : 1613553197:0;ga common/shlibs
 : 1613553727:0;ga srcpkgs/dav1d
-: 1613553912:0;gd --staged
 : 1613554915:0;gcs -m "dav1d: update to 0.8.1"
 : 1613619619:0;gcs -m "ffmpeg: revbump to build against libdav1d4"
 : 1613640896:0;gco -b update_bullet
@@ -3921,10 +3917,7 @@ done
 : 1613640961:0;./xbps-src pkg bullet
 : 1613704455:0;xset dpms force off
 : 1613715400:0;/usr/bin/time /bin/zsh -i -c exit
-: 1613715435:0;e ~/.config/doom/config.el
 : 1613723882:0;man zshcompsys
-: 1613734949:0;yadm add ~/.config/tmux/tmux.conf{,.local}
-: 1613794989:0;man zshexpn
 : 1613798387:0;functions
 : 1613798492:0;plain move
 : 1613800465:0;e ~/.zsh/zshenv
@@ -4011,7 +4004,6 @@ done
 : 1614830246:0;curl https://ipinfo.io/ip
 : 1614840274:0;svlogtail | rg sshd
 : 1614854139:0;e ~/.config/awesome/signals.lua
-: 1614876089:0;e ~/.config/mpv/input.conf
 : 1614881662:0;nmap localhost
 : 1614881886:0;cp /usr/share/nzbget/nzbget.conf ~/.config/nzbget/nzbget.conf
 : 1614881916:0;nzbget -s -o outputmode=log
@@ -4540,7 +4532,6 @@ done
 : 1637389089:0;inxi -F -d -f -l -m -o -p -t cm -u -x
 : 1637389879:0;sudo xbps-install rsync
 : 1637390220:0;gco -b update_gocryptfs
-: 1637390475:0;plain hide
 : 1637390480:0;rep
 : 1637391344:0;./xbps-src pkg gocryptfs
 : 1637391394:0;sudo xbps-install --repository=hostdir/binpkgs/update_gocryptfs gocryptfs
@@ -4615,12 +4606,10 @@ done
 : 1638258210:0;man vifm
 : 1638268842:0;sudo xbps-install net-tools
 : 1638371519:0;free -he
-: 1638374408:0;echo "/.log" >> .gitignore
 : 1638415004:0;Downloads
 : 1638425251:0;aria 'https://download.servo.org/nightly/linux/servo-latest.tar.gz'
 : 1638425954:0;sudo xbps-install gst-plugins-bad1
 : 1638502350:0;ht
-: 1638554068:0;crontab -e
 : 1638601677:0;sudo xbps-install ngetty
 : 1638601687:0;sudo ln -s /etc/sv/ngetty /var/service
 : 1638641264:0;pkill emacs
@@ -4633,17 +4622,14 @@ done
 : 1638792502:0;gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-dark-solid"
 : 1638813770:0;e ~/.config/wf-shell.ini
 : 1638847307:0;svlogtail | rg blue
-: 1638848282:0;switch_theme toggle
 : 1638878082:0;e ~/.zsh/.zprofile
 : 1638945145:0;git commit --all --amend --no-edit
-: 1638952552:0;yt --list-formats "$(wl-paste)"
 : 1638955854:0;e ~/.config/doom/init.el
 : 1638959599:0;gp --set-upstream origin master
 : 1638983538:0;svlogtail | rg smbd
 : 1639026032:0;jtop
 : 1639038451:0;npm run
 : 1639046158:0;npm run build -- --jCmd=2 ttf::iosevka-custom
-: 1639046899:0;gs
 : 1639046921:0;npm install
 : 1639047336:0;cat .gitignore
 : 1639047552:0;repos/Iosevka
@@ -4685,9 +4671,7 @@ done
 : 1639394092:0;nvm use "lts/*"
 : 1639399022:0;echo $path | tr " " "\n" | nl
 : 1639399991:0;relaod
-: 1639400089:0;sudo xbps-install vscode
 : 1639404192:0;sudo sv restart udevmon
-: 1639404708:0;/bin/emacs -bg '#17191a' --daemon
 : 1639404721:0;sudoedit caps2esc.yaml
 : 1639404789:0;svlogtail | rg udevmon
 : 1639405049:0;nvm alias default stable
@@ -4701,46 +4685,35 @@ done
 : 1639587071:0;sudo ln -s /etc/sv/touchegg /var/service
 : 1639623810:0;free -h
 : 1639629617:0;sudo xbps-install evtest
-: 1639630736:0;npx eslint --init
 : 1639674972:0;e ~/.config/wayfire.ini
 : 1639722991:0;npm install --save-dev json-server
 : 1639734061:0;libinput-gestures -r
 : 1639735062:0;libinput debug-events
 : 1639759023:0;npm install --save-dev eslint-config-prettier
-: 1639760935:0;code-oss .
 : 1639765187:0;crontab -l
 : 1639803097:0;wf-recorder -f recording.mp4
 : 1639803644:0;wl-paste > file.png
 : 1639823501:0;Q
 : 1639842159:0;npm run server
-: 1639889455:0;swaymsg -t get_tree | fzf
 : 1639894723:0;e srcpkgs/rar2fs/template
 : 1639896800:0;./xbps-src pkg rar2fs
 : 1639898691:0;./xbps-src clean
 : 1639898693:0;./xbps-src pkg unrar-devel
 : 1639899834:0;repos/void-packages/
 : 1639899837:0;gco $(gb | fzf)
-: 1639936535:0;sudo sv status /var/service/*
 : 1639936545:0;ping mustaqim.ml
-: 1639978924:0;doom upgrade
 : 1639984853:0;sudo xbps-install konversation
 : 1639992650:0;node index.js
-: 1640013352:0;npm install --save-dev eslint-plugin-react
 : 1640021320:0;npx nodemon index.js
-: 1640076930:0;doom sync
 : 1640080915:0;npm init
 : 1640081013:0;npm install --save-dev nodemon
 : 1640081128:0;npm install express
 : 1640082150:0;npm start
-: 1640082249:0;..
 : 1640104828:0;gcan!
 : 1640158112:0;Regular 400\
 q
-: 1640162281:0;bandwhich -d 1.1.1.1
 : 1640171030:0;npm install morgan
 : 1640172997:0;phonebook/
-: 1640185041:0;npm install cors
-: 1640186672:0;git init
 : 1640187076:0;npm install heroku
 : 1640188522:0;heroku --version
 : 1640188687:0;nvm use v16.13.1
@@ -4748,15 +4721,11 @@ q
 : 1640188866:0;nvm version
 : 1640188877:0;nvm ls
 : 1640188893:0;nvm alias default v16.13.1
-: 1640188901:1;nvm use
 : 1640189148:0;heroku autocomplete
-: 1640189315:0;heroku create
 : 1640189696:0;heroku keys:add
 : 1640189714:0;ssh-keygen -t ed25519 -o -a 100 -C "heroku"
-: 1640189741:0;git push heroku master
 : 1640190265:0;node --version
 : 1640190447:0;w
-: 1640191430:0;cd
 : 1640197701:0;grc
 : 1640228732:0;heroku logs
 : 1640229323:0;sudo xbps-install openntpd
@@ -4764,61 +4733,102 @@ q
 : 1640229470:0;sudo xbps-install chrony
 : 1640229485:0;sudo ln -s /etc/sv/chronyd /var/service
 : 1640233484:0;sudo vkpurge rm all
-: 1640247760:0;npm run start
-: 1640249267:0;npm run build
-: 1640278912:0;grv
 : 1640279177:0;gp
-: 1640281784:0;npm run dev
-: 1640282809:0;glo
-: 1640283090:0;ga .
-: 1640283106:0;gd
 : 1640285756:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
 : 1640319590:0;echo $TERM
 : 1640321137:0;npx alacritty-themes
 : 1640323091:0;e ~/.zsh/.p10k-lean.zsh
-: 1640323152:0;psmem -p $(pgrep -d, -u $USER) -S
-: 1640323235:0;e ~/.tmux.conf.local
 : 1640324960:0;yadm add ~/.config/sway
 : 1640325044:0;yadm commit
 : 1640325093:0;ssh-add $HOME/.ssh/GitLab </dev/null
-: 1640325473:0;zpl update -p
 : 1640329213:0;echo $THEME
-: 1640331560:0;ls -l
-: 1640338471:0;plain show
-: 1640340420:0;tlp-stat -t | rg temp
-: 1640343920:0;e ~/.config/vifm/vifmrc
 : 1640344176:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,WhiteSur,WhiteSur-solid}
-: 1640344202:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1640346788:0;sudo xbps-remove -R vscode
 : 1640346876:0;fc-cache -fv
-: 1640346980:0;e ~/.config/mpv/mpv.conf
-: 1640347013:0;man mpv
-: 1640348148:0;e ~/.zsh/functions/switch_theme
-: 1640349607:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
-: 1640361604:0;sudo xbps-install -Suvy
 : 1640364416:0;yadm add ~/.config/alacritty/alacritty.yml
 : 1640364425:0;yadm add ~/.config/bat
-: 1640364620:0;push
-: 1640366122:0;yadm diff
-: 1640367046:0;yadm push
 : 1640367234:0;npm --version
-: 1640368504:0;e ~/.config/alacritty/alacritty.yml
-: 1640401843:0;htop
 : 1640402141:0;tmux attach || tmux
-: 1640402304:0;yadm status
-: 1640402446:0;e ~/.zsh/.zshenv
 : 1640402526:0;yadm add ~/.tmux.conf.local
-: 1640402558:0;gst
-: 1640403537:0;e ~/.zsh/.zshrc
 : 1640403873:0;vf
-: 1640404037:0;zpl times
-: 1640404279:0;reload
 : 1640404489:0;e ~/.config/vifm/colors/light.vifm 
-: 1640404531:0;f
-: 1640404746:0;yadm status
 : 1640404764:0;yadm add ~/.config/tmux/tmux.conf{,.local}
 : 1640404776:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1640404784:0;yadm diff
-: 1640404791:0;yadm status
-: 1640404856:0;yadm push
-: 1640405294:0;yadm status
+: 1640405327:0;yadm push
+: 1640409671:0;npm install cors
+: 1640412552:0;git init
+: 1640412666:0;heroku create
+: 1640414828:0;touch README.md
+: 1640428477:0;doom upgrade
+: 1640428620:0;doom sync
+: 1640429358:0;npm install trepan-ni
+: 1640429712:0;npm install eslint
+: 1640429864:0;npm install -g eslint
+: 1640430194:0;npx eslint --init
+: 1640430704:0;npm install --save-dev eslint-plugin-react
+: 1640451169:0;node --inspect index.js
+: 1640488310:0;npm install --save-dev eslint eslint-plugin-react
+: 1640500802:0;sudo xbps-install rlwrap
+: 1640502444:0;chts rust/:learn
+: 1640503737:0;e ~/.config/mpv/mpv.conf
+: 1640520252:0;e ~/.config/vifm/vifmrc
+: 1640521251:0;plain hide
+: 1640536804:0;ls -l
+: 1640553194:0;/bin/emacs -bg '#17191a' --daemon
+: 1640553202:0;crontab -e
+: 1640575424:0;man mpv
+: 1640586046:0;npm install mongoose
+: 1640588904:0;echo "/.log" >> .gitignore
+: 1640595874:0;..
+: 1640595882:0;gs
+: 1640599545:0;cd
+: 1640599560:0;nvm use
+: 1640600264:0;echo ".env" >> .gitignore
+: 1640600290:0;npm install dotenv
+: 1640600435:0;npm run start
+: 1640607693:0;d
+: 1640628180:0;gd --staged
+: 1640661019:0;sudo xbps-install vscode
+: 1640661054:0;code-oss .
+: 1640661311:0;npm run dev
+: 1640667471:0;sudo xbps-install qt5-plugin-sqlite
+: 1640667515:0;swaymsg -t get_tree | fzf
+: 1640669932:0;yt --list-formats "$(wl-paste)"
+: 1640679430:0;e ~/.zsh/functions/switch_theme
+: 1640679742:0;switch_theme toggle
+: 1640680205:0;e ~/.config/mpv/input.conf
+: 1640682110:0;e ~/.config/alacritty/alacritty.yml
+: 1640684838:0;yadm status
+: 1640684958:0;e ~/.config/doom/config
+: 1640684963:0;e ~/.config/doom/config.el
+: 1640686337:0;yadm diff
+: 1640688345:0;heroku config:get MONGODB_URI
+: 1640691925:0;npm install mongoose-unique-validator
+: 1640692031:0;bandwhich -d 1.1.1.1
+: 1640694648:0;sudo sv status /var/service/*
+: 1640706026:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1640707921:0;e ~/.tmux.conf.local
+: 1640715188:0;plain show
+: 1640753413:0;gd
+: 1640753459:0;npm run build
+: 1640753519:0;glo
+: 1640753544:0;ga .
+: 1640753568:0;grv
+: 1640753571:0;git push heroku master
+: 1640753674:0;heroku logs --tail
+: 1640754612:0;sudo xbps-install -Suvy
+: 1640755162:0;e ~/.zsh/.zshrc
+: 1640755300:0;man zshexpn
+: 1640755863:0;e ~/.zsh/.zshenv
+: 1640755941:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
+: 1640755958:0;reload
+: 1640757216:0;zpl times
+: 1640757220:0;zpl update -p
+: 1640757356:0;htop
+: 1640757404:0;tlp-stat -t | rg temp
+: 1640757410:0;gst
+: 1640759545:0;push
+: 1640760297:0;f
+: 1640763386:0;yadm status
+: 1640763401:0;yadm diff
+: 1640763423:0;yadm status

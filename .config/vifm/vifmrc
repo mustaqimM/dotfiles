@@ -167,8 +167,8 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep nvim "+grep %a"
 command! reload :write | restart
 
-command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('fd -t d -F . $HOME | fzf --reverse 2>/dev/tty')) | view
-nnoremap <c-g> :FZFlocate<cr>
+" command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('fd -t d -F . $HOME | fzf --reverse 2>/dev/tty')) | view
+" nnoremap <c-g> :FZFlocate<cr>
 command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd -L . --min-depth 1 -t f -t d -H -c always | fzf 2>/dev/tty'))
 nnoremap F :FZFfind<cr>
 
@@ -505,7 +505,7 @@ fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --synt
 
 " Text
 filetype <text/*> emacsclient
-fileviewer <text/*> env -uCOLORTERM bat --color always --wrap never --pager never -p %c
+fileviewer <text/*> env -uCOLORTERM bat --color always --pager never -p %c
 " fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night -- %c
 " fileviewer <text/*> pygmentize3 -f "terminal256" -O "style=tomorrownight" %c
                     \ %pc
@@ -531,7 +531,7 @@ set classify+='  ::*.iso,,*.img::'
 " images
 set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.webp,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,*.xwd,,*.jxl::'
 " audio
-set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.opus,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
+set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.eac3,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.opus,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 " media
 set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m2ts,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vid,,*.vob,,*.wmv,,*.xvid,,*.webm::'
 " documents

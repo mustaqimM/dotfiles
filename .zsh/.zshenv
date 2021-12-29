@@ -37,12 +37,13 @@ export COLORTERM=truecolor
 export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -H -c always"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --max-depth 1"
 export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
-export FZF_DEFAULT_OPTS="--layout=reverse --ansi --prompt=' ' --pointer='›' --marker='›' --color=spinner:yellow,hl:red,info:yellow,pointer:yellow,marker:green,prompt:blue,hl+:red"
+export FZF_DEFAULT_OPTS="--layout=reverse --ansi --prompt='› ' --pointer='›' --marker='›' --color=spinner:yellow,hl:underline:red,hl+:-1:underline:red,info:yellow,pointer:yellow,marker:green,prompt:blue"
 export ENHANCD_FILTER='fzf'
 export ENHANCD_COMPLETION_BEHAVIOR=list
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 # FAST_ALIAS_TIPS_PREFIX="$(tput bold)╭───\n\033[01;33m   \033[01;37m"
 # FAST_ALIAS_TIPS_SUFFIX="\n╰───$(tput sgr0)"
+export CHTSH_QUERY_OPTIONS="style=algol_nu"
 
 export GNUPGHOME=$HOME/.config/gnupg
 export GPG_TTY=$(tty)
@@ -88,10 +89,10 @@ path=(
     # $ANDROID_HOME/tools
     # $ANDROID_HOME/platform-tools
     # /opt/texlive/2020/bin/x86_64-linux
-    # $JAVA_HOME/bin
+    $JAVA_HOME/bin
     $path
 )
-export PATH
+# export PATH
 
 # remove duplicate entries (not required if using the -U array flag)
 # for i in $( echo $PATH | tr ":" "\n" | sort | uniq )

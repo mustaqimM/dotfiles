@@ -2,7 +2,7 @@
 
 alias aria="aria2c --no-conf -x16 -s16 -k1M --summary-interval=0 --check-certificate=false"
 alias cat=bat
-alias cd=' cd'
+alias chts='cht --shell'
 alias gpg=gpg2
 alias jackett='mono ~/.local/bin/Jackett/JackettConsole.exe'
 # alias ktlint='ktlint --android --color --relative -v'

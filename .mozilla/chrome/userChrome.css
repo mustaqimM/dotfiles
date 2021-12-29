@@ -77,7 +77,7 @@ vbox#sidebar-box.chromeclass-extrachrome {
 }
 
 /* Hide the forward button always */
-#forward-button {
+#forward-button[disabled="true"] {
   display: none;
 }
 

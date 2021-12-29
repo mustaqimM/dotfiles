@@ -13,8 +13,8 @@ call plug#begin('~/.nvim/plugged')
   "Plug 'xolox/vim-easytags'
   "Plug 'majutsushi/tagbar'
   "Plug 'ctrlpvim/ctrlp.vim'                " Find files with <C-p>
-  Plug 'yuttie/comfortable-motion.vim'         " Smooth motion
-  "Plug 'vim-scripts/a.vim'               " Open the header file with :AT
+  "Plug 'yuttie/comfortable-motion.vim'     " Smooth motion
+  "Plug 'vim-scripts/a.vim'                 " Open the header file with :AT
   "Plug 'Raimondi/delimitMate'              " Automatic closing of quotes, parenthesis, brackets, etc.
   "Plug 'tpope/vim-surround'
   "Plug 'tpope/vim-commentary'
@@ -32,24 +32,24 @@ call plug#begin('~/.nvim/plugged')
   "Plug 'joshdick/onedark.vim'
   "Plug 'itchyny/vim-cursorword'            " Underlines words under cursor
 
-call plug#end()                     " Add plugins to &runtimepath
+call plug#end()                     		" Add plugins to &runtimepath
 
 " ===== Filetype Settings =====
-filetype plugin indent on                 " Enable file type detection. Tries to recognise filetype and load plugins and indent files
+filetype plugin indent on                 	" Enable file type detection. Tries to recognise filetype and load plugins and indent files
 augroup myFiletypes
 au!
 
 " ========== General settings ==========
 set termguicolors
-set t_Co=256                        " Enable 256 colours
-set backspace=indent,eol,start                          " allow backspacing over everything in insert mode
-set ruler                         " show the cursor position all the time
-set number                          " line numbers
-set showcmd                       " display incomplete commands
-set showmatch                       " highlight matching [{()}]
-set incsearch                       " do incremental searching
+set t_Co=256                        		" Enable 256 colours
+set backspace=indent,eol,start              " allow backspacing over everything in insert mode
+set ruler                         			" show the cursor position all the time
+set number                          		" line numbers
+set showcmd                       			" display incomplete commands
+set showmatch                       		" highlight matching [{()}]
+set incsearch                       		" do incremental searching
 set mouse=a
-set ttyfast                       " make laggy connections work faster
+set ttyfast                       			" make laggy connections work faster
 set tabstop=4
 set shiftwidth=4
 set hlsearch
@@ -61,20 +61,20 @@ hi clear SignColumn
 " =========== Theme conf ===========
 " Switch syntax highlighting on, when the terminal has colour
 " Also switch on highlighting the last used search pattern.
-let base16colorspace=256                  " Access colors present in 256 colorspace
+let base16colorspace=256                  	" Access colors present in 256 colorspace
 if &t_Co > 2 || has("gui_running")
   syntax enable
   set background=dark
 endif
 
-let g:enable_bold_font = 1                " Make some functions bold
+let g:enable_bold_font = 1                	" Make some functions bold
 
 try
   colorscheme base16-tomorrow-night
 catch
 endtry
 
-let g:airline_theme='base16_tomorrow'
+let g:airline_theme='tomorrow'
 
 if (exists('colorcolumn'))                  " Right column at 80
   set colorcolumn=80
@@ -82,7 +82,7 @@ if (exists('colorcolumn'))                  " Right column at 80
 endif
 
 " =========== vim-airline ===========
-set laststatus=2                      " Always show statusbar
+set laststatus=2                      		" Always show statusbar
 let g:airline_detect_paste=1                " Show PASTE if in paste mode
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1        " Displays all buffers when there's only one tab open.

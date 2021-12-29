@@ -99,8 +99,8 @@
 ;  (add-hook 'vue-mode-hook 'vuejs-custom))
 ;(add-hook 'vue-mode-hook (lambda () (setq syntax-ppss-table nil)))
 
-(after! rjsx-mode
-  (add-hook! 'rjsx-mode-hook 'prettier-mode))
+;; (after! rjsx-mode
+;;   (add-hook! 'rjsx-mode-hook 'prettier-mode))
 
 ;(with-eval-after-load 'flycheck
 ;  (flycheck-add-mode 'javascript-eslint 'vue-mode)
