@@ -54,8 +54,8 @@
 
 ;; ============================================================================
 ;; misc
-(add-to-list 'default-frame-alist
-             '(background-color . "#17191a"))
+;; (add-to-list 'default-frame-alist
+;;              '(background-color . "#17191a"))
 
 ;; ============================================================================
 ;; automodes
@@ -179,7 +179,7 @@
 
 ;; ============================================================================
 ;; key bindings
-(map! "M-n" 'mc/mark-all-dwim)
+(map! :n "M-n" 'mc/mark-all-dwim)
 ;; (map! "C-S-<mouse-1>" 'mc/add-cursor-on-click)
 
 (map! :n "g h" 'evil-beginning-of-line)

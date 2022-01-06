@@ -27,7 +27,7 @@ export LC_ALL="en_ZA.UTF-8"
 
 export LIBVA_DRIVER_NAME=i965
 
-export EDITOR="emacsclient -nw"
+export EDITOR="/bin/emacsclient -nw"
 # ALTERNATE_EDITOR=""
 # VISUAL="emacsclient -c -a emacs"
 
@@ -35,7 +35,7 @@ export TERM=xterm-256color
 export COLORTERM=truecolor
 
 export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -H -c always"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --max-depth 1"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --max-depth 5"
 export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
 export FZF_DEFAULT_OPTS="--layout=reverse --ansi --prompt='› ' --pointer='›' --marker='›' --color=spinner:yellow,hl:underline:red,hl+:-1:underline:red,info:yellow,pointer:yellow,marker:green,prompt:blue"
 export ENHANCD_FILTER='fzf'
@@ -44,6 +44,7 @@ export ZSH_AUTOSUGGEST_USE_ASYNC=1
 # FAST_ALIAS_TIPS_PREFIX="$(tput bold)╭───\n\033[01;33m   \033[01;37m"
 # FAST_ALIAS_TIPS_SUFFIX="\n╰───$(tput sgr0)"
 export CHTSH_QUERY_OPTIONS="style=algol_nu"
+# export ZVM_CURSOR_STYLE_ENABLED=false
 
 export GNUPGHOME=$HOME/.config/gnupg
 export GPG_TTY=$(tty)
@@ -90,6 +91,8 @@ path=(
     # $ANDROID_HOME/platform-tools
     # /opt/texlive/2020/bin/x86_64-linux
     $JAVA_HOME/bin
+    $HOME/.yarn/bin
+    # $HOME/.nvm/versions/node/v17.3.0/bin
     $path
 )
 # export PATH

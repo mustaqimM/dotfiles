@@ -4,7 +4,7 @@ alias aria="aria2c --no-conf -x16 -s16 -k1M --summary-interval=0 --check-certifi
 alias cat=bat
 alias chts='cht --shell'
 alias gpg=gpg2
-alias jackett='mono ~/.local/bin/Jackett/JackettConsole.exe'
+alias jackett='~/.local/bin/Jackett/jackett'
 # alias ktlint='ktlint --android --color --relative -v'
 alias nightly=/opt/firefox/firefox-bin
 alias q=exit
@@ -17,10 +17,6 @@ alias yt=yt-dlp
 alias ls='lsd -h'
 
 alias -s {yml,yaml,toml,md}=$EDITOR
-
-# alias -g ...='../..'
-# alias -g ....='../../..'
-# alias -g .....='../../../..'
 
 forgit_log=fglo
 forgit_diff=fgd

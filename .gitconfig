@@ -7,7 +7,7 @@
     ui = true
 
 [core]
-    editor = emacs -bg 'black' -fs
+    editor = emacsclient
     excludesfile = /home/mustaqim/.gitignore_global
     pager = diff-so-fancy | less --tabs=4 -RFX
     autocrlf = input
@@ -47,8 +47,9 @@
     newNormal = green bold
     newHighlight = green bold 22
 [color "diff"]
-    meta = yellow
+    meta = 11
     frag = magenta bold
+    func = blue
     commit = yellow bold
     old = red bold
     new = green bold
@@ -57,5 +58,6 @@
     markEmptyLines = true
     changeHunkIndicators = true
     stripLeadingSymbols = true
+    useUnicodeRuler = true
 [blame]
     coloring = highlightRecent

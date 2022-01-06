@@ -38,7 +38,7 @@ autoload -Uz _zinit
 fpath=(
   /usr/share/zsh/site-functions
   $ZDOTDIR/functions
-  $ZDOTDIR/completions
+  # $ZDOTDIR/completions
   "${fpath[@]}"
 )
 
@@ -65,23 +65,23 @@ setopt interactivecomments
 setopt extended_glob
 
 typeset -gA FAST_HIGHLIGHT_STYLES
-FAST_HIGHLIGHT_STYLES[alias]="fg=012"
+FAST_HIGHLIGHT_STYLES[alias]="fg=blue"
 FAST_HIGHLIGHT_STYLES[path]="fg=blue"
 FAST_HIGHLIGHT_STYLES[path-to-dir]="fg=blue,underline"
-FAST_HIGHLIGHT_STYLES[suffix-alias]="fg=012"
-FAST_HIGHLIGHT_STYLES[builtin]="fg=012"
-FAST_HIGHLIGHT_STYLES[function]="fg=012"
+FAST_HIGHLIGHT_STYLES[suffix-alias]="fg=blue"
+FAST_HIGHLIGHT_STYLES[builtin]="fg=blue"
+FAST_HIGHLIGHT_STYLES[function]="fg=blue"
 FAST_HIGHLIGHT_STYLES[precommand]="fg=red,bg=default,underline,bold"
-FAST_HIGHLIGHT_STYLES[command]="fg=012"
-FAST_HIGHLIGHT_STYLES[commandseparator]="fg=012"
-FAST_HIGHLIGHT_STYLES[comment]="fg=011,bold,italic"
-FAST_HIGHLIGHT_STYLES[single-quoted-argument]="fg=011"
-FAST_HIGHLIGHT_STYLES[double-quoted-argument]="fg=011"
-FAST_HIGHLIGHT_STYLES[dollar-quoted-argument]="fg=011"
+FAST_HIGHLIGHT_STYLES[command]="fg=blue"
+# FAST_HIGHLIGHT_STYLES[commandseparator]="fg=16"
+FAST_HIGHLIGHT_STYLES[comment]="fg=008,bold,italic"
+FAST_HIGHLIGHT_STYLES[single-quoted-argument]="fg=yellow"
+FAST_HIGHLIGHT_STYLES[double-quoted-argument]="fg=yellow"
+FAST_HIGHLIGHT_STYLES[dollar-quoted-argument]="fg=yellow"
 FAST_HIGHLIGHT_STYLES[single-hyphen-option]="fg=yellow"
-FAST_HIGHLIGHT_STYLES[double-hyphen-option]="fg=011"
-FAST_HIGHLIGHT_STYLES[variable]="fg=016"
-HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=blue,fg=white,bold'
+FAST_HIGHLIGHT_STYLES[double-hyphen-option]="fg=yellow"
+# FAST_HIGHLIGHT_STYLES[variable]="fg=016"
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=blue,fg=015,bold'
 # ==============================================================================
 
 unalias run-help
@@ -95,9 +95,9 @@ zi ice wait lucid
 zi light "zsh-users/zsh-history-substring-search"
 
 zi wait lucid for \
-  atinit"_zcompare" \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     light-mode zdharma-continuum/fast-syntax-highlighting \
-  atload"zicompinit; zicdreplay" blockf \
+  blockf \
     light-mode zsh-users/zsh-completions \
   compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start" \
     light-mode zsh-users/zsh-autosuggestions
@@ -113,6 +113,9 @@ zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)cd*]} ]]' lucid pick"init.sh"
 zi light "b4b4r07/enhancd"
 # zi ice wait lucid
 # zi light "changyuheng/zsh-interactive-cd"
+
+# zi ice depth=1
+# zi light "jeffreytse/zsh-vi-mode"
 
 # zi ice lucid from"gh-r" as'program' bpick"" pick"def-matcher"
 # zi light sei40kr/fast-alias-tips-bin
@@ -133,6 +136,10 @@ zi light "hlissner/zsh-autopair"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)np*]} ]]'
 zi snippet "OMZ::plugins/npm/npm.plugin.zsh"
+
+zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completions" \
+  mv"pnpm-completions -> _pnpm" as"completion" nocompile atinit"source _pnpm"
+zi snippet "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
 
 if [[ $(type -p fzf) ]] then
    zi ice wait lucid multisrc"{key-bindings,completion}.zsh" pick"" \
@@ -183,7 +190,7 @@ zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
 #  atload'eval "$(pyenv virtualenv-init - zsh)"'
 #zi light pyenv/pyenv-virtualenv
 
-zi ice lucid wait"[[ -f package.json ]]" atload"[[ -f .nvmrc ]] && nvm exec" # wait'[[ -n ${ZLAST_COMMANDS[(r)nv]} ]]'
+zi ice lucid wait"[[ -f package-lock.json ]]" atload"[[ -f .nvmrc ]] && nvm exec" # wait'[[ -n ${ZLAST_COMMANDS[(r)nv]} ]]'
 zi light sei40kr/zsh-lazy-nvm
 
 zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn #atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
@@ -232,7 +239,7 @@ zi light "so-fancy/diff-so-fancy"
 # zi ice lucid from"gh-r" as"program" bpick"*linux*"
 # zi light "casey/intermodal"
 
-# zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> completions/exercism_completion.zsh"
+# zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> _exercism"
 # zi light "exercism/cli"
 
 #zi ice wait"2" lucid as"program" pick"build/release/peaclock" atclone"./build.sh"
@@ -254,6 +261,7 @@ zi snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
 
 # }}}
 
+zi creinstall -Q $ZDOTDIR/completions
 
 # === THEME ===
 # {{{
@@ -349,10 +357,11 @@ bindkey '^[[1;5D' vi-backward-word
 bindkey '^F'      vi-forward-word
 bindkey '^B'      emacs-backward-word
 bindkey '^A'      beginning-of-line
-bindkey '^E'      end-of-line
+# bindkey '^E'      end-of-line
 # bindkey '^O'      push-line-or-edit
 bindkey '^[[P'    delete-char
 bindkey '^W'      backward-kill-word
+bindkey '^[[Z'    reverse-menu-complete
 
 zle -N            autosuggest-accept
 bindkey '^[f'     autosuggest-accept

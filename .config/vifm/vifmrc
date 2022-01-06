@@ -2,7 +2,7 @@
 " nesting detection
 let $INSIDE_VIFM = 'true'
 
-set vicmd='$EMACS_PLUGIN_LAUNCHER -nw'
+set vicmd='emacsclient -nw'
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
@@ -116,7 +116,7 @@ set vifminfo=dhistory,chistory,state,tui,shistory,
 "filter! /^\_\_MACOSX\/$/
 filter node_modules\/
 
-set grepprg='rg -n -H -j2 %i %a %s'
+set grepprg='rg -n -H -j2 -g '!package-lock.json' %i %a %s'
 set findprg='fd -t d -t f -H -L -E ".git" %p'
 
 " Add additional place to look for executables
@@ -199,7 +199,7 @@ vnoremap w :view<cr>gv
 " Open file in existing instance
 nnoremap o :!emacsclient -nc %f &<cr>
 " Open file in new instance
-nnoremap O :!/bin/emacs -bg '#1d1f21' -fs %f &<cr>
+nnoremap O :!/bin/emacs -fs %f &<cr>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>

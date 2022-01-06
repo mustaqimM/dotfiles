@@ -176,12 +176,12 @@ schemes:
       white:      "#c5c8c6"
     bright:
       black:      "#969896"
-      red:        "#cc6666"
-      green:      "#b5bd68"
-      yellow:     "#f0c674"
-      blue:       "#81a2be"
-      magenta:    "#b294bb"
-      cyan:       "#8abeb7"
+      red:        "#d54e53"
+      green:      "#b9ca4a"
+      yellow:     "#e7c547"
+      blue:       "#7aa6da"
+      magenta:    "#c397d8"
+      cyan:       "#70c0b1"
       white:      "#ffffff"
     indexed_colors:
       - { index: 16, color: '#de935f' }
@@ -193,11 +193,11 @@ schemes:
 
   tomorrow-light: &tomorrow-light
     primary:
-      background: "#ffffff"
+      background: "#fafafa"
       foreground: "#4d4d4c"
     cursor:
-      text:       "#ffffff"
-      cursor:     "#1d1f21"
+      text: CellBackground
+      cursor: "#d6d6d6"
     normal:
       black:      "#ffffff"
       red:        "#c82829"
@@ -209,12 +209,12 @@ schemes:
       white:      "#4d4d4c"
     bright:
       black:      "#8e908c"
-      red:        "#c82829"
-      green:      "#718c00"
+      red:        "#ff3334"
+      green:      "#9ec400"
       yellow:     "#eab700"
-      blue:       "#4271ae"
-      magenta:    "#8959a8"
-      cyan:       "#3e999f"
+      blue:       "#5795e6"
+      magenta:    "#b777e0"
+      cyan:       "#54ced6"
       white:      "#1d1f21"
     indexed_colors:
       - { index: 16, color: '#f5871f' }

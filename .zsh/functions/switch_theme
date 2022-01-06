@@ -17,6 +17,9 @@ switch_theme() {
         sed -i 's|Papirus-Dark|Papirus-Light|' ~/.config/qt5ct/qt5ct.conf
         sed -i 's|colors: \*tomorrow-dark|colors: \*tomorrow-light|' ~/.config/alacritty/alacritty.yml
         sed -i 's|Tomorrow-Night|Tomorrow|' ~/.config/bat/config
+        sed -i 's|base16-tomorrow-night|base16-tomorrow|' ~/.config/nvim/init.vim
+        sed -i 's|doom-tomorrow-night|doom-tomorrow-day|' ~/.config/doom/config.el
+        sed -i 's|colorscheme dark|colorscheme light|' ~/.config/vifm/vifmrc
     }
     dark_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]DARK"
@@ -26,6 +29,9 @@ switch_theme() {
         sed -i 's|Papirus-Light|Papirus-Dark|' ~/.config/qt5ct/qt5ct.conf
         sed -i 's|colors: \*tomorrow-light|colors: \*tomorrow-dark|' ~/.config/alacritty/alacritty.yml
         sed -i 's|Tomorrow|Tomorrow-Night|' ~/.config/bat/config
+        sed -i 's|base16-tomorrow|base16-tomorrow-night|' ~/.config/nvim/init.vim
+        sed -i 's|doom-tomorrow-day|doom-tomorrow-night|' ~/.config/doom/config.el
+        sed -i 's|colorscheme light|colorscheme dark|' ~/.config/vifm/vifmrc
     }
 
     case "$1" in

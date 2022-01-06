@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Type=Application
-Exec=vimb -c /home/mustaqim/.config/vimb/settings.conf -- "/home/mustaqim/.local/bin/scripts/ariang.html"
-Name=AriaNg
-GenericName=Downloader
-Comment=Downloader
-Icon=downloader-arrow
