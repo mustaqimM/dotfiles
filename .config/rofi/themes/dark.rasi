@@ -42,12 +42,12 @@
   highlight: none #6eaafb;
 }
 configuration {
-  display-combi: "";
-  display-drun: "";
-  /*display-window: "  ";*/
-  window-format: "{w}​	{t}";
-  show-icons: true;
-  icon-theme: "Papirus-Dark";
+  /* display-window: "  "; */
+  display-combi:  "";
+  display-drun:   "";
+  window-format:  "{w}​	{t}";
+  show-icons:     true;
+  icon-theme:     "Papirus-Dark";
 }
 element {
   padding: 4px;
@@ -106,17 +106,17 @@ element-icon {
   text-color:       inherit;
 }
 window {
-  width: 820px;
-  height: 460px;
+  width:            820px;
+  height:           460px;
   padding:          5;
   background-color: #1d1f21F2;
   border:           1;
-  border-color: var(separatorcolor);
+  border-color:     var(separatorcolor);
   border-radius:    10px;
 }
 mainbox {
-    padding: 0;
-    border:  0;
+  padding: 0;
+  border:  0;
 }
 message {
     padding:      1px ;
@@ -124,13 +124,12 @@ message {
     border:       1px dash 0px 0px ;
 }
 textbox {
-    text-color: var(foreground);
+  text-color: var(foreground);
 }
 listview {
-  padding:      20px 10px 0px ;
-  scrollbar:    true;
+  padding:      10px 5px 0px;
   border-color: var(separatorcolor);
-  spacing:      2px ;
+  spacing:      0;
   fixed-height: 0;
   border:       1px dash 0px 0px ;
   scrollbar:    false;
@@ -165,15 +164,8 @@ num-rows {
 }
 textbox-num-sep {
   expand:     false;
-  str:        "/";
+  str:        "|";
   text-color: var(normal-foreground);
-}
-inputbar {
-    padding:    10 10 0 10;
-    spacing:    0px ;
-    text-color: var(normal-foreground);
-    children:   [ prompt,textbox-prompt-colon,entry,num-filtered-rows,textbox-num-sep,num-rows,case-indicator ];
-    /* children:   [ prompt,textbox-prompt-colon,entry,num-filtered-rows,textbox-num-sep,num-rows,case-indicator ]; */
 }
 num-filtered-rows,textbox-num-sep,num-rows,case-indicator {
   font: "SF Pro Text Regular 9";
@@ -186,12 +178,22 @@ entry {
   placeholder:       "";
 }
 prompt {
+  margin: 2 0 0 0;
   spacing:    0;
   text-color: @blue;
 }
 textbox-prompt-colon {
-    margin:     0px 0.3000em 0.0000em 0.0000em ;
-    expand:     false;
-    str:        "";
-    text-color: inherit;
+  /* margin:     20px 0.3000em 0.0000em 0.0000em ; */
+  margin: 0 0 0 20;
+  expand:     false;
+  str:        "";
+  text-color: inherit;
+}
+
+inputbar {
+    padding:    10 0 0 10;
+    spacing:    0px ;
+    text-color: var(normal-foreground);
+    children:   [ prompt,textbox-prompt-colon,entry ];
+    /* children:   [ prompt,textbox-prompt-colon,entry,num-filtered-rows,textbox-num-sep,num-rows,case-indicator ]; */
 }

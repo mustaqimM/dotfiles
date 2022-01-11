@@ -103,7 +103,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Iosevka
+    family: monospace
     # The `style` can be specified to pick a specific face.
     # style: Regular
     # Bold font face
@@ -197,7 +197,7 @@ schemes:
       foreground: "#4d4d4c"
     cursor:
       text: CellBackground
-      cursor: "#d6d6d6"
+      cursor: "#4d4d4c"
     normal:
       black:      "#ffffff"
       red:        "#c82829"

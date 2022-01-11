@@ -80,8 +80,8 @@ FAST_HIGHLIGHT_STYLES[double-quoted-argument]="fg=yellow"
 FAST_HIGHLIGHT_STYLES[dollar-quoted-argument]="fg=yellow"
 FAST_HIGHLIGHT_STYLES[single-hyphen-option]="fg=yellow"
 FAST_HIGHLIGHT_STYLES[double-hyphen-option]="fg=yellow"
-# FAST_HIGHLIGHT_STYLES[variable]="fg=016"
-HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=blue,fg=015,bold'
+FAST_HIGHLIGHT_STYLES[variable]="fg=016"
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=012,fg=255,bold'
 # ==============================================================================
 
 unalias run-help

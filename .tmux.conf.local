@@ -341,6 +341,10 @@ set -g mouse on
 #set -g status-keys vi
 #set -g mode-keys vi
 
+set-window-option -g mode-keys vi
+bind-key -T copy-mode-vi v send -X begin-selection
+bind-key -T copy-mode-vi V send -X select-line
+
 # replace C-b by C-a instead of using both prefixes
  set -gu prefix2
  unbind C-a

@@ -2432,7 +2432,6 @@
 : 1587054077:0;e /usr/share/icons/default/index.theme
 : 1587054141:0;sudo xbps-remove gnome-tweaks
 : 1587054150:0;sudo xbps-remove -R gnome-tweaks
-: 1587054174:0;./megatools-1.11.0-git-20200404-linux-x86_64/megatools dl 'https://mega.nz/#!CodCSK4D!17aeO7Jg3WNFpPGU2PBmxjF-6ghejwfMEThLTDzFPEU'
 : 1587058495:0;mimeo --add image/jpeg feh.desktop
 : 1587059490:0;sudo xbps-install most
 : 1587096814:0;xbps-query -Rs webp
@@ -3989,9 +3988,7 @@ done
 : 1614840274:0;svlogtail | rg sshd
 : 1614854139:0;e ~/.config/awesome/signals.lua
 : 1614881662:0;nmap localhost
-: 1614881886:0;cp /usr/share/nzbget/nzbget.conf ~/.config/nzbget/nzbget.conf
 : 1614881916:0;nzbget -s -o outputmode=log
-: 1614881929:0;nzbget -s -o outputmode=log -c ~/.config/nzbget/nzbget.conf
 : 1614934334:0;e cv/education.tex
 : 1614934383:0;xelatex cv.tex
 : 1615132936:0;sudo iptables -L
@@ -4386,7 +4383,6 @@ done
 : 1634660585:0;ssh-agent
 : 1634660643:0;git clone gh:mustaqimm/void-packages
 : 1634664058:0;./xbps-src binary-bootstrap
-: 1634665401:0;tmux list-keys | fzf
 : 1634665677:0;gco -b update_dav1d
 : 1634700902:0;xbps-query -Rs dav1d
 : 1634704853:0;./xbps-src pkg dav1d
@@ -4540,7 +4536,6 @@ done
 : 1637739231:0;sudo sv restart bluetoothd
 : 1637739430:0;sudo xbps-install rtkit
 : 1637739502:0;sudo usermod -a -G rtkit $USER
-: 1637743780:0;e ~/.config/waybar/config
 : 1637769850:0;cp /usr/share/pipewire/pipewire.conf ~/.config/pipewire
 : 1637771325:0;yadm add ~/.config/pipewire/
 : 1637818034:0;sudo xbps-install gimp gmic-gimp
@@ -4609,7 +4604,6 @@ done
 : 1639133223:0;yadm add ~/.config/zathura/zathurarc
 : 1639133240:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
 : 1639133577:0;fc-list | rg "Iosevka" | cut -d ":" -f2
-: 1639141052:0;sudo xbps-remove -ROo
 : 1639141188:0;df -Th
 : 1639209158:0;sudo xbps-install nmap
 : 1639209643:0;sudo xbps-install smbclient
@@ -4635,7 +4629,6 @@ done
 : 1639404721:0;sudoedit caps2esc.yaml
 : 1639404789:0;svlogtail | rg udevmon
 : 1639405049:0;nvm alias default stable
-: 1639413182:0;libinput list-devices
 : 1639459972:0;npm install axios
 : 1639460025:0;npm install --save-dev --save-exact prettier
 : 1639466756:0;curl -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://restcountries.com/v3.1/all -s | jq '.[0]'
@@ -4711,7 +4704,6 @@ q
 : 1640488310:0;npm install --save-dev eslint eslint-plugin-react
 : 1640500802:0;sudo xbps-install rlwrap
 : 1640502444:0;chts rust/:learn
-: 1640503737:0;e ~/.config/mpv/mpv.conf
 : 1640521251:0;plain hide
 : 1640588904:0;echo "/.log" >> .gitignore
 : 1640595874:0;..
@@ -4722,13 +4714,11 @@ q
 : 1640667471:0;sudo xbps-install qt5-plugin-sqlite
 : 1640669932:0;yt --list-formats "$(wl-paste)"
 : 1640679742:0;switch_theme toggle
-: 1640680205:0;e ~/.config/mpv/input.conf
 : 1640684958:0;e ~/.config/doom/config
 : 1640684963:0;e ~/.config/doom/config.el
 : 1640688345:0;heroku config:get MONGODB_URI
 : 1640691925:0;npm install mongoose-unique-validator
 : 1640694648:0;sudo sv status /var/service/*
-: 1640707921:0;e ~/.tmux.conf.local
 : 1640753459:0;npm run build
 : 1640753571:0;git push heroku master
 : 1640753674:0;heroku logs --tail
@@ -4763,7 +4753,6 @@ q
 : 1640881517:0;echo ".env" >> .gitignore
 : 1640884116:0;gca
 : 1640884129:0;gca!
-: 1640888858:0;e ~/.config/fontconfig/fonts.conf
 : 1640889103:0;e ~/.config/vifm/colors/dark.vifm
 : 1640889388:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
 : 1640919711:0;nvm ls-remote
@@ -4783,18 +4772,15 @@ q
 : 1640944555:0;ls 
 : 1640944748:0;zi cclear
 : 1640952247:0;fc-list | rg "icon" | cut -d ":" -f2
-: 1640952355:0;fc-cache -fv
 : 1640964420:0;cd
 : 1640967321:0;zi completions
 : 1640970275:0;/bin/emacs -bg '#17191a' --daemon
 : 1640970282:0;crontab -e
 : 1640970340:0;crontab -l
-: 1641006718:0;e ~/.config/vifm/vifmrc
 : 1641006964:0;doom upgrade
 : 1641009648:0;nvm install v17.3.0
 : 1641010306:0;pnpm env use --global latest
 : 1641016252:0;sudo xbps-install telegram-desktop
-: 1641024572:0;e ~/.config/sway/rules
 : 1641026132:0;sudo xbps-install broot
 : 1641026584:0;psmem -p $(pgrep -d, -u $USER) -S
 : 1641027102:0;br
@@ -4812,11 +4798,8 @@ q
 : 1641057723:0;pnpm add -D lodash
 : 1641102311:0;node test.js
 : 1641108000:0;decode
-: 1641110504:0;bandwhich -d 1.1.1.1
-: 1641141815:0;tmux attach || tmux
 : 1641211399:0;bindkey -v
 : 1641212070:0;e ~/.zsh/zsh_history
-: 1641226653:0;e ~/.zsh/.zshenv
 : 1641271298:0;zi 
 : 1641272540:0;sudo xbps-install gramps graphviz libosmgpsmap python3-PyICU libgexiv2 goocanvas
 : 1641272559:0;sudo xbps-install gramps graphviz libosmgpsmap python3-PyICU libgexiv2 goocanvas geocode-glib
@@ -4824,53 +4807,81 @@ q
 : 1641287965:0;sudo xbps-install vscode
 : 1641289602:0;pnpm run test -- -t '_id'
 : 1641290816:0;pnpm add express-async-errors
-: 1641298463:0;pnpm run test
 : 1641311096:0;doom sync
-: 1641311588:0;pnpm run dev
 : 1641312960:0;code-oss .
-: 1641314816:0;gaa
-: 1641314956:0;glo
-: 1641357135:0;zi update -p
-: 1641358387:0;zi times
 : 1641378150:0;pnpm add bcrypt
-: 1641379775:0;e ~/.config/sway/config
 : 1641380114:0;git pull --rebase upstream master
 : 1641381168:0;e srcpkgs/rofi/template
 : 1641383624:0;xbps-query -Rs wayland
 : 1641383693:0;./xbps-src pkg rofi
 : 1641384213:0;e ~/.config/rofi/config.rasi
-: 1641384433:0;swaymsg -t get_tree | fzf
-: 1641387992:0;plain show
 : 1641390145:0;rofi -show
-: 1641398367:0;tlp-stat -t | rg temp
 : 1641407304:0;sudo xbps-install nheko
-: 1641438629:0;e ~/.config/rofi/themes/dark.rasi
 : 1641442732:0;yadm add ~/.config/doom
 : 1641442738:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1641442741:0;yadm add ~/.config/rofi
 : 1641442747:0;yadm add ~/.config/sway
 : 1641442752:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1641442759:0;yadm add ~/.config/waybar
-: 1641442829:0;yadm diff
 : 1641442861:0;yadm 
-: 1641443033:0;yadm commit
-: 1641443079:0;yadm push
-: 1641448934:0;htop
 : 1641449123:0;e ~/.config/
-: 1641449233:0;e ~/.config/alacritty/alacritty.yml
-: 1641450807:0;e ~/.zsh/.zshrc
-: 1641450856:0;sudo xbps-install -Suvy
-: 1641452383:0;e ~/.gitconfig
-: 1641453832:0;gst
-: 1641454020:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
-: 1641454138:0;grv
-: 1641454218:0;push
-: 1641454273:0;gd
-: 1641454299:0;e ~/.config/waybar/style.css
-: 1641454630:0;f
-: 1641454766:0;yadm status
 : 1641454863:0;bindkey
-: 1641454944:0;reload
-: 1641455116:0;yadm status
-: 1641455123:0;yadm diff
-: 1641455132:0;yadm status
+: 1641455693:0;e ~/.tmux.conf.local
+: 1641458665:0;e ~/.gitconfig
+: 1641488267:0;tmux list-keys | fzf
+: 1641488493:0;grv
+: 1641525149:0;zi times
+: 1641529895:0;sudo xbps-remove -ROo
+: 1641530980:0;e ~/.config/mpv/input.conf
+: 1641531581:0;e ~/.config/mpv/mpv.conf
+: 1641532784:0;sudo xbps-install wireplumber
+: 1641533446:0;e ~/.config/fontconfig/fonts.conf
+: 1641550343:0;pnpm run test
+: 1641550876:0;pnpm add mongoose-unique-validator@2.0.1
+: 1641550908:0;pnpm add -g pnpm
+: 1641573025:0;sudo xbps-install kmonad
+: 1641574272:0;sudo groupadd uinput
+: 1641574360:0;sudo usermod -aG uinput $USER
+: 1641574444:0;sudo modprobe uinput
+: 1641575650:0;e ~/.zsh/.zshrc
+: 1641576578:0;e ~/.config/kmonad/config.kbd
+: 1641576636:0;libinput list-devices
+: 1641612192:0;kmonad ~/.config/kmonad/config.kbd
+: 1641617596:0;e ~/.config/sway/config
+: 1641654860:0;e ~/.config/waybar/config
+: 1641729914:0;e ~/.config/waybar/style.css
+: 1641747658:0;pnpm run dev
+: 1641748009:0;gaa
+: 1641748011:0;gst
+: 1641748013:0;gd
+: 1641748034:0;glo
+: 1641761642:0;plain show
+: 1641783747:0;zi update -p
+: 1641788533:0;sudo xbps-install element-desktop
+: 1641788933:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
+: 1641792177:0;tlp-stat -t | rg temp
+: 1641792475:0;e ~/.config/alacritty/alacritty.yml
+: 1641794629:0;e ~/.config/vifm/vifmrc
+: 1641795146:0;autoload zmv
+: 1641797446:0;sudo mv /usr/lib/element-desktop/resources/img/element.png{,.BAK}
+: 1641802217:0;fc-cache -fv
+: 1641802366:0;tmux attach || tmux
+: 1641833326:0;reload
+: 1641835374:0;cp /usr/share/nzbget/nzbget.conf ~/.config/nzbget/nzbget.conf
+: 1641838082:0;push
+: 1641870234:0;sudo xbps-install -Suvy
+: 1641873675:0;e ~/.zsh/.zshenv
+: 1641874829:0;swaymsg -t get_tree | fzf
+: 1641874856:0;e ~/.config/sway/rules
+: 1641876325:0;htop
+: 1641881901:0;e ~/.config/nzbget/nzbget.conf
+: 1641881915:0;nzbget -s -o outputmode=log -c ~/.config/nzbget/nzbget.conf
+: 1641881950:0;f
+: 1641884417:0;yadm commit
+: 1641884426:0;yadm push
+: 1641884595:0;yadm status
+: 1641885861:0;bandwhich -d 1.1.1.1
+: 1641890275:0;e ~/.config/rofi/themes/dark.rasi
+: 1641891693:0;yadm diff
+: 1641891714:0;e ~/.config/rofi/themes/dark.rasi
+: 1641895981:0;yadm status
