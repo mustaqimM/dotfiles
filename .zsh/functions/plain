@@ -12,9 +12,9 @@ plain() {
         ;;
       show)
         if [ $mount(NF) ]; then
-          f $mount
+          vifm $mount
         else
-          gocryptfs -q $cipher $mount -o -allow_other && f $mount
+          gocryptfs -q $cipher $mount -o -allow_other && vifm $mount
         fi
         ;;
       move)

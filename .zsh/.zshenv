@@ -58,7 +58,7 @@ export DOOMDIR="~/.config/doom"
 
 # export JAVA_HOME="/usr/lib/jvm/openjdk"
 export JAVA_HOME="/usr/lib/jvm/jbrsdk"
-export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 # export CLASSPATH="/home/mustaqim/Downloads/perimeter/apache-csv.jar:courserajava.jar"
 export _JAVA_AWT_WM_NONREPARENTING=1
 

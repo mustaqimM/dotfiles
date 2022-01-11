@@ -8,6 +8,7 @@ switch_theme() {
     qt_light_theme="WhiteSur-solid"
     qt_dark_theme="WhiteSur-solidDark"
     current_theme=$(gsettings get org.gnome.desktop.interface gtk-theme | tr -d "'")
+    vifm_servers=("${(@f)$(vifm --server-list)}")
 
     light_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]LIGHT"
@@ -20,6 +21,10 @@ switch_theme() {
         sed -i 's|base16-tomorrow-night|base16-tomorrow|' ~/.config/nvim/init.vim
         sed -i 's|doom-tomorrow-night|doom-tomorrow-day|' ~/.config/doom/config.el
         sed -i 's|colorscheme dark|colorscheme light|' ~/.config/vifm/vifmrc
+        for server in $vifm_servers; do vifm --server-name $server --remote +'colorscheme light'; done
+        sed -i 's|"dark"|"light"|' ~/.config/rofi/config.rasi
+        pkill dunst; mv ~/.config/dunst/dunstrc.d/dark.conf ~/.config/dunst/dunstrc.d/dark.conf.BAK; dunst &
+        # sed -i 's|dark|light|' ~/.config/foot/foot.ini
     }
     dark_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]DARK"
@@ -32,6 +37,10 @@ switch_theme() {
         sed -i 's|base16-tomorrow|base16-tomorrow-night|' ~/.config/nvim/init.vim
         sed -i 's|doom-tomorrow-day|doom-tomorrow-night|' ~/.config/doom/config.el
         sed -i 's|colorscheme light|colorscheme dark|' ~/.config/vifm/vifmrc
+        for server in $vifm_servers; do vifm --server-name $server --remote +'colorscheme dark'; done
+        sed -i 's|"light"|"dark"|' ~/.config/rofi/config.rasi
+        pkill dunst; mv ~/.config/dunst/dunstrc.d/dark.conf.BAK ~/.config/dunst/dunstrc.d/dark.conf; dunst &
+        # sed -i 's|light|dark|' ~/.config/foot/foot.ini
     }
 
     case "$1" in

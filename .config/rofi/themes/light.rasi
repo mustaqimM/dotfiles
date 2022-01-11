@@ -1,23 +1,23 @@
 /* -*- mode:css; -*- */
 
 * {
-  red:                         #cc6666;
-  green:                       #b5bd68;
-  yellow:                      #f0c674;
-  blue:                        #81a2be;
-  magenta:                     #b294bb;
-  cyan:                        #8abeb7;
-  emphasis:                    #373b41;
-  text:                        #ffffff;
-  text-alt:                    #c5c8c6;
-  foreground:                  #abb2bf;
-  background:                  #17191a;
+  red:                         #c82829;
+  green:                       #718c00;
+  yellow:                      #eab700;
+  blue:                        #5795e6;
+  magenta:                     #8959a8;
+  cyan:                        #3e999f;
+  emphasis:                    #d6d6d6;
+  text:                        #000000;
+  text-alt:                    #373b41;
+  foreground:                  #1d1f21;
+  background:                  #fafafa;
   selected-active-foreground:  var(background);
-  lightfg:                     #c5c8c6;
+  lightfg:                     #282a2e;
   separatorcolor:              var(emphasis);
   urgent-foreground:           var(red);
   alternate-urgent-background: var(lightbg);
-  lightbg:                     #fafafa;
+  lightbg:                     #ffffff;
   background-color:            transparent;
   border-color:                var(foreground);
   normal-background:           var(background);
@@ -38,7 +38,7 @@
   alternate-active-foreground: var(blue);
 
   font: "SF Pro Text Regular 15";
-  highlight: none #6eaafb;
+  highlight: none #5795e6;
 }
 element {
   padding: 4px;
@@ -100,7 +100,7 @@ window {
   width:            820px;
   height:           460px;
   padding:          5;
-  background-color: #1d1f21F2;
+  background-color: #f7f7f8F2;
   border:           1;
   border-color:     var(separatorcolor);
   border-radius:    10px;

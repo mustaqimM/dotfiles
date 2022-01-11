@@ -1,5 +1,12 @@
 #!/usr/bin/env zsh
 
+# if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+#   eval "$(ssh-agent -s)"
+#   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+# fi
+# ssh-add $HOME/.ssh/GitHub 2>/dev/null
+# ssh-add $HOME/.ssh/GitLab 2>/dev/null
+
 # ==============================================================================
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -305,19 +312,6 @@ _zcomp() {
 
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
-man() {
- if [ -n "$TMUX" ]; then
- tmux split-window -h -p 40 \
-   /bin/man "$@"
-   # emacsclient -nw -e "(let ((Man-notify-method 'bully)) (man \"$1\") (evil-local-set-key 'normal \"q\" (lambda () (interactive) (+workspace:delete) (delete-frame))))"
- else
-   /bin/man "$@"
-   # emacsclient -nw -e "(let ((Man-notify-method 'bully)) (man \"$1\"))"
- fi
-}
-
-function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/"$@" ;}
-
 # # Ctrl-w - delete a full WORD (including colon, dot, comma, quotes...)
 # my-backward-kill-word () {
 #   # Add colon, comma, single/double quotes to word chars
@@ -328,25 +322,25 @@ function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/"$@" ;}
 # zle -N my-backward-kill-word
 # bindkey '^w' my-backward-kill-word
 
-fzf-open-file-or-dir() {
-  local cmd="_fzf_compgen_path -calways $(pwd)"
-  local out=$(eval $cmd | fzf-tmux --exit-0)
+# fzf-open-file-or-dir() {
+#   local cmd="_fzf_compgen_path -calways $(pwd)"
+#   local out=$(eval $cmd | fzf-tmux --exit-0)
 
-  if [ -f "$out" ]; then
-    /bin/emacs -nw "$out" </dev/tty
-  elif [ -d "$out" ]; then
-    cd "$out"
-    zle accept-line
-  fi
-}
+#   if [ -f "$out" ]; then
+#     /bin/emacs -nw "$out" </dev/tty
+#   elif [ -d "$out" ]; then
+#     cd "$out"
+#     zle accept-line
+#   fi
+# }
 
 # }}}
 
 
 # === BINDINGS ===
 # {{{
-zle     -N        fzf-open-file-or-dir
-bindkey '^O'      fzf-open-file-or-dir
+# zle     -N        fzf-open-file-or-dir
+# bindkey '^O'      fzf-open-file-or-dir
 
 bindkey '^[[A'    history-substring-search-up
 bindkey '^P'      history-substring-search-up
@@ -426,14 +420,14 @@ select-word-style bash # Delete word at a time
 source $ZDOTDIR/aliases
 
 # Load autoload shell functions on demand
-autoload -Uz cdl open fzf_log yadm_log_diff mkcd f fz fh fkill fco gfy headphones kd pb scan center_text switch_theme plain push ert-run sqlint magit clip decode
+autoload -Uz decode diff fz fzf_log gfy gitignore headphones kd man magit mkcd switch_theme plain push open yadm_log_diff
 #autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl direnv docker \
-  dunst emacs flask fsck.ext4 fzf gocryptfs hexyl inkscape ktlint light \
-  lsd mimeo megadl mkfs.vfat nzbget pamixer pip pip3 pipx psmem pw-cli redshift rofi rustc \
+  dunst emacs ffmpeg flask fsck.ext4 fzf gocryptfs hexyl inkscape ktlint light \
+  lsd mimeo megadl mkfs.vfat nzbget notify-send pamixer pip pip3 pipx psmem pw-cli redshift rofi rustc \
   tlp tlp-stat \
   vue zstd
 

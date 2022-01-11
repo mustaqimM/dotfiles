@@ -24,7 +24,7 @@ set $menu dmenu_path | rofi -show | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/Wallpapers/wallpaper.jpg fill
+output * bg ~/Pictures/Wallpapers/warty-final-ubuntu.png fill
 #
 # Example configuration:
 #

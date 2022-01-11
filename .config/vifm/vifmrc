@@ -2,7 +2,7 @@
 " nesting detection
 let $INSIDE_VIFM = 'true'
 
-set vicmd='emacsclient -nw'
+set vicmd='nvim'
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
@@ -53,7 +53,7 @@ colorscheme dark
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
 " See man date or man strftime for details.
-set timefmt=%m/%d\ %H:%M
+set timefmt=%d/%m/%y\ %H:%M
 
 " Show list of matches on tab completion in command-line mode
 set wildmenu
@@ -93,10 +93,10 @@ only
 "set milleroptions+=lsize:1,csize:3,rsize:4,rpreview:all
 
 " Customize view columns a bit (enable ellipsis for truncated file names)
-set viewcolumns=-{name}...,{target}..,6{size}
+set viewcolumns=-{name},{target}.,6{}
 
 " Set custom status line look
-set statusline=" Hint: *%z%= %A %9u:%-8g %7E %13d "
+set statusline=' Hint: %z %= %A %8u:%-8g %E %13d '
 
 " update terminal title
 "set title
@@ -104,7 +104,7 @@ set statusline=" Hint: *%z%= %A %9u:%-8g %7E %13d "
 set nowrap
 
 " Empty the ruler. By default, it shows the number of directories+files.
-" set rulerformat='%l/%S %[  %x%]'
+set rulerformat='%l/%S %[+%x%] '
 
 " What should be saved automatically between vifm sessions.  Drop "savedirs"
 " value if you don't want vifm to remember last visited directories for you.
@@ -127,6 +127,8 @@ set findprg='fd -t d -t f -H -L -E ".git" %p'
 " Don't show delete confirmation
 "set confirm-=delete
 
+" tmux integration
+screen!
 
 " ------------------------------------------------------------------------------
 " ==============================================================================
@@ -187,7 +189,7 @@ nnoremap yn :!echo -n %c:r | wl-copy %i <cr>:echo expand('%"c:r') ": file name y
 nnoremap yc :!wl-copy -n < %f %i <cr>:echo expand('%"c') ": file contents yanked"<cr>
 
 " Start shell in current directory
-nnoremap s :shell<cr>
+nnoremap s :shell!<cr>
 
 " Display sorting dialog
 nnoremap S :sort<cr>
@@ -242,7 +244,11 @@ nnoremap mkd :mkdir<space>
 nnoremap gb :file &<cr>l
 
 " Open application dialog
-nnoremap b :file &<cr>
+nnoremap b :file &<cr> %i
+
+" Push selected files via adb
+command! push adb connect 192.168.1.101:5555; adb push %f /sdcard/Movies %s && notify-send 'adb' 'File sent!' --icon=/usr/share/icons/Papirus/24x24/apps/distributor-logo-android.svg
+nnoremap aa :push<cr>
 
 " Extract an archive
 " set shellcmdflag=-ic
@@ -253,7 +259,6 @@ nnoremap b :file &<cr>
 nnoremap <silent> ,b :set viewcolumns=*{name}..,6{}.<cr>
 " detailed information about files
 nnoremap <silent> ,d :set viewcolumns=*{name}.,10{perms},12{uname},-7{gname},10{size}.,20{mtime}<cr>
-
 
 
 " ------------------------------------------------------------------------------
@@ -372,7 +377,7 @@ filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Images
-" filetype *.bmp,*.gif,*.jpeg,*.jpg,*.png,*.svg,*.tif,*.webp,*.xpm
+" filetype *.bmp,*.gif,*.jpeg,*.jpg,*.jxl,*.png,*.svg,*.tif,*.webp,*.xpm
 filetype <image/*>
        \ {View in qview}
        \ qview %f %i &,
@@ -386,10 +391,10 @@ filetype <image/*>
        " \ feh --scale-down %c %i &,
        " \ {View in sxiv}
        " \ sxiv %f,
-fileviewer <image/*>
-        \ vifmimg draw %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+" fileviewer <image/*>
+"         \ vifmimg draw %px %py %pw %ph %c
+"         \ %pc
+"         \ vifmimg clear
 
 " OpenRaster
 filextype *.ora
@@ -433,9 +438,9 @@ fileviewer *.torrent imdl -c always -t torrent show -i %c
 filetype *.jar java -jar %f %i &
 
 " FuseZipMount
-filetype *.zip,*.war,*.ear,*.oxt,*.apkg
-       \ {Mount with fuse-zip}
-       \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
+filetype *.jar,*.zip,*.war,*.ear,*.oxt,*.apkg,*.deb
+       \ {Mount with fuse-archive}
+       \ FUSE_MOUNT|fuse-archive %SOURCE_FILE %DESTINATION_DIR,
        \ {View contents}
        \ zip -sf %c | less,
        \ {Extract here}
@@ -444,8 +449,8 @@ fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zipinfo -1 %c
 
 " ArchiveMount
 filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.tar.zst,*.txz
-       \ {Mount with archivemount}
-       \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
+       \ {Mount with fuse-archive}
+       \ FUSE_MOUNT|fuse-archive %SOURCE_FILE %DESTINATION_DIR,
 fileviewer *.tgz,*.tar.gz tar -tzf %c
 fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
 fileviewer *.tar.txz,*.txz xz --list %c
@@ -453,14 +458,14 @@ fileviewer *.tar tar -tf %c
 
 " Rar2FsMount and rar archives
 filetype *.rar
-       \ {Mount with rar2fs}
-       \ FUSE_MOUNT|rar2fs %SOURCE_FILE %DESTINATION_DIR,
+       \ {Mount with fuse-archive}
+       \ FUSE_MOUNT|fuse-archive %SOURCE_FILE %DESTINATION_DIR,
 fileviewer *.rar unrar v %c
 
 " IsoMount
 filetype *.iso
-       \ {Mount with fuseiso}
-       \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
+       \ {Mount with fuse-archive}
+       \ FUSE_MOUNT|fuse-archive %SOURCE_FILE %DESTINATION_DIR,
 fileviewer *.iso iso-info %c | tail -n5
 
 " SshMount
@@ -475,8 +480,8 @@ filetype *.ftp
 
 " Fuse7z and 7z archives
 filetype *.7z
-       \ {Mount with fuse-7z}
-       \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
+       \ {Mount with fuse-archive}
+       \ FUSE_MOUNT|fuse-archive %SOURCE_FILE %DESTINATION_DIR,
 fileviewer *.7z 7z l %c
 
 " Office files

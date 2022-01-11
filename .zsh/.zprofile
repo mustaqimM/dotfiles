@@ -7,8 +7,8 @@
 #fi
 
 if [ ! "$DISPLAY" ]; then
-  # sx sh ~/.xinitrc 2> .xsession-errors
   LIBSEAT_BACKEND=logind dbus-run-session sway
+  # sx sh ~/.xinitrc 2> .xsession-errors
   # XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland
   # startx 2> .xsession-errors
 fi

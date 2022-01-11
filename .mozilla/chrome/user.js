@@ -7,3 +7,8 @@ user_pref("browser.tabs.closeWindowWithLastTab", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", false);
 user_pref("browser.compactmode.show", false);
 user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
+
+user_pref("widget.non-native-theme.scrollbar.style", 3);
+
+// ECH
+user_pref("network.dns.echconfig.enabled", true);

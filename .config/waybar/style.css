@@ -59,7 +59,8 @@ window#waybar.empty button:not(.focused) {
 }
 
 #workspaces button.urgent {
-    background-color: #6eaaff;
+  background-color: #6eaaff;
+  color: #ffffff;
 }
 
 #mode {
@@ -194,8 +195,8 @@ label:focus {
 }
 
 /* #tray { */
-/*     background: @theme_bg_color; */
-/*     color: @theme_bg_color; */
+/*   background: @theme_bg_color; */
+/*   color: @theme_bg_color; */
 /* } */
 
 #idle_inhibitor {
