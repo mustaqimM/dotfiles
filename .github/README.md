@@ -1,4 +1,4 @@
-```bash
+```zsh
       ██            ██     ████ ██  ██
      ░██           ░██    ░██░ ░░  ░██
      ░██  ██████  ██████ ██████ ██ ░██  █████   ██████
@@ -9,19 +9,16 @@
  ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░
 
   ▓▓▓▓▓▓▓▓▓▓
- ░▓ about  ▓ custom linux config files
+ ░▓ about  ▓ linux config files
  ░▓ author ▓ mustaqim
  ░▓ os     ▓ https://voidlinux.org/
  ░▓▓▓▓▓▓▓▓▓▓
  ░░░░░░░░░░
 
- awesomewm       > fast, extensible, highly configurable, next generation framework wm for X
- compton         > minimal composite config for opacity
+ swaywm          > Tiling Wayland compositor
  editor          > doom emacs
- fonts           > Iosevka fonts patched with Ligaturizer
- term            > xst, zsh, zplugin, {git,rbenv,rust} prompts:
-                   `time xst -e /bin/zsh -i -c exit  0.09s user 0.02s system 72% cpu 0.118 total`
-                   Initial plugin loading time: 0.035s
+ term            > alacritty, zsh, zinit, tmux
+ font            >  Iosevka, SF Pro
  ```
 
 The dotfiles in this repository are managed by [yadm](https://thelocehiliosan.github.io/yadm/)
@@ -34,6 +31,25 @@ The dotfiles in this repository are managed by [yadm](https://thelocehiliosan.gi
 
 ## Previews
 
+### swaywm
+
+#### mpv
+![mpv](https://i.imgur.com/ZVvsuz8.png "mpv")
+
+#### Emacs
+![Emacs](https://i.imgur.com/I8c2kjJ.png "Emacs")
+
+#### Alacritty, git, tmux, vifm
+![Alacritty, git, tmux, vifm](https://i.imgur.com/KvzTUM8.png "Alacritty, git, tmux, vifm")
+
+#### Rofi
+![](https://i.imgur.com/xfMaXa4.mp4)
+
+---
+
+<details>
+  <summary>Screenshots of older versions</summary>
+
 ### awesomewm
 
 ![Desktop](https://i.imgur.com/Fom5TQ0.png)
@@ -44,11 +60,6 @@ The dotfiles in this repository are managed by [yadm](https://thelocehiliosan.gi
 ![Qbittorrent](https://i.imgur.com/XNYtqu1.png)
 ![Floating gaps](https://i.imgur.com/O16j1BZ.png "Floating gaps")
 
-## Notes
-* There is no `⇪ Caps Lock` key. When `⇪ Caps Lock` is pressed alone, it is `Esc`.
-  When pressed in combination with another key, it acts as `Ctrl`.
-
-
 ### bspwm
 
 ![mpv](https://i.imgur.com/Jo267T9.jpg)
@@ -57,6 +68,10 @@ The dotfiles in this repository are managed by [yadm](https://thelocehiliosan.gi
 ![git, emacs and magit](https://i.imgur.com/VskZzcT.png)
 ![nvim](https://i.imgur.com/5Uxn9qF.png)
 
-## Credits
+</details>
 
-[xero](https://github.com/xero/dotfiles) and [others](https://reddit.com/r/unixporn).
+## Notes
+* When `⇪ Caps Lock` is pressed alone, it acts as `⎋ Esc`.
+  When pressed in combination with another key, it acts as `⎈ Ctrl`.
+  The `⇪ Caps Lock` key is at the `⎋ Esc` key.
+

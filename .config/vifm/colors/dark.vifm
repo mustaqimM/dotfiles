@@ -66,7 +66,7 @@ highlight /^.*(authors|changes|contributors|copying|copyright|history|install|li
 highlight /^.*\.(msql|mysql|pgsql|sql)$/I cterm=none ctermfg=222 ctermbg=default
 highlight /^.*(\.cfusertextencoding|\.ds_store|\.localized|\.part|\.r[0-9]{0,2}|\.z[0-9]{0,2}|\.zx[0-9]{0,2}|coderesources|pkginfo|!qB)$/I cterm=none ctermfg=239 ctermbg=default
 highlight /^.*(\.dockerignore|\.gitattributes|\.gitignore|\.gitmodules|\.pyc|pm_to_blib)$/I cterm=none ctermfg=240 ctermbg=default
-highlight /^.*(\.aria2|\.bak|\.bup|\.dll|\.dump|\.dylib|\.mdump|\.o|\.orig|\.rlib|\.stackdump|\.un~|\.zcompdump|\.zwc|core)$/I cterm=none ctermfg=241 ctermbg=default
+highlight /^.*(\.aria2|\.bak|\.bup|\.disable|\.dll|\.dump|\.dylib|\.mdump|\.o|\.orig|\.rlib|\.stackdump|\.un~|\.zcompdump|\.zwc|core|~)$/I cterm=none ctermfg=241 ctermbg=default
 highlight /^.*\.(am|hin|in|m4|old|out|scan)$/I cterm=none ctermfg=242 ctermbg=default
 highlight /^.*(manifest)$/I cterm=none ctermfg=243 ctermbg=default
 highlight /^.*\.(sassc|skip|swo|swp|tmp)$/I cterm=none ctermfg=244 ctermbg=default

@@ -22,7 +22,7 @@ local user_opts = {
     scalefullscreen = 1.0,      -- scaling of the controller when fullscreen
     scaleforcedwindow = 2.0,    -- scaling when rendered on a forced window
     vidscale = false,           -- scale the controller with the video?
-    hidetimeout = 1500,         -- duration in ms until the OSC hides if no
+    hidetimeout = 800,         -- duration in ms until the OSC hides if no
                                 -- mouse movement. enforced non-negative for the
                                 -- user, but internally negative is 'always-on'.
     fadeduration = 250,         -- duration of fade out in ms, 0 = no fade
@@ -31,10 +31,10 @@ local user_opts = {
     iamaprogrammer = false,     -- use native mpv values and disable OSC
                                 -- internal track list management (and some
                                 -- functions that depend on it)
-    font = 'Geomanist',	-- default osc font
+    font = 'SF Pro Rounded',	-- default osc font
     seekbarhandlesize = 1.0,	-- size ratio of the slider handle, range 0 ~ 1
     seekrange = true,		-- show seekrange overlay
-    seekrangealpha = 33,      	-- transparency of seekranges
+    seekrangealpha = 64,      	-- transparency of seekranges
     seekbarkeyframes = false,    -- use keyframes when dragging the seekbar
     showjump = false,            -- show "jump forward/backward 5 seconds" buttons
                                 -- shift+left-click to step 1 frame and 
@@ -216,7 +216,7 @@ function build_keyboard_controls()
     end
     table.insert(bottom_button_line, 'skipfrwd')
     table.insert(bottom_button_line, 'pl_next')
-    table.insert(bottom_button_line, 'tog_info')
+    -- table.insert(bottom_button_line, 'tog_info')
     table.insert(bottom_button_line, 'tog_fs')
 
     -- build up the main mapping object
@@ -1506,11 +1506,11 @@ function osc_init()
         function () mp.commandv('cycle', 'fullscreen') end
 
     --tog_info
-    ne = new_element('tog_info', 'button')
-    ne.content = icons.info
-    ne.visible = (osc_param.playresx >= 600)
-    ne.eventresponder['mbtn_left_up'] =
-        function () mp.commandv('script-binding', 'stats/display-stats-toggle') end
+    -- ne = new_element('tog_info', 'button')
+    -- ne.content = icons.info
+    -- ne.visible = (osc_param.playresx >= 600)
+    -- ne.eventresponder['mbtn_left_up'] =
+    --     function () mp.commandv('script-binding', 'stats/display-stats-toggle') end
 
     -- title
     ne = new_element('title', 'button')

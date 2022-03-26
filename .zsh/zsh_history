@@ -4469,7 +4469,6 @@ done
 : 1638502350:0;ht
 : 1638601677:0;sudo xbps-install ngetty
 : 1638601687:0;sudo ln -s /etc/sv/ngetty /var/service
-: 1638641264:0;pkill emacs
 : 1638681933:0;npx react-devtools
 : 1638779940:0;sudo sv restart smbd
 : 1638779942:0;sudo smbstatus
@@ -4516,7 +4515,6 @@ done
 : 1639394092:0;nvm use "lts/*"
 : 1639399022:0;echo $path | tr " " "\n" | nl
 : 1639399991:0;relaod
-: 1639404192:0;sudo sv restart udevmon
 : 1639404721:0;sudoedit caps2esc.yaml
 : 1639404789:0;svlogtail | rg udevmon
 : 1639405049:0;nvm alias default stable
@@ -4563,7 +4561,6 @@ q
 : 1640229333:0;sudo ln -s /etc/sv/openntpd /var/service
 : 1640229470:0;sudo xbps-install chrony
 : 1640229485:0;sudo ln -s /etc/sv/chronyd /var/service
-: 1640319590:0;echo $TERM
 : 1640321137:0;npx alacritty-themes
 : 1640323091:0;e ~/.zsh/.p10k-lean.zsh
 : 1640344176:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,WhiteSur,WhiteSur-solid}
@@ -4608,9 +4605,7 @@ q
 : 1640794591:0;npx eslint .
 : 1640794994:0;git push origin master
 : 1640852040:0;npm install --save-dev prettier eslint-config-prettier
-: 1640852307:0;doom install
 : 1640855004:0;ls -
-: 1640855007:0;ls -l
 : 1640856580:0;man zshexpn
 : 1640861061:0;npm init
 : 1640861216:0;npm install --save-dev eslint prettier eslint-config-prettier
@@ -4720,7 +4715,6 @@ q
 : 1642312062:0;fd -e png -x ./waifu2x-ncnn-vulkan -s 4 -m ./models-upconv_7_photo -i {} -o {}_1.png
 : 1642403047:0;e ~/.config/waybar/style.css
 : 1642403069:0;pkill waybar -SIGUSR2
-: 1642475833:0;git clone --depth 1 gh:hlissner/doom-emacs ~/.emacs.d
 : 1642481836:0;sudo xbps-install filelight
 : 1642482541:0;sudo xbps-remove -R filelight
 : 1642583320:0;adb shell ls /sdcard/Movies
@@ -4812,7 +4806,6 @@ q
 : 1646371779:0;ga srcpkgs/gramps
 : 1646371815:0;git push origin update_gramps
 : 1646372018:0;gp origin update_gramps
-: 1646382341:0;grv
 : 1646382480:0;gp origin new_package_life-line-chart
 : 1646382971:0;./xbps-src pkg python3-life-line-chart
 : 1646469740:0;fd -e jxl -x mv {} {.}.jpg
@@ -4831,9 +4824,7 @@ q
 : 1646582260:0;sudo xbps-install gnome-themes-extra
 : 1646807140:0;jackett
 : 1646810833:0;git clone gh:jdfekete/geneaquilt
-: 1646888373:0;zcalc
 : 1646900811:0;yadm add ~/.config/dunst
-: 1646900919:0;yadm push
 : 1646989904:0;notify-send -u normal "Test" "This is a test"
 : 1647020896:0;cp /usr/share/pipewire/pipewire.conf ~/.config/pipewire
 : 1647060534:0;e ~/.config/sway/autostart
@@ -4873,7 +4864,6 @@ q
 : 1647337563:0;echo $SSH_AUTH_SOCK
 : 1647337880:0;sudo xbps-remove -ROo
 : 1647365586:0;fusermount -u mnt
-: 1647366284:0;doom upgrade
 : 1647405977:0;e srcpkgs/gramps/template
 : 1647498939:0;cd
 : 1647625807:0;./xbps-src clean
@@ -4881,7 +4871,6 @@ q
 : 1647627467:0;xbps-query -f dav1d
 : 1647662174:0;gcan!
 : 1647662510:0;gca! -m "dav1d: update to 1.0.0"
-: 1647662556:0;fglo
 : 1647662603:0;git reset HEAD^ srcpkgs/ffmpeg/template
 : 1647662612:0;git reset HEAD~ srcpkgs/ffmpeg/template
 : 1647662738:0;gb -d update_dav1d
@@ -4901,7 +4890,6 @@ q
 : 1647749019:0;sudo xbps-install delta
 : 1647751943:0;yadm_log_diff
 : 1647752070:0;yadm checkout 28cd289df9460eb40e80b5f66939a9ede3ab2e65 -- .config/jgmenu/
-: 1647752110:0;e ~/.config/sway/config
 : 1647753170:0;e ~/.gitconfig
 : 1647756569:0;sudo xbps-install --repository=hostdir/binpkgs/new_rofi_wayland rofi-wayland
 : 1647756736:0;gp
@@ -4913,12 +4901,10 @@ q
 : 1647877398:0;sudo xbps-install linux-mainline
 : 1647878050:0;lscpu
 : 1647878856:0;sudo touch /etc/sv/udevmon/down
-: 1647879575:0;adb connect 192.168.1.101
 : 1647879666:0;df -Th
 : 1647884356:0;sudo xbps-install libva-utils
 : 1647884364:0;vainfo
 : 1647884379:0;vainfo | rg 'VAEntrypointVLD'
-: 1647884439:0;e ~/.zsh/.zshenv
 : 1647921501:0;xbps-query -Rs acpi
 : 1647921835:0;sudo xbps-remove -R acpid
 : 1647921953:0;xbps-query -Rs upower
@@ -4944,7 +4930,6 @@ q
 : 1647929851:0;xbps-query -Rs linux
 : 1647929873:0;sudo xbps-install linux-lts
 : 1647930461:0;sudo update_unbound_sb_hosts.sh
-: 1647931119:0;sudo sv up udevmon
 : 1647931311:0;sudo xbps-install bind-utils
 : 1647931768:0;e /etc/unbound/unbound.conf
 : 1647931828:0;ping 'srv.carbonads.net'
@@ -4953,7 +4938,6 @@ q
 : 1647934006:0;man vifm
 : 1647935111:0;wf-recorder -f recording.mp4
 : 1647937681:0;cp /etc/iwd/main.conf ~/.config/configs/etc/iwd/
-: 1647970819:0;svlogtail
 : 1647971401:0;cp /etc/unbound/rpz.conf ~/.config/configs/etc/unbound/
 : 1647971922:0;cp /etc/resolvconf.conf ~/.config/configs/etc/
 : 1647971932:0;cp /etc/unbound/resolvconf.conf ~/.config/configs/etc/unbound/
@@ -4962,45 +4946,89 @@ q
 : 1648008615:0;e /etc/resolv.conf
 : 1648011194:0;sudo resolvconf -u
 : 1648013266:0;e /etc/unbound/resolvconf.conf
-: 1648014018:0;bandwhich
 : 1648020077:0;sudo xbps-install nautilus
 : 1648023487:0;sudo xbps-install igt-gpu-tools
-: 1648023508:0;reload
-: 1648036537:0;sudo sv status /var/service/*
 : 1648036547:0;sudo sv restart unbound
 : 1648036564:0;sudo sv restart iwd
 : 1648036565:0;ping mustaqim.ml
-: 1648048737:0;e ~/.config/mpv/mpv.conf
-: 1648057859:0;gst
-: 1648057871:0;git pull --rebase upstream master
-: 1648057926:0;gco $(gb | fzf)
 : 1648057948:0;git rebase master
 : 1648057953:0;glo
 : 1648057975:0;git push -f
-: 1648094073:0;sudo xbps-install -Suvy
 : 1648094462:0;man mpv
 : 1648101399:0;aria 'https://cdn.joypixels.com/arch-linux/font/6.6.0/joypixels-android.ttf'
 : 1648101524:0;fc-cache -fv
 : 1648103897:0;e ~/.zsh/functions/switch_theme
 : 1648104846:0;crontab -e
-: 1648105072:0;tmux attach || tmux
-: 1648105076:0;plain show
 : 1648105375:0;e ~/.zsh/.zshrc
 : 1648105469:0;zi cclear
 : 1648106310:0;yadm add ~/.config/configs
-: 1648106970:0;ssh-add $HOME/.ssh/GitHub </dev/null
-: 1648107000:0;yadm push -f
 : 1648107220:0;e ~/.config/vifm/vifmrc
 : 1648108070:0;e ~/.config/sway/rules
 : 1648108098:0;swaymsg -t get_tree | fzf
 : 1648111831:0;sudo intel_gpu_top
-: 1648112894:0;psmem -p $(pgrep -d, -u $USER) -S
-: 1648113996:0;tlp-stat -t | rg temp
-: 1648113999:0;htop
-: 1648117449:0;f
-: 1648117499:0;eval $(ssh-agent -s)
-: 1648117500:0;ssh-add $HOME/.ssh/GitLab </dev/null
-: 1648117509:0;yadm diff
-: 1648117515:0;yadm status
-: 1648117553:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1648117581:0;yadm commit -v -a --no-edit --amend
+: 1648185025:0;doom upgrade
+: 1648192678:0;git pull --rebase upstream master
+: 1648192722:0;git remote add emacs gh:jbenden/void-packages
+: 1648192724:0;grv
+: 1648192975:0;gco $(gb | fzf)
+: 1648193023:0;gco -b emacs
+: 1648193031:0;git pull emacs emacs-nativecomp
+: 1648193204:0;./xbps-src pkg libgccjit
+: 1648194228:0;fc-list | rg "SF" | cut -d ":" -f2
+: 1648196166:0;./xbps-src pkg emacs-nativecomp
+: 1648197396:0;zcalc
+: 1648202195:0;cat /sys/class/drm/card0/gt_cur_freq_mhz
+: 1648203297:0;sudo xbps-remove -R emacs-gtk3
+: 1648203321:0;sudo xbps-install --repository=hostdir/binpkgs/emacs emacs-nativecomp
+: 1648203613:0;sudo xbps-install greetd
+: 1648203858:0;sudo rm /var/service/agetty-tty1
+: 1648206917:0;sudo ln -s /etc/sv/agetty-tty1 /var/service
+: 1648207203:0;sudo sv upE
+: 1648208952:0;git clone --depth 1 gh:hlissner/doom-emacs ~/.emacs.d
+: 1648209021:0;doom install
+: 1648211868:0;sudo mkdir -p /etc/interception/udevmon.d/
+: 1648212262:0;e /etc/interception/udevmon.d/caps2esc.yaml
+: 1648212513:0;sudo sv restart udevmon
+: 1648212564:0;sudo sv down udevmon
+: 1648222870:0;e ~/.config/sway/config
+: 1648223594:0;adb connect 192.168.1.101
+: 1648223759:0;adb shell df -h
+: 1648224241:0;adb shell du -a /storage/emulated/0/ | sort -n -r | head -n 20
+: 1648224445:0;plain show
+: 1648227128:0;sudo xbps-install tuigreet
+: 1648227187:0;e /etc/greetd/config.toml
+: 1648228540:0;sudo chmod -R go+r /etc/greetd
+: 1648228682:0;sudo ln -s /etc/sv/greetd /var/service
+: 1648228995:0;sudo xbps-remove -R greetd
+: 1648228999:0;sudo xbps-remove -R tuigreet
+: 1648229151:0;sudo sv up udevmon
+: 1648229264:0;tmux attach || tmux
+: 1648229292:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1648277962:0;echo $TERM
+: 1648278004:0;ls -l
+: 1648278106:0;e ~/.zsh/.zshenv
+: 1648278130:0;pkill emacs
+: 1648280223:0;sudo sv status /var/service/*
+: 1648280227:0;sudo rm /var/service/greetd
+: 1648285628:0;e ~/.config/mpv/mpv.conf
+: 1648285664:0;yadm diff
+: 1648285711:0;yadm add ~/.config/mpv/{script-opts,shaders,input.conf,mpv.conf,scripts}
+: 1648285726:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1648285750:0;yadm status
+: 1648285791:0;eval $(ssh-agent -s)
+: 1648285793:0;ssh-add $HOME/.ssh/GitHub </dev/null
+: 1648285798:0;ssh-add $HOME/.ssh/GitLab </dev/null
+: 1648285801:0;yadm push
+: 1648289303:0;htop
+: 1648290048:0;reload
+: 1648290213:0;svlogtail
+: 1648290902:0;bandwhich
+: 1648308648:0;gst
+: 1648309231:0;fglo
+: 1648310141:0;yadm commit -v -a --no-edit --amend
+: 1648310144:0;yadm push -f
+: 1648313894:0;f
+: 1648314195:0;tlp-stat -t | rg temp
+: 1648353274:0;sudo xbps-install -Suvy
+: 1648353642:0;f
+: 1648353860:0;yadm commit -v -a --no-edit --amend
