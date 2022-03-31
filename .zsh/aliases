@@ -4,6 +4,7 @@ alias aria="aria2c --no-conf -x16 -s16 -k1M --summary-interval=0 --check-certifi
 alias cat=bat
 alias chts='cht --shell'
 alias f=vifm
+# alias e=emacsclient -nc
 alias gpg=gpg2
 alias jackett='~/.local/bin/Jackett/jackett'
 # alias ktlint='ktlint --android --color --relative -v'

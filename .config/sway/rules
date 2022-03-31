@@ -1,7 +1,8 @@
 # -*- mode: conf -*-
 
 # workspace rules
-assign [app_id="(Nightly|firefox|chromium|microsoft-edge-dev|updater)"] workspace 1
+assign [app_id="(Nightly|firefox|chromium|microsoft-edge|updater)"] workspace 1
+assign [app_id="foot"] workspace 2
 assign [class="Emacs"] workspace 3
 assign [app_id="org.keepassxc.KeePassXC"] workspace 4
 assign [app_id="mpv"] workspace 5

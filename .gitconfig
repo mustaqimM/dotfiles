@@ -1,63 +1,87 @@
 [user]
-    name = mustaqim
-    email = git@mustaqim.ml
-    signingkey = 72692FB2
+  name = mustaqim
+  email = git@mustaqim.ml
+  signingkey = 72692FB2
+
+[init]
+  defaultBranch = main
 
 [color]
-    ui = true
+  ui = true
 
 [core]
-    editor = emacsclient
-    excludesfile = /home/mustaqim/.gitignore_global
-    pager = diff-so-fancy | less --tabs=4 -RFX
-    autocrlf = input
-    # autocrlf = true
-    # safecrlf = true
-    # autocrlf = input
+  editor = emacsclient
+  excludesfile = /home/mustaqim/.gitignore_global
+  # pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = delta
+  autocrlf = input
+  # autocrlf = true
+  # safecrlf = true
+  # autocrlf = input
 
-[url "git@github.com:"]
-    insteadOf = "gh:"
+[interactive]
+  diffFilter = delta --color-only
 
-[url "https://gist.github.com/"]
-    insteadOf = "gist:"
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  # features = kingfisher
+  syntax-theme = ansi
 
-[url "git@gitlab.com:"]
-    insteadOf = "gl:"
+[merge]
+  conflictstyle = diff3
 
-[url "https://gitlab.com/snippets/"]
-    insteadOf = "snippet:"
-
-[url "git://git.suckless.org/"]
-    insteadOf = "suckless:"
-
-[alias]
-    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
-    exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
+[diff]
+  colorMoved = default
 
 [gpg]
-    program = gpg2
+  program = gpg2
 
 [commit]
-    gpgsign = true
-    verbose = true
+  gpgsign = true
+  verbose = true
 
 [color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+
 [color "diff"]
-    meta = 11
-    frag = magenta bold
-    func = blue
-    commit = yellow bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
+  meta = 11
+  frag = magenta bold
+  func = blue
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+
 [diff-so-fancy]
-    markEmptyLines = true
-    changeHunkIndicators = true
-    stripLeadingSymbols = true
-    useUnicodeRuler = true
+  markEmptyLines = true
+  changeHunkIndicators = true
+  stripLeadingSymbols = true
+  useUnicodeRuler = true
+
 [blame]
-    coloring = highlightRecent
+  coloring = highlightRecent
+
+[include]
+  path = /home/mustaqim/.config/delta/themes.gitconfig
+
+[url "git@github.com:"]
+  insteadOf = "gh:"
+
+[url "https://gist.github.com/"]
+  insteadOf = "gist:"
+
+[url "git@gitlab.com:"]
+  insteadOf = "gl:"
+
+[url "https://gitlab.com/snippets/"]
+  insteadOf = "snippet:"
+
+[url "git://git.suckless.org/"]
+  insteadOf = "suckless:"
+
+[alias]
+  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+  exclude = !sh -c 'echo "$1" >> .git/info/exclude' -

@@ -209,3 +209,8 @@
 ;; (add-to-list 'exec-path "~/.local/bin/language-servers/kotlin-language-server/bin")
 ;; (setq-hook! 'rjsx-mode-hook +format-with-lsp nil)
 
+;; (setq lsp-rust-server 'rust-analyzer)
+;; (after! lsp-rust
+;;   (setq lsp-rust-server 'rust-analyzer))
+;; (after! rustic
+;;   (setq rustic-lsp-server 'rust-analyzer))

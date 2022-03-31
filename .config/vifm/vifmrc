@@ -160,6 +160,9 @@ mark s ~/Library/Series
 " %D the other window directory name.
 " %m run the command in a menu window
 
+" Block particular shortcut
+" nnoremap <left> <nop>
+
 command! df df -h %m 2> /dev/null
 command! diff git diff %f %F
 command! zip zip -r %f.zip %f
@@ -174,19 +177,24 @@ command! reload :write | restart
 command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd -L . --min-depth 1 -t f -t d -H -c always | fzf 2>/dev/tty'))
 nnoremap F :FZFfind<cr>
 
-" Block particular shortcut
-" nnoremap <left> <nop>
-
 " yank current directory path into the clipboard
-nnoremap yd :!echo -n %d | wl-copy %i <cr>:echo expand('%"d') ": dir yanked to clipboard"<cr>
+nnoremap yd :!echo -n %d | wl-copy %i <cr>:echo expand('%"d') ": dir yanked to clipboard "<cr>
 " yank current file path into the clipboard
-nnoremap yp :!echo -n %c:p | wl-copy %i <cr>:echo expand('%"c:p') ": file path yanked to clipboard"<cr>
+nnoremap yp :!echo -n %c:p | wl-copy %i <cr>:echo expand('%"c:p') ": file path yanked to clipboard "<cr>
 " yank current filename without path into the clipboard
-nnoremap ye :!echo -n %c | wl-copy %i <cr>:echo expand('%"c') ": file & ext yanked to clipboard"<cr>
+nnoremap ye :!echo -n %c | wl-copy %i <cr>:echo expand('%"c') ": file & ext yanked to clipboard "<cr>
 " yank root of current file's name into the clipboard
-nnoremap yn :!echo -n %c:r | wl-copy %i <cr>:echo expand('%"c:r') ": file name yanked to clipboard"<cr>
+nnoremap yn :!echo -n %c:r | wl-copy %i <cr>:echo expand('%"c:r') ": file name yanked to clipboard "<cr>
 " yank contents of file
-nnoremap yc :!wl-copy -n < %f %i <cr>:echo expand('%"c') ": file contents yanked"<cr>
+nnoremap yc :!wl-copy -n < %c %i <cr>:echo expand('%"c') ": contents yanked "<cr>
+
+" Push selected files via adb
+command! push adb connect 192.168.1.101:5555; adb push %f /sdcard/Movies %s && notify-send 'adb' 'File sent!' --icon=distributor-logo-android
+nnoremap aa :push<cr>
+
+" Extract an archive
+command! extract dtrx -n %c %i
+nnoremap x :extract<cr>:echo expand('%"c') ": archive extracted "<cr>
 
 " Start shell in current directory
 nnoremap s :shell!<cr>
@@ -234,7 +242,7 @@ nmap q ZQ
 nnoremap ; :
 
 " Upload highlighted file to 0x0.st and then save url to clipboard
-nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)" &<cr>
+" nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)" &<cr>
 
 "nnoremap gg 2gg
 "nnoremap t tj
@@ -245,15 +253,6 @@ nnoremap gb :file &<cr>l
 
 " Open application dialog
 nnoremap b :file &<cr> %i
-
-" Push selected files via adb
-command! push adb connect 192.168.1.101:5555; adb push %f /sdcard/Movies %s && notify-send 'adb' 'File sent!' --icon=/usr/share/icons/Papirus/24x24/apps/distributor-logo-android.svg
-nnoremap aa :push<cr>
-
-" Extract an archive
-" set shellcmdflag=-ic
-" command! extract extract %c &
-" nnoremap x :extract<cr>
 
 " brief information about files
 nnoremap <silent> ,b :set viewcolumns=*{name}..,6{}.<cr>
@@ -379,16 +378,18 @@ fileviewer *.[1-8] man ./%c | col -b
 " Images
 " filetype *.bmp,*.gif,*.jpeg,*.jpg,*.jxl,*.png,*.svg,*.tif,*.webp,*.xpm
 filetype <image/*>
-       \ {View in qview}
-       \ qview %f %i &,
+       " \ {View in qview}
+       " \ qview %f %i &,
+       " \ {View in swayimg}
+       " \ swayimg %f %i
        " \ {View in pqiv}
        " \ pqiv * &,
        " \ {View in gThumb}
        " \ gthumb %f %i &,
        " \ {View in imv}
        " \ imv -b 000000 * -n %f %i &,
-       " \ {View in feh}
-       " \ feh --scale-down %c %i &,
+       \ {View in feh}
+       \ feh --scale-down --start-at %c %i &,
        " \ {View in sxiv}
        " \ sxiv %f,
 " fileviewer <image/*>
@@ -438,7 +439,7 @@ fileviewer *.torrent imdl -c always -t torrent show -i %c
 filetype *.jar java -jar %f %i &
 
 " FuseZipMount
-filetype *.jar,*.zip,*.war,*.ear,*.oxt,*.apkg,*.deb
+filetype *.jar,*.zip,*.war,*.ear,*.oxt,*.apkg,*.deb,*.xbps
        \ {Mount with fuse-archive}
        \ FUSE_MOUNT|fuse-archive %SOURCE_FILE %DESTINATION_DIR,
        \ {View contents}
@@ -448,7 +449,7 @@ filetype *.jar,*.zip,*.war,*.ear,*.oxt,*.apkg,*.deb
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zipinfo -1 %c
 
 " ArchiveMount
-filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.tar.zst,*.txz
+filetype *.gz,*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.tar.zst,*.txz
        \ {Mount with fuse-archive}
        \ FUSE_MOUNT|fuse-archive %SOURCE_FILE %DESTINATION_DIR,
 fileviewer *.tgz,*.tar.gz tar -tzf %c
@@ -516,25 +517,25 @@ fileviewer <text/*> env -uCOLORTERM bat --color always --pager never -p %c
                     \ %pc
                     " \ vifmimg clear
 
-filetype * xdg-open %c &
+" filetype * xdg-open %c &
 " filetype * mimeo %c %i &
-"fileviewer * file -b %c
+" fileviewer * file -b %c
 
 set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  ::*.apk::'
 " code
-set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.rkt::'
+set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.rkt::'
 set classify+='  ::.git/,,*.git/,,.gitignore,,.gitconfig,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css,,*.scss::'
 set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
-set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
-set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::/^rc|rc$/::,  ::*.properties::,  ::*.log::,  ::/json|yml$/::'
+set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el,,*.elc,,*.eln::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
+set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::/^rc|rc$/::,  ::*.properties::,  ::*.log::,  ::/json|yml$/::,  ::*.toml::'
 set classify+='  ::*.db,,*.sql,,*.sqlite::'
-set classify+='  ::*.pem::'
+set classify+='  ::*.pem::,  ::*.lock::'
 " archives
 set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.zst::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
 set classify+='  ::*.iso,,*.img::'
 " images
-set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.webp,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,*.xwd,,*.jxl::'
+set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.jxl,,*.ico,,*.png,,*.ppm,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.webp,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,*.xwd::'
 " audio
 set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.eac3,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.opus,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 " media

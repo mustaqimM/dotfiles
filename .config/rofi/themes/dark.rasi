@@ -46,7 +46,7 @@ element {
   spacing: 15px ;
   border:  0;
   text-color: @text-alt;
-  border-radius: 14px;
+  border-radius: 12px;
 }
 element normal.normal {
   background-color: inherit;

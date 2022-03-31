@@ -9,7 +9,7 @@
   cyan:                        #3e999f;
   emphasis:                    #d6d6d6;
   text:                        #000000;
-  text-alt:                    #373b41;
+  text-alt:                    #282a2e;
   foreground:                  #1d1f21;
   background:                  #fafafa;
   selected-active-foreground:  var(background);
@@ -46,7 +46,7 @@ element {
   spacing: 15px ;
   border:  0;
   text-color: @text-alt;
-  border-radius: 14px;
+  border-radius: 12px;
 }
 element normal.normal {
   background-color: inherit;
@@ -54,7 +54,7 @@ element normal.normal {
 }
 element normal.urgent {
     background-color: var(urgent-background);
-    text-color:       var(urgent-foreground);
+    /* text-color:       var(urgent-foreground); */
 }
 element normal.active {
     background-color: var(active-background);

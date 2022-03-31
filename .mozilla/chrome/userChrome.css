@@ -1,3 +1,33 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Popups */
+    --gnome-menu-background: rgba(51, 51, 51, 0.95);
+    --gnome-menu-border-color: #070707;
+    --gnome-popover-background: rgba(51, 51, 51, 0.95);
+    --gnome-popover-border-color: #070707;
+    --gnome-popover-shadow: 0 5px 8px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    --gnome-popover-button-hover-background: rgba(255, 255, 255, 0.1);
+    --gnome-popover-button-active-background: rgba(255, 255, 255, 0.15);
+    --gnome-popover-separator-color: rgba(0, 0, 0, 0.1);
+    --gnome-urlbar-background: #464646;
+    --gnome-urlbar-color: #ffffff;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Popups */
+    --gnome-menu-background: rgba(255, 255, 255, 0.95);
+    --gnome-menu-border-color: #cdc7c2;
+    --gnome-popover-background: rgba(255, 255, 255, 0.95);
+    --gnome-popover-border-color: #cdc7c2;
+    --gnome-popover-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+    --gnome-popover-button-hover-background: rgba(0, 0, 0, 0.1);
+    --gnome-popover-button-active-background: rgba(0, 0, 0, 0.2);
+    --gnome-popover-separator-color: rgba(0, 0, 0, 0.1);
+    --gnome-urlbar-background: #f5f5f5;
+    --gnome-urlbar-color: #020202;
+  }
+}
 /* Hide main tabs toolbar */
 #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar {
   opacity: 0;
@@ -22,14 +52,15 @@ vbox#sidebar-box.chromeclass-extrachrome {
   --wide-tab-width: 200px;
   --toolbar-field-focus-border-color: transparent !important;
 }
+
 /* Tree Style Tabs */
 /* Hide splitter, when using Tree Style Tab. */
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter {
-    display: none !important;
+  display: none !important;
 }
 /* Hide sidebar header, when using Tree Style Tab. */
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-    visibility: collapse;
+  visibility: collapse;
 }
 /* Don't shrink other sidebar tabs */
 #sidebar-box:not([sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]) {
@@ -52,23 +83,30 @@ vbox#sidebar-box.chromeclass-extrachrome {
   z-index: 1;
 }
 
-/* Urlbar */
+/* bar */
+/* #nav-bar { */
+/*   height: 30px !important; */
+/* } */
 #navigator-toolbox{ border-bottom: none !important }
-#urlbar-container {
-  margin-top: -3px !important;
-  --urlbar-container-height: 31px !important;
-}
+
 #urlbar {
-  --urlbar-height:  24px !important;
+  box-shadow: none !important;
+  background: var(--gnome-popover-background) !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--gnome-popover-background) !important;
+  padding: 0 0 !important;
+}
+#urlbar-background {
+  background: var(--gnome-popover-background) !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  background: transparent !important;
+  border-radius: 8px !important;
+  padding: 0 0 !important;
 }
 
-.browser-toolbar:not(.titlebar-color) {
-  background-image: none !important;
-}
-/* @media (prefers-color-scheme: dark) { */
-/*   #urlbar { */
-/*     color: #ffffff !important; */
-/*   } */
+/* .browser-toolbar:not(.titlebar-color) { */
+/*   background-image: none !important; */
 /* } */
 
 /* Hide the back button unless we can actually go back. */

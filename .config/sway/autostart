@@ -13,6 +13,8 @@ run dunst
 
 run blueman-applet
 
+# run foot --server
+
 # run emacs -bg "#17191a" --daemon -fs
 
 # run aria2c --rpc-secret="${RPC_SECRET}" -D

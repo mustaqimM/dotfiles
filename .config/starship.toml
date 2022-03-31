@@ -1,0 +1,67 @@
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$line_break\
+$character
+"""
+
+right_format = """
+$cmd_duration\
+${custom.vifm}
+"""
+
+[directory]
+style = "blue"
+# read_only = " "
+
+[character]
+success_symbol = "[\\$](white)"
+error_symbol = "[\\$](red)"
+vicmd_symbol = "[\\$](green)"
+
+[git_commit]
+only_detached = true
+commit_hash_length = 8
+tag_disabled = false
+tag_symbol = "🏷 "
+format = "( [@](white)[($hash$tag)](green))"
+
+[git_branch]
+symbol = ""
+format = "[($symbol $branch)]($style)"
+style = "green"
+
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = '⇕\[⇡${ahead_count} ⇣${behind_count}\]'
+conflicted = "[(!$count)](16) "
+untracked = "([⋅$count](yellow) )"
+modified = "([±$count](5) )"
+staged = "([+$count](blue) )"
+renamed = "([➥$count](green) )"
+deleted = "([⌧ $count](bold red) )"
+stashed = "([ $count](16) )"
+format = "[( $ahead$conflicted$untracked$modified$staged$renamed$deleted$stashed$ahead_behind)](white)"
+
+[git_state]
+cherry_pick = "[cherry](bold red)"
+format = ' \([$state($progress_current/$progress_total)]($style)\)'
+
+[git_metrics]
+added_style = "bold blue"
+format = '(\[([+$added]($added_style))( [-$deleted]($deleted_style))\])'
+disabled = false
+
+[cmd_duration]
+format = "([$duration]($style) )"
+style = "247"
+
+[custom.vifm]
+description = "Checks if shell was launched from vifm"
+when = "[[ -v INSIDE_VIFM ]]"
+shell = ["zsh", "-df"]
+format = '[](yellow)'

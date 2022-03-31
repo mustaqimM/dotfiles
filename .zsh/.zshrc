@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+PROMPT=$'\n'"%F{blue}~%f"$'\n'"$ "
+
 # if [ ! -S ~/.ssh/ssh_auth_sock ]; then
 #   eval "$(ssh-agent -s)"
 #   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
@@ -11,9 +13,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 # ==============================================================================
 
 declare -A ZINIT
@@ -103,11 +105,11 @@ zi light "zsh-users/zsh-history-substring-search"
 
 zi wait lucid for \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    light-mode zdharma-continuum/fast-syntax-highlighting \
-  blockf \
-    light-mode zsh-users/zsh-completions \
+    light-mode "zdharma-continuum/fast-syntax-highlighting" \
+  blockf atpull'zinit creinstall -q ~/.zsh/completions'\
+    light-mode "zsh-users/zsh-completions" \
   compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start" \
-    light-mode zsh-users/zsh-autosuggestions
+    light-mode "zsh-users/zsh-autosuggestions"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi snippet "OMZ::plugins/git/git.plugin.zsh"
@@ -116,7 +118,7 @@ zi snippet "OMZ::plugins/git-extras/git-extras.plugin.zsh"
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi light "wfxr/forgit"
 
-zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)cd*]} ]]' lucid pick"init.sh"
+zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)c*]} ]]' pick"init.sh"
 zi light "b4b4r07/enhancd"
 # zi ice wait lucid
 # zi light "changyuheng/zsh-interactive-cd"
@@ -135,28 +137,32 @@ zi light "b4b4r07/enhancd"
 #zi light "willghatch/zsh-cdr"
 #zi light "zsh-users/zaw"
 
-zi ice wait"1" lucid nocompletions
+zi ice wait"1" lucid compile"*.zsh" nocompletions
 zi light "hlissner/zsh-autopair"
 
 #zi ice wait"2" lucid
 #zi snippet "OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh"
 
-zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)np*]} ]]'
-zi snippet "OMZ::plugins/npm/npm.plugin.zsh"
+# zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)np*]} ]]'
+# zi snippet "OMZ::plugins/npm/npm.plugin.zsh"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completions" \
   mv"pnpm-completions -> _pnpm" as"completion" nocompile atinit"source _pnpm"
 zi snippet "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
 
-if [[ $(type -p fzf) ]] then
-   zi ice wait lucid multisrc"{key-bindings,completion}.zsh" pick"" \
-     atload"\
-     _fzf_compgen_path() { command fd -L -td -tf -tl -H -E \".git\" . \"\$1\" 2> /dev/null }; \
-     _fzf_compgen_dir() { command fd -L -td -H -E \".git\" . \"\$1\" 2> /dev/null }"
-  zi light "/usr/share/fzf"
-fi
+# if [[ $(type -p fzf) ]] then
+zi ice wait lucid multisrc"{key-bindings,completion}.zsh" \
+  atload" \
+    _fzf_compgen_path() { command fd -L -td -tf -tl -H -E \".git\" . \"\$1\" 2> /dev/null }; \
+    _fzf_compgen_dir() { command fd -L -td -H -E \".git\" . \"\$1\" 2> /dev/null }"
+zi light "/usr/share/fzf"
+# fi
 
-zi ice wait"1" lucid
+# zi light "Aloxaf/fzf-tab"
+# zstyle ':completion:*:descriptions' format '[%d]'
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 --color=always $realpath'
+
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)x*]} ]]' lucid
 zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
 #zi ice wait"2" lucid
 #zi snippet "OMZ::plugins/sudo/sudo.plugin.zsh"
@@ -206,11 +212,15 @@ zi snippet "OMZ::plugins/emacs"
 #zi ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
 #zi light "chriskempson/base16-shell"
 
-zi ice lucid reset \
-  atclone"dircolors -b LS_COLORS > c.zsh; sed -i 's/30/12/g; s/172/11/g; s/196/9/g' c.zsh;" \
-  atpull'%atclone' pick"c.zsh" nocompile'!' \
-  atload'zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}'
-zi light trapd00r/LS_COLORS
+# zi ice lucid reset \
+#   pick"c.zsh" nocompile'!' \
+#   atload'zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}'
+# zi light trapd00r/LS_COLORS
+
+zi ice atclone"dircolors -b LS_COLORS > c.zsh" \
+  atpull'%atclone' pick"c.zsh" nocompile'!'
+  # atload'zstyle ":completion:*:default" list-colors ${(s.:.)LS_COLORS}'
+zi light "trapd00r/LS_COLORS"
 
 #zi ice lucid from"gh-r" as"program" bpick"*linux*" mv"lsd* -> lsd" pick"lsd/lsd"
 #zi light "Peltoche/lsd"
@@ -219,16 +229,16 @@ zi light trapd00r/LS_COLORS
 #  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
 #zi light direnv/direnv
 
-zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ch*]} ]]' lucid as"program" mv"*cht.sh -> cht" pick"cht" id-as"cht.sh"
-zi snippet "https://cht.sh/:cht.sh"
+# zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ch*]} ]]' lucid as"program" mv"*cht.sh -> cht" pick"cht" id-as"cht.sh"
+# zi snippet "https://cht.sh/:cht.sh"
 #zi ice wait"2" lucid id-as"tldr" as"program" pick"tldr"
 #zi snippet "https://raw.githubusercontent.com/raylee/tldr/master/tldr"
 
 zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ps*]} ]]' lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
 zi light "pixelb/ps_mem"
 
-zi ice lucid from"gh-r" as"program"
-zi light "so-fancy/diff-so-fancy"
+# zi ice lucid from"gh-r" as"program"
+# zi light "so-fancy/diff-so-fancy"
 
 #zi ice pick"fasd" as"program"
 #zi snippet "https://raw.githubusercontent.com/clvv/fasd/master/fasd"
@@ -268,22 +278,24 @@ zi snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
 
 # }}}
 
-zi creinstall -Q $ZDOTDIR/completions
 
 # === THEME ===
 # {{{
-#PS1="%F{green}%B$❯%b%f "
-zi ice depth'1' lucid atinit'[[ ! -f ~/.zsh/.p10k-lean.zsh ]] || source ~/.zsh/.p10k-lean.zsh' nocd atload"!_p9k_do_nothing _p9k_precmd"
-zi light romkatv/powerlevel10k
+# zi ice depth'1' lucid atinit'source ~/.zsh/.p10k-lean.zsh' nocd atload"!_p9k_do_nothing _p9k_precmd"
+# zi light romkatv/powerlevel10k
+zi ice wait"!" lucid as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" compile"init.zsh" src"init.zsh"
+zi light starship/starship
 # }}}
+
+# zi light romkatv/zsh-prompt-benchmark
 
 
 # === FUNCTIONS ===
 # {{{
-if [ -n "$INSIDE_VIFM" ]; then
-    RANGER_LEVEL=""
-    unset INSIDE_VIFM
-fi
+# if [ -n "$INSIDE_VIFM" ]; then RANGER_LEVEL=""; unset INSIDE_VIFM; fi
+
 
 # Compile to decrease startup speed (only if $1 is older than 4 hours)
 _zcompare() {
@@ -292,7 +304,7 @@ _zcompare() {
   # - '.' matches "regular files"
   # - 'mh+4' matches files (or directories or whatever) that are older than 4 hours.
   setopt extendedglob local_options
-  if [[ -n "${1}"(#qN.mh+4) && (! -s "${1}.zwc" || "$1" -nt "${1}.zwc") ]]; then
+  if [[ -n "${1}"(#qN.mh+4) && (! -s "${1}.zwc" || "$1" -nt "${1}.zwc" ) ]]; then
     ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay
     zcompile ${1}
   fi
@@ -360,9 +372,9 @@ bindkey '^[[Z'    reverse-menu-complete
 zle -N            autosuggest-accept
 bindkey '^[f'     autosuggest-accept
 
-autoload -U       edit-command-line
-zle -N            edit-command-line
-bindkey '^x^e'    edit-command-line
+# autoload -U       edit-command-line
+# zle -N            edit-command-line
+# bindkey '^x^e'    edit-command-line
 
 # }}}
 
@@ -370,6 +382,12 @@ bindkey '^x^e'    edit-command-line
 zmodload zsh/complist
 setopt menucomplete
 zstyle ':completion:*'               menu select=2 search
+bindkey -M menuselect '/'            history-incremental-search-forward
+bindkey -M menuselect '?'            history-incremental-search-backward
+bindkey -M menuselect '^H'           vi-backward-char
+bindkey -M menuselect '^K'           vi-up-line-or-history
+bindkey -M menuselect '^J'           vi-down-line-or-history
+bindkey -M menuselect '^L'           vi-forward-char
 
 zstyle ':completion:*'               matcher-list '' \
        'm:{a-z\-}={A-Z\_}' \
@@ -387,24 +405,18 @@ zstyle ':completion:*'               file-patterns '%p:globbed-files' '*(-/):dir
 
 zstyle ':completion:*:manuals'       separate-sections true
 zstyle ':completion:*:manuals.*'     insert-sections   true
-zstyle ':completion:*:man:*'         menu yes select
 
-zstyle ':completion:*:corrections'   format ' %B%F{green} %d (errors: %e)  %f%b'
-zstyle ':completion:*:descriptions'  format ' %F{yellow} %U%d%u  %f'
-zstyle ':completion:*:messages'      format ' %B%F{magenta}  %U%d%u  %f%b'
+zstyle ':completion:*:corrections'   format ' %B%F{green}  %d (errors: %e)  %f%b'
+zstyle ':completion:*:descriptions'  format ' %F{yellow}  %d  %f'
+zstyle ':completion:*:messages'      format ' %B%F{magenta}  %U%d%u  %f%b'
 zstyle ':completion:*:warnings'      format ' %B%F{red} %Uno matches found%u %f%b'
-# zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
+# zstyle ":completion:*:default"       list-colors ${(s.:.)LS_COLORS}
 
 zstyle ':completion:*:parameters'    ignored-patterns '_*'
 
 zstyle ':completion:*'               use-cache on
 zstyle ':completion:*'               cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
-
-zmodload zsh/complist
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
 
 # zstyle ':notify:*'                   notifier /bin/notify-send # Only needed for custom scripts
 # zstyle ':notify:*'                   error-title "Command failed in #{time_elapsed}s"
@@ -415,20 +427,21 @@ bindkey -M menuselect 'l' vi-forward-char
 # zstyle ':notify:*'                   activate-terminal no
 
 autoload -U select-word-style
-select-word-style bash # Delete word at a time
+select-word-style bash # Delete a word at a time
 
 source $ZDOTDIR/aliases
 
 # Load autoload shell functions on demand
 autoload -Uz decode diff fz fzf_log gfy gitignore headphones kd man magit mkcd switch_theme plain push open yadm_log_diff
-#autoload -Uz cargo cargo-clippy cargo-fmt cargo-miri clippy-driver rls rust-gdb rust-lldb rustc rustdoc rustfmt rustup
 autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)
-zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl direnv docker \
-  dunst emacs ffmpeg flask fsck.ext4 fzf gocryptfs hexyl inkscape ktlint light \
+zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl darkhttpd direnv docker \
+  dunst emacs ffmpeg flask fsck.ext4 fzf gocryptfs hexyl inkscape ktlint light lighttpd \
   lsd mimeo megadl mkfs.vfat nzbget notify-send pamixer pip pip3 pipx psmem pw-cli redshift rofi rustc \
   tlp tlp-stat \
   vue zstd
+
+# zi creinstall -Q $ZDOTDIR/completions
 
 # for comp ( yadm vifm ) { zicompdef _$comp $comp; }

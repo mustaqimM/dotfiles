@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -241,7 +241,8 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+c move position center
 
-bindsym Print exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+bindsym Print exec grim -g "$(slurp -d)" - | swappy -f -
+# bindsym Print exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 #
 # Status Bar:
@@ -261,6 +262,8 @@ bar {
     #     inactive_workspace #32323200 #32323200 #5c5c5c
     # }
 }
+
+# xwayland disable
 
 # autostart
 exec_always ~/.config/sway/autostart

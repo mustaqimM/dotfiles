@@ -12,12 +12,12 @@ highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
 highlight Executable cterm=none ctermfg=208 ctermbg=default
 highlight Selected cterm=none ctermfg=255 ctermbg=235
 highlight CurrLine cterm=none ctermfg=255 ctermbg=27
-highlight OtherLine cterm=bold ctermfg=default ctermbg=248
-highlight TopLine cterm=bold ctermfg=236 ctermbg=255
+highlight OtherLine cterm=default ctermfg=default ctermbg=18
+highlight TopLine cterm=bold ctermfg=20 ctermbg=255
 highlight TopLineSel cterm=bold ctermfg=236 ctermbg=255
 highlight TabLine cterm=none ctermfg=8 ctermbg=18
 highlight TabLineSel cterm=bold ctermfg=255 ctermbg=27
-highlight StatusLine cterm=bold ctermfg=236 ctermbg=18
+highlight StatusLine cterm=bold ctermfg=007 ctermbg=18
 highlight WildMenu cterm=underline,reverse ctermfg=236 ctermbg=255
 highlight CmdLine cterm=none ctermfg=236 ctermbg=255
 highlight ErrorMsg cterm=none ctermfg=red ctermbg=236
@@ -27,7 +27,8 @@ highlight SuggestBox cterm=bold ctermfg=default ctermbg=default
 
 
 " file name specific highlight
-highlight /^.*(\.entitlements|\.epf|\.hidden-color-scheme|\.hidden-tmtheme|\.ini|\.last-run|\.merged-ca-bundle|\.pbxproj|\.pcf|\.plist|\.psf|\.strings|\.sublime-build|\.sublime-commands|\.sublime-keymap|\.sublime-project|\.sublime-settings|\.sublime-snippet|\.sublime-workspace|\.tmtheme|\.user-ca-bundle|\.viminfo|\.xcconfig|\.xcsettings|\.xcuserstate|\.xcworkspacedata|authorized_keys|cfg|conf|config|known_hosts|rc)$/I cterm=none ctermfg=default ctermbg=default
+
+highlight /^.*(\.bash_login|\.bash_logout|\.bash_profile|\.entitlements|\.epf|\.hidden-color-scheme|\.hidden-tmTheme|\.ini|\.last-run|\.merged-ca-bundle|\.pbxproj|\.pcf|\.plist|\.profile|\.psf|\.rstheme|\.strings|\.sublime-build|\.sublime-commands|\.sublime-keymap|\.sublime-project|\.sublime-settings|\.sublime-snippet|\.sublime-workspace|\.tmTheme|\.user-ca-bundle|\.viminfo|\.xcconfig|\.xcsettings|\.xcuserstate|\.xcworkspacedata|\.zlogin|\.zlogout|\.zprofile|\.zshenv|authorized_keys|cfg|conf|config|known_hosts|rc)$/I cterm=bold ctermfg=default ctermbg=default
 highlight /^.*\.(coffee|java|js|jsm|jsp|mjs)$/I cterm=none ctermfg=074 ctermbg=default
 highlight /^.*\.(awk|bash|bat|rproj|sed|sh|vim|zsh)$/I cterm=none ctermfg=208 ctermbg=default
 highlight /^.*\.(agdai|h|h++|hi|hpp|hxx|ii|m|s|tcc)$/I cterm=none ctermfg=110 ctermbg=default
@@ -70,32 +71,32 @@ highlight /^.*(\.aria2|\.bak|\.bup|\.disable|\.dll|\.dump|\.dylib|\.mdump|\.o|\.
 highlight /^.*\.(am|hin|in|m4|old|out|scan)$/I cterm=none ctermfg=242 ctermbg=default
 highlight /^.*(manifest)$/I cterm=none ctermfg=243 ctermbg=default
 highlight /^.*\.(sassc|skip|swo|swp|tmp)$/I cterm=none ctermfg=244 ctermbg=default
-highlight /^.*(\.pid|\.state|lock|lockfile)$/I cterm=none ctermfg=248 ctermbg=default
+highlight /^.*(\.pid|\.state|lock|lockfile)$/I cterm=none ctermfg=8 ctermbg=default
 highlight /^.*\.(txt)$/I cterm=none ctermfg=none ctermbg=default
 highlight /^.*\.(cap|dmp|pcap)$/I cterm=none ctermfg=29 ctermbg=default
 highlight /^.*\.(pacnew)$/I cterm=none ctermfg=33 ctermbg=default
 highlight /^.*\.(lnk)$/I cterm=none ctermfg=39 ctermbg=default
-highlight /^.*\.(7z|a|arj|bz2|cpio|gz|lrz|lz|lzma|lzo|rar|s7z|sz|tar|tgz|xz|z|zip|zipx|zoo|zpaq|zst|zstd|zz)$/I cterm=none ctermfg=034 ctermbg=default
-highlight /^.*\.(ahk|clj|cljc|cljs|cljw|gemspec|ipynb|py|rb|scala)$/I cterm=none ctermfg=41 ctermbg=default
+highlight /^.*\.(7z|WARC|a|arj|bz2|cpio|gz|lrz|lz|lzma|lzo|rar|s7z|sz|tar|tbz|tgz|warc|xz|z|zip|zipx|zoo|zpaq|zst|zstd|zz)$/I cterm=none ctermfg=034 ctermbg=default
+highlight /^.*\.(ahk|clj|cljc|cljs|cljw|gemspec|ipynb|py|rb|sc|scala|xsh)$/I cterm=none ctermfg=41 ctermbg=default
 highlight /^.*(@.service|\.automount|\.device|\.mount|\.path|\.service|\.snapshot|\.socket|\.swap|\.target|\.timer)$/I cterm=none ctermfg=45 ctermbg=default
-highlight /^.*\.(r)$/I cterm=none ctermfg=49 ctermbg=default
+highlight /^.*\.(R|r)$/I cterm=none ctermfg=49 ctermbg=default
 highlight /^.*\.(dart)$/I cterm=none ctermfg=51 ctermbg=default
 highlight /^.*\.(car|nib)$/I cterm=none ctermfg=57 ctermbg=default
 highlight /^.*\.(accdb|accde|accdr|accdt|db|fmp12|fp7|localstorage|mdb|mde|nc|sqlite|typelib)$/I cterm=none ctermfg=60 ctermbg=default
 highlight /^.*\.(tcl)$/I cterm=bold ctermfg=64 ctermbg=default
-highlight /^.*\.(afm|fnt|fon|otf|pfa|pfb|pfm|ttf|woff|woff2)$/I cterm=none ctermfg=66 ctermbg=default
+highlight /^.*\.(PFA|afm|fnt|fon|otf|pfa|pfb|pfm|ttf|woff|woff2)$/I cterm=none ctermfg=66 ctermbg=default
 highlight /^.*\.(1p|3p|cnc|def|ex|example|feature|gbr|ger|ics|map|mf|mfasl|mi|mm|mtx|pc|pcb|pi|plt|pm|pot|rdf|ru|sch|scm|sis|spl|sty|sug|tdy|tfm|tfnt|tg|vcard|vcf|xcf|xln)$/I cterm=none ctermfg=7 ctermbg=default
 highlight /^.*\.(xltx)$/I cterm=none ctermfg=73 ctermbg=default
 highlight /^.*\.(xltm)$/I cterm=underline ctermfg=73 ctermbg=default
 highlight /^.*\.(xla)$/I cterm=none ctermfg=76 ctermbg=default
 highlight /^.*\.(csv|tsv)$/I cterm=none ctermfg=78 ctermbg=default
-highlight /^.*\.(agda|asm|c|c++|cc|cl|cp|cpp|cr|cs|ctp|cxx|f|f03|f08|f90|f95|for|ftn|go|gs|hs|lagda|lagda.md|lagda.rst|lagda.tex|lhs|lisp|lua|moon|nim|nimble|php|rkt|rs|sx|twig|vala|vapi|vb|vba|vbs)$/I cterm=none ctermfg=81 ctermbg=default
+highlight /^.*\.(C|F|F03|F08|F90|F95|agda|asm|c|c++|cc|cl|cp|cpp|cr|cs|ctp|cxx|el|f|f03|f08|f90|f95|for|ftn|go|gs|hs|lagda|lagda.md|lagda.rst|lagda.tex|lhs|lisp|lua|moon|nim|nimble|php|rkt|rs|sx|twig|v|vala|vapi|vb|vba|vbs|zig)$/I cterm=none ctermfg=81 ctermbg=default
 highlight /^.*\.(deny|storyboard)$/I cterm=none ctermfg=9 ctermbg=default
-highlight /^.*\.(bmp|cdr|dicom|flif|gif|icns|ico|jpeg|jpg|jxl|nth|png|psd|pxd|pxm|tif|tiff|webp|xpm)$/I cterm=none ctermfg=97 ctermbg=default
+highlight /^.*\.(JPG|TIFF|bmp|cdr|dicom|flif|gif|icns|ico|jpeg|jpg|jxl|nth|png|psd|pxd|pxm|tif|tiff|webp|xpm)$/I cterm=none ctermfg=97 ctermbg=default
 highlight /^.*\.(ai|drw|eps|epsf|ps|svg)$/I cterm=none ctermfg=99 ctermbg=default
 highlight /^.*\.(diff)$/I cterm=bold ctermfg=232 ctermbg=197
 highlight /^.*\.(patch)$/I cterm=none ctermfg=197 ctermbg=default
-highlight /^.*(ls_colors)$/I cterm=none,reverse,underline,reverse ctermfg=197 ctermbg=89
+highlight /^.*(LS_COLORS)$/I cterm=none,reverse,underline,reverse ctermfg=197 ctermbg=89
 
 
 if $USER == 'root'

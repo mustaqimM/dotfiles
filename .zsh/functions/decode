@@ -4,10 +4,10 @@ decode() {
     declare string
     declare base
 
-    if [ "$XDG_SESSION_TYPE" = "x11" ];then
-        base=$(xclip -sel clip -o)
+    if [ "$XDG_SESSION_TYPE" = "wayland" ];then
+        base=$(wl-paste)
     else
-        base=$(wl-paste -p)
+        base=$(xclip -sel clip -o)
     fi
 
     string=$(base64 -d <<< $(echo $base | awk '{$1=$1};1'))
