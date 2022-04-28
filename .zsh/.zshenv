@@ -40,8 +40,8 @@ export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
 export FZF_DEFAULT_OPTS="--layout=reverse --ansi --prompt='› ' --pointer='›' --marker='›'
  --color=bg+:18,fg+:015,spinner:yellow,hl:009,hl+:red,info:yellow,pointer:yellow,marker:green,prompt:blue"
 export ENHANCD_FILTER='fzf'
-# export ENHANCD_COMPLETION_BEHAVIOR=list
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
+export ENHANCD_COMPLETION_BEHAVIOR=list
+export ZSH_AUTOSUGGEST_USE_ASYNC=true
 # FAST_ALIAS_TIPS_PREFIX="$(tput bold)╭───\n\033[01;33m   \033[01;37m"
 # FAST_ALIAS_TIPS_SUFFIX="\n╰───$(tput sgr0)"
 export CHTSH_QUERY_OPTIONS="style=algol_nu"

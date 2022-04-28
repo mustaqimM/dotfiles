@@ -1,3 +1,5 @@
+# -*- eval: (rainbow-mode); -*-
+
 [user]
   name = mustaqim
   email = git@mustaqim.ml
@@ -6,32 +8,12 @@
 [init]
   defaultBranch = main
 
-[color]
-  ui = true
-
 [core]
   editor = emacsclient
-  excludesfile = /home/mustaqim/.gitignore_global
-  # pager = diff-so-fancy | less --tabs=4 -RFX
   pager = delta
+  # pager = diff-so-fancy | less --tabs=4 -RFX
   autocrlf = input
-  # autocrlf = true
   # safecrlf = true
-  # autocrlf = input
-
-[interactive]
-  diffFilter = delta --color-only
-
-[delta]
-  navigate = true  # use n and N to move between diff sections
-  # features = kingfisher
-  syntax-theme = ansi
-
-[merge]
-  conflictstyle = diff3
-
-[diff]
-  colorMoved = default
 
 [gpg]
   program = gpg2
@@ -40,32 +22,70 @@
   gpgsign = true
   verbose = true
 
-[color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
+[merge]
+  conflictstyle = diff3
 
-[color "diff"]
-  meta = 11
-  frag = magenta bold
-  func = blue
-  commit = yellow bold
-  old = red bold
-  new = green bold
-  whitespace = red reverse
+# [diff]
+#   colorMoved = default
 
-[diff-so-fancy]
-  markEmptyLines = true
-  changeHunkIndicators = true
-  stripLeadingSymbols = true
-  useUnicodeRuler = true
+[interactive]
+  diffFilter = delta --color-only
+# [include]
+#   path = /home/mustaqim/.config/delta/themes.gitconfig
+[delta]
+  features                      = decorations
+  commit-style                  = bold yellow
+  file-style                    = bright-black
+  minus-style                   = syntax "#3f0001"
+  # minus-non-emph-style          = bold red
+  # minus-emph-style              = bold red 52
+  minus-empty-line-marker-style = normal "#3f0001"
+  zero-style                    = syntax
+  plus-style                    = syntax "#003800"
+  # plus-non-emph-style           = bold green
+  # plus-emph-style               = bold green 22
+  plus-empty-line-marker-style  = normal "#002800"
+  grep-file-style               = blue
+  grep-line-number-style        = blue
+  whitespace-error-style        = reverse red
+  # blame-palette                 = #000000 #222222 #444444
+  right-arrow                   = to
+  map-styles                    = bold purple => syntax magenta, bold cyan => syntax blue
+  syntax-theme                  = Tomorrow-Night
+[delta "decorations"]
+  commit-decoration-style       = magenta box
+  file-style                    = blue
+  file-decoration-style         = 19 ol ul
+  hunk-header-decoration-style  = blue box
+[delta "line-numbers"]
+  line-numbers-left-style       = 19
+  line-numbers-right-style      = 19
+  line-numbers-minus-style      = red
+  line-numbers-plus-style       = green
 
-[blame]
-  coloring = highlightRecent
+# [diff-so-fancy]
+#   markEmptyLines = true
+#   changeHunkIndicators = true
+#   stripLeadingSymbols = true
+#   useUnicodeRuler = true
+# [color]
+#   ui = true
+# [color "diff-highlight"]
+#   oldNormal = red bold
+#   oldHighlight = red bold 52
+#   newNormal = green bold
+#   newHighlight = green bold 22
+# [color "diff"]
+#   meta = 11
+#   frag = magenta bold
+#   func = blue
+#   commit = yellow bold
+#   old = red bold
+#   new = green bold
+#   whitespace = red reverse
 
-[include]
-  path = /home/mustaqim/.config/delta/themes.gitconfig
+# [blame]
+#   coloring = highlightRecent
 
 [url "git@github.com:"]
   insteadOf = "gh:"

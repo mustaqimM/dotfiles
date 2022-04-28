@@ -1,3 +1,8 @@
+/* Overrides: Change the flash color */
+/* #tabbrowser-tabpanels, #tabbrowser-tabpanels[pendingpaint], browser { */
+/*   background-color: #333333 !important; */
+/* } */
+
 @media (prefers-color-scheme: dark) {
   :root {
     /* Popups */
@@ -84,23 +89,29 @@ vbox#sidebar-box.chromeclass-extrachrome {
 }
 
 /* bar */
-/* #nav-bar { */
-/*   height: 30px !important; */
-/* } */
+#nav-bar.browser-toolbar {
+  margin-top: -1px !important;
+  height: 30px !important;
+  background: var(--gnome-popover-background) !important;
+}
+toolbarbutton {
+  margin-top: 2px !important;
+  margin-bottom: 5px !important;
+}
+
 #navigator-toolbox{ border-bottom: none !important }
 
 #urlbar {
   box-shadow: none !important;
-  background: var(--gnome-popover-background) !important;
+  background: var(--gnome-urlbar-background) !important;
   border-radius: 8px !important;
-  border: 1px solid var(--gnome-popover-background) !important;
+  border: 1px solid var(--gnome-urlbar-background) !important;
   padding: 0 0 !important;
 }
 #urlbar-background {
-  background: var(--gnome-popover-background) !important;
+  background: transparent !important;
   box-shadow: none !important;
   border: 0 !important;
-  background: transparent !important;
   border-radius: 8px !important;
   padding: 0 0 !important;
 }
@@ -122,6 +133,11 @@ vbox#sidebar-box.chromeclass-extrachrome {
 /* Rounded menus */
 .menupopup-arrowscrollbox {
   border-radius: 8px !important
+}
+
+/* Add to Dark Reader */
+pre code {
+  font-family: monospace !important;
 }
 
 /* Extension Icons */

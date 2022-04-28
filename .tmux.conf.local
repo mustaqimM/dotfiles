@@ -234,7 +234,7 @@ tmux_conf_theme_status_left=' #S #P ,'
 tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}#{?window_zoomed_flag, ,} '
 
 # status left style
-tmux_conf_theme_status_left_fg="colour8,colour15,colour0"
+tmux_conf_theme_status_left_fg="colour244,colour15,colour0"
 tmux_conf_theme_status_left_bg="default"
 tmux_conf_theme_status_left_attr="none,none,none"
 

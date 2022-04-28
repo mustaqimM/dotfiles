@@ -1,6 +1,6 @@
 :root{
-  scrollbar-face-color: rgb(210,210,210); /* Firefox 63 compatibility */
-  scrollbar-track-color: rgb(46,54,69); /* Firefox 63 compatibility */
-  scrollbar-color: rgba(0,0,0,.4) rgba(140,140,140,0.1);
+  /* scrollbar-face-color: rgb(210,210,210); /\* Firefox 63 compatibility *\/ */
+  /* scrollbar-track-color: rgb(46,54,69); /\* Firefox 63 compatibility *\/ */
+  /* scrollbar-color: rgba(0,0,0,.4) rgba(140,140,140,0.1); */
   scrollbar-width: thin;
 }

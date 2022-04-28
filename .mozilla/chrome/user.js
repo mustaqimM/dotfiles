@@ -9,6 +9,10 @@ user_pref("browser.compactmode.show", false);
 user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
 
 user_pref("widget.non-native-theme.scrollbar.style", 3);
+user_pref("ui.scrollbarDisplayOnMouseMove", 0);
 
 // ECH
 user_pref("network.dns.echconfig.enabled", true);
+
+user_pref("network.http.referer.XOriginPolicy", 0);
+user_pref("network.http.referer.spoofSource", true);

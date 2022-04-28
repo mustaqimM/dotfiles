@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
-alias aria="aria2c --no-conf -x16 -s16 -k1M --summary-interval=0 --check-certificate=false"
 alias cat=bat
 alias chts='cht --shell'
+dl() {aria2c --no-conf --continue -x16 -s16 -k1M --summary-interval=0 --check-certificate=false "$(wl-paste)"}
 alias f=vifm
-# alias e=emacsclient -nc
+# alias e="emacs -bg '#1d1f21'"
 alias gpg=gpg2
 alias jackett='~/.local/bin/Jackett/jackett'
 # alias ktlint='ktlint --android --color --relative -v'
@@ -12,6 +12,7 @@ alias nightly=/opt/firefox/firefox-bin
 alias q=exit
 alias reload='exec zsh'
 alias s='googler --count 7'
+alias x=dtrx
 # alias pip='/usr/bin/pip'
 alias sudo=doas
 alias xargs='xargs ' # Needed for alias subtitution

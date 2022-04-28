@@ -3,7 +3,7 @@
 URL="https://giant.gfycat.com/"
 if [ $# -eq 1 ]; then
     TITLE="$1"
-    wget "$URL$TITLE.webm"
+    aria2c "$URL$TITLE.webm"
 else
     echo "Unable to find the file ID." >&2
     exit 1

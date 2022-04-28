@@ -30,8 +30,7 @@ tag_symbol = "🏷 "
 format = "( [@](white)[($hash$tag)](green))"
 
 [git_branch]
-symbol = ""
-format = "[($symbol $branch)]($style)"
+format = "[($symbol$branch)]($style)"
 style = "green"
 
 [git_status]
@@ -45,7 +44,7 @@ staged = "([+$count](blue) )"
 renamed = "([➥$count](green) )"
 deleted = "([⌧ $count](bold red) )"
 stashed = "([ $count](16) )"
-format = "[( $ahead$conflicted$untracked$modified$staged$renamed$deleted$stashed$ahead_behind)](white)"
+format = "[( $ahead$conflicted$staged$untracked$modified$renamed$deleted$stashed$ahead_behind)](white)"
 
 [git_state]
 cherry_pick = "[cherry](bold red)"

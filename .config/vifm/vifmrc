@@ -93,7 +93,7 @@ only
 "set milleroptions+=lsize:1,csize:3,rsize:4,rpreview:all
 
 " Customize view columns a bit (enable ellipsis for truncated file names)
-set viewcolumns=-{name},{target}.,6{}
+set viewcolumns=-{name},{target}..,6{}
 
 " Set custom status line look
 set statusline=' Hint: %z %= %A %8u:%-8g %E %13d '
@@ -209,7 +209,7 @@ vnoremap w :view<cr>gv
 " Open file in existing instance
 nnoremap o :!emacsclient -nc %f &<cr>
 " Open file in new instance
-nnoremap O :!/bin/emacs -fs %f &<cr>
+nnoremap O :!/bin/emacs -bg '#1d1f21' %f &<cr>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
@@ -503,19 +503,15 @@ filextype *.pro qtcreator %f &
 
 " fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
 fileviewer *.json bat --color always %c
-fileviewer *.org highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax md
+" fileviewer *.org highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax md
 fileviewer *.[s]o hexyl -c 500 %c
 fileviewer *.csv bat --color always --wrap never --pager never -p %c
 
 fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --syntax make %c
 
 " Text
-filetype <text/*> emacsclient
+filetype <text/*> emacs
 fileviewer <text/*> env -uCOLORTERM bat --color always --pager never -p %c
-" fileviewer <text/*> highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night -- %c
-" fileviewer <text/*> pygmentize3 -f "terminal256" -O "style=tomorrownight" %c
-                    \ %pc
-                    " \ vifmimg clear
 
 " filetype * xdg-open %c &
 " filetype * mimeo %c %i &
@@ -531,7 +527,7 @@ set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::/^rc|rc$/:
 set classify+='  ::*.db,,*.sql,,*.sqlite::'
 set classify+='  ::*.pem::,  ::*.lock::'
 " archives
-set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.zst::'
+set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.xbps,,*.zst::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
 set classify+='  ::*.iso,,*.img::'
 " images
@@ -543,7 +539,7 @@ set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m2ts,,*.m4p,,*.m4v,,.mka,,*
 " documents
 set classify+='  ::*.org::,  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.msg,,*.text,,*.txt,,README::'
 set classify+='  ::*.epub,,*.fb2,,*.djvu,,*.mobi::'
-set classify+='  ::*.csv::,  ::*.srt,,*.vtt::,  ::*.pdf::'
+set classify+='  ::*.csv::,  ::*.srt,,*.vtt::,  ::*.pdf::,  ::*.cbr::'
 " misc
 set classify+='  ::*.otf,,*.ttf::,  ::*.asc::,  ::.priv-env::'
 "}}}
