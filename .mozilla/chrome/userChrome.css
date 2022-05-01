@@ -89,31 +89,31 @@ vbox#sidebar-box.chromeclass-extrachrome {
 }
 
 /* bar */
-#nav-bar.browser-toolbar {
-  margin-top: -1px !important;
-  height: 30px !important;
-  background: var(--gnome-popover-background) !important;
-}
-toolbarbutton {
-  margin-top: 2px !important;
-  margin-bottom: 5px !important;
-}
-
 #navigator-toolbox{ border-bottom: none !important }
 
-#urlbar {
-  box-shadow: none !important;
-  background: var(--gnome-urlbar-background) !important;
-  border-radius: 8px !important;
-  border: 1px solid var(--gnome-urlbar-background) !important;
-  padding: 0 0 !important;
-}
+/* #nav-bar.browser-toolbar { */
+/*   margin-top: -1px !important; */
+/*   height: 30px !important; */
+/*   background: var(--gnome-popover-background) !important; */
+/* } */
+/* toolbarbutton { */
+/*   margin-top: 2px !important; */
+/*   margin-bottom: 5px !important; */
+/* } */
+
+/* #urlbar { */
+/*   box-shadow: none !important; */
+/*   background: var(--gnome-urlbar-background) !important; */
+/*   border-radius: 8px !important; */
+/*   border: 1px solid var(--gnome-urlbar-background) !important; */
+/*   padding: 0 0 !important; */
+/* } */
 #urlbar-background {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
+  /* background: transparent !important; */
+  /* box-shadow: none !important; */
+  /* border: 0 !important; */
   border-radius: 8px !important;
-  padding: 0 0 !important;
+  /* padding: 0 0 !important; */
 }
 
 /* .browser-toolbar:not(.titlebar-color) { */

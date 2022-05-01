@@ -1,8 +1,7 @@
---theme="base16-256"
-
+--theme="Tomorrow-Night"
 
 # Use C++ syntax for .ino files
---map-syntax "*.ino:C++"
+# --map-syntax "*.ino:C++"
 
 # Use ".gitignore"-style highlighting for ".ignore" files
---map-syntax ".ignore:Git Ignore"
+# --map-syntax ".ignore:Git Ignore"

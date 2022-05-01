@@ -1855,7 +1855,6 @@
 : 1579318729:0;sudo protonvpn init
 : 1579318783:0;sudo protonvpn connect
 : 1579321175:0;sudo protonvpn disconnect
-: 1579364462:0;xbps-query -Rs rust
 : 1579364833:0;sudo xbps-install rust
 : 1579422780:0;pipx install fonttools
 : 1579423132:0;sudo xbps-install libotf-32bit
@@ -3593,7 +3592,6 @@ done
 : 1606723855:0;man fzf
 : 1607101286:0;base64 -d <<< $(xclip -sel clip -o | awk '{$1=$1};1') | xclip -sel clip
 : 1607169616:0;man tmux
-: 1607193448:0;bat cache --build
 : 1607224251:0;sudo tlmgr update --self
 : 1607225771:0;yadm add ~/.local/bin/scripts
 : 1607658437:0;sudo sv restart dhcpcd
@@ -4426,7 +4424,6 @@ done
 : 1639052266:0;print -raC16 {" "..~}
 : 1639133033:0;yadm add ~/.config/wf-shell.ini
 : 1639133037:0;yadm add ~/.config/wayfire.ini
-: 1639133223:0;yadm add ~/.config/zathura/zathurarc
 : 1639133577:0;fc-list | rg "Iosevka" | cut -d ":" -f2
 : 1639209158:0;sudo xbps-install nmap
 : 1639209643:0;sudo xbps-install smbclient
@@ -4632,7 +4629,6 @@ q
 : 1642914736:0;djxl -h
 : 1643602662:0;ls /dev/pts
 : 1643690307:0;git remote rename origin upstream
-: 1643858061:0;sudo vkpurge rm all
 : 1643909321:0;push
 : 1644034720:0;e srcpkgs/rofi/template
 : 1644057888:0;ffmpeg -ss 00:22:47.520 -to 00:30:43.092 -i file.mkv -c copy out.mkv
@@ -4652,7 +4648,6 @@ q
 : 1644732152:0;sudo xbps-install libssl48-32bit
 : 1644732197:0;sudo ln -s /usr/lib32/libssl.so.48.0.1 /usr/lib32/libssl.so.1.0.0
 : 1644732383:0;sudo ln -s /usr/lib32/libssl.so.1.1 /usr/lib32/libssl.so.1.0.0
-: 1644769373:0;yadm 
 : 1644850227:0;adb shell pm uninstall --user 0 com.android.calculator2
 : 1644851800:0;adb tcpip 5555
 : 1644852194:0;nmap 192.168.1.101 -p 30000-60000 --system-dns | rg "tcp" | cut -d/ -f1
@@ -4720,7 +4715,6 @@ q
 : 1646571708:0;adb shell pm uninstall --user 0 com.android.dialer
 : 1646582260:0;sudo xbps-install gnome-themes-extra
 : 1646810833:0;git clone gh:jdfekete/geneaquilt
-: 1646900811:0;yadm add ~/.config/dunst
 : 1647020896:0;cp /usr/share/pipewire/pipewire.conf ~/.config/pipewire
 : 1647060534:0;e ~/.config/sway/autostart
 : 1647060545:0;pactl info
@@ -4821,7 +4815,6 @@ q
 : 1648057975:0;git push -f
 : 1648101399:0;aria 'https://cdn.joypixels.com/arch-linux/font/6.6.0/joypixels-android.ttf'
 : 1648105469:0;zi cclear
-: 1648106310:0;yadm add ~/.config/configs
 : 1648108070:0;e ~/.config/sway/rules
 : 1648192722:0;git remote add emacs gh:jbenden/void-packages
 : 1648193023:0;gco -b emacs
@@ -4920,7 +4913,6 @@ q
 : 1648720033:0;pkill dunst
 : 1648725868:0;xbps-query -Rs java
 : 1648727731:0;ssh-add $HOME/.ssh/GitLab </dev/null
-: 1648727732:0;yadm push
 : 1648733068:0;pkill waybar -SIGUSR2
 : 1648747826:0;rg -o --regexp '\D+' 'Bygone Visions of Cosmic Neighbors [LhfCietvDZo].en.vtt' | rg -o --regexp '\w+' | sort -u | fzf
 : 1648785602:0;fzf | xargs xdg-mime query filetype
@@ -4987,10 +4979,8 @@ q
 : 1649149803:0;psmem -p $(pgrep -d, -u $USER) -S
 : 1649150958:0;exi
 : 1649151947:0;echo $RANGER_LEVEL
-: 1649155585:0;yadm add ~/.config/doom
 : 1649155591:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
 : 1649172300:0;zsh-prompt-benchmark
-: 1649216323:0;git init
 : 1649235697:0;git tag
 : 1649236043:0;s
 : 1649260491:0;ls --tree
@@ -5005,14 +4995,12 @@ q
 : 1649303143:0;git config core.fsmonitor rs-git-fsmonitor
 : 1649303478:0;watchman watch-list
 : 1649303620:0;git config --unset core.fsmonitor
-: 1649309957:0;swaymsg -t get_tree | fzf
 : 1649312672:0;./xbps-src pkg Waybar
 : 1649313428:0;sudo xbps-install --repository=hostdir/binpkgs/update_waybar Waybar
 : 1649315297:0;sudo xbps-install easyeffects
 : 1649315519:0;sudo xbps-remove -R easyeffects
 : 1649331326:0;sudo xbps-install strace
 : 1649333138:0;yadm add ~/.config/bat
-: 1649333152:0;yadm add ~/.config/pipewire/pipewire.conf
 : 1649333353:0;yadm add ~/.config/sway
 : 1649333363:0;yadm add ~/.gitconfig
 : 1649333371:0;yadm add ~/.local/share/virtual-surround
@@ -5029,17 +5017,11 @@ q
 : 1649476634:0;man feh
 : 1649498292:0;zmodload zsh/zprof
 : 1649498303:0;zprof
-: 1649498829:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1649498833:0;yadm add ~/.config/rofi
-: 1649498838:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1649498845:0;yadm add ~/.config/starship.toml
 : 1649498855:0;yadm add ~/.tmux.conf.local
-: 1649498863:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
 : 1649498874:0;yadm commit -v -a --no-edit --amend
 : 1649498924:0;ssh-add $HOME/.ssh/GitLab 2>/dev/null
 : 1649498930:0;yadm push -f
-: 1649584310:0;xdg-mime query filetype $(fzf)
-: 1649593537:0;yadm add ~/.mozilla/chrome
 : 1649594126:0;e /etc/iwd/main.conf
 : 1649594239:0;e ~/.zsh/.zshrc
 : 1649594373:0;e ~/.config/vifm/vifmrc
@@ -5075,7 +5057,6 @@ q
 : 1650515223:0;sudo wifi toggle
 : 1650515226:0;sudo bluetooth toggle
 : 1650522885:0;echo -e '\U0001f602'
-: 1650527187:0;gd --staged
 : 1650531978:0;echo $CARGO_HOME
 : 1650531985:0;echo $RUSTUP_HOME
 : 1650534976:0;jackett
@@ -5086,7 +5067,6 @@ q
 : 1650551238:0;rustup completions zsh > ~/.zsh/completions/_rustup
 : 1650552194:0;echo $FPATH | tr ":" "\n" | nl
 : 1650552677:0;zi completions
-: 1650553510:0;zi creinstall $ZDOTDIR/completions
 : 1650554301:0;eval $(ssh-agent -s)
 : 1650554304:0;ssh-add $HOME/.ssh/GitHub </dev/null
 : 1650597055:0;gcan!
@@ -5099,11 +5079,9 @@ q
 : 1650699026:0;e .alsoftrc
 : 1650717784:0;cat /proc/cmdline
 : 1650717853:0;e /etc/default/grub
-: 1650717978:0;echo $PATH | tr ":" "\n" | nl
 : 1650718044:0;e ~/.config/foot/foot.ini
 : 1650720550:0;e ~/.config/starship.toml
 : 1650777530:0;sleep 1; timeout 5s wf-recorder -f recording.mp4
-: 1650778018:0;wf-recorder -f recording.mp4
 : 1650784495:0;sudo mv /usr/share/applications/emacs.desktop{,.BAK}
 : 1650817451:0;git rebase master
 : 1650817871:0;sudo xbps-install --repository=hostdir/binpkgs/jxl kimageformats
@@ -5113,66 +5091,104 @@ q
 : 1650865808:0;crontab -e
 : 1650870935:0;ffprobe -v error -show_chapters "$(fd -d 1 -c always | fzf)" | rg 'title' | cut -d= -f2
 : 1650872422:0;ffmpeg -i 'file.mkv' -i 'file.meta' -map_metadata 1 -codec copy 'out.mkv'
-: 1650885636:0;sudo sv up udevmon
 : 1650886328:0;e /etc/xbps.d/10-ignore.conf
 : 1650886408:0;cp /etc/xbps.d/10-ignore.conf ~/.config/configs/etc/xbps.d/10-ignore.conf
-: 1650891658:0;ffprobe "$(fd -d 1 -c always | fzf)"
 : 1650891937:0;ffmpeg -i infile.mp4 -i infile.srt -c copy -c:s mov_text out.mp4
-: 1650900530:0;pkill emacs
-: 1650900535:0;doom upgrade
-: 1650901231:0;yadm status
 : 1650906570:0;e ~/.config/pipewire/pipewire.conf
 : 1650942841:0;zi times -a
-: 1650957871:0;exec zsh
 : 1650958395:0;zmodload -F zsh/parameter p:aliases
 : 1650969228:0;cal
-: 1650970642:0;ls -al
-: 1650991299:0;tmux attach || tmux
 : 1650992529:0;xbps-query mpv
-: 1650993375:0;git pull --rebase upstream master
-: 1651031862:0;fc-cache -fv
 : 1651033992:0;sudo dmesg
 : 1651034002:0;sudo sv restart iwd
 : 1651034013:0;ping google.com
-: 1651040462:0;rust-analyzer --version
-: 1651042359:0;yt --list-formats "$(wl-paste)"
-: 1651044122:0;htop
 : 1651044201:0;grv
-: 1651044236:0;gco $(gb | fzf)
 : 1651045028:0;ffmpeg -i file.avi -qscale:v 1 -qmin 1 -qmax 1 -vsync 0 frame%08d.jpg
 : 1651045186:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
-: 1651047948:0;man mpv
 : 1651055346:0;rustc --explain E0308
-: 1651055690:0;fglo
-: 1651062996:0;tlp-stat -t | rg temp
 : 1651073827:0;df -Th
-: 1651076700:0;e src/main.rs
-: 1651076808:0;cargo run
-: 1651079892:0;gaa
-: 1651079910:0;glo
 : 1651079962:0;crontab -l
-: 1651079990:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
-: 1651115099:0;sudo xbps-install -Suvy
-: 1651120425:0;bandwhich
-: 1651127449:0;plain show
-: 1651127580:0;dl
 : 1651129257:0;fd '\.(jpe?|pn)g' -x cjxl {} {.}.jxl
 : 1651129327:0;fd -e jpg -x rm
-: 1651131176:0;zi times
-: 1651131178:0;zi update -p
 : 1651134676:0;g
-: 1651137996:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
-: 1651138651:0;delta --diff-so-fancy --show-config
 : 1651138660:0;delta --help
-: 1651140331:0;gst
-: 1651140573:0;yadm diff
-: 1651140705:0;f
-: 1651140710:0;gd
-: 1651140735:0;cd
-: 1651140921:0;reload
-: 1651140925:0;gd
-: 1651141246:0;yadm diff
-: 1651141342:0;yadm status
 : 1651141349:0;yadm add ~/.mozilla/chrome
 : 1651141359:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
-: 1651141360:0;yadm status
+: 1651141405:0;yadm add ~/.config/configs
+: 1651141409:0;yadm add ~/.config/doom
+: 1651141414:0;yadm add ~/.config/fontconfig/fonts.conf
+: 1651141480:0;yadm add ~/.config/dunst
+: 1651141484:0;yadm add ~/.config/pipewire/pipewire.conf
+: 1651141487:0;yadm add ~/.config/starship.toml
+: 1651141493:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1651141500:0;yadm add ~/.config/zathura/zathurarc
+: 1651141571:0;yadm push
+: 1651156906:0;git init
+: 1651157026:0;gd 
+: 1651157358:0;gaa
+: 1651157470:0;gd --staged
+: 1651157489:0;delta --diff-so-fancy --show-config
+: 1651158309:0;yadm 
+: 1651231452:0;ffprobe "$(fd -d 1 -c always | fzf)"
+: 1651235386:0;gd
+: 1651240672:0;tmux attach || tmux
+: 1651241167:0;sudo sv up udevmon
+: 1651246458:0;ls -al
+: 1651248732:0;swaymsg -t get_tree | fzf
+: 1651252065:0;dl
+: 1651296819:0;fc-cache -fv
+: 1651297049:0;pkill emacs
+: 1651300040:0;sudo vkpurge rm all
+: 1651318131:0;fglo
+: 1651319775:0;xdg-mime query filetype $(fzf)
+: 1651320560:0;man mpv
+: 1651326072:0;./xbps-src pkg lapce
+: 1651326712:0;xbps-query -Rs rust
+: 1651327925:0;cargo run
+: 1651328755:0;doom upgrade
+: 1651329960:0;reload 
+: 1651332838:0;glo
+: 1651337342:0;tlp-stat -t | rg temp
+: 1651340054:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
+: 1651381910:0;zi update -p
+: 1651382028:0;zi update rust-lang/rust-analyzer
+: 1651382303:0;rust-analyzer --version
+: 1651382343:0;zcompile init.zsh
+: 1651384267:0;bandwhich
+: 1651384757:0;e src/main.rs
+: 1651386806:0;gco $(gb | fzf)
+: 1651386810:0;git pull --rebase upstream master
+: 1651386835:0;gst
+: 1651387026:0;wf-recorder -f recording.mp4
+: 1651387483:0;yt --list-formats "$(wl-paste)"
+: 1651388998:0;plain show
+: 1651389172:0;zi times
+: 1651389722:0;htop
+: 1651390116:0;sudo xbps-install -Suvy
+: 1651390770:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
+: 1651391032:0;cp /usr/lib/kitty/shell-integration/zsh/completions/_kitty ~/.zsh/completions
+: 1651391059:0;zi creinstall $ZDOTDIR/completions
+: 1651396518:0;reload
+: 1651396557:0;exec zsh
+: 1651396563:0;cd
+: 1651396572:0;echo $PATH | tr ":" "\n" | nl
+: 1651400122:0;yadm status
+: 1651400126:0;yadm diff
+: 1651400133:0;f
+: 1651400232:0;bat cache --build
+: 1651400282:0;yadm status
+: 1651400286:0;yadm add ~/.config/bat
+: 1651400317:0;yadm status
+: 1651400320:0;yadm diff
+: 1651400573:0;yadm status
+: 1651400630:0;f
+: 1651400665:0;yadm status
+: 1651400671:0;yadm add ~/.config/bat
+: 1651400673:0;yadm diff
+: 1651400689:0;yadm status
+: 1651400723:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1651400728:0;yadm add ~/.mozilla/chrome
+: 1651400733:0;yadm add ~/.tmux.conf.local
+: 1651400748:0;yadm status
+: 1651400750:0;yadm diff
+: 1651400781:0;yadm commit -a -m "update"

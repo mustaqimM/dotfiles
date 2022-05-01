@@ -393,9 +393,9 @@ filetype <image/*>
        " \ {View in sxiv}
        " \ sxiv %f,
 " fileviewer <image/*>
-"         \ vifmimg draw %px %py %pw %ph %c
-"         \ %pc
-"         \ vifmimg clear
+"             \ kitty +icat --silent --transfer-mode=stream --place=%pwx%ph@%pxx%py %c %N
+"             \ %pc
+"             \ kitty icat --clear --silent %pd
 
 " OpenRaster
 filextype *.ora
@@ -502,16 +502,14 @@ filextype *.pro qtcreator %f &
 "        \ Thunar %f &,
 
 " fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
-fileviewer *.json bat --color always %c
+fileviewer <application/json> bat -p --color always %c
 " fileviewer *.org highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax md
 fileviewer *.[s]o hexyl -c 500 %c
-fileviewer *.csv bat --color always --wrap never --pager never -p %c
-
-fileviewer Makefile,Makefile.* highlight -q -O xterm256 -s base16/monokai --syntax make %c
 
 " Text
 filetype <text/*> emacs
-fileviewer <text/*> env -uCOLORTERM bat --color always --pager never -p %c
+fileviewer <text/*> bat -p --color=always %c
+" fileviewer <text/*> highlight -q -O truecolor --replace-tabs=2 --style=base16/tomorrow-night %c
 
 " filetype * xdg-open %c &
 " filetype * mimeo %c %i &
@@ -539,7 +537,7 @@ set classify+='  ::*.avi,,*.axv,,*.divx,,*.m2v,,*.m2ts,,*.m4p,,*.m4v,,.mka,,*
 " documents
 set classify+='  ::*.org::,  ::*.md::,  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::,  ::*.msg,,*.text,,*.txt,,README::'
 set classify+='  ::*.epub,,*.fb2,,*.djvu,,*.mobi::'
-set classify+='  ::*.csv::,  ::*.srt,,*.vtt::,  ::*.pdf::,  ::*.cbr::'
+set classify+='  ::*.csv::,  ::*.srt,,*.vtt::,  ::*.pdf::,  ::*.cbr,,*.cbz::'
 " misc
 set classify+='  ::*.otf,,*.ttf::,  ::*.asc::,  ::.priv-env::'
 "}}}

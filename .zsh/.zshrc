@@ -144,6 +144,9 @@ zi ice wait lucid multisrc"{key-bindings,completion}.zsh" \
 zi light "/usr/share/fzf"
 # fi
 
+# zi ice lucid from"gh-r" as="command"
+# zi light "facebook/PathPicker"
+
 # zi light "Aloxaf/fzf-tab"
 # zstyle ':completion:*:descriptions' format '[%d]'
 # zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 --color=always $realpath'
@@ -218,8 +221,8 @@ zi light "trapd00r/LS_COLORS"
 # zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ps*]} ]]' lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
 # zi light "pixelb/ps_mem"
 
-zi ice lucid from"gh-r" as"program"
-zi light "so-fancy/diff-so-fancy"
+# zi ice lucid from"gh-r" as"program"
+# zi light "so-fancy/diff-so-fancy"
 
 # zi ice pick"fasd" as"program"
 # zi snippet "https://raw.githubusercontent.com/clvv/fasd/master/fasd"
@@ -254,7 +257,7 @@ zi light "so-fancy/diff-so-fancy"
 # zi ice lucid blockf
 # zi light "ziglang/shell-completions"
 
-zi ice lucid cloneonly from"gh-r" bpick"*linux-gnu.gz" mv"rust-analyzer-* -> rust-analyzer" fbin"rust-analyzer"
+zi ice lucid cloneonly from"gh-r" ver"nightly" bpick"*linux-gnu.gz" mv"rust-analyzer-* -> rust-analyzer" fbin"rust-analyzer"
 zi light "rust-lang/rust-analyzer"
 
 # zi light romkatv/zsh-prompt-benchmark
@@ -346,10 +349,10 @@ bindkey -M menuselect '^K'           vi-up-line-or-history
 bindkey -M menuselect '^J'           vi-down-line-or-history
 bindkey -M menuselect '^L'           vi-forward-char
 
-zstyle ':completion:*'               matcher-list '' \
-       'm:{a-z\-}={A-Z\_}' \
-       'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
-       'r:|?=** m:{a-z\-}={A-Z\_}'
+# zstyle ':completion:*'               matcher-list '' \
+#        'm:{a-z\-}={A-Z\_}' \
+#        'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+#        'r:|?=** m:{a-z\-}={A-Z\_}'
 
 zstyle ':completion:*'               completer _complete _match _approximate
 zstyle ':completion:*:match:*'       original only
@@ -363,12 +366,11 @@ zstyle ':completion:*'               file-patterns '%p:globbed-files' '*(-/):dir
 zstyle ':completion:*:manuals'       separate-sections true
 zstyle ':completion:*:manuals.*'     insert-sections   true
 
-zstyle ':completion:*:corrections'   format ' %B%F{green}  %d (errors: %e)  %f%b'
-zstyle ':completion:*:descriptions'  format ' %F{yellow}  %d  %f'
-zstyle ':completion:*:messages'      format ' %B%F{magenta}  %U%d%u  %f%b'
-zstyle ':completion:*:warnings'      format ' %B%F{red} %Uno matches found%u %f%b'
+zstyle ':completion:*:corrections'   format '%B%F{green}  %d (errors: %e)  %f%b'
+zstyle ':completion:*:descriptions'  format '%F{blue}  %d  %f'
+zstyle ':completion:*:messages'      format '%B%F{magenta}  %U%d%u  %f%b'
+zstyle ':completion:*:warnings'      format '%B%F{red} %Uno matches found%u %f%b'
 zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
-# zstyle ":completion:*:default"       list-colors ${(s.:.)LS_COLORS}
 
 zstyle ':completion:*:parameters'    ignored-patterns '_*'
 
@@ -394,7 +396,7 @@ autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl darkhttpd direnv docker \
-  dunst emacs ffmpeg ffprobe flask fsck.ext4 fzf gocryptfs hexyl inkscape ktlint light lighttpd \
+  dunst emacs ffmpeg ffprobe flask fsck.ext4 fzf gocryptfs hexyl highlight inkscape ktlint light lighttpd \
   lsd mimeo megadl mkfs.vfat nzbget notify-send pamixer pip pip3 pipx psmem pw-cli rofi rustc \
   tlp tlp-stat \
   vue zstd
