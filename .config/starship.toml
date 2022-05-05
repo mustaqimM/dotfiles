@@ -9,18 +9,22 @@ $character
 """
 
 right_format = """
+$status\
 $cmd_duration\
 ${custom.vifm}
 """
 
 [directory]
 style = "blue"
-# read_only = " "
 
 [character]
 success_symbol = "[\\$](white)"
 error_symbol = "[\\$](red)"
-vicmd_symbol = "[\\$](green)"
+vicmd_symbol = "[\\$](underline bold green)"
+
+[git_branch]
+format = "[($symbol$branch)]($style)"
+style = "green"
 
 [git_commit]
 only_detached = true
@@ -29,9 +33,9 @@ tag_disabled = false
 tag_symbol = "🏷 "
 format = "( [@](white)[($hash$tag)](green))"
 
-[git_branch]
-format = "[($symbol$branch)]($style)"
-style = "green"
+[git_state]
+cherry_pick = "[cherry](bold red)"
+format = ' \([$state($progress_current/$progress_total)]($style)\)'
 
 [git_status]
 ahead = "⇡${count}"
@@ -46,18 +50,23 @@ deleted = "([⌧ $count](bold red) )"
 stashed = "([ $count](16) )"
 format = "[( $ahead$conflicted$staged$untracked$modified$renamed$deleted$stashed$ahead_behind)](white)"
 
-[git_state]
-cherry_pick = "[cherry](bold red)"
-format = ' \([$state($progress_current/$progress_total)]($style)\)'
-
 [git_metrics]
 added_style = "bold blue"
-format = '(\[([+$added]($added_style))( [-$deleted]($deleted_style))\])'
+deleted_style = "bold red"
+format = '(\[([+$added]($added_style)) ([-$deleted]($deleted_style))\])'
 disabled = false
 
 [cmd_duration]
 format = "([$duration]($style) )"
 style = "247"
+
+[status]
+format = "[$symbol$status]($style) "
+pipestatus_format = "\\[$pipestatus\\] => [$symbol$common_meaning$signal_name$maybe_int]($style) "
+symbol = "✗ "
+# map_symbol = true
+# pipestatus = true
+disabled = false
 
 [custom.vifm]
 description = "Checks if shell was launched from vifm"

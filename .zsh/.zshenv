@@ -9,12 +9,8 @@ export XDG_CURRENT_DESKTOP=Unity
 # KDE_SESSION_VERSION=5
 # XDG_SESSION_CLASS=user
 
-# AWESOME_THEMES_PATH="/home/mustaqim/.config/awesome/themes/"
-# KDEWM=/usr/bin/awesome
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_QPA_PLATFORM=wayland
-# XCURSOR_PATH=$HOME/.local/share/icons
-# XCURSOR_THEME="Breeze_Snow"
 export GTK_USE_PORTAL=0
 
 # export BROWSER="firefox"
@@ -28,8 +24,6 @@ export LC_ALL="en_ZA.UTF-8"
 export LIBVA_DRIVER_NAME=i965
 
 export EDITOR="/bin/emacsclient -nw"
-# ALTERNATE_EDITOR=""
-# VISUAL="emacsclient -c -a emacs"
 
 export TERM=xterm-256color
 export COLORTERM=truecolor
@@ -38,10 +32,12 @@ export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -H -c always"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --max-depth 5"
 export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
 export FZF_DEFAULT_OPTS="--layout=reverse --ansi --prompt='› ' --pointer='›' --marker='›'
- --color=bg+:18,fg+:015,spinner:yellow,hl:009,hl+:red,info:yellow,pointer:yellow,marker:green,prompt:blue"
+ --color=bg+:18,fg+:015,spinner:yellow,hl:016:bold,hl+:blue,info:yellow,pointer:yellow,marker:green,prompt:blue"
 export ENHANCD_FILTER='fzf'
 export ENHANCD_COMPLETION_BEHAVIOR=list
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_COMPLETION_IGNORE="[[:space:]]*"
 # FAST_ALIAS_TIPS_PREFIX="$(tput bold)╭───\n\033[01;33m   \033[01;37m"
 # FAST_ALIAS_TIPS_SUFFIX="\n╰───$(tput sgr0)"
 export CHTSH_QUERY_OPTIONS="style=algol_nu"
@@ -50,9 +46,7 @@ export CHTSH_QUERY_OPTIONS="style=algol_nu"
 export GNUPGHOME=$HOME/.config/gnupg
 export GPG_TTY=$(tty)
 export MANPAGER='nvim +Man!'
-# MANPAGER="sh -c \'col -bx | bat -l man -p\'"
 export MANPATH=/usr/share/man:/opt/texlive/2020/texmf-dist/doc/man
-# export XENVIRONMENT="${HOME}/.Xresources"
 export DOCKER_HOST=127.0.0.1:2375
 export DOOMDIR="~/.config/doom"
 export FEH_SKIP_MAGIC=1
@@ -74,9 +68,8 @@ export LESS_TERMCAP_so=$'\e[38;5;246m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\e[0m'           # end underline
 export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
 export LESS_TERMCAP_so=$'\e[30;43m'       # search result
-# }}}
 
-export RUST_SRC_PATH="/home/mustaqim/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+# export RUST_SRC_PATH="/home/mustaqim/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 # export ANDROID_HOME="$HOME/Android/Sdk"
 
 # shellcheck source=/home/mustaqim/.priv-env
@@ -96,8 +89,6 @@ path=(
     # $ANDROID_HOME/platform-tools
     # /opt/texlive/2020/bin/x86_64-linux
     $JAVA_HOME/bin
-    # $HOME/.yarn/bin
-    # $HOME/.nvm/versions/node/v17.3.0/bin
     $path
 )
 # export PATH
@@ -109,4 +100,30 @@ path=(
 # done
 # PATH="${PATH_SORT%:}"
 
-# . "$HOME/.cargo/env"
+# === Aliases ===
+alias cat=bat
+alias chts='cht --shell'
+alias f=vifm
+alias gpg=gpg2
+alias jackett='~/.local/bin/Jackett/jackett'
+# alias ktlint='ktlint --android --color --relative -v'
+alias nightly=/opt/firefox/firefox-bin
+alias q=exit
+alias reload='exec zsh'
+alias s='googler --count 7'
+alias x=dtrx
+alias sudo=doas
+alias xargs='xargs ' # Needed for alias subtitution
+alias yt=yt-dlp
+alias ls='lsd -h'
+
+alias -s {yml,yaml,toml,md}=$EDITOR
+
+forgit_log=fglo
+forgit_diff=fgd
+forgit_add=fga
+forgit_reset_head=fgrh
+forgit_ignore=fgi
+forgit_restore=fgcf
+forgit_clean=fgclean
+forgit_stash_show=fgss

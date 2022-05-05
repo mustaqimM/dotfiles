@@ -142,7 +142,7 @@ mark c ~/Library/Cloud
 mark d ~/Library/Downloads
 mark m ~/Library/Movies
 mark s ~/Library/Series
-
+mark z ~/.local/share/zinit
 
 " ------------------------------------------------------------------------------
 " ==============================================================================
@@ -389,7 +389,7 @@ filetype <image/*>
        " \ {View in imv}
        " \ imv -b 000000 * -n %f %i &,
        \ {View in feh}
-       \ feh --scale-down --start-at %c %i &,
+       \ feh -g 1024x576 --scale-down --start-at %c %i &,
        " \ {View in sxiv}
        " \ sxiv %f,
 " fileviewer <image/*>
@@ -439,7 +439,7 @@ fileviewer *.torrent imdl -c always -t torrent show -i %c
 filetype *.jar java -jar %f %i &
 
 " FuseZipMount
-filetype *.jar,*.zip,*.war,*.ear,*.oxt,*.apkg,*.deb,*.xbps
+filetype *.jar,*.zip,*.war,*.ear,*.oxt,*.apkg,*.deb,*.xbps,*.crate
        \ {Mount with fuse-archive}
        \ FUSE_MOUNT|fuse-archive %SOURCE_FILE %DESTINATION_DIR,
        \ {View contents}
@@ -525,7 +525,7 @@ set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::/^rc|rc$/:
 set classify+='  ::*.db,,*.sql,,*.sqlite::'
 set classify+='  ::*.pem::,  ::*.lock::'
 " archives
-set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.xbps,,*.zst::'
+set classify+='  ::*.7z*,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.crate,,*.deb,,*.dz,,*.gz,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.xbps,,*.zst::'
 set classify+='  ::*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
 set classify+='  ::*.iso,,*.img::'
 " images

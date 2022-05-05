@@ -16,7 +16,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 # (this is currently required for annexes)
 zinit light-mode for \
     zdharma-continuum/zinit-annex-bin-gem-node
-    # zdharma-continuum/zinit-annex-as-monitor \
+    # zdharma-continuum/zinit-annex-readurl \
     # zdharma-continuum/zinit-annex-patch-dl \
     # zdharma-continuum/zinit-annex-rust
 ### End of Zinit's installer chunk
@@ -46,7 +46,7 @@ setopt NO_HUP                                           # don't kill jobs
 setopt NO_CHECK_JOBS
 setopt correct                                          # spelling correction for commands
 setopt autocd
-unsetopt rm_star_silent                                 # ask for confirmation for `rm *' or `rm path/*'
+unsetopt rm_star_silent                                 # ask for confirmation for rm * or rm path/*
 setopt interactivecomments
 setopt extended_glob
 
@@ -79,15 +79,13 @@ unalias run-help
 # zi ice depth'1' lucid atinit'source ~/.zsh/.p10k-lean-8colors.zsh' nocd atload"!_p9k_do_nothing _p9k_precmd"
 # zi light romkatv/powerlevel10k
 PROMPT=$'\n'"%F{blue}~%f"$'\n'"$ "
-zi ice lucid from"gh-r" bpick"*linux-gnu.tar.gz" fbin"starship" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" compile"init.zsh" src"init.zsh"
-zi light starship/starship
-
-zi ice wait lucid
-zi light "zsh-users/zsh-history-substring-search"
+zi from"gh-r" nocompile bpick"*linux-gnu.tar.gz" sbin"starship" \
+  atclone"./starship init zsh > init.zsh; zcompile init.zsh; \
+  ./starship completions zsh > _starship" atpull"%atclone" for \
+  "starship/starship"
 
 zi wait lucid for \
+    light-mode "zsh-users/zsh-history-substring-search" \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     light-mode "zdharma-continuum/fast-syntax-highlighting" \
   blockf atpull'zinit creinstall -q ~/.zsh/completions'\
@@ -109,22 +107,9 @@ zstyle :omz:plugins:ssh-agent identities GitHub GitLab
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)c*]} ]]' pick"init.sh"
 zi light "b4b4r07/enhancd"
-# zi ice wait lucid
-# zi light "changyuheng/zsh-interactive-cd"
 
 # zi ice depth=1
 # zi light "jeffreytse/zsh-vi-mode"
-
-# zi ice lucid from"gh-r" as'program' bpick"" pick"def-matcher"
-# zi light sei40kr/fast-alias-tips-bin
-# zi ice wait"2h" lucid
-# zi light sei40kr/zsh-fast-alias-tips
-
-# zi ice wait lucid
-# zi light "xPMo/zsh-toggle-command-prefix"
-
-# zi light "willghatch/zsh-cdr"
-# zi light "zsh-users/zaw"
 
 zi ice wait"2" lucid compile"*.zsh" nocompletions
 zi light "hlissner/zsh-autopair"
@@ -137,31 +122,16 @@ zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completions" \
 zi snippet "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
 
 # if [[ $(type -p fzf) ]] then
-zi ice wait lucid multisrc"{key-bindings,completion}.zsh" \
+zi ice wait"1" lucid multisrc"{key-bindings,completion}.zsh" \
   atload" \
     _fzf_compgen_path() { command fd -L -td -tf -tl -H -E \".git\" . \"\$1\" 2> /dev/null }; \
     _fzf_compgen_dir() { command fd -L -td -H -E \".git\" . \"\$1\" 2> /dev/null }"
 zi light "/usr/share/fzf"
 # fi
 
-# zi ice lucid from"gh-r" as="command"
-# zi light "facebook/PathPicker"
-
 # zi light "Aloxaf/fzf-tab"
 # zstyle ':completion:*:descriptions' format '[%d]'
 # zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 --color=always $realpath'
-
-# zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)x*]} ]]' lucid
-# zi snippet "OMZ::plugins/extract/extract.plugin.zsh"
-# zi ice wait"2" lucid
-# zi snippet "OMZ::plugins/sudo/sudo.plugin.zsh"
-# zi ice wait"2" lucid
-# zi snippet "OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh"
-# zi ice wait"2" lucid
-# zi snippet "OMZ::plugins/tmux/tmux.plugin.zsh"
-
-# zi ice wait"3" lucid
-# zi light "marzocchi/zsh-notify"
 
 # if [[ ! -d ~/.rbenv/plugins ]] then
 #   echo "Creating \$(rbenv root)/plugins"
@@ -202,16 +172,10 @@ zi light "/usr/share/fzf"
 zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn #atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
 zi snippet "OMZ::plugins/emacs"
 
-# zi ice wait lucid atload"[[ -r ~/.base16_theme ]] || base16_tomorrow-night"
-# zi light "chriskempson/base16-shell"
-
 zi ice atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS;
   dircolors -b LS_COLORS > c.zsh; " \
   atpull'%atclone' pick"c.zsh" nocompile'!'
 zi light "trapd00r/LS_COLORS"
-
-# zi ice lucid from"gh-r" as"program" bpick"*linux*" mv"lsd* -> lsd" pick"lsd/lsd"
-# zi light "Peltoche/lsd"
 
 # zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ch*]} ]]' lucid as"program" mv"*cht.sh -> cht" pick"cht" id-as"cht.sh"
 # zi snippet "https://cht.sh/:cht.sh"
@@ -221,21 +185,8 @@ zi light "trapd00r/LS_COLORS"
 # zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ps*]} ]]' lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
 # zi light "pixelb/ps_mem"
 
-# zi ice lucid from"gh-r" as"program"
-# zi light "so-fancy/diff-so-fancy"
-
-# zi ice pick"fasd" as"program"
-# zi snippet "https://raw.githubusercontent.com/clvv/fasd/master/fasd"
-# zi snippet "OMZ::plugins/fasd/fasd.plugin.zsh"
-
 # zi ice lucid as"program" pick"pfetch"
 # zi light "dylanaraps/pfetch"
-
-# zi ice lucid from"gh-r" as"program" bpick"*linux*"
-# zi light "imsnif/bandwhich"
-
-# zi ice lucid from"gh-r" as"program" bpick"*linux*" pick"bat-v0.13.0-x86_64-unknown-linux-gnu/bat"
-# zi light "sharkdp/bat"
 
 # zi ice lucid from"gh-r" as"program" bpick"*linux*"
 # zi light "casey/intermodal"
@@ -257,8 +208,8 @@ zi light "trapd00r/LS_COLORS"
 # zi ice lucid blockf
 # zi light "ziglang/shell-completions"
 
-zi ice lucid cloneonly from"gh-r" ver"nightly" bpick"*linux-gnu.gz" mv"rust-analyzer-* -> rust-analyzer" fbin"rust-analyzer"
-zi light "rust-lang/rust-analyzer"
+zi from'gh-r' nocompile bpick"*linux-gnu.gz" sbin'*->rust-analyzer' for \
+  rust-lang/rust-analyzer
 
 # zi light romkatv/zsh-prompt-benchmark
 
@@ -285,8 +236,8 @@ zi light "rust-lang/rust-analyzer"
 #   _zcompare "$zshrc"
 #   _zcompare "$zcompdump"
 #   _zcompare "$p10k"
-
-#   # for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
+# }
+# for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
 
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
@@ -342,6 +293,7 @@ bindkey '^[[Z'    reverse-menu-complete
 zmodload zsh/complist
 setopt menucomplete
 zstyle ':completion:*'               menu select=2 search
+
 bindkey -M menuselect '/'            history-incremental-search-forward
 bindkey -M menuselect '?'            history-incremental-search-backward
 bindkey -M menuselect '^H'           vi-backward-char
@@ -349,10 +301,10 @@ bindkey -M menuselect '^K'           vi-up-line-or-history
 bindkey -M menuselect '^J'           vi-down-line-or-history
 bindkey -M menuselect '^L'           vi-forward-char
 
-# zstyle ':completion:*'               matcher-list '' \
-#        'm:{a-z\-}={A-Z\_}' \
-#        'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
-#        'r:|?=** m:{a-z\-}={A-Z\_}'
+zstyle ':completion:*'               matcher-list '' \
+       'm:{a-z\-}={A-Z\_}' \
+       'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+       'r:|?=** m:{a-z\-}={A-Z\_}'
 
 zstyle ':completion:*'               completer _complete _match _approximate
 zstyle ':completion:*:match:*'       original only
@@ -364,9 +316,9 @@ zstyle ':completion:*'               auto-description
 zstyle ':completion:*'               file-patterns '%p:globbed-files' '*(-/):directories' '*:all-files'
 
 zstyle ':completion:*:manuals'       separate-sections true
-zstyle ':completion:*:manuals.*'     insert-sections   true
+zstyle ':completion:*:manuals.(^1*)' insert-sections   true
 
-zstyle ':completion:*:corrections'   format '%B%F{green}  %d (errors: %e)  %f%b'
+zstyle ':completion:*:corrections'   format '%F{green}  %d (errors: %e)  %f'
 zstyle ':completion:*:descriptions'  format '%F{blue}  %d  %f'
 zstyle ':completion:*:messages'      format '%B%F{magenta}  %U%d%u  %f%b'
 zstyle ':completion:*:warnings'      format '%B%F{red} %Uno matches found%u %f%b'
@@ -377,21 +329,11 @@ zstyle ':completion:*:parameters'    ignored-patterns '_*'
 zstyle ':completion:*'               use-cache on
 zstyle ':completion:*'               cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
 
-# zstyle ':notify:*'                   notifier /bin/notify-send # Only needed for custom scripts
-# zstyle ':notify:*'                   error-title "Command failed in #{time_elapsed}s"
-# zstyle ':notify:*'                   success-title "Command finished in #{time_elapsed}s"
-# zstyle ':notify:*'                   error-icon "/usr/share/emoticons/EmojiOne/1f3f3.png"
-# zstyle ':notify:*'                   success-icon "/usr/share/emoticons/EmojiOne/1f389.png"
-# zstyle ':notify:*'                   command-complete-timeout 15
-# zstyle ':notify:*'                   activate-terminal no
-
 autoload -U select-word-style
 select-word-style bash # Delete a word at a time
 
-source $ZDOTDIR/aliases
-
 # Load autoload shell functions on demand
-autoload -Uz decode fz fzf_log gfy gitignore headphones kd man magit mkcd switch_theme plain push open yadm_log_diff
+autoload -Uz decode dl fz fzf_log gfy gitignore headphones kd man magit mkcd switch_theme plain push open yadm_log_diff
 autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)

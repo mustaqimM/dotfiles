@@ -61,14 +61,14 @@ highlight /^.*(\.asc|\.bfe|\.enc|\.gpg|\.p12|\.p7s|\.pem|\.pgp|\.sig|\.signature
 highlight /^.*\.(git)$/I cterm=none ctermfg=197 ctermbg=default
 highlight /^.*\.(xib)$/I cterm=none ctermfg=208 ctermbg=default
 highlight /^.*\.(32x|a00|a52|a64|a78|adf|atr|cdi|fm2|gb|gba|gbc|gel|gg|ggl|ipk|j64|nds|nes|rom|sav|sms|st)$/I cterm=none ctermfg=213 ctermbg=default
-highlight /^.*\.(apk|bsp|cab|deb|dmg|ipa|jad|jar|pak|pk3|rpm|vdf|vpk|xbps)$/I cterm=none ctermfg=215 ctermbg=default
+highlight /^.*\.(apk|bsp|cab|crate|deb|dmg|ipa|jad|jar|pak|pk3|rpm|vdf|vpk|xbps)$/I cterm=none ctermfg=215 ctermbg=default
 highlight /^.*\.(dwg|ply|stl|wrl)$/I cterm=none ctermfg=216 ctermbg=default
 highlight /^.*\.(scpt|swift)$/I cterm=none ctermfg=219 ctermbg=default
 highlight /^.*(authors|changes|contributors|copying|copyright|history|install|license|notice|patents|readme|readme.md|readme.rst|version)$/I cterm=none ctermfg=220 ctermbg=default
 highlight /^.*\.(msql|mysql|pgsql|sql)$/I cterm=none ctermfg=222 ctermbg=default
 highlight /^.*(\.cfusertextencoding|\.ds_store|\.localized|\.part|\.r[0-9]{0,2}|\.z[0-9]{0,2}|\.zx[0-9]{0,2}|coderesources|pkginfo|!qB)$/I cterm=none ctermfg=239 ctermbg=default
 highlight /^.*(\.dockerignore|\.gitattributes|\.gitignore|\.gitmodules|\.pyc|pm_to_blib)$/I cterm=none ctermfg=240 ctermbg=default
-highlight /^.*(\.aria2|\.bak|\.bup|\.disable|\.dll|\.dump|\.dylib|\.mdump|\.o|\.orig|\.rlib|\.stackdump|\.un~|\.zcompdump|\.zwc|core|~)$/I cterm=none ctermfg=241 ctermbg=default
+highlight /^.*(\.aria2|\.bak|\.bup|\.disable|\.dll|\.dump|\.dylib|\.mdump|\.o|\.orig|\.pickle|\.rlib|\.stackdump|\.un~|\.zcompdump|\.zwc|core|~)$/I cterm=none ctermfg=241 ctermbg=default
 highlight /^.*\.(am|hin|in|m4|old|out|scan)$/I cterm=none ctermfg=242 ctermbg=default
 highlight /^.*(manifest)$/I cterm=none ctermfg=243 ctermbg=default
 highlight /^.*\.(sassc|skip|swo|swp|tmp)$/I cterm=none ctermfg=244 ctermbg=default

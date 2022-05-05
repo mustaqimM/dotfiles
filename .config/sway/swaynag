@@ -1,3 +1,5 @@
+# -*- conf -*-
+
 [exit]
 font=SF Pro Display
 edge=bottom

@@ -1,4 +1,5 @@
-# -*- eval: (rainbow-mode) -*-
+# -*- mode: conf; eval: (rainbow-mode); -*-
+
 # Base16 Tomorrow
 
 set $base00 #ffffff

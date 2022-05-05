@@ -1,4 +1,4 @@
-# -*- mode: conf -*-
+# -*- conf -*-
 
 # workspace rules
 assign [app_id="(Nightly|firefox|chromium|microsoft-edge|updater)"] workspace 1
