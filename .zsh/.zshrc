@@ -90,7 +90,7 @@ zi wait lucid for \
     light-mode "zsh-users/zsh-completions" \
   compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start" \
     light-mode "zsh-users/zsh-autosuggestions" \
-  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+  atload"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     light-mode "zdharma-continuum/fast-syntax-highlighting"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'

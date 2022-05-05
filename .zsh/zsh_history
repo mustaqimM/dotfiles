@@ -5170,15 +5170,14 @@ q
 : 1651739104:0;glo
 : 1651739422:0;yadm add ~/.config/sway
 : 1651739425:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1651739470:0;yadm commit -a -m "update"
 : 1651739551:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
-: 1651739554:0;yadm status
-: 1651739574:0;reload
 : 1651739580:0;gst
-: 1651739583:0;yadm push
 : 1651739619:0;starship timings
-: 1651740880:0;f
-: 1651741104:0;yadm diff
-: 1651741143:0;zi times
 : 1651741231:0;yadm status
 : 1651741265:0;yadm commit -a -m "update"
+: 1651741279:0;yadm push
+: 1651741327:0;f
+: 1651741379:0;zi times
+: 1651741429:0;yadm diff
+: 1651741435:0;reload
+: 1651741438:0;yadm commit -a -m "update"
