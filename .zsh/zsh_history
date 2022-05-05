@@ -4964,7 +4964,6 @@ q
 : 1649149803:0;psmem -p $(pgrep -d, -u $USER) -S
 : 1649150958:0;exi
 : 1649151947:0;echo $RANGER_LEVEL
-: 1649155591:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
 : 1649172300:0;zsh-prompt-benchmark
 : 1649235697:0;git tag
 : 1649236043:0;s
@@ -4985,7 +4984,6 @@ q
 : 1649315297:0;sudo xbps-install easyeffects
 : 1649315519:0;sudo xbps-remove -R easyeffects
 : 1649331326:0;sudo xbps-install strace
-: 1649333353:0;yadm add ~/.config/sway
 : 1649333363:0;yadm add ~/.gitconfig
 : 1649333371:0;yadm add ~/.local/share/virtual-surround
 : 1649333517:0;yadm add ~/.config/waybar
@@ -5113,11 +5111,8 @@ q
 : 1651396557:0;exec zsh
 : 1651400232:0;bat cache --build
 : 1651400671:0;yadm add ~/.config/bat
-: 1651400723:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1651400728:0;yadm add ~/.mozilla/chrome
 : 1651400733:0;yadm add ~/.tmux.conf.local
-: 1651400781:0;yadm commit -a -m "update"
-: 1651400810:0;yadm push
 : 1651403245:0;df -Th
 : 1651403508:0;yt --list-formats "$(wl-paste)"
 : 1651412765:0;gco $(gb | fzf)
@@ -5149,7 +5144,6 @@ q
 : 1651647244:0;cargo test -- --ignored
 : 1651647483:0;cargo test -- --include-ignored
 : 1651647494:0;cd
-: 1651647498:0;gst
 : 1651647616:0;e src/lib.rs
 : 1651647993:0;mkdir tests
 : 1651648035:0;e tests/integration_test.rs
@@ -5174,21 +5168,17 @@ q
 : 1651737098:0;sudo powertop --auto-tune
 : 1651737109:0;sudo powertop
 : 1651739104:0;glo
-: 1651739109:0;zi times
-: 1651739188:0;yadm status
-: 1651739192:0;yadm diff
-: 1651739335:0;f
-: 1651739353:0;reload
-: 1651739356:0;starship timings
-: 1651739392:0;gst
-: 1651739395:0;yadm status
 : 1651739422:0;yadm add ~/.config/sway
 : 1651739425:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1651739441:0;yadm status
 : 1651739470:0;yadm commit -a -m "update"
-: 1651739473:0;yadm push
-: 1651739484:0;yadm status
-: 1651739503:0;f
-: 1651739544:0;yadm status
 : 1651739551:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
 : 1651739554:0;yadm status
+: 1651739574:0;reload
+: 1651739580:0;gst
+: 1651739583:0;yadm push
+: 1651739619:0;starship timings
+: 1651740880:0;f
+: 1651741104:0;yadm diff
+: 1651741143:0;zi times
+: 1651741231:0;yadm status
+: 1651741265:0;yadm commit -a -m "update"

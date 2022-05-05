@@ -86,12 +86,12 @@ zi from"gh-r" nocompile bpick"*linux-gnu.tar.gz" sbin"starship" \
 
 zi wait lucid for \
     light-mode "zsh-users/zsh-history-substring-search" \
-  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    light-mode "zdharma-continuum/fast-syntax-highlighting" \
   blockf atpull'zinit creinstall -q ~/.zsh/completions'\
     light-mode "zsh-users/zsh-completions" \
   compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start" \
-    light-mode "zsh-users/zsh-autosuggestions"
+    light-mode "zsh-users/zsh-autosuggestions" \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    light-mode "zdharma-continuum/fast-syntax-highlighting"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi snippet "OMZ::plugins/git/git.plugin.zsh"
@@ -113,13 +113,6 @@ zi light "b4b4r07/enhancd"
 
 zi ice wait"2" lucid compile"*.zsh" nocompletions
 zi light "hlissner/zsh-autopair"
-
-# zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)np*]} ]]'
-# zi snippet "OMZ::plugins/npm/npm.plugin.zsh"
-
-zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completions" \
-  mv"pnpm-completions -> _pnpm" as"completion" nocompile atinit"source _pnpm"
-zi snippet "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
 
 # if [[ $(type -p fzf) ]] then
 zi ice wait"1" lucid multisrc"{key-bindings,completion}.zsh" \
@@ -162,17 +155,24 @@ zi light "/usr/share/fzf"
 #  atload'eval "$(pyenv virtualenv-init - zsh)"'
 # zi light pyenv/pyenv-virtualenv
 
+# zi ice lucid wait"[[ -f package-lock.json ]]" atload"[[ -f .nvmrc ]] && nvm exec" # wait'[[ -n ${ZLAST_COMMANDS[(r)nv]} ]]'
+# zi light sei40kr/zsh-lazy-nvm
+
+# zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)np*]} ]]'
+# zi snippet "OMZ::plugins/npm/npm.plugin.zsh"
+
 # zi ice from"gh-r" as"program" mv"direnv* -> direnv" \
 #  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
 # zi light direnv/direnv
 
-# zi ice lucid wait"[[ -f package-lock.json ]]" atload"[[ -f .nvmrc ]] && nvm exec" # wait'[[ -n ${ZLAST_COMMANDS[(r)nv]} ]]'
-# zi light sei40kr/zsh-lazy-nvm
+zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completions" \
+  mv"pnpm-completions -> _pnpm" as"completion" nocompile atinit"source _pnpm"
+zi snippet "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
 
 zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn #atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
 zi snippet "OMZ::plugins/emacs"
 
-zi ice atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS;
+zi ice lucid wait"1" atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS;
   dircolors -b LS_COLORS > c.zsh; " \
   atpull'%atclone' pick"c.zsh" nocompile'!'
 zi light "trapd00r/LS_COLORS"
