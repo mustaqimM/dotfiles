@@ -68,6 +68,7 @@ FAST_HIGHLIGHT_STYLES[single-hyphen-option]="fg=yellow"
 FAST_HIGHLIGHT_STYLES[double-hyphen-option]="fg=yellow"
 FAST_HIGHLIGHT_STYLES[variable]="fg=016"
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=012,fg=255,bold'
+zle_highlight=('paste:reverse')
 # ==============================================================================
 
 unalias run-help
@@ -79,19 +80,19 @@ unalias run-help
 # zi ice depth'1' lucid atinit'source ~/.zsh/.p10k-lean-8colors.zsh' nocd atload"!_p9k_do_nothing _p9k_precmd"
 # zi light romkatv/powerlevel10k
 PROMPT=$'\n'"%F{blue}~%f"$'\n'"$ "
-zi from"gh-r" nocompile bpick"*linux-gnu.tar.gz" sbin"starship" \
+zi from"gh-r" nocompile sbin"starship" \
   atclone"./starship init zsh > init.zsh; zcompile init.zsh; \
   ./starship completions zsh > _starship" atpull"%atclone" for \
   "starship/starship"
 
 zi wait lucid for \
     light-mode "zsh-users/zsh-history-substring-search" \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    light-mode "zdharma-continuum/fast-syntax-highlighting" \
   blockf atpull'zinit creinstall -q ~/.zsh/completions'\
     light-mode "zsh-users/zsh-completions" \
   compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start" \
-    light-mode "zsh-users/zsh-autosuggestions" \
-  atload"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    light-mode "zdharma-continuum/fast-syntax-highlighting"
+    light-mode "zsh-users/zsh-autosuggestions"
 
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi snippet "OMZ::plugins/git/git.plugin.zsh"
@@ -208,7 +209,7 @@ zi light "trapd00r/LS_COLORS"
 # zi ice lucid blockf
 # zi light "ziglang/shell-completions"
 
-zi from'gh-r' nocompile bpick"*linux-gnu.gz" sbin'*->rust-analyzer' for \
+zi from'gh-r' nocompile sbin'*->rust-analyzer' for \
   rust-lang/rust-analyzer
 
 # zi light romkatv/zsh-prompt-benchmark

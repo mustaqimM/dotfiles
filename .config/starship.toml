@@ -19,7 +19,7 @@ style = "blue"
 
 [character]
 success_symbol = "[\\$](white)"
-error_symbol = "[\\$](red)"
+error_symbol = "[\\$](bold red)"
 vicmd_symbol = "[\\$](underline bold green)"
 
 [git_branch]

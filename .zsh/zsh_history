@@ -4837,7 +4837,6 @@ q
 : 1648376116:0;e ~/.config/yt-dlp/config
 : 1648398869:0;e ~/.config/fontconfig/fonts.conf
 : 1648440103:0;tmux kill-session -t 10
-: 1648446760:0;tmux ls
 : 1648448895:0;fusermount -u mnt
 : 1648449747:0;sudo xbps-install swappy
 : 1648450053:0;e ~/.config/sway/config
@@ -4996,8 +4995,6 @@ q
 : 1649423835:0;sudo xbps-install sassc glib-devel libxml2
 : 1649475551:0;fd -e jxl -x djxl {} {.}.png
 : 1649476634:0;man feh
-: 1649498292:0;zmodload zsh/zprof
-: 1649498303:0;zprof
 : 1649498833:0;yadm add ~/.config/rofi
 : 1649498874:0;yadm commit -v -a --no-edit --amend
 : 1649498924:0;ssh-add $HOME/.ssh/GitLab 2>/dev/null
@@ -5102,7 +5099,6 @@ q
 : 1651318131:0;fglo
 : 1651326072:0;./xbps-src pkg lapce
 : 1651326712:0;xbps-query -Rs rust
-: 1651340054:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
 : 1651382343:0;zcompile init.zsh
 : 1651386810:0;git pull --rebase upstream master
 : 1651390770:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
@@ -5114,7 +5110,6 @@ q
 : 1651400728:0;yadm add ~/.mozilla/chrome
 : 1651400733:0;yadm add ~/.tmux.conf.local
 : 1651403245:0;df -Th
-: 1651403508:0;yt --list-formats "$(wl-paste)"
 : 1651412765:0;gco $(gb | fzf)
 : 1651415953:0;zcompile .zcompdump
 : 1651461400:0;xdg-mime query filetype $(fzf)
@@ -5131,8 +5126,6 @@ q
 : 1651564038:0;
 : 1651573836:0;zi cclear
 : 1651574292:0;zi creinstall starship/starship
-: 1651580987:0;htop
-: 1651581184:0;tlp-stat -t | rg temp
 : 1651589595:0;pkill emacs
 : 1651594176:0;watch -n.1 "rg 'cpu MHz' /proc/cpuinfo"
 : 1651597283:0;git ls-files
@@ -5150,34 +5143,54 @@ q
 : 1651648430:0;e tests/common/mod.rs
 : 1651648465:0;cargo test
 : 1651656377:0;gaa
-: 1651663855:0;bandwhich
-: 1651681892:0;crontab -l
-: 1651684640:0;crontab -e
-: 1651720282:0;cargo run
-: 1651720436:0;zi update -p
-: 1651724796:0;sudo bluetooth toggle
-: 1651731967:0;sudo wifi toggle
-: 1651733288:0;sudo xbps-install -Suvy
-: 1651733956:0;plain show
 : 1651735095:0;zi delete
 : 1651735629:0;zi delete rust-lang/rust-analyzer
-: 1651735733:0;rust-analyzer --version
 : 1651735762:0;echo $PATH | tr ":" "\n" | nl
 : 1651735811:0;ls -al
-: 1651736068:0;e src/main.rs
 : 1651737098:0;sudo powertop --auto-tune
 : 1651737109:0;sudo powertop
 : 1651739104:0;glo
 : 1651739422:0;yadm add ~/.config/sway
 : 1651739425:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1651739551:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
-: 1651739580:0;gst
-: 1651739619:0;starship timings
 : 1651741231:0;yadm status
-: 1651741265:0;yadm commit -a -m "update"
-: 1651741279:0;yadm push
-: 1651741327:0;f
-: 1651741379:0;zi times
-: 1651741429:0;yadm diff
-: 1651741435:0;reload
 : 1651741438:0;yadm commit -a -m "update"
+: 1651741445:0;yadm push
+: 1651741757:0;gst
+: 1651742367:0;sudo xbps-install shfmt
+: 1651743480:0;zmodload zsh/zprof
+: 1651743481:0;zprof
+: 1651751262:0;e src/main.rs
+: 1651751356:0;cargo run
+: 1651751403:0;cargo run test sample.txt
+: 1651752530:0;cargo run test poem.text
+: 1651761085:0;sudo bluetooth toggle
+: 1651761090:0;sudo wifi toggle
+: 1651767015:0;tlp-stat -t | rg temp
+: 1651768778:0;plain show
+: 1651771104:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
+: 1651807079:0;crontab -l > ~/.config/configs/cron
+: 1651807100:0;crontab -e
+: 1651807989:0;tmux send-keys "ls" C-m
+: 1651808718:0;tmux ls
+: 1651808939:0;crontab -l
+: 1651810991:0;starship timings
+: 1651813384:0;zi update -p
+: 1651813820:0;rust-analyzer --version
+: 1651814116:0;reload
+: 1651814542:0;bandwhich
+: 1651814548:0;htop
+: 1651814600:0;sudo xbps-install -Suvy
+: 1651825108:0;yt --list-formats "$(wl-paste)"
+: 1651831564:0;zi times
+: 1651831584:0;f
+: 1651832240:0;cargo run the poem.text
+: 1651832365:0;yadm diff
+: 1651832411:0;yadm status
+: 1651832419:0;yadm add ~/.config/configs
+: 1651832421:0;yadm status
+: 1651832426:0;yadm diff
+: 1651832439:0;yadm add ~/.config/starship.toml
+: 1651832441:0;yadm status
+: 1651832447:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
+: 1651832465:0;yadm commit -a -m "update"

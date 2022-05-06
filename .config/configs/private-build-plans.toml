@@ -1,7 +1,10 @@
-[buildPlans.iosevka-custom]      # <iosevka-custom> is your plan name
+[buildPlans.iosevka-custom]      # <iosevka-custom> is your plan name. v15.1
 family = "Iosevka"        # Font menu family name
-spacing = "normal"               # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
+spacing = "fontconfig-mono"               # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
 serifs = "sans"                  # Optional; Values: `sans` or `slab`
+apl-form = "enable"
+
+# webfont-formats = ['ttf', 'woff2']
 
 ###################################################################################################
 # Configure variants
@@ -18,10 +21,11 @@ capital-g = 'toothless-corner-serifless-hooked'
 capital-i = 'serifed'
 capital-j = 'serifed'
 capital-n = 'standard'
-capital-q = 'crossing-curly-tailed'
+capital-q = 'horizontal-tailed'
 # capital-r = 'curly'
+capital-u = 'toothless-rounded'
 # capital-v = 'curly'
-# capital-w = 'curly'
+capital-w = 'curly'
 # capital-y = 'curly-serifless'
 a = 'double-storey-toothless-corner'
 g = 'double-storey-open'
@@ -42,11 +46,12 @@ four = 'open'
 six = 'straight-bar'
 seven = 'straight-serifless'
 nine = 'straight-bar'
-lig-ltgteq = 'slanted'
-# dollar = 'open'
 paren = 'flat-arc'
 asterisk = 'penta-low'
-# ampersand = 'et-toothless-corner'
+number-sign = 'upright'
+ampersand = 'upper-open'
+# dollar = 'open'
+lig-ltgteq = 'slanted'
 bar = 'force-upright'
 
 # Optional; Configure single character's variant for Upright and Oblique; Overrides [design]
@@ -58,6 +63,7 @@ bar = 'force-upright'
 [buildPlans.iosevka-custom.variants.italic]
 i = 'tailed-serifed'
 l = 'tailed-serifed'
+q = 'earless-rounded-diagonal-tailed'
 
 # End variant section
 ###################################################################################################
@@ -67,7 +73,7 @@ l = 'tailed-serifed'
 
 [buildPlans.iosevka-custom.ligations]
 inherits = "default-calt"   # Optional; inherits an existing ligation set
-disables = []               # Optional; disable specific ligation groups, overrides inherited ligation set
+disables = ["exeqeq", "exeq"]               # Optional; disable specific ligation groups, overrides inherited ligation set
 enables  = []               # Optional; enable specific ligation groups, overrides inherited ligation set
 
 # End ligation section
@@ -166,10 +172,10 @@ ranges = [[10003, 10008]]
 # following section to build PUA characters that are generated from the OpenType ligatures.
 # Remove this section when compatibility ligatures are not needed.
 
-[[buildPlans.iosevka-custom.compatibility-ligatures]]
-unicode = 57600 # 0xE100
-featureTag = 'calt'
-sequence = '<*>'
+# [[buildPlans.iosevka-custom.compatibility-ligatures]]
+# unicode = 57657 # 0xE139
+# featureTag = 'calt'
+# sequence = '->'
 
 # End compatibility ligatures section
 ###################################################################################################
