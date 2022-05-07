@@ -1,6 +1,6 @@
 # -*- conf -*-
 
-include colorscheme-dark
+include dark
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
@@ -35,6 +35,6 @@ titlebar_padding 0
 #     gsettings set $gnome-schema font-name 'SF Pro Text 11'
 # }
 
-# set $cursor X11-Cursors-Breeze-Hacked-White
+# set $cursor Breeze-Hacked-White
 # seat * xcursor_theme $cursor
 seat * hide_cursor when-typing enable

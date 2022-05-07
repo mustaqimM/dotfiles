@@ -5008,7 +5008,6 @@ q
 : 1649660862:0;notify-send -u normal "Test" "This is a test"
 : 1649661150:0;sudo xbps-install linux4.19
 : 1649661859:0;yt -f '398+251' "$(wl-paste)"
-: 1649687561:0;man vifm
 : 1649822903:0;free -h
 : 1649991987:0;sudo lspci -vvvk
 : 1650129229:0;e common/shlibs
@@ -5076,24 +5075,19 @@ q
 : 1651129327:0;fd -e jpg -x rm
 : 1651134676:0;g
 : 1651138660:0;delta --help
-: 1651141359:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
-: 1651141405:0;yadm add ~/.config/configs
 : 1651141409:0;yadm add ~/.config/doom
 : 1651141414:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1651141480:0;yadm add ~/.config/dunst
 : 1651141484:0;yadm add ~/.config/pipewire/pipewire.conf
-: 1651141487:0;yadm add ~/.config/starship.toml
 : 1651141500:0;yadm add ~/.config/zathura/zathurarc
 : 1651156906:0;git init
 : 1651157470:0;gd --staged
 : 1651157489:0;delta --diff-so-fancy --show-config
 : 1651158309:0;yadm
-: 1651231452:0;ffprobe "$(fd -d 1 -c always | fzf)"
 : 1651235386:0;gd
 : 1651240672:0;tmux attach || tmux
 : 1651241167:0;sudo sv up udevmon
 : 1651248732:0;swaymsg -t get_tree | fzf
-: 1651252065:0;dl
 : 1651296819:0;fc-cache -fv
 : 1651300040:0;sudo vkpurge rm all
 : 1651318131:0;fglo
@@ -5150,13 +5144,8 @@ q
 : 1651737098:0;sudo powertop --auto-tune
 : 1651737109:0;sudo powertop
 : 1651739104:0;glo
-: 1651739422:0;yadm add ~/.config/sway
 : 1651739425:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1651739551:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
-: 1651741231:0;yadm status
-: 1651741438:0;yadm commit -a -m "update"
-: 1651741445:0;yadm push
-: 1651741757:0;gst
 : 1651742367:0;sudo xbps-install shfmt
 : 1651743480:0;zmodload zsh/zprof
 : 1651743481:0;zprof
@@ -5166,8 +5155,6 @@ q
 : 1651752530:0;cargo run test poem.text
 : 1651761085:0;sudo bluetooth toggle
 : 1651761090:0;sudo wifi toggle
-: 1651767015:0;tlp-stat -t | rg temp
-: 1651768778:0;plain show
 : 1651771104:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
 : 1651807079:0;crontab -l > ~/.config/configs/cron
 : 1651807100:0;crontab -e
@@ -5175,22 +5162,32 @@ q
 : 1651808718:0;tmux ls
 : 1651808939:0;crontab -l
 : 1651810991:0;starship timings
-: 1651813384:0;zi update -p
 : 1651813820:0;rust-analyzer --version
-: 1651814116:0;reload
-: 1651814542:0;bandwhich
-: 1651814548:0;htop
-: 1651814600:0;sudo xbps-install -Suvy
 : 1651825108:0;yt --list-formats "$(wl-paste)"
-: 1651831564:0;zi times
-: 1651831584:0;f
 : 1651832240:0;cargo run the poem.text
-: 1651832365:0;yadm diff
-: 1651832411:0;yadm status
 : 1651832419:0;yadm add ~/.config/configs
-: 1651832421:0;yadm status
-: 1651832426:0;yadm diff
 : 1651832439:0;yadm add ~/.config/starship.toml
-: 1651832441:0;yadm status
 : 1651832447:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
 : 1651832465:0;yadm commit -a -m "update"
+: 1651832525:0;yadm push
+: 1651835138:0;bandwhich
+: 1651838293:0;tlp-stat -t | rg temp
+: 1651855172:0;zi update -p
+: 1651896732:0;htop
+: 1651897479:0;pnpx histdbimport
+: 1651901584:0;sudo xbps-install -Suvy
+: 1651903282:0;man vifm
+: 1651903349:0;zi times
+: 1651905197:0;ffprobe "$(fd -d 1 -c always | fzf)"
+: 1651906197:0;yt -f 'hd' "$(wl-paste)"
+: 1651909327:0;plain show
+: 1651909864:0;dl
+: 1651909870:0;reload
+: 1651909873:0;yadm diff
+: 1651909903:0;yadm add ~/.config/sway
+: 1651909905:0;yadm status
+: 1651909912:0;f
+: 1651909928:0;gst
+: 1651910160:0;yadm add ~/.zsh/functions/^*.zwc
+: 1651910165:0;yadm status
+: 1651910203:0;yadm commit -a -m "update"

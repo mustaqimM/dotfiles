@@ -15,6 +15,7 @@ switch_theme() {
         gsettings set org.gnome.desktop.interface gtk-theme $gtk_light_theme
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Light"
         kvantummanager --set "$qt_light_theme"
+        sed -i 's|include dark|include light|' ~/.config/sway/theme
         sed -i 's|Papirus-Dark|Papirus-Light|' ~/.config/qt5ct/qt5ct.conf
         sed -i 's|colors: \*tomorrow-dark|colors: \*tomorrow-light|' ~/.config/alacritty/alacritty.yml
         sed -i 's|Tomorrow-Night|Tomorrow|' ~/.config/bat/config
@@ -35,6 +36,7 @@ switch_theme() {
         gsettings set org.gnome.desktop.interface gtk-theme $gtk_dark_theme
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
         kvantummanager --set "$qt_dark_theme"
+        sed -i 's|include light|include dark|' ~/.config/sway/theme
         sed -i 's|Papirus-Light|Papirus-Dark|' ~/.config/qt5ct/qt5ct.conf
         sed -i 's|colors: \*tomorrow-light|colors: \*tomorrow-dark|' ~/.config/alacritty/alacritty.yml
         sed -i 's|Tomorrow|Tomorrow-Night|' ~/.config/bat/config

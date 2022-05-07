@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+man() {
+ if [ -n "$TMUX" ]; then
+ tmux split-window -h -p 40 \
+   /bin/man "$@"
+   # emacsclient -nw -e "(let ((Man-notify-method 'bully)) (man \"$1\") (evil-local-set-key 'normal \"q\" (lambda () (interactive) (+workspace:delete) (delete-frame))))"
+ else
+   /bin/man "$@"
+   # emacsclient -nw -e "(let ((Man-notify-method 'bully)) (man \"$1\"))"
+ fi
+}
+
+man "$@"

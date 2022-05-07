@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+diff() { /bin/diff -u "$@" | diff-so-fancy }
+
+diff "$@"

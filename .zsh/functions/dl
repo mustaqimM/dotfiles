@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+autoload colors && colors
+
+dl() {
+    echo "Downloading: \e[4m$fg[blue]$(wl-paste)\e[0m"
+    aria2c "$(wl-paste)" --no-conf --continue -x16 -s16 -k1M --summary-interval=0 --check-certificate=false "$@"
+}
+
+dl "$@"

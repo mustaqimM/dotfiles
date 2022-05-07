@@ -94,6 +94,9 @@ zi wait lucid for \
   compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start" \
     light-mode "zsh-users/zsh-autosuggestions"
 
+# zi lucid for \
+#   larkery/zsh-histdb
+
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
 zi snippet "OMZ::plugins/git/git.plugin.zsh"
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
@@ -173,7 +176,7 @@ zi snippet "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main
 zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn #atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
 zi snippet "OMZ::plugins/emacs"
 
-zi ice lucid wait"1" atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS;
+zi ice lucid atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS;
   dircolors -b LS_COLORS > c.zsh; " \
   atpull'%atclone' pick"c.zsh" nocompile'!'
 zi light "trapd00r/LS_COLORS"
@@ -339,7 +342,7 @@ autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl darkhttpd direnv docker \
-  dunst emacs ffmpeg ffprobe flask fsck.ext4 fzf gocryptfs hexyl highlight inkscape ktlint light lighttpd \
+  dunst emacs ffmpeg ffprobe flask fsck.ext4 fzf gocryptfs hexyl highlight histdb inkscape ktlint light lighttpd \
   lsd mimeo megadl mkfs.vfat nzbget notify-send pamixer pip pip3 pipx psmem pw-cli rofi rustc \
   tlp tlp-stat \
   vue zstd
