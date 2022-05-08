@@ -88,7 +88,7 @@ zi from"gh-r" nocompile sbin"starship" \
 zi wait lucid for \
     light-mode "zsh-users/zsh-history-substring-search" \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    light-mode "zdharma-continuum/fast-syntax-highlighting" \
+    light-mode "zdharma-continuum/fast-syntax-highlighting"\
   blockf atpull'zinit creinstall -q ~/.zsh/completions'\
     light-mode "zsh-users/zsh-completions" \
   compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start" \
@@ -115,16 +115,15 @@ zi light "b4b4r07/enhancd"
 # zi ice depth=1
 # zi light "jeffreytse/zsh-vi-mode"
 
-zi ice wait"2" lucid compile"*.zsh" nocompletions
-zi light "hlissner/zsh-autopair"
-
 # if [[ $(type -p fzf) ]] then
-zi ice wait"1" lucid multisrc"{key-bindings,completion}.zsh" \
-  atload" \
-    _fzf_compgen_path() { command fd -L -td -tf -tl -H -E \".git\" . \"\$1\" 2> /dev/null }; \
-    _fzf_compgen_dir() { command fd -L -td -H -E \".git\" . \"\$1\" 2> /dev/null }"
-zi light "/usr/share/fzf"
+zi lucid wait"1" multisrc"{key-bindings,completion}.zsh" atload" \
+  _fzf_compgen_path() { command fd -L -td -tf -tl -H -E \".git\" . \"\$1\" 2> /dev/null }; \
+  _fzf_compgen_dir() { command fd -L -td -H -E \".git\" . \"\$1\" 2> /dev/null }" for \
+  light-mode "/usr/share/fzf"
 # fi
+
+zi ice lucid wait"1" compile"*.zsh" nocompletions
+zi light "hlissner/zsh-autopair"
 
 # zi light "Aloxaf/fzf-tab"
 # zstyle ':completion:*:descriptions' format '[%d]'
@@ -176,9 +175,8 @@ zi snippet "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main
 zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn #atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
 zi snippet "OMZ::plugins/emacs"
 
-zi ice lucid atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS;
-  dircolors -b LS_COLORS > c.zsh; " \
-  atpull'%atclone' pick"c.zsh" nocompile'!'
+zi ice wait lucid atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS;
+  dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh" nocompile'!' atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
 zi light "trapd00r/LS_COLORS"
 
 # zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ch*]} ]]' lucid as"program" mv"*cht.sh -> cht" pick"cht" id-as"cht.sh"
@@ -212,7 +210,7 @@ zi light "trapd00r/LS_COLORS"
 # zi ice lucid blockf
 # zi light "ziglang/shell-completions"
 
-zi from'gh-r' nocompile sbin'*->rust-analyzer' for \
+zi wait'[[ -n ${ZLAST_COMMANDS[(r)rust*]} ]]' lucid from'gh-r' nocompile sbin'*->rust-analyzer' for \
   rust-lang/rust-analyzer
 
 # zi light romkatv/zsh-prompt-benchmark
@@ -326,7 +324,7 @@ zstyle ':completion:*:corrections'   format '%F{green}  %d (errors: %e)  %
 zstyle ':completion:*:descriptions'  format '%F{blue}  %d  %f'
 zstyle ':completion:*:messages'      format '%B%F{magenta}  %U%d%u  %f%b'
 zstyle ':completion:*:warnings'      format '%B%F{red} %Uno matches found%u %f%b'
-zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
+# zstyle ':completion:*:default'       list-colors ${(s.:.)LS_COLORS}
 
 zstyle ':completion:*:parameters'    ignored-patterns '_*'
 
@@ -342,7 +340,7 @@ autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)
 zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl darkhttpd direnv docker \
-  dunst emacs ffmpeg ffprobe flask fsck.ext4 fzf gocryptfs hexyl highlight histdb inkscape ktlint light lighttpd \
+  dunst emacs feh ffmpeg ffprobe flask fsck.ext4 fzf gocryptfs hexyl highlight histdb inkscape ktlint light lighttpd \
   lsd mimeo megadl mkfs.vfat nzbget notify-send pamixer pip pip3 pipx psmem pw-cli rofi rustc \
   tlp tlp-stat \
   vue zstd

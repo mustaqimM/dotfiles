@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 fzf_log() {
-  hash=$(git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" | fzf | awk '{print $1}')
-  echo $hash | wl-copy
+  hash=$(git log --color=always --format="%C(auto)%h%d %s %C(8)%C(bold)%cr" "$@" | fzf | awk '{print $1}')
+  # wl-copy -n <<< $hash
   git diff $hash
 }
 

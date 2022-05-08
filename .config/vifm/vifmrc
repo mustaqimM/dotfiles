@@ -194,7 +194,7 @@ nnoremap aa :push<cr>
 
 " Extract an archive
 command! extract dtrx -n %c %i
-nnoremap x :extract<cr>:echo expand('%"c') ": archive extracted "<cr>
+nnoremap x :extract<cr>:echo expand('%"c') ": extracting archive "<cr>
 
 " Start shell in current directory
 nnoremap s :shell!<cr>
@@ -267,8 +267,11 @@ nnoremap <silent> ,d :set viewcolumns=*{name}.,10{perms},12{uname},-7{gname},10{
 " don't show preview on ../
 " fileviewer ../ echo >/dev/null
 
-" fileviewer /^.*// fd . -d 1 -c always
-" fileviewer /^.?*// lsd --color=always --group-dirs=first --tree --depth=1 -a
+" Directories
+" filextype */
+"        \ {View in thunar}
+"        \ Thunar %f &,
+fileviewer */,.*/ lsd --color=always --group-dirs=first --tree --depth=1 -a
 
 " Pdf
 filextype *.pdf zathura %c %i
@@ -495,11 +498,6 @@ filetype *.tudu tudu -f %c
 
 " Qt projects
 filextype *.pro qtcreator %f &
-
-" Directories
-"filextype */
-"        \ {View in thunar}
-"        \ Thunar %f &,
 
 " fileviewer *.json python -m json.tool -- %c | highlight -q -O xterm256 --replace-tabs=2 --style=base16/tomorrow-night --syntax json
 fileviewer <application/json> bat -p --color always %c

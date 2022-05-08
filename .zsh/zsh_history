@@ -4564,7 +4564,6 @@ q
 : 1641102311:0;node test.js
 : 1641211399:0;bindkey -v
 : 1641212070:0;e ~/.zsh/zsh_history
-: 1641271298:0;zi
 : 1641272540:0;sudo xbps-install gramps graphviz libosmgpsmap python3-PyICU libgexiv2 goocanvas
 : 1641272559:0;sudo xbps-install gramps graphviz libosmgpsmap python3-PyICU libgexiv2 goocanvas geocode-glib
 : 1641285255:0;pnpm add -D supertest
@@ -5026,7 +5025,6 @@ q
 : 1650522885:0;echo -e '\U0001f602'
 : 1650531978:0;echo $CARGO_HOME
 : 1650531985:0;echo $RUSTUP_HOME
-: 1650534976:0;jackett
 : 1650539654:0;rustup docs --book
 : 1650544510:0;rustc --explain E0277
 : 1650550422:0;rustc --explain E0382
@@ -5060,18 +5058,14 @@ q
 : 1650886408:0;cp /etc/xbps.d/10-ignore.conf ~/.config/configs/etc/xbps.d/10-ignore.conf
 : 1650891937:0;ffmpeg -i infile.mp4 -i infile.srt -c copy -c:s mov_text out.mp4
 : 1650906570:0;e ~/.config/pipewire/pipewire.conf
-: 1650942841:0;zi times -a
 : 1650958395:0;zmodload -F zsh/parameter p:aliases
 : 1650969228:0;cal
 : 1650992529:0;xbps-query mpv
 : 1651033992:0;sudo dmesg
 : 1651034002:0;sudo sv restart iwd
-: 1651034013:0;ping google.com
 : 1651044201:0;grv
 : 1651045028:0;ffmpeg -i file.avi -qscale:v 1 -qmin 1 -qmax 1 -vsync 0 frame%08d.jpg
-: 1651045186:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
 : 1651055346:0;rustc --explain E0308
-: 1651129257:0;fd '\.(jpe?|pn)g' -x cjxl {} {.}.jxl
 : 1651129327:0;fd -e jpg -x rm
 : 1651134676:0;g
 : 1651138660:0;delta --help
@@ -5090,12 +5084,9 @@ q
 : 1651248732:0;swaymsg -t get_tree | fzf
 : 1651296819:0;fc-cache -fv
 : 1651300040:0;sudo vkpurge rm all
-: 1651318131:0;fglo
 : 1651326072:0;./xbps-src pkg lapce
 : 1651326712:0;xbps-query -Rs rust
 : 1651382343:0;zcompile init.zsh
-: 1651386810:0;git pull --rebase upstream master
-: 1651390770:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
 : 1651391032:0;cp /usr/lib/kitty/shell-integration/zsh/completions/_kitty ~/.zsh/completions
 : 1651391059:0;zi creinstall $ZDOTDIR/completions
 : 1651396557:0;exec zsh
@@ -5108,12 +5099,10 @@ q
 : 1651415953:0;zcompile .zcompdump
 : 1651461400:0;xdg-mime query filetype $(fzf)
 : 1651468329:0;adb connect 192.168.1.101
-: 1651474836:0;rustup update
 : 1651497981:0;wf-recorder -f recording.mp4
 : 1651509175:0;magick compare mpv-shot0001.jpg mpv-shot0002.jpg -compose src diff.png
 : 1651511253:0;mpv --show-profile=gpu-hq
 : 1651548444:0;uname -a
-: 1651557754:0;man mpv
 : 1651562599:0;which-command mpv
 : 1651562622:0;bindkey
 : 1651562651:0;which-command echo
@@ -5130,64 +5119,79 @@ q
 : 1651647106:0;cargo test it_works
 : 1651647244:0;cargo test -- --ignored
 : 1651647483:0;cargo test -- --include-ignored
-: 1651647494:0;cd
 : 1651647616:0;e src/lib.rs
 : 1651647993:0;mkdir tests
 : 1651648035:0;e tests/integration_test.rs
 : 1651648430:0;e tests/common/mod.rs
 : 1651648465:0;cargo test
-: 1651656377:0;gaa
 : 1651735095:0;zi delete
-: 1651735629:0;zi delete rust-lang/rust-analyzer
 : 1651735762:0;echo $PATH | tr ":" "\n" | nl
 : 1651735811:0;ls -al
 : 1651737098:0;sudo powertop --auto-tune
 : 1651737109:0;sudo powertop
-: 1651739104:0;glo
 : 1651739425:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1651739551:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
 : 1651742367:0;sudo xbps-install shfmt
 : 1651743480:0;zmodload zsh/zprof
 : 1651743481:0;zprof
-: 1651751262:0;e src/main.rs
-: 1651751356:0;cargo run
 : 1651751403:0;cargo run test sample.txt
 : 1651752530:0;cargo run test poem.text
 : 1651761085:0;sudo bluetooth toggle
 : 1651761090:0;sudo wifi toggle
-: 1651771104:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
 : 1651807079:0;crontab -l > ~/.config/configs/cron
-: 1651807100:0;crontab -e
 : 1651807989:0;tmux send-keys "ls" C-m
 : 1651808718:0;tmux ls
-: 1651808939:0;crontab -l
-: 1651810991:0;starship timings
-: 1651813820:0;rust-analyzer --version
-: 1651825108:0;yt --list-formats "$(wl-paste)"
-: 1651832240:0;cargo run the poem.text
 : 1651832419:0;yadm add ~/.config/configs
 : 1651832439:0;yadm add ~/.config/starship.toml
 : 1651832447:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
-: 1651832465:0;yadm commit -a -m "update"
-: 1651832525:0;yadm push
-: 1651835138:0;bandwhich
-: 1651838293:0;tlp-stat -t | rg temp
 : 1651855172:0;zi update -p
-: 1651896732:0;htop
 : 1651897479:0;pnpx histdbimport
-: 1651901584:0;sudo xbps-install -Suvy
-: 1651903282:0;man vifm
-: 1651903349:0;zi times
 : 1651905197:0;ffprobe "$(fd -d 1 -c always | fzf)"
 : 1651906197:0;yt -f 'hd' "$(wl-paste)"
-: 1651909327:0;plain show
-: 1651909864:0;dl
-: 1651909870:0;reload
-: 1651909873:0;yadm diff
 : 1651909903:0;yadm add ~/.config/sway
-: 1651909905:0;yadm status
-: 1651909912:0;f
-: 1651909928:0;gst
 : 1651910160:0;yadm add ~/.zsh/functions/^*.zwc
-: 1651910165:0;yadm status
 : 1651910203:0;yadm commit -a -m "update"
+: 1651910208:0;yadm push
+: 1651910858:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
+: 1651911060:0;fzf_log
+: 1651911250:0;cd
+: 1651911427:0;glo
+: 1651911820:0;jackett
+: 1651912074:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
+: 1651912718:0;fd '\.(jpe?|pn)g' -x cjxl {} {.}.jxl
+: 1651913934:0;git pull --rebase upstream master
+: 1651914156:0;gst
+: 1651917601:0;man mpv
+: 1651922447:0;dl
+: 1651928334:0;gaa
+: 1651938036:0;sudo xbps-install -Suvy
+: 1651938589:0;yt --list-formats "$(wl-paste)"
+: 1651950431:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
+: 1651983090:0;crontab -l
+: 1651983263:0;crontab -e
+: 1651987296:0;rustup update
+: 1651993176:0;e src/main.rs
+: 1651999849:0;tlp-stat -t | rg temp
+: 1652001128:0;zi
+: 1652001562:0;yadm diff
+: 1652002010:0;zi delete rust-lang/rust-analyzer
+: 1652002050:0;bandwhich
+: 1652002060:0;zi times -a
+: 1652002348:0;rust-analyzer --version
+: 1652003216:0;plain show
+: 1652004944:0;cargo run the poem.text
+: 1652004997:0;fglo
+: 1652005011:0;cargo run
+: 1652005160:0;ping google.com
+: 1652006231:0;htop
+: 1652007401:0;starship timings
+: 1652007422:0;zi times
+: 1652007636:0;man vifm
+: 1652007678:0;f
+: 1652007723:0;yadm status
+: 1652008146:0;reload
+: 1652008195:0;yadm status
+: 1652008205:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
+: 1652008212:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1652008226:0;yadm status
+: 1652008231:0;yadm commit -a -m "update"
