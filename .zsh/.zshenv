@@ -67,7 +67,7 @@ export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
 export LESS_TERMCAP_so=$'\e[38;5;246m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\e[0m'           # end underline
 export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
-export LESS_TERMCAP_so=$'\e[30;43m'       # search result
+export LESS_TERMCAP_so=$'\e[30;44m'       # search result
 
 # export RUST_SRC_PATH="/home/mustaqim/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 # export ANDROID_HOME="$HOME/Android/Sdk"

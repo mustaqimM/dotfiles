@@ -1,14 +1,5 @@
 #!/usr/bin/env zsh
 
-# ==============================================================================
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-# ==============================================================================
-
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -71,7 +62,7 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=012,fg=255,bold'
 zle_highlight=('paste:reverse')
 # ==============================================================================
 
-unalias run-help
+# unalias run-help
 # unalias zplg
 
 # ==============================================================================
@@ -80,50 +71,57 @@ unalias run-help
 # zi ice depth'1' lucid atinit'source ~/.zsh/.p10k-lean-8colors.zsh' nocd atload"!_p9k_do_nothing _p9k_precmd"
 # zi light romkatv/powerlevel10k
 PROMPT=$'\n'"%F{blue}~%f"$'\n'"$ "
-zi from"gh-r" nocompile sbin"starship" \
+zi lucid light-mode from"gh-r" nocompile sbin"starship" \
   atclone"./starship init zsh > init.zsh; zcompile init.zsh; \
   ./starship completions zsh > _starship" atpull"%atclone" for \
   "starship/starship"
 
-zi wait lucid for \
-    light-mode "zsh-users/zsh-history-substring-search" \
+zi lucid light-mode wait for \
+    "zsh-users/zsh-history-substring-search" \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    light-mode "zdharma-continuum/fast-syntax-highlighting"\
+    "zdharma-continuum/fast-syntax-highlighting" \
   blockf atpull'zinit creinstall -q ~/.zsh/completions'\
-    light-mode "zsh-users/zsh-completions" \
+    "zsh-users/zsh-completions" \
   compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start" \
-    light-mode "zsh-users/zsh-autosuggestions"
+    "zsh-users/zsh-autosuggestions"
 
 # zi lucid for \
 #   larkery/zsh-histdb
 
-zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
-zi snippet "OMZ::plugins/git/git.plugin.zsh"
-zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
-zi snippet "OMZ::plugins/git-extras/git-extras.plugin.zsh"
-zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]'
-zi light "wfxr/forgit"
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]' for \
+  "OMZ::plugins/git/git.plugin.zsh" \
+  "OMZ::plugins/git-extras/git-extras.plugin.zsh" \
+  "wfxr/forgit"
 
-zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)git*]} ]]'
-zi snippet "OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh"
-zstyle :omz:plugins:ssh-agent quiet yes
-zstyle :omz:plugins:ssh-agent identities GitHub GitLab
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]' atload' \
+  zstyle ":omz:plugins:ssh-agent" quiet yes \
+  zstyle ":omz:plugins:ssh-agent" identities GitHub GitLab' for \
+  "OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh"
 
-zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)c*]} ]]' pick"init.sh"
-zi light "b4b4r07/enhancd"
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)c*]} ]]' pick"init.sh" for \
+  "b4b4r07/enhancd"
 
 # zi ice depth=1
 # zi light "jeffreytse/zsh-vi-mode"
 
 # if [[ $(type -p fzf) ]] then
-zi lucid wait"1" multisrc"{key-bindings,completion}.zsh" atload" \
+zi lucid light-mode wait"1" multisrc"{key-bindings,completion}.zsh" atload" \
   _fzf_compgen_path() { command fd -L -td -tf -tl -H -E \".git\" . \"\$1\" 2> /dev/null }; \
   _fzf_compgen_dir() { command fd -L -td -H -E \".git\" . \"\$1\" 2> /dev/null }" for \
-  light-mode "/usr/share/fzf"
+  "/usr/share/fzf"
 # fi
 
-zi ice lucid wait"1" compile"*.zsh" nocompletions
-zi light "hlissner/zsh-autopair"
+zi lucid light-mode wait"1" compile"*.zsh" nocompletions for \
+  "hlissner/zsh-autopair"
+
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn
+zi snippet "OMZ::plugins/emacs"
+
+zi lucid light-mode wait \
+  atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS; \
+  dircolors -b LS_COLORS > c.zsh" \
+  atpull'%atclone' pick"c.zsh" nocompile'!' atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"' for \
+  "trapd00r/LS_COLORS"
 
 # zi light "Aloxaf/fzf-tab"
 # zstyle ':completion:*:descriptions' format '[%d]'
@@ -146,6 +144,10 @@ zi light "hlissner/zsh-autopair"
 # zi ice wait"3a" lucid wait"[[ -f Gemfile || -f Rakefile ]]" unload"[[ ! -f Gemfile ]]"
 # zi snippet "OMZ::plugins/rbenv/rbenv.plugin.zsh"
 
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completions" \
+  mv"pnpm-completions -> _pnpm" as"completion" nocompile atinit"source _pnpm" for \
+  "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
+
 # zi ice lucid wait \
 #  as'command' pick'bin/pyenv' \
 #  atload'eval "$(pyenv init - --no-rehash zsh)"; echo "TEST"' \
@@ -167,17 +169,6 @@ zi light "hlissner/zsh-autopair"
 # zi ice from"gh-r" as"program" mv"direnv* -> direnv" \
 #  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
 # zi light direnv/direnv
-
-zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completions" \
-  mv"pnpm-completions -> _pnpm" as"completion" nocompile atinit"source _pnpm"
-zi snippet "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
-
-zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn #atclone"sed -i '1,13d; 51d; s|\$ZSH/plugins|\$ZINIT[SNIPPETS_DIR]/OMZ::plugins|' emacs.plugin.zsh"
-zi snippet "OMZ::plugins/emacs"
-
-zi ice wait lucid atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS;
-  dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh" nocompile'!' atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
-zi light "trapd00r/LS_COLORS"
 
 # zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ch*]} ]]' lucid as"program" mv"*cht.sh -> cht" pick"cht" id-as"cht.sh"
 # zi snippet "https://cht.sh/:cht.sh"
@@ -210,7 +201,7 @@ zi light "trapd00r/LS_COLORS"
 # zi ice lucid blockf
 # zi light "ziglang/shell-completions"
 
-zi wait'[[ -n ${ZLAST_COMMANDS[(r)rust*]} ]]' lucid from'gh-r' nocompile sbin'*->rust-analyzer' for \
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)rust*]} ]]' from'gh-r' nocompile sbin'*->rust-analyzer' for \
   rust-lang/rust-analyzer
 
 # zi light romkatv/zsh-prompt-benchmark
