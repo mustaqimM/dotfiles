@@ -516,7 +516,7 @@ fileviewer <text/*> bat -p --color=always %c
 set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  ::*.apk::'
 " code
 set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.rkt::'
-set classify+='  ::.git/,,*.git/,,.gitignore,,.gitconfig,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::,  ::*.css,,*.scss::'
+set classify+='  ::.git/,,*.git/,,.gitignore,,.gitconfig,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html::,  ::*.xml::,  ::*.css,,*.scss::'
 set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
 set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el,,*.elc,,*.eln::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
 set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::/^rc|rc$/::,  ::*.properties::,  ::*.log::,  ::/json|yml$/::,  ::*.toml::'

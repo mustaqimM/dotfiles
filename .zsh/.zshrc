@@ -120,7 +120,7 @@ zi snippet "OMZ::plugins/emacs"
 zi lucid light-mode wait \
   atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS; \
   dircolors -b LS_COLORS > c.zsh" \
-  atpull'%atclone' pick"c.zsh" nocompile'!' atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"' for \
+  atpull'%atclone' pick"c.zsh" nocompile'!' atload'zstyle ":completion:*:default" list-colors "${(s.:.)LS_COLORS}"' for \
   "trapd00r/LS_COLORS"
 
 # zi light "Aloxaf/fzf-tab"
@@ -303,7 +303,11 @@ zstyle ':completion:*'               completer _complete _match _approximate
 zstyle ':completion:*:match:*'       original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
+zstyle '*:matches'                   group 'yes'
 zstyle ':completion:*'               group-name ''
+# zstyle ':completion:*:*:-command-:*' group-order builtins functions aliases commands
+zstyle ':completion:*'               group-order files directories
+
 zstyle ':completion:*'               list-dirs-first true
 zstyle ':completion:*'               auto-description
 zstyle ':completion:*'               file-patterns '%p:globbed-files' '*(-/):directories' '*:all-files'

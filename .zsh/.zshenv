@@ -25,8 +25,8 @@ export LIBVA_DRIVER_NAME=i965
 
 export EDITOR="/bin/emacsclient -nw"
 
-export TERM=xterm-256color
-export COLORTERM=truecolor
+# export TERM=xterm-256color
+# export COLORTERM=truecolor
 
 export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -H -c always"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --max-depth 5"

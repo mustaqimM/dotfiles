@@ -1873,7 +1873,6 @@
 : 1579666047:0;rustup component add rustfmt-preview
 : 1579666275:0;sudo xbps-remove -R racer
 : 1579685217:0;yadm diff .config/ranger/rifle.conf
-: 1579685651:0;cargo clippy
 : 1579706839:0;sudo xbps-install -Suv
 : 1579725012:0;sk
 : 1579725239:0;man sk
@@ -4341,7 +4340,6 @@ done
 : 1637479409:0;swaymsg reload
 : 1637481989:0;/q
 : 1637561073:0;svlogtail | rg cron
-: 1637603300:0;ttyqr -b $(wl-paste)
 : 1637642292:0;doom clean
 : 1637652464:0;gco -b new_package_jconvolver
 : 1637652479:0;xnew jconvolver
@@ -5010,7 +5008,6 @@ q
 : 1649822903:0;free -h
 : 1649991987:0;sudo lspci -vvvk
 : 1650129229:0;e common/shlibs
-: 1650202604:0;zcalc
 : 1650210608:0;/bin/emacs -bg '#17191a' --daemon
 : 1650269739:0;sudo sv status /var/service/*
 : 1650354658:0;sudo powertop --calibrate
@@ -5039,7 +5036,6 @@ q
 : 1650698883:0;xbps-query -f openal
 : 1650698893:0;xbps-query -f libopenal
 : 1650699022:0;cp /usr/share/examples/libopenal/alsoftrc.sample $HOME/.alsoftrc
-: 1650699026:0;e .alsoftrc
 : 1650717784:0;cat /proc/cmdline
 : 1650717853:0;e /etc/default/grub
 : 1650718044:0;e ~/.config/foot/foot.ini
@@ -5076,10 +5072,8 @@ q
 : 1651157470:0;gd --staged
 : 1651157489:0;delta --diff-so-fancy --show-config
 : 1651158309:0;yadm
-: 1651240672:0;tmux attach || tmux
 : 1651241167:0;sudo sv up udevmon
 : 1651248732:0;swaymsg -t get_tree | fzf
-: 1651296819:0;fc-cache -fv
 : 1651300040:0;sudo vkpurge rm all
 : 1651326072:0;./xbps-src pkg lapce
 : 1651326712:0;xbps-query -Rs rust
@@ -5105,23 +5099,18 @@ q
 : 1651564038:0;
 : 1651573836:0;zi cclear
 : 1651574292:0;zi creinstall starship/starship
-: 1651589595:0;pkill emacs
 : 1651594176:0;watch -n.1 "rg 'cpu MHz' /proc/cpuinfo"
 : 1651597283:0;git ls-files
-: 1651641291:0;doom upgrade
 : 1651643696:0;zi update rust-lang/rust-analyzer
 : 1651646749:0;cargo test -- --test-threads=1
 : 1651646823:0;cargo test -- --show-output
 : 1651647106:0;cargo test it_works
 : 1651647244:0;cargo test -- --ignored
 : 1651647483:0;cargo test -- --include-ignored
-: 1651647616:0;e src/lib.rs
 : 1651647993:0;mkdir tests
 : 1651648035:0;e tests/integration_test.rs
 : 1651648430:0;e tests/common/mod.rs
-: 1651648465:0;cargo test
 : 1651735095:0;zi delete
-: 1651735811:0;ls -al
 : 1651737098:0;sudo powertop --auto-tune
 : 1651737109:0;sudo powertop
 : 1651739551:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
@@ -5144,53 +5133,72 @@ q
 : 1651910160:0;yadm add ~/.zsh/functions/^*.zwc
 : 1651910858:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
 : 1651911060:0;fzf_log
-: 1651911250:0;cd
-: 1651911427:0;glo
 : 1651911820:0;jackett
 : 1651912074:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
 : 1651912718:0;fd '\.(jpe?|pn)g' -x cjxl {} {.}.jxl
 : 1651913934:0;git pull --rebase upstream master
 : 1651917601:0;man mpv
 : 1651922447:0;dl
-: 1651928334:0;gaa
-: 1651938589:0;yt --list-formats "$(wl-paste)"
-: 1651950431:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
-: 1651983090:0;crontab -l
-: 1651983263:0;crontab -e
 : 1651987296:0;rustup update
 : 1652001128:0;zi
 : 1652002010:0;zi delete rust-lang/rust-analyzer
 : 1652002060:0;zi times -a
-: 1652003216:0;plain show
-: 1652004944:0;cargo run the poem.text
-: 1652004997:0;fglo
-: 1652005160:0;ping google.com
-: 1652006231:0;htop
 : 1652007401:0;starship timings
 : 1652007636:0;man vifm
 : 1652008205:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
 : 1652008212:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1652008231:0;yadm commit -a -m "update"
-: 1652008392:0;yadm push
-: 1652011081:0;gst
 : 1652013371:0;echo $PATH | tr ":" "\n" | nl
 : 1652013379:0;echo $FPATH | tr ":" "\n" | nl
 : 1652014305:0;rust-analyzer --version
-: 1652024912:0;cargo run
-: 1652025153:0;e src/main.rs
 : 1652029182:0;sleep 1; timeout 5s wf-recorder -f recording.mp4
-: 1652029272:0;wf-recorder -f recording.mp4
-: 1652029568:0;bandwhich
-: 1652036934:0;tlp-stat -t | rg temp
-: 1652065818:0;f
-: 1652066154:0;reload
-: 1652066155:0;gd
-: 1652066369:0;sudo xbps-install -Suvy
-: 1652066399:0;zi update -p
-: 1652067087:0;yadm status
-: 1652067089:0;yadm diff
-: 1652067386:0;zi times
-: 1652067766:0;yadm status
-: 1652067780:0;yadm diff
-: 1652067820:0;yadm status
 : 1652067835:0;yadm commit -a -m "update"
+: 1652067852:0;yadm push
+: 1652080985:0;pkill emacs
+: 1652080990:0;doom upgrade
+: 1652098780:0;sudo xbps-install zellij
+: 1652098887:0;ls -al
+: 1652099218:0;zellij
+: 1652099243:0;zellij setup --dump-config > ~/.config/zellij/config.yaml
+: 1652099253:0;e ~/.config/zellij/config.yaml
+: 1652099320:0;zellij 
+: 1652099323:0;cd
+: 1652110003:0;ttyqr -b $(wl-paste)
+: 1652116257:0;crontab -e
+: 1652116423:0;fc-cache -fv
+: 1652117440:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "23:59 today" +%s)"
+: 1652151548:0;bandwhich
+: 1652162250:0;e wiki.txt
+: 1652201280:0;crontab -l
+: 1652239410:0;sudo xbps-install -Suvy
+: 1652244933:0;zi update -p
+: 1652245884:0;yadm status
+: 1652248892:0;plain show
+: 1652248965:0;e .alsoftrc
+: 1652262042:0;e src/lib.rs
+: 1652262442:0;tmux attach || tmux
+: 1652263929:0;cargo test
+: 1652263933:0;cargo run the poem.text
+: 1652272740:0;e src/main.rs
+: 1652272915:0;cargo run 
+: 1652280888:0;gd
+: 1652281013:0;cargo run
+: 1652281399:0;git switch -c Cacher_HashMap
+: 1652282792:0;cargo clippy
+: 1652282841:0;glo
+: 1652282878:0;gst
+: 1652282881:0;gaa
+: 1652282893:0;gsw main
+: 1652283044:0;fglo
+: 1652285276:0;wf-recorder -f recording.mp4
+: 1652325164:0;yt --list-formats "$(wl-paste)"
+: 1652332136:0;zcalc
+: 1652334055:0;ping google.com
+: 1652355561:0;f
+: 1652356315:0;tlp-stat -t | rg temp
+: 1652367183:0;zi times
+: 1652367251:0;yadm diff
+: 1652367553:0;htop
+: 1652367556:0;reload
+: 1652367980:0;yadm diff
+: 1652367987:0;yadm status
+: 1652368034:0;yadm commit -a -m "update"

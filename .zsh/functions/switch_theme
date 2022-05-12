@@ -29,7 +29,7 @@ switch_theme() {
         sed -i 's|Tomorrow-Night|Tomorrow|' ~/.gitconfig
         # kitty +kitten themes --reload-in=all Tomorrow
         # sed -i 's|dark.conf|light.conf|' ~/.config/kitty/kitty.conf
-        sed -i 's|dark|light|' ~/.config/foot/foot.ini; pkill foot; foot tmux attach -t 0
+        # sed -i 's|dark|light|' ~/.config/foot/foot.ini; pkill foot; foot tmux attach -t 0
     }
     dark_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]DARK"
@@ -50,7 +50,7 @@ switch_theme() {
         sed -i 's|Tomorrow|Tomorrow-Night|' ~/.gitconfig
         # kitty +kitten themes --reload-in=all 'Tomorrow Night'
         # sed -i 's|light.conf|dark.conf|' ~/.config/kitty/kitty.conf
-        sed -i 's|light|dark|' ~/.config/foot/foot.ini; pkill foot; foot tmux attach -t 0
+        # sed -i 's|light|dark|' ~/.config/foot/foot.ini; pkill foot; foot tmux attach -t 0
     }
 
     case "$1" in
