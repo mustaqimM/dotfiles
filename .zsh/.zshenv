@@ -13,7 +13,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_QPA_PLATFORM=wayland
 export GTK_USE_PORTAL=0
 
-# export BROWSER="firefox"
+# export BROWSER="/opt/firefox/firefox"
 export MOZ_ENABLE_WAYLAND=1
 
 export TZ=Africa/Johannesburg
@@ -32,7 +32,7 @@ export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -H -c always"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --max-depth 5"
 export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
 export FZF_DEFAULT_OPTS="--layout=reverse --ansi --prompt='› ' --pointer='›' --marker='›'
- --color=bg+:18,fg+:015,spinner:yellow,hl:016:bold,hl+:blue,info:yellow,pointer:yellow,marker:green,prompt:blue"
+ --color=bg+:18,fg+:015,spinner:yellow,hl:016:bold,hl+:red,info:yellow,pointer:yellow,marker:green,prompt:blue"
 export ENHANCD_FILTER='fzf'
 export ENHANCD_COMPLETION_BEHAVIOR=list
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
@@ -46,7 +46,7 @@ export CHTSH_QUERY_OPTIONS="style=algol_nu"
 export GNUPGHOME=$HOME/.config/gnupg
 export GPG_TTY=$(tty)
 export MANPAGER='nvim +Man!'
-export MANPATH=/usr/share/man:/opt/texlive/2020/texmf-dist/doc/man
+export MANPATH=/usr/share/man:/opt/texlive/2022/texmf-dist/doc/man
 export DOCKER_HOST=127.0.0.1:2375
 export DOOMDIR="~/.config/doom"
 export FEH_SKIP_MAGIC=1
@@ -87,7 +87,7 @@ path=(
     $HOME/.local/bin/scripts
     # $ANDROID_HOME/tools
     # $ANDROID_HOME/platform-tools
-    # /opt/texlive/2020/bin/x86_64-linux
+    /opt/texlive/2022/bin/x86_64-linux
     $JAVA_HOME/bin
     $path
 )
@@ -104,6 +104,7 @@ path=(
 alias cat=bat
 alias chts='cht --shell'
 alias f=vifm
+alias firefox=/opt/firefox/firefox
 alias gpg=gpg2
 alias jackett='~/.local/bin/Jackett/jackett'
 # alias ktlint='ktlint --android --color --relative -v'

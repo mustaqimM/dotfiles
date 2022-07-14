@@ -4,7 +4,6 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
-
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
@@ -418,3 +417,5 @@ set -g @extrakto_key 'y'
 #
 # "$@"
 # # /!\ do not remove the previous line
+
+set -ga terminal-overrides ",alacritty:Tc"

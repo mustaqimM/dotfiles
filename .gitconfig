@@ -11,7 +11,7 @@
 [core]
   editor = emacsclient
   pager = delta
-  # pager = diff-so-fancy | less --tabs=4 -RFX
+  # pager = dsf | less --tabs=4 -RFX
   autocrlf = input
   # safecrlf = true
 
@@ -22,39 +22,46 @@
   gpgsign = true
   verbose = true
 
-[merge]
-  conflictstyle = diff3
-
 # [diff]
 #   colorMoved = default
 
+[blame]
+  coloring = highlightRecent
+
+[merge]
+  conflictstyle = diff3
+
 [interactive]
   diffFilter = delta --color-only
-# [include]
-#   path = /home/mustaqim/.config/delta/themes.gitconfig
+[include]
+  path = /home/mustaqim/.config/delta/themes.gitconfig
 [delta]
-  features                      = decorations
+  features                      = zebra-dark decorations
+  syntax-theme                  = Tomorrow-Night
   commit-style                  = bold yellow
   file-style                    = bright-black
-  minus-style                   = syntax "#3f0001"
-  # minus-non-emph-style          = bold red
-  # minus-emph-style              = bold red 52
-  minus-empty-line-marker-style = normal "#3f0001"
-  zero-style                    = syntax
-  plus-style                    = syntax "#003800"
+  # minus-style                   = syntax 52
+  # minus-emph-style              = syntax 9
+  # # minus-non-emph-style          = bold red
+  # # minus-empty-line-marker-style = normal "#3f0001"
+  # plus-style                    = syntax 22
+  # plus-emph-style               = syntax 28
   # plus-non-emph-style           = bold green
-  # plus-emph-style               = bold green 22
-  plus-empty-line-marker-style  = normal "#002800"
+  # plus-empty-line-marker-style  = normal "#002800"
+  map-styles = \
+    bold purple => syntax magenta, \
+    bold blue => syntax blue, \
+    bold cyan => syntax blue, \
+    bold yellow => syntax yellow
+  zero-style                    = syntax
+  # whitespace-error-style        = reverse red
   grep-file-style               = blue
   grep-line-number-style        = blue
-  whitespace-error-style        = reverse red
   # blame-palette                 = #000000 #222222 #444444
   right-arrow                   = to
-  map-styles                    = bold purple => syntax magenta, bold cyan => syntax blue
-  syntax-theme                  = Tomorrow-Night
+
 [delta "decorations"]
   commit-decoration-style       = magenta box
-  file-style                    = blue
   file-decoration-style         = 19 ol ul
   hunk-header-decoration-style  = blue box
 [delta "line-numbers"]
@@ -83,9 +90,6 @@
 #   old = red bold
 #   new = green bold
 #   whitespace = red reverse
-
-# [blame]
-#   coloring = highlightRecent
 
 [url "git@github.com:"]
   insteadOf = "gh:"

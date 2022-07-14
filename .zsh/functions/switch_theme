@@ -3,8 +3,8 @@
 autoload colors && colors
 
 switch_theme() {
-    gtk_light_theme="WhiteSur-light-solid"
-    gtk_dark_theme="WhiteSur-dark-solid"
+    gtk_light_theme="WhiteSur-Light-solid"
+    gtk_dark_theme="WhiteSur-Dark-solid"
     qt_light_theme="WhiteSur-solid"
     qt_dark_theme="WhiteSur-solidDark"
     current_theme=$(gsettings get org.gnome.desktop.interface gtk-theme | tr -d "'")
@@ -26,7 +26,7 @@ switch_theme() {
         sed -i 's|"dark"|"light"|' ~/.config/rofi/config.rasi
         sed -i 's|Papirus-Dark|Papirus-Light|g' ~/.config/dunst/dunstrc
         pkill dunst; mv ~/.config/dunst/dunstrc.d/dark.conf ~/.config/dunst/dunstrc.d/dark.conf.BAK; dunst &
-        sed -i 's|Tomorrow-Night|Tomorrow|' ~/.gitconfig
+        sed -i -e 's|Tomorrow-Night|Tomorrow|' -e 's|zebra-dark|zebra-light|' ~/.gitconfig
         # kitty +kitten themes --reload-in=all Tomorrow
         # sed -i 's|dark.conf|light.conf|' ~/.config/kitty/kitty.conf
         # sed -i 's|dark|light|' ~/.config/foot/foot.ini; pkill foot; foot tmux attach -t 0
@@ -47,7 +47,7 @@ switch_theme() {
         sed -i 's|"light"|"dark"|' ~/.config/rofi/config.rasi
         sed -i 's|Papirus-Light|Papirus-Dark|g' ~/.config/dunst/dunstrc
         pkill dunst; mv ~/.config/dunst/dunstrc.d/dark.conf.BAK ~/.config/dunst/dunstrc.d/dark.conf; dunst &
-        sed -i 's|Tomorrow|Tomorrow-Night|' ~/.gitconfig
+        sed -i -e 's|Tomorrow|Tomorrow-Night|' -e 's|zebra-light|zebra-dark|' ~/.gitconfig
         # kitty +kitten themes --reload-in=all 'Tomorrow Night'
         # sed -i 's|light.conf|dark.conf|' ~/.config/kitty/kitty.conf
         # sed -i 's|light|dark|' ~/.config/foot/foot.ini; pkill foot; foot tmux attach -t 0

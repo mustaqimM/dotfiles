@@ -142,7 +142,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol-qt"
+        "on-click": "pavucontrol-qt",
     },
     "custom/media": {
         "format": "{icon} {}",

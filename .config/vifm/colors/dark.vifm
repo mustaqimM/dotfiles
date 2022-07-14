@@ -54,7 +54,7 @@ highlight /^.*\.(err|error|stderr)$/I cterm=bold ctermfg=160 ctermbg=default
 highlight /^.*\.(iml|key|odp|pps|ppt|ppts|pptx)$/I cterm=none ctermfg=166 ctermbg=default
 highlight /^.*\.(pptsm|pptxm)$/I cterm=underline ctermfg=166 ctermbg=default
 highlight /^.*\.(tf|tfstate|tfvars)$/I cterm=none ctermfg=168 ctermbg=default
-highlight /^.*\.(bib|dhall|fxml|json|jsonl|msg|pgn|rdata|rss|toml|xml|yaml|yml)$/I cterm=none ctermfg=178 ctermbg=default
+highlight /^.*\.(bib|dhall|fxml|geojson|json|jsonl|msg|pgn|rdata|rss|toml|xml|yaml|yml)$/I cterm=none ctermfg=178 ctermbg=default
 highlight /^.*\.(etx|info|markdown|md|mkd|nfo|pod|rst|tex|textile)$/I cterm=none ctermfg=011 ctermbg=default
 highlight /^.*\.(log)$/I cterm=none ctermfg=190 ctermbg=default
 highlight /^.*(\.asc|\.bfe|\.enc|\.gpg|\.p12|\.p7s|\.pem|\.pgp|\.sig|\.signature|id_dsa|id_ecdsa|id_ed25519|id_rsa)$/I cterm=none ctermfg=192 ctermbg=black

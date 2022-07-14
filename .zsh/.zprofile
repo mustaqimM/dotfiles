@@ -8,7 +8,9 @@
 
 if [ ! "$DISPLAY" ]; then
   LIBSEAT_BACKEND=logind dbus-run-session sway
-  # sx sh ~/.xinitrc 2> .xsession-errors
+  # gnome-shell --wayland
+  # XDG_SESSION_TYPE=wayland dbus-run-session gnome-session
   # XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland
+  # sx sh ~/.xinitrc 2> .xsession-errors
   # startx 2> .xsession-errors
 fi

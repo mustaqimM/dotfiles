@@ -10,15 +10,15 @@
 
   ▓▓▓▓▓▓▓▓▓▓
  ░▓ about  ▓ linux config files
- ░▓ author ▓ mustaqim
  ░▓ os     ▓ https://voidlinux.org/
  ░▓▓▓▓▓▓▓▓▓▓
  ░░░░░░░░░░
 
- swaywm          > Tiling Wayland compositor
- editor          > doom emacs
- term            > alacritty, zsh, zinit, tmux
- font            >  Iosevka, SF Pro
+ wm              > swaywm
+ editor          > Doom emacs
+ term            > Alacritty (zsh, zinit, tmux)
+ font            > Iosevka, SF Pro
+ colours         > Tomorrow {Day,Night}
  ```
 
 The dotfiles in this repository are managed by [yadm](https://thelocehiliosan.github.io/yadm/)

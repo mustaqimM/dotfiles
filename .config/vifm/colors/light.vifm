@@ -22,7 +22,7 @@ highlight TabLineSel cterm=bold ctermfg=255 ctermbg=27
 highlight StatusLine cterm=bold ctermfg=007 ctermbg=18
 highlight WildMenu cterm=underline,reverse ctermfg=236 ctermbg=255
 highlight CmdLine cterm=none ctermfg=236 ctermbg=255
-highlight ErrorMsg cterm=none ctermfg=red ctermbg=236
+highlight ErrorMsg cterm=none ctermfg=red ctermbg=default
 highlight Border cterm=none ctermfg=236 ctermbg=255
 highlight JobLine cterm=bold,reverse ctermfg=black ctermbg=red
 highlight SuggestBox cterm=bold ctermfg=default ctermbg=default
@@ -54,9 +54,9 @@ highlight /^.*\.(err|error|stderr)$/I cterm=bold ctermfg=160 ctermbg=default
 highlight /^.*\.(iml|key|odp|pps|ppt|ppts|pptx)$/I cterm=none ctermfg=166 ctermbg=default
 highlight /^.*\.(pptsm|pptxm)$/I cterm=underline ctermfg=166 ctermbg=default
 highlight /^.*\.(tf|tfstate|tfvars)$/I cterm=none ctermfg=168 ctermbg=default
-highlight /^.*\.(bib|dhall|fxml|json|jsonl|msg|pgn|rdata|rss|toml|xml|yaml|yml)$/I cterm=none ctermfg=178 ctermbg=default
+highlight /^.*\.(bib|dhall|fxml|geojson|json|jsonl|msg|pgn|rdata|rss|toml|xml|yaml|yml)$/I cterm=none ctermfg=178 ctermbg=default
 highlight /^.*\.(etx|info|markdown|md|mkd|nfo|pod|rst|tex|textile)$/I cterm=none ctermfg=yellow ctermbg=default
-highlight /^.*\.(log)$/I cterm=none ctermfg=190 ctermbg=default
+highlight /^.*\.(log)$/I cterm=none ctermfg=11 ctermbg=default
 highlight /^.*(\.asc|\.bfe|\.enc|\.gpg|\.p12|\.p7s|\.pem|\.pgp|\.sig|\.signature|id_dsa|id_ecdsa|id_ed25519|id_rsa)$/I ctermfg=192 ctermbg=default
 highlight /^.*\.(git)$/I cterm=none ctermfg=197 ctermbg=default
 highlight /^.*\.(xib)$/I cterm=none ctermfg=208 ctermbg=default
@@ -64,7 +64,7 @@ highlight /^.*\.(32x|a00|a52|a64|a78|adf|atr|cdi|fm2|gb|gba|gbc|gel|gg|ggl|ipk|j
 highlight /^.*\.(apk|bsp|cab|crate|deb|dmg|ipa|jad|jar|pak|pk3|rpm|vdf|vpk|xbps)$/I cterm=none ctermfg=215 ctermbg=default
 highlight /^.*\.(dwg|ply|stl|wrl)$/I cterm=none ctermfg=216 ctermbg=default
 highlight /^.*\.(scpt|swift)$/I cterm=none ctermfg=219 ctermbg=default
-highlight /^.*(authors|changes|contributors|copying|copyright|history|install|license|notice|patents|readme|readme.md|readme.rst|version)$/I cterm=none ctermfg=178 ctermbg=default
+highlight /^.*(authors|changes|contributors|copying|copyright|history|install|license|notice|patents|readme|readme.md|readme.rst|version)$/I cterm=none ctermfg=11 ctermbg=default
 highlight /^.*\.(msql|mysql|pgsql|sql)$/I cterm=none ctermfg=222 ctermbg=default
 highlight /^.*(\.cfusertextencoding|\.ds_store|\.localized|\.part|\.part-Frag[0-9]{0,3}|\.r[0-9]{0,2}|\.z[0-9]{0,2}|\.zx[0-9]{0,2}|coderesources|pkginfo|!qB)$/I cterm=none ctermfg=239 ctermbg=default
 highlight /^.*(\.dockerignore|\.gitattributes|\.gitignore|\.gitmodules|\.pyc|pm_to_blib)$/I cterm=none ctermfg=240 ctermbg=default

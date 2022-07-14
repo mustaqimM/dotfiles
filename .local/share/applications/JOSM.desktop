@@ -5,7 +5,7 @@ Name=JOSM
 GenericName=Java OpenStreetMap Editor
 Comment=Extensible off-line editor for OpenStreetMap (OSM)
 Icon=josm
-Exec=zsh -c 'env GTK_THEME=Yaru-dark /usr/lib/jvm/jbrsdk/bin/java -jar /home/mustaqim/.local/bin/josm-tested.jar'
+Exec=zsh -c 'env GTK_THEME=Yaru-blue-dark /usr/lib/jvm/jbrsdk/bin/java -jar /home/mustaqim/.local/bin/josm-tested.jar'
 Terminal=false
 MimeType=application/geo+json;application/gpx+xml;application/gzip;application/x-bzip;application/x-gpx+xml;application/x-josm-session+xml;application/x-josm-session+zip;application/x-osm+xml;application/x-xz;application/zip;x-scheme-handler/geo;
 StartupNotify=true

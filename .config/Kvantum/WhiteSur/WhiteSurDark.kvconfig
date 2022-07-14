@@ -58,9 +58,9 @@ reduce_window_opacity=25
 respect_DE=true
 scrollbar_in_view=false
 spin_button_width=16
-submenu_delay=0
+submenu_delay=250
 transient_groove=true
-tree_branch_line=false
+tree_branch_line=true
 no_inactiveness=false
 reduce_menu_opacity=25
 click_behavior=0
@@ -71,6 +71,8 @@ saturation=1.00
 scrollable_menu=true
 shadowless_popup=false
 drag_from_buttons=false
+menu_blur_radius=9
+tooltip_blur_radius=6
 
 [GeneralColors]
 window.color=#242424
@@ -124,6 +126,7 @@ scroll_jump_workaround=false
 centered_forms=false
 kinetic_scrolling=false
 noninteger_translucency=false
+blur_only_active_window=false
 style_vertical_toolbars=false
 
 [PanelButtonCommand]
@@ -343,10 +346,10 @@ frame.element=toolbar
 text.normal.color=#dedede
 text.focus.color=#ffffff
 text.normal.inactive.color=#dedede74
-frame.left=4
-frame.right=0
+frame.left=6
+frame.right=6
 frame.top=0
-frame.bottom=0
+frame.bottom=1
 frame.expansion=0
 
 [Slider]

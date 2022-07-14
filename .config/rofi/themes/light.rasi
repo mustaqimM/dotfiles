@@ -162,11 +162,13 @@ num-filtered-rows,textbox-num-sep,num-rows,case-indicator {
   font: "SF Pro Text Regular 9";
 }
 entry {
+  /* background-color: #5795e620; */
   text-color:        var(text);
   cursor:            text;
   spacing:           0;
   placeholder-color: var(emphasis);
   placeholder:       "";
+  /* border-radius: 12px; */
 }
 prompt {
   margin: 2 0 0 0;

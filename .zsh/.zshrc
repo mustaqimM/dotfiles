@@ -71,7 +71,7 @@ zle_highlight=('paste:reverse')
 # zi ice depth'1' lucid atinit'source ~/.zsh/.p10k-lean-8colors.zsh' nocd atload"!_p9k_do_nothing _p9k_precmd"
 # zi light romkatv/powerlevel10k
 PROMPT=$'\n'"%F{blue}~%f"$'\n'"$ "
-zi lucid light-mode from"gh-r" nocompile sbin"starship" \
+zi lucid light-mode from"gh-r" bpick"*linux-gnu.tar.gz" nocompile sbin"starship" \
   atclone"./starship init zsh > init.zsh; zcompile init.zsh; \
   ./starship completions zsh > _starship" atpull"%atclone" for \
   "starship/starship"
@@ -93,7 +93,8 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]' for \
   "OMZ::plugins/git-extras/git-extras.plugin.zsh" \
   "wfxr/forgit"
 
-zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]' atload' \
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]' \
+ atinit'
   zstyle ":omz:plugins:ssh-agent" quiet yes \
   zstyle ":omz:plugins:ssh-agent" identities GitHub GitLab' for \
   "OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh"
@@ -175,8 +176,8 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completio
 # zi ice wait"2" lucid id-as"tldr" as"program" pick"tldr"
 # zi snippet "https://raw.githubusercontent.com/raylee/tldr/master/tldr"
 
-# zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ps*]} ]]' lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
-# zi light "pixelb/ps_mem"
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ps*]} ]]' lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
+zi light "pixelb/ps_mem"
 
 # zi ice lucid as"program" pick"pfetch"
 # zi light "dylanaraps/pfetch"
@@ -201,7 +202,8 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completio
 # zi ice lucid blockf
 # zi light "ziglang/shell-completions"
 
-zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)rust*]} ]]' from'gh-r' nocompile sbin'*->rust-analyzer' for \
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)rust*]} ]]' \
+  from'gh-r' bpick"*linux-gnu.gz" nocompile sbin'*->rust-analyzer' for \
   rust-lang/rust-analyzer
 
 # zi light romkatv/zsh-prompt-benchmark
@@ -289,10 +291,10 @@ zstyle ':completion:*'               menu select=2 search
 
 bindkey -M menuselect '/'            history-incremental-search-forward
 bindkey -M menuselect '?'            history-incremental-search-backward
-bindkey -M menuselect '^H'           vi-backward-char
-bindkey -M menuselect '^K'           vi-up-line-or-history
-bindkey -M menuselect '^J'           vi-down-line-or-history
-bindkey -M menuselect '^L'           vi-forward-char
+bindkey -M menuselect '^B'           vi-backward-char
+bindkey -M menuselect '^P'           vi-up-line-or-history
+bindkey -M menuselect '^N'           vi-down-line-or-history
+bindkey -M menuselect '^F'           vi-forward-char
 
 zstyle ':completion:*'               matcher-list '' \
        'm:{a-z\-}={A-Z\_}' \
@@ -337,7 +339,7 @@ autoload zcalc
 zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl darkhttpd direnv docker \
   dunst emacs feh ffmpeg ffprobe flask fsck.ext4 fzf gocryptfs hexyl highlight histdb inkscape ktlint light lighttpd \
   lsd mimeo megadl mkfs.vfat nzbget notify-send pamixer pip pip3 pipx psmem pw-cli rofi rustc \
-  tlp tlp-stat \
+  tlmgr tlp tlp-stat \
   vue zstd
 
 # zi creinstall -Q $ZDOTDIR/completions

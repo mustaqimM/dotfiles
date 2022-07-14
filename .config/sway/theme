@@ -4,7 +4,7 @@ include dark
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
-client.focused          $base05 $base0D $base00 $base0D $base01
+client.focused          $base01 $base00 $base07 $base0D $base01
 client.focused_inactive $base01 $base01 $base05 $base03 $base01
 client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
@@ -18,7 +18,7 @@ for_window [shell="x_wayland"] title_format "%class - %title"
 # Borders
 default_border pixel 1
 default_floating_border pixel 1
-# smart_gaps on
+smart_gaps on
 hide_edge_borders --i3 both
 
 # Hide titlebar on tabbed windows

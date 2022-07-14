@@ -1,0 +1,17 @@
+-f '22+251/247+251/bestvideo[vcodec=?vp9]+bestaudio[acodec=?opus]/best' # 398+251/
+--sub-langs=en
+--sub-format=best
+# --write-subs
+# --write-auto-sub
+--embed-subs
+--embed-metadata
+--embed-chapters
+# --embed-thumbnail
+--merge-output-format mkv
+# --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0'
+--external-downloader aria2c
+--external-downloader-args 'aria2c: --no-conf --continue -x16 -s16 -j16 --summary-interval=0 --download-result=hide'
+--output-na-placeholder ''
+-o '%(playlist_index|)s%(playlist_index& -)s %(title)s.%(ext)s'
+--sponsorblock-mark all
+-i

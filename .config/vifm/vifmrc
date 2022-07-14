@@ -45,7 +45,7 @@ set undolevels=100
 set novimhelp
 
 " don't allow automatic running of executable files
-set norunexec
+" set norunexec
 
 " Selected color scheme
 colorscheme dark
@@ -392,7 +392,7 @@ filetype <image/*>
        " \ {View in imv}
        " \ imv -b 000000 * -n %f %i &,
        \ {View in feh}
-       \ feh -g 1024x576 --scale-down --start-at %c %i &,
+       \ feh --scale-down --start-at %c %i &,
        " \ {View in sxiv}
        " \ sxiv %f,
 " fileviewer <image/*>
@@ -509,14 +509,14 @@ filetype <text/*> emacs
 fileviewer <text/*> bat -p --color=always %c
 " fileviewer <text/*> highlight -q -O truecolor --replace-tabs=2 --style=base16/tomorrow-night %c
 
-" filetype * xdg-open %c &
+filetype * xdg-open %c &
 " filetype * mimeo %c %i &
 " fileviewer * file -b %c
 
 set classify='  :dir:,  :exe:,  :reg:,  :link:,  ::*.exe::,  ::*.apk::'
 " code
-set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.rkt::'
-set classify+='  ::.git/,,*.git/,,.gitignore,,.gitconfig,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html::,  ::*.xml::,  ::*.css,,*.scss::'
+set classify+='  ::../::,  ::*.sh,,*.zsh::,  ::*.[hc]pp::,  ::*.c::,  ::*.h::,  ::/^copying|license|NOTICE$/::,  ::*.py,,*.ipynb::,  ::*.rkt::,  ::/hdl$/::'
+set classify+='  ::.git/,,*.git/,,.gitignore,,.gitconfig,,.gitattributes,,.github/::,  ::*.gradle::,  ::*.htm,,*.html,,**.[sx]html::,  ::*.xml::,  ::*.css,,*.scss::'
 set classify+='  ::*.gd,,*.godot,,*.gdns,,*.tscn,,*.tres::,  ::*.java::, ::*.go::,  ::*.lua::,  ::*.vue::,  ::*.ts::,  ::*.jar::,  ::*.rb,,Gemfile::,  ::*.kt::'
 set classify+='  ::*.diff,,*.patch::,  ::*.tex::,  ::*.el,,*.elc,,*.eln::,  ::*.cls::,  ::Dockerfile::,  ::*.rs::,  ::*.js::'
 set classify+='  ::*.conf,,*.ini,,*.cfg,,*.config,,config::,  ::/^rc|rc$/::,  ::*.properties::,  ::*.log::,  ::/json|yml$/::,  ::*.toml::'
