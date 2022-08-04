@@ -4503,7 +4503,6 @@ done
 : 1640942558:0;zi cdclear
 : 1640952247:0;fc-list | rg "icon" | cut -d ":" -f2
 : 1641009648:0;nvm install v17.3.0
-: 1641010306:0;pnpm env use --global latest
 : 1641016252:0;sudo xbps-install telegram-desktop
 : 1641026132:0;sudo xbps-install broot
 : 1641027102:0;br
@@ -4534,7 +4533,6 @@ done
 : 1641488267:0;tmux list-keys | fzf
 : 1641530980:0;e ~/.config/mpv/input.conf
 : 1641532784:0;sudo xbps-install wireplumber
-: 1641550343:0;pnpm run test
 : 1641573025:0;sudo xbps-install kmonad
 : 1641574272:0;sudo groupadd uinput
 : 1641574360:0;sudo usermod -aG uinput $USER
@@ -5118,9 +5116,7 @@ done
 : 1655880495:0;sudo rm /var/service/gdm
 : 1655880790:0;yt "$(wl-paste)"
 : 1655916048:0;swaymsg -t get_tree | fzf
-: 1655970498:0;git pull --rebase upstream master
 : 1655970626:0;./xbps-src pkg river
-: 1655972840:0;gsw master
 : 1655972937:0;e srcpkgs/hyprland/template
 : 1655973240:0;./xbps-src pkg hyprland
 : 1656133627:0;psmem -p $(pgrep -d, -u $USER) -S
@@ -5179,7 +5175,6 @@ done
 : 1657616135:0;man zathura
 : 1657636191:0;sudo sv restart iwd
 : 1657778760:0;fd '\.(jpe?|pn)g' -d 1 -x convert {} {.}.webp
-: 1657810068:0;yadm add ~/.config/yt-dlp/config
 : 1657810108:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,WhiteSur,WhiteSur-solid}
 : 1657810113:0;yadm add ~/.config/aria2/aria2.conf
 : 1657810118:0;yadm add ~/.config/bat
@@ -5189,15 +5184,11 @@ done
 : 1657810137:0;yadm add ~/.config/rofi
 : 1657810142:0;yadm add ~/.config/starship.toml
 : 1657810147:0;yadm add ~/.config/sway
-: 1657810151:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1657810154:0;yadm add ~/.config/waybar
 : 1657810159:0;yadm add ~/.config/zathura/zathurarc
 : 1657810169:0;yadm add ~/.gitconfig
 : 1657810174:0;yadm add ~/.github/README.md
 : 1657810203:0;yadm add ~/.tmux.conf.local
-: 1657810214:0;yadm diff
-: 1657810310:0;yadm status
-: 1657810377:0;yadm push
 : 1657863643:0;man mpv
 : 1657889906:0;xdg-mime query filetype $(fzf)
 : 1657946002:0;iwctl 
@@ -5206,7 +5197,6 @@ done
 : 1658304378:0;man yt-dlp
 : 1658305604:0;gco $(gb | fzf)
 : 1658389810:0;yt -f '247+251' "$(wl-paste)"
-: 1658506459:0;ping google.com
 : 1658570445:0;zi times
 : 1658578001:0;sudo sv up udevmon
 : 1658580971:0;sudo sv restart unbound
@@ -5221,24 +5211,16 @@ done
 : 1659110559:0;pnpm install
 : 1659162375:0;e src/main.rs
 : 1659162784:0;doom upgrade
-: 1659163278:0;cd
 : 1659200700:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "21:59 today" +%s)"
 : 1659242693:0;crontab -l
 : 1659261106:0;zellij
-: 1659262267:0;htop
 : 1659277881:0;tmux list-keys -T prefixless
-: 1659328716:0;yt --list-formats "$(wl-paste)"
 : 1659329434:0;ffprobe "$(fd -d 1 -c always | fzf)"
-: 1659329583:0;starship timings
-: 1659354616:0;tmux attach || tmux
 : 1659364465:0;doom sync
-: 1659441839:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
 : 1659455246:0;zi update -p
 : 1659515049:0;pnpm run start
 : 1659515911:0;jackett
 : 1659518614:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
-: 1659518680:0;plain show
-: 1659518806:0;dl
 : 1659527281:0;tlp-stat -t | rg temp
 : 1659527635:0;wl-paste > _dl.txt
 : 1659527823:0;pnpm add bcrypt
@@ -5247,20 +5229,38 @@ done
 : 1659528599:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
 : 1659529634:0;pnpm add -g pnpm
 : 1659529705:0;pnpm update
-: 1659529829:0;reload
 : 1659541858:0;fzf < /etc/unbound/zones/rpz.db
-: 1659587791:0;bandwhich
 : 1659590604:0;sudo xbps-install -Suvy
 : 1659591079:0;gd
-: 1659591108:0;gst
 : 1659592084:0;git pull --rebase origin master
-: 1659592186:0;glo
-: 1659602643:0;f
-: 1659604272:0;yadm status
-: 1659604275:0;yadm diff
-: 1659604560:0;yadm status
 : 1659604561:0;yadm diff
-: 1659605233:0;yadm status
 : 1659605277:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1659605282:0;yadm add ~/.config/yt-dlp/config
 : 1659605285:0;yadm status
+: 1659605342:0;yadm push
+: 1659605440:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
+: 1659607676:0;plain show
+: 1659610085:0;dl
+: 1659610168:0;sudo xbps-install audacity
+: 1659611337:0;starship timings
+: 1659612263:0;ping google.com
+: 1659614113:0;glo
+: 1659614538:0;yt --list-formats "$(wl-paste)"
+: 1659614970:0;tmux attach || tmux
+: 1659615261:0;pnpm env use --global latest
+: 1659615965:0;reload
+: 1659615983:0;pnpm run test
+: 1659616147:0;bandwhich
+: 1659616248:0;gsw master
+: 1659616435:0;gst
+: 1659616452:0;git pull --rebase upstream master
+: 1659616575:0;cd
+: 1659619773:0;htop
+: 1659619939:0;f
+: 1659620005:0;tlp-stat -t | rg temp
+: 1659620007:0;htop
+: 1659620637:0;f
+: 1659620643:0;yadm diff
+: 1659620673:0;yadm status
+: 1659620682:0;yadm push
+: 1659620696:0;yadm status

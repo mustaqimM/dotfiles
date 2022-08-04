@@ -344,3 +344,8 @@ zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl darkhttpd dire
 
 # for comp ( yadm vifm ) { zicompdef _$comp $comp; }
 
+
+# pnpm
+export PNPM_HOME="/home/mustaqim/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

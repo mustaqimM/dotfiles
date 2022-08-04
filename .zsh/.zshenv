@@ -59,7 +59,7 @@ export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndF
 # export CLASSPATH="/home/mustaqim/Downloads/perimeter/apache-csv.jar:courserajava.jar"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-export PNPM_HOME="/home/mustaqim/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
