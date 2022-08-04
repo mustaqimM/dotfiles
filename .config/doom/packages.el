@@ -65,3 +65,4 @@
 
 ;; (package! gdscript-mode)
 
+(package! svg-tag-mode)

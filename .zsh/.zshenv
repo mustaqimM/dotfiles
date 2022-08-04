@@ -59,6 +59,8 @@ export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndF
 # export CLASSPATH="/home/mustaqim/Downloads/perimeter/apache-csv.jar:courserajava.jar"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+export PNPM_HOME="/home/mustaqim/.local/share/pnpm"
+
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # begin bold
@@ -89,6 +91,8 @@ path=(
     # $ANDROID_HOME/platform-tools
     /opt/texlive/2022/bin/x86_64-linux
     $JAVA_HOME/bin
+    $HOME/.deno/bin
+    $HOME/.local/share/pnpm
     $path
 )
 # export PATH

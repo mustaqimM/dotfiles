@@ -2621,7 +2621,6 @@
 : 1589462035:0;echo $JAVA_HOME
 : 1589465474:0;java -classpath "courserajava.jar:apache-csv.jar" PerimeterRunner.java
 : 1589466128:0;pwd | xclip -sel clip
-: 1589470043:0;yadm add ~/.github/README.md
 : 1589470344:0;yadm add '~/.config/Code - OSS/User/settings.json'
 : 1589520956:0;cat .xinitrc
 : 1589521027:0;sudo xbps-install emacs-x11
@@ -3948,7 +3947,6 @@ done
 : 1620184295:0;sudo xbps-remove -R pulseaudio
 : 1620191000:0;sudo hdparm -y /dev/sdb
 : 1620275439:0;yadm add ~/.xinitrc
-: 1620275566:0;yadm add ~/.config/aria2/aria2.conf
 : 1620275591:0;yadm add ~/.config/htop/htoprc
 : 1620281590:0;pw-cli info all
 : 1620359450:0;e /etc/X11/xorg.conf.d/20-intel.conf
@@ -4236,7 +4234,6 @@ done
 : 1636393550:0;sudo xbps-install --repository=hostdir/binpkgs/jxl qt-jpegxl-image-plugin
 : 1636394268:0;gd > patch.patch
 : 1636444488:0;sudo xbps-remove -R imv
-: 1636469458:0;e _dl.txt
 : 1636516191:0;sudo xbps-install gthumb
 : 1636519792:0;sudo xbps-install qView
 : 1636530952:0;sudo xbps-install krita
@@ -4442,7 +4439,6 @@ done
 : 1640229485:0;sudo ln -s /etc/sv/chronyd /var/service
 : 1640321137:0;npx alacritty-themes
 : 1640323091:0;e ~/.zsh/.p10k-lean.zsh
-: 1640344176:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,WhiteSur,WhiteSur-solid}
 : 1640346788:0;sudo xbps-remove -R vscode
 : 1640364416:0;yadm add ~/.config/alacritty/alacritty.yml
 : 1640403873:0;vf
@@ -4530,7 +4526,6 @@ done
 : 1641289602:0;pnpm run test -- -t '_id'
 : 1641290816:0;pnpm add express-async-errors
 : 1641312960:0;code-oss .
-: 1641378150:0;pnpm add bcrypt
 : 1641383624:0;xbps-query -Rs wayland
 : 1641383693:0;./xbps-src pkg rofi
 : 1641384213:0;e ~/.config/rofi/config.rasi
@@ -4730,7 +4725,6 @@ done
 : 1647928635:0;sudo xbps-install openresolv
 : 1647928713:0;sudo sv down wpa_supplicant
 : 1647928730:0;sudo ln -s /etc/sv/iwd /var/service
-: 1647928736:0;sudo sv up iwd
 : 1647928818:0;sudo rm /var/service/wpa_supplicant
 : 1647928876:0;bandwhich -d 1.1.1.1
 : 1647929242:0;sudo rm /var/service/dhcpcd-wlp2s0
@@ -4880,7 +4874,6 @@ done
 : 1648973286:0;sudo sv restart lighttpd
 : 1648973324:0;svlogtail | rg lighttpd
 : 1648973459:0;sudo rm /var/service/lighttpd
-: 1648973610:0;pnpm add -g pnpm
 : 1648975028:0;sudo sv uE
 : 1648995802:0;cargo run --release
 : 1648996697:0;rustup toolchain install nightly
@@ -4899,7 +4892,6 @@ done
 : 1649001368:0;cargo install cargo-check
 : 1649061064:0;e Cargo.toml
 : 1649062659:0;cargo build
-: 1649073803:0;fzf < /etc/unbound/zones/rpz.db
 : 1649077169:0;sudo xbps-remove -R vlc
 : 1649148745:0;touch .envrc
 : 1649150958:0;exi
@@ -4909,7 +4901,6 @@ done
 : 1649236043:0;s
 : 1649260491:0;ls --tree
 : 1649263038:0;gl
-: 1649263985:0;pnpm install
 : 1649264944:0;pnpm run build -- ttf::iosevka-custom
 : 1649302640:0;gco -b update_watchman
 : 1649302660:0;e srcpkgs/watchman/template
@@ -4924,9 +4915,7 @@ done
 : 1649315297:0;sudo xbps-install easyeffects
 : 1649315519:0;sudo xbps-remove -R easyeffects
 : 1649331326:0;sudo xbps-install strace
-: 1649333363:0;yadm add ~/.gitconfig
 : 1649333371:0;yadm add ~/.local/share/virtual-surround
-: 1649333517:0;yadm add ~/.config/waybar
 : 1649340731:0;echo $INSIDE_VIFM
 : 1649342774:0;sudo xbps-install lldb
 : 1649347255:0;rustc --explain E0106
@@ -4936,7 +4925,6 @@ done
 : 1649423835:0;sudo xbps-install sassc glib-devel libxml2
 : 1649475551:0;fd -e jxl -x djxl {} {.}.png
 : 1649476634:0;man feh
-: 1649498833:0;yadm add ~/.config/rofi
 : 1649498874:0;yadm commit -v -a --no-edit --amend
 : 1649498924:0;ssh-add $HOME/.ssh/GitLab 2>/dev/null
 : 1649498930:0;yadm push -f
@@ -4945,16 +4933,13 @@ done
 : 1649594373:0;e ~/.config/vifm/vifmrc
 : 1649660613:0;e ~/.zsh/functions/switch_theme
 : 1649660714:0;e ~/.config/dunst/dunstrc
-: 1649660862:0;notify-send -u normal "Test" "This is a test"
 : 1649661150:0;sudo xbps-install linux4.19
 : 1649661859:0;yt -f '398+251' "$(wl-paste)"
 : 1649991987:0;sudo lspci -vvvk
 : 1650129229:0;e common/shlibs
 : 1650354658:0;sudo powertop --calibrate
-: 1650357745:0;doom sync
 : 1650435437:0;cargo new --lib restaurant
 : 1650443670:0;mdbook build
-: 1650452043:0;yt -f '247+251' "$(wl-paste)"
 : 1650456380:0;glg
 : 1650467786:0;fg
 : 1650467801:0;jobs
@@ -4995,11 +4980,8 @@ done
 : 1651045028:0;ffmpeg -i file.avi -qscale:v 1 -qmin 1 -qmax 1 -vsync 0 frame%08d.jpg
 : 1651055346:0;rustc --explain E0308
 : 1651129327:0;fd -e jpg -x rm
-: 1651141409:0;yadm add ~/.config/doom
-: 1651141414:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1651141480:0;yadm add ~/.config/dunst
 : 1651141484:0;yadm add ~/.config/pipewire/pipewire.conf
-: 1651141500:0;yadm add ~/.config/zathura/zathurarc
 : 1651156906:0;git init
 : 1651157470:0;gd --staged
 : 1651157489:0;delta --diff-so-fancy --show-config
@@ -5011,10 +4993,7 @@ done
 : 1651391032:0;cp /usr/lib/kitty/shell-integration/zsh/completions/_kitty ~/.zsh/completions
 : 1651391059:0;zi creinstall $ZDOTDIR/completions
 : 1651396557:0;exec zsh
-: 1651400671:0;yadm add ~/.config/bat
 : 1651400728:0;yadm add ~/.mozilla/chrome
-: 1651400733:0;yadm add ~/.tmux.conf.local
-: 1651412765:0;gco $(gb | fzf)
 : 1651415953:0;zcompile .zcompdump
 : 1651509175:0;magick compare mpv-shot0001.jpg mpv-shot0002.jpg -compose src diff.png
 : 1651511253:0;mpv --show-profile=gpu-hq
@@ -5037,7 +5016,6 @@ done
 : 1651648035:0;e tests/integration_test.rs
 : 1651648430:0;e tests/common/mod.rs
 : 1651735095:0;zi delete
-: 1651739551:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
 : 1651742367:0;sudo xbps-install shfmt
 : 1651743480:0;zmodload zsh/zprof
 : 1651743481:0;zprof
@@ -5049,17 +5027,13 @@ done
 : 1651807989:0;tmux send-keys "ls" C-m
 : 1651808718:0;tmux ls
 : 1651832419:0;yadm add ~/.config/configs
-: 1651832439:0;yadm add ~/.config/starship.toml
 : 1651897479:0;pnpx histdbimport
 : 1651906197:0;yt -f 'hd' "$(wl-paste)"
-: 1651909903:0;yadm add ~/.config/sway
 : 1651910160:0;yadm add ~/.zsh/functions/^*.zwc
 : 1651911060:0;fzf_log
 : 1652001128:0;zi
 : 1652002060:0;zi times -a
 : 1652008205:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
-: 1652008212:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1652013371:0;echo $PATH | tr ":" "\n" | nl
 : 1652013379:0;echo $FPATH | tr ":" "\n" | nl
 : 1652029182:0;sleep 1; timeout 5s wf-recorder -f recording.mp4
 : 1652098780:0;sudo xbps-install zellij
@@ -5074,13 +5048,11 @@ done
 : 1652282893:0;gsw main
 : 1652285276:0;wf-recorder -f recording.mp4
 : 1652368034:0;yadm commit -a -m "update"
-: 1652368037:0;yadm push
 : 1652443995:0;gcan!
 : 1652589437:0;env CASE_INSENSITIVE=1 cargo run the poem.text
 : 1652609427:0;g
 : 1652614834:0;man delta
 : 1652625875:0;echo $TERM
-: 1652626425:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
 : 1652626657:0;delta --help
 : 1652679103:0;bat cache --build
 : 1652697169:0;cargo build --release
@@ -5090,19 +5062,16 @@ done
 : 1652891339:0;w
 : 1652975360:0;cargo clippy
 : 1652976251:0;sudo powertop
-: 1653209783:0;yadm diff
 : 1653283305:0;sudo xbps-install mono
 : 1653800297:0;ls -al
 : 1653884849:0;zi delete rust-lang/rust-analyzer
 : 1653884930:0;rust-analyzer --version
 : 1653889830:0;man 8 bluetoothd
-: 1653890809:0;pkill dunst
 : 1653920541:0;sudo xbps-remove -ROo
 : 1654058323:0;gocryptfs -version
 : 1654059473:0;gocryptfs -speed
 : 1654059503:0;plain hide
 : 1654062168:0;cargo update
-: 1654062175:0;rustup update
 : 1654362325:0;adb connect 192.168.1.101
 : 1655007526:0;gsf
 : 1655007692:0;git rebase master
@@ -5124,7 +5093,6 @@ done
 : 1655217409:0;svlogtail | rg smbd
 : 1655217944:0;lsblk --fs
 : 1655226048:0;e /etc/doas.conf
-: 1655312421:0;e src/main.rs
 : 1655370784:0;wl-paste > file.txt
 : 1655394007:0;e src/lib.rs
 : 1655394562:0;cargo test
@@ -5132,18 +5100,14 @@ done
 : 1655396055:0;bc <<< "$(fd -e mkv -x ffprobe -i {} -show_entries format=duration -v quiet -of csv="p=0" | awk '{total = total + $1}END{print total}') / 60"
 : 1655463779:0;sudo mount /dev/sdb1 /media/ -o uid=1000,gid=1000,utf8
 : 1655465072:0;sudo umount /media
-: 1655529963:0;zellij
 : 1655531362:0;sudo xbps-install godot
 : 1655531425:0;man zellij
-: 1655532458:0;man mpv
 : 1655532587:0;yadm lg
 : 1655532856:0;yadm log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" | fzf | awk '{print $1}'
-: 1655621448:0;glo
 : 1655621464:0;fglo
 : 1655652846:0;iwctl device wlp2s0 show
 : 1655704175:0;chmod +x *.sh
 : 1655706772:0;man vifm
-: 1655713358:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
 : 1655714861:0;env _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true' ./HardwareSimulator.sh
 : 1655796614:0;iwctl
 : 1655796634:0;iwctl --help
@@ -5196,57 +5160,26 @@ done
 : 1656572335:0;tlmgr -gui
 : 1656575950:0;gp
 : 1656577664:0;make cv.pdf
-: 1656578086:0;gd
-: 1656578095:0;gaa
-: 1656669713:0;cd
 : 1656743282:0;zcalc
-: 1656996058:0;crontab -l
 : 1656996068:0;crontab -e
 : 1656996089:0;pkill emacs
-: 1656996093:0;/bin/emacs -bg '#17191a' --daemon
 : 1657097930:0;sudo xbps-install -u xbps
 : 1657118036:0;df -Th
 : 1657185963:0;man aria2c
 : 1657271254:0;pkill inkscape
 : 1657271368:0;free -h
-: 1657294872:0;doom upgrade
 : 1657350829:0;wl-paste > file.json
 : 1657370419:0;. venv/bin/activate
-: 1657370601:0;zi times
-: 1657370605:0;starship timings
 : 1657370738:0;fc-cache -fv
 : 1657370835:0;colors process pantone
-: 1657387023:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "21:59 today" +%s)"
 : 1657549375:0;svlogtail
 : 1657549402:0;sudo sv status /var/service/*
 : 1657604577:0;sudo sv upE
-: 1657614086:0;gst
 : 1657615759:0;man 5 zathurarc
 : 1657616135:0;man zathura
 : 1657636191:0;sudo sv restart iwd
-: 1657636215:0;sudo sv restart unbound
-: 1657636232:0;iwctl 
-: 1657636235:0;ping google.com
-: 1657692767:0;man yt-dlp
-: 1657693086:0;ffprobe "$(fd -d 1 -c always | fzf)"
-: 1657693095:0;xdg-mime query filetype $(fzf)
-: 1657697977:0;sudo sv up udevmon
-: 1657698117:0;tmux attach || tmux
-: 1657729803:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
-: 1657773078:0;sudo xbps-install -Suvy
-: 1657776019:0;zi update -p
 : 1657778760:0;fd '\.(jpe?|pn)g' -d 1 -x convert {} {.}.webp
-: 1657780248:0;plain show
-: 1657781260:0;bandwhich
-: 1657781824:0;jackett
-: 1657782958:0;reload
-: 1657802471:0;htop
-: 1657803098:0;tlp-stat -t | rg temp
-: 1657807480:0;dl
-: 1657809228:0;yt --list-formats "$(wl-paste)"
-: 1657809877:0;f
 : 1657810068:0;yadm add ~/.config/yt-dlp/config
-: 1657810090:0;yadm status
 : 1657810108:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,WhiteSur,WhiteSur-solid}
 : 1657810113:0;yadm add ~/.config/aria2/aria2.conf
 : 1657810118:0;yadm add ~/.config/bat
@@ -5261,7 +5194,73 @@ done
 : 1657810159:0;yadm add ~/.config/zathura/zathurarc
 : 1657810169:0;yadm add ~/.gitconfig
 : 1657810174:0;yadm add ~/.github/README.md
-: 1657810179:0;yadm diff
 : 1657810203:0;yadm add ~/.tmux.conf.local
 : 1657810214:0;yadm diff
 : 1657810310:0;yadm status
+: 1657810377:0;yadm push
+: 1657863643:0;man mpv
+: 1657889906:0;xdg-mime query filetype $(fzf)
+: 1657946002:0;iwctl 
+: 1657946022:0;sudo sv up iwd
+: 1658040458:0;rustup update
+: 1658304378:0;man yt-dlp
+: 1658305604:0;gco $(gb | fzf)
+: 1658389810:0;yt -f '247+251' "$(wl-paste)"
+: 1658506459:0;ping google.com
+: 1658570445:0;zi times
+: 1658578001:0;sudo sv up udevmon
+: 1658580971:0;sudo sv restart unbound
+: 1658747731:0;e _dl.txt
+: 1658752110:0;dl --input-file _dl.txt 
+: 1658854859:0;notify-send -u normal "Test" "This is a test"
+: 1658854891:0;man 5 dunst
+: 1658987207:0;pkill dunst
+: 1659018978:0;gaa
+: 1659021442:0;curl portquiz.net:27017
+: 1659092501:0;/bin/emacs -bg '#17191a' --daemon
+: 1659110559:0;pnpm install
+: 1659162375:0;e src/main.rs
+: 1659162784:0;doom upgrade
+: 1659163278:0;cd
+: 1659200700:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "21:59 today" +%s)"
+: 1659242693:0;crontab -l
+: 1659261106:0;zellij
+: 1659262267:0;htop
+: 1659277881:0;tmux list-keys -T prefixless
+: 1659328716:0;yt --list-formats "$(wl-paste)"
+: 1659329434:0;ffprobe "$(fd -d 1 -c always | fzf)"
+: 1659329583:0;starship timings
+: 1659354616:0;tmux attach || tmux
+: 1659364465:0;doom sync
+: 1659441839:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
+: 1659455246:0;zi update -p
+: 1659515049:0;pnpm run start
+: 1659515911:0;jackett
+: 1659518614:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
+: 1659518680:0;plain show
+: 1659518806:0;dl
+: 1659527281:0;tlp-stat -t | rg temp
+: 1659527635:0;wl-paste > _dl.txt
+: 1659527823:0;pnpm add bcrypt
+: 1659527970:0;echo $PATH | tr ":" "\n" | nl
+: 1659527977:0;pnpm setup
+: 1659528599:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
+: 1659529634:0;pnpm add -g pnpm
+: 1659529705:0;pnpm update
+: 1659529829:0;reload
+: 1659541858:0;fzf < /etc/unbound/zones/rpz.db
+: 1659587791:0;bandwhich
+: 1659590604:0;sudo xbps-install -Suvy
+: 1659591079:0;gd
+: 1659591108:0;gst
+: 1659592084:0;git pull --rebase origin master
+: 1659592186:0;glo
+: 1659602643:0;f
+: 1659604272:0;yadm status
+: 1659604275:0;yadm diff
+: 1659604560:0;yadm status
+: 1659604561:0;yadm diff
+: 1659605233:0;yadm status
+: 1659605277:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1659605282:0;yadm add ~/.config/yt-dlp/config
+: 1659605285:0;yadm status

@@ -94,10 +94,8 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]' for \
   "wfxr/forgit"
 
 zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)g*]} ]]' \
- atinit'
-  zstyle ":omz:plugins:ssh-agent" quiet yes \
-  zstyle ":omz:plugins:ssh-agent" identities GitHub GitLab' for \
-  "OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh"
+ atinit'zstyle ":omz:plugins:ssh-agent" identities GitHub GitLab' for \
+ "OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh"
 
 zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)c*]} ]]' pick"init.sh" for \
   "b4b4r07/enhancd"

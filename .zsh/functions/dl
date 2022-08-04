@@ -3,10 +3,14 @@
 autoload colors && colors
 
 dl() {
-    declare string
-    string=$(wl-paste | awk '{$1=$1};1')
-    echo "Downloading: \e[4m$fg[blue]$string\e[0m"
-    aria2c --continue -x16 -s16 -k1M --summary-interval=0 --check-certificate=false "$@" -- "$string"
+    if [ $# -eq 2 ]; then
+        aria2c --continue -x16 -s16 -k1M --summary-interval=0 --check-certificate=false "$@"
+    else
+        declare string
+        string=$(wl-paste | awk '{$1=$1};1')
+        echo "Downloading: \e[4m$fg[blue]$string\e[0m"
+        aria2c --continue -x16 -s16 -k1M --summary-interval=0 --check-certificate=false "$@" -- "$string"
+    fi
 }
 
 dl "$@"
