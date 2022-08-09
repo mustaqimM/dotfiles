@@ -1,3 +1,5 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
 $directory\
 $git_branch\
@@ -16,7 +18,16 @@ ${custom.vifm}
 """
 
 [directory]
-style = "blue"
+style = "bg:none fg:blue"
+# format = "[$path]($style)"
+# truncation_length = 3
+# truncation_symbol = "…/"
+
+# [directory.substitutions]
+# "Documents" = " "
+# "Downloads" = " "
+# "Music" = " "
+# "Pictures" = " "
 
 [character]
 success_symbol = "[\\$](white)"

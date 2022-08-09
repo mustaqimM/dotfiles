@@ -31,7 +31,7 @@ setopt HIST_SAVE_NO_DUPS                                # don't write duplicate 
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_SPACE                                # prefix commands you don't want stored with a space
-HISTORY_IGNORE="(exit|ls|r|open|pwd|q|x *|kill *|s *|cd *)"
+HISTORY_IGNORE="(builtin *|exit|ls|r|open|pwd|q|x *|kill *|s *|cd *)"
 
 setopt NO_HUP                                           # don't kill jobs
 setopt NO_CHECK_JOBS
@@ -343,9 +343,3 @@ zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl darkhttpd dire
 # zi creinstall -Q $ZDOTDIR/completions
 
 # for comp ( yadm vifm ) { zicompdef _$comp $comp; }
-
-
-# pnpm
-export PNPM_HOME="/home/mustaqim/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
