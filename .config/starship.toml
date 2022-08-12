@@ -6,12 +6,12 @@ $git_branch\
 $git_commit\
 $git_state\
 $git_status\
-$python\
 $line_break\
 $character
 """
 
 right_format = """
+$jobs\
 $status\
 $cmd_duration\
 ${custom.vifm}
@@ -71,6 +71,8 @@ disabled = false
 [cmd_duration]
 format = "([$duration]($style) )"
 style = "247"
+# show_notifications = true
+# min_time_to_notify = 45000
 
 [status]
 format = "[$symbol$status]($style) "

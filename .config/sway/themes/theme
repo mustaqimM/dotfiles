@@ -4,7 +4,7 @@ include dark
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
-client.focused          $base01 $base00 $base07 $base0D $base01
+client.focused          $base01 $base00 $base07 $base0D #4d4d4c
 client.focused_inactive $base01 $base01 $base05 $base03 $base01
 client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08

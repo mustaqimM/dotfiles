@@ -6,17 +6,13 @@ if !exists('g:vscode')
 set nocompatible
 
 call plug#begin('~/.local/share/nvim/plugged')
-  " Plug 'ctjhoa/spacevim'
   " Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " NERD tree will be loaded on the first invocation of NERDTreeToggle command
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'chriskempson/base16-vim'
+  Plug 'neovim/nvim-lspconfig'
   " Plug 'bronson/vim-trailing-whitespace'
-  " Plug 'vim-syntastic/syntastic'
-  " Plug 'xolox/vim-misc'
-  " Plug 'xolox/vim-easytags'
-  " Plug 'majutsushi/tagbar'
   " Plug 'ctrlpvim/ctrlp.vim'                " Find files with <C-p>
-  " Plug 'yuttie/comfortable-motion.vim'     " Smooth motion
   " Plug 'vim-scripts/a.vim'                 " Open the header file with :AT
   " Plug 'Raimondi/delimitMate'              " Automatic closing of quotes, parenthesis, brackets, etc.
   " Plug 'tpope/vim-surround'
@@ -31,7 +27,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   " ========== Git =========
   " Plug 'airblade/vim-gitgutter'
   " Plug 'tpope/vim-fugitive'
-  Plug 'chriskempson/base16-vim'
   " Plug 'joshdick/onedark.vim'
   " Plug 'itchyny/vim-cursorword'            " Underlines words under cursor
 
@@ -207,5 +202,4 @@ let g:airline_powerline_fonts = 1
 " let &t_SI = "\<Esc>[6 q"
 " let &t_SR = "\<Esc>[4 q"
 " let &t_EI = "\<Esc>[2 q"
-
 endif

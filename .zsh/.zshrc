@@ -201,8 +201,12 @@ zi light "pixelb/ps_mem"
 # zi light "ziglang/shell-completions"
 
 zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)rust*]} ]]' \
-  from'gh-r' bpick"*linux-gnu.gz" nocompile sbin'*->rust-analyzer' for \
+  from'gh-r' bpick"*linux-gnu.gz" ver"latest" nocompile sbin'*->rust-analyzer' for \
   rust-lang/rust-analyzer
+
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)tr*]} ]]' \
+  from'gh-r' nocompile sbin'*->tree-sitter' for \
+  tree-sitter/tree-sitter
 
 # zi light romkatv/zsh-prompt-benchmark
 

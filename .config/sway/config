@@ -269,5 +269,5 @@ bar {
 exec_always ~/.config/sway/autostart
 
 # include /etc/sway/config.d/*
-include ~/.config/sway/theme
+include ~/.config/sway/themes/theme
 include ~/.config/sway/rules

@@ -15,11 +15,11 @@ switch_theme() {
         gsettings set org.gnome.desktop.interface gtk-theme $gtk_light_theme
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Light"
         kvantummanager --set "$qt_light_theme"
-        sed -i 's|include dark|include light|' ~/.config/sway/theme
+        sed -i 's|include dark|include light|' ~/.config/sway/themes/theme
         sed -i 's|Papirus-Dark|Papirus-Light|' ~/.config/qt5ct/qt5ct.conf
         sed -i 's|colors: \*tomorrow-dark|colors: \*tomorrow-light|' ~/.config/alacritty/alacritty.yml
         sed -i 's|Tomorrow-Night|Tomorrow|' ~/.config/bat/config
-        sed -i 's|base16-tomorrow-night|base16-tomorrow|' ~/.config/nvim/init.vim
+        sed -i 's|base16-tomorrow-night|base16-tomorrow|' ~/.config/nvim/init.lua
         sed -i 's|doom-tomorrow-night|doom-tomorrow-day|' ~/.config/doom/config.el
         sed -i 's|colorscheme dark|colorscheme light|' ~/.config/vifm/vifmrc
         for server in $vifm_servers; do vifm --server-name $server --remote +'colorscheme light'; done
@@ -36,11 +36,11 @@ switch_theme() {
         gsettings set org.gnome.desktop.interface gtk-theme $gtk_dark_theme
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
         kvantummanager --set "$qt_dark_theme"
-        sed -i 's|include light|include dark|' ~/.config/sway/theme
+        sed -i 's|include light|include dark|' ~/.config/sway/themes/theme
         sed -i 's|Papirus-Light|Papirus-Dark|' ~/.config/qt5ct/qt5ct.conf
         sed -i 's|colors: \*tomorrow-light|colors: \*tomorrow-dark|' ~/.config/alacritty/alacritty.yml
         sed -i 's|Tomorrow|Tomorrow-Night|' ~/.config/bat/config
-        sed -i 's|base16-tomorrow|base16-tomorrow-night|' ~/.config/nvim/init.vim
+        sed -i 's|base16-tomorrow|base16-tomorrow-night|' ~/.config/nvim/init.lua
         sed -i 's|doom-tomorrow-day|doom-tomorrow-night|' ~/.config/doom/config.el
         sed -i 's|colorscheme light|colorscheme dark|' ~/.config/vifm/vifmrc
         for server in $vifm_servers; do vifm --server-name $server --remote +'colorscheme dark'; done

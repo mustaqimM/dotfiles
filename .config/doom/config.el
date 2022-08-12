@@ -27,6 +27,9 @@
 ;; `load-theme' function. These are the defaults.
 (setq doom-theme 'doom-tomorrow-night)
 
+(custom-set-faces!
+  `(font-lock-comment-face :foreground ,(doom-lighten 'grey .05)))
+
 ;; If you intend to use org, it is recommended you change this!
 (setq org-directory "~/Library/Cloud/Org/")
 

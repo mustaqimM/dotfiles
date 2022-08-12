@@ -4985,7 +4985,6 @@ done
 : 1651391032:0;cp /usr/lib/kitty/shell-integration/zsh/completions/_kitty ~/.zsh/completions
 : 1651391059:0;zi creinstall $ZDOTDIR/completions
 : 1651396557:0;exec zsh
-: 1651400728:0;yadm add ~/.mozilla/chrome
 : 1651415953:0;zcompile .zcompdump
 : 1651509175:0;magick compare mpv-shot0001.jpg mpv-shot0002.jpg -compose src diff.png
 : 1651511253:0;mpv --show-profile=gpu-hq
@@ -5025,7 +5024,6 @@ done
 : 1651911060:0;fzf_log
 : 1652001128:0;zi
 : 1652002060:0;zi times -a
-: 1652008205:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
 : 1652013379:0;echo $FPATH | tr ":" "\n" | nl
 : 1652029182:0;sleep 1; timeout 5s wf-recorder -f recording.mp4
 : 1652098780:0;sudo xbps-install zellij
@@ -5099,7 +5097,6 @@ done
 : 1655621464:0;fglo
 : 1655652846:0;iwctl device wlp2s0 show
 : 1655704175:0;chmod +x *.sh
-: 1655706772:0;man vifm
 : 1655714861:0;env _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true' ./HardwareSimulator.sh
 : 1655796614:0;iwctl
 : 1655796634:0;iwctl --help
@@ -5151,7 +5148,6 @@ done
 : 1656575950:0;gp
 : 1656577664:0;make cv.pdf
 : 1656743282:0;zcalc
-: 1656996068:0;crontab -e
 : 1656996089:0;pkill emacs
 : 1657097930:0;sudo xbps-install -u xbps
 : 1657118036:0;df -Th
@@ -5160,7 +5156,6 @@ done
 : 1657271368:0;free -h
 : 1657350829:0;wl-paste > file.json
 : 1657370419:0;. venv/bin/activate
-: 1657370738:0;fc-cache -fv
 : 1657370835:0;colors process pantone
 : 1657549375:0;svlogtail
 : 1657549402:0;sudo sv status /var/service/*
@@ -5172,12 +5167,7 @@ done
 : 1657810108:0;yadm add ~/.config/Kvantum/{kvantum.kvconfig,WhiteSur,WhiteSur-solid}
 : 1657810113:0;yadm add ~/.config/aria2/aria2.conf
 : 1657810118:0;yadm add ~/.config/bat
-: 1657810124:0;yadm add ~/.config/doom
-: 1657810128:0;yadm add ~/.config/fontconfig/fonts.conf
-: 1657810133:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
 : 1657810137:0;yadm add ~/.config/rofi
-: 1657810142:0;yadm add ~/.config/starship.toml
-: 1657810147:0;yadm add ~/.config/sway
 : 1657810154:0;yadm add ~/.config/waybar
 : 1657810159:0;yadm add ~/.config/zathura/zathurarc
 : 1657810169:0;yadm add ~/.gitconfig
@@ -5190,7 +5180,6 @@ done
 : 1658304378:0;man yt-dlp
 : 1658305604:0;gco $(gb | fzf)
 : 1658389810:0;yt -f '247+251' "$(wl-paste)"
-: 1658578001:0;sudo sv up udevmon
 : 1658580971:0;sudo sv restart unbound
 : 1658747731:0;e _dl.txt
 : 1658854859:0;notify-send -u normal "Test" "This is a test"
@@ -5201,7 +5190,6 @@ done
 : 1659200700:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "21:59 today" +%s)"
 : 1659261106:0;zellij
 : 1659277881:0;tmux list-keys -T prefixless
-: 1659364465:0;doom sync
 : 1659515911:0;jackett
 : 1659518614:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
 : 1659527823:0;pnpm add bcrypt
@@ -5209,27 +5197,20 @@ done
 : 1659529634:0;pnpm add -g pnpm
 : 1659541858:0;fzf < /etc/unbound/zones/rpz.db
 : 1659592084:0;git pull --rebase origin master
-: 1659605277:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1659605282:0;yadm add ~/.config/yt-dlp/config
-: 1659611337:0;starship timings
 : 1659612263:0;ping google.com
 : 1659615261:0;pnpm env use --global latest
 : 1659615983:0;pnpm run test
 : 1659616248:0;gsw master
 : 1659616575:0;cd
-: 1659620703:0;yadm push
 : 1659695304:0;git pull --rebase upstream master
-: 1659712711:0;crontab -l
 : 1659769809:0;node -v
-: 1659774969:0;zi times
 : 1659801594:0;dunstctl history-pop
 : 1659801661:0;sudo xbps-install audacity
 : 1659855174:0;sudo xbps-install libjack-pipewire
 : 1659855608:0;pw-jack audacity
 : 1659855725:0;ffprobe "$(fd -d 1 -c always | fzf)"
 : 1659872884:0;wl-paste > _dl.txt
-: 1659887749:0;yadm status
-: 1659890434:0;plain show
 : 1659929616:0;sudo xbps-install pkg-config
 : 1659929622:0;cargo install taplo-cli
 : 1659930255:0;/bin/emacs -bg '#17191a' --daemon
@@ -5238,45 +5219,65 @@ done
 : 1659932747:0;sudo update_unbound_sb_hosts.sh
 : 1659936239:0;doom upgrade
 : 1659938432:0;doom install
-: 1659947346:0;yt --list-formats "$(wl-paste)"
 : 1659952601:0;pnpm init
 : 1659954079:0;bandwhich
 : 1659954868:0;echo $PATH | tr ":" "\n" | nl
 : 1659956544:0;git init
 : 1659956906:0;pnpm run start
-: 1659958147:0;dl --input-file _dl.txt 
 : 1659961751:0;xdg-mime query filetype $(fzf)
 : 1659962245:0;pnpm add express
 : 1659962418:0;pnpm install
 : 1659964864:0;pnpm add -D nodemon
-: 1659965002:0;pnpm run dev
-: 1659974987:0;htop
 : 1659975147:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
-: 1659975870:0;gst
-: 1659975872:0;gd
-: 1659976094:0;gaa
-: 1659976100:0;glo
-: 1659977536:0;dl
-: 1660015008:0;tlp-stat -t | rg temp
-: 1660015010:0;sudo xbps-install -Suvy
 : 1660015112:0;zi update -p
 : 1660017463:0;deno completions zsh > ~/.zsh/completions/_deno
 : 1660017474:0;zi creinstall -Q $ZDOTDIR/completions
 : 1660017536:0;pnpm update
 : 1660018399:0;deno task start
-: 1660023817:0;reload
-: 1660023818:0;f
-: 1660023891:0;tmux attach || tmux
 : 1660024520:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
-: 1660028193:0;yadm diff
-: 1660028297:0;yadm status
-: 1660028361:0;doom sync
-: 1660028454:0;yadm status
-: 1660028458:0;yadm diff
-: 1660028503:0;yadm status
-: 1660028509:0;yadm add ~/.config/doom
 : 1660028515:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
-: 1660028522:0;yadm add ~/.config/starship.toml
 : 1660028526:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1660028530:0;yadm add ~/.mozilla/chrome
 : 1660028536:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
+: 1660028555:0;yadm push
+: 1660040557:0;dl --input-file _dl.txt 
+: 1660050391:0;gaa
+: 1660062827:0;crontab -l
+: 1660063361:0;sudo sv up udevmon
+: 1660063786:0;crontab -e
+: 1660115704:0;gd
+: 1660119245:0;pnpm add -D eslint
+: 1660123473:0;dl
+: 1660127373:0;tree-sitter --version
+: 1660135487:0;zi times
+: 1660149609:0;pnpm run dev
+: 1660201082:0;doom sync
+: 1660201422:0;man vifm
+: 1660204048:0;glo
+: 1660299574:0;plain show
+: 1660299586:0;yt --list-formats "$(wl-paste)"
+: 1660309224:0;htop
+: 1660312641:0;reload
+: 1660316136:0;tlp-stat -t | rg temp
+: 1660318596:0;sudo xbps-install -Suvy
+: 1660318774:0;gst
+: 1660319389:0;fc-cache -fv
+: 1660319398:0;tmux attach || tmux
+: 1660320679:0;starship timings
+: 1660321562:0;yadm diff
+: 1660321780:0;yadm add ~/.config/doom
+: 1660321783:0;yadm add ~/.config/fontconfig/fonts.conf
+: 1660321797:0;f
+: 1660322513:0;yadm add ~/.config/nvim/*~*plugin*
+: 1660322516:0;yadm status
+: 1660322534:0;yadm add ~/.config/starship.toml
+: 1660322538:0;yadm add ~/.config/sway
+: 1660322697:0;yadm status
+: 1660322702:0;yadm add ~/.config/sway
+: 1660322705:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1660322709:0;yadm add ~/.tmux.conf.local
+: 1660322716:0;yadm diff
+: 1660322727:0;yadm status
+: 1660322749:0;htop
+: 1660322770:0;yadm push
+: 1660322774:0;yadm commit -a -m "update"
