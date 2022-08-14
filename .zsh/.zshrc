@@ -113,10 +113,10 @@ zi lucid light-mode wait"1" multisrc"{key-bindings,completion}.zsh" atload" \
 zi lucid light-mode wait"1" compile"*.zsh" nocompletions for \
   "hlissner/zsh-autopair"
 
-zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn
-zi snippet "OMZ::plugins/emacs"
+# zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn
+# zi snippet "OMZ::plugins/emacs"
 
-zi lucid light-mode wait \
+zi lucid light-mode wait"1" \
   atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS; \
   dircolors -b LS_COLORS > c.zsh" \
   atpull'%atclone' pick"c.zsh" nocompile'!' atload'zstyle ":completion:*:default" list-colors "${(s.:.)LS_COLORS}"' for \
@@ -215,25 +215,30 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)tr*]} ]]' \
 # if [ -n "$INSIDE_VIFM" ]; then RANGER_LEVEL=""; unset INSIDE_VIFM; fi
 
 # Compile to decrease startup speed (only if $1 is older than 4 hours)
-# _zcompare() {
-#   # - '#q' is an explicit glob qualifier that makes globbing work within zsh's [[ ]] construct.
-#   # - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
-#   # - '.' matches "regular files"
-#   # - 'mh+4' matches files (or directories or whatever) that are older than 4 hours.
-#   setopt extendedglob local_options
-#   if [[ -n "${1}"(#qN.mh+4) && (! -s "${1}.zwc" || "$1" -nt "${1}.zwc" ) ]]; then
-#     ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay
-#     zcompile ${1}
-#   fi
-# _zcomp() {
-#   zshrc="${ZDOTDIR}/.zshrc"
-#   zcompdump="${ZDOTDIR}/.zcompdump"
-#   p10k="${ZDOTDIR}/.p10k-lean.zsh"
+_zcompare() {
+  # - '#q' is an explicit glob qualifier that makes globbing work within zsh's [[ ]] construct.
+  # - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
+  # - '.' matches "regular files"
+  # - 'mh+4' matches files (or directories or whatever) that are older than 4 hours.
+  # setopt extendedglob local_options
+  # if [[ -n "${1}"(#qN.mh+4) && (! -s "${1}.zwc" || "$1" -nt "${1}.zwc" ) ]]; then
+  if [[ -s ${1} && ( ! -s ${1}.zwc || ${1} -nt ${1}.zwc) ]]; then
+    ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay
+    zcompile ${1}
+  fi
+}
+_zcomp() {
+  zshrc="${ZDOTDIR}/.zshrc"
+  zcompdump="${ZDOTDIR}/.zcompdump"
+  zshenv="${ZDOTDIR}/.zshenv"
+  zprofile="${ZDOTDIR}/.zprofile"
 
-#   _zcompare "$zshrc"
-#   _zcompare "$zcompdump"
-#   _zcompare "$p10k"
-# }
+  _zcompare "$zshrc"
+  _zcompare "$zcompdump"
+  _zcompare "$zshenv"
+  _zcompare "$zprofile"
+}
+_zcomp
 # for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
 
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }

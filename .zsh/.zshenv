@@ -33,9 +33,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --max-depth 5"
 export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
 export FZF_DEFAULT_OPTS="--layout=reverse --ansi --prompt='› ' --pointer='›' --marker='›'
  --color=bg+:18,fg+:015,spinner:yellow,hl:016:bold,hl+:red,info:yellow,pointer:yellow,marker:green,prompt:blue"
+# export FZF_COMPLETION_TRIGGER=''
 export ENHANCD_FILTER='fzf'
 export ENHANCD_COMPLETION_BEHAVIOR=list
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_COMPLETION_IGNORE="[[:space:]]*"
 # FAST_ALIAS_TIPS_PREFIX="$(tput bold)╭───\n\033[01;33m   \033[01;37m"
@@ -120,7 +122,7 @@ alias x=dtrx
 alias sudo=doas
 alias xargs='xargs ' # Needed for alias subtitution
 alias yt=yt-dlp
-alias ls='lsd -h'
+alias ls='lsd'
 
 alias -s {yml,yaml,toml,md}=$EDITOR
 
