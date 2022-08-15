@@ -79,11 +79,6 @@ set incsearch
 " Try to leave some space from cursor to upper/lower border in lists
 set scrolloff=0
 
-" Don't do too many requests to slow file systems
-"if !has('win')
-"    set slowfs=curlftpfs
-"endif
-
 " show preview window
 " view
 only

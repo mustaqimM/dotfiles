@@ -15,15 +15,8 @@
   autocrlf = input
   # safecrlf = true
 
-[gpg]
-  program = gpg2
-
-[commit]
-  gpgsign = true
-  verbose = true
-
-# [diff]
-#   colorMoved = default
+[diff]
+  colorMoved = default
 
 [blame]
   coloring = highlightRecent
@@ -33,6 +26,7 @@
 
 [interactive]
   diffFilter = delta --color-only
+
 [include]
   path = /home/mustaqim/.config/delta/themes.gitconfig
 [delta]
@@ -42,28 +36,31 @@
   file-style                    = bright-black
   # minus-style                   = syntax 52
   # minus-emph-style              = syntax 9
-  # # minus-non-emph-style          = bold red
-  # # minus-empty-line-marker-style = normal "#3f0001"
+  # minus-non-emph-style          = bold red
+  # minus-empty-line-marker-style = normal "#3f0001"
   # plus-style                    = syntax 22
   # plus-emph-style               = syntax 28
   # plus-non-emph-style           = bold green
   # plus-empty-line-marker-style  = normal "#002800"
-  map-styles = \
-    bold purple => syntax magenta, \
-    bold blue => syntax blue, \
-    bold cyan => syntax blue, \
-    bold yellow => syntax yellow
-  zero-style                    = syntax
-  # whitespace-error-style        = reverse red
-  grep-file-style               = blue
-  grep-line-number-style        = blue
+  # map-styles = \
+  #   bold purple => syntax magenta, \
+  #   bold blue   => syntax blue,    \
+  #   bold cyan   => syntax cyan,    \
+  #   bold yellow => syntax yellow
+  # zero-style                    = syntax
+  whitespace-error-style        = reverse red
+  # grep-file-style               = blue
+  # grep-line-number-style        = blue
   # blame-palette                 = #000000 #222222 #444444
   right-arrow                   = to
+  # side-by-side                  = true
+  navigate                      = true
 
 [delta "decorations"]
   commit-decoration-style       = magenta box
   file-decoration-style         = 19 ol ul
   hunk-header-decoration-style  = blue box
+
 [delta "line-numbers"]
   line-numbers-left-style       = 19
   line-numbers-right-style      = 19
@@ -106,6 +103,12 @@
 [url "git://git.suckless.org/"]
   insteadOf = "suckless:"
 
-[alias]
-  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+# [alias]
   # exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
+
+[gpg]
+  program = gpg2
+
+[commit]
+  gpgsign = true
+  verbose = true

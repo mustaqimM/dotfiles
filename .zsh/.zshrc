@@ -147,6 +147,10 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completio
   mv"pnpm-completions -> _pnpm" as"completion" nocompile atinit"source _pnpm" for \
   "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
 
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)deno]} ]]'\
+  from'gh-r' bpick"*linux-gnu*" ver"latest" nocompile sbin'*->deno' atclone"ln -s $(realpath deno) ~/.deno/bin" for \
+  denoland/deno
+
 # zi ice lucid wait \
 #  as'command' pick'bin/pyenv' \
 #  atload'eval "$(pyenv init - --no-rehash zsh)"; echo "TEST"' \

@@ -2,6 +2,8 @@
 
 format = """
 $directory\
+$git_branch\
+$git_commit\
 $git_state\
 $git_status\
 $line_break\
@@ -41,24 +43,24 @@ only_detached = true
 commit_hash_length = 8
 tag_disabled = false
 tag_symbol = "🏷 "
-format = "( [@](white)[($hash$tag)](green))"
+format = "([@](white)[($hash$tag)](green))"
 
 [git_state]
 cherry_pick = "[cherry](bold red)"
 format = ' \([$state($progress_current/$progress_total)]($style)\)'
 
 [git_status]
-ahead = "⇡${count}"
-behind = "⇣${count}"
+ahead = " ⇡${count}"
+behind = " ⇣${count}"
 diverged = '⇕\[⇡${ahead_count} ⇣${behind_count}\]'
-conflicted = "[(!$count)](16) "
-untracked = "([⋅$count](yellow) )"
-modified = "([±$count](5) )"
-staged = "([+$count](blue) )"
-renamed = "([➥$count](green) )"
-deleted = "([⌧ $count](bold red) )"
-stashed = "([ $count](16) )"
-format = "[($ahead$conflicted$staged$untracked$modified$renamed$deleted$stashed$ahead_behind)](white)"
+conflicted = "[ (!$count)](16)"
+untracked = "( [⋅$count](yellow))"
+modified = "( [±$count](5))"
+staged = "( [+$count](blue))"
+renamed = "( [➥$count](green))"
+deleted = "( [⌧ $count](bold red))"
+stashed = "( [ $count](16))"
+format = "[($conflicted$staged$untracked$modified$renamed$deleted$stashed$ahead_behind)](white)"
 
 [git_metrics]
 added_style = "bold blue"

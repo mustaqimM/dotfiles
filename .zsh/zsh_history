@@ -3068,7 +3068,6 @@
 : 1595407634:0;sudo xbps-install plank
 : 1595407793:0;sudo xbps-install jgmenu
 : 1595410327:0;glog
-: 1595410331:0;glol
 : 1595485711:0;echo "blacklist pcspkr" | sudo tee -a /etc/modprobe.d/blacklist.conf # Disable Bell
 : 1595675559:0;man alacritty
 : 1595694129:0;f git rm -r  app/src/main/res/
@@ -5053,7 +5052,6 @@ done
 : 1653283305:0;sudo xbps-install mono
 : 1653800297:0;ls -al
 : 1653884849:0;zi delete rust-lang/rust-analyzer
-: 1653884930:0;rust-analyzer --version
 : 1653889830:0;man 8 bluetoothd
 : 1653920541:0;sudo xbps-remove -ROo
 : 1654058323:0;gocryptfs -version
@@ -5238,49 +5236,53 @@ done
 : 1660201422:0;man vifm
 : 1660322513:0;yadm add ~/.config/nvim/*~*plugin*
 : 1660322534:0;yadm add ~/.config/starship.toml
-: 1660322709:0;yadm add ~/.tmux.conf.local
 : 1660322774:0;yadm commit -a -m "update"
 : 1660324687:0;crontab -l
 : 1660377641:0;doom upgrade
-: 1660378912:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
 : 1660379854:0;e ~/.config/nvim/init.lua
 : 1660451311:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
 : 1660457942:0;rustup update
 : 1660461178:0;plain show
 : 1660468977:0;fc-list | rg "Iosevka" | cut -d ":" -f2
-: 1660470896:0;tlp-stat -t | rg temp
 : 1660474355:0;bandwhich
-: 1660474913:0;yt --list-formats "$(wl-paste)"
 : 1660475755:0;xbps-query -f yt-dlp
-: 1660479763:0;yadm add ~/.config/doom
-: 1660479767:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1660479770:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
-: 1660479786:0;yadm add ~/.config/sway
 : 1660479791:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1660479800:0;yadm status
-: 1660479812:0;yadm push
 : 1660479929:0;doom sync
 : 1660495651:0;fc-cache -fv
 : 1660496080:0;tmux show -s default-terminal
 : 1660496291:0;echo -e "\e[3mitalic\e[0m"
 : 1660537845:0;zi update -p
-: 1660540824:0;zi times
-: 1660542548:0;htop
 : 1660542723:0;sudo xbps-install -Suvy
-: 1660543285:0;starship timings
-: 1660544181:0;glo
-: 1660544674:0;yadm diff
-: 1660545679:0;gst
-: 1660546274:0;dl
-: 1660546566:0;f
-: 1660546650:0;gd
 : 1660546922:0;tmux attach || tmux
-: 1660547390:0;reload
-: 1660548689:0;yadm status
-: 1660548698:0;yadm diff
-: 1660548710:0;yadm status
 : 1660548715:0;yadm add ~/.config/doom
 : 1660548717:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1660548726:0;yadm add ~/.config/sway
 : 1660548729:0;yadm add ~/.tmux.conf.local
-: 1660548732:0;yadm status
+: 1660548740:0;yadm push
+: 1660549045:0;gd
+: 1660549799:0;glol
+: 1660551470:0;dl
+: 1660553953:0;htop
+: 1660555545:0;yt --list-formats "$(wl-paste)"
+: 1660569907:0;gst
+: 1660570449:0;glo
+: 1660570517:0;tlp-stat -t | rg temp
+: 1660577582:0;starship timings
+: 1660578358:0;deno upgrade
+: 1660579668:0;ln -s $(realpath deno) ~/.deno/bin
+: 1660580258:0;rust-analyzer --version
+: 1660581155:0;deno --version
+: 1660581158:0;zi times
+: 1660581274:0;reload
+: 1660581775:0;yadm status
+: 1660582562:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
+: 1660583060:0;f
+: 1660583084:0;yadm diff
+: 1660583325:0;yadm status
+: 1660583338:0;yadm add ~/.config/delta
+: 1660583344:0;yadm add ~/.config/starship.toml
+: 1660583348:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1660583354:0;yadm add ~/.gitconfig
+: 1660583359:0;yadm add ~/.mozilla/chrome
+: 1660583366:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
