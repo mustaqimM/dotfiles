@@ -418,4 +418,5 @@ set -g @extrakto_key 'y'
 # "$@"
 # # /!\ do not remove the previous line
 
-set -ga terminal-overrides ",alacritty:Tc"
+set -g default-terminal "alacritty"        # Needed for italic, etc.
+set -ga terminal-overrides ",alacritty:Tc" # Needed for delta dark theme colour

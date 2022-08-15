@@ -2,8 +2,6 @@
 
 format = """
 $directory\
-$git_branch\
-$git_commit\
 $git_state\
 $git_status\
 $line_break\
@@ -60,7 +58,7 @@ staged = "([+$count](blue) )"
 renamed = "([➥$count](green) )"
 deleted = "([⌧ $count](bold red) )"
 stashed = "([ $count](16) )"
-format = "[( $ahead$conflicted$staged$untracked$modified$renamed$deleted$stashed$ahead_behind)](white)"
+format = "[($ahead$conflicted$staged$untracked$modified$renamed$deleted$stashed$ahead_behind)](white)"
 
 [git_metrics]
 added_style = "bold blue"

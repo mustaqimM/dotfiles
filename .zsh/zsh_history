@@ -5226,7 +5226,6 @@ done
 : 1660017474:0;zi creinstall -Q $ZDOTDIR/completions
 : 1660017536:0;pnpm update
 : 1660018399:0;deno task start
-: 1660028515:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
 : 1660028530:0;yadm add ~/.mozilla/chrome
 : 1660028536:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
 : 1660040557:0;dl --input-file _dl.txt 
@@ -5237,48 +5236,51 @@ done
 : 1660127373:0;tree-sitter --version
 : 1660149609:0;pnpm run dev
 : 1660201422:0;man vifm
-: 1660320679:0;starship timings
-: 1660321780:0;yadm add ~/.config/doom
-: 1660321783:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1660322513:0;yadm add ~/.config/nvim/*~*plugin*
 : 1660322534:0;yadm add ~/.config/starship.toml
-: 1660322702:0;yadm add ~/.config/sway
-: 1660322705:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1660322709:0;yadm add ~/.tmux.conf.local
-: 1660322727:0;yadm status
 : 1660322774:0;yadm commit -a -m "update"
-: 1660322798:0;yadm push
 : 1660324687:0;crontab -l
-: 1660365409:0;zi update -p
-: 1660370465:0;doom sync
 : 1660377641:0;doom upgrade
 : 1660378912:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
 : 1660379854:0;e ~/.config/nvim/init.lua
-: 1660380740:0;yadm diff
-: 1660404664:0;htop
 : 1660451311:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
-: 1660452030:0;sudo xbps-install -Suvy
 : 1660457942:0;rustup update
-: 1660460613:0;gst
-: 1660460659:0;glo
 : 1660461178:0;plain show
-: 1660462845:0;reload
 : 1660468977:0;fc-list | rg "Iosevka" | cut -d ":" -f2
 : 1660470896:0;tlp-stat -t | rg temp
-: 1660471479:0;zi times
 : 1660474355:0;bandwhich
-: 1660474515:0;dl
 : 1660474913:0;yt --list-formats "$(wl-paste)"
-: 1660475509:0;fc-cache -fv
-: 1660475514:0;tmux attach || tmux
 : 1660475755:0;xbps-query -f yt-dlp
-: 1660478809:0;gd
-: 1660479076:0;f
-: 1660479728:0;yadm diff
-: 1660479759:0;yadm status
 : 1660479763:0;yadm add ~/.config/doom
 : 1660479767:0;yadm add ~/.config/fontconfig/fonts.conf
 : 1660479770:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
 : 1660479786:0;yadm add ~/.config/sway
 : 1660479791:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1660479800:0;yadm status
+: 1660479812:0;yadm push
+: 1660479929:0;doom sync
+: 1660495651:0;fc-cache -fv
+: 1660496080:0;tmux show -s default-terminal
+: 1660496291:0;echo -e "\e[3mitalic\e[0m"
+: 1660537845:0;zi update -p
+: 1660540824:0;zi times
+: 1660542548:0;htop
+: 1660542723:0;sudo xbps-install -Suvy
+: 1660543285:0;starship timings
+: 1660544181:0;glo
+: 1660544674:0;yadm diff
+: 1660545679:0;gst
+: 1660546274:0;dl
+: 1660546566:0;f
+: 1660546650:0;gd
+: 1660546922:0;tmux attach || tmux
+: 1660547390:0;reload
+: 1660548689:0;yadm status
+: 1660548698:0;yadm diff
+: 1660548710:0;yadm status
+: 1660548715:0;yadm add ~/.config/doom
+: 1660548717:0;yadm add ~/.config/fontconfig/fonts.conf
+: 1660548726:0;yadm add ~/.config/sway
+: 1660548729:0;yadm add ~/.tmux.conf.local
+: 1660548732:0;yadm status

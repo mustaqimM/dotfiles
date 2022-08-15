@@ -17,7 +17,7 @@ for_window [shell="x_wayland"] title_format "%class - %title"
 
 # Borders
 default_border pixel 1
-default_floating_border pixel 1
+default_floating_border pixel 2
 smart_gaps on
 hide_edge_borders --i3 both
 
