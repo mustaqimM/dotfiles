@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-export STARSHIP_NUM_THREADS=6
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -95,7 +93,7 @@ path=(
     # $ANDROID_HOME/platform-tools
     /opt/texlive/2022/bin/x86_64-linux
     $JAVA_HOME/bin
-    $HOME/.deno/bin
+    # $HOME/.deno/bin
     $HOME/.local/share/pnpm
     $path
 )

@@ -7,6 +7,8 @@ switch_theme() {
     gtk_dark_theme="WhiteSur-Dark-solid"
     qt_light_theme="WhiteSur-solid"
     qt_dark_theme="WhiteSur-solidDark"
+    icon_light_theme="Papirus-Light"
+    icon_dark_theme="Papirus-Dark"
     current_theme=$(gsettings get org.gnome.desktop.interface gtk-theme | tr -d "'")
     vifm_servers=("${(@f)$(vifm --server-list)}")
 
@@ -14,6 +16,10 @@ switch_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]LIGHT"
         gsettings set org.gnome.desktop.interface gtk-theme $gtk_light_theme
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Light"
+        sed -i 's/'"$gtk_dark_theme"'/'"$gtk_light_theme"'/' ~/.gtkrc-2.0
+        sed -i 's/'"$icon_dark_theme"'/'"$icon_light_theme"'/' ~/.gtkrc-2.0
+        sed -i 's/'"$gtk_dark_theme"'/'"$gtk_light_theme"'/' ~/.config/gtk-3.0/settings.ini
+        sed -i 's/'"$icon_dark_theme"'/'"$icon_light_theme"'/' ~/.config/gtk-3.0/settings.ini
         kvantummanager --set "$qt_light_theme"
         sed -i 's|include dark|include light|' ~/.config/sway/themes/theme
         sed -i 's|Papirus-Dark|Papirus-Light|' ~/.config/qt5ct/qt5ct.conf
@@ -22,9 +28,10 @@ switch_theme() {
         sed -i 's|base16-tomorrow-night|base16-tomorrow|' ~/.config/nvim/init.lua
         sed -i 's|doom-tomorrow-night|doom-tomorrow-day|' ~/.config/doom/config.el
         sed -i 's|colorscheme dark|colorscheme light|' ~/.config/vifm/vifmrc
-        for server in $vifm_servers; do vifm --server-name $server --remote +'colorscheme light'; done
-        sed -i 's|"dark"|"light"|' ~/.config/rofi/config.rasi
-        sed -i 's|Papirus-Dark|Papirus-Light|g' ~/.config/dunst/dunstrc
+        sed -i 's|#1d1f21|gainsboro|' ~/.config/vifm/vifmrc
+        for server in $vifm_servers; do vifm --server-name $server --remote +'colorscheme light' +': reload'; done
+        sed -i '$s|dark|light|' ~/.config/rofi/config.rasi
+        sed -i 's|Papirus-Dark|Papirus-Light|' ~/.config/dunst/dunstrc
         pkill dunst; mv ~/.config/dunst/dunstrc.d/dark.conf ~/.config/dunst/dunstrc.d/dark.conf.BAK; dunst &
         sed -i -e 's|Tomorrow-Night|Tomorrow|' -e 's|zebra-dark|zebra-light|' ~/.gitconfig
         # kitty +kitten themes --reload-in=all Tomorrow
@@ -35,6 +42,10 @@ switch_theme() {
         echo "\nChanging theme to $fg[black]$bg[white]DARK"
         gsettings set org.gnome.desktop.interface gtk-theme $gtk_dark_theme
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+        sed -i 's/'"$gtk_light_theme"'/'"$gtk_dark_theme"'/' ~/.gtkrc-2.0
+        sed -i 's/'"$icon_light_theme"'/'"$icon_dark_theme"'/' ~/.gtkrc-2.0
+        sed -i 's/'"$gtk_light_theme"'/'"$gtk_dark_theme"'/' ~/.config/gtk-3.0/settings.ini
+        sed -i 's/'"$icon_light_theme"'/'"$icon_dark_theme"'/' ~/.config/gtk-3.0/settings.ini
         kvantummanager --set "$qt_dark_theme"
         sed -i 's|include light|include dark|' ~/.config/sway/themes/theme
         sed -i 's|Papirus-Light|Papirus-Dark|' ~/.config/qt5ct/qt5ct.conf
@@ -43,9 +54,10 @@ switch_theme() {
         sed -i 's|base16-tomorrow|base16-tomorrow-night|' ~/.config/nvim/init.lua
         sed -i 's|doom-tomorrow-day|doom-tomorrow-night|' ~/.config/doom/config.el
         sed -i 's|colorscheme light|colorscheme dark|' ~/.config/vifm/vifmrc
-        for server in $vifm_servers; do vifm --server-name $server --remote +'colorscheme dark'; done
-        sed -i 's|"light"|"dark"|' ~/.config/rofi/config.rasi
-        sed -i 's|Papirus-Light|Papirus-Dark|g' ~/.config/dunst/dunstrc
+        sed -i 's|gainsboro|#1d1f21|' ~/.config/vifm/vifmrc
+        for server in $vifm_servers; do vifm --server-name $server --remote +'colorscheme dark' +': reload'; done
+        sed -i '$s|light|dark|' ~/.config/rofi/config.rasi
+        sed -i 's|Papirus-Light|Papirus-Dark|' ~/.config/dunst/dunstrc
         pkill dunst; mv ~/.config/dunst/dunstrc.d/dark.conf.BAK ~/.config/dunst/dunstrc.d/dark.conf; dunst &
         sed -i -e 's|Tomorrow|Tomorrow-Night|' -e 's|zebra-light|zebra-dark|' ~/.gitconfig
         # kitty +kitten themes --reload-in=all 'Tomorrow Night'

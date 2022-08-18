@@ -148,7 +148,7 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completio
   "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
 
 zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)deno]} ]]'\
-  from'gh-r' bpick"*linux-gnu*" ver"latest" nocompile sbin'*->deno' atclone"ln -s $(realpath deno) ~/.deno/bin" for \
+  from'gh-r' bpick"*linux-gnu*" ver"latest" nocompile sbin'*->deno' for \
   denoland/deno
 
 # zi ice lucid wait \
@@ -343,7 +343,7 @@ autoload -U select-word-style
 select-word-style bash # Delete a word at a time
 
 # Load autoload shell functions on demand
-autoload -Uz decode dl fz fzf_log gfy gitignore headphones kd man magit mkcd switch_theme plain push open yadm_log_diff
+autoload -Uz decode dl fz fzf_log gitignore kd man magit mkcd plain push switch_theme yadm_log_diff
 autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)

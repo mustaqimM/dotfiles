@@ -190,7 +190,7 @@ command! push adb connect 192.168.1.101:5555; adb push %f /sdcard/Movies %s && n
 nnoremap aa :push<cr>
 
 " Extract an archive
-command! extract dtrx -n %c %i
+command! extract dtrx -n %c
 nnoremap x :extract<cr>:echo expand('%"c') ": extracting archive "<cr>
 
 " Start shell in current directory
@@ -206,7 +206,7 @@ vnoremap w :view<cr>gv
 " Open file in existing instance
 nnoremap o :!emacsclient -nc %f &<cr>
 " Open file in new instance
-nnoremap O :!/bin/emacs -bg '#1d1f21' %f &<cr>
+nnoremap O :!/bin/emacs -bg "#1d1f21" %f &<cr>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>

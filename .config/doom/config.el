@@ -208,10 +208,12 @@
 
 ;; ============================================================================
 ;; lsp
+;; (setq lsp-ui-doc-show-with-cursor t)
+;; (setq lsp-ui-sideline-show-code-actions t)
 ;; (setq lsp-enable-symbol-highlighting nil)
 ;; (setq underline-minimum-offset 5)
-;; (add-to-list 'exec-path "~/.local/bin/language-servers/kotlin-language-server/bin")
 ;; (setq-hook! 'rjsx-mode-hook +format-with-lsp nil)
+;; (add-to-list 'exec-path "~/.local/bin/language-servers/kotlin-language-server/bin")
 
 ;; (setq lsp-rust-server 'rust-analyzer)
 ;; (after! lsp-rust
