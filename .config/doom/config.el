@@ -19,14 +19,14 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "Iosevka" :size 16 :weight 'normal))
-(custom-set-faces
- '(font-lock-comment-face ((t (:foreground "#5a5b5a" :slant italic)))))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
 (setq doom-theme 'doom-tomorrow-night)
 
+;; (custom-set-faces
+;;  '(font-lock-comment-face ((t (:foreground "#5a5b5a" :slant italic)))))
 (custom-set-faces!
   `(font-lock-comment-face :foreground ,(doom-lighten 'grey .05)))
 
@@ -183,7 +183,7 @@
 
 ;; ============================================================================
 ;; key bindings
-(map! :n "M-n" 'mc/mark-all-dwim)
+;; (map! :n "M-n" 'mc/mark-all-dwim)
 ;; (map! "C-S-<mouse-1>" 'mc/add-cursor-on-click)
 
 (map! :n "g h" 'evil-beginning-of-line)
@@ -208,8 +208,9 @@
 
 ;; ============================================================================
 ;; lsp
-;; (setq lsp-ui-doc-show-with-cursor t)
+(setq lsp-ui-doc-show-with-cursor t)
 ;; (setq lsp-ui-sideline-show-code-actions t)
+(setq lsp-ui-doc-delay 0.01)
 ;; (setq lsp-enable-symbol-highlighting nil)
 ;; (setq underline-minimum-offset 5)
 ;; (setq-hook! 'rjsx-mode-hook +format-with-lsp nil)
@@ -220,3 +221,12 @@
 ;;   (setq lsp-rust-server 'rust-analyzer))
 ;; (after! rustic
 ;;   (setq rustic-lsp-server 'rust-analyzer))
+
+(defun svg-hook()
+  (setq svg-tag-tags
+        '((":android:" . ((lambda (tag) (svg-tag-make "android")))))))
+(after! org
+  (add-hook 'org-mode-hook 'svg-hook)
+  (add-hook 'org-mode-hook 'svg-tag-mode)
+  )
+(use-package! svg-tag-mode)

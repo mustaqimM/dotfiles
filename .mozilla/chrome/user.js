@@ -2,6 +2,7 @@
 user_pref("apz.gtk.kinetic_scroll.enabled", false);
 user_pref("general.smoothScroll.mouseWheel.durationMinMS", 250);
 user_pref("mousewheel.default.delta_multiplier_y", 70);
+user_pref("widget.disable-swipe-tracker", false);
 
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", false);
@@ -14,5 +15,4 @@ user_pref("ui.scrollbarDisplayOnMouseMove", 0);
 // ECH
 user_pref("network.dns.echconfig.enabled", true);
 
-user_pref("network.http.referer.XOriginPolicy", 0);
-user_pref("network.http.referer.spoofSource", true);
+// user_pref("network.http.referer.XOriginPolicy", 0);

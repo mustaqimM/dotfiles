@@ -1,9 +1,3 @@
-@media (prefers-color-scheme: dark) {
-  :root {
-    --tabbar-bg: rgba(51, 51, 51, 0.95);
-  }
-}
-
 .newtab-button-box {
   display: none;
 }
@@ -23,10 +17,25 @@ tab-item tab-twisty {
 }
 
 /* Change styling of pending (unloaded) tabs */
-tab-item.discarded .label-content {
-  opacity: 0.5;
+tab-item.discarded tab-item-substance {
+  opacity: 0.75;
 }
 
 tab-item.unread .label-content {
   font-style: italic;
+}
+
+/*
+tab-item:not(.pinned) .contextual-identity-marker {
+  max-width: 0.5em !important;
+  border-radius: 14px;
+  left: 0px;
+}
+tab-item.pinned .contextual-identity-marker {
+  max-width: 1em !important;
+  height: 0.1em !important;
+}
+*/
+.contextual-identity-marker {
+  max-width: 0;
 }

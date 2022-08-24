@@ -4,6 +4,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+export LIBSEAT_BACKEND=logind
+
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=Unity
 # KDE_SESSION_VERSION=5
@@ -23,6 +25,7 @@ export LC_ALL="en_ZA.UTF-8"
 
 export LIBVA_DRIVER_NAME=i965
 
+export TERMINAL=alacritty
 export EDITOR="/bin/emacsclient -nw"
 
 # export TERM=xterm-256color

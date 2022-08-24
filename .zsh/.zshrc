@@ -37,9 +37,9 @@ setopt NO_HUP                                           # don't kill jobs
 setopt NO_CHECK_JOBS
 setopt correct                                          # spelling correction for commands
 setopt autocd
-unsetopt rm_star_silent                                 # ask for confirmation for rm * or rm path/*
 setopt interactivecomments
 setopt extended_glob
+unsetopt rm_star_silent                                 # ask for confirmation for rm * or rm path/*
 
 typeset -gA FAST_HIGHLIGHT_STYLES
 FAST_HIGHLIGHT_STYLES[alias]="fg=blue"
@@ -77,13 +77,20 @@ zi lucid light-mode from"gh-r" bpick"*linux-gnu.tar.gz" nocompile sbin"starship"
   "starship/starship"
 
 zi lucid light-mode wait for \
-    "zsh-users/zsh-history-substring-search" \
+  atclone'(){local f;cd -q →*;for f (*~*.zwc){zcompile -Uz -- ${f}};}' \
+  atpull'%atclone' compile'.*fast*~*.zwc' nocompletions nocd \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    "zdharma-continuum/fast-syntax-highlighting" \
+    zdharma-continuum/fast-syntax-highlighting \
+  atinit"
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^P'   history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+    bindkey '^N'   history-substring-search-down"\
+  zsh-users/zsh-history-substring-search \
   blockf atpull'zinit creinstall -q ~/.zsh/completions'\
-    "zsh-users/zsh-completions" \
-  compile'{src/*.zsh,src/strategies/*}' atload"!_zsh_autosuggest_start" \
-    "zsh-users/zsh-autosuggestions"
+    zsh-users/zsh-completions \
+  compile'{src/*.zsh,src/strategies/*}' atload'!_zsh_autosuggest_start' \
+    zsh-users/zsh-autosuggestions
 
 # zi lucid for \
 #   larkery/zsh-histdb
@@ -126,6 +133,10 @@ zi lucid light-mode wait"1" \
 # zstyle ':completion:*:descriptions' format '[%d]'
 # zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 --color=always $realpath'
 
+# zi ice from"gh-r" as"program" mv"direnv* -> direnv" \
+#  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
+# zi light direnv/direnv
+
 # if [[ ! -d ~/.rbenv/plugins ]] then
 #   echo "Creating \$(rbenv root)/plugins"
 #   mkdir -p ~/.rbenv/plugins
@@ -143,11 +154,17 @@ zi lucid light-mode wait"1" \
 # zi ice wait"3a" lucid wait"[[ -f Gemfile || -f Rakefile ]]" unload"[[ ! -f Gemfile ]]"
 # zi snippet "OMZ::plugins/rbenv/rbenv.plugin.zsh"
 
-zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)p*]} ]]' id-as"pnpm-completions" \
-  mv"pnpm-completions -> _pnpm" as"completion" nocompile atinit"source _pnpm" for \
+# zi ice lucid wait"[[ -f package-lock.json ]]" atload"[[ -f .nvmrc ]] && nvm exec" # wait'[[ -n ${ZLAST_COMMANDS[(r)nv]} ]]'
+# zi light sei40kr/zsh-lazy-nvm
+
+# zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)np*]} ]]'
+# zi snippet "OMZ::plugins/npm/npm.plugin.zsh"
+
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)pn*]} ]]' id-as"pnpm-completions" \
+  mv"pnpm-completions -> _pnpm" as"completion" nocompile blockf atinit"source _pnpm" for \
   "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
 
-zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)deno]} ]]'\
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)den*]} ]]'\
   from'gh-r' bpick"*linux-gnu*" ver"latest" nocompile sbin'*->deno' for \
   denoland/deno
 
@@ -162,16 +179,6 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)deno]} ]]'\
 #  as'command' pick"bin/*" \
 #  atload'eval "$(pyenv virtualenv-init - zsh)"'
 # zi light pyenv/pyenv-virtualenv
-
-# zi ice lucid wait"[[ -f package-lock.json ]]" atload"[[ -f .nvmrc ]] && nvm exec" # wait'[[ -n ${ZLAST_COMMANDS[(r)nv]} ]]'
-# zi light sei40kr/zsh-lazy-nvm
-
-# zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)np*]} ]]'
-# zi snippet "OMZ::plugins/npm/npm.plugin.zsh"
-
-# zi ice from"gh-r" as"program" mv"direnv* -> direnv" \
-#  atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" compile"zhook.zsh" src"zhook.zsh"
-# zi light direnv/direnv
 
 # zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ch*]} ]]' lucid as"program" mv"*cht.sh -> cht" pick"cht" id-as"cht.sh"
 # zi snippet "https://cht.sh/:cht.sh"
@@ -195,8 +202,14 @@ zi light "pixelb/ps_mem"
 # zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)her*]} ]]' lucid #cloneonly
 # zi snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
 
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)her*]} ]]' extract"!-" id-as"heroku" \
+  nocompile sbin'*bin/heroku->heroku' for \
+  "https://cli-assets.heroku.com/heroku-linux-x64.tar.gz"
+zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)her*]} ]]'
+zi snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
+
 # zi ice as"program" pick"bin/sml"
-# zi snippet "/home/mustaqim/.local/bin/sml/bin/sml"
+# zi snippet "~/.local/bin/sml/bin/sml"
 
 # zi ice lucid from"gh-r" as"program"
 # zi light "pinterest/ktlint"
@@ -243,7 +256,7 @@ _zcomp() {
   _zcompare "$zprofile"
 }
 _zcomp
-# for file in /home/mustaqim/.zsh/functions/**/*(.); _zcompare "$file"
+# for file in ~/.zsh/functions/**/*(.); _zcompare "$file"
 
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
@@ -273,10 +286,10 @@ zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 # zle     -N        fzf-open-file-or-dir
 # bindkey '^O'      fzf-open-file-or-dir
 
-bindkey '^[[A'    history-substring-search-up
-bindkey '^P'      history-substring-search-up
-bindkey '^[[B'    history-substring-search-down
-bindkey '^N'      history-substring-search-down
+# bindkey '^[[A'    history-substring-search-up
+# bindkey '^P'      history-substring-search-up
+# bindkey '^[[B'    history-substring-search-down
+# bindkey '^N'      history-substring-search-down
 bindkey '^[[1;5C' vi-forward-word
 bindkey '^[[1;5D' vi-backward-word
 bindkey '^F'      vi-forward-word
@@ -356,3 +369,4 @@ zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl darkhttpd dire
 # zi creinstall -Q $ZDOTDIR/completions
 
 # for comp ( yadm vifm ) { zicompdef _$comp $comp; }
+
