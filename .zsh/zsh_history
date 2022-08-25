@@ -4429,7 +4429,6 @@ done
 : 1640321137:0;npx alacritty-themes
 : 1640323091:0;e ~/.zsh/.p10k-lean.zsh
 : 1640346788:0;sudo xbps-remove -R vscode
-: 1640364416:0;yadm add ~/.config/alacritty/alacritty.yml
 : 1640403873:0;vf
 : 1640404764:0;yadm add ~/.config/tmux/tmux.conf{,.local}
 : 1640414828:0;touch README.md
@@ -4902,7 +4901,6 @@ done
 : 1649347255:0;rustc --explain E0106
 : 1649390070:0;gco
 : 1649400864:0;rustup default nightly
-: 1649412393:0;man fd
 : 1649423835:0;sudo xbps-install sassc glib-devel libxml2
 : 1649475551:0;fd -e jxl -x djxl {} {.}.png
 : 1649476634:0;man feh
@@ -5088,7 +5086,6 @@ done
 : 1655878958:0;sudo ln -s /etc/sv/gdm /var/service
 : 1655880495:0;sudo rm /var/service/gdm
 : 1655880790:0;yt "$(wl-paste)"
-: 1655916048:0;swaymsg -t get_tree | fzf
 : 1655970626:0;./xbps-src pkg river
 : 1655972937:0;e srcpkgs/hyprland/template
 : 1655973240:0;./xbps-src pkg hyprland
@@ -5203,15 +5200,12 @@ done
 : 1660496080:0;tmux show -s default-terminal
 : 1660496291:0;echo -e "\e[3mitalic\e[0m"
 : 1660548717:0;yadm add ~/.config/fontconfig/fonts.conf
-: 1660548726:0;yadm add ~/.config/sway
-: 1660548729:0;yadm add ~/.tmux.conf.local
 : 1660549799:0;glol
 : 1660578358:0;deno upgrade
 : 1660582562:0;for i in {0..255}; do print -Pn "%${i}F${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done
 : 1660583338:0;yadm add ~/.config/delta
 : 1660583344:0;yadm add ~/.config/starship.toml
 : 1660583354:0;yadm add ~/.gitconfig
-: 1660583359:0;yadm add ~/.mozilla/chrome
 : 1660583366:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
 : 1660583573:0;wl-paste > _dl.txt
 : 1660623494:0;zi t
@@ -5228,7 +5222,6 @@ done
 : 1660721017:0;plain show
 : 1660732160:0;gcan!
 : 1660732269:0;pnpm add morgan
-: 1660739556:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
 : 1660753261:0;rust-analyzer --version
 : 1660754717:0;ln -s $(which rust-analyzer) ~/.cargo/bin
 : 1660754792:0;ln -s $(which deno) ~/.deno/bin
@@ -5238,10 +5231,7 @@ done
 : 1660811109:0;gsettings get org.gnome.desktop.interface gtk-theme
 : 1660814774:0;zcompile switch_theme
 : 1660815040:0;switch_theme toggle
-: 1660815120:0;yadm status
-: 1660815129:0;yadm add ~/.config/doom
 : 1660815133:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
-: 1660815176:0;yadm push
 : 1660826853:0;pnpx create-react-app frontend
 : 1660831440:0;dl --input-file _dl.txt 
 : 1660922972:0;pnpx json-server --port 3002 --watch db.json
@@ -5250,7 +5240,6 @@ done
 : 1660978133:0;doom sync
 : 1660993197:0;sudo xbps-install earlyoom
 : 1660993232:0;sudo ln -s /etc/sv/earlyoom /var/service
-: 1660993237:0;sudo sv status /var/service/*
 : 1661006989:0;cd
 : 1661010088:0;nvim +Man! /tmp/man.XXXXjzYpvK
 : 1661011147:0;pnpm add axios
@@ -5262,55 +5251,67 @@ done
 : 1661062031:0;man vifm
 : 1661075567:0;pnpx json-server --port 3001 --watch db.json
 : 1661077301:0;pnpm add -D json-server
-: 1661096280:0;glo
 : 1661096706:0;pnpm run json
-: 1661101392:0;echo $PATH | tr ":" "\n" | nl
 : 1661159974:0;sudo mkdir /var/cache/swap
 : 1661160228:0;sudo dd if=/dev/zero of=/var/cache/swap/swapfile bs=1M count=4096
 : 1661160337:0;sudo chmod 0600 /var/cache/swap/swapfile
 : 1661160351:0;sudo mkswap /var/cache/swap/swapfile
 : 1661160369:0;sudo swapon /var/cache/swap/swapfile
-: 1661162629:0;svlogtail
-: 1661163548:0;fc-cache -fv
-: 1661177411:0;starship timings
-: 1661228537:0;zi update -p
 : 1661231923:0;yt --list-formats "$(wl-paste)"
-: 1661232442:0;tlp-stat -t | rg temp
-: 1661235475:0;sudo xbps-install -Suvy
 : 1661238315:0;pnpm add cors
 : 1661239858:0;bandwhich
 : 1661241813:0;sudo xbps-install hikari
 : 1661242351:0;nvim
-: 1661245906:0;sudo sv up udevmon
-: 1661250582:0;free -h
 : 1661251210:0;xdg-mime query filetype $(fzf)
-: 1661251650:0;tmux attach || tmux
-: 1661251672:0;pnpm run dev
-: 1661251715:0;pnpm run start
 : 1661257244:0;type -f _zsh_autosuggest_start
-: 1661258848:0;htop
 : 1661259029:0;dl
-: 1661268200:0;gd
 : 1661268266:0;heroku --version
 : 1661268448:0;git init
-: 1661268466:0;gst
 : 1661268474:0;gitignore node
-: 1661268477:0;gaa
-: 1661268560:0;yadm diff
 : 1661268596:0;heroku auth:login
-: 1661268708:0;psmem -p $(pgrep -d, -u $USER) -S
 : 1661268842:0;node -v
 : 1661268892:0;heroku create
-: 1661268941:0;grv
-: 1661268991:0;gp heroku main
-: 1661270924:0;reload
-: 1661271960:0;zi times
-: 1661271961:0;f
 : 1661275134:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "21:59 today" +%s)"
-: 1661314807:0;yadm diff
-: 1661314873:0;yadm status
 : 1661314880:0;yadm add ~/.config/alacritty/alacritty.yml
 : 1661314883:0;yadm add ~/.config/doom
 : 1661314894:0;yadm add ~/.mozilla/chrome
-: 1661314899:0;yadm add ~/.tmux.conf.local
-: 1661314913:0;yadm status
+: 1661314925:0;yadm push
+: 1661320013:0;man fd
+: 1661323948:0;fc-cache -fv
+: 1661331256:0;echo "{}" > jsconfig.json
+: 1661334618:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
+: 1661334937:0;starship timings
+: 1661335165:0;pnpm run build
+: 1661336195:0;gp heroku main
+: 1661336644:0;pnpm run build:ui
+: 1661336979:0;gaa
+: 1661337103:0;glo
+: 1661337124:0;pnpm run dev
+: 1661338208:0;svlogtail
+: 1661342781:0;sudo sv status /var/service/*
+: 1661349167:0;tlp-stat -t | rg temp
+: 1661355843:0;free -h
+: 1661356527:0;swaymsg -t get_tree | fzf
+: 1661356540:0;sudo sv up udevmon
+: 1661356626:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1661401654:0;zi update -p
+: 1661404477:0;pnpm run start
+: 1661405733:0;htop
+: 1661405816:0;f
+: 1661405938:0;grv
+: 1661406031:0;gst
+: 1661406035:0;gd
+: 1661406051:0;gl --rebase origin master
+: 1661407158:0;sudo xbps-install -Suvy
+: 1661407888:0;reload
+: 1661407910:0;tmux attach || tmux
+: 1661408042:0;echo $PATH | tr ":" "\n" | nl
+: 1661408250:0;yadm status
+: 1661408254:0;yadm add ~/.tmux.conf.local
+: 1661408261:0;yadm add ~/.config/sway
+: 1661408269:0;yadm diff
+: 1661408293:0;zi times
+: 1661408307:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
+: 1661408310:0;yadm status
+: 1661408319:0;yadm diff
+: 1661408335:0;yadm commit -a -m "update"

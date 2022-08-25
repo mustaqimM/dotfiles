@@ -11,6 +11,7 @@ if [ ! "$DISPLAY" ]; then
   # gnome-shell --wayland
   # dbus-run-session gnome-session
   # dbus-run-session startplasma-wayland
+  # dbus-run-session river
   # sx sh ~/.xinitrc 2> .xsession-errors
   # startx 2> .xsession-errors
 fi

@@ -89,7 +89,7 @@ zi lucid light-mode wait for \
   zsh-users/zsh-history-substring-search \
   blockf atpull'zinit creinstall -q ~/.zsh/completions'\
     zsh-users/zsh-completions \
-  compile'{src/*.zsh,src/strategies/*}' atload'!_zsh_autosuggest_start' \
+  compile'{src/*.zsh,src/strategies/*}' atload'!_zsh_autosuggest_start' nocd \
     zsh-users/zsh-autosuggestions
 
 # zi lucid for \
@@ -123,10 +123,10 @@ zi lucid light-mode wait"1" compile"*.zsh" nocompletions for \
 # zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)e*]} ]]' lucid svn
 # zi snippet "OMZ::plugins/emacs"
 
-zi lucid light-mode wait"1" \
+zi lucid light-mode wait"1" reset \
   atclone"sed -i 's/38;5;30/38;5;4/g; s/38;5;172/38;5;16/g; s/38;5;196/38;5;9/g' LS_COLORS; \
-  dircolors -b LS_COLORS > c.zsh" \
-  atpull'%atclone' pick"c.zsh" nocompile'!' atload'zstyle ":completion:*:default" list-colors "${(s.:.)LS_COLORS}"' for \
+  dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh" nocompile'!' \
+  atload'zstyle ":completion:*:default" list-colors "${(s.:.)LS_COLORS}"' for \
   "trapd00r/LS_COLORS"
 
 # zi light "Aloxaf/fzf-tab"

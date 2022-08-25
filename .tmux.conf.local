@@ -4,6 +4,7 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
+
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
@@ -19,21 +20,25 @@
 # new window retains current path, possible values are:
 #   - true
 #   - false (default)
+#   - disabled (do not modify new-window bindings)
 tmux_conf_new_window_retain_current_path=false
 
 # new pane retains current path, possible values are:
 #   - true (default)
 #   - false
+#   - disabled (do not modify split-window bindings)
 tmux_conf_new_pane_retain_current_path=true
 
-# new pane tries to reconnect ssh sessions (experimental), possible values are:
+# new pane tries to reconnect ssh sessions, possible values are:
 #   - true
 #   - false (default)
+#   - disabled (do not modify split-window bindings)
 tmux_conf_new_pane_reconnect_ssh=false
 
 # prompt for session name when creating a new session, possible values are:
 #   - true
 #   - false (default)
+#   - disabled (do not modify new-session bindings)
 tmux_conf_new_session_prompt=false
 
 
@@ -41,8 +46,13 @@ tmux_conf_new_session_prompt=false
 
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
-#  - false (default)
-tmux_conf_24b_colour=true
+#  - false
+#  - auto (default)
+#
+# automatic detection relies on the COLORTERM environment variable being defined
+# to 'truecolor' or '24bit' or '$ tput colors' answering '16777216'
+# see https://github.com/termstandard/colors
+tmux_conf_24b_colour=auto
 
 # default theme
 # tmux_conf_theme_colour_1="#080808"    # dark gray
@@ -137,8 +147,7 @@ tmux_conf_theme_status_attr="none"
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-# tmux_conf_theme_terminal_title="Terminal ❐ #S ● #I #W"
-tmux_conf_theme_terminal_title="Terminal"
+tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
 
 # window status style
 #   - built-in variables are:
@@ -150,12 +159,13 @@ tmux_conf_theme_terminal_title="Terminal"
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-
 tmux_conf_theme_window_status_fg="colour008"
 tmux_conf_theme_window_status_bg="default"
 tmux_conf_theme_window_status_attr="none"
-# tmux_conf_theme_window_status_format="#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}"
+# tmux_conf_theme_window_status_format="#I #W"
 tmux_conf_theme_window_status_format="#I#{?window_bell_flag,🔔,}#{?window_zoomed_flag,,}"
+#tmux_conf_theme_window_status_format="#{circled_window_index} #W"
+#tmux_conf_theme_window_status_format="#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}"
 
 # window current status style
 #   - built-in variables are:
@@ -171,13 +181,13 @@ tmux_conf_theme_window_status_current_fg="colour004"
 tmux_conf_theme_window_status_current_bg="colour019"
 tmux_conf_theme_window_status_current_attr="none"
 tmux_conf_theme_window_status_current_format="#I"
-# tmux_conf_theme_window_status_current_format="#{circled_window_index} #W"
-# tmux_conf_theme_window_status_current_format="#I #W#{?window_zoomed_flag,🔍,}"
+#tmux_conf_theme_window_status_current_format="#{circled_window_index} #W"
+#tmux_conf_theme_window_status_current_format="#I #W#{?window_zoomed_flag,🔍,}"
 
 # window activity status style
 tmux_conf_theme_window_status_activity_fg="blue"
 tmux_conf_theme_window_status_activity_bg="default"
-tmux_conf_theme_window_status_activity_attr="blink,bold"
+tmux_conf_theme_window_status_activity_attr="blink,bold,underscore"
 
 # window bell status style
 tmux_conf_theme_window_status_bell_fg="colour011"
@@ -191,13 +201,13 @@ tmux_conf_theme_window_status_last_attr="none"
 
 # status left/right sections separators
 tmux_conf_theme_left_separator_main=""
-tmux_conf_theme_left_separator_sub="┊"
+tmux_conf_theme_left_separator_sub="|"
 tmux_conf_theme_right_separator_main=""
-tmux_conf_theme_right_separator_sub=""
-#tmux_conf_theme_left_separator_main="\uE0B0"  # /!\ you don't need to install Powerline
-#tmux_conf_theme_left_separator_sub="\uE0B1"   #   you only need fonts patched with
-#tmux_conf_theme_right_separator_main="\uE0B2" #   Powerline symbols or the standalone
-#tmux_conf_theme_right_separator_sub="\uE0B3"  #   PowerlineSymbols.otf font, see README.md
+tmux_conf_theme_right_separator_sub="|"
+#tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
+#tmux_conf_theme_left_separator_sub='\uE0B1'   #   you only need fonts patched with
+#tmux_conf_theme_right_separator_main='\uE0B2' #   Powerline symbols or the standalone
+#tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see README.md
 
 # status left/right content:
 #   - separate main sections with "|"
@@ -227,8 +237,8 @@ tmux_conf_theme_right_separator_sub=""
 #     - #{username}
 #     - #{username_ssh}
 # tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_left=' #S #P ,'
 # tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
+tmux_conf_theme_status_left=' #S #P ,'
 tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}#{root}#{?window_zoomed_flag, ,}'
 
 # status left style
@@ -242,7 +252,7 @@ tmux_conf_theme_status_right_bg="default"
 tmux_conf_theme_status_right_attr="none,none,bold"
 
 # pairing indicator
-tmux_conf_theme_pairing=" "                 # U+2687
+tmux_conf_theme_pairing=""                 # U+2687 ⚇
 tmux_conf_theme_pairing_fg="none"
 tmux_conf_theme_pairing_bg="none"
 tmux_conf_theme_pairing_attr="none"
@@ -261,7 +271,7 @@ tmux_conf_theme_mouse_attr="none"
 
 # root indicator
 tmux_conf_theme_root=""
-tmux_conf_theme_root_fg="colour016"
+tmux_conf_theme_root_fg="orange"
 tmux_conf_theme_root_bg="none"
 tmux_conf_theme_root_attr="bold,blink"
 
@@ -320,6 +330,7 @@ tmux_conf_theme_clock_style="24"
 # in copy mode, copying selection also copies to the OS clipboard
 #   - true
 #   - false (default)
+#   - disabled
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
 tmux_conf_copy_to_os_clipboard=false
@@ -339,10 +350,6 @@ set -g mouse on
 #set -g status-keys vi
 #set -g mode-keys vi
 
-set-window-option -g mode-keys vi
-bind-key -T copy-mode-vi v send -X begin-selection
-bind-key -T copy-mode-vi V send -X select-line
-
 # replace C-b by C-a instead of using both prefixes
 set -gu prefix2
 unbind C-a
@@ -352,10 +359,12 @@ unbind C-a
 set -g prefix M-j
 bind M-j send-prefix
 
-unbind -n C-l
+# if you don't want Oh my tmux! to alter a binding, use #!important
+# bind v new-window -c #{pane_current_path} #!important
 
 # move status line to top
 #set -g status-position top
+
 
 # -- tpm -----------------------------------------------------------------------
 
@@ -376,6 +385,17 @@ tmux_conf_update_plugins_on_launch=true
 #   - false
 tmux_conf_update_plugins_on_reload=true
 
+# by default, reloading the configuration will uninstall tpm and plugins when no
+# plugins are enabled
+#   - true (default)
+#   - false
+tmux_conf_uninstall_plugins_on_reload=true
+
+# /!\ the tpm bindings differ slightly from upstream:
+#   - installing plugins: <prefix> + I
+#   - uninstalling plugins: <prefix> + Alt + u
+#   - updating plugins: <prefix> + u
+
 # /!\ do not add set -g @plugin 'tmux-plugins/tpm'
 # /!\ do not add run '~/.tmux/plugins/tpm/tpm'
 
@@ -392,6 +412,12 @@ set -g @extrakto_key 'y'
 
 # -- custom variables ----------------------------------------------------------
 
+set -g  default-terminal "alacritty"        # Needed for italic, etc.
+set -ga terminal-overrides ",alacritty:Tc"  # Needed for delta dark theme colour
+
+set -sg repeat-time        10
+set -g  display-panes-time 1200             # slightly longer pane indicators display time
+
 # to define a custom #{foo} variable, define a POSIX shell function between the
 # '# EOF' and the '# "$@"' lines. Please note that the opening brace { character
 # must be on the same line as the function name otherwise the parse won't detect
@@ -405,9 +431,9 @@ set -g @extrakto_key 'y'
 #
 # # /!\ do not "uncomment" the functions: the leading "# " characters are needed
 #
-# weather() {
-#   curl -m 1 wttr.in?format=3 2>/dev/null
-#   sleep 900 # sleep for 15 minutes, throttle network requests whatever the value of status-interval
+# weather() {                                         # see https://github.com/chubin/wttr.in#one-line-output
+#   curl -f -s -m 2 'wttr.in?format=3' || printf '\n' # /!\ make sure curl is installed
+#   sleep 900                                         # sleep for 15 minutes, throttle network requests whatever the value of status-interval
 # }
 #
 # online() {
@@ -416,6 +442,3 @@ set -g @extrakto_key 'y'
 #
 # "$@"
 # # /!\ do not remove the previous line
-
-set -g default-terminal "alacritty"        # Needed for italic, etc.
-set -ga terminal-overrides ",alacritty:Tc" # Needed for delta dark theme colour

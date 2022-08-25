@@ -31,9 +31,9 @@ export EDITOR="/bin/emacsclient -nw"
 # export TERM=xterm-256color
 # export COLORTERM=truecolor
 
-export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -H -c always"
+export FZF_DEFAULT_COMMAND="fd -L . --min-depth 1 -t f -t d -H -c always --strip-cwd-prefix 2> /dev/null"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --max-depth 5"
-export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always 2> /dev/null"
+export FZF_ALT_C_COMMAND="fd -L . --min-depth 1 -t d -c always --strip-cwd-prefix 2> /dev/null"
 export FZF_DEFAULT_OPTS="--layout=reverse --ansi --prompt='› ' --pointer='›' --marker='›'
  --color=bg+:18,fg+:015,spinner:yellow,hl:016:bold,hl+:red,info:yellow,pointer:yellow,marker:green,prompt:blue"
 # export FZF_COMPLETION_TRIGGER=''
@@ -96,7 +96,7 @@ path=(
     # $ANDROID_HOME/platform-tools
     /opt/texlive/2022/bin/x86_64-linux
     $JAVA_HOME/bin
-    # $HOME/.deno/bin
+    $HOME/.deno/bin
     $HOME/.local/share/pnpm
     $path
 )
@@ -117,15 +117,15 @@ alias firefox=/opt/firefox/firefox
 alias gpg=gpg2
 alias jackett='~/.local/bin/Jackett/jackett'
 # alias ktlint='ktlint --android --color --relative -v'
-alias nightly=/opt/firefox/firefox-bin
+alias ls='lsd'
+alias nightly=/opt/firefox-nightly/firefox-bin
 alias q=exit
 alias reload='exec zsh'
-alias s='googler --count 7'
-alias x=dtrx
+# alias s='googler --count 7'
 alias sudo=doas
+alias x=dtrx
 alias xargs='xargs ' # Needed for alias subtitution
 alias yt=yt-dlp
-alias ls='lsd'
 
 alias -s {yml,yaml,toml,md}=$EDITOR
 
