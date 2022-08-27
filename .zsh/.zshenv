@@ -1,19 +1,19 @@
 #!/usr/bin/env zsh
 
+export LIBSEAT_BACKEND=logind
+
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-export LIBSEAT_BACKEND=logind
-
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=Unity
-# KDE_SESSION_VERSION=5
 # XDG_SESSION_CLASS=user
+# KDE_SESSION_VERSION=5
 
+export GTK_USE_PORTAL=0
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_QPA_PLATFORM=wayland
-export GTK_USE_PORTAL=0
 
 # export BROWSER="/opt/firefox/firefox"
 export MOZ_ENABLE_WAYLAND=1
@@ -26,7 +26,8 @@ export LC_ALL="en_ZA.UTF-8"
 export LIBVA_DRIVER_NAME=i965
 
 export TERMINAL=alacritty
-export EDITOR="/bin/emacsclient -nw"
+export EDITOR="/bin/emacs"
+# export EDITOR="/bin/emacsclient -nw"
 
 # export TERM=xterm-256color
 # export COLORTERM=truecolor
@@ -51,8 +52,8 @@ export CHTSH_QUERY_OPTIONS="style=algol_nu"
 export GNUPGHOME=$HOME/.config/gnupg
 export GPG_TTY=$(tty)
 export MANPAGER='nvim +Man!'
-export MANPATH=/usr/share/man:/opt/texlive/2022/texmf-dist/doc/man
-export DOCKER_HOST=127.0.0.1:2375
+# export MANPATH=/usr/share/man:/opt/texlive/2022/texmf-dist/doc/man:~/.local/share/zinit/polaris/man
+# export DOCKER_HOST=127.0.0.1:2375
 export DOOMDIR="~/.config/doom"
 export FEH_SKIP_MAGIC=1
 

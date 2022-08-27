@@ -74,23 +74,23 @@ tmux_conf_24b_colour=auto
 # tmux_conf_theme_colour_17="#e4e4e4"   # white
 
 # default theme (ansi)
-tmux_conf_theme_colour_1="colour0"       # dark gray
-tmux_conf_theme_colour_2="colour234"     # gray
-tmux_conf_theme_colour_3="colour7"       # light gray
-tmux_conf_theme_colour_4="colour4"       # light blue
-tmux_conf_theme_colour_5="colour11"      # yellow
-tmux_conf_theme_colour_6="colour0"       # dark gray
-tmux_conf_theme_colour_7="colour15"      # white
-tmux_conf_theme_colour_8="colour0"       # dark gray
-tmux_conf_theme_colour_9="colour11"      # yellow
-tmux_conf_theme_colour_10="colour13"     # pink
-tmux_conf_theme_colour_11="colour10"     # green
-tmux_conf_theme_colour_12="colour8"      # light gray
-tmux_conf_theme_colour_13="colour15"     # white
-tmux_conf_theme_colour_14="colour0"      # dark gray
-tmux_conf_theme_colour_15="colour235"    # dark gray
-tmux_conf_theme_colour_16="colour1"      # red
-tmux_conf_theme_colour_17="colour15"     # white
+# tmux_conf_theme_colour_1="colour0"       # dark gray
+# tmux_conf_theme_colour_2="colour234"     # gray
+# tmux_conf_theme_colour_3="colour7"       # light gray
+# tmux_conf_theme_colour_4="colour4"       # light blue
+# tmux_conf_theme_colour_5="colour11"      # yellow
+# tmux_conf_theme_colour_6="colour0"       # dark gray
+# tmux_conf_theme_colour_7="colour15"      # white
+# tmux_conf_theme_colour_8="colour0"       # dark gray
+# tmux_conf_theme_colour_9="colour11"      # yellow
+# tmux_conf_theme_colour_10="colour13"     # pink
+# tmux_conf_theme_colour_11="colour10"     # green
+# tmux_conf_theme_colour_12="colour8"      # light gray
+# tmux_conf_theme_colour_13="colour15"     # white
+# tmux_conf_theme_colour_14="colour0"      # dark gray
+# tmux_conf_theme_colour_15="colour235"    # dark gray
+# tmux_conf_theme_colour_16="colour1"      # red
+# tmux_conf_theme_colour_17="colour15"     # white
 
 # window style
 tmux_conf_theme_window_fg="default"
@@ -147,7 +147,8 @@ tmux_conf_theme_status_attr="none"
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
+# tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
+tmux_conf_theme_terminal_title="Terminal"
 
 # window status style
 #   - built-in variables are:
@@ -201,9 +202,9 @@ tmux_conf_theme_window_status_last_attr="none"
 
 # status left/right sections separators
 tmux_conf_theme_left_separator_main=""
-tmux_conf_theme_left_separator_sub="|"
+tmux_conf_theme_left_separator_sub="│"
 tmux_conf_theme_right_separator_main=""
-tmux_conf_theme_right_separator_sub="|"
+tmux_conf_theme_right_separator_sub="│"
 #tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
 #tmux_conf_theme_left_separator_sub='\uE0B1'   #   you only need fonts patched with
 #tmux_conf_theme_right_separator_main='\uE0B2' #   Powerline symbols or the standalone
@@ -359,6 +360,8 @@ unbind C-a
 set -g prefix M-j
 bind M-j send-prefix
 
+unbind -n C-l # Don't clear history
+
 # if you don't want Oh my tmux! to alter a binding, use #!important
 # bind v new-window -c #{pane_current_path} #!important
 
@@ -406,6 +409,7 @@ tmux_conf_uninstall_plugins_on_reload=true
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'laktak/extrakto'
+# set -g @plugin 'toddyamakawa/tmux-prefixless'
 
 set -g @continuum-restore 'on'
 set -g @extrakto_key 'y'

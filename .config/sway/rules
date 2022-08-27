@@ -18,6 +18,7 @@ assign [app_id="gramps"] workspace 10
 assign [class="org-openstreetmap-josm-gui-MainApplication"] workspace 10
 assign [app_id="lutris"] workspace 10
 
+for_window [app_id="Authenticator"] floating enable
 for_window [class="Emacs"] focus
 for_window [title="Extension: \(Tree Style Tab\)"] floating enable, move position center, resize set 455 270
 for_window [title="About Firefox Nightly"] floating enable

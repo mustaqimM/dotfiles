@@ -809,7 +809,6 @@
 : 1562132208:0;zplg update
 : 1562212621:0;sudo tlp-stat -t | rg CPU
 : 1562241666:0;sudo xbps-install pandoc
-: 1562243583:0;ld
 : 1562263774:0;command rbenv
 : 1562264510:0;command which rbenv
 : 1562264550:0;echo 'eval "$(rbenv init -)"' >> ~/.bashrc
@@ -2434,7 +2433,6 @@
 : 1587534481:0;yarn global bin
 : 1587542779:0;print $precmd_functions
 : 1587542850:0;typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-: 1587548079:0;echo $MANPATH
 : 1587548320:0;ls -Al
 : 1587557106:0;sudo xbps-install font-cursor-misc
 : 1587568332:0;git clone gh:hlissner/doom-emacs ~/.emacs.d
@@ -2578,7 +2576,6 @@
 : 1589032349:0;gcs -m "broot: update to 0.13.6"
 : 1589032357:0;git push origin update_broot
 : 1589032736:0;f .
-: 1589080935:0;gl --rebase upstream master
 : 1589082668:0;e quasar.conf.js
 : 1589085464:0;sudo xbps-install plymouth
 : 1589112176:0;e ~/.config/qutebrowser/config.py
@@ -4091,7 +4088,6 @@ done
 : 1631293943:0;sudo smbpasswd -a mustaqim
 : 1631293978:0;sudo smbpasswd -a nobody
 : 1631293983:0;sudo ln -s /etc/sv/smbd /var/service
-: 1631294504:0;sudo makewhatis /usr/share/man
 : 1631337767:0;sudo ln -s /etc/sv/dbus /var/service
 : 1631338265:0;dbus-run-session sway
 : 1631338297:0;sudo xbps-remove -R polkit
@@ -4452,7 +4448,6 @@ done
 : 1640691925:0;npm install mongoose-unique-validator
 : 1640753459:0;npm run build
 : 1640753571:0;git push heroku master
-: 1640753674:0;heroku logs --tail
 : 1640772140:0;npx eslint index.js
 : 1640779357:0;npm install
 : 1640780908:0;npm install --save-dev eslint
@@ -4764,8 +4759,6 @@ done
 : 1648449747:0;sudo xbps-install swappy
 : 1648450053:0;e ~/.config/sway/config
 : 1648450462:0;e srcpkgs/rofi-wayland/template
-: 1648451727:0;./xbps-src pkg rofi-wayland
-: 1648452107:0;sudo xbps-install --repository=hostdir/binpkgs/new_rofi_wayland rofi-wayland
 : 1648452838:0;gco -b new_package_swayimg
 : 1648452856:0;e srcpkgs/swayimg/template
 : 1648454653:0;gs
@@ -5044,7 +5037,6 @@ done
 : 1654062168:0;cargo update
 : 1654362325:0;adb connect 192.168.1.101
 : 1655007526:0;gsf
-: 1655007692:0;git rebase master
 : 1655007904:0;ssh-add $HOME/.ssh/GitHub </dev/null
 : 1655007906:0;git push -f
 : 1655008000:0;e srcpkgs/dav1d/template
@@ -5123,7 +5115,6 @@ done
 : 1656571891:0;tlmgr install infwarerr
 : 1656572289:0;tlmgr install tools enumitem ragged2e geometry fancyhdr xcolor iftex xifthen etoolbox setspace fontspec lastpage ifmtarg unicode-math amsmath sourcesanspro xkeyval tcolorbox pgf environ parskip kvoptions ltxcmds kvsetkeys hyperref infwarerr
 : 1656572335:0;tlmgr -gui
-: 1656575950:0;gp
 : 1656577664:0;make cv.pdf
 : 1656743282:0;zcalc
 : 1657097930:0;sudo xbps-install -u xbps
@@ -5158,20 +5149,16 @@ done
 : 1659021442:0;curl portquiz.net:27017
 : 1659162375:0;e src/main.rs
 : 1659261106:0;zellij
-: 1659277881:0;tmux list-keys -T prefixless
 : 1659515911:0;jackett
 : 1659518614:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
 : 1659527823:0;pnpm add bcrypt
 : 1659527977:0;pnpm setup
-: 1659529634:0;pnpm add -g pnpm
 : 1659541858:0;fzf < /etc/unbound/zones/rpz.db
 : 1659592084:0;git pull --rebase origin master
 : 1659605282:0;yadm add ~/.config/yt-dlp/config
 : 1659612263:0;ping google.com
 : 1659615261:0;pnpm env use --global latest
 : 1659615983:0;pnpm run test
-: 1659616248:0;gsw master
-: 1659695304:0;git pull --rebase upstream master
 : 1659801661:0;sudo xbps-install audacity
 : 1659855174:0;sudo xbps-install libjack-pipewire
 : 1659855608:0;pw-jack audacity
@@ -5191,7 +5178,6 @@ done
 : 1660119245:0;pnpm add -D eslint
 : 1660127373:0;tree-sitter --version
 : 1660322513:0;yadm add ~/.config/nvim/*~*plugin*
-: 1660322774:0;yadm commit -a -m "update"
 : 1660379854:0;e ~/.config/nvim/init.lua
 : 1660457942:0;rustup update
 : 1660468977:0;fc-list | rg "Iosevka" | cut -d ":" -f2
@@ -5206,7 +5192,6 @@ done
 : 1660583338:0;yadm add ~/.config/delta
 : 1660583344:0;yadm add ~/.config/starship.toml
 : 1660583354:0;yadm add ~/.gitconfig
-: 1660583366:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
 : 1660583573:0;wl-paste > _dl.txt
 : 1660623494:0;zi t
 : 1660625208:0;git rebase -i HEAD~2
@@ -5233,20 +5218,15 @@ done
 : 1660815040:0;switch_theme toggle
 : 1660815133:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1660826853:0;pnpx create-react-app frontend
-: 1660831440:0;dl --input-file _dl.txt 
 : 1660922972:0;pnpx json-server --port 3002 --watch db.json
 : 1660939286:0;w
-: 1660975282:0;doom upgrade
-: 1660978133:0;doom sync
 : 1660993197:0;sudo xbps-install earlyoom
 : 1660993232:0;sudo ln -s /etc/sv/earlyoom /var/service
-: 1661006989:0;cd
 : 1661010088:0;nvim +Man! /tmp/man.XXXXjzYpvK
 : 1661011147:0;pnpm add axios
 : 1661055776:0;git clone gh:openai/openai-quickstart-node
 : 1661056634:0;pnpm install
 : 1661057590:0;notify-send -u normal "Test" "This is a test"
-: 1661057735:0;dunstctl history-pop
 : 1661062027:0;man 
 : 1661062031:0;man vifm
 : 1661075567:0;pnpx json-server --port 3001 --watch db.json
@@ -5258,60 +5238,98 @@ done
 : 1661160351:0;sudo mkswap /var/cache/swap/swapfile
 : 1661160369:0;sudo swapon /var/cache/swap/swapfile
 : 1661231923:0;yt --list-formats "$(wl-paste)"
-: 1661238315:0;pnpm add cors
 : 1661239858:0;bandwhich
 : 1661241813:0;sudo xbps-install hikari
 : 1661242351:0;nvim
-: 1661251210:0;xdg-mime query filetype $(fzf)
 : 1661257244:0;type -f _zsh_autosuggest_start
-: 1661259029:0;dl
 : 1661268266:0;heroku --version
-: 1661268448:0;git init
-: 1661268474:0;gitignore node
 : 1661268596:0;heroku auth:login
 : 1661268842:0;node -v
-: 1661268892:0;heroku create
-: 1661275134:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "21:59 today" +%s)"
 : 1661314880:0;yadm add ~/.config/alacritty/alacritty.yml
 : 1661314883:0;yadm add ~/.config/doom
 : 1661314894:0;yadm add ~/.mozilla/chrome
-: 1661314925:0;yadm push
 : 1661320013:0;man fd
-: 1661323948:0;fc-cache -fv
 : 1661331256:0;echo "{}" > jsconfig.json
-: 1661334618:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
-: 1661334937:0;starship timings
-: 1661335165:0;pnpm run build
-: 1661336195:0;gp heroku main
 : 1661336644:0;pnpm run build:ui
-: 1661336979:0;gaa
-: 1661337103:0;glo
-: 1661337124:0;pnpm run dev
-: 1661338208:0;svlogtail
-: 1661342781:0;sudo sv status /var/service/*
-: 1661349167:0;tlp-stat -t | rg temp
-: 1661355843:0;free -h
-: 1661356527:0;swaymsg -t get_tree | fzf
-: 1661356540:0;sudo sv up udevmon
-: 1661356626:0;psmem -p $(pgrep -d, -u $USER) -S
-: 1661401654:0;zi update -p
-: 1661404477:0;pnpm run start
-: 1661405733:0;htop
-: 1661405816:0;f
-: 1661405938:0;grv
-: 1661406031:0;gst
-: 1661406035:0;gd
 : 1661406051:0;gl --rebase origin master
-: 1661407158:0;sudo xbps-install -Suvy
-: 1661407888:0;reload
-: 1661407910:0;tmux attach || tmux
 : 1661408042:0;echo $PATH | tr ":" "\n" | nl
-: 1661408250:0;yadm status
 : 1661408254:0;yadm add ~/.tmux.conf.local
 : 1661408261:0;yadm add ~/.config/sway
-: 1661408269:0;yadm diff
-: 1661408293:0;zi times
 : 1661408307:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
-: 1661408310:0;yadm status
-: 1661408319:0;yadm diff
 : 1661408335:0;yadm commit -a -m "update"
+: 1661408355:0;yadm push
+: 1661411500:0;sudo makewhatis /usr/share/man
+: 1661412536:0;echo $MANPATH
+: 1661417770:0;pnpm add cors
+: 1661418218:0;pnpm add -g pnpm
+: 1661418396:0;git init
+: 1661418449:0;gitignore node
+: 1661419483:0;gl --rebase upstream master
+: 1661421027:0;echo "web: node index.js" > Procfile
+: 1661421075:0;gp
+: 1661421833:0;heroku logs --tail
+: 1661422900:0;heroku create
+: 1661424285:0;pnpm run build
+: 1661424762:0;gp heroku main
+: 1661424857:0;pnpm run start
+: 1661424919:0;pnpm run dev
+: 1661424959:0;gaa
+: 1661439700:0;xdg-mime query filetype $(fzf)
+: 1661440757:0;sudo xbps-install xdg-desktop-portal xdg-desktop-portal-wlr
+: 1661445981:0;swaymsg -t get_tree | fzf
+: 1661491435:0;zi update -p
+: 1661500382:0;sudo sv up udevmon
+: 1661500385:0;sudo sv status /var/service/*
+: 1661510524:0;doom sync
+: 1661511220:0;doom upgrade
+: 1661514054:0;reload
+: 1661518153:0;fc-cache -fv
+: 1661518484:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
+: 1661526736:0;ld
+: 1661526738:0;dl
+: 1661533176:0;dunstctl history-pop
+: 1661533189:0;dunstify "Progress: " -h int:value:"`pamixer --get-volume`"
+: 1661534811:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "21:59 today" +%s)"
+: 1661573481:0;sudo xbps-install -Suvy
+: 1661576573:0;kill
+: 1661576963:0;tmux list-keys -T prefixless
+: 1661577046:0;tmux attach || tmux
+: 1661579978:0;yadm diff
+: 1661581953:0;dl --input-file _dl.txt 
+: 1661582867:0;gst
+: 1661582869:0;gd
+: 1661582998:0;git pull --rebase upstream master
+: 1661583133:0;gsw master
+: 1661583176:0;git rebase master
+: 1661583179:0;glo
+: 1661583230:0;./xbps-src pkg rofi-wayland
+: 1661583738:0;sudo xbps-install --repository=hostdir/binpkgs/new_rofi_wayland rofi-wayland
+: 1661585312:0;cd
+: 1661586333:0;htop
+: 1661586437:0;free -h
+: 1661588794:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1661589438:0;grv
+: 1661589630:0;starship timings
+: 1661589633:0;zi times
+: 1661589699:0;svlogtail
+: 1661590105:0;f
+: 1661590751:0;tlp-stat -t | rg temp
+: 1661590993:0;yadm status
+: 1661590999:0;cd
+: 1661591004:0;yadm status
+: 1661591009:0;yadm diff
+: 1661591039:0;yadm status
+: 1661591092:0;yadm diff
+: 1661591098:0;yadm status
+: 1661591103:0;yadm add ~/.config/alacritty/alacritty.yml
+: 1661591113:0;yadm add ~/.config/doom
+: 1661591123:0;yadm add ~/.config/dunst
+: 1661591130:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
+: 1661591844:0;tlp-stat -t | rg temp
+: 1661593166:0;yadm status
+: 1661593183:0;yadm add ~/.config/sway
+: 1661593187:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
+: 1661593191:0;yadm add ~/.config/waybar
+: 1661593194:0;yadm add ~/.tmux.conf.local
+: 1661593197:0;yadm status
+: 1661593201:0;yadm add ~/.mozilla/chrome

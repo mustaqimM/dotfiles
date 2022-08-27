@@ -106,6 +106,9 @@ set rulerformat='%l/%S %[+%x%] '
 set vifminfo=dhistory,chistory,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks,marks
 
+" Makes it possible to copy files between servers
+set syncregs=general
+
 " Filter-out build and temporary files
 " filter! /^.*\.(lo|o|d|class|py[co])$|.*~$/
 "filter! /^\_\_MACOSX\/$/
@@ -376,6 +379,9 @@ filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Images
+filetype <image/svg+xml>
+       \ {View in qview}
+       \ qview %f %i &,
 " filetype *.bmp,*.gif,*.jpeg,*.jpg,*.jxl,*.png,*.svg,*.tif,*.webp,*.xpm
 filetype <image/*>
        " \ {View in qview}

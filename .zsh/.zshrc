@@ -117,6 +117,10 @@ zi lucid light-mode wait"1" multisrc"{key-bindings,completion}.zsh" atload" \
   "/usr/share/fzf"
 # fi
 
+zi lucid light-mode nocompile wait'[[ -n ${ZLAST_COMMANDS[(r)fp*]} ]]' sbin'fpp' \
+ atclone"cp -vf debian/usr/share/man/man1/fpp.1 $ZINIT[MAN_DIR]/man1" for \
+  "facebook/PathPicker"
+
 zi lucid light-mode wait"1" compile"*.zsh" nocompletions for \
   "hlissner/zsh-autopair"
 
@@ -185,25 +189,8 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)den*]} ]]'\
 # zi ice wait"2" lucid id-as"tldr" as"program" pick"tldr"
 # zi snippet "https://raw.githubusercontent.com/raylee/tldr/master/tldr"
 
-zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ps*]} ]]' lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
-zi light "pixelb/ps_mem"
-
-# zi ice lucid as"program" pick"pfetch"
-# zi light "dylanaraps/pfetch"
-
-# zi ice lucid from"gh-r" as"program" bpick"*linux*"
-# zi light "casey/intermodal"
-
-# zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> _exercism"
-# zi light "exercism/cli"
-
-# zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)her*]} ]]' lucid as"program" pick"heroku"
-# zi light "$HOME/.local/bin/heroku/bin"
-# zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)her*]} ]]' lucid #cloneonly
-# zi snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
-
 zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)her*]} ]]' extract"!-" id-as"heroku" \
-  nocompile sbin'*bin/heroku->heroku' for \
+  nocompile sbin'bin/heroku' mv"bin/node -> bin/nodeBAK" for \
   "https://cli-assets.heroku.com/heroku-linux-x64.tar.gz"
 zi ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)her*]} ]]'
 zi snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
@@ -225,7 +212,17 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)tr*]} ]]' \
   from'gh-r' nocompile sbin'*->tree-sitter' for \
   tree-sitter/tree-sitter
 
-# zi light romkatv/zsh-prompt-benchmark
+zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ps*]} ]]' lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
+zi light "pixelb/ps_mem"
+
+# zi ice lucid as"program" pick"pfetch"
+# zi light "dylanaraps/pfetch"
+
+# zi ice lucid from"gh-r" as"program" bpick"*linux*"
+# zi light "casey/intermodal"
+
+# zi ice lucid from"gh-r" as"program" bpick"*linux-x86_64*" mv"shell/exercism_completion.zsh -> _exercism"
+# zi light "exercism/cli"
 
 
 # === FUNCTIONS ===
