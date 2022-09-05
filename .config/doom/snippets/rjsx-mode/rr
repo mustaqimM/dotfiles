@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: (request, response)
+# uuid: rr
+# key: /rr
+# condition: t
+# --
+(request, response)

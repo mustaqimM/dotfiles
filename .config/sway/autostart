@@ -9,9 +9,11 @@ run() {
 run pipewire
 run pipewire-pulse
 
-run dunst
-
 run blueman-applet
+
+dbus-update-activation-environment --all
+
+# run dunst
 
 # run foot --server
 

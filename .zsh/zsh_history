@@ -2236,7 +2236,6 @@
 : 1586706043:0;sudo xbps-remove -R xcursor-themes
 : 1586706653:0;xbps-query -Rs pinentry
 : 1586710706:0;sudo xbps-install libsecret
-: 1586710793:0;sudo xbps-install libsecret gnome-keyring
 : 1586712113:0;sudo xbps-install seahorse
 : 1586712628:0;sudo xbps-install surf
 : 1586712926:0;stat -c "%a %n" .priv-env
@@ -3854,7 +3853,6 @@ done
 : 1615440837:0;e ~/.config/firejail/chromium.local
 : 1615647006:0;adb logcat -c
 : 1615647108:0;adb logcat -d -v time > log.txt
-: 1615647207:0;adb logcat -v threadtime > log.txt
 : 1615904203:0;smbclient -U nobody //192.168.1.100/plain
 : 1616000953:0;./shadowfox_linux_x64 -generate-uuids -set-dark-theme
 : 1616001552:0;xbps-query -Rs alsa
@@ -4333,7 +4331,6 @@ done
 : 1638168001:0;sudo xbps-install binutils
 : 1638171961:0;echo $LIBVA_DRIVER_NAME
 : 1638268842:0;sudo xbps-install net-tools
-: 1638371519:0;free -he
 : 1638415004:0;Downloads
 : 1638425251:0;aria 'https://download.servo.org/nightly/linux/servo-latest.tar.gz'
 : 1638425954:0;sudo xbps-install gst-plugins-bad1
@@ -4444,7 +4441,6 @@ done
 : 1640667471:0;sudo xbps-install qt5-plugin-sqlite
 : 1640684958:0;e ~/.config/doom/config
 : 1640684963:0;e ~/.config/doom/config.el
-: 1640688345:0;heroku config:get MONGODB_URI
 : 1640691925:0;npm install mongoose-unique-validator
 : 1640753459:0;npm run build
 : 1640753571:0;git push heroku master
@@ -4490,19 +4486,16 @@ done
 : 1641027102:0;br
 : 1641040642:0;fast-theme --list
 : 1641041054:0;fast-theme --reset
-: 1641050237:0;pnpm add -D jest
 : 1641050843:0;pnpm list
 : 1641051527:0;pnpm outdated
 : 1641053941:0;mkcd TEST
 : 1641053974:0;ga .
 : 1641054483:0;e ~/.zsh/aliases
-: 1641057723:0;pnpm add -D lodash
 : 1641102311:0;node test.js
 : 1641211399:0;bindkey -v
 : 1641212070:0;e ~/.zsh/zsh_history
 : 1641272540:0;sudo xbps-install gramps graphviz libosmgpsmap python3-PyICU libgexiv2 goocanvas
 : 1641272559:0;sudo xbps-install gramps graphviz libosmgpsmap python3-PyICU libgexiv2 goocanvas geocode-glib
-: 1641285255:0;pnpm add -D supertest
 : 1641287965:0;sudo xbps-install vscode
 : 1641289602:0;pnpm run test -- -t '_id'
 : 1641290816:0;pnpm add express-async-errors
@@ -4625,13 +4618,8 @@ done
 : 1646543303:0;sudo xbps-install --repository=hostdir/binpkgs/update_gramps gramps
 : 1646562297:0;man cjxl
 : 1646562334:0;cjxl -v -v -h
-: 1646566007:0;adb connect 192.168.1.101:$(nmap 192.168.1.101 -p 30000-65535 --system-dns | rg "tcp" | cut -d/ -f1)
 : 1646569500:0;gem install webrick
 : 1646569531:0;sudo xbps-remove -R ruby
-: 1646571691:0;adb shell pm uninstall --user 0 org.lineageos.eleven
-: 1646571699:0;adb shell pm uninstall --user 0 com.android.contacts
-: 1646571703:0;adb shell pm uninstall --user 0 com.android.messaging
-: 1646571708:0;adb shell pm uninstall --user 0 com.android.dialer
 : 1646582260:0;sudo xbps-install gnome-themes-extra
 : 1646810833:0;git clone gh:jdfekete/geneaquilt
 : 1647020896:0;cp /usr/share/pipewire/pipewire.conf ~/.config/pipewire
@@ -4952,7 +4940,6 @@ done
 : 1651045028:0;ffmpeg -i file.avi -qscale:v 1 -qmin 1 -qmax 1 -vsync 0 frame%08d.jpg
 : 1651055346:0;rustc --explain E0308
 : 1651129327:0;fd -e jpg -x rm
-: 1651141480:0;yadm add ~/.config/dunst
 : 1651141484:0;yadm add ~/.config/pipewire/pipewire.conf
 : 1651157470:0;gd --staged
 : 1651157489:0;delta --diff-so-fancy --show-config
@@ -5050,7 +5037,6 @@ done
 : 1655013396:0;zstyle -L
 : 1655014206:0;xbps-query -Rs texlive
 : 1655098134:0;xelatex cv.tex
-: 1655131971:0;fd '\.(jpe?|pn)g' -x cjxl {} {.}.jxl
 : 1655217386:0;sudo sv restart smbd
 : 1655217409:0;svlogtail | rg smbd
 : 1655217944:0;lsblk --fs
@@ -5133,7 +5119,6 @@ done
 : 1657810113:0;yadm add ~/.config/aria2/aria2.conf
 : 1657810118:0;yadm add ~/.config/bat
 : 1657810137:0;yadm add ~/.config/rofi
-: 1657810154:0;yadm add ~/.config/waybar
 : 1657810159:0;yadm add ~/.config/zathura/zathurarc
 : 1657810174:0;yadm add ~/.github/README.md
 : 1657863643:0;man mpv
@@ -5142,7 +5127,6 @@ done
 : 1658304378:0;man yt-dlp
 : 1658305604:0;gco $(gb | fzf)
 : 1658389810:0;yt -f '247+251' "$(wl-paste)"
-: 1658580971:0;sudo sv restart unbound
 : 1658747731:0;e _dl.txt
 : 1658854891:0;man 5 dunst
 : 1658987207:0;pkill dunst
@@ -5156,9 +5140,7 @@ done
 : 1659541858:0;fzf < /etc/unbound/zones/rpz.db
 : 1659592084:0;git pull --rebase origin master
 : 1659605282:0;yadm add ~/.config/yt-dlp/config
-: 1659612263:0;ping google.com
 : 1659615261:0;pnpm env use --global latest
-: 1659615983:0;pnpm run test
 : 1659801661:0;sudo xbps-install audacity
 : 1659855174:0;sudo xbps-install libjack-pipewire
 : 1659855608:0;pw-jack audacity
@@ -5174,15 +5156,11 @@ done
 : 1660017474:0;zi creinstall -Q $ZDOTDIR/completions
 : 1660017536:0;pnpm update
 : 1660018399:0;deno task start
-: 1660063786:0;crontab -e
-: 1660119245:0;pnpm add -D eslint
-: 1660127373:0;tree-sitter --version
 : 1660322513:0;yadm add ~/.config/nvim/*~*plugin*
 : 1660379854:0;e ~/.config/nvim/init.lua
 : 1660457942:0;rustup update
 : 1660468977:0;fc-list | rg "Iosevka" | cut -d ":" -f2
 : 1660475755:0;xbps-query -f yt-dlp
-: 1660479770:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
 : 1660496080:0;tmux show -s default-terminal
 : 1660496291:0;echo -e "\e[3mitalic\e[0m"
 : 1660548717:0;yadm add ~/.config/fontconfig/fonts.conf
@@ -5192,31 +5170,21 @@ done
 : 1660583338:0;yadm add ~/.config/delta
 : 1660583344:0;yadm add ~/.config/starship.toml
 : 1660583354:0;yadm add ~/.gitconfig
-: 1660583573:0;wl-paste > _dl.txt
 : 1660623494:0;zi t
 : 1660625208:0;git rebase -i HEAD~2
 : 1660627689:0;sudo xbps-install patch
 : 1660627988:0;git mergetool
 : 1660629113:0;git rebase --continue
-: 1660642538:0;pnpm init
-: 1660642572:0;pnpm add -D nodemon
-: 1660642592:0;pnpm add express
 : 1660643979:0;echo "# dependencies\nnode_modules" > .gitignore
 : 1660644556:0;yadm checkout 1e7878b589a47b3f324f89a055ceb5657097da5d -- ~/.zsh/functions/gitignore
 : 1660716841:0;wf-recorder -f recording.mp4
-: 1660721017:0;plain show
-: 1660732160:0;gcan!
 : 1660732269:0;pnpm add morgan
 : 1660753261:0;rust-analyzer --version
 : 1660754717:0;ln -s $(which rust-analyzer) ~/.cargo/bin
 : 1660754792:0;ln -s $(which deno) ~/.deno/bin
-: 1660756894:0;crontab -l
-: 1660802316:0;deno --version
 : 1660810815:0;pkill emacs
-: 1660811109:0;gsettings get org.gnome.desktop.interface gtk-theme
 : 1660814774:0;zcompile switch_theme
 : 1660815040:0;switch_theme toggle
-: 1660815133:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1660826853:0;pnpx create-react-app frontend
 : 1660922972:0;pnpx json-server --port 3002 --watch db.json
 : 1660939286:0;w
@@ -5237,31 +5205,21 @@ done
 : 1661160337:0;sudo chmod 0600 /var/cache/swap/swapfile
 : 1661160351:0;sudo mkswap /var/cache/swap/swapfile
 : 1661160369:0;sudo swapon /var/cache/swap/swapfile
-: 1661231923:0;yt --list-formats "$(wl-paste)"
-: 1661239858:0;bandwhich
 : 1661241813:0;sudo xbps-install hikari
 : 1661242351:0;nvim
 : 1661257244:0;type -f _zsh_autosuggest_start
 : 1661268266:0;heroku --version
 : 1661268596:0;heroku auth:login
 : 1661268842:0;node -v
-: 1661314880:0;yadm add ~/.config/alacritty/alacritty.yml
-: 1661314883:0;yadm add ~/.config/doom
-: 1661314894:0;yadm add ~/.mozilla/chrome
 : 1661320013:0;man fd
 : 1661331256:0;echo "{}" > jsconfig.json
 : 1661336644:0;pnpm run build:ui
 : 1661406051:0;gl --rebase origin master
 : 1661408042:0;echo $PATH | tr ":" "\n" | nl
-: 1661408254:0;yadm add ~/.tmux.conf.local
-: 1661408261:0;yadm add ~/.config/sway
 : 1661408307:0;yadm add ~/.zsh/.zshrc ~/.zsh/zsh_history ~/.zsh/.zshenv
 : 1661408335:0;yadm commit -a -m "update"
-: 1661408355:0;yadm push
 : 1661411500:0;sudo makewhatis /usr/share/man
 : 1661412536:0;echo $MANPATH
-: 1661417770:0;pnpm add cors
-: 1661418218:0;pnpm add -g pnpm
 : 1661418396:0;git init
 : 1661418449:0;gitignore node
 : 1661419483:0;gl --rebase upstream master
@@ -5269,67 +5227,126 @@ done
 : 1661421075:0;gp
 : 1661421833:0;heroku logs --tail
 : 1661422900:0;heroku create
-: 1661424285:0;pnpm run build
-: 1661424762:0;gp heroku main
-: 1661424857:0;pnpm run start
-: 1661424919:0;pnpm run dev
-: 1661424959:0;gaa
-: 1661439700:0;xdg-mime query filetype $(fzf)
 : 1661440757:0;sudo xbps-install xdg-desktop-portal xdg-desktop-portal-wlr
-: 1661445981:0;swaymsg -t get_tree | fzf
-: 1661491435:0;zi update -p
-: 1661500382:0;sudo sv up udevmon
-: 1661500385:0;sudo sv status /var/service/*
 : 1661510524:0;doom sync
-: 1661511220:0;doom upgrade
-: 1661514054:0;reload
 : 1661518153:0;fc-cache -fv
-: 1661518484:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
 : 1661526736:0;ld
-: 1661526738:0;dl
 : 1661533176:0;dunstctl history-pop
 : 1661533189:0;dunstify "Progress: " -h int:value:"`pamixer --get-volume`"
-: 1661534811:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "21:59 today" +%s)"
-: 1661573481:0;sudo xbps-install -Suvy
 : 1661576573:0;kill
 : 1661576963:0;tmux list-keys -T prefixless
-: 1661577046:0;tmux attach || tmux
-: 1661579978:0;yadm diff
 : 1661581953:0;dl --input-file _dl.txt 
-: 1661582867:0;gst
-: 1661582869:0;gd
 : 1661582998:0;git pull --rebase upstream master
 : 1661583133:0;gsw master
 : 1661583176:0;git rebase master
-: 1661583179:0;glo
 : 1661583230:0;./xbps-src pkg rofi-wayland
 : 1661583738:0;sudo xbps-install --repository=hostdir/binpkgs/new_rofi_wayland rofi-wayland
-: 1661585312:0;cd
-: 1661586333:0;htop
-: 1661586437:0;free -h
-: 1661588794:0;psmem -p $(pgrep -d, -u $USER) -S
-: 1661589438:0;grv
-: 1661589630:0;starship timings
-: 1661589633:0;zi times
-: 1661589699:0;svlogtail
-: 1661590105:0;f
-: 1661590751:0;tlp-stat -t | rg temp
-: 1661590993:0;yadm status
-: 1661590999:0;cd
-: 1661591004:0;yadm status
-: 1661591009:0;yadm diff
-: 1661591039:0;yadm status
-: 1661591092:0;yadm diff
-: 1661591098:0;yadm status
 : 1661591103:0;yadm add ~/.config/alacritty/alacritty.yml
 : 1661591113:0;yadm add ~/.config/doom
 : 1661591123:0;yadm add ~/.config/dunst
 : 1661591130:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
-: 1661591844:0;tlp-stat -t | rg temp
-: 1661593166:0;yadm status
 : 1661593183:0;yadm add ~/.config/sway
 : 1661593187:0;yadm add ~/.config/vifm/{colors,scripts,vifmrc}
 : 1661593191:0;yadm add ~/.config/waybar
 : 1661593194:0;yadm add ~/.tmux.conf.local
 : 1661593197:0;yadm status
 : 1661593201:0;yadm add ~/.mozilla/chrome
+: 1661593237:0;yadm push
+: 1661617384:0;swaymsg -t get_tree | fzf
+: 1661676112:0;sudo xbps-install libsecret gnome-keyring
+: 1661745642:0;crontab -e
+: 1661749806:0;adb logcat -v threadtime > log.txt
+: 1661755349:0;adb shell pm uninstall --user 0 com.android.contacts
+: 1661755353:0;adb shell pm uninstall --user 0 com.android.messaging
+: 1661755357:0;adb shell pm uninstall --user 0 com.android.dialer
+: 1661755519:0;adb shell pm uninstall --user 0 org.lineageos.eleven
+: 1661784702:0;heroku config:get MONGODB_URI
+: 1661786880:0;pnpm run start
+: 1661788243:0;gcan!
+: 1661790024:0;pnpm add mongoose-unique-validator
+: 1661791219:0;pnpm run build
+: 1661791374:0;gp heroku main
+: 1661791954:0;pnpx eslint index.js
+: 1661792640:0;touch .eslintignore
+: 1661793443:0;echo "build" > .eslintignore
+: 1661832713:0;pnpm run lint
+: 1661832771:0;pnpm run lint --fix
+: 1661874030:0;pnpm init
+: 1661874050:0;pnpm add express
+: 1661874077:0;pnpm add cors
+: 1661874086:0;pnpm add mongoose
+: 1661874161:0;pnpm add -D eslint
+: 1661874177:0;pnpm add dotenv
+: 1661874237:0;pnpx eslint --init
+: 1661875667:0;pnpm add -D nodemon
+: 1661919402:0;sudo sv restart unbound
+: 1661919408:0;ping google.com
+: 1661932741:0;fd '\.(jpe?|pn)g' -x cjxl {} {.}.jxl
+: 1661932755:0;xdg-mime query filetype $(fzf)
+: 1661932796:0;xdg-mime query filetype "$(fzf)"
+: 1661933532:0;grv
+: 1661937382:0;wf-recorder -g "$(slurp)"
+: 1661937806:0;pnpm add -D eslint prettier eslint-config-prettier
+: 1661938489:0;wf-recorder -f vaapi_recording.mkv -c h264_vaapi -d /dev/dri/renderD128
+: 1661951405:0;starship timings
+: 1662021759:0;pnpm add -D jest
+: 1662027775:0;pnpm run dev
+: 1662028002:0;pnpm add -D jest @types/jest
+: 1662028677:0;gd
+: 1662028711:0;gst
+: 1662028714:0;gaa
+: 1662028718:0;glo
+: 1662030385:0;pnpm add -D lodash
+: 1662034027:0;cd
+: 1662104588:0;sudo xbps-install lshw
+: 1662104644:0;sudo dmidecode -t memory
+: 1662104942:0;sudo lshw -short -C memory
+: 1662105093:0;svlogtail
+: 1662119665:0;yadm diff
+: 1662135516:0;ps -auxwwwf | fzf --header-lines=1
+: 1662135582:0;sudo xbps-install psmisc
+: 1662135625:0;sudo sv status /var/service/*
+: 1662139782:0;sudo sv up udevmon
+: 1662139814:0;crontab -l
+: 1662139845:0;sudo rtcwake -m mem -u "+2" -t "$(date -d "21:59 today" +%s)"
+: 1662191269:0;free -he
+: 1662191641:0;qalc
+: 1662221718:0;gsettings get org.gnome.desktop.interface gtk-theme
+: 1662221728:0;gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Dark"
+: 1662221735:0;gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Light"
+: 1662224672:0;gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Dark-solid"
+: 1662225397:0;dbus-monitor --session sender=org.freedesktop.portal.Desktop destination=org.freedesktop.portal.Desktop
+: 1662264288:0;tree-sitter --version
+: 1662264294:0;deno --version
+: 1662267947:0;kill **
+: 1662271606:0;wl-paste > _dl.txt
+: 1662271900:0;free -h
+: 1662271903:0;psmem -p $(pgrep -d, -u $USER) -S
+: 1662295217:0;htop
+: 1662307634:0;tlp-stat -t | rg temp
+: 1662354671:0;zi update -p
+: 1662354710:0;zi times
+: 1662355055:0;tmux attach || tmux
+: 1662356902:0;adb shell pm uninstall --user 0 com.android.deskclock
+: 1662357642:0;plain show
+: 1662358098:0;adb connect 192.168.1.101:$(nmap 192.168.1.101 -p 30000-65535 --system-dns | rg "tcp" | cut -d/ -f1)
+: 1662358568:0;doom upgrade
+: 1662358913:0;sudo xbps-install -Suvy
+: 1662360971:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
+: 1662367147:0;bandwhich
+: 1662367173:0;dl
+: 1662368373:0;pnpm add -D supertest
+: 1662369200:0;pnpm add -g pnpm
+: 1662369719:0;pnpm run test
+: 1662374248:0;f
+: 1662374378:0;yt --list-formats "$(wl-paste)"
+: 1662374693:0;reload
+: 1662374921:0;yadm status
+: 1662374924:0;yadm diff
+: 1662375091:0;yadm status
+: 1662375097:0;yadm add ~/.mozilla/chrome
+: 1662375103:0;yadm add ~/.config/doom
+: 1662375107:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
+: 1662375111:0;yadm add ~/.config/sway
+: 1662375126:0;yadm status
+: 1662375128:0;yadm commit -a -m "update"

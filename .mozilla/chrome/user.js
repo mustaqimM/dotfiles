@@ -19,3 +19,5 @@ user_pref("network.dns.echconfig.enabled", true);
 // user_pref("network.http.referer.XOriginPolicy", 0);
 
 user_pref("gfx.downloadable_fonts.enabled ", false);
+
+user_pref("accessibility.typeaheadfind", false);

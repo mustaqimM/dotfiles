@@ -31,7 +31,7 @@ setopt HIST_SAVE_NO_DUPS                                # don't write duplicate 
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_SPACE                                # prefix commands you don't want stored with a space
-HISTORY_IGNORE="(builtin *|exit|ls|r|open|pwd|q|x *|kill *|s *|cd *)"
+HISTORY_IGNORE="(builtin *|exit|ls|r|open|pwd|q|x *|s *|cd *)"
 
 setopt NO_HUP                                           # don't kill jobs
 setopt NO_CHECK_JOBS
@@ -214,6 +214,10 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)tr*]} ]]' \
 
 zi ice wait'[[ -n ${ZLAST_COMMANDS[(r)ps*]} ]]' lucid as"program" mv"ps_mem.py -> psmem" pick"psmem"
 zi light "pixelb/ps_mem"
+
+zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)yt*]} ]]' \
+  from'gh-r' bpick"yt-dlp" nocompile sbin'yt-dlp->yt' for \
+  yt-dlp/yt-dlp
 
 # zi ice lucid as"program" pick"pfetch"
 # zi light "dylanaraps/pfetch"

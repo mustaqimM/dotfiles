@@ -7,7 +7,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 export XDG_SESSION_TYPE=wayland
-export XDG_CURRENT_DESKTOP=Unity
+export XDG_SESSION_DESKTOP=sway
+export XDG_CURRENT_DESKTOP=sway
 # XDG_SESSION_CLASS=user
 # KDE_SESSION_VERSION=5
 
@@ -24,6 +25,7 @@ export TZ=Africa/Johannesburg
 export LC_ALL="en_ZA.UTF-8"
 
 export LIBVA_DRIVER_NAME=i965
+export SDL_VIDEODRIVER=wayland
 
 export TERMINAL=alacritty
 export EDITOR="/bin/emacs"
@@ -126,7 +128,6 @@ alias reload='exec zsh'
 alias sudo=doas
 alias x=dtrx
 alias xargs='xargs ' # Needed for alias subtitution
-alias yt=yt-dlp
 
 alias -s {yml,yaml,toml,md}=$EDITOR
 
