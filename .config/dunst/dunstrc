@@ -197,7 +197,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/Papirus-Dark/24x24/actions/:/usr/share/icons/Papirus-Dark/24x24/status/:/usr/share/icons/Papirus-Dark/24x24/devices/:/usr/share/icons/Papirus-Dark/24x24/apps/
+    icon_path = /usr/share/icons/Papirus-Dark/24x24/actions/:/usr/share/icons/Papirus-Light/24x24/status/:/usr/share/icons/Papirus-Light/24x24/devices/:/usr/share/icons/Papirus-Light/24x24/apps/
 
     ### History ###
 

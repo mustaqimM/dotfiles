@@ -271,7 +271,7 @@ nnoremap <silent> ,d :set viewcolumns=*{name}.,10{perms},12{uname},-7{gname},10{
 " filextype */
 "        \ {View in thunar}
 "        \ Thunar %f &,
-fileviewer */,.*/ lsd --color=always --group-dirs=first --tree --depth=1 -a
+fileviewer */,.*/ lsd --icon never --color=always --group-dirs=first --tree --depth=1 -a
 
 " Pdf
 filextype *.pdf zathura %c %i

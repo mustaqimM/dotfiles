@@ -370,4 +370,3 @@ zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl darkhttpd dire
 # zi creinstall -Q $ZDOTDIR/completions
 
 # for comp ( yadm vifm ) { zicompdef _$comp $comp; }
-

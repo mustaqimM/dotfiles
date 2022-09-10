@@ -29,6 +29,7 @@ export SDL_VIDEODRIVER=wayland
 
 export TERMINAL=alacritty
 export EDITOR="/bin/emacs"
+export VISUAL=$EDITOR
 # export EDITOR="/bin/emacsclient -nw"
 
 # export TERM=xterm-256color
@@ -100,7 +101,7 @@ path=(
     /opt/texlive/2022/bin/x86_64-linux
     $JAVA_HOME/bin
     $HOME/.deno/bin
-    $HOME/.local/share/pnpm
+    $PNPM_HOME
     $path
 )
 # export PATH
