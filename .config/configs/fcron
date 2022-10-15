@@ -1,0 +1,21 @@
+!mail(false)
+
+DISPLAY=:0
+QT_QPA_PLATFORMTHEME=qt5ct
+yt=/home/mustaqim/.local/share/zinit/polaris/bin/yt
+
+# Mins  Hours  Days  Months  Day    Command
+# -----------------------------------------
+# *     *      *     *       *      /usr/bin/env > /home/mustaqim/cron-env
+
+# @weekly                            bash /bin/update_unbound.sh > /dev/null 2>&1
+
+# @midnight                          env DISPLAY=:0 firejail --profile=~/.config/firejail/JDownloader.local
+
+# 00 22 * * * /bin/qbittorrent
+# 00 22 * * * /usr/lib/jvm/jbrsdk/bin/java -jar /home/mustaqim/.local/bin/jd2/JDownloader.jar
+
+00 22 * * * cd /home/mustaqim/Library/Downloads/youtube/ib && $yt --playlist-start 74 'https://www.youtube.com/playlist?list=PL8M9dV_BySaXAcvOFRz-nz97x2eEHqZSr'
+# @midnight cd /home/mustaqim/Library/Downloads/youtube/sampson && $yt --playlist-start 140 'https://www.youtube.com/playlist?list=PLB00JHoTw1TeX82Qw8hoFLRJI89Us_jMw'
+
+00 22 * * * cd '/home/mustaqim/Library/Downloads/AB PU' && megadl 'https://mega.nz/folder/T6oHkKRI#CZvxMAIIK2U-cKKTdBwZJQ'

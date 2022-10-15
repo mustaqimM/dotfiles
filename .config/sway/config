@@ -68,9 +68,10 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
       scroll_factor 1
 }
 
-input "type:keyboard" {
+input "1:1:AT_Translated_Set_2_keyboard" {
       # xkb_options caps:ctrl_modifier
       # xkb_options caps:escape
+      xkb_numlock enabled
       repeat_delay 300
       repeat_rate  60
 }
@@ -125,7 +126,6 @@ input "type:keyboard" {
     bindsym Print exec grim -g "$(slurp -d)" - | swappy -f -
     # bindsym Print exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
-    bindsym $mod+o exec pkill -SIGUSR1 waybar
 #
 # Moving around:
 #
@@ -189,6 +189,7 @@ input "type:keyboard" {
     # respectively.
     bindsym $mod+b splith
     bindsym $mod+v splitv
+    # bindsym $mod+n split toggle
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -206,6 +207,13 @@ input "type:keyboard" {
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    bindsym $mod+c move position center
+
+    bindsym $mod+o exec pkill -SIGUSR1 waybar
+
+    bindsym $mod+Shift+o sticky toggle
+
 #
 # Scratchpad:
 #
@@ -243,7 +251,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bindsym $mod+c move position center
 
 #
 # Status Bar:

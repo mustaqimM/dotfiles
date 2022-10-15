@@ -23,14 +23,18 @@ for_window [class="Emacs"] focus
 for_window [title="Extension: \(Tree Style Tab\)"] floating enable, move position center, resize set 455 270
 for_window [title="About Firefox Nightly"] floating enable
 for_window [title="About Mozilla Firefox"] floating enable
-for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, move position 890 490, resize set 505 305, sticky enable
+for_window [title="(Picture-in-Picture|Picture in picture)"] floating enable, move position 984 404, resize set 505 305, sticky enable
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable, move position 644 0, sticky enable
+for_window [app_id="firefox" title="Extension: \(MetaMask\) - MetaMask Notification — Mozilla Firefox"] floating enable
 for_window [app_id="firefox"] layout stacking
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable, resize set 956 576
 # for_window [title=".+[Ss]haring (Indicator|your screen)"] floating enable, move to scratchpad
 for_window [app_id="mpv"] fullscreen, focus, resize set 956 576
-for_window [app_id="qview"] fullscreen disable, floating enable, move position center, resize set 1024 576
+for_window [app_id="com.interversehq.qView"] fullscreen disable, floating enable, move position center
 for_window [app_id="pavucontrol-qt"] floating enable, focus, resize set 956 576
 for_window [app_id="org.pwmt.zathura"] focus
 for_window [app_id="pcmanfm-qt"] floating enable, focus, resize set 956 576
 for_window [app_id="org.gnome.Nautilus"] floating enable
+for_window [app_id="qalculate-gtk"] floating enable
+for_window [app_id="^msedge-.*-.*$"] shortcuts_inhibitor disable
+for_window [app_id="org.twosheds.iwgtk"] floating enable

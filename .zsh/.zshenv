@@ -12,12 +12,18 @@ export XDG_CURRENT_DESKTOP=sway
 # XDG_SESSION_CLASS=user
 # KDE_SESSION_VERSION=5
 
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export GLFW_IM_MODULE=ibus
+
 export GTK_USE_PORTAL=0
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_QPA_PLATFORM=wayland
 
 # export BROWSER="/opt/firefox/firefox"
 export MOZ_ENABLE_WAYLAND=1
+export MOZ_USE_XINPUT2=1
 
 export TZ=Africa/Johannesburg
 

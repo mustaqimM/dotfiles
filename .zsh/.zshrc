@@ -20,6 +20,7 @@ fpath=(
 )
 
 # ==============================================================================
+setopt no_global_rcs
 HISTFILE=${ZDOTDIR}/zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -68,9 +69,9 @@ zle_highlight=('paste:reverse')
 # ==============================================================================
 # === PLUGINS ===
 # === THEME ===
+PROMPT=$'\n'"%F{blue}~%f"$'\n'"$ "
 # zi ice depth'1' lucid atinit'source ~/.zsh/.p10k-lean-8colors.zsh' nocd atload"!_p9k_do_nothing _p9k_precmd"
 # zi light romkatv/powerlevel10k
-PROMPT=$'\n'"%F{blue}~%f"$'\n'"$ "
 zi lucid light-mode from"gh-r" bpick"*linux-gnu.tar.gz" nocompile sbin"starship" \
   atclone"./starship init zsh > init.zsh; zcompile init.zsh; \
   ./starship completions zsh > _starship" atpull"%atclone" for \
@@ -370,3 +371,4 @@ zicompdef _gnu_generic aomenc ar aria2c bandwhich curl cwebp cjxl darkhttpd dire
 # zi creinstall -Q $ZDOTDIR/completions
 
 # for comp ( yadm vifm ) { zicompdef _$comp $comp; }
+

@@ -6,12 +6,14 @@ run() {
   fi
 }
 
+dbus-update-activation-environment --all
+
 run pipewire
 run pipewire-pulse
 
 run blueman-applet
 
-dbus-update-activation-environment --all
+# run mpris-proxy
 
 # run dunst
 

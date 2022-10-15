@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 push() {
-     adb connect 192.168.1.101:5555
+     # adb connect 10.0.0.2:5555
      declare -a list
      declare -i i=1
      fd -e mkv -e mp4 -e webm -c always | \

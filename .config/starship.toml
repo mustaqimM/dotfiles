@@ -52,7 +52,7 @@ format = ' \([$state($progress_current/$progress_total)]($style)\)'
 [git_status]
 ahead = " ⇡${count}"
 behind = " ⇣${count}"
-diverged = '⇕\[⇡${ahead_count} ⇣${behind_count}\]'
+diverged = '( ⇕\[⇡${ahead_count} ⇣${behind_count}\])'
 conflicted = "[ (!$count)](16)"
 untracked = "( [⋅$count](yellow))"
 modified = "( [±$count](5))"

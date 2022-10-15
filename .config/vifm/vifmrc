@@ -189,7 +189,7 @@ nnoremap yn :!echo -n %c:r | wl-copy %i <cr>:echo expand('%"c:r') ": file name y
 nnoremap yc :!wl-copy -n < %c %i <cr>:echo expand('%"c') ": contents yanked "<cr>
 
 " Push selected files via adb
-command! push adb connect 192.168.1.101:5555; adb push %f /sdcard/Movies %s && notify-send 'adb' 'File sent!' --icon=distributor-logo-android
+command! push adb push %f /sdcard/Movies %s && notify-send 'adb' 'File sent!' --icon=distributor-logo-android
 nnoremap aa :push<cr>
 
 " Extract an archive
