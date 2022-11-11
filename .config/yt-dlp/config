@@ -1,4 +1,5 @@
 -f '247+251/bestvideo[vcodec=?vp9]+bestaudio[acodec=?opus]/best' # 398+251/
+--extractor-args "youtube:lang=en"
 --sub-langs 'en.*'
 --sub-format=best
 # --write-subs
@@ -15,3 +16,4 @@
 -o '%(playlist_index|)s%(playlist_index& - )s%(title)s.%(ext)s'
 --sponsorblock-mark all
 -i
+--mark-watched

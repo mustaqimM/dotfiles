@@ -2,7 +2,7 @@
 Name=Thunderbird
 GenericName=Mail Client
 Comment=Send and receive mail with Thunderbird
-Exec=sh -c "firejail --rmenv=LS_COLORS --profile=thunderbird thunderbird & birdtray"
+Exec=thunderbird & birdtray
 Icon=thunderbird
 Terminal=false
 Type=Application

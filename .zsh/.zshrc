@@ -170,7 +170,7 @@ zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)pn*]} ]]' id-as"pnpm-completi
   "https://raw.githubusercontent.com/SebastienWae/pnpm-completions/main/pnpm.zsh"
 
 zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)den*]} ]]'\
-  from'gh-r' bpick"*linux-gnu*" ver"latest" nocompile sbin'*->deno' for \
+  from'gh-r' bpick"*linux-gnu*" nocompile sbin'*->deno' for \
   denoland/deno
 
 # zi ice lucid wait \
@@ -206,7 +206,7 @@ zi snippet "OMZ::plugins/heroku/heroku.plugin.zsh"
 # zi light "ziglang/shell-completions"
 
 zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)rust*]} ]]' \
-  from'gh-r' bpick"*linux-gnu.gz" ver"latest" nocompile sbin'*->rust-analyzer' for \
+  from'gh-r' bpick"*linux-gnu.gz" nocompile sbin'*->rust-analyzer' for \
   rust-lang/rust-analyzer
 
 zi lucid light-mode wait'[[ -n ${ZLAST_COMMANDS[(r)tr*]} ]]' \
@@ -358,7 +358,7 @@ autoload -U select-word-style
 select-word-style bash # Delete a word at a time
 
 # Load autoload shell functions on demand
-autoload -Uz decode dl fz fzf_log gitignore kd man magit mkcd plain push switch_theme yadm_log_diff
+autoload -Uz decode dl fz fzf_log gitignore kd man magit mkcd plain push rv switch_theme yadm_log_diff
 autoload zcalc
 
 # generic completions for programs which understand GNU long options(--help)

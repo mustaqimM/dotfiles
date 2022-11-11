@@ -1,2 +1,4 @@
-# My personal additions
 local-zone: "graph.facebook.com" always_nxdomain
+
+local-zone: "s.click.aliexpress.com" always_transparent
+local-zone: "adf.ly" always_transparent
