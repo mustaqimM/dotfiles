@@ -3570,11 +3570,9 @@ done
 : 1608468093:0;sudo fdisk /dev/loop0
 : 1608535699:0;java -jar mkgmap.jar --gmapsupp map.osm
 : 1608535718:0;aria 'https://download.geofabrik.de/africa/south-africa-latest.osm.bz2'
-: 1608542539:0;sudo mount -t vfat /dev/mmcblk0p1 /media/ -o uid=1000,gid=1000,utf8,dmask=027,fmask=137
 : 1608543725:0;sudo u
 : 1608544073:0;sudo mount /dev/loop0p1 /media
 : 1608545181:0;sudo mount -t ufs -o ufstype=ufs2 /dev/loop0p1 /mnt
-: 1608545238:0;sudo fdisk -l
 : 1608546089:0;sudo kpartx -av gps.img
 : 1608546164:0;sudo losetup -f -P gps.img
 : 1608546263:0;sudo kpartx -dv gps.img
@@ -4497,7 +4495,6 @@ done
 : 1642403047:0;e ~/.config/waybar/style.css
 : 1642481836:0;sudo xbps-install filelight
 : 1642482541:0;sudo xbps-remove -R filelight
-: 1642583320:0;adb shell ls /sdcard/Movies
 : 1642841805:0;e ~/.config/vifm/colors/light.vifm
 : 1642865856:0;sudo ln -s /etc/sv/elogind /var/service
 : 1642914736:0;djxl -h
@@ -4761,11 +4758,8 @@ done
 : 1648885060:0;printc '\033[38;5;196m'
 : 1648891221:0;echo $SSH_AUTH_SOCK
 : 1648892604:0;mpv /dev/video0
-: 1648965595:0;sudo xbps-install --repository=hostdir/binpkgs/new_package_noise-suppression-for-voice noise-suppression-for-voice
-: 1648966033:0;./xbps-src clean
 : 1648966099:0;xbps-query -f noise-suppression-for-voice --repository=hostdir/binpkgs/new_package_noise-suppression-for-voice
 : 1648966177:0;gcs -m "New package: noise-suppression-for-voice-0.91"
-: 1648966663:0;xbps-query -f noise-suppression-for-voice
 : 1648969817:0;sudo xbps-install darkhttpd
 : 1648971012:0;sudo ln -s /etc/sv/darkhttpd /var/service
 : 1648971130:0;svlogtail | rg darkhttpd
@@ -4879,7 +4873,6 @@ done
 : 1650906570:0;e ~/.config/pipewire/pipewire.conf
 : 1650958395:0;zmodload -F zsh/parameter p:aliases
 : 1650969228:0;cal
-: 1651033992:0;sudo dmesg
 : 1651045028:0;ffmpeg -i file.avi -qscale:v 1 -qmin 1 -qmax 1 -vsync 0 frame%08d.jpg
 : 1651055346:0;rustc --explain E0308
 : 1651129327:0;fd -e jpg -x rm
@@ -4959,7 +4952,6 @@ done
 : 1654362325:0;adb connect 192.168.1.101
 : 1655007526:0;gsf
 : 1655007904:0;ssh-add $HOME/.ssh/GitHub </dev/null
-: 1655007906:0;git push -f
 : 1655008000:0;e srcpkgs/dav1d/template
 : 1655008607:0;sudo xbps-install texlive-2022-bin
 : 1655008611:0;sudo xbps-install texlive2022-bin
@@ -4969,7 +4961,6 @@ done
 : 1655013202:0;git clone gl:mustaqim/cv
 : 1655013396:0;zstyle -L
 : 1655098134:0;xelatex cv.tex
-: 1655217944:0;lsblk --fs
 : 1655226048:0;e /etc/doas.conf
 : 1655394007:0;e src/lib.rs
 : 1655394562:0;cargo test
@@ -5038,11 +5029,8 @@ done
 : 1657810137:0;yadm add ~/.config/rofi
 : 1657810159:0;yadm add ~/.config/zathura/zathurarc
 : 1657810174:0;yadm add ~/.github/README.md
-: 1657863643:0;man mpv
 : 1657946002:0;iwctl 
 : 1657946022:0;sudo sv up iwd
-: 1658304378:0;man yt-dlp
-: 1658389810:0;yt -f '247+251' "$(wl-paste)"
 : 1658747731:0;e _dl.txt
 : 1658854891:0;man 5 dunst
 : 1658987207:0;pkill dunst
@@ -5128,15 +5116,9 @@ done
 : 1661533189:0;dunstify "Progress: " -h int:value:"`pamixer --get-volume`"
 : 1661576963:0;tmux list-keys -T prefixless
 : 1661581953:0;dl --input-file _dl.txt 
-: 1661582998:0;git pull --rebase upstream master
 : 1661583230:0;./xbps-src pkg rofi-wayland
 : 1661583738:0;sudo xbps-install --repository=hostdir/binpkgs/new_rofi_wayland rofi-wayland
 : 1661676112:0;sudo xbps-install libsecret gnome-keyring
-: 1661749806:0;adb logcat -v threadtime > log.txt
-: 1661755349:0;adb shell pm uninstall --user 0 com.android.contacts
-: 1661755353:0;adb shell pm uninstall --user 0 com.android.messaging
-: 1661755357:0;adb shell pm uninstall --user 0 com.android.dialer
-: 1661755519:0;adb shell pm uninstall --user 0 org.lineageos.eleven
 : 1661784702:0;heroku config:get MONGODB_URI
 : 1661788243:0;gcan!
 : 1661791219:0;pnpm run build
@@ -5170,7 +5152,6 @@ done
 : 1662221735:0;gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Light"
 : 1662225397:0;dbus-monitor --session sender=org.freedesktop.portal.Desktop destination=org.freedesktop.portal.Desktop
 : 1662271606:0;wl-paste > _dl.txt
-: 1662356902:0;adb shell pm uninstall --user 0 com.android.deskclock
 : 1662378421:0;pnpm run start
 : 1662389445:0;sudo xbps-install waydroid
 : 1662389465:0;sudo waydroid init
@@ -5200,19 +5181,14 @@ done
 : 1662963910:0;gsw master
 : 1662964024:0;gl --rebase upstream master
 : 1662964698:0;git rebase master
-: 1662965342:0;./xbps-src pkg noise-suppression-for-voice
 : 1662967664:0;xbps-query -Rs texlive
 : 1663047221:0;./realesrgan-ncnn-vulkan -i image.png -o image_upscale.png
-: 1663075331:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
 : 1663129353:0;doom sync
 : 1663131161:0;/bin/emacs -bg '#17191a' --daemon
-: 1663134193:0;fc-cache -fv
 : 1663306977:0;doom help upgrade
 : 1663307008:0;doom clean
 : 1663307017:0;doom sync -u
 : 1663416068:0;./FAHClient --user="2107iubhoya7" --team=234980
-: 1663477475:0;adb shell pm uninstall --user 0 org.lineageos.etar
-: 1663477498:0;adb shell pm uninstall --user 0 com.android.calculator2
 : 1663506645:0;adb connect 192.168.1.101:5555
 : 1663646383:0;sudo rm /var/service/iwd
 : 1663646401:0;sudo xbps-install wpa_supplicant
@@ -5264,7 +5240,6 @@ done
 : 1665448044:0;sudo xbps-install phantomjs
 : 1665462524:0;git remote rename origin upstream
 : 1665462582:0;gp
-: 1665483131:0;fd '\.(jpe?|pn)g' -x cjxl {} {.}.jxl
 : 1665551869:0;starship timings
 : 1665596321:0;adb connect 10.0.0.2:5555
 : 1665636695:0;dl --referer=""
@@ -5293,14 +5268,12 @@ done
 : 1665805060:0;yadm add ~/.config/waybar
 : 1665805063:0;yadm add ~/.mozilla/chrome
 : 1665805081:0;yadm commit -a -m "update"
-: 1665805161:0;yadm push
 : 1665808851:0;fpp --version
 : 1665845707:0;read "PORT?Enter PORT number: " && adb connect 10.0.0.2:$PORT
 : 1665846568:0;man aria2c
 : 1665848109:0;man smb.conf
 : 1665848620:0;sudo sv restart smbd
 : 1665848707:0;sudo xbps-install iperf
-: 1665971667:0;light -S 1%
 : 1665971714:0;svlogtail | rg smbd
 : 1665982088:0;dig @1.1.1.1 | rg "Query time"
 : 1665986588:0;cjxl -v -v -h
@@ -5327,24 +5300,17 @@ done
 : 1666098421:0;nslookup google.com
 : 1666149553:0;cat /etc/resolv.conf
 : 1666185964:0;curl "https://loadshedding.eskom.co.za/LoadShedding/GetStatus"
-: 1666198750:0;adb kill-server
 : 1666236960:0;svlogtail | rg cron
 : 1666239910:0;ffmpeg -t 00:30:00 -i file.m4a -c copy out1.m4a
-: 1666337161:0;decode
 : 1666338938:0;ping gs.statcounter.com
 : 1666368929:0;sudo xbps-install intel-gpu-tools
 : 1666439498:0;sudo wifi toggle
 : 1666488215:0;sudo sv up unbound
 : 1666489547:0;sudo setcap cap_sys_ptrace,cap_dac_read_search,cap_net_raw,cap_net_admin+ep $(which bandwhich)
-: 1666489729:0;bandwhich
-: 1666507955:0;ttyqr -b $(wl-paste)
-: 1666590327:0;yadm status
 : 1666673295:0;psmem -p $(pgrep -d, -u $USER) -S
 : 1666770451:0;sudo xbps-install nzbget
 : 1666873950:0;tree-sitter --version
-: 1666885054:0;lsusb
 : 1666929505:0;sudo intel_gpu_top
-: 1666938183:0;sudo sv down udevmon
 : 1666940319:0;xdg-mime query filetype "$(fzf)"
 : 1666993452:0;ip addr show
 : 1666994517:0;pkill megadl
@@ -5357,13 +5323,8 @@ done
 : 1667128143:0;ping adf.ly
 : 1667128393:0;sudo xbps-install streamlink
 : 1667143185:0;sudo mount /dev/sdb1 /media/ -o uid=1000,gid=1000,utf8
-: 1667143239:0;sudo umount /media
-: 1667259953:0;dl
-: 1667277087:0;glo
 : 1667277144:0;grv
 : 1667286113:0;gd
-: 1667286117:0;gst
-: 1667292043:0;w
 : 1667292166:0;pnpm add -g pnpm
 : 1667292179:0;pnpm update
 : 1667301322:0;pkill firefox-bin
@@ -5373,41 +5334,86 @@ done
 : 1667456383:0;dl -- 'https://josm.openstreetmap.de/josm-tested.jar'
 : 1667456393:0;chmod +x josm-tested.jar
 : 1667462801:0;wl-paste > file.json
-: 1667471433:0;free -h
-: 1667471691:0;yadm diff
-: 1667478356:0;tlp-stat -t | rg temp
 : 1667531954:0;deno --version
-: 1667820846:0;sudo sv up udevmon
-: 1667821038:0;zi times
-: 1667821040:0;rust-analyzer --version
-: 1667821072:0;tmux attach || tmux
 : 1667830436:0;swaymsg -t get_tree | jless
 : 1667830863:0;svlogtail | rg unbound
 : 1667830870:0;svlogtail | rg warp
-: 1667830914:0;sudo sv down warp
-: 1667831011:0;sudo sv up warp
-: 1667836011:0;bandwhich -i CloudflareWARP
-: 1667836018:0;sudo sv status /var/service/*
 : 1667893358:0;crontab -l
-: 1667893971:0;jackett
-: 1667906333:0;curl https://www.cloudflare.com/cdn-cgi/trace/ 2>/dev/null | rg warp
 : 1667975414:0;sudo xbps-remove -ROo
-: 1667999368:0;ping google.com
 : 1668008321:0;man vifm
-: 1668012306:0;fzf < /etc/unbound/zones/rpz.db
-: 1668015123:0;yt --list-formats "$(wl-paste)"
-: 1668049199:0;cd
-: 1668072148:0;ffprobe "$(fd -d 1 -c always | fzf)"
-: 1668094516:0;vared -p "Enter PORT number: " -c PORT && adb connect 10.0.0.2:$PORT
-: 1668098827:0;df -Th
-: 1668135631:0;sudo xbps-install -Suvy
-: 1668135809:0;zi update -p
-: 1668135875:0;reload
-: 1668135879:0;doom upgrade
-: 1668140173:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
-: 1668145269:0;htop
-: 1668145740:0;f
-: 1668146127:0;plain show
-: 1668151262:0;ffprobe "$(fd -d 1 -c always | fzf)"
-: 1668151485:0;sudo sv status /var/service/*
-: 1668151494:0;yadm status
+: 1668151564:0;yadm push
+: 1668171304:0;fc-cache -fv
+: 1668229795:0;cp /usr/share/man/man1/yt-dlp.1 .local/share/zinit/polaris/man/man1
+: 1668420995:0;sudo sv up warp
+: 1668830207:0;sudo sv down udevmon
+: 1668834033:0;sudo fdisk -l
+: 1668837361:0;sudo umount /media
+: 1668923284:0;man yt-dlp
+: 1669042167:0;rust-analyzer --version
+: 1669042169:0;zi times
+: 1669135594:0;cd
+: 1669334646:0;bandwhich -i CloudflareWARP
+: 1669738509:0;adb shell pm uninstall --user 0 com.android.calculator2
+: 1669738574:0;adb shell pm uninstall --user 0 org.lineageos.eleven
+: 1669738587:0;adb shell pm uninstall --user 0 com.android.dialer
+: 1669738605:0;adb shell pm uninstall --user 0 com.android.messaging
+: 1669738632:0;adb shell pm uninstall --user 0 com.android.contacts
+: 1669738648:0;adb shell pm uninstall --user 0 com.android.deskclock
+: 1669738668:0;adb shell pm uninstall --user 0 org.lineageos.etar
+: 1669868254:0;lsblk --fs
+: 1669868316:0;lsusb
+: 1669868409:0;sudo dmesg
+: 1669868539:0;sudo mount -t vfat /dev/mmcblk0p1 /media/ -o uid=1000,gid=1000,utf8,dmask=027,fmask=137
+: 1670043196:0;tlp-stat -t | rg temp
+: 1670207471:0;git pull --rebase upstream master
+: 1670208699:0;./xbps-src clean
+: 1670208823:0;./xbps-src pkg noise-suppression-for-voice
+: 1670209975:0;glo
+: 1670210014:0;gst
+: 1670210024:0;git push -f
+: 1670210104:0;sudo xbps-install --repository=hostdir/binpkgs/new_package_noise-suppression-for-voice noise-suppression-for-voice
+: 1670212080:0;xbps-query -f noise-suppression-for-voice
+: 1670250825:0;adb logcat -v threadtime > log.txt
+: 1670312041:0;fzf < /etc/unbound/zones/rpz.db
+: 1670336996:0;jackett
+: 1670337471:0;df -Th
+: 1670382057:0;w
+: 1670464126:0;light -S 1%
+: 1670515402:0;yadm status
+: 1670515407:0;yadm diff
+: 1670576014:0;ffprobe "$(fd -d 1 -c always | fzf)"
+: 1670646792:0;ttyqr -b $(wl-paste)
+: 1670832769:0;free -h
+: 1670836841:0;fd '\.(jpe?|pn)g' -d 1 -x ./waifu2x-ncnn-vulkan -i {} -o {}_1.png -n 2 -m models-cunet
+: 1670836899:0;fd '\.(jpe?|pn)g' -x cjxl {} {.}.jxl
+: 1670846411:0;sudo sv down warp
+: 1670846415:0;sudo sv up udevmon
+: 1670846433:0;sudo rm /var/service/warp/
+: 1670846445:0;sudo rm /var/service/warp
+: 1670846451:0;sudo sv status /var/service/*
+: 1670846706:0;decode
+: 1670905149:0;man mpv
+: 1670936250:0;dl
+: 1671088569:0;kill 1640 1624 1626 
+: 1671187033:0;plain show
+: 1671189698:0;yt --list-formats "$(wl-paste)"
+: 1671201385:0;ping google.com
+: 1671293755:0;bandwhich
+: 1671332485:0;sudo xbps-install -Suvy
+: 1671333265:0;zi update -p
+: 1671333305:0;reload
+: 1671334939:0;upower -d | awk -v RS='' '/LivePods/' | rg percentage | cut -d':' -f2 | awk '{$1=$1;print}'
+: 1671335039:0;doom upgrade
+: 1671337241:0;htop
+: 1671342781:0;curl https://www.cloudflare.com/cdn-cgi/trace/ 2>/dev/null | rg warp
+: 1671342967:0;tmux attach || tmux
+: 1671343088:0;yt -f '247+251' "$(wl-paste)"
+: 1671343147:0;f
+: 1671363819:0;adb kill-server
+: 1671363831:0;vared -p "Enter PORT number: " -c PORT && adb connect 10.0.0.2:$PORT
+: 1671364421:0;adb shell ls /sdcard/Movies
+: 1671365894:0;yadm status
+: 1671365901:0;yadm add ~/.config/dunst
+: 1671365903:0;yadm add ~/.config/mpv/{script-opts,scripts,shaders,input.conf,mpv.conf}
+: 1671365906:0;yadm status
+: 1671365919:0;yadm commit -a -m "update"

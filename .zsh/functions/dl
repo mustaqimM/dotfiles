@@ -3,6 +3,10 @@
 autoload colors && colors
 
 dl() {
+    # if [[ "$(wl-paste)" =~ "mega" ]]; then
+    #     megadl $(wl-paste)
+    # fi
+
     if [ $# -eq 2 ]; then
         aria2c --continue -x16 -s16 -k1M --summary-interval=0 --check-certificate=false "$@"
     else
